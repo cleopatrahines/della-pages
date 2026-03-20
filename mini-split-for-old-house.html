@@ -47,14 +47,14 @@ body {
 
 /* 鈹€鈹€鈹€ TYPOGRAPHY 鈹€鈹€鈹€ */
 h1 { font-family: var(--font-display); font-size: clamp(33px, 5vw, 53px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
-h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; text-transform: uppercase; }
 h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-height: 1.3; }
 .eyebrow { font-family: var(--font-display); font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; display: block; }
 .lead { font-size: 18px; color: var(--text-muted); line-height: 1.65; max-width: none !important; }
 .caption { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
 
 /* 鈹€鈹€鈹€ BUTTONS 鈹€鈹€鈹€ */
-.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 30px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-primary:hover { background: #1a2a6c; }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-200); }
@@ -154,13 +154,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .decision-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.8; }
 .decision-label { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .decision-hint { font-size: 13px; color: var(--text-muted); line-height: 1.45; margin-bottom: 10px; }
-.decision-cta {
-  font-family: var(--font-display); font-size: 13px; font-weight: 600;
-  color: var(--blue); display: inline-flex; align-items: center;
-  transition: color 0.15s ease;
-  margin-top: auto;
-}
-.decision-card:hover .decision-cta { color: var(--navy); }
+.decision-cta { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--blue); margin-top: auto; transition: color 0.15s; }
 
 /* 鈹€鈹€鈹€ SHOP SECTION 鈹€鈹€鈹€ */
 .shop-section { background: #FAF7F2; border-bottom: 1px solid var(--gray-200); }
@@ -194,15 +188,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
 .shop-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .shop-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
-.shop-card-cta {
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); display: inline-flex; align-items: center;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-  align-self: flex-start;
-}
-.shop-card:hover .shop-card-cta { background: var(--navy); color: #fff; border-color: var(--navy); }
+.shop-card-cta { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); transition: color 0.15s; }
 
 .shop-note { font-size: 15px; color: var(--text-muted); padding: 14px 16px; background: rgba(255,255,255,0.72); border-radius: var(--radius-sm); border: 1px solid var(--gray-200); }
 .shop-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
@@ -246,14 +232,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .use-row-text p { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
 .use-rec { font-size: 15px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
 .use-rec strong { color: var(--blue); }
-.use-link {
-  font-family: var(--font-display); font-size: 16px; font-weight: 600;
-  color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; align-self: flex-start;
-  padding: 10px 16px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-}
-.use-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.use-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); text-decoration: none; align-self: flex-start; transition: color 0.15s; }
+.use-link:hover { color: var(--navy); }
 
 /* 鈹€鈹€鈹€ PRODUCTS 鈹€鈹€鈹€ */
 .products-grid {
@@ -413,18 +393,6 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .faq-a a { color: var(--blue); text-decoration: none; }
 .faq-item.open .faq-a { display: block; }
 .faq-item.open .faq-icon::before { transform: rotate(-135deg); }
-.faq-footer { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.faq-footer-text { font-size: 16px; color: var(--text-body); }
-.faq-footer-link {
-  display: inline-flex; align-items: center;
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); text-decoration: none;
-  padding: 10px 16px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-}
-.faq-footer-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
-
 /* 鈹€鈹€鈹€ FINAL CTA 鈹€鈹€鈹€ */
 .final-cta {
   background: var(--gray-50);
@@ -489,8 +457,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <h1>Mini Split for <em>Old House</em></h1>
       <p class="hero-text">Add heating and cooling to an older home without rebuilding major ductwork. Start with one room, then choose the setup that fits your layout.</p>
       <div class="hero-actions">
-        <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="btn btn-primary btn-lg">Shop Wall-Mounted Systems</a>
-        <a href="#find-setup" class="hero-link">Find the right setup</a>
+        <a href="#find-setup" class="btn btn-primary btn-lg">Find Your Setup</a>
+        <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="hero-link">Or shop wall-mounted directly</a>
       </div>
       <div class="hero-stats">
         <div>
@@ -498,7 +466,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           <div class="hero-stat-label">Needed for most retrofits</div>
         </div>
         <div>
-          <div class="hero-stat-num">-13F</div>
+          <div class="hero-stat-num">-13°F</div>
           <div class="hero-stat-label">Ultra Heat rated</div>
         </div>
         <div>
@@ -842,25 +810,23 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
 
     </div>
-    <div class="faq-footer">
-      <span class="faq-footer-text">Ready to find your system?</span>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="faq-footer-link">Shop Wall-Mounted Systems</a>
+  </div>
+</section>
+
+<section style="background: var(--navy); padding: 56px 0; text-align: center;">
+  <div class="w">
+    <h2 style="color: #fff; margin-bottom: 12px;">Find the Best Setup for Your Old House</h2>
+    <p style="color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 28px;">Start with one room or plan a whole-floor upgrade.</p>
+    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="btn btn-lg" style="background: #5884E7; color: #fff; border-radius: 30px;">Shop Wall-Mounted Systems</a>
+      <a href="https://dellahome.com/collections/mini-split-multi-zone" class="btn btn-lg" style="background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 30px;">Explore Multi-Zone Options</a>
     </div>
   </div>
 </section>
 
-<!-- 鈶?FINAL CTA -->
-<section class="final-cta sec">
-  <div class="w">
-    <h2>Shop Mini Split Systems for Your Old House</h2>
-    <p>Start with one room or shop cleaner-look and multi-room options based on your layout.</p>
-    <div class="final-cta-actions">
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="btn btn-primary btn-lg">Shop Wall-Mounted Systems</a>
-      <a href="https://dellahome.com/collections/mini-split-multi-zone" class="btn btn-outline btn-lg">Explore Multi-Zone Options</a>
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="btn btn-outline btn-lg">Explore Concealed Ducted</a>
-    </div>
-  </div>
-</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What mini split system works best for an old house?","acceptedAnswer":{"@type":"Answer","text":"The best mini split type for an old house depends on the layout. Many older homes start with a wall-mounted mini split, while others are a better fit for concealed ducted, ceiling cassette, floor-ceiling, or multi-zone systems."}},{"@type":"Question","name":"Are mini splits good for old houses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mini splits are one of the best HVAC options for old houses because they add heating and cooling without rebuilding full-house ductwork."}},{"@type":"Question","name":"What works best in a home with radiators or baseboards?","acceptedAnswer":{"@type":"Answer","text":"A floor-ceiling mini split is often the best fit when low-wall placement makes more sense."}},{"@type":"Question","name":"When should I choose concealed ducted instead?","acceptedAnswer":{"@type":"Answer","text":"Choose concealed ducted when you want a cleaner interior look and have space to hide the unit in a closet, attic, or ceiling area."}},{"@type":"Question","name":"Should I choose multi-zone or separate single-zone systems?","acceptedAnswer":{"@type":"Answer","text":"For 2-3 rooms, a multi-zone system is usually the cleaner option. For rooms that are far apart or on different floors, separate single-zone systems can be simpler to install."}},{"@type":"Question","name":"Can you install a mini split in an old house without existing ductwork?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many mini split retrofits in old houses work without existing ductwork. Wall-mounted, floor-ceiling, cassette, and multi-zone systems do not require a full traditional duct system."}}]}
+</script>
 
 </body>
 </html>
