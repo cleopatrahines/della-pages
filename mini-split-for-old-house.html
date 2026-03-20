@@ -102,6 +102,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .hero-link { font-size: 15px; color: rgba(255,255,255,0.65); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: all 0.15s; }
 .hero-link:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+.hero-reco { margin-top: 14px; font-size: 15px; color: rgba(255,255,255,0.72); }
+.hero-reco strong { color: #fff; }
 .hero-stats {
   display: flex; gap: 40px; margin-top: 48px; padding-top: 32px;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -194,7 +196,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
 
 /* 鈹€鈹€鈹€ PAIN POINTS 鈹€鈹€鈹€ */
-.pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .pain-card {
   padding: 24px 20px; background: #FCFBF8;
   border: 1px solid var(--gray-200); border-radius: var(--radius);
@@ -319,6 +321,12 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 }
 .product-feature:hover .product-cta,
 .product-card:hover .product-cta { background: var(--navy); color: #fff; }
+.product-trust {
+  margin-top: 24px; padding: 14px 18px;
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius);
+  font-size: 15px; color: var(--text-muted); text-align: center;
+}
+.product-trust strong { color: var(--navy); }
 
 /* 鈹€鈹€鈹€ BEFORE YOU BUY 鈹€鈹€鈹€ */
 .byb-row {
@@ -466,6 +474,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <a href="#find-setup" class="btn btn-primary btn-lg">Find Your Setup</a>
         <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="hero-link">Or shop wall-mounted directly</a>
       </div>
+      <p class="hero-reco">Best starting point for most old houses: <strong>a wall-mounted single-zone system.</strong></p>
       <div class="hero-stats">
         <div>
           <div class="hero-stat-num">No Major Duct Rebuild</div>
@@ -576,22 +585,17 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
       <div class="pain-card">
         <span class="pain-kicker">02</span>
-        <div class="pain-title">Radiator-Era Layouts</div>
-        <div class="pain-desc">Rooms were designed around radiators and baseboards, not central air.</div>
+        <div class="pain-title">Layout and Placement Limits</div>
+        <div class="pain-desc">Radiators, trim, windows, and plaster walls often limit where indoor units can go.</div>
       </div>
       <div class="pain-card">
         <span class="pain-kicker">03</span>
-        <div class="pain-title">Upstairs Comfort Problems</div>
-        <div class="pain-desc">Second floors often trap heat in summer and lose it faster in winter.</div>
-      </div>
-      <div class="pain-card">
-        <span class="pain-kicker">04</span>
         <div class="pain-title">Preserve the Character</div>
         <div class="pain-desc">Comfort upgrades need to work without tearing into trim, walls, or ceilings.</div>
       </div>
     </div>
     <div class="pain-summary">
-      In older homes, the best mini split setup usually depends more on <strong>layout and structure</strong> than square footage alone. That is why some retrofits start with a wall-mounted system, while others are a better fit for concealed ducted, ceiling cassette, floor-ceiling, or multi-zone setups.
+      In older homes, the best mini split setup usually depends more on <strong>layout and structure</strong> than square footage alone. For many homes, the best starting point is a <strong>wall-mounted single-zone system</strong>, while cleaner-look, low-wall, and multi-room layouts may call for concealed ducted, floor-ceiling, cassette, or multi-zone options.
     </div>
   </div>
 </section>
@@ -736,6 +740,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
 
     </div>
+    <div class="product-trust"><strong>Why shop DELLA here:</strong> Free shipping, 30-day returns, live support, and lifetime coverage on mini split systems.</div>
   </div>
 </section>
 
@@ -749,11 +754,10 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="byb-row">
       <img class="byb-img" src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&q=80" alt="Older home being prepared for mini split installation">
       <div class="byb-list">
-        <div class="byb-item">Check your electrical panel. Most mini splits need a dedicated 115V or 230V circuit</div>
-        <div class="byb-item">Insulation still matters. Better insulation usually means a smaller, quieter system</div>
-        <div class="byb-item">Plan where the line set will run. Older walls may need surface routing</div>
-        <div class="byb-item">Start with the system type that fits your layout - single-zone for one problem room, or multi-zone and hidden-install options when needed</div>
-        <div class="byb-item">All DELLA mini splits include a wall-mount bracket, remote, and installation kit</div>
+        <div class="byb-item">Check your electrical panel first. Most mini splits need a dedicated 115V or 230V circuit.</div>
+        <div class="byb-item">Insulation still matters. Better insulation usually means a smaller, quieter, and less expensive system.</div>
+        <div class="byb-item">Plan the line-set route early. Older walls, plaster, and trim may require a cleaner surface-run strategy.</div>
+        <div class="byb-item">For most old houses, start with a wall-mounted single-zone system, then move to multi-zone or concealed ducted only when the layout really calls for it.</div>
       </div>
     </div>
   </div>
