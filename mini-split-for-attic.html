@@ -201,15 +201,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
 .shop-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .shop-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
-.shop-card-cta {
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); display: inline-flex; align-items: center;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-  align-self: flex-start;
-}
-.shop-card:hover .shop-card-cta { background: var(--navy); color: #fff; border-color: var(--navy); }
+.shop-card-cta { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); transition: color 0.15s; }
 
 .shop-note { font-size: 15px; color: var(--text-muted); padding: 14px 16px; background: rgba(255,255,255,0.72); border-radius: var(--radius-sm); border: 1px solid var(--gray-200); }
 .shop-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
@@ -358,7 +350,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   margin-bottom: 10px;
 }
 .byb-item:last-child { margin-bottom: 0; }
-.byb-item::before { content: '\2022'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
+.byb-item::before { content: '\233E'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
 
 /* 鈹€鈹€鈹€ FAQ 鈹€鈹€鈹€ */
 .faq-section {
@@ -420,26 +412,6 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .faq-a a { color: var(--blue); text-decoration: none; }
 .faq-item.open .faq-a { display: block; }
 .faq-item.open .faq-icon::before { transform: rotate(-135deg); }
-.faq-footer { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.faq-footer-text { font-size: 16px; color: var(--text-body); }
-.faq-footer-link {
-  display: inline-flex; align-items: center;
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); text-decoration: none;
-  padding: 10px 16px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-}
-.faq-footer-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
-
-/* 鈹€鈹€鈹€ FINAL CTA 鈹€鈹€鈹€ */
-.final-cta { background: var(--gray-50); border-top: 1px solid var(--gray-200); text-align: center; }
-.final-cta h2 { color: var(--navy); margin-bottom: 12px; }
-.final-cta p { color: var(--text-muted); font-size: 17px; margin-bottom: 32px; }
-.final-cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.final-cta .btn-outline { color: var(--navy); border-color: var(--gray-200); background: var(--white); }
-.final-cta .btn-outline:hover { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
-
 /* 鈹€鈹€鈹€ SECTION HELPERS 鈹€鈹€鈹€ */
 .section-header { margin-bottom: 40px; }
 
@@ -606,22 +578,17 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
       <div class="pain-card">
         <span class="pain-kicker">02</span>
-        <div class="pain-title">Central Air Falls Short</div>
-        <div class="pain-desc">Even when ductwork reaches the attic, airflow is often the weakest there.</div>
+        <div class="pain-title">Weak Airflow Up Top</div>
+        <div class="pain-desc">Even when ductwork reaches the attic, cooling and heating are often weakest there.</div>
       </div>
       <div class="pain-card">
         <span class="pain-kicker">03</span>
-        <div class="pain-title">Insulation Changes Load</div>
-        <div class="pain-desc">Finished attics vary a lot. Thin insulation and air leaks change sizing fast.</div>
-      </div>
-      <div class="pain-card">
-        <span class="pain-kicker">04</span>
         <div class="pain-title">Angles Limit Placement</div>
-        <div class="pain-desc">Knee walls, dormers, and slopes affect where indoor units can actually go.</div>
+        <div class="pain-desc">Knee walls, dormers, slopes, and ceiling height all affect what system type will fit cleanly.</div>
       </div>
     </div>
     <div class="pain-summary">
-      In attic spaces, the best mini split setup usually depends more on <strong>layout, insulation, and unit placement</strong> than square footage alone. That is why some attic projects start with wall-mounted systems, while others are a better fit for concealed ducted, ceiling cassette, or multi-zone setups.
+      In attic spaces, the best mini split setup usually depends more on <strong>layout, insulation, and unit placement</strong> than square footage alone. Many attic projects start with a <strong>wall-mounted system</strong>, while cleaner-look, open-loft, and multi-room layouts may be a better fit for concealed ducted, ceiling cassette, or multi-zone options.
     </div>
   </div>
 </section>
@@ -764,10 +731,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <img class="byb-img" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=640&q=80" alt="Finished attic being prepared for mini split installation">
       <div class="byb-list">
         <div class="byb-item">Check insulation and air sealing first. Poor attic insulation changes comfort and sizing faster than most buyers expect.</div>
-        <div class="byb-item">Look at wall height, slopes, knee walls, and dormers before assuming a standard high-wall head will fit cleanly.</div>
+        <div class="byb-item">Check wall height, slopes, knee walls, and dormers before assuming a standard high-wall head will fit cleanly.</div>
         <div class="byb-item">Plan the line-set route and condensate drainage early. Finished attic walls are harder to work around later.</div>
-        <div class="byb-item">Use square footage only as a starting point. Sun exposure, ceiling height, and room use matter a lot in attic spaces.</div>
-        <div class="byb-item">Start with the system type that fits your layout, then choose wall-mounted, concealed ducted, cassette, or multi-zone as needed.</div>
+        <div class="byb-item">For most attic rooms, start with wall-mounted, then move to concealed ducted, cassette, or multi-zone only when the layout truly calls for it.</div>
       </div>
     </div>
   </div>
@@ -830,25 +796,23 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
 
     </div>
-    <div class="faq-footer">
-      <span class="faq-footer-text">Ready to start with the most common attic path?</span>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="faq-footer-link">Shop Wall-Mounted Systems</a>
+  </div>
+</section>
+
+<section style="background: linear-gradient(180deg, #F7FAFF 0%, #EEF4FF 100%); border-top: 1px solid var(--gray-200); padding: 56px 0; text-align: center;">
+  <div class="w">
+    <h2 style="color: var(--navy); margin-bottom: 12px;">Find the Best Setup for Your Attic</h2>
+    <p style="color: var(--text-muted); font-size: 17px; margin-bottom: 28px;">Start with one finished attic room or branch into a more tailored layout.</p>
+    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="btn btn-primary btn-lg">Shop Wall-Mounted Systems</a>
+      <a href="https://dellahome.com/collections/mini-split-multi-zone" class="btn btn-outline btn-lg">Explore Multi-Zone Options</a>
     </div>
   </div>
 </section>
 
-<!-- 鈶?FINAL CTA -->
-<section class="final-cta sec">
-  <div class="w">
-    <h2>Find the Best Mini Split for Your Attic</h2>
-    <p>Start with one finished attic room or branch into concealed ducted and multi-zone paths if your layout needs something more tailored.</p>
-    <div class="final-cta-actions">
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="btn btn-primary btn-lg">Shop Wall-Mounted</a>
-      <a href="https://dellahome.com/collections/mini-split-multi-zone" class="btn btn-outline btn-lg">Explore Multi-Zone Options</a>
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="btn btn-outline btn-lg">Explore Concealed Ducted</a>
-    </div>
-  </div>
-</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What mini split system works best for an attic?","acceptedAnswer":{"@type":"Answer","text":"The best mini split type for an attic depends on the layout. Many attic projects start with a wall-mounted mini split, while others are a better fit for concealed ducted, ceiling cassette, or multi-zone systems."}},{"@type":"Question","name":"Are mini splits good for attic rooms?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mini splits are one of the best HVAC options for attic rooms because they add targeted heating and cooling without relying on weak top-floor ductwork."}},{"@type":"Question","name":"What works best for one finished attic bedroom?","acceptedAnswer":{"@type":"Answer","text":"Usually a wall-mounted mini split. It is the cleanest starting point for most attic bedrooms, offices, and guest rooms."}},{"@type":"Question","name":"When should I choose concealed ducted instead?","acceptedAnswer":{"@type":"Answer","text":"Choose concealed ducted when you want a cleaner interior look and have space to hide the unit in a knee wall, ceiling area, or other attic cavity."}},{"@type":"Question","name":"Should I choose multi-zone or a one-room system?","acceptedAnswer":{"@type":"Answer","text":"For one attic room, wall-mounted is usually the simplest path. If the attic is part of a larger upstairs project, multi-zone is often the cleaner option."}},{"@type":"Question","name":"Is square footage enough to size an attic mini split?","acceptedAnswer":{"@type":"Answer","text":"No. Square footage is only a starting point. Insulation, sun exposure, ceiling height, and room use can all push an attic room into a different size range."}}]}
+</script>
 
 </body>
 </html>
