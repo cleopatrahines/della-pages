@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Split for Garage | DELLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0e1953;--navy-2:#15266f;--blue:#5884e7;--blue-2:#3f6fe0;--blue-light:#edf3ff;--bg:#f7f9fd;--line:#dde4f0;--text:#1a2550;--muted:#5c6a8a;--white:#fff;--shadow:0 16px 36px rgba(14,25,83,.12);--shadow-sm:0 2px 10px rgba(14,25,83,.06)}
+*{box-sizing:border-box}body{margin:0;font-family:"Roboto",sans-serif;font-size:17px;line-height:1.6;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}.w{width:min(1200px,calc(100% - 48px));margin:0 auto}.sec{padding:84px 0}.sec-sm{padding:60px 0}h1,h2,h3{margin:0;color:var(--navy)}h1{font-size:clamp(40px,6vw,64px);line-height:.98;font-weight:800;letter-spacing:-.03em}h2{font-size:clamp(30px,4vw,42px);line-height:1.08;font-weight:800;letter-spacing:-.025em}h3{font-size:22px;line-height:1.2;font-weight:700;letter-spacing:-.02em}.eyebrow,.subhead{display:inline-block;margin-bottom:12px;font-size:14px;line-height:1.2;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-2)}.lead{max-width:760px;margin-top:14px;font-size:19px;line-height:1.72;color:var(--muted)}.section-header{margin-bottom:38px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 24px;border:0;border-radius:10px;font-size:16px;line-height:1;font-weight:700;white-space:nowrap;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--navy);color:#fff;box-shadow:0 10px 24px rgba(14,25,83,.16)}.btn-primary:hover{background:var(--navy-2)}.btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.btn-outline:hover{border-color:var(--blue);background:var(--blue-light);color:var(--blue-2)}.btn-sm{min-height:46px;padding:12px 18px;font-size:15px}.btn-lg{min-height:58px;padding:18px 30px;font-size:17px}
+.hero{position:relative;overflow:hidden;min-height:680px;background:var(--navy)}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,25,83,.94) 0%,rgba(14,25,83,.78) 42%,rgba(14,25,83,.24) 100%),linear-gradient(180deg,rgba(88,132,231,.18),rgba(14,25,83,0))}.hero .w{position:relative;z-index:1}.hero-inner{display:grid;grid-template-columns:minmax(0,720px) minmax(280px,320px);gap:28px;align-items:end;min-height:680px;padding:96px 0 76px}.hero-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:8px 16px;border:1px solid rgba(123,164,255,.35);border-radius:999px;background:rgba(88,132,231,.18);color:#c7d8ff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.hero-tag span{width:8px;height:8px;border-radius:50%;background:var(--blue)}.hero h1{color:#fff;max-width:640px}.hero h1 em{font-style:normal;color:#8cb1ff}.hero-text{max-width:620px;margin-top:18px;font-size:20px;line-height:1.75;color:rgba(255,255,255,.82)}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.hero-link,.shop-card-cta,.use-link{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:1.45;font-weight:700}.hero-link{color:#fff}.hero-link::after,.shop-card-cta::after,.use-link::after{content:"->";font-size:.95em}.hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:42px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}.hero-stat-num{font-size:clamp(30px,4vw,40px);line-height:1;font-weight:800;color:#fff}.hero-stat-label{margin-top:8px;font-size:15px;line-height:1.45;color:rgba(255,255,255,.68)}.hero-panel{padding:24px;border:1px solid rgba(255,255,255,.14);border-radius:24px;background:rgba(10,18,56,.38);backdrop-filter:blur(8px);color:#fff;box-shadow:var(--shadow)}.hero-panel-title{margin-bottom:14px;font-size:15px;line-height:1.3;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#9ebcff}.hero-panel-item{padding-top:14px;margin-top:14px;border-top:1px solid rgba(255,255,255,.12)}.hero-panel-item:first-child{margin-top:0;padding-top:0;border-top:0}.hero-panel-item strong{display:block;margin-bottom:4px;font-size:19px;line-height:1.3}.hero-panel-item span{display:block;font-size:15px;line-height:1.5;color:rgba(255,255,255,.72)}
+.feature-bar{padding:32px 0;background:linear-gradient(180deg,#fff,#fbfcff);border-bottom:1px solid var(--line)}.feature-bar-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.feature-bar-item{display:flex;align-items:center;gap:14px}.feature-bar-icon{width:52px;height:52px;flex-shrink:0}.feature-bar-icon img{width:100%;height:100%;object-fit:contain}.feature-bar-text{font-size:16px;line-height:1.45;font-weight:700;color:var(--navy)}
+.shop-section{background:radial-gradient(circle at top right,rgba(88,132,231,.12),transparent 28%),var(--bg);border-bottom:1px solid var(--line)}.steps-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:28px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}.step-tab{padding:18px 22px;border-right:1px solid var(--line);font-size:16px;line-height:1.45;font-weight:700;color:var(--text)}.step-tab:last-child{border-right:0}.step-tab-num{display:block;margin-bottom:6px;font-size:13px;line-height:1.2;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-2)}.shop-primary{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:18px;padding:32px;border:2px solid var(--navy);border-radius:24px;background:#fff;box-shadow:var(--shadow-sm);transition:.18s ease}.shop-primary:hover,.shop-card:hover,.use-card:hover,.product-card:hover,.know-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.shop-primary-left{display:flex;align-items:center;gap:18px}.shop-primary-icon{display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:16px;background:var(--blue-light);flex-shrink:0}.shop-primary-icon svg{width:28px;height:28px;stroke:var(--blue-2);fill:none;stroke-width:1.8}.shop-badge,.use-tag,.product-label-badge{display:inline-flex;align-items:center;min-height:28px;padding:5px 12px;border-radius:8px;font-size:12px;line-height:1;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.shop-badge,.product-label-badge{background:var(--navy);color:#fff}.use-tag{background:var(--blue-light);color:var(--blue-2)}.shop-primary-name{margin-top:10px;font-size:28px;line-height:1.1;font-weight:800}.shop-primary-desc{margin-top:8px;font-size:17px;line-height:1.65;color:var(--muted)}.shop-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:28px}.shop-card{display:block;padding:28px;border:1.5px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow-sm);transition:.18s ease}.shop-card:hover,.product-card:hover,.know-card:hover{border-color:var(--blue)}.shop-card-name{font-size:22px;line-height:1.2;font-weight:800;color:var(--navy)}.shop-card-desc{margin-top:10px;font-size:16px;line-height:1.65;color:var(--muted)}.shop-card-cta{margin-top:16px;color:var(--blue-2)}.btu-row{display:flex;flex-wrap:wrap;gap:12px}.btu-chip{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-size:16px;line-height:1;font-weight:800;transition:.18s ease}.btu-chip:hover{border-color:var(--blue);background:var(--blue-light);color:var(--blue-2)}.shop-note{margin-top:18px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:16px;line-height:1.65;color:var(--muted)}.shop-note a{color:var(--blue-2);font-weight:700}
+.table-wrap{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow-sm)}.sizing-table{width:100%;border-collapse:collapse}.sizing-table thead{background:var(--navy)}.sizing-table th{padding:18px 24px;text-align:left;font-size:13px;line-height:1.2;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.74)}.sizing-table td{padding:24px;border-bottom:1px solid #eef2f8;vertical-align:middle}.sizing-table tr:last-child td{border-bottom:0}.sizing-table tr:hover td{background:#fcfdff}.garage-name{font-size:21px;line-height:1.2;font-weight:800}.garage-hint,.sqft-val{margin-top:6px;font-size:16px;line-height:1.55;color:var(--muted)}.btu-val{font-size:19px;line-height:1.35;font-weight:800;color:var(--navy)}.table-note{margin-top:16px;padding:18px 20px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:var(--blue-light);font-size:16px;line-height:1.65;color:var(--text)}
+.use-section{background:linear-gradient(180deg,rgba(237,243,255,.5),rgba(248,249,251,.7)),var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.use-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.use-card{display:grid;grid-template-columns:176px minmax(0,1fr);gap:20px;padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow-sm);transition:.18s ease}.use-card:hover{border-color:var(--blue)}.use-thumb{overflow:hidden;border-radius:18px;background:linear-gradient(180deg,#f8fbff,#eef3fb);aspect-ratio:1}.use-thumb img{width:100%;height:100%;object-fit:contain;padding:14px}.use-content{display:flex;flex-direction:column;justify-content:center}.use-content h3{margin-top:12px}.use-content p{margin:10px 0 16px;font-size:16px;line-height:1.68;color:var(--muted)}.use-link{color:var(--blue-2)}.info-callout{display:flex;align-items:flex-start;gap:14px;margin-top:24px;padding:20px 22px;border:1px solid var(--blue);border-radius:18px;background:linear-gradient(135deg,rgba(88,132,231,.12),rgba(88,132,231,.04))}.info-callout-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:50%;background:var(--navy);color:#fff;font-size:16px;font-weight:800}.info-callout-text{font-size:16px;line-height:1.68;color:var(--text)}.info-callout-text strong{color:var(--navy)}
+.byb-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:22px}.byb-summary{padding:28px;border-radius:24px;background:linear-gradient(160deg,rgba(14,25,83,.98),rgba(21,38,111,.96)),var(--navy);color:#fff;box-shadow:var(--shadow)}.byb-summary .subhead{color:#9ebcff}.byb-summary h3{color:#fff;font-size:28px}.byb-summary p{margin:14px 0 0;font-size:17px;line-height:1.72;color:rgba(255,255,255,.78)}.byb-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}.byb-metric{padding:18px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.06)}.byb-metric strong{display:block;font-size:28px;line-height:1;font-weight:800}.byb-metric span{display:block;margin-top:8px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.74)}.byb-list{display:grid;gap:12px}.byb-item,.placement-item{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;font-size:16px;line-height:1.68;color:var(--text)}.byb-item::before,.placement-item::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex-shrink:0;margin-top:1px;border-radius:50%;background:var(--blue-light);color:var(--blue-2);font-size:16px;line-height:1;font-weight:800}
+.products-section{background:radial-gradient(circle at top left,rgba(88,132,231,.08),transparent 32%),var(--bg);border-top:1px solid var(--line)}.products-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow-sm);transition:.18s ease}.product-img-wrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#f9fbff,#f1f4fa);aspect-ratio:1;padding:18px}.product-img-wrap img{width:100%;height:100%;object-fit:contain;transition:transform .24s ease}.product-card:hover .product-img-wrap img{transform:scale(1.04)}.product-label-badge{position:absolute;top:14px;left:14px}.product-body{display:flex;flex:1;flex-direction:column;padding:22px}.product-name{font-size:18px;line-height:1.4;font-weight:800;color:var(--navy)}.product-spec{margin-top:8px;font-size:15px;line-height:1.6;color:var(--muted)}.product-price{margin-top:16px;font-size:30px;line-height:1;font-weight:800;color:var(--blue-2)}.product-cta{margin-top:18px;display:block;padding:14px 16px;border-radius:12px;background:var(--blue-light);color:var(--blue-2);font-size:16px;line-height:1.2;font-weight:800;text-align:center;transition:.18s ease}.product-card:hover .product-cta{background:var(--navy);color:#fff}
+.placement-grid,.know-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.placement-item{background:var(--bg)}.tips-list{display:grid;gap:10px;margin-bottom:36px}.tip-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;font-size:16px;line-height:1.68;color:var(--text)}.tip-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--navy);color:#fff;font-size:15px;line-height:1;font-weight:800}.know-card{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow-sm);transition:.18s ease}.know-card h3{font-size:20px}.know-card p{margin-top:10px;font-size:16px;line-height:1.68;color:var(--muted)}
+.faq-section{background:linear-gradient(180deg,rgba(14,25,83,.98),rgba(21,38,111,.98)),var(--navy)}.faq-section h2,.faq-section .lead,.faq-footer-text{color:#fff}.faq-section .lead{max-width:560px;color:rgba(255,255,255,.72)}.faq-list{margin-top:34px;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:24px}.faq-item{border-bottom:1px solid rgba(255,255,255,.1)}.faq-item:last-child{border-bottom:0}.faq-q{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 28px;cursor:pointer;transition:.18s ease}.faq-q:hover{background:rgba(255,255,255,.04)}.faq-q h3{flex:1;font-size:18px;line-height:1.5;font-weight:700;color:#fff}.faq-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;border:1.5px solid rgba(255,255,255,.22);border-radius:50%;color:rgba(255,255,255,.72);font-size:22px;line-height:1;font-weight:400;transition:.18s ease}.faq-a{display:none;padding:0 28px 24px;font-size:16px;line-height:1.72;color:rgba(255,255,255,.72)}.faq-item.open .faq-a{display:block}.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(88,132,231,.16);color:#9ebcff;border-color:rgba(88,132,231,.42)}.faq-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-top:28px}.faq-footer-text{font-size:18px;line-height:1.45;font-weight:700}
+@media (max-width:1100px){.hero-inner{grid-template-columns:1fr;align-items:start}.hero-panel{max-width:420px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:768px){body{font-size:16px}.w{width:min(100% - 32px,1200px)}.sec{padding:64px 0}.sec-sm{padding:48px 0}.hero{min-height:auto}.hero-inner{min-height:auto;padding:72px 0 48px}.hero-text,.lead{font-size:18px}.hero-stats,.feature-bar-grid,.steps-bar,.shop-row,.use-grid,.byb-layout,.products-grid,.placement-grid,.know-grid,.byb-metrics{grid-template-columns:1fr}.shop-primary,.shop-primary-left{flex-direction:column;align-items:flex-start}.step-tab{border-right:0;border-bottom:1px solid var(--line)}.step-tab:last-child{border-bottom:0}.use-card{grid-template-columns:1fr}.use-thumb{aspect-ratio:16/10}.sizing-table,.sizing-table thead,.sizing-table tbody,.sizing-table tr,.sizing-table th,.sizing-table td{display:block;width:100%}.sizing-table thead{display:none}.sizing-table tr{padding:18px;border-bottom:1px solid #eef2f8}.sizing-table tr:last-child{border-bottom:0}.sizing-table td{padding:0;border:0}.sizing-table td+td{margin-top:10px}.faq-q,.faq-a{padding-left:20px;padding-right:20px}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <img class="hero-bg" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/Garage_workshop_with_wall-mounted_mini_split.webp?v=1772258547" alt="Wall-mounted mini split installed in a garage workshop" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="w">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag"><span></span>Ductless Garage Comfort</div>
+        <h1>Mini Split for <em>Garage</em></h1>
+        <p class="hero-text">Shop DELLA mini split systems sized for garages, workshops, hobby spaces, and cold-climate setups with clearer ecommerce hierarchy and much stronger readability.</p>
+        <div class="hero-actions">
+          <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-primary btn-lg">Shop Garage Systems</a>
+          <a href="#sizing" class="hero-link">Not sure what size? Start here</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">9K-36K</div><div class="hero-stat-label">BTU sizes for compact garages through larger workshops.</div></div>
+          <div><div class="hero-stat-num">-13&deg;F</div><div class="hero-stat-label">Ultra Heat options for colder winter installs.</div></div>
+          <div><div class="hero-stat-num">No Ducts</div><div class="hero-stat-label">Cleaner retrofit path for finished or detached garages.</div></div>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Quick garage buying guide">
+        <div class="hero-panel-title">Quick Start</div>
+        <div class="hero-panel-item"><strong>Most 2-car garages start at 12K BTU</strong><span>Move up a tier if insulation is poor or the space runs hot like a workshop.</span></div>
+        <div class="hero-panel-item"><strong>Choose high efficiency for daily use</strong><span>Garage gyms, offices, and hobby spaces benefit from better SEER2 ratings.</span></div>
+        <div class="hero-panel-item"><strong>Use Ultra Heat for low winter temps</strong><span>Cold-climate systems keep output steadier when freezing weather hits.</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+<section class="feature-bar">
+  <div class="w">
+    <div class="feature-bar-grid">
+      <div class="feature-bar-item"><div class="feature-bar-icon"><img src="https://dellahome.com/cdn/shop/files/80x80px-40.png?v=1746071491&width=64" alt="Free shipping"></div><p class="feature-bar-text">Free &amp; Fast Shipping<br>Same Day Processing</p></div>
+      <div class="feature-bar-item"><div class="feature-bar-icon"><img src="https://dellahome.com/cdn/shop/files/20250424-114745.png?v=1745466491&width=64" alt="Money-back guarantee"></div><p class="feature-bar-text">30-Day Money-Back<br>Guarantee</p></div>
+      <div class="feature-bar-item"><div class="feature-bar-icon"><img src="https://dellahome.com/cdn/shop/files/20250911-174827-1.png?v=1757584142&width=64" alt="Customer support"></div><p class="feature-bar-text">24x7 Live Chat Support<br>M-F Technical Phone Support</p></div>
+      <div class="feature-bar-item"><div class="feature-bar-icon"><img src="https://dellahome.com/cdn/shop/files/20250424-114735.png?v=1745466499&width=64" alt="Lifetime coverage"></div><p class="feature-bar-text">Lifetime Coverage<br>for Mini Splits</p></div>
+    </div>
+  </div>
+</section>
+<section class="shop-section sec-sm">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Choose Your System</span>
+      <h2>Shop Garage Mini Split Systems</h2>
+      <p class="lead">我把这一段改得更像 DELLA 的分类落地页了，先给用户明确 CTA，再给决策路径，而不是用很多小字去解释。</p>
+    </div>
+    <div class="steps-bar">
+      <div class="step-tab"><span class="step-tab-num">Step 1</span>Choose your main system type</div>
+      <div class="step-tab"><span class="step-tab-num">Step 2</span>Shop by BTU size</div>
+      <div class="step-tab"><span class="step-tab-num">Step 3</span>Narrow by climate or usage</div>
+    </div>
+    <a href="https://dellahome.com/collections/mini-split-single-zone" class="shop-primary">
+      <div class="shop-primary-left">
+        <div class="shop-primary-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2.5" y="4" width="19" height="7" rx="2"></rect>
+            <path d="M12 11v9"></path>
+            <path d="M8.5 19.5h7"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="shop-badge">Recommended</div>
+          <div class="shop-primary-name">Single-Zone Garage Systems</div>
+          <div class="shop-primary-desc">One indoor unit and one outdoor unit. This is still the clearest path for most garages, workshops, and hobby spaces.</div>
+        </div>
+      </div>
+      <span class="btn btn-primary">Browse Single-Zone</span>
+    </a>
+    <div class="shop-row">
+      <a href="https://dellahome.com/collections/high-efficiency" class="shop-card">
+        <div class="shop-card-name">High-Efficiency Systems</div>
+        <div class="shop-card-desc">Best for garages used every day, including home gyms, hobby rooms, and workspaces with longer runtime.</div>
+        <div class="shop-card-cta">Browse Energy-Saving Systems</div>
+      </a>
+      <a href="https://dellahome.com/collections/ultra-heat" class="shop-card">
+        <div class="shop-card-name">Ultra Heat -13&deg;F Systems</div>
+        <div class="shop-card-desc">A stronger path for colder climates where winter heating performance matters as much as summer cooling.</div>
+        <div class="shop-card-cta">Browse Cold Climate Heating</div>
+      </a>
+    </div>
+    <p class="subhead">Size by BTU</p>
+    <div class="btu-row">
+      <a href="https://dellahome.com/collections/9000-btu-mini-split" class="btu-chip">9K BTU</a>
+      <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btu-chip">12K BTU</a>
+      <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btu-chip">18K BTU</a>
+      <a href="https://dellahome.com/collections/24000-btu-mini-split" class="btu-chip">24K BTU</a>
+      <a href="https://dellahome.com/collections/36000-btu-mini-split" class="btu-chip">36K BTU</a>
+    </div>
+    <div class="shop-note">Garage with separate rooms or divided work areas? <a href="https://dellahome.com/collections/mini-split-multi-zone">See multi-zone options</a></div>
+  </div>
+</section>
+<section class="sec" id="sizing">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">BTU Sizing Guide</span>
+      <h2>Choose by Garage Size</h2>
+      <p class="lead">Use this as a starting point for an insulated garage with roughly 8-10 ft ceilings. Go up one tier if the space is under-insulated, sees extreme temperatures, or carries workshop heat load.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="sizing-table">
+        <thead><tr><th>Garage Type</th><th>Sq Ft</th><th>BTU Range</th><th>Shop</th></tr></thead>
+        <tbody>
+          <tr><td><div class="garage-name">1-Car Garage</div><div class="garage-hint">Parking, storage, and lighter use</div></td><td class="sqft-val">200-300</td><td class="btu-val">9,000-12,000</td><td><a href="https://dellahome.com/collections/9000-btu-mini-split" class="btn btn-outline btn-sm">View 9K Options</a></td></tr>
+          <tr><td><div class="garage-name">2-Car Garage</div><div class="garage-hint">Most common attached-garage setup</div></td><td class="sqft-val">400-600</td><td class="btu-val">12,000-18,000</td><td><a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-outline btn-sm">View 12K Options</a></td></tr>
+          <tr><td><div class="garage-name">3-Car Garage or Workshop</div><div class="garage-hint">Tools and longer sessions add heat load</div></td><td class="sqft-val">600-900</td><td class="btu-val">18,000-24,000</td><td><a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-sm">View 18K Options</a></td></tr>
+          <tr><td><div class="garage-name">Large Shop or Pole Barn</div><div class="garage-hint">Higher ceilings and more volume need more capacity</div></td><td class="sqft-val">900+</td><td class="btu-val">24,000+</td><td><a href="https://dellahome.com/collections/24000-btu-mini-split" class="btn btn-outline btn-sm">View 24K Options</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Most 2-car garages start at 12,000 BTU. If the garage door is poorly insulated or the space is used as a shop, sizing up usually produces a better result.</p>
+  </div>
+</section>
+<section class="use-section sec">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Use Case Match</span>
+      <h2>Match by How You Use Your Garage</h2>
+      <p class="lead">这里我直接去掉了最出戏的第三方品牌场景图，换成更 DELLA 化的产品导向场景卡。</p>
+    </div>
+    <div class="use-grid">
+      <article class="use-card">
+        <div class="use-thumb"><img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800" alt="DELLA Motto Series mini split"></div>
+        <div class="use-content">
+          <span class="use-tag">Most Common</span>
+          <h3>Standard Garage</h3>
+          <p>For parking, storage, and occasional use, a simple single-zone system keeps the decision path clean and product-first.</p>
+          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-link">Shop Small Garage Systems</a>
+        </div>
+      </article>
+      <article class="use-card">
+        <div class="use-thumb"><img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series mini split"></div>
+        <div class="use-content">
+          <span class="use-tag">Higher Runtime</span>
+          <h3>Garage Gym or Hobby Room</h3>
+          <p>When the garage is occupied often, better efficiency makes more sense than a basic occasional-use setup.</p>
+          <a href="https://dellahome.com/collections/high-efficiency" class="use-link">Shop High-Efficiency Models</a>
+        </div>
+      </article>
+      <article class="use-card">
+        <div class="use-thumb"><img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1764061301&width=800" alt="DELLA Optima Series Ultra Heat mini split"></div>
+        <div class="use-content">
+          <span class="use-tag">Cold Climate</span>
+          <h3>Below-Freezing Garage</h3>
+          <p>For garages that need winter-ready performance, this keeps the message centered on the Ultra Heat product line.</p>
+          <a href="https://dellahome.com/collections/ultra-heat" class="use-link">Shop Ultra Heat Systems</a>
+        </div>
+      </article>
+      <article class="use-card">
+        <div class="use-thumb"><img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18K BTU mini split"></div>
+        <div class="use-content">
+          <span class="use-tag">Higher Load</span>
+          <h3>Workshop or Multi-Tool Space</h3>
+          <p>Tool heat, longer sessions, and bigger spaces often push shoppers toward more capacity than a basic garage needs.</p>
+          <a href="https://dellahome.com/collections/18000-btu-mini-split" class="use-link">Shop Workshop-Friendly Sizes</a>
+        </div>
+      </article>
+    </div>
+    <div class="info-callout">
+      <div class="info-callout-icon">i</div>
+      <div class="info-callout-text"><strong>Airflow tip:</strong> aim the indoor unit toward the main occupied zone, but avoid blowing directly onto a workbench, treadmill, or seated workspace once the room is up to temperature.</div>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Before You Buy</span>
+      <h2>What to Know First</h2>
+    </div>
+    <div class="byb-layout">
+      <div class="byb-summary">
+        <span class="subhead">Fast Read</span>
+        <h3>Better decisions start with insulation, climate, and usage.</h3>
+        <p>这一块我改成了更像电商导购信息卡的形式，层级更强，也不会被一张不属于 DELLA 的大图抢走注意力。</p>
+        <div class="byb-metrics">
+          <div class="byb-metric"><strong>12K</strong><span>Common starting point for many 2-car garages</span></div>
+          <div class="byb-metric"><strong>-13&deg;F</strong><span>Ultra Heat target for colder winter installs</span></div>
+        </div>
+      </div>
+      <div class="byb-list">
+        <div class="byb-item">Insulate the garage door first because it is usually the largest source of heat gain and heat loss.</div>
+        <div class="byb-item">If the space is uninsulated or drafty, go up one BTU tier instead of shopping only by floor area.</div>
+        <div class="byb-item">For freezing climates, send shoppers into Ultra Heat instead of making them decode cold-weather capability from specs alone.</div>
+        <div class="byb-item">Avoid oversizing for a small garage because short cycling can reduce comfort and leave the room feeling clammy.</div>
+        <div class="byb-item">Use square footage, insulation quality, climate, and actual usage pattern together when choosing capacity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="products-section sec">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Product Lineup</span>
+      <h2>Recommended Garage Systems</h2>
+      <p class="lead">这一段我保留了最接近 DELLA 原站的逻辑：真实产品、真实价格、清晰适用场景、直接去 PDP。</p>
+    </div>
+    <div class="products-grid">
+      <a href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-label-badge">Small Garage</div>
+          <img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800" alt="DELLA Motto Series 12K BTU 17 SEER2">
+        </div>
+        <div class="product-body">
+          <div class="product-name">Motto Series 12K BTU 17 SEER2</div>
+          <div class="product-spec">12,000 BTU | Up to 550 sq. ft.</div>
+          <div class="product-price">$719.96</div>
+          <span class="product-cta">View Details</span>
+        </div>
+      </a>
+      <a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-label-badge">Daily Use</div>
+          <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 12K BTU 23 SEER2">
+        </div>
+        <div class="product-body">
+          <div class="product-name">Vario Series 12K BTU 23 SEER2</div>
+          <div class="product-spec">12,000 BTU | Up to 550 sq. ft.</div>
+          <div class="product-price">$829.96</div>
+          <span class="product-cta">View Details</span>
+        </div>
+      </a>
+      <a href="https://dellahome.com/products/optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-label-badge">Cold Climate</div>
+          <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1764061301&width=800" alt="DELLA Optima Series 12K BTU 23 SEER2 Ultra Heat">
+        </div>
+        <div class="product-body">
+          <div class="product-name">Optima Series 12K BTU 23 SEER2 Ultra Heat</div>
+          <div class="product-spec">12,000 BTU | Up to 550 sq. ft. | -13&deg;F heating</div>
+          <div class="product-price">From $994.96</div>
+          <span class="product-cta">View Details</span>
+        </div>
+      </a>
+      <a href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-label-badge">2-Car Garage</div>
+          <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18K BTU 21 SEER2">
+        </div>
+        <div class="product-body">
+          <div class="product-name">Vario Series 18K BTU 21 SEER2</div>
+          <div class="product-spec">18,000 BTU | Up to 1,000 sq. ft.</div>
+          <div class="product-price">$1,099.96</div>
+          <span class="product-cta">View Details</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Installation &amp; Maintenance</span>
+      <h2>Placement, Maintenance, and Installation</h2>
+    </div>
+    <h3 class="subhead">Where to Mount</h3>
+    <div class="placement-grid">
+      <div class="placement-item">Mount the indoor unit high on the longest wall to improve throw and coverage across the garage.</div>
+      <div class="placement-item">Aim airflow toward the occupied area, but not directly at people for long sessions.</div>
+      <div class="placement-item">Keep the unit away from dust-heavy cutting or grinding zones whenever possible.</div>
+      <div class="placement-item">Choose a location that allows a clean condensate drain path and sensible line-set routing.</div>
+    </div>
+    <h3 class="subhead" style="margin-top:36px;">Owner Tips</h3>
+    <div class="tips-list">
+      <div class="tip-item"><div class="tip-num">1</div><span>Pre-condition the garage about 15-20 minutes before starting work or a workout.</span></div>
+      <div class="tip-item"><div class="tip-num">2</div><span>Clean filters every 2-3 weeks if the garage doubles as a dusty workshop.</span></div>
+      <div class="tip-item"><div class="tip-num">3</div><span>Insulate the garage door first because it usually has the biggest comfort payoff.</span></div>
+      <div class="tip-item"><div class="tip-num">4</div><span>Keep the outdoor unit clear of leaves, clutter, snow, and anything that restricts airflow.</span></div>
+    </div>
+    <h3 class="subhead">Before Installation</h3>
+    <div class="know-grid">
+      <div class="know-card"><h3>Gravity Drain vs Pump</h3><p>Use a gravity drain when possible. Add a condensate pump only if the layout cannot support a downhill route.</p></div>
+      <div class="know-card"><h3>Dust and Filter Care</h3><p>Woodworking and sanding garages need more frequent filter cleaning and often benefit from a pre-filter approach.</p></div>
+      <div class="know-card"><h3>DIY vs Pro Install</h3><p>A professional install helps with refrigerant handling, vacuum procedure, code, and cleaner finishing details.</p></div>
+      <div class="know-card"><h3>Electrical Check</h3><p>Many systems require a dedicated 115V or 230V circuit. Do not assume the same circuit as larger shop tools.</p></div>
+    </div>
+  </div>
+</section>
+<section class="faq-section sec">
+  <div class="w">
+    <span class="eyebrow" style="color:#9ebcff;">Common Questions</span>
+    <h2>Garage Mini Split FAQ</h2>
+    <p class="lead">这里也整体抬高了字号和对比度，FAQ 终于会像“能读”的电商 FAQ，而不是脚注。</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>Is a ductless mini split a good option for a garage?</h3><div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes. A ductless system works especially well in garages because it avoids bulky ductwork, conditions the room only when needed, and gives a much cleaner retrofit path than traditional central air.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>What size mini split do I need for a 2-car garage?</h3><div class="faq-icon">+</div></div>
+        <div class="faq-a">A 2-car garage often starts around 12,000-18,000 BTU. If the garage is poorly insulated, oversized vertically, or used as a workshop, sizing up is usually the safer recommendation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>Can a mini split heat an uninsulated garage?</h3><div class="faq-icon">+</div></div>
+        <div class="faq-a">It can, but performance and efficiency will suffer. The better shopper experience is to recommend insulation first, then match BTU size and cold-climate capability appropriately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>How much does a garage mini split usually cost?</h3><div class="faq-icon">+</div></div>
+        <div class="faq-a">On this page, the showcased garage-friendly systems run roughly from the $700 range to a little over $1,000 depending on BTU, efficiency level, and whether Ultra Heat capability is included.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>What is the best mini split for a workshop?</h3><div class="faq-icon">+</div></div>
+        <div class="faq-a">That depends on heat load and size, but workshops often need more capacity than a standard parking garage. An 18K system is a common starting point, with high-efficiency or cold-climate upgrades depending on use.</div>
+      </div>
+    </div>
+    <div class="faq-footer">
+      <span class="faq-footer-text">Ready to pick a system?</span>
+      <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-primary">Browse Garage Mini Split Systems</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
