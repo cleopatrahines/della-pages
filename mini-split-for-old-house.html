@@ -322,11 +322,22 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .product-feature:hover .product-cta,
 .product-card:hover .product-cta { background: var(--navy); color: #fff; }
 .product-trust {
-  margin-top: 24px; padding: 14px 18px;
-  background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius);
-  font-size: 15px; color: var(--text-muted); text-align: center;
+  margin-top: 24px; padding: 18px 20px;
+  background: linear-gradient(180deg, #F8FBFF 0%, #F2F6FF 100%);
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
 }
-.product-trust strong { color: var(--navy); }
+.product-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.product-trust-item {
+  padding: 14px 12px; background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(88,132,231,0.14); border-radius: var(--radius-sm);
+  text-align: center;
+}
+.product-trust-kicker {
+  display: block; margin-bottom: 6px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue);
+}
+.product-trust-text { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
 /* 鈹€鈹€鈹€ BEFORE YOU BUY 鈹€鈹€鈹€ */
 .byb-row {
@@ -431,6 +442,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .decision-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .shop-row { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }
+  .product-trust-grid { grid-template-columns: 1fr 1fr; }
   .product-card { flex-direction: column; align-items: stretch; }
   .product-card .product-img-wrap { width: 100%; min-width: 0; }
   .pain-grid { grid-template-columns: 1fr 1fr; }
@@ -442,6 +454,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 @media (min-width: 769px) and (max-width: 1024px) {
   .products-grid { grid-template-columns: 1fr; }
   .product-stack { grid-template-columns: 1fr; }
+  .product-trust-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* 鈹€鈹€鈹€ SUBTLE ANIMATIONS 鈹€鈹€鈹€ */
@@ -684,7 +697,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     </div>
     <div class="products-grid">
 
-      <a href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" class="product-feature">
+      <a href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" class="product-feature" target="_blank" rel="noopener noreferrer">
         <div class="product-img-wrap">
           <div class="product-label-badge">Popular Starting Point</div>
           <img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800" alt="DELLA Motto Series 12000 BTU Wall-Mounted" loading="lazy">
@@ -699,7 +712,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </a>
 
       <div class="product-stack">
-        <a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" class="product-card">
+        <a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <div class="product-label-badge">Upstairs</div>
             <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 12000 BTU" loading="lazy">
@@ -712,7 +725,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           </div>
         </a>
 
-        <a href="https://dellahome.com/products/della-11000-btu-19-seer2-concealed-ducted-mini-split-air-conditioner" class="product-card">
+        <a href="https://dellahome.com/products/della-11000-btu-19-seer2-concealed-ducted-mini-split-air-conditioner" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <div class="product-label-badge">Cleaner Look</div>
             <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1764061301&width=800" alt="DELLA Concealed Ducted 11000 BTU" loading="lazy">
@@ -725,7 +738,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           </div>
         </a>
 
-        <a href="https://dellahome.com/products/della-27000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-12k-up-to-1650-sq-ft" class="product-card">
+        <a href="https://dellahome.com/products/della-27000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-12k-up-to-1650-sq-ft" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <div class="product-label-badge">Multi-Room</div>
             <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Ceiling Cassette Tri-Zone 27000 BTU" loading="lazy">
@@ -740,7 +753,26 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </div>
 
     </div>
-    <div class="product-trust"><strong>Why shop DELLA here:</strong> Free shipping, 30-day returns, live support, and lifetime coverage on mini split systems.</div>
+    <div class="product-trust">
+      <div class="product-trust-grid">
+        <div class="product-trust-item">
+          <span class="product-trust-kicker">Shipping</span>
+          <div class="product-trust-text">Free and fast shipping on mini split orders.</div>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-kicker">Returns</span>
+          <div class="product-trust-text">30-day returns for extra purchase confidence.</div>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-kicker">Support</span>
+          <div class="product-trust-text">Live chat plus weekday technical phone support.</div>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-kicker">Coverage</span>
+          <div class="product-trust-text">Lifetime coverage on DELLA mini split systems.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
