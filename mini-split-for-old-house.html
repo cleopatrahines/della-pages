@@ -232,8 +232,14 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .use-row-text p { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
 .use-rec { font-size: 15px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
 .use-rec strong { color: var(--blue); }
-.use-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); text-decoration: none; align-self: flex-start; transition: color 0.15s; }
-.use-link:hover { color: var(--navy); }
+.use-link {
+  font-family: var(--font-display); font-size: 16px; font-weight: 600;
+  color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; align-self: flex-start;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
+  transition: all 0.15s ease;
+}
+.use-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 /* 鈹€鈹€鈹€ PRODUCTS 鈹€鈹€鈹€ */
 .products-grid {
@@ -331,7 +337,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   margin-bottom: 10px;
 }
 .byb-item:last-child { margin-bottom: 0; }
-.byb-item::before { content: '\2022'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
+.byb-item::before { content: '\233E'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
 
 /* 鈹€鈹€鈹€ FAQ 鈹€鈹€鈹€ */
 .faq-section {
