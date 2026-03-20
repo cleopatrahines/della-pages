@@ -169,7 +169,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .shop-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
 .shop-card-cta { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
-.shop-card-cta::after { content: '→'; }
+.shop-card-cta::after { content: ''; }
 
 .btu-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .btu-chip {
@@ -217,9 +217,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .use-tag { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; background: var(--blue-light); color: var(--blue); margin-bottom: 12px; }
 .use-row-text h3 { font-size: 17px; margin-bottom: 8px; }
 .use-row-text p { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
-.use-link { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 4px; align-self: flex-start; }
-.use-link:hover { gap: 8px; }
-.use-link::after { content: '→'; transition: transform 0.15s; }
+.use-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 30px; align-self: flex-start; transition: all 0.18s; }
+.use-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 .info-callout {
   margin-top: 24px; padding: 18px 22px;
@@ -378,13 +377,13 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .faq-footer { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .faq-footer-text { font-size: 16px; color: var(--text-body); }
 .faq-footer-link {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center;
   font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); text-decoration: none;
-  transition: gap 0.15s ease, color 0.15s ease;
+  color: #fff; text-decoration: none; background: var(--navy);
+  padding: 12px 24px; border-radius: 30px;
+  transition: all 0.18s;
 }
-.faq-footer-link:hover { gap: 10px; color: var(--navy); }
-.faq-footer-link::after { content: '→'; }
+.faq-footer-link:hover { background: #1a2a6c; }
 
 /* ─── SECTION DIVIDERS ─── */
 .sec-label { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
@@ -523,7 +522,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="shop-row" style="grid-template-columns: repeat(3, 1fr);">
       <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="shop-card">
         <div class="shop-card-name">Wall-Mounted Systems</div>
-        <div class="shop-card-desc">The most popular garage setup — simple and effective.</div>
+        <div class="shop-card-desc">The most popular garage setup. Simple and effective.</div>
         <div class="shop-card-cta">Browse Wall-Mounted</div>
       </a>
       <a href="https://dellahome.com/collections/high-efficiency" class="shop-card">
@@ -546,7 +545,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <a href="https://dellahome.com/collections/24000-btu-mini-split" class="btu-chip">24K BTU</a>
       <a href="https://dellahome.com/collections/36000-btu-mini-split" class="btu-chip">36K BTU</a>
     </div>
-    <div class="shop-note" style="margin-top:16px;">Garage with separate walled-off rooms? <a href="https://dellahome.com/collections/mini-split-multi-zone">See multi-zone options →</a></div>
+    <div class="shop-note" style="margin-top:16px;">Garage with separate walled-off rooms? <a href="https://dellahome.com/collections/mini-split-multi-zone">See multi-zone options</a></div>
   </div>
 </section>
 
@@ -576,7 +575,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
             <td><a href="https://dellahome.com/collections/9000-btu-mini-split" class="btn btn-outline btn-sm">View 9K Options</a></td>
           </tr>
           <tr>
-            <td><div class="garage-name">2-Car Garage</div><div class="garage-hint">Most common — typical attached garage</div></td>
+            <td><div class="garage-name">2-Car Garage</div><div class="garage-hint">Most common, typical attached garage</div></td>
             <td class="sqft-val">400–600</td>
             <td class="btu-val">12,000–18,000</td>
             <td><a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-outline btn-sm">View 12K Options</a></td>
@@ -648,7 +647,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     </div>
     <div class="info-callout">
       <div class="info-callout-icon">💡</div>
-      <div class="info-callout-text"><strong>Airflow tip:</strong> Avoid aiming airflow directly at your work spot — redirect louvers once the garage reaches temperature.</div>
+      <div class="info-callout-text"><strong>Airflow tip:</strong> Avoid aiming airflow directly at your work spot. Redirect louvers once the garage reaches temperature.</div>
     </div>
   </div>
 </section>
@@ -663,10 +662,10 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="byb-row">
       <img class="byb-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_CS_Fairway_Independent_Mortgage_Corporation_072_cc4c9de6f5.jpg&w=640&q=90" alt="Garage Setup">
       <div class="byb-list">
-        <div class="byb-item">Insulate first — the garage door is the biggest source of heat loss</div>
+        <div class="byb-item">Insulate first. The garage door is the biggest source of heat loss.</div>
         <div class="byb-item">Uninsulated? Size up one BTU tier to compensate</div>
         <div class="byb-item">Below freezing? Choose an Ultra Heat system rated to −13°F</div>
-        <div class="byb-item">Avoid oversizing — it short cycles and leaves the garage damp</div>
+        <div class="byb-item">Avoid oversizing. It short cycles and leaves the garage damp.</div>
         <div class="byb-item">Factor in sq ft + insulation + climate, not just floor area</div>
       </div>
     </div>
@@ -754,7 +753,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="tips-list" style="margin-bottom:36px;">
       <div class="tip-item"><div class="tip-num">1</div><span>Pre-condition 15–20 min before starting work.</span></div>
       <div class="tip-item"><div class="tip-num">2</div><span>Clean filters every 2–3 weeks in dusty shops.</span></div>
-      <div class="tip-item"><div class="tip-num">3</div><span>Insulate the garage door first — it's the biggest heat loss.</span></div>
+      <div class="tip-item"><div class="tip-num">3</div><span>Insulate the garage door first. It's the biggest heat loss.</span></div>
       <div class="tip-item"><div class="tip-num">4</div><span>Keep the outdoor unit clear of debris and snow.</span></div>
     </div>
 
