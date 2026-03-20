@@ -384,16 +384,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .faq-a a { color: var(--blue); text-decoration: none; }
 .faq-item.open .faq-a { display: block; }
 .faq-item.open .faq-icon::before { transform: rotate(-135deg); }
-.faq-footer { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.faq-footer { margin-top: 28px; display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 14px; }
 .faq-footer-text { font-size: 16px; color: var(--text-body); }
-.faq-footer-link {
-  display: inline-flex; align-items: center;
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: #fff; text-decoration: none; background: var(--navy);
-  padding: 12px 24px; border-radius: 30px;
-  transition: all 0.18s;
-}
-.faq-footer-link:hover { background: #1a2a6c; }
+.faq-footer-link { text-decoration: none; }
 
 /* ─── SECTION DIVIDERS ─── */
 .sec-label { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
@@ -822,7 +815,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     </div>
     <div class="faq-footer">
       <span class="faq-footer-text">Ready to pick a system?</span>
-      <a href="https://dellahome.com/collections/mini-split-single-zone" class="faq-footer-link">Browse Garage Mini Split Systems</a>
+      <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-primary faq-footer-link">Browse Garage Mini Split Systems</a>
     </div>
   </div>
 </section>
