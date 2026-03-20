@@ -46,14 +46,14 @@ body {
 
 /* ─── TYPOGRAPHY ─── */
 h1 { font-family: var(--font-display); font-size: clamp(33px, 5vw, 53px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
-h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; text-transform: uppercase; }
+h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-height: 1.3; }
 .eyebrow { font-family: var(--font-display); font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; display: block; }
 .lead { font-size: 18px; color: var(--text-muted); line-height: 1.65; max-width: none !important; }
 .caption { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
 
 /* ─── BUTTONS ─── */
-.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 30px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-primary:hover { background: #1a2a6c; }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-200); }
@@ -168,7 +168,15 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
 .shop-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .shop-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
-.shop-card-cta { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); }
+.shop-card-cta {
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  color: var(--blue); display: inline-flex; align-items: center;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
+  transition: all 0.15s ease;
+  align-self: flex-start;
+}
+.shop-card:hover .shop-card-cta { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 .btu-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .btu-chip {
@@ -216,8 +224,14 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .use-tag { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; background: var(--blue-light); color: var(--blue); margin-bottom: 12px; }
 .use-row-text h3 { font-size: 17px; margin-bottom: 8px; }
 .use-row-text p { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
-.use-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--blue); text-decoration: none; align-self: flex-start; transition: color 0.15s; }
-.use-link:hover { color: var(--navy); }
+.use-link {
+  font-family: var(--font-display); font-size: 16px; font-weight: 600;
+  color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; align-self: flex-start;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
+  transition: all 0.15s ease;
+}
+.use-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 .info-callout {
   margin-top: 24px; padding: 18px 22px;
@@ -740,7 +754,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <h2>Placement, Maintenance, and Installation</h2>
     </div>
 
-    <h3 style="font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px;">Where to Mount</h3>
+    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px;">Where to Mount</h3>
     <div class="placement-grid">
       <div class="placement-item">Mount high on the longest wall for widest coverage.</div>
       <div class="placement-item">Aim toward the work area but not directly at people.</div>
@@ -748,7 +762,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <div class="placement-item">Choose a spot that allows a gravity drain line.</div>
     </div>
 
-    <h3 style="font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; margin-top:36px;">Owner Tips</h3>
+    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px; margin-top:36px;">Owner Tips</h3>
     <div class="tips-list" style="margin-bottom:36px;">
       <div class="tip-item"><div class="tip-num">1</div><span>Pre-condition 15–20 min before starting work.</span></div>
       <div class="tip-item"><div class="tip-num">2</div><span>Clean filters every 2–3 weeks in dusty shops.</span></div>
@@ -756,7 +770,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       <div class="tip-item"><div class="tip-num">4</div><span>Keep the outdoor unit clear of debris and snow.</span></div>
     </div>
 
-    <h3 style="font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px;">Before Installation</h3>
+    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px;">Before Installation</h3>
     <div class="know-grid">
       <div class="know-card"><h3>Gravity Drain vs Condensate Pump</h3><p>Use gravity drainage when possible. Only add a pump if you can't route a downhill line.</p></div>
       <div class="know-card"><h3>Dust and Filter Care</h3><p>Add a mesh pre-filter for woodworking shops. Clean it regularly to maintain airflow.</p></div>
