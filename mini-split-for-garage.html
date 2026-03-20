@@ -46,14 +46,14 @@ body {
 
 /* ─── TYPOGRAPHY ─── */
 h1 { font-family: var(--font-display); font-size: clamp(33px, 5vw, 53px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
-h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; text-transform: uppercase; }
 h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-height: 1.3; }
 .eyebrow { font-family: var(--font-display); font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; display: block; }
 .lead { font-size: 18px; color: var(--text-muted); line-height: 1.65; max-width: none !important; }
 .caption { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
 
 /* ─── BUTTONS ─── */
-.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 30px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-primary:hover { background: #1a2a6c; }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-200); }
@@ -136,6 +136,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   position: relative;
 }
 .step-tab:last-child { border-right: none; }
+.step-tab:first-child { background: var(--blue-light); }
 .step-tab-num { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 2px; }
 
 .shop-primary {
@@ -249,7 +250,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .byb-item::before { content: '⌾'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
 
 /* ─── PRODUCTS ─── */
-.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .product-card {
   background: var(--white); border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg); overflow: hidden;
@@ -267,7 +268,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   letter-spacing: 0.06em; text-transform: uppercase;
   background: var(--navy); color: #fff; padding: 4px 10px; border-radius: 4px;
 }
-.product-body { padding: 18px 20px 22px; flex: 1; display: flex; flex-direction: column; }
+.product-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
 .product-name { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 6px; min-height: 38px; }
 .product-spec { font-size: 15px; color: var(--text-muted); margin-bottom: 10px; }
 .product-price { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--blue); margin-bottom: 14px; margin-top: auto; }
@@ -811,6 +812,29 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     </div>
   </div>
 </section>
+
+<section class="sec-sm" style="background:var(--gray-50); border-top:1px solid var(--gray-200);">
+  <div class="w">
+    <span class="eyebrow">Explore More Scenarios</span>
+    <h2 style="margin-bottom:24px;">Mini Split for Every Space</h2>
+    <div class="shop-row">
+      <a href="mini-split-for-old-house.html" class="shop-card">
+        <div class="shop-card-name">Mini Split for Old House</div>
+        <div class="shop-card-desc">Heating and cooling for older homes without ductwork.</div>
+        <div class="shop-card-cta">View Old House Guide</div>
+      </a>
+      <a href="mini-split-for-attic.html" class="shop-card">
+        <div class="shop-card-name">Mini Split for Attic</div>
+        <div class="shop-card-desc">Wall-mounted, ducted, and multi-zone attic options.</div>
+        <div class="shop-card-cta">View Attic Guide</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a ductless mini split good for a garage?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ductwork needed and it only runs when you use the space."}},{"@type":"Question","name":"What size mini split do I need for a 2-car garage?","acceptedAnswer":{"@type":"Answer","text":"12,000–18,000 BTU. Size up for poor insulation or extreme climate."}},{"@type":"Question","name":"Can a mini split heat an uninsulated garage?","acceptedAnswer":{"@type":"Answer","text":"It can, but costs more. Insulate first for better results."}},{"@type":"Question","name":"How much does a garage mini split cost?","acceptedAnswer":{"@type":"Answer","text":"$700–$1,100 depending on BTU, efficiency, and cold climate features."}},{"@type":"Question","name":"What is the best mini split for a workshop?","acceptedAnswer":{"@type":"Answer","text":"18,000 BTU handles most workshops. Choose high-efficiency if you run it daily."}}]}
+</script>
 
 </body>
 </html>
