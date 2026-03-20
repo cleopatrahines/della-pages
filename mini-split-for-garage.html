@@ -160,7 +160,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 
 .shop-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
 .shop-card {
-  display: block; padding: 22px 24px;
+  display: flex; flex-direction: column; align-items: flex-start; padding: 22px 24px;
   background: var(--white); border: 1.5px solid var(--gray-200);
   border-radius: var(--radius); text-decoration: none; color: inherit;
   transition: all 0.18s;
@@ -171,12 +171,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .shop-card-cta {
   font-family: var(--font-display); font-size: 15px; font-weight: 600;
   color: var(--blue); display: inline-flex; align-items: center;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  background: var(--blue-light); border: 1px solid rgba(88,132,231,0.18);
-  transition: all 0.15s ease;
-  align-self: flex-start;
+  margin-top: auto; transition: color 0.15s ease;
 }
-.shop-card:hover .shop-card-cta { background: var(--navy); color: #fff; border-color: var(--navy); }
+.shop-card:hover .shop-card-cta { color: var(--navy); }
 
 .btu-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .btu-chip {
@@ -545,7 +542,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
       </a>
       <a href="https://dellahome.com/collections/ultra-heat" class="shop-card">
         <div class="shop-card-name">Ultra Heat −13°F Systems</div>
-        <div class="shop-card-desc">Full heating output down to −13°F.</div>
+        <div class="shop-card-desc">Full heating output down to −13°F in winter conditions.</div>
         <div class="shop-card-cta">Browse Cold Climate Heating</div>
       </a>
     </div>
