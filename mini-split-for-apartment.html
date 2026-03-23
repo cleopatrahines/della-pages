@@ -108,7 +108,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 
 .decision-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   padding: 8px;
   background: var(--white);
@@ -243,15 +243,6 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 }
 .compare-card h3 { margin-bottom: 8px; color: var(--navy); }
 .compare-card p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-.compare-note {
-  margin-top: 18px;
-  padding: 16px 18px;
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  font-size: 15px;
-  color: var(--text-muted);
-}
 
 /* 鈹€鈹€鈹€ PRODUCTS 鈹€鈹€鈹€ */
 .products-grid {
@@ -419,7 +410,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   .feature-bar-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .decision-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .decision-grid { grid-template-columns: 1fr; gap: 8px; }
   .pain-grid { grid-template-columns: 1fr 1fr; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
@@ -458,24 +449,24 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   <div class="hero-overlay"></div>
   <div class="w">
     <div class="hero-inner">
-      <h1>Best <em>Mini Split for Apartment</em></h1>
-      <p class="hero-text">Most apartments start with a single-zone ductless mini split AC and a wall-mounted indoor unit. Choose 9K, 12K, or 18K BTU by your main room first, then confirm placement, voltage, and building rules before you buy.</p>
+      <h1>Best Mini Split for <em>Apartment</em></h1>
+      <p class="hero-text">Most apartments start with a single-zone mini split and a wall-mounted indoor unit. Choose 9K, 12K, or 18K by your main room first.</p>
       <div class="hero-actions">
         <a href="#sizing" class="btn btn-primary btn-lg">Find Your BTU</a>
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="hero-link">Most apartments start with 12K options</a>
+        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="hero-link">Start with 12K options</a>
       </div>
       <div class="hero-stats">
         <div>
           <div class="hero-stat-num">9K-18K</div>
-          <div class="hero-stat-label">Most apartment mini splits live in this range</div>
+          <div class="hero-stat-label">Most apartment picks live in this range</div>
         </div>
         <div>
           <div class="hero-stat-num">12K First</div>
-          <div class="hero-stat-label">The most common starting point for studios and main rooms</div>
+          <div class="hero-stat-label">The most common starting point</div>
         </div>
         <div>
           <div class="hero-stat-num">Wall-Mounted</div>
-          <div class="hero-stat-label">The most common indoor unit style for apartments</div>
+          <div class="hero-stat-label">The main indoor unit recommendation</div>
         </div>
       </div>
     </div>
@@ -518,8 +509,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   <div class="w">
     <div class="section-header">
       <span class="eyebrow">Start Here</span>
-      <h2>Start with BTU Size, Not with a Complicated HVAC Taxonomy</h2>
-      <p class="lead" style="margin-top:10px; max-width:1120px !important;">Apartment shoppers usually think in plain terms: small bedroom, studio, or larger open space. That makes 9K, 12K, and 18K the cleanest first decision path.</p>
+      <h2>Start with BTU Size</h2>
+      <p class="lead" style="margin-top:10px; max-width:1120px !important;">For apartment traffic, 9K, 12K, and 18K are the cleanest first choices.</p>
     </div>
     <div class="decision-grid">
       <a href="https://dellahome.com/collections/9000-btu-mini-split" class="decision-card">
@@ -527,7 +518,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M6 8h12"/><path d="M7 16h10"/><rect x="2" y="5" width="20" height="14" rx="2"/></svg>
         </div>
         <div class="decision-label">Small Bedroom or Office</div>
-        <div class="decision-hint">Best for smaller enclosed rooms and studio sleeping areas where 9K is enough.</div>
+        <div class="decision-hint">Best for smaller enclosed rooms.</div>
         <div class="decision-cta">Shop 9K Options</div>
       </a>
       <a href="https://dellahome.com/collections/12000-btu-mini-split" class="decision-card">
@@ -535,7 +526,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div class="decision-label">Studio or Main Living Area</div>
-        <div class="decision-hint">The most common apartment starting point for one main room that needs year-round comfort.</div>
+        <div class="decision-hint">The most common apartment starting point.</div>
         <div class="decision-cta">Shop 12K Options</div>
       </a>
       <a href="https://dellahome.com/collections/18000-btu-mini-split" class="decision-card">
@@ -543,16 +534,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 16l3-4 3 2 4-6"/></svg>
         </div>
         <div class="decision-label">Large Open Apartment</div>
-        <div class="decision-hint">A stronger fit for larger open plans, heavier sun exposure, or hotter top-floor layouts.</div>
+        <div class="decision-hint">A stronger fit for larger open layouts.</div>
         <div class="decision-cta">Shop 18K Options</div>
-      </a>
-      <a href="#indoor-units" class="decision-card">
-        <div class="decision-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg>
-        </div>
-        <div class="decision-label">Need the Right Indoor Unit?</div>
-        <div class="decision-hint">Wall-mounted is most common, while cassette and floor-mounted are secondary fit choices.</div>
-        <div class="decision-cta">Compare Indoor Units</div>
       </a>
     </div>
   </div>
@@ -563,7 +546,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="section-header">
       <span class="eyebrow">BTU Sizing Guide</span>
       <h2>Choose by the Main Apartment Space You Need to Condition</h2>
-      <p class="lead" style="margin-top:10px;">Start with your main room, not the total apartment number on the lease. Closed doors, solar gain, insulation, and floor level all change the load.</p>
+      <p class="lead" style="margin-top:10px;">Start with your main room, not the total apartment square footage.</p>
     </div>
     <div class="table-wrap">
       <table class="sizing-table">
@@ -605,32 +588,32 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   <div class="w">
     <div class="section-header">
       <span class="eyebrow">Why Ductless Works</span>
-      <h2>Why a Mini Split Fits Apartment Living So Well</h2>
+      <h2>Why Mini Splits Work for Apartments</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
         <span class="pain-kicker">01</span>
         <div class="pain-title">One Main Zone Is Common</div>
-        <div class="pain-desc">Many apartments have one room that drives comfort decisions: the studio itself, the bedroom, or the main living space.</div>
+        <div class="pain-desc">Most buyers are really solving one main room.</div>
       </div>
       <div class="pain-card">
         <span class="pain-kicker">02</span>
         <div class="pain-title">Quiet Comfort Matters</div>
-        <div class="pain-desc">Bedrooms and compact living spaces make indoor noise more noticeable, so quiet operation matters more.</div>
+        <div class="pain-desc">Noise matters more in compact living spaces.</div>
       </div>
       <div class="pain-card">
         <span class="pain-kicker">03</span>
         <div class="pain-title">Install Rules Change the Plan</div>
-        <div class="pain-desc">Apartment projects often hinge on landlord, HOA, condo, or exterior placement rules before product choice is final.</div>
+        <div class="pain-desc">Approval and outdoor placement can shape the install.</div>
       </div>
       <div class="pain-card">
         <span class="pain-kicker">04</span>
         <div class="pain-title">Voltage and Drainage Need Planning</div>
-        <div class="pain-desc">A dedicated circuit, outdoor unit location, and condensate route can decide whether a simple setup stays simple.</div>
+        <div class="pain-desc">Voltage and drainage need a clean plan.</div>
       </div>
     </div>
     <div class="pain-summary">
-      For U.S. apartment buyers, the clearest path is usually <strong>single-zone first, wall-mounted first, and 12K first</strong>. Move down to 9K for smaller rooms, or up to 18K when the apartment layout, sun load, or main living space is meaningfully bigger.
+      For most apartment buyers, the cleanest path is <strong>12K first and wall-mounted first</strong>, then move down to 9K or up to 18K as needed.
     </div>
   </div>
 </section>
@@ -640,7 +623,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="section-header">
       <span class="eyebrow">Match by Room</span>
       <h2>Best Mini Split Setups for Common Apartment Scenarios</h2>
-      <p class="lead" style="margin-top:10px;">This page is built around the way apartment buyers actually shop: by room size, heat load, and install practicality.</p>
+      <p class="lead" style="margin-top:10px;">Choose by room size first.</p>
     </div>
     <div class="use-rows">
 
@@ -649,7 +632,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="use-row-text">
           <span class="use-tag">Small Space</span>
           <h3>9K for a Small Bedroom, Office, or Studio Sleeping Zone</h3>
-          <p>If the space is compact and enclosed, 9K is usually the cleaner fit than jumping straight to 12K. This is where small-apartment and studio-bedroom searches often land.</p>
+          <p>Best for smaller enclosed rooms that do not need a full 12K step-up.</p>
           <div class="use-rec">Recommended: <strong>9,000 BTU wall-mounted single-zone</strong></div>
           <a href="https://dellahome.com/collections/9000-btu-mini-split" class="use-link">Shop 9K Options</a>
         </div>
@@ -660,7 +643,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="use-row-text">
           <span class="use-tag">Most Common</span>
           <h3>12K for a Studio Apartment or Main Living Area</h3>
-          <p>This is the strongest default for apartment traffic. When one main room drives the comfort problem, 12K is usually the first size to compare before anything more specialized.</p>
+          <p>The main default for studios and primary living spaces.</p>
           <div class="use-rec">Recommended: <strong>12,000 BTU wall-mounted single-zone</strong></div>
           <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-link">Shop 12K Options</a>
         </div>
@@ -671,20 +654,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="use-row-text">
           <span class="use-tag">Higher Load</span>
           <h3>18K for a Larger Open Apartment or Top-Floor Heat Load</h3>
-          <p>Use 18K when the conditioned zone is meaningfully larger, more open, or gets hotter from sun exposure. It is the stronger tier for bigger apartment living spaces, not the default for every unit.</p>
+          <p>Use 18K for larger open layouts or heavier top-floor heat load.</p>
           <div class="use-rec">Recommended: <strong>18,000 BTU single-zone</strong></div>
           <a href="https://dellahome.com/collections/18000-btu-mini-split" class="use-link">Shop 18K Options</a>
-        </div>
-      </div>
-
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=640&q=80" alt="Modern apartment interior with clean walls and minimal built-in details">
-        <div class="use-row-text">
-          <span class="use-tag">Indoor Unit Styles</span>
-          <h3>Wall-Mounted First, Ceiling Cassette Only When the Apartment Layout Calls for It</h3>
-          <p>High-wall units are still the most common apartment answer. Ceiling cassette works when a cleaner look matters and the ceiling path supports it. Floor-mounted is a niche fallback when upper wall space is limited.</p>
-          <div class="use-rec">Recommended: <strong>Wall-mounted first, cassette second, floor-mounted only when needed</strong></div>
-          <a href="#indoor-units" class="use-link">Compare Indoor Units</a>
         </div>
       </div>
 
@@ -696,27 +668,26 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   <div class="w">
     <div class="section-header">
       <span class="eyebrow">Indoor Unit Types</span>
-      <h2>Which Indoor Unit Makes the Most Sense in an Apartment?</h2>
-      <p class="lead" style="margin-top:10px;">The most common answer is still wall-mounted. Cassette and floor-mounted options are useful, but they are not the default apartment starting point.</p>
+      <h2>Wall-Mounted First</h2>
+      <p class="lead" style="margin-top:10px;">For most apartment shoppers, wall-mounted is the main recommendation. Ceiling cassette is a secondary cleaner-look option, and floor-mounted is just a light fallback.</p>
     </div>
     <div class="compare-grid">
       <div class="compare-card">
-        <div class="compare-kicker">Most Common</div>
+        <div class="compare-kicker">Primary Pick</div>
         <h3>Wall-Mounted</h3>
-        <p>The easiest and most familiar fit for apartments. It works well for bedrooms, studios, and main living rooms, and it matches how most U.S. buyers shop for single-zone comfort.</p>
+        <p>The default choice for bedrooms, studios, and main living rooms.</p>
       </div>
       <div class="compare-card">
-        <div class="compare-kicker">Cleaner Look</div>
+        <div class="compare-kicker">Secondary</div>
         <h3>Ceiling Cassette</h3>
-        <p>A better fit when appearance matters more and the apartment has the right ceiling conditions. It is more layout-dependent and less common than wall-mounted for apartment installs.</p>
+        <p>Useful when a cleaner look matters and the ceiling layout supports it.</p>
       </div>
       <div class="compare-card">
-        <div class="compare-kicker">Rare Fallback</div>
+        <div class="compare-kicker">Light Mention</div>
         <h3>Floor-Mounted</h3>
-        <p>Useful when upper wall space is blocked by windows, millwork, or layout limits. Think of it as the niche option, not the main apartment default.</p>
+        <p>A niche fallback when upper wall space is limited.</p>
       </div>
     </div>
-    <div class="compare-note">If you are building this page around conversion, keep the primary CTA on 9K, 12K, and 18K collections. Use indoor unit styles to reduce hesitation, not to send users into a more complicated path too early.</div>
   </div>
 </section>
 
@@ -725,7 +696,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="section-header">
       <span class="eyebrow">Shop by Size</span>
       <h2>Start with the BTU Collection That Matches Your Apartment</h2>
-      <p class="lead" style="margin-top:10px; max-width:1120px !important;">These size-first collection paths are the cleanest match for apartment SEO, paid landing traffic, and quick shopper self-selection.</p>
+      <p class="lead" style="margin-top:10px; max-width:1120px !important;">These are the cleanest collection paths for apartment traffic.</p>
     </div>
     <div class="products-grid">
 
@@ -737,7 +708,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="product-body">
           <div class="product-name">12,000 BTU Mini Split Options</div>
           <div class="product-spec">Up to 550 Sq.Ft. | Studio apartments, larger bedrooms, and main living areas</div>
-          <p class="product-lead">If this page only has one default answer, this is it. A 12K collection is the cleanest first click for most apartment buyers who want one ductless mini split for one primary zone.</p>
+          <p class="product-lead">If this page has one default answer, this is it.</p>
           <div class="product-emphasis">Start Here First</div>
           <span class="product-cta">Shop 12K Collection</span>
         </div>
@@ -779,7 +750,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   <div class="w">
     <div class="section-header">
       <span class="eyebrow">Before You Buy</span>
-      <h2>What Apartment Buyers Should Check Before Choosing a Mini Split</h2>
+      <h2>What to Check Before You Buy</h2>
     </div>
     <div class="byb-row">
       <img class="byb-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=640&q=80" alt="Apartment interior being prepared for mini split planning">
