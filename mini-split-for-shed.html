@@ -75,7 +75,6 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-muted);
   line-height: 1.65;
   margin-top: 10px;
-  max-width: 680px;
 }
 
 .btn {
@@ -262,7 +261,11 @@ a { text-decoration: none; color: inherit; }
   transition: all .2s;
   position: relative;
 }
-.capacity-card:hover { background: var(--gray-50); }
+.capacity-card:hover {
+  background: var(--gray-50);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
 .capacity-card.is-featured {
   background: var(--navy);
   color: #fff;
@@ -416,15 +419,20 @@ a { text-decoration: none; color: inherit; }
 .check-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
+  border-left: 3px solid transparent;
   border-radius: var(--radius);
   padding: 28px 32px;
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 20px;
   align-items: start;
-  transition: box-shadow .2s;
+  transition: all .25s ease;
 }
-.check-card:hover { box-shadow: var(--shadow); }
+.check-card:hover {
+  box-shadow: var(--shadow);
+  border-left-color: var(--blue);
+  transform: translateX(4px);
+}
 .check-num {
   font-family: var(--font);
   font-size: 32px;
@@ -644,7 +652,9 @@ a { text-decoration: none; color: inherit; }
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
-.faq-item { border-bottom: 1px solid var(--gray-100); }
+.faq-item { border-bottom: 1px solid var(--gray-100); border-left: 3px solid transparent; transition: border-color .2s; }
+.faq-item:hover { border-left-color: var(--blue); }
+.faq-item.open { border-left-color: var(--blue); }
 .faq-item:last-child { border-bottom: none; }
 .faq-q {
   display: flex;
@@ -767,7 +777,7 @@ a { text-decoration: none; color: inherit; }
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdRdUrfDd1ntnb4SN2i17bUnlsc8CERNorFMX7j0sq7H1D0S9jFG0-7r1P6J778pe2BwPa_t-gJSAU7eSWAZAXKhHCk38WKdiLrUo1WLJoY5MZQfSVTx013R02LWtAJ6fr3M6E6FZa-j6H4PL0aSQeb40B8HrBU-ONmRv3FlawvrpYLsr7NhH5jbkBeSVS4h9yfpNK0tosfvYRZoZzP_JaEVWsUonVF72h5ZLiwP6IZVV1r_3ceHtD4YZMu0XdAIbZm_Xt--rdW75l" alt="Modern backyard shed office with large windows at dusk" width="1400" height="933" loading="eager">
+  <img class="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtuhdmGCtPT6ZgZwq4vciv847IXz1OTExiYZHf5gSke9_bTLczyJCzzTAaoUgLEfu105c7OqhloWXYn_IR9n_KIIZALFbMJ8qoO7BROWeaKO_re8aW4FM1Vn-k8EisTbw6b8bv-Ow7ywutyAIgnEYnA1iDaILvI0pW3j2vNTDjoFrRIelG6GFp2G3CPoKHuhNuIaox-3ntnl8dyVSbznRTVVwgIkSDQUfZYeA3QPzE_Aem_mrFfdbL3w8NNi2wbz_OeLAhOtE5mKj7" alt="Premium home office shed interior with clean lines and natural light" width="1400" height="933" loading="eager">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
@@ -819,7 +829,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section capacity-section" id="capacity">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Choose Your Capacity</span>
+      <span class="section-label">Find Your BTU</span>
       <h2 class="section-title">Choose Your Capacity</h2>
       <p class="section-desc">Finding the right BTU rating starts with how the shed is really used. For most detached office sheds, 12K is still the clearest default.</p>
     </div>
@@ -864,7 +874,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section sizing-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Sizing Reference</span>
+      <span class="section-label">BTU by Shed Type</span>
       <h2 class="section-title">Quick Sizing Guide</h2>
       <p class="section-desc">Match your shed type to the right BTU range before you shop.</p>
     </div>
@@ -915,7 +925,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section checklist-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Preparation Guide</span>
+      <span class="section-label">Before You Buy</span>
       <h2 class="section-title">The Detached Checklist</h2>
       <p class="section-desc">Before you lock in 9K, 12K, or 18K, check the detached-building basics that change the load fastest.</p>
     </div>
@@ -956,7 +966,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section use-cases-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Match by Use</span>
+      <span class="section-label">Beyond Storage</span>
       <h2 class="section-title">Best Mini Split Setups for Common Shed Scenarios</h2>
       <p class="section-desc">Choose by how the shed is actually used, not just by the label on the building.</p>
     </div>
@@ -997,7 +1007,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section products-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Precision Picks</span>
+      <span class="section-label">Top Picks for Sheds</span>
       <h2 class="section-title">Precision Picks</h2>
       <p class="section-desc">These are the three strongest shed product paths once you know whether the project lands in 9K, 12K, or 18K territory.</p>
     </div>
@@ -1055,7 +1065,7 @@ a { text-decoration: none; color: inherit; }
 <section class="section faq-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Common Questions</span>
+      <span class="section-label">Quick Answers</span>
       <h2 class="section-title">Mini Split FAQ for Shed Buyers</h2>
       <p class="section-desc">Quick answers before you buy.</p>
     </div>
