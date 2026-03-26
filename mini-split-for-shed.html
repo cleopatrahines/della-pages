@@ -314,22 +314,28 @@ a { text-decoration: none; color: inherit; }
   opacity: 1;
   background: linear-gradient(90deg, #7BA4FF, #5884E7);
 }
+.capacity-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
 .capacity-badge {
   position: static;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  align-self: center;
   background: var(--blue);
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
-  margin: 2px auto 18px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+  white-space: nowrap;
 }
 .capacity-kicker {
   font-size: 12px;
@@ -341,7 +347,7 @@ a { text-decoration: none; color: inherit; }
 }
 .capacity-card.is-featured .capacity-kicker {
   color: var(--blue-mid);
-  margin-top: 0;
+  margin: 0;
 }
 .capacity-btu {
   font-family: var(--font);
@@ -1051,8 +1057,10 @@ a { text-decoration: none; color: inherit; }
         <span class="capacity-cta">View 9K Options</span>
       </a>
       <a href="https://dellahome.com/collections/12000-btu-mini-split" class="capacity-card is-featured">
-        <span class="capacity-badge">Most Recommended</span>
-        <span class="capacity-kicker">The Gold Standard</span>
+        <div class="capacity-topline">
+          <span class="capacity-kicker">The Gold Standard</span>
+          <span class="capacity-badge">Most Recommended</span>
+        </div>
         <div class="capacity-btu">12,000 BTU</div>
         <p class="capacity-desc">The clearest default for backyard office sheds and everyday detached workspaces that need room-like comfort.</p>
         <ul class="capacity-points">
