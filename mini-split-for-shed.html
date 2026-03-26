@@ -587,9 +587,10 @@ a { text-decoration: none; color: inherit; }
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
   padding: 22px 26px;
   transition: all .25s;
 }
@@ -608,10 +609,11 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
 }
 .product-feature .product-img-wrap {
-  flex: 0 0 43%;
+  width: 100%;
+  max-width: 280px;
   min-height: auto;
-  padding-top: 28px;
-  align-self: flex-start;
+  padding-top: 22px;
+  align-self: start;
 }
 .product-img-wrap img {
   width: 100%;
@@ -619,7 +621,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   transition: transform .3s;
 }
-.product-feature .product-img-wrap img { max-height: 286px; }
+.product-feature .product-img-wrap img { max-height: 228px; }
 .product-feature:hover .product-img-wrap img,
 .product-card:hover .product-img-wrap img { transform: scale(1.04); }
 .product-badge {
@@ -635,11 +637,22 @@ a { text-decoration: none; color: inherit; }
   border-radius: 4px;
 }
 .product-body {
-  padding: 24px;
-  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+.product-copy,
+.product-action {
   display: flex;
   flex-direction: column;
   min-width: 0;
+}
+.product-copy { gap: 8px; }
+.product-action {
+  gap: 12px;
+  align-items: flex-start;
 }
 .product-name {
   font-family: var(--font);
@@ -647,26 +660,27 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
   color: var(--navy);
   line-height: 1.35;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 .product-feature .product-body {
-  padding: 6px 0 0;
-  justify-content: flex-start;
+  padding: 0;
+  gap: 20px;
+  align-self: start;
+  padding-top: 6px;
 }
-.product-feature .product-name { font-size: 20px; margin-bottom: 8px; }
-.product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+.product-feature .product-name { font-size: 20px; }
+.product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 0; line-height: 1.4; }
 .product-rating strong { color: var(--navy); font-weight: 700; }
-.product-card .product-rating { font-size: 13px; margin-bottom: 10px; }
+.product-card .product-rating { font-size: 13px; }
 .product-card .product-rating strong { font-weight: 600; }
-.product-spec { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 12px; }
+.product-spec { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 0; }
 .product-lead { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 14px; }
 .product-price {
   font-family: var(--font);
   font-size: 22px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 14px;
-  margin-top: auto;
+  margin: 0;
 }
 .product-cta {
   display: inline-flex;
@@ -692,9 +706,10 @@ a { text-decoration: none; color: inherit; }
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
   gap: 20px;
-  align-items: center;
+  align-items: start;
   padding: 22px 24px;
   transition: all .25s;
 }
@@ -707,14 +722,16 @@ a { text-decoration: none; color: inherit; }
   width: 132px; min-width: 132px;
   border-radius: 0;
   aspect-ratio: auto;
-  padding-top: 30px;
+  padding-top: 22px;
   background: transparent;
-  align-self: flex-start;
+  align-self: start;
 }
-.product-card .product-img-wrap img { max-height: 116px; }
+.product-card .product-img-wrap img { max-height: 96px; }
 .product-card .product-body {
   padding: 0;
-  justify-content: center;
+  gap: 16px;
+  align-self: start;
+  padding-top: 4px;
 }
 
 /* ============================================
@@ -866,6 +883,7 @@ a { text-decoration: none; color: inherit; }
   .check-num { display: none; }
   .products-grid { grid-template-columns: 1fr; }
   .product-feature {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
@@ -880,6 +898,7 @@ a { text-decoration: none; color: inherit; }
     align-self: flex-start;
   }
   .product-card { flex-direction: column; align-items: stretch; padding: 20px 20px 22px; }
+  .product-card { display: flex; }
   .product-card .product-img-wrap {
     width: 100%;
     min-width: 0;
@@ -897,6 +916,7 @@ a { text-decoration: none; color: inherit; }
   .use-card.narrow { grid-column: span 1; }
   .products-grid { grid-template-columns: 1fr; }
   .product-feature {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
@@ -1098,11 +1118,15 @@ a { text-decoration: none; color: inherit; }
           <img src="https://dellahome.com/cdn/shop/files/048-TPH-12K2V-25S-01.jpg?v=1750937277&width=800" alt="DELLA Optima Series 12000 BTU ultra hyper heat mini split" loading="lazy">
         </div>
         <div class="product-body">
-          <div class="product-name">Optima Series 12,000 BTU 25 SEER2 Ultra Hyper Heat</div>
-          <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (3 reviews)</div>
-          <div class="product-spec">Up to 550 Sq.Ft. | Backyard office sheds</div>
-          <div class="product-price">$1,249.96</div>
-          <span class="product-cta">Shop 12K Optima</span>
+          <div class="product-copy">
+            <div class="product-name">Optima Series 12,000 BTU 25 SEER2 Ultra Hyper Heat</div>
+            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (3 reviews)</div>
+            <div class="product-spec">Up to 550 Sq.Ft. | Backyard office sheds</div>
+          </div>
+          <div class="product-action">
+            <div class="product-price">$1,249.96</div>
+            <span class="product-cta">Shop 12K Optima</span>
+          </div>
         </div>
       </a>
       <div class="product-stack">
@@ -1112,11 +1136,15 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/048-TL-9K1VB-19S-01.jpg?v=1750225850&width=800" alt="DELLA Vario Series 9000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
-            <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
-            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (18 reviews)</div>
-            <div class="product-spec">Up to 400 Sq.Ft. | Small enclosed sheds</div>
-            <div class="product-price">$729.96</div>
-            <span class="product-cta">Shop 9K Vario</span>
+            <div class="product-copy">
+              <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (18 reviews)</div>
+              <div class="product-spec">Up to 400 Sq.Ft. | Small enclosed sheds</div>
+            </div>
+            <div class="product-action">
+              <div class="product-price">$729.96</div>
+              <span class="product-cta">Shop 9K Vario</span>
+            </div>
           </div>
         </a>
         <a href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" class="product-card">
@@ -1125,11 +1153,15 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
-            <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
-            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
-            <div class="product-spec">Up to 1,000 Sq.Ft. | Larger or hotter sheds</div>
-            <div class="product-price">$1,049.96</div>
-            <span class="product-cta">Shop 18K Vario</span>
+            <div class="product-copy">
+              <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
+              <div class="product-spec">Up to 1,000 Sq.Ft. | Larger or hotter sheds</div>
+            </div>
+            <div class="product-action">
+              <div class="product-price">$1,049.96</div>
+              <span class="product-cta">Shop 18K Vario</span>
+            </div>
           </div>
         </a>
       </div>
