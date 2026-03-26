@@ -801,8 +801,13 @@ a { text-decoration: none; color: inherit; }
    BOTTOM CTA
 ============================================ */
 .bottom-cta {
+  background: transparent;
+  padding: 36px 0 0;
+}
+.bottom-cta-card {
   background: linear-gradient(180deg, #F7FAFF 0%, #EEF4FF 100%);
-  padding: 56px 0;
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
   text-align: center;
 }
 .bottom-cta h2 {
@@ -813,10 +818,10 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 12px;
 }
 .bottom-cta p {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-muted);
-  margin-bottom: 28px;
-  max-width: 640px;
+  margin-bottom: 24px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -824,8 +829,13 @@ a { text-decoration: none; color: inherit; }
 .bottom-cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
+}
+.bottom-cta .btn-lg { padding: 14px 24px; font-size: 16px; }
+.bottom-cta .btn-navy:hover {
+  background: var(--blue);
+  box-shadow: none;
 }
 
 /* ============================================
@@ -872,7 +882,9 @@ a { text-decoration: none; color: inherit; }
     padding-top: 34px;
     align-self: flex-start;
   }
-  .bottom-cta { padding: 48px 0; }
+  .bottom-cta { padding: 32px 0 0; }
+  .bottom-cta-card { padding: 28px 20px; }
+  .bottom-cta .btn-lg { padding: 12px 18px; font-size: 15px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .use-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 280px; }
@@ -1171,12 +1183,14 @@ a { text-decoration: none; color: inherit; }
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <div class="container">
-    <h2>Start With 12K if Your Shed Feels Like a Real Room</h2>
-    <p>Most backyard office sheds start with 12K. If the shed stays smaller and lighter-use, move down to 9K. If the load is clearly bigger or rougher, move up to 18K.</p>
-    <div class="bottom-cta-buttons">
-      <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K Options</a>
-      <a href="#capacity" class="btn btn-outline btn-lg">Compare 9K vs 12K</a>
-      <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-lg">See 18K Options</a>
+    <div class="bottom-cta-card">
+      <h2>Start With 12K if Your Shed Feels Like a Real Room</h2>
+      <p>For most backyard office sheds, 12K is the clearest first pick. Move down to 9K for lighter use, or up to 18K for bigger load.</p>
+      <div class="bottom-cta-buttons">
+        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Browse 12K Systems</a>
+        <a href="#capacity" class="btn btn-outline btn-lg">See When 9K Fits</a>
+        <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-lg">See When 18K Fits</a>
+      </div>
     </div>
   </div>
 </section>
