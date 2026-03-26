@@ -894,35 +894,60 @@ a { text-decoration: none; color: inherit; }
   .check-card { border-right: none; border-bottom: 1px solid var(--gray-200); }
   .check-card:last-child { border-bottom: none; }
   .check-num { display: none; }
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
   .product-feature {
     flex-direction: column;
     align-items: stretch;
-    gap: 18px;
-    padding: 22px 22px 24px;
+    gap: 16px;
+    padding: 20px 18px 22px;
     height: auto;
   }
   .product-feature .product-img-wrap {
     flex: none;
     width: 100%;
-    max-width: 320px;
+    max-width: 290px;
     min-height: auto;
-    padding-top: 0;
+    padding-top: 34px;
     align-self: center;
+  }
+  .product-feature .product-img-wrap img { max-height: 208px; }
+  .product-feature .product-body { max-width: none; gap: 14px; }
+  .product-feature .product-name { font-size: 18px; }
+  .product-feature .product-price { font-size: 18px; }
+  .product-feature .product-cta {
+    min-width: 0;
+    width: 100%;
+    max-width: 220px;
   }
   .product-card {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
-    padding: 20px 20px 22px;
+    gap: 12px;
+    padding: 18px 18px 20px;
+    min-height: auto;
   }
   .product-card .product-img-wrap {
     width: 100%;
     min-width: 0;
-    max-width: 240px;
-    padding-top: 34px;
-    align-self: flex-start;
+    max-width: 180px;
+    padding-top: 30px;
+    align-self: center;
+  }
+  .product-card .product-img-wrap img { max-height: 108px; }
+  .product-card .product-body { gap: 10px; }
+  .product-card .product-copy { gap: 4px; }
+  .product-card .product-action { gap: 8px; }
+  .product-card .product-name { font-size: 14px; line-height: 1.25; }
+  .product-card .product-rating { font-size: 11px; }
+  .product-card .product-spec { font-size: 11px; line-height: 1.35; }
+  .product-card .product-price { font-size: 16px; }
+  .product-card .product-cta {
+    min-width: 0;
+    width: 100%;
+    max-width: 126px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
   .bottom-cta { padding: 0 0 24px; }
   .bottom-cta-card { padding: 24px 18px; }
