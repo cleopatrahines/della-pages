@@ -76,7 +76,6 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.65;
   margin-top: 10px;
 }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -253,45 +252,82 @@ a { text-decoration: none; color: inherit; }
 /* ============================================
    CAPACITY CARDS
 ============================================ */
-.capacity-section { background: var(--gray-50); }
+.capacity-section {
+  background:
+    radial-gradient(circle at top center, rgba(88,132,231,.14), transparent 36%),
+    linear-gradient(180deg, #F8FBFF 0%, var(--gray-50) 48%, #F4F7FC 100%);
+}
+.capacity-section .section-header {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+.capacity-section .section-desc {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .capacity-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+  align-items: stretch;
 }
 .capacity-card {
-  background: var(--white);
-  padding: 40px 32px 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, #F9FBFF 100%);
+  padding: 34px 30px 30px;
   display: flex;
   flex-direction: column;
   transition: all .2s;
   position: relative;
+  border: 1px solid rgba(14,25,83,.08);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 28px rgba(14,25,83,.06);
+  overflow: hidden;
+  isolation: isolate;
+}
+.capacity-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(88,132,231,.78), rgba(88,132,231,.08));
+  opacity: .78;
 }
 .capacity-card:hover {
-  background: var(--gray-50);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  background: var(--white);
+  border-color: rgba(88,132,231,.26);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(14,25,83,.1);
 }
 .capacity-card.is-featured {
-  background: var(--navy);
+  background: linear-gradient(180deg, #0E1953 0%, #14225D 100%);
   color: #fff;
-  transform: scaleY(1.02);
+  transform: translateY(-10px);
   z-index: 2;
-  box-shadow: 0 16px 40px rgba(14,25,83,.25);
-  border: 2px solid var(--blue);
+  box-shadow: 0 22px 44px rgba(14,25,83,.22);
+  border: 1px solid var(--blue);
+}
+.capacity-card.is-featured::before {
+  height: 5px;
+  opacity: 1;
+  background: linear-gradient(90deg, #7BA4FF, #5884E7);
 }
 .capacity-badge {
   position: absolute;
-  top: 16px; right: 16px;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--blue);
   color: #fff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 2px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(14,25,83,.16);
 }
 .capacity-kicker {
   font-size: 12px;
@@ -301,29 +337,33 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-muted);
   margin-bottom: 16px;
 }
-.capacity-card.is-featured .capacity-kicker { color: var(--blue-mid); }
+.capacity-card.is-featured .capacity-kicker {
+  color: var(--blue-mid);
+  margin-top: 10px;
+}
 .capacity-btu {
   font-family: var(--font);
   font-size: clamp(36px, 3.5vw, 48px);
   font-weight: 700;
   line-height: 1;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .capacity-card.is-featured .capacity-btu { color: #fff; }
 .capacity-desc {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.55;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  min-height: 72px;
 }
-.capacity-card.is-featured .capacity-desc { color: rgba(255,255,255,.7); }
+.capacity-card.is-featured .capacity-desc { color: rgba(255,255,255,.82); }
 .capacity-points {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 24px;
   padding: 0;
 }
 .capacity-points li {
@@ -345,22 +385,29 @@ a { text-decoration: none; color: inherit; }
 .capacity-card.is-featured .capacity-points li::before { color: #B7C8FF; }
 .capacity-cta {
   margin-top: auto;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--navy);
-  letter-spacing: .02em;
-}
-.capacity-card.is-featured .capacity-cta {
+  letter-spacing: .01em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 18px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(14,25,83,.14);
+  background: var(--white);
+  transition: all .2s;
+}
+.capacity-card:hover .capacity-cta {
+  border-color: rgba(88,132,231,.36);
+  background: var(--blue-light);
+}
+.capacity-card.is-featured .capacity-cta {
   background: #fff;
   color: var(--navy);
-  padding: 14px 24px;
-  border-radius: 4px;
-  width: 100%;
-  font-size: 15px;
-  transition: all .2s;
+  border-color: transparent;
 }
 .capacity-card.is-featured .capacity-cta:hover {
   background: var(--blue);
@@ -452,57 +499,94 @@ a { text-decoration: none; color: inherit; }
 /* ============================================
    CHECKLIST — Editorial Steps
 ============================================ */
-.checklist-section { background: var(--gray-50); }
+.checklist-section {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7FAFF 100%);
+}
+.checklist-section .section-header,
+.use-cases-section .section-header,
+.products-section .section-header { max-width: 760px; }
 .checklist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin-top: 48px;
-  border-top: 1px solid var(--gray-200);
+  gap: 18px;
+  margin-top: 40px;
 }
 .check-card {
-  padding: 40px 36px;
-  border-bottom: 1px solid var(--gray-200);
-  border-right: 1px solid var(--gray-200);
+  padding: 32px 30px 30px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 10px 24px rgba(14,25,83,.04);
   position: relative;
-  transition: background .3s;
+  transition: all .25s;
 }
-.check-card:nth-child(2n) { border-right: none; }
-.check-card:nth-last-child(-n+2) { border-bottom: none; }
-.check-card:hover { background: var(--white); }
+.check-card:nth-child(2n) { border-right: 1px solid var(--gray-200); }
+.check-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
+.check-card:hover {
+  background: var(--white);
+  border-color: rgba(88,132,231,.28);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
 .check-num {
   font-family: var(--font);
-  font-size: 64px;
+  font-size: 52px;
   font-weight: 700;
-  color: rgba(88,132,231,.10);
+  color: rgba(88,132,231,.08);
   line-height: 1;
   position: absolute;
-  top: 20px;
+  top: 24px;
   right: 24px;
+}
+.check-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--blue-light);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 .check-body h3 {
   font-family: var(--font);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.check-body h3::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--blue);
-  flex-shrink: 0;
 }
 .check-body p {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.65;
-  padding-left: 32px;
+  max-width: 34ch;
+}
+.check-points {
+  list-style: none;
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+.check-points li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--navy);
+}
+.check-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--blue);
 }
 
 /* ============================================
@@ -512,15 +596,17 @@ a { text-decoration: none; color: inherit; }
 .use-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 340px;
-  gap: 12px;
+  grid-auto-rows: 320px;
+  gap: 16px;
   margin-top: 40px;
 }
 .use-card {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background: var(--navy);
+  border: 1px solid rgba(14,25,83,.08);
+  box-shadow: 0 16px 36px rgba(14,25,83,.08);
 }
 .use-card.wide { grid-column: span 8; }
 .use-card.narrow { grid-column: span 4; }
@@ -537,57 +623,95 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: linear-gradient(
     0deg,
-    rgba(14,25,83,.85) 0%,
-    rgba(14,25,83,.4) 30%,
-    rgba(14,25,83,.08) 60%,
+    rgba(14,25,83,.88) 0%,
+    rgba(14,25,83,.48) 32%,
+    rgba(14,25,83,.12) 62%,
     transparent 100%
   );
 }
 .use-card-body {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  inset: 0;
   z-index: 2;
-  padding: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.use-kicker {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
 }
 .use-card h3 {
   font-family: var(--font);
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 7px;
+  margin-bottom: 0;
 }
-.use-card.wide h3 { font-size: 20px; }
+.use-card.wide h3 { font-size: 24px; }
 .use-card p {
   font-size: 15px;
   color: rgba(255,255,255,.94);
-  line-height: 1.35;
+  line-height: 1.5;
   margin: 0;
-  max-width: 360px;
+  max-width: 430px;
 }
-.use-card.wide p { max-width: 410px; }
+.use-card.wide p { max-width: 460px; }
+.use-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.use-meta span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(7,18,61,.38);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
 
 /* ============================================
    PRODUCTS — 1 featured + 2 stacked
 ============================================ */
-.products-section { background: var(--gray-50); }
+.products-section {
+  background: linear-gradient(180deg, var(--gray-50) 0%, #F7FAFF 100%);
+}
 .products-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
   margin-top: 40px;
+  align-items: stretch;
 }
 .product-feature {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: linear-gradient(180deg, #fff 0%, #FBFCFF 100%);
+  border: 1px solid rgba(14,25,83,.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all .25s;
+  box-shadow: 0 12px 28px rgba(14,25,83,.06);
 }
 .product-feature:hover {
   border-color: var(--blue);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 18px 40px rgba(14,25,83,.1);
   transform: translateY(-3px);
 }
 .product-img-wrap {
@@ -622,6 +746,15 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
 }
+.product-feature .product-body { padding: 28px; }
+.product-fit {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
 .product-name {
   font-family: var(--font);
   font-size: 16px;
@@ -634,6 +767,20 @@ a { text-decoration: none; color: inherit; }
 .product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
 .product-rating strong { color: var(--navy); font-weight: 700; }
 .product-spec { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
+.product-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.product-pills span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--blue-light);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+}
 .product-lead { font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
 .product-price {
   font-family: var(--font);
@@ -667,8 +814,8 @@ a { text-decoration: none; color: inherit; }
 .product-card:hover .product-cta { background: var(--blue); }
 .product-stack { display: grid; gap: 20px; }
 .product-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: linear-gradient(180deg, #fff 0%, #FBFCFF 100%);
+  border: 1px solid rgba(14,25,83,.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
@@ -676,10 +823,11 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   padding: 18px;
   transition: all .25s;
+  box-shadow: 0 12px 28px rgba(14,25,83,.06);
 }
 .product-card:hover {
   border-color: var(--blue);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 18px 40px rgba(14,25,83,.1);
   transform: translateY(-3px);
 }
 .product-card .product-img-wrap {
@@ -689,7 +837,16 @@ a { text-decoration: none; color: inherit; }
   padding: 16px;
   background: var(--gray-50);
 }
-.product-card .product-body { padding: 0; }
+.product-card .product-body {
+  padding: 0;
+  justify-content: space-between;
+  gap: 10px;
+}
+.product-feature .product-cta,
+.product-card .product-cta {
+  width: 100%;
+  min-height: 48px;
+}
 
 /* ============================================
    FAQ
@@ -805,20 +962,20 @@ a { text-decoration: none; color: inherit; }
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .capacity-grid { grid-template-columns: 1fr; gap: 12px; }
+  .capacity-grid { grid-template-columns: 1fr; gap: 14px; }
   .capacity-card.is-featured { transform: none; }
-  .use-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+  .use-grid { grid-template-columns: 1fr; grid-auto-rows: 280px; }
   .use-card.wide,
   .use-card.narrow { grid-column: auto; }
   .checklist-grid { margin-top: 28px; grid-template-columns: 1fr; }
-  .check-card { padding: 28px 24px; }
-  .check-card:nth-child(2n) { border-right: none; }
-  .check-card { border-right: none; border-bottom: 1px solid var(--gray-200); }
-  .check-card:last-child { border-bottom: none; }
+  .check-card { padding: 28px 24px; border: 1px solid var(--gray-200); }
+  .check-card:nth-child(2n) { border-right: 1px solid var(--gray-200); }
+  .check-card:last-child { border-bottom: 1px solid var(--gray-200); }
   .check-num { font-size: 48px; top: 16px; right: 16px; }
   .products-grid { grid-template-columns: 1fr; }
   .product-card { flex-direction: column; align-items: stretch; }
   .product-card .product-img-wrap { width: 100%; min-width: 0; }
+  .use-card-body { padding: 22px; }
   .bottom-cta { padding: 48px 0; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -883,10 +1040,11 @@ a { text-decoration: none; color: inherit; }
       <a href="https://dellahome.com/collections/9000-btu-mini-split" class="capacity-card">
         <span class="capacity-kicker">Compact Spaces</span>
         <div class="capacity-btu">9,000 BTU</div>
-        <p class="capacity-desc">Best for smaller enclosed sheds and lighter weekly use.</p>
+        <p class="capacity-desc">Best for smaller enclosed sheds, lighter weekly use, and backyard rooms that stay tighter and better insulated.</p>
         <ul class="capacity-points">
           <li>Small hobby rooms</li>
           <li>Compact enclosed sheds</li>
+          <li>Lighter weekly use</li>
         </ul>
         <span class="capacity-cta">View 9K Options</span>
       </a>
@@ -894,7 +1052,7 @@ a { text-decoration: none; color: inherit; }
         <span class="capacity-badge">Most Recommended</span>
         <span class="capacity-kicker">The Gold Standard</span>
         <div class="capacity-btu">12,000 BTU</div>
-        <p class="capacity-desc">The strongest default for backyard office sheds and everyday detached workspaces.</p>
+        <p class="capacity-desc">The clearest default for backyard office sheds and everyday detached workspaces that need room-like comfort.</p>
         <ul class="capacity-points">
           <li>High-efficiency inverter tech</li>
           <li>Rapid cooling and heating</li>
@@ -905,10 +1063,11 @@ a { text-decoration: none; color: inherit; }
       <a href="https://dellahome.com/collections/18000-btu-mini-split" class="capacity-card">
         <span class="capacity-kicker">Extended Spaces</span>
         <div class="capacity-btu">18,000 BTU</div>
-        <p class="capacity-desc">Move up for larger workshop sheds or clearly higher load.</p>
+        <p class="capacity-desc">Move up for larger workshop sheds, stronger solar gain, or detached spaces with a clearly higher load.</p>
         <ul class="capacity-points">
           <li>Larger footprints</li>
           <li>Hotter detached spaces</li>
+          <li>More sun-exposed layouts</li>
         </ul>
         <span class="capacity-cta">View 18K Options</span>
       </a>
@@ -928,29 +1087,49 @@ a { text-decoration: none; color: inherit; }
       <div class="check-card">
         <span class="check-num">01</span>
         <div class="check-body">
+          <span class="check-tag">Electrical</span>
           <h3>Power Supply</h3>
           <p>Confirm the shed can support the right voltage path first. Electrical access often decides whether the project stays simple.</p>
+          <ul class="check-points">
+            <li>Check 115V versus 208/230V before choosing the collection</li>
+            <li>Leave room for a dedicated circuit if the shed will run often</li>
+          </ul>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">02</span>
         <div class="check-body">
+          <span class="check-tag">Envelope</span>
           <h3>Insulation Integrity</h3>
           <p>Thin walls and simple roof assemblies can push a small shed up one capacity tier faster than expected.</p>
+          <ul class="check-points">
+            <li>Check wall and roof insulation before assuming 9K is enough</li>
+            <li>Account for window area and hard afternoon sun on the shed shell</li>
+          </ul>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">03</span>
         <div class="check-body">
+          <span class="check-tag">Placement</span>
           <h3>Line-Set Path</h3>
           <p>Plan the wall penetration, drain route, and condenser placement before you commit to the system size.</p>
+          <ul class="check-points">
+            <li>Choose the indoor head wall before you size around furniture</li>
+            <li>Reserve a clean condenser and condensate route outside the shed</li>
+          </ul>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">04</span>
         <div class="check-body">
+          <span class="check-tag">Usage Pattern</span>
           <h3>Seasonal Use</h3>
           <p>A light hobby shed and a full backyard office should not be sized as if they are the same project.</p>
+          <ul class="check-points">
+            <li>Weekend hobby use can stay smaller than all-day office use</li>
+            <li>Year-round comfort goals can justify stepping up the BTU path</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -961,37 +1140,57 @@ a { text-decoration: none; color: inherit; }
 <section class="section use-cases-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Beyond Storage</span>
-      <h2 class="section-title">Best Mini Split Setups for Common Shed Scenarios</h2>
-      <p class="section-desc">Choose by how the shed is actually used, not just by the label on the building.</p>
+      <span class="section-label">Shed Scenarios</span>
+      <h2 class="section-title">Which Shed Setup Are You Actually Sizing For?</h2>
+      <p class="section-desc">Choose by how the shed is used in real life, not by the generic label on the building.</p>
     </div>
     <div class="use-grid">
       <article class="use-card wide">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiksmNNyyiKOoYnjxilkB_aw_G9bo2q8AwH7xjTMz7-a2H3Y5c10WajliZVAqVuvIItocg-bhRjYGbxVTTiivVk9zEchRTlYDQ41uGlGFBVpGxuEEHKPAn2uPCN4D6rSq9OhSAoOUXjQ0-1xPs3QZGSKnJUIfLEHNnvWE22TzoBBFltQLiBkLSpfyJVGeG8ghxCP3K7I23zJfTq_XEOmIekK69fmBQrD8yKqmf6NPerWp1w3EVxy6Pa8DRwnq-waJpgEQLbEUEvxY_" alt="Modern backyard office shed interior with desk and greenery" loading="lazy">
         <div class="use-card-body">
-          <h3>The executive studio</h3>
-          <p>Productivity requires focus. Maintain a steady 72&deg;F regardless of midday sun.</p>
+          <span class="use-kicker">12K Default</span>
+          <h3>The backyard office</h3>
+          <p>When the shed behaves like a real room with daily desk work, 12K is usually the cleanest place to start.</p>
+          <div class="use-meta">
+            <span>Daily use</span>
+            <span>Desk and electronics</span>
+          </div>
         </div>
       </article>
       <article class="use-card narrow">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsR9QlijILXYkKgc9nL5kV6AdltMc20DdlnI8PnM7osn5C2VifQL1Wj0iSw0jWBAV62g_ZOltIrk07gQHAHJjgYGxnl9wV9nCHeqQhjB-fY7BX1wgQsYS7TSECmyeeRUU2tHAKi19T3gqW_CYUGBr0OYI4KkzzUIB2bJwS5cW3kAI6P2iQh-oR3wRzH8XdLgBCldw1p4xE19m1gildlUknQwRaOUmdO0LPzHXo2b9v6Dk2xu-18vQTfupdvQMru9TDV4Rxx__7ywPm" alt="Large workshop shed with benches and tools" loading="lazy">
         <div class="use-card-body">
-          <h3>The workshop</h3>
-          <p>Protect tools and finishes from humidity and temperature swings.</p>
+          <span class="use-kicker">18K Step-Up</span>
+          <h3>The workshop shed</h3>
+          <p>Larger floor plans, more sun, and harder-working occupancy can push the project above 12K faster than expected.</p>
+          <div class="use-meta">
+            <span>Larger footprint</span>
+            <span>Hotter afternoons</span>
+          </div>
         </div>
       </article>
       <article class="use-card narrow">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE7ex99ctRXx_2yJTZfZM7iKwmLJt-CwHINO2IBRci_xQSoHa0N30pqWfMc8yp9SzGgAn1k22FeHVQa3pO_C-XIPqAGT2y4gTQCpcOgKG4aGS7Xy9g-YD1c11zcyptW00m1ToXD-GwzhJkk9iiTS2T2a0ui_LYkEOQ2nBJHFsPFkoJfkFP4OugxiR191QoaOvg0vMPV520A-CdoijqcS45ZDlYnrx1J-l-NabgDuijxofAwbCiiv5jm_sfIf_kXBL3tFmhX0oiajCV" alt="Small hobby shed used as private gym" loading="lazy">
         <div class="use-card-body">
-          <h3>The private gym</h3>
-          <p>Keep smaller workout sheds usable through wider seasonal swings.</p>
+          <span class="use-kicker">9K or 12K</span>
+          <h3>The workout shed</h3>
+          <p>For shorter sessions in a tighter enclosed shell, compare 9K first and move to 12K if the load climbs.</p>
+          <div class="use-meta">
+            <span>Compact shell</span>
+            <span>Burst use</span>
+          </div>
         </div>
       </article>
       <article class="use-card wide">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwwIa8mLFJ4XNd5iXa-FgJOiL6YusTRxE-mw88eHMqDWkHK4B0mZpsHmHxXtpRJ9l1tRZS1a9ylvS8zGYIWngwL2WJvFC8FLuqDBC_32KJZIc_WT5ZphktxV4LBKc2IDerq6fjgVNZn1rrc4hi-ikn2luxHFcbfJ3roZvShEK3mtLyKgY7iRLuRVOjf_LA93PPOVCEn5FTipnOHKPHwRyabjgDGkAcP76kMlSnp0Wk4hhQ7-Bf3IvWTF0aKQdYHybdvb8ElS4yXZL4" alt="Creative shed studio with canvases and warm afternoon light" loading="lazy">
         <div class="use-card-body">
-          <h3>The artist retreat</h3>
-          <p>Create in a room that holds a steadier feel through changing seasons.</p>
+          <span class="use-kicker">12K Comfort Range</span>
+          <h3>The creative studio</h3>
+          <p>If you want the shed to hold a steadier feel through longer sessions and shoulder seasons, start from the 12K path.</p>
+          <div class="use-meta">
+            <span>Long stays</span>
+            <span>Comfort first</span>
+          </div>
         </div>
       </article>
     </div>
@@ -1013,9 +1212,15 @@ a { text-decoration: none; color: inherit; }
           <img src="https://dellahome.com/cdn/shop/files/048-TPH-12K2V-25S-01.jpg?v=1750937277&width=800" alt="DELLA Optima Series 12000 BTU ultra hyper heat mini split" loading="lazy">
         </div>
         <div class="product-body">
+          <div class="product-fit">12K default for backyard offices</div>
           <div class="product-name">Optima Series 12,000 BTU 25 SEER2 Ultra Hyper Heat</div>
           <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (3 reviews)</div>
           <div class="product-spec">Up to 550 Sq.Ft. | Backyard office sheds and detached workspaces</div>
+          <div class="product-pills">
+            <span>Up to 550 Sq.Ft.</span>
+            <span>Hyper Heat</span>
+            <span>Daily-use sheds</span>
+          </div>
           <p class="product-lead">The strongest default for most backyard office sheds.</p>
           <div class="product-price">$1,249.96</div>
           <div class="product-emphasis">Best Starting Point</div>
@@ -1029,9 +1234,15 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/048-TL-9K1VB-19S-01.jpg?v=1750225850&width=800" alt="DELLA Vario Series 9000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
+            <div class="product-fit">9K for lighter-use enclosed sheds</div>
             <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
             <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (18 reviews)</div>
             <div class="product-spec">Up to 400 Sq.Ft. | Small enclosed sheds</div>
+            <div class="product-pills">
+              <span>Up to 400 Sq.Ft.</span>
+              <span>Smaller shell</span>
+              <span>Lighter weekly use</span>
+            </div>
             <div class="product-price">$729.96</div>
             <div class="product-emphasis">Smaller-Space Pick</div>
             <span class="product-cta">View 9K Vario</span>
@@ -1043,9 +1254,15 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
+            <div class="product-fit">18K for bigger or hotter sheds</div>
             <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
             <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
             <div class="product-spec">Up to 1,000 Sq.Ft. | Larger or hotter sheds</div>
+            <div class="product-pills">
+              <span>Up to 1,000 Sq.Ft.</span>
+              <span>Larger footprint</span>
+              <span>Higher load</span>
+            </div>
             <div class="product-price">$1,049.96</div>
             <div class="product-emphasis">Higher-Load Pick</div>
             <span class="product-cta">View 18K Vario</span>
