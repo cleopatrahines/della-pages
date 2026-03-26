@@ -143,10 +143,10 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: linear-gradient(
     95deg,
-    rgba(14,25,83,.72) 0%,
-    rgba(14,25,83,.35) 40%,
-    rgba(14,25,83,.10) 70%,
-    transparent 100%
+    rgba(14,25,83,.78) 0%,
+    rgba(14,25,83,.48) 38%,
+    rgba(14,25,83,.18) 66%,
+    rgba(14,25,83,.04) 100%
   );
 }
 .hero-content {
@@ -156,7 +156,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-inner {
   padding: 72px 0;
-  max-width: 1000px;
+  max-width: 780px;
 }
 .hero h1 {
   font-family: var(--font);
@@ -176,7 +176,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.7;
   color: rgba(255,255,255,.78);
   margin-bottom: 24px;
-  max-width: 920px;
+  max-width: 720px;
 }
 .hero-actions {
   display: flex;
@@ -184,17 +184,23 @@ a { text-decoration: none; color: inherit; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.hero-link {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255,255,255,.65);
-  border-bottom: 1px solid rgba(255,255,255,.3);
-  padding-bottom: 2px;
-  transition: all .2s;
+.hero-actions .btn-navy {
+  box-shadow: var(--shadow-sm);
 }
-.hero-link:hover {
+.hero-actions .btn-navy:hover {
+  background: var(--blue);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+.hero-actions .btn-outline-white {
+  color: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.04);
+}
+.hero-actions .btn-outline-white:hover {
   color: #fff;
-  border-color: rgba(255,255,255,.7);
+  border-color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.10);
 }
 .hero-stats {
   display: flex;
@@ -827,25 +833,15 @@ a { text-decoration: none; color: inherit; }
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtuhdmGCtPT6ZgZwq4vciv847IXz1OTExiYZHf5gSke9_bTLczyJCzzTAaoUgLEfu105c7OqhloWXYn_IR9n_KIIZALFbMJ8qoO7BROWeaKO_re8aW4FM1Vn-k8EisTbw6b8bv-Ow7ywutyAIgnEYnA1iDaILvI0pW3j2vNTDjoFrRIelG6GFp2G3CPoKHuhNuIaox-3ntnl8dyVSbznRTVVwgIkSDQUfZYeA3QPzE_Aem_mrFfdbL3w8NNi2wbz_OeLAhOtE5mKj7" alt="Premium home office shed interior with clean lines and natural light" width="1400" height="933" loading="eager">
+  <img class="hero-bg" src="shed-hero-gemini-2.png" alt="Wood-lined backyard office shed with desk, large windows, and a wall-mounted mini split" width="2752" height="1536" loading="eager">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
       <h1>Best Mini Split for <em>Shed</em></h1>
-      <p class="hero-text">Most sheds do best with a single-zone, wall-mounted mini split. Start with 9K or 12K based on insulation, voltage, and whether the space runs like a backyard office or just occasional flex space.</p>
+      <p class="hero-text">Most sheds do best with a single-zone, wall-mounted mini split. Start with 12K for everyday backyard office use, or 9K when the space stays smaller and lighter-use.</p>
       <div class="hero-actions">
         <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K - Most Common Pick</a>
-        <a href="#capacity" class="hero-link">Compare 9K vs 12K first</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">9K–12K First</div>
-          <div class="hero-stat-label">Where most shed buyers start</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">Detached Building</div>
-          <div class="hero-stat-label">Power access and insulation matter more</div>
-        </div>
+        <a href="#capacity" class="btn btn-outline-white btn-lg">Compare 9K vs 12K first</a>
       </div>
     </div>
   </div>
