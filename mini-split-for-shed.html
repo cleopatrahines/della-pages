@@ -933,13 +933,18 @@ a { text-decoration: none; color: inherit; }
     flex: none;
     width: 100%;
     min-width: 0;
-    max-width: 230px;
+    max-width: none;
     min-height: auto;
     padding-top: 34px;
-    align-self: center;
+    align-self: stretch;
   }
   .product-feature .product-img-wrap img,
-  .product-card .product-img-wrap img { max-height: 148px; }
+  .product-card .product-img-wrap img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
   .product-feature .product-badge,
   .product-card .product-badge {
     left: 0;
