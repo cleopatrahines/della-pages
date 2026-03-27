@@ -188,7 +188,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.7;
   color: rgba(255,255,255,.78);
   margin-bottom: 24px;
-  max-width: 720px;
+  max-width: 700px;
 }
 .hero-actions {
   display: flex;
@@ -297,7 +297,7 @@ a { text-decoration: none; color: inherit; }
   color: #fff;
   transform: none;
   z-index: 2;
-  box-shadow: 0 12px 30px rgba(14,25,83,.14);
+  box-shadow: 0 8px 22px rgba(14,25,83,.10);
   border: 2px solid var(--blue);
 }
 .capacity-badge {
@@ -562,9 +562,9 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: linear-gradient(
     0deg,
-    rgba(14,25,83,.85) 0%,
-    rgba(14,25,83,.4) 30%,
-    rgba(14,25,83,.08) 60%,
+    rgba(14,25,83,.76) 0%,
+    rgba(14,25,83,.32) 32%,
+    rgba(14,25,83,.06) 60%,
     transparent 100%
   );
 }
@@ -598,8 +598,8 @@ a { text-decoration: none; color: inherit; }
 .products-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, .95fr);
-  gap: 22px;
-  margin-top: 36px;
+  gap: 24px;
+  margin-top: 38px;
   align-items: stretch;
 }
 .product-feature {
@@ -609,8 +609,8 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 26px 28px;
+  gap: 26px;
+  padding: 26px 28px 24px;
   min-height: 100%;
   height: 100%;
   transition: all .25s;
@@ -630,11 +630,11 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
 }
 .product-feature .product-img-wrap {
-  flex: 0 0 54%;
+  flex: 0 0 58%;
   width: auto;
-  max-width: 430px;
+  max-width: 500px;
   min-height: auto;
-  padding-top: 42px;
+  padding-top: 38px;
   align-self: center;
 }
 .product-img-wrap img {
@@ -644,7 +644,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   transition: transform .3s;
 }
-.product-feature .product-img-wrap img { max-height: 318px; }
+.product-feature .product-img-wrap img { max-height: 372px; }
 .product-feature:hover .product-img-wrap img,
 .product-card:hover .product-img-wrap img { transform: scale(1.04); }
 .product-badge {
@@ -688,12 +688,13 @@ a { text-decoration: none; color: inherit; }
 }
 .product-feature .product-body {
   flex: 1;
-  max-width: 330px;
+  max-width: 360px;
   padding: 0;
-  gap: 16px;
-  align-self: center;
+  gap: 18px;
+  align-self: flex-start;
+  padding-top: 10px;
 }
-.product-feature .product-name { font-size: 20px; }
+.product-feature .product-name { font-size: 21px; }
 .product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 0; line-height: 1.35; }
 .product-rating strong { color: var(--navy); font-weight: 700; }
 .product-card .product-rating { font-size: 12px; }
@@ -711,9 +712,9 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  padding: 11px 22px;
+  padding: 12px 22px;
   border-radius: 4px;
   background: var(--blue);
   color: #fff;
@@ -723,14 +724,14 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 .product-feature .product-cta {
-  min-width: 210px;
-  min-height: 48px;
-  padding: 12px 26px;
+  min-width: 238px;
+  min-height: 50px;
+  padding: 12px 24px;
 }
 .product-card .product-cta {
-  min-width: 188px;
-  min-height: 46px;
-  padding: 11px 22px;
+  min-width: 198px;
+  min-height: 48px;
+  padding: 12px 22px;
 }
 .product-feature .product-cta:hover,
 .product-card .product-cta:hover {
@@ -738,7 +739,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--blue);
   border-color: var(--blue);
 }
-.product-stack { display: grid; gap: 18px; }
+.product-stack { display: grid; gap: 20px; }
 .product-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
@@ -746,9 +747,9 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 22px 24px;
-  min-height: 214px;
+  gap: 24px;
+  padding: 24px 26px;
+  min-height: 228px;
   transition: all .25s;
 }
 .product-card:hover {
@@ -757,25 +758,26 @@ a { text-decoration: none; color: inherit; }
   transform: none;
 }
 .product-card .product-img-wrap {
-  width: 206px; min-width: 206px;
-  padding-top: 40px;
+  width: 228px; min-width: 228px;
+  padding-top: 34px;
   align-self: center;
 }
-.product-card .product-img-wrap img { max-height: 150px; }
+.product-card .product-img-wrap img { max-height: 176px; }
 .product-card .product-body {
   flex: 1;
   padding: 0;
-  gap: 12px;
+  gap: 14px;
   align-self: center;
+  justify-content: space-between;
 }
-.product-card .product-copy { gap: 6px; }
-.product-card .product-action { gap: 10px; }
+.product-card .product-copy { gap: 7px; }
+.product-card .product-action { gap: 12px; }
 .product-card .product-name {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.3;
 }
 .product-card .product-price {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 /* ============================================
@@ -1085,7 +1087,7 @@ a { text-decoration: none; color: inherit; }
   <div class="container hero-content">
     <div class="hero-inner">
       <h1>Mini Split for <em>Shed</em></h1>
-      <p class="hero-text">Sheds heat up and lose comfort fast, so getting the BTU right matters before you buy.</p>
+      <p class="hero-text">Most sheds do best with a single-zone wall-mounted mini split, and 12K is the safest starting point for everyday office-style use.</p>
       <div class="hero-actions">
         <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Start with 12K</a>
         <a href="#capacity" class="btn btn-outline-white btn-lg">Compare 9K vs 12K</a>
