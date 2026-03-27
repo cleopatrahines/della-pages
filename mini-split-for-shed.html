@@ -95,10 +95,13 @@ a { text-decoration: none; color: inherit; }
 .btn-navy {
   background: var(--blue);
   color: #fff;
+  border: 1px solid var(--blue);
   box-shadow: none;
 }
 .btn-navy:hover {
-  background: var(--blue-cta-hover);
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
   box-shadow: none;
 }
 .btn-outline {
@@ -193,11 +196,13 @@ a { text-decoration: none; color: inherit; }
   font-size: 16px;
 }
 .hero-actions .btn-navy {
-  border: 1px solid transparent;
+  border: 1px solid var(--blue);
   box-shadow: none;
 }
 .hero-actions .btn-navy:hover {
-  background: var(--blue-cta-hover);
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
   box-shadow: none;
   transform: none;
 }
@@ -383,12 +388,13 @@ a { text-decoration: none; color: inherit; }
   border-radius: 4px;
   width: 100%;
   font-size: 15px;
-  border: 1px solid transparent;
+  border: 1px solid var(--blue);
   transition: all .2s;
 }
 .capacity-card.is-featured .capacity-cta:hover {
-  background: var(--blue-cta-hover);
-  color: #fff;
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
 }
 
 /* ============================================
@@ -705,7 +711,7 @@ a { text-decoration: none; color: inherit; }
   border-radius: 4px;
   background: var(--blue);
   color: #fff;
-  border: 1px solid transparent;
+  border: 1px solid var(--blue);
   transition: all .2s;
   align-self: flex-start;
   white-space: nowrap;
@@ -720,8 +726,12 @@ a { text-decoration: none; color: inherit; }
   min-height: 46px;
   padding: 11px 22px;
 }
-.product-feature:hover .product-cta,
-.product-card:hover .product-cta { background: var(--blue-cta-hover); }
+.product-feature .product-cta:hover,
+.product-card .product-cta:hover {
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
+}
 .product-stack { display: grid; gap: 18px; }
 .product-card {
   background: var(--white);
@@ -884,7 +894,9 @@ a { text-decoration: none; color: inherit; }
 }
 .bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
 .bottom-cta .btn-navy:hover {
-  background: var(--blue-cta-hover);
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
   box-shadow: none;
 }
 
