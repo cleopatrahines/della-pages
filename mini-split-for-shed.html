@@ -887,7 +887,7 @@ a { text-decoration: none; color: inherit; }
 .faq-q:hover h3,
 .faq-item.open .faq-q h3 { color: var(--blue); }
 .faq-icon {
-  width: 16px; height: 16px;
+  width: 20px; height: 20px;
   flex-shrink: 0;
   position: relative;
 }
@@ -895,10 +895,10 @@ a { text-decoration: none; color: inherit; }
 .faq-icon::after {
   content: '';
   position: absolute;
-  background: var(--navy);
-  border-radius: 1px;
+  background: #282828;
+  border-radius: 999px;
   top: 50%;
-  width: 9px;
+  width: 8px;
   height: 2px;
   transition: transform .25s ease, background .2s ease;
 }
@@ -907,12 +907,12 @@ a { text-decoration: none; color: inherit; }
 .faq-item.open .faq-icon::before,
 .faq-item.open .faq-icon::after { background: var(--blue); }
 .faq-icon::before {
-  left: 0;
+  left: 3px;
   transform: translateY(-50%) rotate(45deg);
   transform-origin: right center;
 }
 .faq-icon::after {
-  right: 0;
+  right: 3px;
   transform: translateY(-50%) rotate(-45deg);
   transform-origin: left center;
 }
