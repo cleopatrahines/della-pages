@@ -887,37 +887,26 @@ a { text-decoration: none; color: inherit; }
 .faq-q:hover h3,
 .faq-item.open .faq-q h3 { color: var(--blue); }
 .faq-icon {
-  width: 20px; height: 20px;
+  width: 18px; height: 18px;
   flex-shrink: 0;
   position: relative;
 }
-.faq-icon::before,
-.faq-icon::after {
+.faq-icon::before {
   content: '';
   position: absolute;
-  background: #282828;
-  border-radius: 999px;
   top: 50%;
+  left: 50%;
   width: 8px;
-  height: 2px;
-  transition: transform .25s ease, background .2s ease;
+  height: 8px;
+  border-right: 2px solid #282828;
+  border-bottom: 2px solid #282828;
+  transform: translate(-50%, -62%) rotate(45deg);
+  transform-origin: center;
+  transition: transform .25s ease, border-color .2s ease;
 }
 .faq-q:hover .faq-icon::before,
-.faq-q:hover .faq-icon::after,
-.faq-item.open .faq-icon::before,
-.faq-item.open .faq-icon::after { background: var(--blue); }
-.faq-icon::before {
-  left: 3px;
-  transform: translateY(-50%) rotate(45deg);
-  transform-origin: right center;
-}
-.faq-icon::after {
-  right: 3px;
-  transform: translateY(-50%) rotate(-45deg);
-  transform-origin: left center;
-}
-.faq-item.open .faq-icon::before { transform: translateY(-50%) rotate(-45deg); }
-.faq-item.open .faq-icon::after { transform: translateY(-50%) rotate(45deg); }
+.faq-item.open .faq-icon::before { border-color: var(--blue); }
+.faq-item.open .faq-icon::before { transform: translate(-50%, -38%) rotate(-135deg); }
 .faq-a {
   padding: 0 0 18px;
   font-size: 15px;
