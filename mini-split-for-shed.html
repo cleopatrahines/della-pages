@@ -22,6 +22,7 @@
 :root {
   --navy: #0E1953;
   --blue: #5884E7;
+  --blue-cta-hover: #6B95EF;
   --blue-light: #EDF2FF;
   --blue-mid: #C5D5F5;
   --gray-50: #F8F9FB;
@@ -92,12 +93,13 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 .btn-navy {
-  background: var(--navy);
+  background: var(--blue);
   color: #fff;
+  box-shadow: none;
 }
 .btn-navy:hover {
-  background: #1a2a6c;
-  box-shadow: rgba(0,0,0,.25) 0 2px 10px;
+  background: var(--blue-cta-hover);
+  box-shadow: none;
 }
 .btn-outline {
   background: transparent;
@@ -191,13 +193,13 @@ a { text-decoration: none; color: inherit; }
   font-size: 16px;
 }
 .hero-actions .btn-navy {
-  border: 2px solid transparent;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  box-shadow: none;
 }
 .hero-actions .btn-navy:hover {
-  background: var(--blue);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  background: var(--blue-cta-hover);
+  box-shadow: none;
+  transform: none;
 }
 .hero-actions .btn-outline-white {
   color: rgba(255,255,255,.92);
@@ -375,16 +377,17 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: var(--navy);
+  background: var(--blue);
+  color: #fff;
   padding: 14px 24px;
   border-radius: 4px;
   width: 100%;
   font-size: 15px;
+  border: 1px solid transparent;
   transition: all .2s;
 }
 .capacity-card.is-featured .capacity-cta:hover {
-  background: var(--blue);
+  background: var(--blue-cta-hover);
   color: #fff;
 }
 
@@ -699,9 +702,10 @@ a { text-decoration: none; color: inherit; }
   font-size: 14px;
   font-weight: 600;
   padding: 11px 22px;
-  border-radius: 6px;
-  background: var(--navy);
+  border-radius: 4px;
+  background: var(--blue);
   color: #fff;
+  border: 1px solid transparent;
   transition: all .2s;
   align-self: flex-start;
   white-space: nowrap;
@@ -717,7 +721,7 @@ a { text-decoration: none; color: inherit; }
   padding: 11px 22px;
 }
 .product-feature:hover .product-cta,
-.product-card:hover .product-cta { background: var(--blue); }
+.product-card:hover .product-cta { background: var(--blue-cta-hover); }
 .product-stack { display: grid; gap: 18px; }
 .product-card {
   background: var(--white);
@@ -880,7 +884,7 @@ a { text-decoration: none; color: inherit; }
 }
 .bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
 .bottom-cta .btn-navy:hover {
-  background: var(--blue);
+  background: var(--blue-cta-hover);
   box-shadow: none;
 }
 
