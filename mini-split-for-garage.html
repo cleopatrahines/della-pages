@@ -171,39 +171,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .hero-stat-num { font-family: var(--font-display); font-size: 27px; font-weight: 700; color: #fff; line-height: 1; }
 .hero-stat-label { font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
-/* ─── SETUP SECTION ─── */
-.setup-section { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
-.setup-header { margin-bottom: 36px; }
-
-.setup-step { margin-bottom: 36px; }
-.setup-step:last-child { margin-bottom: 0; }
-.setup-step-label {
-  font-family: var(--font); font-size: 13px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--blue); margin-bottom: 12px;
-}
-.setup-step-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-
-.setup-card {
-  display: flex; flex-direction: column; align-items: flex-start; padding: 24px 28px;
-  background: var(--white); border: 1.5px solid var(--gray-200);
-  border-radius: var(--radius); text-decoration: none; color: inherit;
-  transition: all 0.18s;
-}
-.setup-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
-.setup-card.is-recommended { border: 2px solid var(--navy); }
-.setup-badge { display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; background: var(--navy); color: #fff; border-radius: 4px; margin-bottom: 8px; }
-.setup-card-name { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-.setup-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
-.setup-card-cta {
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--blue); display: inline-flex; align-items: center;
-  margin-top: auto; transition: color 0.15s ease;
-}
-.setup-card:hover .setup-card-cta { color: var(--navy); }
-
-.setup-note { font-size: 15px; color: var(--text-muted); padding: 14px 16px; background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--gray-200); }
-.setup-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
+/* ─── (removed setup section — no longer used) ─── */
 
 /* ─── SIZING TABLE ─── */
 /* ─── SIZING CARDS ─── */
@@ -483,7 +451,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .sec, .sec-sm { padding: 48px 0; }
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .setup-step-row, .products-grid,
+  .products-grid,
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
   .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
@@ -545,7 +513,25 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ② SIZING CARDS -->
+<!-- ② THE GARAGE CHECKLIST -->
+<section class="sec">
+  <div class="w">
+    <div class="section-header">
+      <span class="eyebrow">Before You Size</span>
+      <h2>The Garage Checklist</h2>
+    </div>
+    <div class="know-grid">
+      <div class="know-card"><h3>Insulate First</h3><p>The garage door is the biggest heat leak. Insulate it before sizing — you may need a smaller (cheaper) unit than you think.</p></div>
+      <div class="know-card"><h3>Uninsulated? Size Up</h3><p>No insulation means faster heat loss. Move up one BTU tier to compensate, or you'll run the system harder and pay more in energy.</p></div>
+      <div class="know-card"><h3>Cold Climate? Go Ultra Heat</h3><p>Below freezing regularly? Choose an Ultra Heat system rated to −13°F so the unit doesn't lose capacity when you need it most.</p></div>
+      <div class="know-card"><h3>Don't Oversize</h3><p>Too many BTUs short-cycles the compressor — the garage stays damp and the unit wears out faster. Match the capacity to the space.</p></div>
+      <div class="know-card"><h3>Mount High, Aim Smart</h3><p>Install on the longest wall, high up for widest coverage. Aim toward the work area but not directly at people.</p></div>
+      <div class="know-card"><h3>Dedicated Circuit Required</h3><p>Most units need a dedicated 115V or 230V circuit. Don't share with shop tools — voltage drops damage compressors.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ SIZING CARDS -->
 <section class="sec" id="sizing">
   <div class="w">
     <div class="section-header">
@@ -600,96 +586,49 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ③ CHOOSE YOUR SETUP -->
-<section class="setup-section sec-sm">
-  <div class="w">
-    <div class="setup-header">
-      <span class="eyebrow">After Size</span>
-      <h2>Choose the Right Garage Setup</h2>
-      <p class="lead" style="margin-top:10px;">Two decisions, in order: how many zones, then which indoor unit style.</p>
-    </div>
-
-    <div class="setup-step">
-      <div class="setup-step-label">Step 1 — How Many Zones?</div>
-      <div class="setup-step-row">
-        <a href="https://dellahome.com/collections/mini-split-single-zone" class="setup-card is-recommended">
-          <div class="setup-badge">Best for Most Garages</div>
-          <div class="setup-card-name">Single-Zone Heat Pump</div>
-          <div class="setup-card-desc">One outdoor unit, one indoor unit. The default choice for a single garage space — simplest install, lowest cost.</div>
-          <div class="setup-card-cta">Browse Single-Zone →</div>
-        </a>
-        <a href="https://dellahome.com/collections/2-zone-mini-split" class="setup-card">
-          <div class="setup-card-name">2-Zone Heat Pump</div>
-          <div class="setup-card-desc">One outdoor unit, two indoor units. Choose this when the garage shares the project with a workshop, gym, or bonus room.</div>
-          <div class="setup-card-cta">Browse 2-Zone →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="setup-step">
-      <div class="setup-step-label">Step 2 — Which Indoor Unit Style?</div>
-      <div class="setup-step-row">
-        <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="setup-card is-recommended">
-          <div class="setup-badge">Default for Garages</div>
-          <div class="setup-card-name">Wall-Mounted</div>
-          <div class="setup-card-desc">Mounts high on the wall. The easiest fit for most garages with open wall space above the door or workbench.</div>
-          <div class="setup-card-cta">Browse Wall-Mounted →</div>
-        </a>
-        <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="setup-card">
-          <div class="setup-card-name">Ceiling Cassette</div>
-          <div class="setup-card-desc">Recessed into the ceiling with 4-way airflow. Best when walls are taken by cabinets, tool boards, or bike racks.</div>
-          <div class="setup-card-cta">Browse Ceiling Cassette →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="setup-note" style="margin-top:16px;">Need lower-wall placement? Floor-mounted and floor-ceiling styles can work, but they are usually secondary to wall-mounted and ceiling cassette in garages.</div>
-  </div>
-</section>
-
-<!-- ④ USE CASES -->
+<!-- ③ GARAGE SCENARIOS -->
 <section class="sec" style="background:var(--gray-50); border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200);">
   <div class="w">
     <div class="section-header">
-      <span class="eyebrow">Use Case Match</span>
-      <h2>Match by Garage Layout and Use</h2>
-      <p class="lead" style="margin-top:10px;">Start by choosing between single-zone and 2-zone, then choose the indoor unit style that fits the garage itself.</p>
+      <span class="eyebrow">Scenario Match</span>
+      <h2>Find Your Garage Type</h2>
+      <p class="lead" style="margin-top:10px;">Not sure which BTU fits? Match your garage use to the right capacity.</p>
     </div>
     <div class="use-rows">
       <div class="use-row">
-        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_Suburban_Site_Light_Commercial_se_b373dc1b9a.jpg&w=640&q=90" alt="Standard Garage">
+        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_Suburban_Site_Light_Commercial_se_b373dc1b9a.jpg&w=640&q=90" alt="Standard 2-car garage with car parked inside">
         <div class="use-row-text">
           <span class="use-tag">Most Common</span>
-          <h3>Standard One-Space Garage</h3>
-          <p>For one garage space by itself, a single-zone heat pump is usually the simplest and most cost-effective path.</p>
-          <a href="https://dellahome.com/collections/mini-split-single-zone" class="use-link">Shop Single-Zone Heat Pumps</a>
+          <h3>Standard Parking Garage</h3>
+          <p>A typical attached 2-car garage used for parking and light storage. Insulated walls and a standard 8 ft ceiling keep BTU needs modest.</p>
+          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-link">Shop 12K BTU Systems →</a>
         </div>
       </div>
       <div class="use-row">
-        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_ME_PCFY_Trane_Mech_Industrial_kitchen_1575c49116.webp&w=828&q=90" alt="Workshop Scene">
+        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_CS_Uber_use_42959d300d.jpg&w=640&q=90" alt="Home gym setup inside a garage">
         <div class="use-row-text">
-          <span class="use-tag">Two Spaces</span>
-          <h3>Garage Plus Workshop, Gym, or Bonus Room</h3>
-          <p>Go to 2-zone when the garage is part of a two-space project and both areas need separate comfort control.</p>
-          <a href="https://dellahome.com/collections/2-zone-mini-split" class="use-link">Shop 2-Zone Heat Pumps</a>
+          <span class="use-tag">High Activity</span>
+          <h3>Garage Gym or Home Office</h3>
+          <p>Body heat and equipment push the load higher. You need fast cooling in summer and steady warmth in winter to stay comfortable during workouts or long work sessions.</p>
+          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-link">Shop 12K–18K BTU Systems →</a>
         </div>
       </div>
       <div class="use-row">
-        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_CS_Uber_use_42959d300d.jpg&w=640&q=90" alt="Cold Climate Garage">
+        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_ME_PCFY_Trane_Mech_Industrial_kitchen_1575c49116.webp&w=828&q=90" alt="Workshop garage with tools and workbench">
         <div class="use-row-text">
-          <span class="use-tag">Default Indoor Unit</span>
-          <h3>Typical Garage with Open Wall Space</h3>
-          <p>Wall-mounted is still the default indoor unit for most garages because it fits the widest range of layouts and installation paths.</p>
-          <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="use-link">Shop Wall-Mounted</a>
+          <span class="use-tag">Heavy Use</span>
+          <h3>Workshop or Hobby Garage</h3>
+          <p>Woodworking, welding, or auto repair generate extra heat and dust. Size up one BTU tier and add a mesh pre-filter to protect the unit.</p>
+          <a href="https://dellahome.com/collections/18000-btu-mini-split" class="use-link">Shop 18K BTU Systems →</a>
         </div>
       </div>
       <div class="use-row">
-        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_Hero_1920x1080_split_smart_multi_e05dcf6521.png&w=828&q=90" alt="Garage Gym">
+        <img class="use-row-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_Hero_1920x1080_split_smart_multi_e05dcf6521.png&w=828&q=90" alt="Large pole barn interior with high ceilings">
         <div class="use-row-text">
-          <span class="use-tag">Wall Space Limited</span>
-          <h3>Garage Walls Already Claimed by Storage</h3>
-          <p>Choose ceiling cassette when the walls need to stay open for tool boards, cabinets, shelves, bike racks, or other storage.</p>
-          <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="use-link">Shop Ceiling Cassette</a>
+          <span class="use-tag">Large Space</span>
+          <h3>Pole Barn or Detached Shop</h3>
+          <p>High ceilings and large volume mean more air to condition. Poor insulation is common in pole barns — start at 24K and consider Ultra Heat if you're in a cold climate.</p>
+          <a href="https://dellahome.com/collections/24000-btu-mini-split" class="use-link">Shop 24K BTU Systems →</a>
         </div>
       </div>
     </div>
@@ -700,27 +639,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ⑤ BEFORE YOU BUY -->
-<section class="sec">
-  <div class="w">
-    <div class="section-header">
-      <span class="eyebrow">Before You Buy</span>
-      <h2>What to Know First</h2>
-    </div>
-    <div class="byb-row">
-      <img class="byb-img" src="https://www.mitsubishicomfort.com/_next/image?url=https%3A%2F%2Fdw2p0k56b2hr9.cloudfront.net%2Flarge_CS_Fairway_Independent_Mortgage_Corporation_072_cc4c9de6f5.jpg&w=640&q=90" alt="Garage Setup">
-      <div class="byb-list">
-        <div class="byb-item">Insulate first. The garage door is the biggest source of heat loss.</div>
-        <div class="byb-item">Uninsulated? Size up one BTU tier to compensate</div>
-        <div class="byb-item">Below freezing? Choose an Ultra Heat system rated to −13°F</div>
-        <div class="byb-item">Avoid oversizing. It short cycles and leaves the garage damp.</div>
-        <div class="byb-item">Factor in sq ft + insulation + climate, not just floor area</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑥ PRODUCTS -->
+<!-- ④ PRODUCTS -->
 <section class="sec" style="background:var(--gray-50); border-top:1px solid var(--gray-200);">
   <div class="w">
     <div class="section-header">
@@ -785,31 +704,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ⑦ PLACEMENT & INSTALLATION -->
-<section class="sec">
-  <div class="w">
-    <div class="section-header">
-      <span class="eyebrow">Installation</span>
-      <h2>Placement and Installation</h2>
-    </div>
-
-    <div class="placement-grid" style="margin-bottom:24px;">
-      <div class="placement-item">Mount high on the longest wall for widest coverage.</div>
-      <div class="placement-item">Aim toward the work area but not directly at people.</div>
-      <div class="placement-item">Keep the unit away from dust-heavy zones.</div>
-      <div class="placement-item">Choose a spot that allows a gravity drain line.</div>
-    </div>
-
-    <div class="know-grid">
-      <div class="know-card"><h3>Gravity Drain vs Condensate Pump</h3><p>Use gravity drainage when possible. Only add a pump if you can't route a downhill line.</p></div>
-      <div class="know-card"><h3>Dust and Filter Care</h3><p>Add a mesh pre-filter for woodworking shops. Clean it regularly to maintain airflow.</p></div>
-      <div class="know-card"><h3>When to DIY vs Hire a Pro</h3><p>A pro handles refrigerant and code. DIY needs a vacuum pump and line set experience.</p></div>
-      <div class="know-card"><h3>Electrical Circuit Check</h3><p>Most units need a dedicated 115V or 230V circuit. Don't share with shop tools.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑧ SERVICES -->
+<!-- ⑤ SERVICES -->
 <section class="section services-section">
   <div class="container">
     <div class="services-heading">
