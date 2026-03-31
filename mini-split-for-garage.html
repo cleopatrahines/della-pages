@@ -299,8 +299,21 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   border: 1px solid var(--gray-200);
   transition: all 0.2s; align-self: flex-start;
 }
-.scenario:hover .scenario-cta {
+.scenario-cta:hover, .scenario:hover .scenario-cta {
   border-color: var(--blue); color: var(--blue); background: var(--blue-light);
+}
+
+/* ─── CHECK LIST ─── */
+.check-list {
+  list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;
+}
+.check-list li {
+  position: relative; padding-left: 28px;
+  font-size: 15px; color: var(--text-muted); line-height: 1.6;
+}
+.check-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 0;
+  font-weight: 700; color: var(--blue); font-size: 16px;
 }
 
 .info-callout {
@@ -548,20 +561,43 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ② THE GARAGE CHECKLIST -->
+<!-- ② WHAT TO KNOW -->
 <section class="sec">
   <div class="w">
-    <div class="section-header">
-      <span class="eyebrow">Before You Size</span>
-      <h2>The Garage Checklist</h2>
+    <div class="scenario">
+      <div class="scenario-img">
+        <img src="What%20to%20Know.png" alt="Garage interior showing insulation and mini split placement" loading="lazy">
+      </div>
+      <div class="scenario-text">
+        <span class="eyebrow">Before You Size</span>
+        <h3 style="font-size:clamp(22px,2.5vw,28px);">What to Know Before Buying</h3>
+        <ul class="check-list">
+          <li>Insulate the garage door first. It's the biggest heat leak, and you may need a smaller unit than you think.</li>
+          <li>No insulation? Size up one BTU tier, or you'll run the system harder and pay more in energy.</li>
+          <li>Below freezing regularly? Choose an Ultra Heat system rated to −13°F so it doesn't lose capacity when you need it most.</li>
+          <li>Don't oversize. Too many BTUs short-cycles the compressor, keeps the garage damp, and wears the unit out faster.</li>
+        </ul>
+      </div>
     </div>
-    <div class="know-grid">
-      <div class="know-card"><h3>Insulate First</h3><p>The garage door is the biggest heat leak. Insulate it before sizing — you may need a smaller (cheaper) unit than you think.</p></div>
-      <div class="know-card"><h3>Uninsulated? Size Up</h3><p>No insulation means faster heat loss. Move up one BTU tier to compensate, or you'll run the system harder and pay more in energy.</p></div>
-      <div class="know-card"><h3>Cold Climate? Go Ultra Heat</h3><p>Below freezing regularly? Choose an Ultra Heat system rated to −13°F so the unit doesn't lose capacity when you need it most.</p></div>
-      <div class="know-card"><h3>Don't Oversize</h3><p>Too many BTUs short-cycles the compressor — the garage stays damp and the unit wears out faster. Match the capacity to the space.</p></div>
-      <div class="know-card"><h3>Mount High, Aim Smart</h3><p>Install on the longest wall, high up for widest coverage. Aim toward the work area but not directly at people.</p></div>
-      <div class="know-card"><h3>Dedicated Circuit Required</h3><p>Most units need a dedicated 115V or 230V circuit. Don't share with shop tools — voltage drops damage compressors.</p></div>
+  </div>
+</section>
+
+<!-- ② PLACEMENT & INSTALL -->
+<section class="sec" style="background:var(--gray-50);">
+  <div class="w">
+    <div class="scenario" style="flex-direction:row-reverse;">
+      <div class="scenario-img">
+        <img src="Placement%20and%20Installation.png" alt="Mini split wall unit installed high on garage wall" loading="lazy">
+      </div>
+      <div class="scenario-text">
+        <span class="eyebrow">Installation Tips</span>
+        <h3 style="font-size:clamp(22px,2.5vw,28px);">Placement and Installation</h3>
+        <ul class="check-list">
+          <li>Mount on the longest wall, high up for the widest airflow coverage across the space.</li>
+          <li>Aim toward the work area but not directly at people. Indirect airflow feels more comfortable.</li>
+          <li>Most units need a dedicated 115V or 230V circuit. Don't share with shop tools, voltage drops damage compressors.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
