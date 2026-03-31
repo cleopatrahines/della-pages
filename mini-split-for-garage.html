@@ -219,26 +219,71 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .setup-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
 
 /* ─── SIZING TABLE ─── */
-.table-wrap {
-  border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
-  overflow: hidden; box-shadow: var(--shadow-sm);
+/* ─── SIZING CARDS ─── */
+.sizing-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
 }
-.sizing-table { width: 100%; border-collapse: collapse; }
-.sizing-table thead { background: var(--navy); }
-.sizing-table th {
-  padding: 14px 22px; text-align: left;
-  font-family: var(--font-display); font-size: 15px;
-  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
+.sizing-card {
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); overflow: hidden;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 28px 20px 24px; text-align: center;
+  transition: all 0.25s;
+  position: relative;
 }
-.sizing-table td { padding: 20px 22px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; background: var(--white); }
-.sizing-table tr:last-child td { border-bottom: none; }
-.sizing-table tr:hover td { background: var(--gray-50); }
-.garage-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); }
-.garage-hint { font-size: 15px; color: var(--text-muted); margin-top: 2px; }
-.btu-val { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--navy); }
-.sqft-val { font-size: 15px; color: var(--text-muted); }
-.table-note { margin-top: 14px; padding: 12px 16px; background: var(--blue-light); border-radius: var(--radius-sm); font-size: 15px; color: var(--text-muted); border-left: 3px solid var(--blue); }
+.sizing-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-3px); }
+.sizing-card.is-popular {
+  border: 2px solid var(--blue);
+  box-shadow: 0 4px 20px rgba(46,91,255,0.12);
+}
+.sizing-popular-badge {
+  display: inline-block;
+  font-family: var(--font); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue); background: var(--blue-light);
+  padding: 5px 14px; border-radius: 999px;
+  margin-bottom: 8px;
+}
+.sizing-card-title {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 14px; line-height: 1.25;
+}
+.sizing-card-img {
+  width: 100%; aspect-ratio: 4/3; border-radius: 12px;
+  overflow: hidden; margin-bottom: 18px;
+}
+.sizing-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.sizing-card:hover .sizing-card-img img { transform: scale(1.04); }
+.sizing-card-name {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  color: var(--navy); margin-bottom: 10px;
+}
+.sizing-card-sqft {
+  font-size: 15px; color: var(--text-muted); margin-bottom: 4px;
+}
+.sizing-card-btu {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  color: var(--navy); margin-bottom: 18px;
+}
+.sizing-card-cta {
+  display: block; width: 100%; text-align: center;
+  padding: 13px 18px; border-radius: 8px;
+  background: var(--navy); color: #fff;
+  font-family: var(--font); font-size: 15px; font-weight: 600;
+  border: 2px solid var(--navy);
+  transition: all 0.2s; margin-top: auto;
+}
+.sizing-card:hover .sizing-card-cta {
+  background: #fff; color: var(--navy);
+}
+.sizing-note {
+  margin-top: 20px; text-align: center;
+  font-size: 15px; color: var(--text-muted); line-height: 1.6;
+}
 
 /* ─── USE CASE ROWS ─── */
 .use-rows { display: flex; flex-direction: column; gap: 48px; }
@@ -443,6 +488,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   .setup-row, .products-grid,
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
+  .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .setup-primary { flex-direction: column; align-items: flex-start; gap: 16px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
@@ -504,53 +550,57 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ② SIZING TABLE -->
+<!-- ② SIZING CARDS -->
 <section class="sec" id="sizing">
   <div class="w">
-    <div class="section-header">
-      <span class="eyebrow">BTU Sizing Guide</span>
-      <h2>Choose by Garage Size</h2>
-      <p class="lead" style="margin-top:10px;">Based on an insulated garage with 8–10 ft ceilings. Poor insulation or extreme climate may need one tier higher.</p>
+    <div style="text-align:center; margin-bottom:8px;">
+      <h2 style="font-family:var(--font-display); font-size:clamp(26px,4vw,42px); font-weight:700; color:var(--navy); margin-bottom:10px;">BTU Sizing Guide</h2>
+      <p class="lead">Choose by Garage Size. Based on insulated garage with 8–10 ft ceilings. Poor insulation or extreme climate may need one tier higher.</p>
     </div>
-    <div class="table-wrap">
-      <table class="sizing-table">
-        <thead>
-          <tr>
-            <th>Garage Type</th>
-            <th>Sq Ft</th>
-            <th>BTU Range</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="garage-name">1-Car Garage</div><div class="garage-hint">Parking + light storage</div></td>
-            <td class="sqft-val">200–300</td>
-            <td class="btu-val">9,000–12,000</td>
-            <td><a href="https://dellahome.com/collections/9000-btu-mini-split" class="btn btn-outline btn-sm">View 9K Options</a></td>
-          </tr>
-          <tr>
-            <td><div class="garage-name">2-Car Garage</div><div class="garage-hint">Most common, typical attached garage</div></td>
-            <td class="sqft-val">400–600</td>
-            <td class="btu-val">12,000–18,000</td>
-            <td><a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-outline btn-sm">View 12K Options</a></td>
-          </tr>
-          <tr>
-            <td><div class="garage-name">3-Car or Workshop</div><div class="garage-hint">Tools and equipment add extra heat load</div></td>
-            <td class="sqft-val">600–900</td>
-            <td class="btu-val">18,000–24,000</td>
-            <td><a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-sm">View 18K Options</a></td>
-          </tr>
-          <tr>
-            <td><div class="garage-name">Large Shop or Pole Barn</div><div class="garage-hint">High ceilings increase volume to condition</div></td>
-            <td class="sqft-val">900+</td>
-            <td class="btu-val">24,000+</td>
-            <td><a href="https://dellahome.com/collections/24000-btu-mini-split" class="btn btn-outline btn-sm">View 24K Options</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="sizing-grid">
+      <a href="https://dellahome.com/collections/9000-btu-mini-split" class="sizing-card">
+        <div class="sizing-card-title">1-Car Garage</div>
+        <div class="sizing-card-img">
+          <img src="1-Car Garage.png" alt="Single-car garage with sedan parked inside" loading="lazy">
+        </div>
+        <div class="sizing-card-name">1-Car Garage</div>
+        <div class="sizing-card-sqft">200–300 SQ FT</div>
+        <div class="sizing-card-btu">9,000–12,000 BTU</div>
+        <span class="sizing-card-cta">View 9K Options</span>
+      </a>
+      <a href="https://dellahome.com/collections/12000-btu-mini-split" class="sizing-card is-popular">
+        <span class="sizing-popular-badge">Most Popular</span>
+        <div class="sizing-card-title">2-Car Garage</div>
+        <div class="sizing-card-img">
+          <img src="2-Car Garage.png" alt="Two-car garage with vehicles parked inside" loading="lazy">
+        </div>
+        <div class="sizing-card-name">2-Car Garage</div>
+        <div class="sizing-card-sqft">400–600 SQ FT</div>
+        <div class="sizing-card-btu">12,000–18,000 BTU</div>
+        <span class="sizing-card-cta">View 12K Options</span>
+      </a>
+      <a href="https://dellahome.com/collections/18000-btu-mini-split" class="sizing-card">
+        <div class="sizing-card-title">3-Car or Workshop</div>
+        <div class="sizing-card-img">
+          <img src="Workshop.png" alt="Large workshop garage with tools and car lift" loading="lazy">
+        </div>
+        <div class="sizing-card-name">3-Car or Workshop</div>
+        <div class="sizing-card-sqft">600–900 SQ FT</div>
+        <div class="sizing-card-btu">18,000–24,000 BTU</div>
+        <span class="sizing-card-cta">View 18K Options</span>
+      </a>
+      <a href="https://dellahome.com/collections/24000-btu-mini-split" class="sizing-card">
+        <div class="sizing-card-title">Large Shop or Pole Barn</div>
+        <div class="sizing-card-img">
+          <img src="Pole Barn.png" alt="Open pole barn interior with high ceilings and equipment" loading="lazy">
+        </div>
+        <div class="sizing-card-name">Large Shop or Pole Barn</div>
+        <div class="sizing-card-sqft">900+ SQ FT</div>
+        <div class="sizing-card-btu">24,000+ BTU</div>
+        <span class="sizing-card-cta">View 24K Options</span>
+      </a>
     </div>
-    <p class="table-note">Most 2-car garages start at 12,000 BTU. Size up for poor insulation or extreme climate.</p>
+    <p class="sizing-note">Most 2-car garages start at 12,000 BTU. Size up for poor insulation or extreme climate.</p>
   </div>
 </section>
 
