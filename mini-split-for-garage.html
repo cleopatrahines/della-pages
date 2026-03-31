@@ -64,18 +64,22 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .caption { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
 
 /* ─── BUTTONS ─── */
-.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-primary:hover { background: #1a2a6c; }
+.btn-navy { background: var(--blue); color: #fff; border: 1px solid var(--blue); }
+.btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-200); }
 .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
+.btn-outline-white:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
 .btn-sm { padding: 8px 16px; font-size: 15px; height: 40px; }
 .btn-lg { padding: 16px 32px; font-size: 17px; height: 48px; }
 
 /* ─── HERO ─── */
 .hero {
   position: relative;
-  min-height: 600px;
+  min-height: 620px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -85,12 +89,11 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 65% 40%;
-  opacity: 0.45;
+  object-position: center;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(14,25,83,0.92) 0%, rgba(14,25,83,0.6) 50%, transparent 100%);
+  background: linear-gradient(95deg, rgba(14,25,83,.78) 0%, rgba(14,25,83,.48) 38%, rgba(14,25,83,.18) 66%, rgba(14,25,83,.04) 100%);
 }
 .hero .w { position: relative; z-index: 2; width: 100%; }
 .hero-inner { padding: 72px 0; max-width: 980px; }
@@ -132,70 +135,52 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .feature-bar-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
-/* ─── SHOP SECTION ─── */
-.shop-section { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
-.shop-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 36px; flex-wrap: wrap; }
-.steps-bar {
-  display: flex; gap: 0; margin-bottom: 28px;
-  background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius);
-  overflow: hidden; box-shadow: var(--shadow-sm);
-}
-.step-tab {
-  flex: 1; padding: 16px 20px; font-family: var(--font-display);
-  font-size: 15px; font-weight: 600; color: var(--text-muted);
-  border-right: 1px solid var(--gray-200); cursor: default;
-  position: relative;
-}
-.step-tab:last-child { border-right: none; }
-.step-tab:first-child { background: var(--blue-light); }
-.step-tab-num { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 2px; }
+/* ─── SETUP SECTION ─── */
+.setup-section { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
+.setup-header { margin-bottom: 36px; }
 
-.shop-primary {
+.setup-primary {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   padding: 28px 32px; background: var(--white);
   border: 2px solid var(--navy); border-radius: var(--radius-lg);
   text-decoration: none; color: inherit;
   transition: all 0.18s; margin-bottom: 16px;
 }
-.shop-primary:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-.shop-primary-left { display: flex; align-items: center; gap: 16px; }
-.shop-primary-icon {
-  width: 48px; height: 48px; border-radius: 10px;
+.setup-primary:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.setup-primary-left { display: flex; align-items: center; gap: 20px; }
+.setup-primary-icon {
+  width: 56px; height: 56px; border-radius: 12px;
   background: var(--blue-light); display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.shop-primary-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 1.8; }
-.shop-badge { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--navy); color: #fff; border-radius: 4px; margin-bottom: 6px; }
-.shop-primary-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
-.shop-primary-desc { font-size: 15px; color: var(--text-muted); }
+.setup-primary-icon svg { width: 32px; height: 32px; color: var(--blue); }
+.setup-badge { display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; background: var(--navy); color: #fff; border-radius: 4px; margin-bottom: 6px; }
+.setup-primary-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+.setup-primary-desc { font-size: 15px; color: var(--text-muted); }
 
-.shop-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
-.shop-card {
+.setup-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+.setup-card {
   display: flex; flex-direction: column; align-items: flex-start; padding: 22px 24px;
   background: var(--white); border: 1.5px solid var(--gray-200);
   border-radius: var(--radius); text-decoration: none; color: inherit;
   transition: all 0.18s;
 }
-.shop-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
-.shop-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.shop-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
-.shop-card-cta {
+.setup-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
+.setup-card-icon {
+  width: 44px; height: 44px; margin-bottom: 14px;
+}
+.setup-card-icon svg { width: 44px; height: 44px; color: var(--blue); }
+.setup-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.setup-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+.setup-card-cta {
   font-family: var(--font-display); font-size: 15px; font-weight: 600;
   color: var(--blue); display: inline-flex; align-items: center;
   margin-top: auto; transition: color 0.15s ease;
 }
-.shop-card:hover .shop-card-cta { color: var(--navy); }
+.setup-card:hover .setup-card-cta { color: var(--navy); }
 
-.btu-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
-.btu-chip {
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--navy); text-decoration: none;
-  padding: 8px 18px; border: 1.5px solid var(--gray-200);
-  border-radius: 100px; transition: all 0.15s; background: var(--white);
-}
-.btu-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
-.shop-note { font-size: 15px; color: var(--text-muted); padding: 14px 16px; background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--gray-200); }
-.shop-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
+.setup-note { font-size: 15px; color: var(--text-muted); padding: 14px 16px; background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--gray-200); }
+.setup-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
 
 /* ─── SIZING TABLE ─── */
 .table-wrap {
@@ -408,12 +393,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .sec, .sec-sm { padding: 48px 0; }
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .shop-row, .products-grid,
+  .setup-row, .products-grid,
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
-  .shop-primary { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .steps-bar { flex-direction: column; }
-  .step-tab { border-right: none; border-bottom: 1px solid var(--gray-200); }
-  .step-tab:last-child { border-bottom: none; }
+  .setup-primary { flex-direction: column; align-items: flex-start; gap: 16px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
   .byb-row { flex-direction: column; }
@@ -442,28 +424,28 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 
 <!-- ① HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/Garage_workshop_with_wall-mounted_mini_split.webp?v=1772258547" alt="Wall-mounted mini split installed in a garage workshop" width="1400" height="933" loading="eager">
+  <img class="hero-bg" src="garage-hero.png" alt="Wall-mounted mini split installed in a garage workshop" width="1400" height="933" loading="eager">
   <div class="hero-overlay"></div>
   <div class="w">
     <div class="hero-inner">
       <h1>Mini Split for <em>Garage</em></h1>
-      <p class="hero-text">Most garages start with a single-zone heat pump. Move to 2-zone only if the project includes one more room.</p>
+      <p class="hero-text">Too hot to work in summer. Too cold to start projects in winter. A ductless mini split fixes both — no ductwork, no window units, just quiet year-round comfort.</p>
       <div class="hero-actions">
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-primary btn-lg">Shop 12K - Most Common Pick</a>
-        <a href="#sizing" class="hero-link">Not sure? See garage sizing</a>
+        <a href="#sizing" class="btn btn-navy btn-lg">Find Your Garage System</a>
+        <a href="#sizing" class="btn btn-outline-white btn-lg">See Sizing Guide</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-num">9K–36K</div>
-          <div class="hero-stat-label">BTU range available</div>
+          <div class="hero-stat-num">From $700</div>
+          <div class="hero-stat-label">Complete system</div>
         </div>
         <div>
-          <div class="hero-stat-num">12K+</div>
-          <div class="hero-stat-label">Most 2-car garages start here</div>
+          <div class="hero-stat-num">No Ducts</div>
+          <div class="hero-stat-label">No ductwork needed</div>
         </div>
         <div>
-          <div class="hero-stat-num">No ducts</div>
-          <div class="hero-stat-label">Simple installation</div>
+          <div class="hero-stat-num">115V / 230V</div>
+          <div class="hero-stat-label">Standard garage outlet</div>
         </div>
       </div>
     </div>
@@ -552,50 +534,80 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ③ AFTER SIZE -->
-<section class="shop-section sec-sm">
+<!-- ③ CHOOSE YOUR SETUP -->
+<section class="setup-section sec-sm">
   <div class="w">
-    <div class="shop-header">
-      <div>
-        <span class="eyebrow">After Size</span>
-        <h2>Choose the Right Garage Setup</h2>
-        <p class="lead" style="margin-top:10px;">After sizing by square footage, most garages stay with single-zone and wall-mounted. Move to 2-zone only when the garage shares the project with one more room.</p>
-      </div>
+    <div class="setup-header">
+      <span class="eyebrow">After Size</span>
+      <h2>Choose the Right Garage Setup</h2>
+      <p class="lead" style="margin-top:10px;">After sizing by square footage, most garages stay with single-zone and wall-mounted. Move to 2-zone only when the garage shares the project with one more room.</p>
     </div>
 
-    <a href="https://dellahome.com/collections/mini-split-single-zone" class="shop-primary">
-      <div class="shop-primary-left">
-        <div class="shop-primary-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M12 11v10M8 19h8"/></svg>
+    <a href="https://dellahome.com/collections/mini-split-single-zone" class="setup-primary">
+      <div class="setup-primary-left">
+        <div class="setup-primary-icon">
+          <!-- Lucide: air-vent (ISC license) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <path d="M6 8h12"/>
+            <path d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12"/>
+            <path d="M6.6 15.572A2 2 0 1 0 10 17v-5"/>
+          </svg>
         </div>
         <div>
-          <div class="shop-badge">Best Starting Point</div>
-          <div class="shop-primary-name">Single-Zone Heat Pump Systems</div>
-          <div class="shop-primary-desc">The default choice for most garages once you know the BTU range you need.</div>
+          <div class="setup-badge">Best Starting Point</div>
+          <div class="setup-primary-name">Single-Zone Heat Pump Systems</div>
+          <div class="setup-primary-desc">The default choice for most garages once you know the BTU range you need.</div>
         </div>
       </div>
       <span class="btn btn-primary">Browse Single-Zone Heat Pumps</span>
     </a>
 
-    <div class="shop-row" style="grid-template-columns: repeat(3, 1fr);">
-      <a href="https://dellahome.com/collections/2-zone-mini-split" class="shop-card">
-        <div class="shop-card-name">2-Zone Mini Split Heat Pumps</div>
-        <div class="shop-card-desc">Use 2-zone when the garage shares the project with one more area, like a workshop, gym, bonus room, or adjacent room.</div>
-        <div class="shop-card-cta">Browse 2-Zone Systems</div>
+    <div class="setup-row">
+      <a href="https://dellahome.com/collections/2-zone-mini-split" class="setup-card">
+        <div class="setup-card-icon">
+          <!-- Lucide: layout-grid (ISC license) — represents 2 zones -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="7" x="3" y="3" rx="1"/>
+            <rect width="7" height="7" x="14" y="3" rx="1"/>
+            <rect width="7" height="7" x="14" y="14" rx="1"/>
+            <rect width="7" height="7" x="3" y="14" rx="1"/>
+          </svg>
+        </div>
+        <div class="setup-card-name">2-Zone Mini Split Heat Pumps</div>
+        <div class="setup-card-desc">Use 2-zone when the garage shares the project with one more area, like a workshop, gym, bonus room, or adjacent room.</div>
+        <div class="setup-card-cta">Browse 2-Zone Systems →</div>
       </a>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="shop-card">
-        <div class="shop-card-name">Wall-Mounted Mini Splits</div>
-        <div class="shop-card-desc">The default indoor unit for garages and the easiest fit for most walls.</div>
-        <div class="shop-card-cta">Browse Wall-Mounted</div>
+      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="setup-card">
+        <div class="setup-card-icon">
+          <!-- Lucide: monitor (ISC license) — wall-mounted device -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="3" rx="2"/>
+            <line x1="8" x2="16" y1="21" y2="21"/>
+            <line x1="12" x2="12" y1="17" y2="21"/>
+          </svg>
+        </div>
+        <div class="setup-card-name">Wall-Mounted Mini Splits</div>
+        <div class="setup-card-desc">The default indoor unit for garages and the easiest fit for most walls.</div>
+        <div class="setup-card-cta">Browse Wall-Mounted →</div>
       </a>
-      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="shop-card">
-        <div class="shop-card-name">Ceiling Cassette Mini Splits</div>
-        <div class="shop-card-desc">A backup option when garage wall space needs to stay open for cabinets, racks, tools, or bikes.</div>
-        <div class="shop-card-cta">Browse Ceiling Cassette</div>
+      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="setup-card">
+        <div class="setup-card-icon">
+          <!-- Lucide: maximize (ISC license) — 4-way airflow -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+            <path d="M21 8V5a2 2 0 0 0-2-2h-3"/>
+            <path d="M3 16v3a2 2 0 0 0 2 2h3"/>
+            <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+          </svg>
+        </div>
+        <div class="setup-card-name">Ceiling Cassette Mini Splits</div>
+        <div class="setup-card-desc">A backup option when garage wall space needs to stay open for cabinets, racks, tools, or bikes.</div>
+        <div class="setup-card-cta">Browse Ceiling Cassette →</div>
       </a>
     </div>
 
-    <div class="shop-note" style="margin-top:16px;">Need lower-wall placement? Floor-mounted and floor-ceiling styles can work, but they are usually secondary to wall-mounted and ceiling cassette in garages.</div>
+    <div class="setup-note" style="margin-top:16px;">Need lower-wall placement? Floor-mounted and floor-ceiling styles can work, but they are usually secondary to wall-mounted and ceiling cassette in garages.</div>
   </div>
 </section>
 
@@ -737,31 +749,21 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ⑦ PLACEMENT & MAINTENANCE -->
+<!-- ⑦ PLACEMENT & INSTALLATION -->
 <section class="sec">
   <div class="w">
     <div class="section-header">
-      <span class="eyebrow">Installation & Maintenance</span>
-      <h2>Placement, Maintenance, and Installation</h2>
+      <span class="eyebrow">Installation</span>
+      <h2>Placement and Installation</h2>
     </div>
 
-    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px;">Where to Mount</h3>
-    <div class="placement-grid">
+    <div class="placement-grid" style="margin-bottom:24px;">
       <div class="placement-item">Mount high on the longest wall for widest coverage.</div>
       <div class="placement-item">Aim toward the work area but not directly at people.</div>
       <div class="placement-item">Keep the unit away from dust-heavy zones.</div>
       <div class="placement-item">Choose a spot that allows a gravity drain line.</div>
     </div>
 
-    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px; margin-top:36px;">Owner Tips</h3>
-    <div class="tips-list" style="margin-bottom:36px;">
-      <div class="tip-item"><div class="tip-num">1</div><span>Pre-condition 15–20 min before starting work.</span></div>
-      <div class="tip-item"><div class="tip-num">2</div><span>Clean filters every 2–3 weeks in dusty shops.</span></div>
-      <div class="tip-item"><div class="tip-num">3</div><span>Insulate the garage door first. It's the biggest heat loss.</span></div>
-      <div class="tip-item"><div class="tip-num">4</div><span>Keep the outdoor unit clear of debris and snow.</span></div>
-    </div>
-
-    <h3 style="font-size:15px; font-weight:600; color:var(--blue); margin-bottom:14px;">Before Installation</h3>
     <div class="know-grid">
       <div class="know-card"><h3>Gravity Drain vs Condensate Pump</h3><p>Use gravity drainage when possible. Only add a pump if you can't route a downhill line.</p></div>
       <div class="know-card"><h3>Dust and Filter Care</h3><p>Add a mesh pre-filter for woodworking shops. Clean it regularly to maintain airflow.</p></div>
