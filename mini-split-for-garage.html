@@ -238,20 +238,16 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   box-shadow: 0 4px 20px rgba(46,91,255,0.12);
 }
 .sizing-popular-badge {
-  display: inline-block;
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
   font-family: var(--font); font-size: 11px; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--blue); background: var(--blue-light);
   padding: 5px 14px; border-radius: 999px;
-  margin-bottom: 8px;
+  white-space: nowrap; z-index: 1;
 }
 .sizing-card-title {
   font-family: var(--font-display); font-size: 18px; font-weight: 700;
   color: var(--navy); margin-bottom: 14px; line-height: 1.25;
-}
-.sizing-card-head {
-  min-height: 62px; display: flex; flex-direction: column;
-  align-items: center; justify-content: flex-end; width: 100%;
 }
 .sizing-card-img {
   width: 100%; aspect-ratio: 16/11; border-radius: 12px;
@@ -288,14 +284,13 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 }
 .sizing-card.is-popular .sizing-card-cta {
   background: #5884E7; color: #fff;
-  font-size: 15px; padding: 14px 24px;
   border: 1px solid #5884E7;
 }
 .sizing-card.is-popular:hover .sizing-card-cta {
   background: #fff; color: var(--blue); border-color: var(--blue);
 }
 .sizing-note {
-  margin-top: 20px; text-align: center;
+  margin-top: 20px; text-align: left;
   font-size: 15px; color: var(--text-muted); line-height: 1.6;
 }
 
@@ -574,9 +569,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     </div>
     <div class="sizing-grid">
       <a href="https://dellahome.com/collections/9000-btu-mini-split" class="sizing-card">
-        <div class="sizing-card-head">
-          <div class="sizing-card-title">1-Car Garage</div>
-        </div>
+        <div class="sizing-card-title">1-Car Garage</div>
         <div class="sizing-card-img">
           <img src="1-Car Garage.png" alt="Single-car garage with sedan parked inside" loading="lazy">
         </div>
@@ -586,10 +579,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <span class="sizing-card-cta">View 9K Options</span>
       </a>
       <a href="https://dellahome.com/collections/12000-btu-mini-split" class="sizing-card is-popular">
-        <div class="sizing-card-head">
-          <span class="sizing-popular-badge">Most Popular</span>
-          <div class="sizing-card-title">2-Car Garage</div>
-        </div>
+        <span class="sizing-popular-badge">Most Popular</span>
+        <div class="sizing-card-title">2-Car Garage</div>
         <div class="sizing-card-img">
           <img src="2-Car Garage.png" alt="Two-car garage with vehicles parked inside" loading="lazy">
         </div>
@@ -599,9 +590,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <span class="sizing-card-cta">View 12K Options</span>
       </a>
       <a href="https://dellahome.com/collections/18000-btu-mini-split" class="sizing-card">
-        <div class="sizing-card-head">
-          <div class="sizing-card-title">3-Car or Workshop</div>
-        </div>
+        <div class="sizing-card-title">3-Car or Workshop</div>
         <div class="sizing-card-img">
           <img src="Workshop.png" alt="Large workshop garage with tools and car lift" loading="lazy">
         </div>
@@ -611,9 +600,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <span class="sizing-card-cta">View 18K Options</span>
       </a>
       <a href="https://dellahome.com/collections/24000-btu-mini-split" class="sizing-card">
-        <div class="sizing-card-head">
-          <div class="sizing-card-title">Large Shop or Pole Barn</div>
-        </div>
+        <div class="sizing-card-title">Large Shop or Pole Barn</div>
         <div class="sizing-card-img">
           <img src="Pole Barn.png" alt="Open pole barn interior with high ceilings and equipment" loading="lazy">
         </div>
