@@ -175,29 +175,26 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .setup-section { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
 .setup-header { margin-bottom: 36px; }
 
-.setup-primary {
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 28px 32px; background: var(--white);
-  border: 2px solid var(--navy); border-radius: var(--radius-lg);
-  text-decoration: none; color: inherit;
-  transition: all 0.18s; margin-bottom: 16px;
+.setup-step { margin-bottom: 36px; }
+.setup-step:last-child { margin-bottom: 0; }
+.setup-step-label {
+  font-family: var(--font); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 12px;
 }
-.setup-primary:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-.setup-primary-left { display: flex; align-items: center; gap: 20px; }
-.setup-badge { display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; background: var(--navy); color: #fff; border-radius: 4px; margin-bottom: 6px; }
-.setup-primary-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
-.setup-primary-desc { font-size: 15px; color: var(--text-muted); }
+.setup-step-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
-.setup-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
 .setup-card {
-  display: flex; flex-direction: column; align-items: flex-start; padding: 22px 24px;
+  display: flex; flex-direction: column; align-items: flex-start; padding: 24px 28px;
   background: var(--white); border: 1.5px solid var(--gray-200);
   border-radius: var(--radius); text-decoration: none; color: inherit;
   transition: all 0.18s;
 }
 .setup-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-1px); }
-.setup-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.setup-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+.setup-card.is-recommended { border: 2px solid var(--navy); }
+.setup-badge { display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; background: var(--navy); color: #fff; border-radius: 4px; margin-bottom: 8px; }
+.setup-card-name { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.setup-card-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
 .setup-card-cta {
   font-family: var(--font-display); font-size: 15px; font-weight: 600;
   color: var(--blue); display: inline-flex; align-items: center;
@@ -486,10 +483,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .sec, .sec-sm { padding: 48px 0; }
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .setup-row, .products-grid,
+  .setup-step-row, .products-grid,
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
   .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .setup-primary { flex-direction: column; align-items: flex-start; gap: 16px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
   .byb-row { flex-direction: column; }
@@ -610,36 +606,41 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="setup-header">
       <span class="eyebrow">After Size</span>
       <h2>Choose the Right Garage Setup</h2>
-      <p class="lead" style="margin-top:10px;">After sizing by square footage, most garages stay with single-zone and wall-mounted. Move to 2-zone only when the garage shares the project with one more room.</p>
+      <p class="lead" style="margin-top:10px;">Two decisions, in order: how many zones, then which indoor unit style.</p>
     </div>
 
-    <a href="https://dellahome.com/collections/mini-split-single-zone" class="setup-primary">
-      <div class="setup-primary-left">
-        <div>
-          <div class="setup-badge">Best Starting Point</div>
-          <div class="setup-primary-name">Single-Zone Heat Pump Systems</div>
-          <div class="setup-primary-desc">The default choice for most garages once you know the BTU range you need.</div>
-        </div>
+    <div class="setup-step">
+      <div class="setup-step-label">Step 1 — How Many Zones?</div>
+      <div class="setup-step-row">
+        <a href="https://dellahome.com/collections/mini-split-single-zone" class="setup-card is-recommended">
+          <div class="setup-badge">Best for Most Garages</div>
+          <div class="setup-card-name">Single-Zone Heat Pump</div>
+          <div class="setup-card-desc">One outdoor unit, one indoor unit. The default choice for a single garage space — simplest install, lowest cost.</div>
+          <div class="setup-card-cta">Browse Single-Zone →</div>
+        </a>
+        <a href="https://dellahome.com/collections/2-zone-mini-split" class="setup-card">
+          <div class="setup-card-name">2-Zone Heat Pump</div>
+          <div class="setup-card-desc">One outdoor unit, two indoor units. Choose this when the garage shares the project with a workshop, gym, or bonus room.</div>
+          <div class="setup-card-cta">Browse 2-Zone →</div>
+        </a>
       </div>
-      <span class="btn btn-primary">Browse Single-Zone Heat Pumps</span>
-    </a>
+    </div>
 
-    <div class="setup-row">
-      <a href="https://dellahome.com/collections/2-zone-mini-split" class="setup-card">
-        <div class="setup-card-name">2-Zone Mini Split Heat Pumps</div>
-        <div class="setup-card-desc">Use 2-zone when the garage shares the project with one more area, like a workshop, gym, bonus room, or adjacent room.</div>
-        <div class="setup-card-cta">Browse 2-Zone Systems →</div>
-      </a>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="setup-card">
-        <div class="setup-card-name">Wall-Mounted Mini Splits</div>
-        <div class="setup-card-desc">The default indoor unit for garages and the easiest fit for most walls.</div>
-        <div class="setup-card-cta">Browse Wall-Mounted →</div>
-      </a>
-      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="setup-card">
-        <div class="setup-card-name">Ceiling Cassette Mini Splits</div>
-        <div class="setup-card-desc">A backup option when garage wall space needs to stay open for cabinets, racks, tools, or bikes.</div>
-        <div class="setup-card-cta">Browse Ceiling Cassette →</div>
-      </a>
+    <div class="setup-step">
+      <div class="setup-step-label">Step 2 — Which Indoor Unit Style?</div>
+      <div class="setup-step-row">
+        <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="setup-card is-recommended">
+          <div class="setup-badge">Default for Garages</div>
+          <div class="setup-card-name">Wall-Mounted</div>
+          <div class="setup-card-desc">Mounts high on the wall. The easiest fit for most garages with open wall space above the door or workbench.</div>
+          <div class="setup-card-cta">Browse Wall-Mounted →</div>
+        </a>
+        <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="setup-card">
+          <div class="setup-card-name">Ceiling Cassette</div>
+          <div class="setup-card-desc">Recessed into the ceiling with 4-way airflow. Best when walls are taken by cabinets, tool boards, or bike racks.</div>
+          <div class="setup-card-cta">Browse Ceiling Cassette →</div>
+        </a>
+      </div>
     </div>
 
     <div class="setup-note" style="margin-top:16px;">Need lower-wall placement? Floor-mounted and floor-ceiling styles can work, but they are usually secondary to wall-mounted and ceiling cassette in garages.</div>
