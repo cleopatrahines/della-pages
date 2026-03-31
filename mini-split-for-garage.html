@@ -291,14 +291,17 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   font-size: 16px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px;
 }
 .scenario-cta {
-  font-family: var(--font-display); font-size: 15px; font-weight: 600;
-  color: var(--navy); text-decoration: none;
-  display: inline-flex; align-items: center; justify-content: center; align-self: flex-start;
-  padding: 12px 22px; border-radius: 4px;
-  background: transparent; border: 1.5px solid var(--gray-200);
-  transition: all 0.2s;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 16px; border-radius: 4px;
+  background: #fff; color: var(--navy);
+  font-family: var(--font-display); font-size: 14px; font-weight: 700;
+  letter-spacing: .02em; text-decoration: none;
+  border: 1px solid var(--gray-200);
+  transition: all 0.2s; align-self: flex-start;
 }
-.scenario-cta:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.scenario:hover .scenario-cta {
+  border-color: var(--blue); color: var(--blue); background: var(--blue-light);
+}
 
 .info-callout {
   margin-top: 24px; padding: 18px 22px;
@@ -634,7 +637,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="scenario-text">
           <span class="scenario-tag">Most Common</span>
           <h3>Standard One-Space Garage</h3>
-          <p>One garage, one unit — the fastest way to heat and cool a standard garage without overcomplicating the install.</p>
+          <p>One garage, one unit. The fastest way to heat and cool a standard garage without overcomplicating the install.</p>
           <a href="https://dellahome.com/collections/12000-btu-mini-split" class="scenario-cta">Shop 12K Systems</a>
         </div>
       </div>
@@ -656,7 +659,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
         <div class="scenario-text">
           <span class="scenario-tag">Heavy Use</span>
           <h3>The Workshop</h3>
-          <p>Welding, woodworking, power tools — your garage runs hot. This tier handles the extra heat.</p>
+          <p>Welding, woodworking, power tools. Your garage runs hot. This tier handles the extra heat.</p>
           <a href="https://dellahome.com/collections/18000-btu-mini-split" class="scenario-cta">Shop 18K Systems</a>
         </div>
       </div>
