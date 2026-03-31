@@ -38,6 +38,8 @@
   --radius-lg: 18px;
   --shadow-sm: 0 1px 3px rgba(14,25,83,0.06), 0 1px 2px rgba(14,25,83,0.04);
   --shadow: 0 4px 16px rgba(14,25,83,0.08), 0 1px 4px rgba(14,25,83,0.04);
+  --blue-surface: #F4F7FF;
+  --font: 'Roboto', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,8 +54,55 @@ body {
 }
 
 .w { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 .sec { padding: 72px 0; }
 .sec-sm { padding: 52px 0; }
+.section { padding: 80px 0; }
+
+/* ─── SHED-STANDARD LABELS & TITLES ─── */
+.section-label {
+  font-family: var(--font); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+  margin-bottom: 12px; display: inline-flex; align-items: center;
+  padding: 8px 16px; border-radius: 999px; background: var(--blue-light); white-space: nowrap;
+}
+.section-title {
+  font-family: var(--font); font-size: clamp(23px, 3vw, 33px); font-weight: 600;
+  line-height: 1.2; letter-spacing: -0.01em; color: var(--navy);
+}
+.section-desc { font-size: 18px; color: var(--text-muted); line-height: 1.65; margin-top: 10px; }
+
+/* ─── SERVICES ─── */
+.services-section { background: var(--white); padding-top: 60px; padding-bottom: 44px; }
+.services-heading { text-align: left; margin-bottom: 18px; }
+.services-heading h2 { font-family: var(--font); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; color: var(--navy); }
+.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.service-card {
+  background: var(--blue-surface); border: 1px solid var(--gray-200);
+  border-radius: 22px; padding: 28px 24px 24px; text-align: center; min-height: 100%;
+}
+.service-icon-wrap {
+  width: 58px; height: 58px; border-radius: 50%; background: var(--blue);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
+}
+.service-icon-wrap img { filter: brightness(0) invert(1); }
+.service-title { margin: 0 0 10px; font-size: 17px; font-weight: 700; line-height: 1.25; color: var(--blue); }
+.service-desc { margin: 0; font-size: 16px; line-height: 1.5; color: var(--text-body); }
+
+/* ─── BOTTOM CTA ─── */
+.bottom-cta { background: transparent; padding: 0 0 28px; }
+.bottom-cta-card {
+  background: var(--blue-surface); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 32px 32px; text-align: center;
+}
+.bottom-cta h2 {
+  font-family: var(--font); font-size: clamp(21px, 2.6vw, 29px); font-weight: 500;
+  color: var(--navy); margin-bottom: 10px; line-height: 1.25;
+}
+.bottom-cta p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.bottom-cta-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
+.bottom-cta .btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); box-shadow: none; }
 
 /* ─── TYPOGRAPHY ─── */
 h1 { font-family: var(--font-display); font-size: clamp(33px, 5vw, 53px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
@@ -312,63 +361,75 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 /* ─── FAQ ─── */
 .faq-section {
   background: var(--white);
-  border-top: 1px solid var(--gray-100);
+  padding-top: 46px;
+  padding-bottom: 28px;
 }
-.faq-section h2 { color: var(--navy); }
-.faq-section .lead { color: var(--text-muted); }
 .faq-list {
-  margin-top: 36px;
-  background: var(--white);
-  border: 1px solid var(--gray-100);
-  border-radius: 16px;
-  overflow: hidden;
+  margin-top: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
 }
-.faq-item { border-bottom: 1px solid var(--gray-100); }
+.faq-item {
+  border-bottom: 1px solid var(--gray-200);
+  transition: border-color .2s ease;
+}
+.faq-item:first-child { border-top: 1px solid var(--gray-200); }
+.faq-item.open { background: transparent; }
 .faq-item:last-child { border-bottom: none; }
 .faq-q {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px; cursor: pointer; gap: 16px;
-  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  cursor: pointer;
+  gap: 16px;
+  transition: color .2s ease;
 }
-.faq-q:hover { background: #FAFBFF; }
+.faq-q:hover { background: transparent; }
 .faq-q h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font);
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
   color: #282828;
-  margin: 0;
   flex: 1;
+  transition: color .2s ease;
 }
+.faq-q:hover h3,
+.faq-item.open .faq-q h3 { color: var(--blue); }
 .faq-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px; height: 18px;
   flex-shrink: 0;
   position: relative;
 }
 .faq-icon::before {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
   border-right: 2px solid #282828;
   border-bottom: 2px solid #282828;
-  transform: rotate(45deg);
-  transition: transform 0.2s ease;
+  transform: translate(-50%, -62%) rotate(45deg);
+  transform-origin: center;
+  transition: transform .25s ease, border-color .2s ease;
 }
+.faq-q:hover .faq-icon::before,
+.faq-item.open .faq-icon::before { border-color: var(--blue); }
+.faq-item.open .faq-icon::before { transform: translate(-50%, -38%) rotate(-135deg); }
 .faq-a {
-  padding: 0 24px 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14.4px;
-  line-height: 1.72;
-  color: #0E1953;
+  padding: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
   display: none;
 }
 .faq-a a { color: var(--blue); text-decoration: none; }
 .faq-item.open .faq-a { display: block; }
-.faq-item.open .faq-icon::before { transform: rotate(-135deg); }
 
 /* ─── SECTION DIVIDERS ─── */
 .sec-label { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
@@ -387,6 +448,23 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .use-row-img { width: 100%; }
   .byb-row { flex-direction: column; }
   .byb-img { width: 100%; }
+  .section { padding: 48px 0; }
+  .container { padding: 0 20px; }
+  .services-section { padding-top: 36px; padding-bottom: 26px; }
+  .services-heading { margin-bottom: 18px; }
+  .services-heading h2 { font-size: 23px; }
+  .services-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-card { padding: 22px 18px 18px; border-radius: 18px; }
+  .service-icon-wrap { width: 52px; height: 52px; margin-bottom: 14px; }
+  .service-title { font-size: 16px; }
+  .service-desc { font-size: 15px; }
+  .faq-section { padding-top: 30px; padding-bottom: 24px; }
+  .bottom-cta { padding: 0 0 24px; }
+  .bottom-cta-card { padding: 20px 16px; }
+  .bottom-cta h2 { font-size: 24px; line-height: 1.2; margin-bottom: 8px; max-width: 280px; margin-left: auto; margin-right: auto; }
+  .bottom-cta p { font-size: 14px; line-height: 1.55; margin-bottom: 18px; max-width: 280px; }
+  .bottom-cta-buttons { flex-direction: column; align-items: center; gap: 8px; }
+  .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -715,63 +793,112 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   </div>
 </section>
 
-<!-- ⑧ FAQ -->
-<section class="faq-section sec">
-  <div class="w">
-    <span class="eyebrow">Common Questions</span>
-    <h2>Garage Mini Split FAQ</h2>
-    <p class="lead">Quick answers before you buy.</p>
+<!-- ⑧ SERVICES -->
+<section class="section services-section">
+  <div class="container">
+    <div class="services-heading">
+      <span class="section-label">Service Confidence</span>
+      <h2>Premium Della Services</h2>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon-wrap">
+          <img src="https://dellahome.com/cdn/shop/files/80x80px-40.png?v=1746071491&width=64" alt="" width="28" height="28" aria-hidden="true">
+        </div>
+        <h3 class="service-title">Free &amp; Fast Shipping</h3>
+        <p class="service-desc">Get your Della products delivered quickly with free standard shipping.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon-wrap">
+          <img src="https://dellahome.com/cdn/shop/files/20250424-114745.png?v=1745466491&width=64" alt="" width="28" height="28" aria-hidden="true">
+        </div>
+        <h3 class="service-title">30-Day Money-Back</h3>
+        <p class="service-desc">Not satisfied? Return within 30 days for a full refund.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon-wrap">
+          <img src="https://dellahome.com/cdn/shop/files/20250911-174827-1.png?v=1757584142&width=64" alt="" width="28" height="28" aria-hidden="true">
+        </div>
+        <h3 class="service-title">24/7 Live Support</h3>
+        <p class="service-desc">Get instant answers to your questions anytime, day or night.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon-wrap">
+          <img src="https://dellahome.com/cdn/shop/files/20250424-114735.png?v=1745466499&width=64" alt="" width="28" height="28" aria-hidden="true">
+        </div>
+        <h3 class="service-title">Lifetime Warranty</h3>
+        <p class="service-desc">Our Mini Split systems come with limited lifetime compressor protection.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Quick Answers</span>
+      <h2 class="section-title">Mini Split FAQ for Garage Buyers</h2>
+      <p class="section-desc">Quick answers to the garage sizing, insulation, and install questions that slow buyers down.</p>
+    </div>
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <h3>Is a ductless mini split good for a garage?</h3>
-          <div class="faq-icon" aria-hidden="true"></div>
+          <span class="faq-icon" aria-hidden="true"></span>
         </div>
-        <div class="faq-a">Yes. No ductwork needed and it only runs when you use the space.</div>
+        <div class="faq-a">Yes. No ductwork needed, it mounts on the wall, and it only runs when you use the space. A mini split is one of the most practical ways to heat and cool a garage without tearing into existing structure.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <h3>What size mini split do I need for a 2-car garage?</h3>
-          <div class="faq-icon" aria-hidden="true"></div>
+          <span class="faq-icon" aria-hidden="true"></span>
         </div>
-        <div class="faq-a">12,000–18,000 BTU. Size up for poor insulation or extreme climate.</div>
+        <div class="faq-a">12,000–18,000 BTU covers most 2-car garages. Size up if you have poor insulation, high ceilings, or live in an extreme climate zone. A well-insulated 400 sq ft garage can often start at 12K.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <h3>Can a mini split heat an uninsulated garage?</h3>
-          <div class="faq-icon" aria-hidden="true"></div>
+          <span class="faq-icon" aria-hidden="true"></span>
         </div>
-        <div class="faq-a">It can, but costs more. Insulate first for better results.</div>
+        <div class="faq-a">It can, but the garage will gain and lose heat much faster, which makes comfort harder to hold and can push the right BTU higher. Insulating walls and the garage door first gives you better results at a lower capacity tier.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <h3>How much does a garage mini split cost?</h3>
-          <div class="faq-icon" aria-hidden="true"></div>
+          <span class="faq-icon" aria-hidden="true"></span>
         </div>
-        <div class="faq-a">$700–$1,100 depending on BTU, efficiency, and cold climate features.</div>
+        <div class="faq-a">$700–$1,100 for the unit depending on BTU, efficiency rating, and cold climate features. Installation costs vary by region but a dedicated circuit and basic line-set run keep most garage projects straightforward.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <h3>What is the best mini split for a workshop?</h3>
-          <div class="faq-icon" aria-hidden="true"></div>
+          <h3>What is the best mini split for a workshop garage?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
         </div>
-        <div class="faq-a">18,000 BTU handles most workshops. Choose high-efficiency if you run it daily.</div>
+        <div class="faq-a">18,000 BTU handles most workshop garages. Choose a high-efficiency unit if you run it daily, and consider adding a mesh pre-filter if the space generates sawdust or metal particles.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background: linear-gradient(180deg, #F7FAFF 0%, #EEF4FF 100%); border-top: 1px solid var(--gray-200); padding: 56px 0; text-align: center;">
-  <div class="w">
-    <h2 style="color: var(--navy); margin-bottom: 12px;">Ready to Pick a System?</h2>
-    <p style="color: var(--text-muted); font-size: 17px; margin-bottom: 28px;">Find the right mini split for your garage in minutes.</p>
-    <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-primary btn-lg">Shop Single-Zone Heat Pumps</a>
+<!-- ⑩ BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="container">
+    <div class="bottom-cta-card">
+      <h2>Stop Guessing Your Garage Size</h2>
+      <p>Garages run hotter in summer, colder in winter, and punish the wrong BTU faster than most rooms.</p>
+      <div class="bottom-cta-buttons">
+        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K Garage Picks</a>
+        <a href="#sizing" class="btn btn-outline btn-lg">Check Sizing Guide</a>
+        <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-lg">See If You Need 18K</a>
+      </div>
+    </div>
   </div>
 </section>
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a ductless mini split good for a garage?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ductwork needed and it only runs when you use the space."}},{"@type":"Question","name":"What size mini split do I need for a 2-car garage?","acceptedAnswer":{"@type":"Answer","text":"12,000–18,000 BTU. Size up for poor insulation or extreme climate."}},{"@type":"Question","name":"Can a mini split heat an uninsulated garage?","acceptedAnswer":{"@type":"Answer","text":"It can, but costs more. Insulate first for better results."}},{"@type":"Question","name":"How much does a garage mini split cost?","acceptedAnswer":{"@type":"Answer","text":"$700–$1,100 depending on BTU, efficiency, and cold climate features."}},{"@type":"Question","name":"What is the best mini split for a workshop?","acceptedAnswer":{"@type":"Answer","text":"18,000 BTU handles most workshops. Choose high-efficiency if you run it daily."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a ductless mini split good for a garage?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ductwork needed, it mounts on the wall, and it only runs when you use the space. A mini split is one of the most practical ways to heat and cool a garage without tearing into existing structure."}},{"@type":"Question","name":"What size mini split do I need for a 2-car garage?","acceptedAnswer":{"@type":"Answer","text":"12,000–18,000 BTU covers most 2-car garages. Size up if you have poor insulation, high ceilings, or live in an extreme climate zone. A well-insulated 400 sq ft garage can often start at 12K."}},{"@type":"Question","name":"Can a mini split heat an uninsulated garage?","acceptedAnswer":{"@type":"Answer","text":"It can, but the garage will gain and lose heat much faster, which makes comfort harder to hold and can push the right BTU higher. Insulating walls and the garage door first gives you better results at a lower capacity tier."}},{"@type":"Question","name":"How much does a garage mini split cost?","acceptedAnswer":{"@type":"Answer","text":"$700–$1,100 for the unit depending on BTU, efficiency rating, and cold climate features. Installation costs vary by region but a dedicated circuit and basic line-set run keep most garage projects straightforward."}},{"@type":"Question","name":"What is the best mini split for a workshop garage?","acceptedAnswer":{"@type":"Answer","text":"18,000 BTU handles most workshop garages. Choose a high-efficiency unit if you run it daily, and consider adding a mesh pre-filter if the space generates sawdust or metal particles."}}]}
 </script>
 
 </body>
