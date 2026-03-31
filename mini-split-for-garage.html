@@ -250,61 +250,55 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   font-size: 15px; color: var(--text-muted); line-height: 1.6;
 }
 
-/* ─── GARAGE SCENARIOS (Card Grid) ─── */
-.scenarios {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-  max-width: 1120px; margin: 0 auto; padding: 0 28px;
-}
+/* ─── GARAGE SCENARIOS (Stitch Alternating) ─── */
+.scenarios { display: flex; flex-direction: column; gap: 48px; }
 .scenario {
-  background: rgba(255,255,255,0.06); border-radius: 14px;
-  color: #fff; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; gap: 40px;
 }
-.scenario:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+.scenario:nth-child(even) { flex-direction: row-reverse; }
 .scenario-img {
-  width: 100%; height: 220px; position: relative; overflow: hidden;
+  width: 55%; flex-shrink: 0; border-radius: 12px; overflow: hidden;
 }
 .scenario-img img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: cover; display: block;
   transition: transform 0.4s ease;
 }
-.scenario:hover .scenario-img img { transform: scale(1.05); }
+.scenario:hover .scenario-img img { transform: scale(1.03); }
 .scenario-text {
-  display: flex; flex-direction: column; padding: 28px 28px 32px;
-  text-align: left;
+  flex: 1; display: flex; flex-direction: column;
 }
 .scenario-tag {
   display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 4px 12px; border-radius: 999px;
-  background: rgba(88,132,231,0.18); color: rgba(255,255,255,0.7);
+  padding: 5px 14px; border-radius: 4px;
+  background: var(--navy); color: #fff;
   margin-bottom: 14px; align-self: flex-start;
 }
 .scenario-text h3 {
-  font-family: var(--font-display); font-size: 20px; font-weight: 700;
-  color: #fff; margin-bottom: 8px; line-height: 1.3; text-align: left;
+  font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700;
+  color: var(--text-body); margin-bottom: 10px; line-height: 1.25;
 }
 .scenario-btu {
-  font-family: var(--font-display); font-size: 14px; font-weight: 700;
-  color: var(--blue); margin-bottom: 12px;
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  color: var(--blue); margin-bottom: 14px;
   display: inline-flex; align-items: center; gap: 6px;
 }
 .scenario-btu::before {
-  content: ''; display: inline-block; width: 7px; height: 7px;
+  content: ''; display: inline-block; width: 8px; height: 8px;
   background: var(--blue); border-radius: 50%;
 }
 .scenario-text p {
-  font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 20px;
+  font-size: 16px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px;
 }
 .scenario-cta {
-  font-family: var(--font-display); font-size: 14px; font-weight: 700;
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
   color: #fff; text-decoration: none;
   display: inline-flex; align-items: center; align-self: flex-start;
-  padding: 10px 20px; border-radius: 6px;
-  background: var(--blue); border: 1px solid var(--blue);
+  padding: 13px 28px; border-radius: 6px;
+  background: var(--navy); border: none;
   transition: all 0.2s;
 }
-.scenario-cta:hover { background: #fff; color: var(--navy); }
+.scenario-cta:hover { background: #1a2a6c; }
 
 .info-callout {
   margin-top: 24px; padding: 18px 22px;
@@ -488,8 +482,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .products-grid,
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
   .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .scenarios { grid-template-columns: 1fr; gap: 20px; }
-  .scenario-img { height: 200px; }
+  .scenarios { gap: 32px; }
+  .scenario, .scenario:nth-child(even) { flex-direction: column; gap: 0; }
+  .scenario-img { width: 100%; border-radius: 12px 12px 0 0; }
   .scenario-text { padding: 24px 20px 28px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
@@ -624,61 +619,61 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 </section>
 
 <!-- ③ GARAGE SCENARIOS -->
-<section class="sec" style="background:var(--navy);">
-  <div style="max-width:1120px; margin:0 auto; padding:0 28px;">
-    <div style="padding-bottom:32px;">
-      <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Scenario Match</span>
-      <h2 style="color:#fff; text-align:left;">Find Your Garage Type</h2>
-      <p class="lead" style="margin-top:10px; color:rgba(255,255,255,0.55); text-align:left;">Not sure which BTU fits? Match your garage use to the right capacity.</p>
+<section class="sec" style="background:var(--white);">
+  <div class="w">
+    <div style="padding-bottom:40px;">
+      <span class="eyebrow">Scenario Match</span>
+      <h2>Find Your Garage Type</h2>
+      <p class="lead" style="margin-top:10px;">Not sure which BTU fits? Match your garage use to the right capacity.</p>
     </div>
-  </div>
-  <div class="scenarios">
-    <div class="scenario">
-      <div class="scenario-img">
-        <img src="Standard%20One-Space%20Garage.png" alt="Standard one-space garage with car parked inside" loading="lazy">
+    <div class="scenarios">
+      <div class="scenario">
+        <div class="scenario-img">
+          <img src="Standard%20One-Space%20Garage.png" alt="Standard one-space garage with mini split installed" loading="lazy">
+        </div>
+        <div class="scenario-text">
+          <span class="scenario-tag">Most Common</span>
+          <h3>Standard Parking Garage</h3>
+          <div class="scenario-btu">12,000 BTU Recommended</div>
+          <p>A typical attached 2-car garage used for parking and light storage. Insulated walls and a standard 8 ft ceiling keep BTU needs modest.</p>
+          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="scenario-cta">Shop 12K Systems</a>
+        </div>
       </div>
-      <div class="scenario-text">
-        <span class="scenario-tag">Most Common</span>
-        <h3>Standard Parking Garage</h3>
-        <div class="scenario-btu">12,000 BTU Recommended</div>
-        <p>A typical attached 2-car garage used for parking and light storage. Insulated walls and a standard 8 ft ceiling keep BTU needs modest.</p>
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="scenario-cta">Shop 12K Systems</a>
+      <div class="scenario">
+        <div class="scenario-img">
+          <img src="Garage%20Gym.png" alt="Home gym setup inside a garage with mini split" loading="lazy">
+        </div>
+        <div class="scenario-text">
+          <span class="scenario-tag">High Activity</span>
+          <h3>Garage Gym or Home Office</h3>
+          <div class="scenario-btu">12,000–18,000 BTU Recommended</div>
+          <p>Body heat and equipment push the load higher. You need fast cooling in summer and steady warmth in winter to stay comfortable during workouts or long work sessions.</p>
+          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="scenario-cta">Shop 12K–18K Systems</a>
+        </div>
       </div>
-    </div>
-    <div class="scenario">
-      <div class="scenario-img">
-        <img src="Garage%20Gym.png" alt="Home gym setup inside a garage" loading="lazy">
+      <div class="scenario">
+        <div class="scenario-img">
+          <img src="The%20Workshop.png" alt="Workshop garage with tools and workbench" loading="lazy">
+        </div>
+        <div class="scenario-text">
+          <span class="scenario-tag">Heavy Use</span>
+          <h3>Workshop or Hobby Garage</h3>
+          <div class="scenario-btu">18,000 BTU Recommended</div>
+          <p>Woodworking, welding, or auto repair generate extra heat and dust. Size up one BTU tier and add a mesh pre-filter to protect the unit.</p>
+          <a href="https://dellahome.com/collections/18000-btu-mini-split" class="scenario-cta">Shop 18K Systems</a>
+        </div>
       </div>
-      <div class="scenario-text">
-        <span class="scenario-tag">High Activity</span>
-        <h3>Garage Gym or Home Office</h3>
-        <div class="scenario-btu">12,000–18,000 BTU Recommended</div>
-        <p>Body heat and equipment push the load higher. You need fast cooling in summer and steady warmth in winter to stay comfortable during workouts or long work sessions.</p>
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="scenario-cta">Shop 12K–18K Systems</a>
-      </div>
-    </div>
-    <div class="scenario">
-      <div class="scenario-img">
-        <img src="The%20Workshop.png" alt="Workshop garage with tools and workbench" loading="lazy">
-      </div>
-      <div class="scenario-text">
-        <span class="scenario-tag">Heavy Use</span>
-        <h3>Workshop or Hobby Garage</h3>
-        <div class="scenario-btu">18,000 BTU Recommended</div>
-        <p>Woodworking, welding, or auto repair generate extra heat and dust. Size up one BTU tier and add a mesh pre-filter to protect the unit.</p>
-        <a href="https://dellahome.com/collections/18000-btu-mini-split" class="scenario-cta">Shop 18K Systems</a>
-      </div>
-    </div>
-    <div class="scenario">
-      <div class="scenario-img">
-        <img src="Storage-Heavy%20Garage.png" alt="Storage-heavy garage with shelves and boxes" loading="lazy">
-      </div>
-      <div class="scenario-text">
-        <span class="scenario-tag">Large Space</span>
-        <h3>Pole Barn or Detached Shop</h3>
-        <div class="scenario-btu">24,000+ BTU Recommended</div>
-        <p>High ceilings and large volume mean more air to condition. Poor insulation is common in pole barns — start at 24K and consider Ultra Heat if you're in a cold climate.</p>
-        <a href="https://dellahome.com/collections/24000-btu-mini-split" class="scenario-cta">Shop 24K Systems</a>
+      <div class="scenario">
+        <div class="scenario-img">
+          <img src="Storage-Heavy%20Garage.png" alt="Storage-heavy garage with ceiling cassette mini split" loading="lazy">
+        </div>
+        <div class="scenario-text">
+          <span class="scenario-tag">Large Space</span>
+          <h3>Pole Barn or Detached Shop</h3>
+          <div class="scenario-btu">24,000+ BTU Recommended</div>
+          <p>High ceilings and large volume mean more air to condition. Poor insulation is common in pole barns — start at 24K and consider Ultra Heat if you're in a cold climate.</p>
+          <a href="https://dellahome.com/collections/24000-btu-mini-split" class="scenario-cta">Shop 24K Systems</a>
+        </div>
       </div>
     </div>
   </div>
