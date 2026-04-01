@@ -177,7 +177,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 /* ─── SIZING CARDS ─── */
 .sizing-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-  align-items: end;
+  align-items: stretch;
 }
 .sizing-card {
   background: var(--white); border: 1px solid var(--gray-200);
@@ -583,9 +583,9 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
   .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; border: none; }
   .scenarios { gap: 32px; }
-  .scenario, .scenario:nth-child(even) { flex-direction: column; gap: 0; }
+  .scenario, .scenario:nth-child(even) { flex-direction: column !important; gap: 0; }
   .scenario-img { width: 100%; border-radius: 12px 12px 0 0; max-height: none; }
-  .scenario-text { padding: 24px 20px 28px; }
+  .scenario-text { padding: 20px 16px 24px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
   .byb-row { flex-direction: column; }
