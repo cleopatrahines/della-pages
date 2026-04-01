@@ -303,6 +303,15 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   border-color: var(--blue); color: var(--blue); background: var(--blue-light);
 }
 
+/* ─── ARC IMAGE SECTIONS ─── */
+.arc-section .scenario-img {
+  border-radius: 16px 100px 100px 16px;
+}
+.arc-section .scenario[style*="row-reverse"] .scenario-img,
+.arc-section.arc-reverse .scenario-img {
+  border-radius: 100px 16px 16px 100px;
+}
+
 /* ─── CHECK LIST ─── */
 .check-list {
   list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;
@@ -426,7 +435,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 }
 .product-card:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
 .product-card .product-img-wrap {
-  padding: 20px; background: var(--gray-50); display: flex;
+  padding: 20px; background: transparent; display: flex;
   align-items: center; justify-content: center; min-height: 200px;
 }
 .product-card .product-img-wrap img { max-height: 180px; }
@@ -584,6 +593,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .scenarios { gap: 32px; }
   .scenario, .scenario:nth-child(even) { flex-direction: column; gap: 0; }
   .scenario-img { width: 100%; border-radius: 12px 12px 0 0; }
+  .arc-section .scenario-img,
+  .arc-section.arc-reverse .scenario-img { border-radius: 16px 16px 16px 16px; }
   .scenario-text { padding: 24px 20px 28px; }
   .use-row, .use-row:nth-child(even) { flex-direction: column; }
   .use-row-img { width: 100%; }
@@ -646,7 +657,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 </section>
 
 <!-- ② WHAT TO KNOW -->
-<section class="sec">
+<section class="sec arc-section">
   <div class="w">
     <div class="scenario">
       <div class="scenario-img">
@@ -862,7 +873,7 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 </section>
 
 <!-- ⑤ PLACEMENT & INSTALL -->
-<section class="sec" style="background:var(--gray-50);">
+<section class="sec arc-section arc-reverse" style="background:var(--gray-50);">
   <div class="w">
     <div class="scenario" style="flex-direction:row-reverse;">
       <div class="scenario-img">
