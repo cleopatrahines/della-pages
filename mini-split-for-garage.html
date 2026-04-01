@@ -344,20 +344,16 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
 .byb-item:last-child { margin-bottom: 0; }
 .byb-item::before { content: '⌾'; color: var(--blue); flex-shrink: 0; font-size: 17px; line-height: 1.4; }
 
-/* ─── PRODUCTS (Precision Picks layout: 1 feature + 3 stacked) ─── */
-.products-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); padding-top: 56px; }
+/* ─── PRODUCTS (Top feature + 3 bottom cards) ─── */
+.products-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); padding-top: 56px; padding-bottom: 56px; }
 .products-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .95fr);
-  gap: 24px;
-  margin-top: 38px;
-  align-items: stretch;
+  display: flex; flex-direction: column; gap: 24px; margin-top: 38px;
 }
 .product-feature {
   background: var(--white); border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg); overflow: hidden;
   display: flex; align-items: center; gap: 28px;
-  padding: 26px 28px 24px; min-height: 100%; height: 100%;
+  padding: 26px 28px 24px;
   transition: all .25s; text-decoration: none; color: inherit;
 }
 .product-feature:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
@@ -366,14 +362,14 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   overflow: visible; display: flex; align-items: center; justify-content: center;
 }
 .product-feature .product-img-wrap {
-  flex: 0 0 58%; width: auto; max-width: 500px;
+  flex: 0 0 48%; max-width: 480px;
   display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 .product-img-wrap img {
   width: auto; max-width: 100%; height: auto;
   display: block; transition: transform .3s;
 }
-.product-feature .product-img-wrap img { max-height: 430px; }
+.product-feature .product-img-wrap img { max-height: 360px; }
 .product-feature .product-badge { position: static; align-self: flex-start; }
 .product-feature:hover .product-img-wrap img,
 .product-card:hover .product-img-wrap img { transform: scale(1.04); }
@@ -396,19 +392,17 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   color: var(--navy); line-height: 1.35; margin-bottom: 0;
 }
 .product-feature .product-body {
-  flex: 1; max-width: 340px; padding: 0; gap: 12px;
-  align-self: center; justify-content: flex-start; padding-top: 18px;
+  flex: 1; max-width: 420px; padding: 0; gap: 12px;
+  align-self: center; justify-content: flex-start; padding-top: 12px;
 }
-.product-feature .product-name { font-size: 19px; }
+.product-feature .product-name { font-size: 21px; }
 .product-feature .product-copy { gap: 6px; }
 .product-feature .product-action { gap: 12px; }
 .product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 0; line-height: 1.35; }
 .product-rating strong { color: var(--navy); font-weight: 700; }
-.product-card .product-rating { font-size: 12px; }
-.product-card .product-rating strong { font-weight: 600; }
-.product-spec { font-size: 13px; color: var(--text-muted); line-height: 1.45; margin-bottom: 0; }
+.product-spec { font-size: 14px; color: var(--text-muted); line-height: 1.45; margin-bottom: 0; }
 .product-price {
-  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
   color: var(--navy); margin: 0;
 }
 .product-cta {
@@ -419,29 +413,35 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   text-decoration: none;
 }
 .product-feature .product-cta { min-width: 198px; min-height: 48px; }
-.product-card .product-cta { min-width: 198px; min-height: 48px; }
 .product-feature .product-cta:hover,
 .product-card .product-cta:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
-.product-stack { display: grid; gap: 18px; }
+.product-bottom-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
 .product-card {
   background: var(--white); border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg); overflow: hidden;
-  display: flex; align-items: center; gap: 20px;
-  padding: 20px 24px; min-height: 212px;
+  display: flex; flex-direction: column;
   transition: all .25s; text-decoration: none; color: inherit;
 }
-.product-card:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
+.product-card:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
 .product-card .product-img-wrap {
-  width: 212px; min-width: 212px; padding-top: 36px; align-self: center;
+  padding: 20px; background: var(--gray-50); display: flex;
+  align-items: center; justify-content: center; min-height: 200px;
 }
-.product-card .product-img-wrap img { max-height: 164px; }
+.product-card .product-img-wrap img { max-height: 180px; }
 .product-card .product-body {
-  flex: 1; padding: 0; gap: 12px; align-self: center; justify-content: space-between;
+  flex: 1; padding: 20px 24px 24px; gap: 14px;
 }
 .product-card .product-copy { gap: 6px; }
-.product-card .product-action { gap: 12px; }
+.product-card .product-action { gap: 10px; }
 .product-card .product-name { font-size: 15px; line-height: 1.3; }
-.product-card .product-price { font-size: 18px; }
+.product-card .product-rating { font-size: 13px; }
+.product-card .product-spec { font-size: 13px; }
+.product-card .product-price { font-size: 19px; }
+.product-card .product-cta {
+  min-height: 44px; width: 100%; justify-content: center;
+}
 
 /* ─── PLACEMENT ─── */
 .placement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
@@ -560,44 +560,25 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .sec, .sec-sm { padding: 48px 0; }
   .hero-inner { padding: 52px 0; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .products-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
-  .product-stack { gap: 14px; }
-  .product-feature,
-  .product-card {
+  .products-grid { gap: 14px; margin-top: 28px; }
+  .product-feature {
     flex-direction: column; align-items: stretch;
-    padding: 18px 16px 16px; gap: 14px; min-height: auto;
+    padding: 18px 16px 16px; gap: 14px;
   }
-  .product-feature .product-img-wrap,
-  .product-card .product-img-wrap {
+  .product-feature .product-img-wrap {
     flex: none; width: 100%; max-width: 100%;
-    padding: 0; padding-top: 0;
     display: flex; justify-content: center;
   }
-  .product-feature .product-img-wrap img,
-  .product-card .product-img-wrap img {
-    max-height: 200px; width: auto; max-width: 80%;
+  .product-feature .product-img-wrap img { max-height: 200px; width: auto; max-width: 80%; }
+  .product-feature .product-badge { position: static; align-self: flex-start; }
+  .product-feature .product-body {
+    max-width: 100%; padding: 0; gap: 10px; padding-top: 0;
   }
-  .product-feature .product-badge,
-  .product-card .product-badge { position: static; align-self: flex-start; }
-  .product-feature .product-body,
-  .product-card .product-body {
-    max-width: 100%; padding: 0; gap: 10px;
-    align-self: stretch; padding-top: 0;
-  }
-  .product-feature .product-copy,
-  .product-card .product-copy { gap: 4px; }
-  .product-feature .product-action,
-  .product-card .product-action { gap: 8px; }
-  .product-feature .product-name,
-  .product-card .product-name { font-size: 15px; }
-  .product-feature .product-rating,
-  .product-card .product-rating { font-size: 12px; }
-  .product-feature .product-spec,
-  .product-card .product-spec { font-size: 12px; }
-  .product-feature .product-price,
-  .product-card .product-price { font-size: 17px; }
-  .product-feature .product-cta,
-  .product-card .product-cta { min-width: auto; width: 100%; min-height: 44px; font-size: 14px; }
+  .product-feature .product-name { font-size: 17px; }
+  .product-feature .product-price { font-size: 19px; }
+  .product-feature .product-cta { min-width: auto; width: 100%; min-height: 44px; font-size: 14px; }
+  .product-bottom-row { grid-template-columns: 1fr; gap: 14px; }
+  .product-card .product-cta { font-size: 14px; }
   .placement-grid, .know-grid { grid-template-columns: 1fr; }
   .sizing-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .scenarios { gap: 32px; }
@@ -627,9 +608,8 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
   .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .products-grid { grid-template-columns: 1fr; }
+  .product-bottom-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .product-feature { flex-direction: row; }
-  .product-stack { grid-template-columns: 1fr; }
 }
 
 /* ─── SUBTLE ANIMATIONS ─── */
@@ -804,75 +784,75 @@ h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; line-h
     <div class="section-header">
       <span class="eyebrow">Product Lineup</span>
       <h2>Recommended Garage Systems</h2>
-      <p class="lead" style="margin-top:10px;">Popular DELLA systems for garage heating and cooling — one pick per BTU tier.</p>
+      <p class="lead" style="margin-top:10px;">One pick per BTU tier — matched to your garage size.</p>
     </div>
     <div class="products-grid">
-      <a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" class="product-feature">
+      <a href="https://dellahome.com/products/optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" class="product-feature">
         <div class="product-img-wrap">
           <span class="product-badge">Most Popular</span>
-          <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 12000 BTU" loading="lazy">
+          <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1764061301&width=700" alt="DELLA Optima Series 12000 BTU Ultra Heat mini split" loading="lazy">
         </div>
         <div class="product-body">
           <div class="product-copy">
-            <div class="product-name">Vario Series 12,000 BTU 23 SEER2</div>
-            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (19 reviews)</div>
-            <div class="product-spec">Up to 550 Sq.Ft. | 1–2 car garages</div>
+            <div class="product-name">Optima Series 12,000 BTU 23 SEER2 Ultra Heat</div>
+            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (10 reviews)</div>
+            <div class="product-spec">Up to 550 Sq.Ft. | Ultra Heat to −13°F | R-454B</div>
           </div>
           <div class="product-action">
-            <div class="product-price">$829.96</div>
-            <span class="product-cta">Shop 12K Vario</span>
+            <div class="product-price">$914.96</div>
+            <span class="product-cta">Shop 12K Optima</span>
           </div>
         </div>
       </a>
-      <div class="product-stack">
-        <a href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" class="product-card">
+      <div class="product-bottom-row">
+        <a href="https://dellahome.com/products/vario-series-9000-btu-seer2-20-mini-split-heat-pump-ac-up-to-400-sq-ft" class="product-card">
           <div class="product-img-wrap">
-            <span class="product-badge">Small Garage</span>
-            <img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800" alt="DELLA Motto Series 12000 BTU" loading="lazy">
+            <span class="product-badge">1-Car Garage</span>
+            <img src="https://dellahome.com/cdn/shop/files/048-TL-9K1VB-19S-01.jpg?v=1750225850&width=700" alt="DELLA Vario Series 9000 BTU mini split" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-copy">
-              <div class="product-name">Motto Series 12,000 BTU 17 SEER2</div>
-              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9</strong> (87 reviews)</div>
-              <div class="product-spec">Up to 550 Sq.Ft. | Budget-friendly</div>
+              <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (18 reviews)</div>
+              <div class="product-spec">Up to 400 Sq.Ft.</div>
             </div>
             <div class="product-action">
-              <div class="product-price">$719.96</div>
-              <span class="product-cta">Shop 12K Motto</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://dellahome.com/products/optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" class="product-card">
-          <div class="product-img-wrap">
-            <span class="product-badge">Cold Climate</span>
-            <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1764061301&width=800" alt="DELLA Optima Series 12000 BTU Ultra Heat" loading="lazy">
-          </div>
-          <div class="product-body">
-            <div class="product-copy">
-              <div class="product-name">Optima Series 12,000 BTU 23 SEER2 Ultra Heat</div>
-              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (10 reviews)</div>
-              <div class="product-spec">Up to 550 Sq.Ft. | Rated to −13°F</div>
-            </div>
-            <div class="product-action">
-              <div class="product-price">From $994.96</div>
-              <span class="product-cta">Shop 12K Optima</span>
+              <div class="product-price">$729.96</div>
+              <span class="product-cta">Shop 9K Vario</span>
             </div>
           </div>
         </a>
         <a href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" class="product-card">
           <div class="product-img-wrap">
             <span class="product-badge">2-Car Garage</span>
-            <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18000 BTU" loading="lazy">
+            <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=700" alt="DELLA Vario Series 18000 BTU mini split" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-copy">
               <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
               <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
-              <div class="product-spec">Up to 1,000 Sq.Ft. | Larger garages</div>
+              <div class="product-spec">Up to 1,000 Sq.Ft.</div>
             </div>
             <div class="product-action">
-              <div class="product-price">$1,099.96</div>
+              <div class="product-price">$1,049.96</div>
               <span class="product-cta">Shop 18K Vario</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://dellahome.com/products/vario-series-24000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1500-sq-ft" class="product-card">
+          <div class="product-img-wrap">
+            <span class="product-badge">Large Shop</span>
+            <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=700" alt="DELLA Vario Series 24000 BTU mini split" loading="lazy">
+          </div>
+          <div class="product-body">
+            <div class="product-copy">
+              <div class="product-name">Vario Series 24,000 BTU 21 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
+              <div class="product-spec">Up to 1,500 Sq.Ft.</div>
+            </div>
+            <div class="product-action">
+              <div class="product-price">$1,499.96</div>
+              <span class="product-cta">Shop 24K Vario</span>
             </div>
           </div>
         </a>
