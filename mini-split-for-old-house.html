@@ -238,174 +238,220 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   ZONE SELECTOR — Old House Specific
+   PROGRESSIVE PATH — Old House Specific
 ============================================ */
-.zone-section {
+.path-section {
   background: var(--white);
   padding-top: 60px;
-  padding-bottom: 56px;
+  padding-bottom: 64px;
 }
-.zone-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  margin-top: 40px;
-}
-.zone-card {
-  background: var(--white);
-  padding: 36px 28px 32px;
-  display: flex;
-  flex-direction: column;
-  transition: all .2s;
+.path-track {
   position: relative;
-  border: 1px solid var(--gray-200);
-  border-right: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 48px;
+  padding-top: 32px;
 }
-.zone-card:last-child { border-right: 1px solid var(--gray-200); }
-.zone-card::before {
+.path-track::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
+  top: 52px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
   background: var(--gray-200);
-  transition: background .3s;
 }
-.zone-card:hover::before { background: var(--blue); }
-.zone-card:hover { background: var(--gray-50); }
-.zone-card.is-featured {
-  background: #162663;
-  color: #fff;
-  z-index: 2;
-  border-color: var(--blue);
-  border-right: 2px solid var(--blue);
-  border-left: 2px solid var(--blue);
-}
-.zone-card.is-featured::before { background: var(--blue); height: 3px; }
-.zone-badge {
+.path-track::after {
+  content: '';
   position: absolute;
-  top: 14px; right: 14px;
-  background: #5884E7;
-  color: #fff;
+  top: 52px;
+  left: 60px;
+  width: 25%;
+  height: 2px;
+  background: var(--blue);
+}
+.path-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 25%;
+  padding: 0 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.path-dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  transition: all .25s;
+}
+.path-dot svg {
+  width: 18px; height: 18px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 1.8;
+  transition: stroke .25s;
+}
+.path-node:first-child .path-dot {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(88,132,231,.15);
+}
+.path-node:first-child .path-dot svg { stroke: #fff; }
+.path-node:hover .path-dot {
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
+.path-node:hover .path-dot svg { stroke: var(--blue); }
+.path-node:first-child:hover .path-dot { background: var(--blue); }
+.path-node:first-child:hover .path-dot svg { stroke: #fff; }
+.path-badge {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-.zone-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  color: var(--blue);
   background: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
-.zone-card.is-featured .zone-icon { background: rgba(88,132,231,.25); }
-.zone-icon svg {
-  width: 22px; height: 22px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.8;
-}
-.zone-card.is-featured .zone-icon svg { stroke: #B7C8FF; }
-.zone-name {
-  font-size: 17px;
+.path-name {
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1.25;
 }
-.zone-card.is-featured .zone-name { color: #fff; }
-.zone-desc {
+.path-desc {
   font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 20px;
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
-.zone-card.is-featured .zone-desc { color: rgba(255,255,255,.7); }
-.zone-cta {
-  margin-top: auto;
-  font-size: 14px;
+.path-cta {
+  font-size: 13px;
   font-weight: 700;
-  color: var(--navy);
-  letter-spacing: .02em;
+  color: var(--blue);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 42px;
-  padding: 10px 16px;
-  border: 1px solid var(--gray-200);
-  border-radius: 4px;
-  background: #fff;
-  transition: all .2s;
+  gap: 4px;
+  transition: gap .2s;
 }
-.zone-card:hover .zone-cta {
-  border-color: var(--blue);
-  color: var(--blue);
-  background: var(--blue-light);
+.path-node:hover .path-cta { gap: 8px; }
+.path-cta::after { content: '\2192'; font-size: 14px; }
+.path-hint {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
-.zone-card.is-featured .zone-cta {
-  background: #5884E7;
-  color: #fff;
-  border: 1px solid #5884E7;
-}
-.zone-card.is-featured .zone-cta:hover {
-  background: #fff;
-  color: var(--blue);
-  border-color: var(--blue);
-}
+.path-hint strong { color: var(--navy); }
 
 /* ============================================
-   WHY DUCTLESS — Old House Specific
+   VS COMPARISON — Old House Specific
 ============================================ */
-.why-section {
+.vs-section {
   background: var(--gray-50);
   border-top: 1px solid var(--gray-200);
 }
-.why-grid {
+.vs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr;
   gap: 0;
   margin-top: 40px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
-.why-card {
-  padding: 40px 36px;
-  border-bottom: 1px solid var(--gray-200);
-  border-right: 1px solid var(--gray-200);
-  position: relative;
-  transition: background .25s ease;
+.vs-col {
+  padding: 0;
 }
-.why-card:nth-child(3n) { border-right: none; }
-.why-card:hover { background: #FCFDFF; }
-.why-num {
-  font-family: var(--font);
-  font-size: 64px;
-  font-weight: 700;
-  color: rgba(88,132,231,.10);
-  line-height: 1;
-  position: absolute;
-  top: 20px;
-  right: 24px;
-}
-.why-card h3 {
-  font-family: var(--font);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-.why-card p {
+.vs-col-header {
+  padding: 20px 28px;
   font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-align: center;
+}
+.vs-old .vs-col-header {
+  background: var(--gray-100);
   color: var(--text-muted);
-  line-height: 1.65;
+}
+.vs-new .vs-col-header {
+  background: var(--navy);
+  color: #fff;
+}
+.vs-row {
+  padding: 18px 28px;
+  border-top: 1px solid var(--gray-200);
+  font-size: 15px;
+  line-height: 1.55;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+.vs-old .vs-row {
+  color: var(--text-muted);
+  background: var(--white);
+}
+.vs-old .vs-row::before {
+  content: '\2717';
+  color: #C5A0A0;
+  font-weight: 700;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.vs-new .vs-row {
+  color: var(--navy);
+  font-weight: 500;
+  background: var(--blue-surface);
+}
+.vs-new .vs-row::before {
+  content: '\2713';
+  color: var(--blue);
+  font-weight: 700;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.vs-divider {
+  width: 1px;
+  background: var(--gray-200);
+}
+.vs-divider-badge {
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-left: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+}
+.vs-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 
 /* ============================================
-   USE CASES — Alternating Rows (Old House Specific)
+   ROOM SCENES — Alternating Rows (Old House Specific)
 ============================================ */
 .scenes-section {
   background: var(--white);
@@ -427,6 +473,7 @@ a { text-decoration: none; color: inherit; }
 .scene-row:nth-child(even) .scene-body { order: 1; }
 .scene-img {
   overflow: hidden;
+  position: relative;
 }
 .scene-img img {
   width: 100%;
@@ -444,22 +491,35 @@ a { text-decoration: none; color: inherit; }
   border-bottom: 1px solid var(--gray-200);
 }
 .scene-row:nth-child(even) .scene-body { background: var(--white); }
-.scene-tag {
-  font-size: 12px;
-  font-weight: 600;
+.scene-room-label {
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--white);
+  background: var(--blue);
+  padding: 5px 12px;
+  border-radius: 4px;
+  display: inline-block;
   margin-bottom: 14px;
+  align-self: flex-start;
 }
 .scene-body h3 {
   font-family: var(--font);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 10px;
-  line-height: 1.25;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-style: italic;
 }
+.scene-fix {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.scene-fix strong { color: var(--blue); }
 .scene-body p {
   font-size: 15px;
   color: var(--text-muted);
@@ -665,50 +725,99 @@ a { text-decoration: none; color: inherit; }
 .product-card .product-price { font-size: 18px; }
 
 /* ============================================
-   BEFORE YOU BUY — Old House Specific
+   COMPATIBILITY CHECK — Old House Specific
 ============================================ */
-.byb-section {
+.compat-section {
   background: var(--white);
   border-top: 1px solid var(--gray-200);
 }
-.byb-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+.compat-card {
   margin-top: 40px;
-  border-top: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
-.byb-card {
-  padding: 36px 32px;
-  border-bottom: 1px solid var(--gray-200);
-  border-right: 1px solid var(--gray-200);
-  position: relative;
-  transition: background .25s ease;
+.compat-header {
+  background: var(--navy);
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.byb-card:nth-child(2n) { border-right: none; }
-.byb-card:nth-last-child(-n+2) { border-bottom: none; }
-.byb-card:hover { background: #FCFDFF; }
-.byb-num {
-  font-family: var(--font);
-  font-size: 64px;
+.compat-header-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(88,132,231,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compat-header-icon svg {
+  width: 16px; height: 16px;
+  stroke: #B7C8FF;
+  fill: none;
+  stroke-width: 2;
+}
+.compat-header-text {
+  font-size: 16px;
   font-weight: 700;
-  color: rgba(88,132,231,.10);
-  line-height: 1;
-  position: absolute;
-  top: 20px;
-  right: 24px;
+  color: #fff;
+  letter-spacing: .02em;
 }
-.byb-card h3 {
+.compat-list {
+  padding: 0;
+  list-style: none;
+}
+.compat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--gray-200);
+  transition: background .2s;
+  cursor: default;
+}
+.compat-item:last-child { border-bottom: none; }
+.compat-item:hover { background: var(--white); }
+.compat-check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-200);
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+  background: var(--white);
+  cursor: pointer;
+}
+.compat-input { display: none; }
+.compat-input:checked + .compat-check {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.compat-input:checked + .compat-check::after {
+  content: '\2713';
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.compat-input:checked ~ .compat-text h4 { color: var(--blue); }
+.compat-text h4 {
   font-family: var(--font);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  transition: color .2s;
 }
-.byb-card p {
-  font-size: 15px;
+.compat-text p {
+  font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
 /* ============================================
@@ -904,13 +1013,17 @@ a { text-decoration: none; color: inherit; }
   .hero-actions .btn-lg { min-width: 170px; min-height: 44px; padding: 10px 16px; font-size: 14px; justify-content: center; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 
-  .zone-grid { grid-template-columns: 1fr; gap: 12px; }
-  .zone-card { border-right: 1px solid var(--gray-200); }
-  .zone-card.is-featured { border: 2px solid var(--blue); }
+  .path-track { flex-direction: column; align-items: stretch; gap: 0; padding-top: 0; }
+  .path-track::before, .path-track::after { display: none; }
+  .path-node { width: 100%; flex-direction: row; text-align: left; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray-200); }
+  .path-node:last-child { border-bottom: none; }
+  .path-dot { margin-bottom: 0; flex-shrink: 0; }
+  .path-node-text { flex: 1; }
+  .path-hint { text-align: left; }
 
-  .why-grid { grid-template-columns: 1fr; }
-  .why-card { border-right: none; }
-  .why-num { display: none; }
+  .vs-grid { grid-template-columns: 1fr; }
+  .vs-divider-badge { display: none; }
+  .vs-new { border-top: 2px solid var(--blue); }
 
   .scene-row { grid-template-columns: 1fr; min-height: auto; }
   .scene-row:nth-child(even) .scene-img { order: 0; }
@@ -955,10 +1068,8 @@ a { text-decoration: none; color: inherit; }
   .product-feature .product-cta,
   .product-card .product-cta { min-width: 148px; width: auto; padding: 8px 14px; font-size: 12px; align-self: center; }
 
-  .byb-grid { grid-template-columns: 1fr; margin-top: 28px; }
-  .byb-card { border-right: none; border-bottom: 1px solid var(--gray-200); }
-  .byb-card:last-child { border-bottom: none; }
-  .byb-num { display: none; }
+  .compat-item { padding: 16px 20px; }
+  .compat-header { padding: 16px 20px; }
 
   .services-section { padding-top: 36px; padding-bottom: 26px; }
   .services-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -977,7 +1088,8 @@ a { text-decoration: none; color: inherit; }
   .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .zone-grid { grid-template-columns: repeat(2, 1fr); }
+  .path-track { flex-wrap: wrap; }
+  .path-node { width: 50%; }
   .products-grid { grid-template-columns: 1fr; }
   .product-feature { flex-direction: column; align-items: stretch; gap: 18px; height: auto; }
   .product-feature .product-img-wrap { flex: none; width: 100%; max-width: 360px; align-self: center; }
@@ -1016,96 +1128,102 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- ZONE SELECTOR -->
-<section class="section zone-section" id="zones">
+<!-- PROGRESSIVE PATH -->
+<section class="section path-section" id="zones">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Start Here</span>
-      <h2 class="section-title">Choose by Room Count</h2>
-      <p class="section-desc">Most old-house buyers start with how many rooms need comfort, then refine the indoor unit style afterward.</p>
+      <span class="section-label">Your Upgrade Path</span>
+      <h2 class="section-title">You Don't Have to Do Everything at Once</h2>
+      <p class="section-desc">Most old-house owners start with one room, then add zones later if needed. Here's the typical path.</p>
     </div>
-    <div class="zone-grid">
-      <a href="https://dellahome.com/collections/mini-split-single-zone" class="zone-card is-featured">
-        <span class="zone-badge">Most Common</span>
-        <div class="zone-icon">
+    <div class="path-track">
+      <a href="https://dellahome.com/collections/mini-split-single-zone" class="path-node">
+        <div class="path-dot">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <div class="zone-name">One Problem Room</div>
-        <p class="zone-desc">Fix one bedroom, office, attic, or sunroom first.</p>
-        <span class="zone-cta">Shop Single-Zone</span>
+        <span class="path-badge">Start Here</span>
+        <div class="path-name">One Room</div>
+        <p class="path-desc">Fix the one room that's always too hot or too cold.</p>
+        <span class="path-cta">Shop Single-Zone</span>
       </a>
-      <a href="https://dellahome.com/collections/2-zone-mini-split" class="zone-card">
-        <div class="zone-icon">
+      <a href="https://dellahome.com/collections/2-zone-mini-split" class="path-node">
+        <div class="path-dot">
           <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="18" y2="10"/></svg>
         </div>
-        <div class="zone-name">Two Rooms</div>
-        <p class="zone-desc">Separate comfort from one outdoor unit.</p>
-        <span class="zone-cta">Shop 2-Zone</span>
+        <div class="path-name">Two Rooms</div>
+        <p class="path-desc">Two rooms, one outdoor unit, separate control.</p>
+        <span class="path-cta">Shop 2-Zone</span>
       </a>
-      <a href="https://dellahome.com/collections/3-zone-mini-split" class="zone-card">
-        <div class="zone-icon">
+      <a href="https://dellahome.com/collections/3-zone-mini-split" class="path-node">
+        <div class="path-dot">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
         </div>
-        <div class="zone-name">Three Rooms</div>
-        <p class="zone-desc">Whole-floor upgrade from one outdoor unit.</p>
-        <span class="zone-cta">Shop 3-Zone</span>
+        <div class="path-name">Three Rooms</div>
+        <p class="path-desc">Whole-floor comfort from one system.</p>
+        <span class="path-cta">Shop 3-Zone</span>
       </a>
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="zone-card">
-        <div class="zone-icon">
+      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="path-node">
+        <div class="path-dot">
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg>
         </div>
-        <div class="zone-name">Cleaner Look</div>
-        <p class="zone-desc">Hidden air handler when wall heads don't fit your interior.</p>
-        <span class="zone-cta">See Concealed Ducted</span>
+        <div class="path-name">Concealed Ducted</div>
+        <p class="path-desc">Hidden install when wall heads don't fit.</p>
+        <span class="path-cta">See Options</span>
       </a>
     </div>
+    <p class="path-hint"><strong>No commitment to scale.</strong> Most buyers never go past single-zone — and that's fine.</p>
   </div>
 </section>
 
-<!-- WHY DUCTLESS -->
-<section class="section why-section">
+<!-- VS COMPARISON -->
+<section class="section vs-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Why Ductless Works</span>
-      <h2 class="section-title">Built for Older Homes</h2>
-      <p class="section-desc">Mini splits solve the problems that make traditional HVAC impractical in pre-duct houses.</p>
+      <span class="section-label">Why Ductless Wins</span>
+      <h2 class="section-title">Traditional HVAC vs Mini Split in an Old House</h2>
+      <p class="section-desc">Old houses weren't built for ductwork. Here's why mini splits fit better.</p>
     </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="why-num">01</span>
-        <h3>No Full Duct Rebuild</h3>
-        <p>Add heating and cooling without opening walls for a full forced-air system.</p>
+    <div class="vs-grid">
+      <div class="vs-col vs-old">
+        <div class="vs-col-header">Traditional HVAC</div>
+        <div class="vs-row">Tear open walls to run full ductwork</div>
+        <div class="vs-row">One system — whole house or nothing</div>
+        <div class="vs-row">Destroys trim, plaster, and original details</div>
+        <div class="vs-row">Weeks of construction disruption</div>
+        <div class="vs-row">Higher upfront cost for older layouts</div>
       </div>
-      <div class="why-card">
-        <span class="why-num">02</span>
-        <h3>Room-by-Room Upgrades</h3>
-        <p>Solve one tough room first, then grow into 2-zone or 3-zone only when needed.</p>
+      <div class="vs-divider-badge">
+        <span class="vs-badge">VS</span>
       </div>
-      <div class="why-card">
-        <span class="why-num">03</span>
-        <h3>Keeps Original Character</h3>
-        <p>Ductless retrofits preserve trim, plaster, and historic interiors better than larger rebuilds.</p>
+      <div class="vs-col vs-new">
+        <div class="vs-col-header">Mini Split</div>
+        <div class="vs-row">Small wall penetration — no duct rebuild</div>
+        <div class="vs-row">Start with one room, scale later</div>
+        <div class="vs-row">Preserves historic character</div>
+        <div class="vs-row">Installed in a day for most single-zone</div>
+        <div class="vs-row">Lower entry cost, room-by-room budgeting</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- USE CASES -->
+<!-- ROOM SCENES -->
 <section class="section scenes-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Choose by Zone Count</span>
-      <h2 class="section-title">Start Single-Zone, Scale Up If Needed</h2>
+      <span class="section-label">Sound Familiar?</span>
+      <h2 class="section-title">Every Old House Has That One Room</h2>
+      <p class="section-desc">Find your problem room below — we'll match it to the right setup.</p>
     </div>
     <div class="scene-rows">
       <div class="scene-row">
         <div class="scene-img">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640&q=80" alt="Older home bedroom with wood trim and classic details" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640&q=80" alt="Older home bedroom with wood trim" loading="lazy">
         </div>
         <div class="scene-body">
-          <div class="scene-tag">Most Common</div>
-          <h3>One Hard-to-Heat Room</h3>
-          <p>One bedroom, office, sunroom, or attic is usually the main comfort problem. Single-zone fixes it without touching the rest of the house.</p>
+          <span class="scene-room-label">Single-Zone</span>
+          <h3>"The Bedroom That's Always Too Hot"</h3>
+          <p>Second-floor bedrooms trap heat all summer and lose it all winter. A single wall unit fixes it without touching the rest of the house.</p>
           <a href="https://dellahome.com/collections/mini-split-single-zone" class="scene-cta">Shop Single-Zone</a>
         </div>
       </div>
@@ -1114,9 +1232,9 @@ a { text-decoration: none; color: inherit; }
           <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=640&q=80" alt="Two connected rooms in an older home" loading="lazy">
         </div>
         <div class="scene-body">
-          <div class="scene-tag">Two Rooms</div>
-          <h3>Two Rooms, Separate Control</h3>
-          <p>When two rooms on the same floor both need regular comfort, 2-zone runs them independently from one outdoor unit.</p>
+          <span class="scene-room-label">2-Zone</span>
+          <h3>"The Sunroom Nobody Uses After June"</h3>
+          <p>Glass walls, no insulation, brutal sun. Pair it with the adjacent living room on a 2-zone system — separate temps, one outdoor unit.</p>
           <a href="https://dellahome.com/collections/2-zone-mini-split" class="scene-cta">Shop 2-Zone</a>
         </div>
       </div>
@@ -1125,20 +1243,20 @@ a { text-decoration: none; color: inherit; }
           <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&q=80" alt="Old house with multiple upstairs rooms" loading="lazy">
         </div>
         <div class="scene-body">
-          <div class="scene-tag">Three Rooms</div>
-          <h3>Whole-Floor Upgrade</h3>
-          <p>When three connected rooms need help, 3-zone is cleaner than stacking multiple separate systems.</p>
+          <span class="scene-room-label">3-Zone</span>
+          <h3>"The Entire Upstairs Is Unusable"</h3>
+          <p>Heat rises. In old houses without returns, the second floor is 10 degrees hotter. 3-zone covers the whole floor from one system.</p>
           <a href="https://dellahome.com/collections/3-zone-mini-split" class="scene-cta">Shop 3-Zone</a>
         </div>
       </div>
       <div class="scene-row">
         <div class="scene-img">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=640&q=80" alt="Historic home interior with a cleaner renovation look" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=640&q=80" alt="Historic home interior" loading="lazy">
         </div>
         <div class="scene-body">
-          <div class="scene-tag">Concealed Ducted</div>
-          <h3>When Wall Heads Don't Fit</h3>
-          <p>Hide the air handler in a closet, attic, or ceiling cavity. Best when visible equipment would clash with your interior.</p>
+          <span class="scene-room-label">Concealed</span>
+          <h3>"I Don't Want a Box on My Plaster Wall"</h3>
+          <p>If your house has crown molding you'd rather keep, concealed ducted hides the air handler in a closet or ceiling cavity.</p>
           <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="scene-cta">See Concealed Ducted</a>
         </div>
       </div>
@@ -1227,35 +1345,73 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- BEFORE YOU BUY -->
-<section class="section byb-section">
+<!-- COMPATIBILITY CHECK -->
+<section class="section compat-section">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Before You Buy</span>
-      <h2 class="section-title">The Old-House Checklist</h2>
-      <p class="section-desc">Older homes have quirks that change what system you need. Check these before you commit.</p>
+      <h2 class="section-title">Old-House Compatibility Check</h2>
+      <p class="section-desc">Tap each item to confirm your house is ready. If you can check all five, you're good to go.</p>
     </div>
-    <div class="byb-grid">
-      <div class="byb-card">
-        <span class="byb-num">01</span>
-        <h3>Electrical Panel</h3>
-        <p>Most mini splits need a dedicated 115V or 230V circuit. Confirm your panel can support it.</p>
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-header-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div class="compat-header-text">Quick Readiness Check</div>
       </div>
-      <div class="byb-card">
-        <span class="byb-num">02</span>
-        <h3>Insulation Quality</h3>
-        <p>Better insulation means a smaller, quieter, less expensive system. Worth checking before you size.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-num">03</span>
-        <h3>Line-Set Route</h3>
-        <p>Older walls, plaster, and trim may need a surface-run strategy. Plan the path early.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-num">04</span>
-        <h3>Start Small</h3>
-        <p>Fix one room first. Move to 2-zone or 3-zone only when more rooms clearly need independent control.</p>
-      </div>
+      <ul class="compat-list">
+        <li class="compat-item">
+          <label>
+            <input type="checkbox" class="compat-input">
+            <span class="compat-check"></span>
+            <div class="compat-text">
+              <h4>Electrical Panel Has Room</h4>
+              <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
+            </div>
+          </label>
+        </li>
+        <li class="compat-item">
+          <label>
+            <input type="checkbox" class="compat-input">
+            <span class="compat-check"></span>
+            <div class="compat-text">
+              <h4>Walls Are at Least Partially Insulated</h4>
+              <p>Better insulation = smaller, cheaper system. Uninsulated walls push the BTU requirement up.</p>
+            </div>
+          </label>
+        </li>
+        <li class="compat-item">
+          <label>
+            <input type="checkbox" class="compat-input">
+            <span class="compat-check"></span>
+            <div class="compat-text">
+              <h4>Exterior Wall Access for Line Set</h4>
+              <p>The indoor and outdoor units connect through a small wall hole. Confirm you have a clean path.</p>
+            </div>
+          </label>
+        </li>
+        <li class="compat-item">
+          <label>
+            <input type="checkbox" class="compat-input">
+            <span class="compat-check"></span>
+            <div class="compat-text">
+              <h4>Outdoor Space for Condenser</h4>
+              <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
+            </div>
+          </label>
+        </li>
+        <li class="compat-item">
+          <label>
+            <input type="checkbox" class="compat-input">
+            <span class="compat-check"></span>
+            <div class="compat-text">
+              <h4>Know Which Room to Fix First</h4>
+              <p>Start with the room that causes the most discomfort. You can always add zones later.</p>
+            </div>
+          </label>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
