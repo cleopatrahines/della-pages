@@ -238,216 +238,203 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   PROGRESSIVE PATH — Old House Specific
+   ZONE CARDS — Della-style rounded cards
 ============================================ */
-.path-section {
+.zone-section {
   background: var(--white);
   padding-top: 60px;
-  padding-bottom: 64px;
+  padding-bottom: 56px;
 }
-.path-track {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 32px;
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
 }
-.path-track::before {
-  content: '';
-  position: absolute;
-  top: 52px;
-  left: 60px;
-  right: 60px;
-  height: 2px;
-  background: var(--gray-200);
-}
-.path-track::after {
-  content: '';
-  position: absolute;
-  top: 52px;
-  left: 60px;
-  width: 25%;
-  height: 2px;
-  background: var(--blue);
-}
-.path-node {
-  position: relative;
+.zone-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 18px;
+  padding: 32px 28px 28px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 25%;
-  padding: 0 12px;
+  transition: all .25s;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
-.path-dot {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 2px solid var(--gray-200);
+.zone-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+.zone-card.is-primary {
+  border-color: var(--blue);
+  background: var(--blue-surface);
+}
+.zone-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.zone-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--blue-light);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  position: relative;
-  z-index: 2;
-  transition: all .25s;
 }
-.path-dot svg {
-  width: 18px; height: 18px;
-  stroke: var(--text-muted);
+.zone-icon svg {
+  width: 24px; height: 24px;
+  stroke: var(--blue);
   fill: none;
   stroke-width: 1.8;
-  transition: stroke .25s;
 }
-.path-node:first-child .path-dot {
-  background: var(--blue);
-  border-color: var(--blue);
-  box-shadow: 0 0 0 4px rgba(88,132,231,.15);
-}
-.path-node:first-child .path-dot svg { stroke: #fff; }
-.path-node:hover .path-dot {
-  border-color: var(--blue);
-  background: var(--blue-light);
-}
-.path-node:hover .path-dot svg { stroke: var(--blue); }
-.path-node:first-child:hover .path-dot { background: var(--blue); }
-.path-node:first-child:hover .path-dot svg { stroke: #fff; }
-.path-badge {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--blue);
-  background: var(--blue-light);
-  padding: 3px 10px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-.path-name {
-  font-size: 16px;
+.zone-name {
+  font-size: 19px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 6px;
-  line-height: 1.25;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
-.path-desc {
-  font-size: 14px;
+.zone-desc {
+  font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.55;
+  margin-bottom: 24px;
 }
-.path-cta {
-  font-size: 13px;
+.zone-cta {
+  margin-top: auto;
+  font-size: 14px;
   font-weight: 700;
   color: var(--blue);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: gap .2s;
 }
-.path-node:hover .path-cta { gap: 8px; }
-.path-cta::after { content: '\2192'; font-size: 14px; }
-.path-hint {
-  text-align: center;
-  margin-top: 36px;
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-.path-hint strong { color: var(--navy); }
-
-/* ============================================
-   VS COMPARISON — Old House Specific
-============================================ */
-.vs-section {
-  background: var(--gray-50);
-  border-top: 1px solid var(--gray-200);
-}
-.vs-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0;
-  margin-top: 40px;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.vs-col {
-  padding: 0;
-}
-.vs-col-header {
-  padding: 20px 28px;
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  text-align: center;
-}
-.vs-old .vs-col-header {
-  background: var(--gray-100);
-  color: var(--text-muted);
-}
-.vs-new .vs-col-header {
-  background: var(--navy);
-  color: #fff;
-}
-.vs-row {
-  padding: 18px 28px;
-  border-top: 1px solid var(--gray-200);
-  font-size: 15px;
-  line-height: 1.55;
-  min-height: 64px;
+.zone-card:hover .zone-cta { gap: 10px; }
+.zone-cta::after { content: '\2192'; font-size: 15px; }
+.zone-alt {
+  margin-top: 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 20px 28px;
+  transition: all .25s;
+  text-decoration: none;
+  color: inherit;
 }
-.vs-old .vs-row {
-  color: var(--text-muted);
-  background: var(--white);
+.zone-alt:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
 }
-.vs-old .vs-row::before {
-  content: '\2717';
-  color: #C5A0A0;
-  font-weight: 700;
-  margin-right: 10px;
-  flex-shrink: 0;
+.zone-alt-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
-.vs-new .vs-row {
-  color: var(--navy);
-  font-weight: 500;
-  background: var(--blue-surface);
-}
-.vs-new .vs-row::before {
-  content: '\2713';
-  color: var(--blue);
-  font-weight: 700;
-  margin-right: 10px;
-  flex-shrink: 0;
-}
-.vs-divider {
-  width: 1px;
-  background: var(--gray-200);
-}
-.vs-divider-badge {
-  width: 48px;
+.zone-alt-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--blue-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--white);
-  border-left: 1px solid var(--gray-200);
-  border-right: 1px solid var(--gray-200);
+  flex-shrink: 0;
 }
-.vs-badge {
-  font-size: 12px;
+.zone-alt-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.8;
+}
+.zone-alt-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.zone-alt-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.zone-alt-cta {
+  font-size: 14px;
   font-weight: 700;
   color: var(--blue);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ============================================
+   WHY DUCTLESS — Icon + Quantified Benefits
+============================================ */
+.benefits-section {
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--white);
+}
+.benefit-item {
+  padding: 40px 32px;
+  text-align: center;
+  border-right: 1px solid var(--gray-200);
+}
+.benefit-item:last-child { border-right: none; }
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.benefit-icon svg {
+  width: 26px; height: 26px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.8;
+}
+.benefit-stat {
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.benefit-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.benefit-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
 }
 
 /* ============================================
@@ -583,9 +570,9 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
 }
 .product-feature .product-img-wrap {
-  flex: 0 0 58%;
+  flex: 0 0 48%;
   width: auto;
-  max-width: 500px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -598,7 +585,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   transition: transform .3s;
 }
-.product-feature .product-img-wrap img { max-height: 430px; }
+.product-feature .product-img-wrap img { max-height: 340px; }
 .product-feature .product-badge { position: static; align-self: flex-start; }
 .product-feature:hover .product-img-wrap img,
 .product-card:hover .product-img-wrap img { transform: scale(1.04); }
@@ -725,96 +712,63 @@ a { text-decoration: none; color: inherit; }
 .product-card .product-price { font-size: 18px; }
 
 /* ============================================
-   COMPATIBILITY CHECK — Old House Specific
+   BEFORE YOU BUY — Editorial Image + List
 ============================================ */
-.compat-section {
+.byb-section {
   background: var(--white);
   border-top: 1px solid var(--gray-200);
 }
-.compat-card {
+.byb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   margin-top: 40px;
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
+  align-items: center;
+}
+.byb-img {
+  border-radius: 16px;
   overflow: hidden;
 }
-.compat-header {
-  background: var(--navy);
-  padding: 20px 32px;
+.byb-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+.byb-list {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 0;
 }
-.compat-header-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: rgba(88,132,231,.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.compat-header-icon svg {
-  width: 16px; height: 16px;
-  stroke: #B7C8FF;
-  fill: none;
-  stroke-width: 2;
-}
-.compat-header-text {
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: .02em;
-}
-.compat-list {
-  padding: 0;
-  list-style: none;
-}
-.compat-item {
+.byb-item {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 20px 32px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--gray-200);
-  transition: background .2s;
-  cursor: default;
 }
-.compat-item:last-child { border-bottom: none; }
-.compat-item:hover { background: var(--white); }
-.compat-check {
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--gray-200);
-  border-radius: 6px;
-  flex-shrink: 0;
-  margin-top: 1px;
+.byb-item:last-child { border-bottom: none; }
+.byb-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .2s;
-  background: var(--white);
-  cursor: pointer;
-}
-.compat-input { display: none; }
-.compat-input:checked + .compat-check {
-  background: var(--blue);
-  border-color: var(--blue);
-}
-.compat-input:checked + .compat-check::after {
-  content: '\2713';
-  color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
+  color: var(--blue);
+  flex-shrink: 0;
 }
-.compat-input:checked ~ .compat-text h4 { color: var(--blue); }
-.compat-text h4 {
+.byb-text h4 {
   font-family: var(--font);
   font-size: 16px;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 4px;
-  transition: color .2s;
 }
-.compat-text p {
+.byb-text p {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.55;
@@ -1013,17 +967,12 @@ a { text-decoration: none; color: inherit; }
   .hero-actions .btn-lg { min-width: 170px; min-height: 44px; padding: 10px 16px; font-size: 14px; justify-content: center; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 
-  .path-track { flex-direction: column; align-items: stretch; gap: 0; padding-top: 0; }
-  .path-track::before, .path-track::after { display: none; }
-  .path-node { width: 100%; flex-direction: row; text-align: left; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray-200); }
-  .path-node:last-child { border-bottom: none; }
-  .path-dot { margin-bottom: 0; flex-shrink: 0; }
-  .path-node-text { flex: 1; }
-  .path-hint { text-align: left; }
+  .zone-grid { grid-template-columns: 1fr; gap: 14px; }
+  .zone-alt { flex-direction: column; align-items: flex-start; gap: 12px; }
 
-  .vs-grid { grid-template-columns: 1fr; }
-  .vs-divider-badge { display: none; }
-  .vs-new { border-top: 2px solid var(--blue); }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefit-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .benefit-item:last-child { border-bottom: none; }
 
   .scene-row { grid-template-columns: 1fr; min-height: auto; }
   .scene-row:nth-child(even) .scene-img { order: 0; }
@@ -1068,8 +1017,7 @@ a { text-decoration: none; color: inherit; }
   .product-feature .product-cta,
   .product-card .product-cta { min-width: 148px; width: auto; padding: 8px 14px; font-size: 12px; align-self: center; }
 
-  .compat-item { padding: 16px 20px; }
-  .compat-header { padding: 16px 20px; }
+  .byb-row { grid-template-columns: 1fr; gap: 28px; }
 
   .services-section { padding-top: 36px; padding-bottom: 26px; }
   .services-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1088,8 +1036,7 @@ a { text-decoration: none; color: inherit; }
   .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .path-track { flex-wrap: wrap; }
-  .path-node { width: 50%; }
+  .zone-grid { grid-template-columns: repeat(3, 1fr); }
   .products-grid { grid-template-columns: 1fr; }
   .product-feature { flex-direction: column; align-items: stretch; gap: 18px; height: auto; }
   .product-feature .product-img-wrap { flex: none; width: 100%; max-width: 360px; align-self: center; }
@@ -1128,80 +1075,88 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- PROGRESSIVE PATH -->
-<section class="section path-section" id="zones">
+<!-- ZONE CARDS -->
+<section class="section zone-section" id="zones">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Your Upgrade Path</span>
-      <h2 class="section-title">You Don't Have to Do Everything at Once</h2>
-      <p class="section-desc">Most old-house owners start with one room, then add zones later if needed. Here's the typical path.</p>
+      <span class="section-label">Start Here</span>
+      <h2 class="section-title">Choose by Room Count</h2>
+      <p class="section-desc">Start with how many rooms need comfort. Refine the indoor unit style later.</p>
     </div>
-    <div class="path-track">
-      <a href="https://dellahome.com/collections/mini-split-single-zone" class="path-node">
-        <div class="path-dot">
+    <div class="zone-grid">
+      <a href="https://dellahome.com/collections/mini-split-single-zone" class="zone-card is-primary">
+        <span class="zone-badge">Most Common</span>
+        <div class="zone-icon">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <span class="path-badge">Start Here</span>
-        <div class="path-name">One Room</div>
-        <p class="path-desc">Fix the one room that's always too hot or too cold.</p>
-        <span class="path-cta">Shop Single-Zone</span>
+        <div class="zone-name">Single-Zone</div>
+        <p class="zone-desc">Fix one bedroom, office, attic, or sunroom. The most common old-house starting point.</p>
+        <span class="zone-cta">Shop Single-Zone</span>
       </a>
-      <a href="https://dellahome.com/collections/2-zone-mini-split" class="path-node">
-        <div class="path-dot">
+      <a href="https://dellahome.com/collections/2-zone-mini-split" class="zone-card">
+        <div class="zone-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="18" y2="10"/></svg>
         </div>
-        <div class="path-name">Two Rooms</div>
-        <p class="path-desc">Two rooms, one outdoor unit, separate control.</p>
-        <span class="path-cta">Shop 2-Zone</span>
+        <div class="zone-name">2-Zone</div>
+        <p class="zone-desc">Two rooms, separate control, one outdoor unit. Best when two rooms share a floor.</p>
+        <span class="zone-cta">Shop 2-Zone</span>
       </a>
-      <a href="https://dellahome.com/collections/3-zone-mini-split" class="path-node">
-        <div class="path-dot">
+      <a href="https://dellahome.com/collections/3-zone-mini-split" class="zone-card">
+        <div class="zone-icon">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
         </div>
-        <div class="path-name">Three Rooms</div>
-        <p class="path-desc">Whole-floor comfort from one system.</p>
-        <span class="path-cta">Shop 3-Zone</span>
-      </a>
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="path-node">
-        <div class="path-dot">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg>
-        </div>
-        <div class="path-name">Concealed Ducted</div>
-        <p class="path-desc">Hidden install when wall heads don't fit.</p>
-        <span class="path-cta">See Options</span>
+        <div class="zone-name">3-Zone</div>
+        <p class="zone-desc">Whole-floor upgrade from one system. Cleaner than stacking multiple single-zone units.</p>
+        <span class="zone-cta">Shop 3-Zone</span>
       </a>
     </div>
-    <p class="path-hint"><strong>No commitment to scale.</strong> Most buyers never go past single-zone — and that's fine.</p>
+    <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="zone-alt">
+      <div class="zone-alt-left">
+        <div class="zone-alt-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg>
+        </div>
+        <div>
+          <div class="zone-alt-name">Prefer a Cleaner Look?</div>
+          <div class="zone-alt-hint">Concealed ducted hides the air handler in a closet or ceiling cavity.</div>
+        </div>
+      </div>
+      <span class="zone-alt-cta">See Concealed Ducted &rarr;</span>
+    </a>
   </div>
 </section>
 
-<!-- VS COMPARISON -->
-<section class="section vs-section">
+<!-- WHY DUCTLESS -->
+<section class="section benefits-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Why Ductless Wins</span>
-      <h2 class="section-title">Traditional HVAC vs Mini Split in an Old House</h2>
-      <p class="section-desc">Old houses weren't built for ductwork. Here's why mini splits fit better.</p>
+      <span class="section-label">Why Ductless</span>
+      <h2 class="section-title">Built for Homes Without Ductwork</h2>
+      <p class="section-desc">Old houses weren't designed for forced air. Mini splits work around that.</p>
     </div>
-    <div class="vs-grid">
-      <div class="vs-col vs-old">
-        <div class="vs-col-header">Traditional HVAC</div>
-        <div class="vs-row">Tear open walls to run full ductwork</div>
-        <div class="vs-row">One system — whole house or nothing</div>
-        <div class="vs-row">Destroys trim, plaster, and original details</div>
-        <div class="vs-row">Weeks of construction disruption</div>
-        <div class="vs-row">Higher upfront cost for older layouts</div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="benefit-stat">0</div>
+        <div class="benefit-name">Walls Torn Open</div>
+        <div class="benefit-desc">Only a small 3" hole connects indoor and outdoor units. No duct rebuild needed.</div>
       </div>
-      <div class="vs-divider-badge">
-        <span class="vs-badge">VS</span>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="benefit-stat">1 Day</div>
+        <div class="benefit-name">Typical Install Time</div>
+        <div class="benefit-desc">Most single-zone setups are installed in one day with minimal disruption.</div>
       </div>
-      <div class="vs-col vs-new">
-        <div class="vs-col-header">Mini Split</div>
-        <div class="vs-row">Small wall penetration — no duct rebuild</div>
-        <div class="vs-row">Start with one room, scale later</div>
-        <div class="vs-row">Preserves historic character</div>
-        <div class="vs-row">Installed in a day for most single-zone</div>
-        <div class="vs-row">Lower entry cost, room-by-room budgeting</div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="benefit-stat">-13°F</div>
+        <div class="benefit-name">Heating Performance</div>
+        <div class="benefit-desc">Ultra hyper heat models keep old houses warm even in extreme cold.</div>
       </div>
     </div>
   </div>
@@ -1345,73 +1300,48 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- COMPATIBILITY CHECK -->
-<section class="section compat-section">
+<!-- BEFORE YOU BUY -->
+<section class="section byb-section">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Before You Buy</span>
-      <h2 class="section-title">Old-House Compatibility Check</h2>
-      <p class="section-desc">Tap each item to confirm your house is ready. If you can check all five, you're good to go.</p>
+      <h2 class="section-title">What to Check in an Older Home</h2>
+      <p class="section-desc">Older homes have quirks. Confirm these four things before you order.</p>
     </div>
-    <div class="compat-card">
-      <div class="compat-header">
-        <div class="compat-header-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        </div>
-        <div class="compat-header-text">Quick Readiness Check</div>
+    <div class="byb-row">
+      <div class="byb-img">
+        <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&q=80" alt="Older home being prepared for mini split installation" loading="lazy">
       </div>
-      <ul class="compat-list">
-        <li class="compat-item">
-          <label>
-            <input type="checkbox" class="compat-input">
-            <span class="compat-check"></span>
-            <div class="compat-text">
-              <h4>Electrical Panel Has Room</h4>
-              <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
-            </div>
-          </label>
-        </li>
-        <li class="compat-item">
-          <label>
-            <input type="checkbox" class="compat-input">
-            <span class="compat-check"></span>
-            <div class="compat-text">
-              <h4>Walls Are at Least Partially Insulated</h4>
-              <p>Better insulation = smaller, cheaper system. Uninsulated walls push the BTU requirement up.</p>
-            </div>
-          </label>
-        </li>
-        <li class="compat-item">
-          <label>
-            <input type="checkbox" class="compat-input">
-            <span class="compat-check"></span>
-            <div class="compat-text">
-              <h4>Exterior Wall Access for Line Set</h4>
-              <p>The indoor and outdoor units connect through a small wall hole. Confirm you have a clean path.</p>
-            </div>
-          </label>
-        </li>
-        <li class="compat-item">
-          <label>
-            <input type="checkbox" class="compat-input">
-            <span class="compat-check"></span>
-            <div class="compat-text">
-              <h4>Outdoor Space for Condenser</h4>
-              <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
-            </div>
-          </label>
-        </li>
-        <li class="compat-item">
-          <label>
-            <input type="checkbox" class="compat-input">
-            <span class="compat-check"></span>
-            <div class="compat-text">
-              <h4>Know Which Room to Fix First</h4>
-              <p>Start with the room that causes the most discomfort. You can always add zones later.</p>
-            </div>
-          </label>
-        </li>
-      </ul>
+      <div class="byb-list">
+        <div class="byb-item">
+          <span class="byb-num">1</span>
+          <div class="byb-text">
+            <h4>Electrical Panel</h4>
+            <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">2</span>
+          <div class="byb-text">
+            <h4>Insulation Quality</h4>
+            <p>Better insulation means a smaller, quieter system. Uninsulated walls push the BTU requirement up.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">3</span>
+          <div class="byb-text">
+            <h4>Line-Set Route</h4>
+            <p>Indoor and outdoor units connect through a 3" wall hole. Older walls and plaster may need a surface run.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">4</span>
+          <div class="byb-text">
+            <h4>Condenser Placement</h4>
+            <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
