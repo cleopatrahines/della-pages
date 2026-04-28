@@ -52,7 +52,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.section { padding: 80px 0; }
+.section { padding: 56px 0; }
 
 .section-label {
   font-family: var(--font); font-size: 12px; font-weight: 600;
@@ -95,13 +95,10 @@ a { text-decoration: none; color: inherit; }
 .hero-actions .btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); transform: none; }
 .hero-actions .btn-outline-white { color: rgba(255,255,255,.92); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); }
 .hero-actions .btn-outline-white:hover { color: var(--blue); border-color: var(--blue); background: var(--blue-light); }
-.hero-stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.1); }
-.hero-stat-num { font-family: var(--font); font-size: 27px; font-weight: 700; color: #fff; line-height: 1; }
-.hero-stat-label { font-size: 15px; color: rgba(255,255,255,.5); margin-top: 4px; }
 
 /* ── DECISION BAR ── */
 .decision-section { padding: 56px 0; }
-.decision-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 8px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); }
+.decision-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 8px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); margin-top: 32px; }
 .decision-card { display: flex; flex-direction: column; align-items: flex-start; padding: 16px 16px 14px; border-radius: var(--radius); text-align: left; transition: all .18s; }
 .decision-card:hover { background: var(--blue-light); transform: translateY(-1px); }
 .decision-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
@@ -116,12 +113,12 @@ a { text-decoration: none; color: inherit; }
 .capacity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
 .capacity-card { background: var(--white); padding: 40px 32px 36px; display: flex; flex-direction: column; transition: all .2s; position: relative; }
 .capacity-card:hover { background: var(--gray-50); box-shadow: var(--shadow-sm); }
-.capacity-card.is-featured { background: #162663; color: #fff; z-index: 2; box-shadow: 0 4px 14px rgba(14,25,83,.06); border: 2px solid var(--blue); }
+.capacity-card.is-featured { background: #162663; color: #fff; z-index: 2; box-shadow: 0 4px 14px rgba(14,25,83,.06); border: 2px solid var(--blue); padding-top: 52px; }
 .capacity-badge { position: absolute; top: 16px; right: 16px; background: #5884E7; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
 .capacity-kicker { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
 .capacity-card.is-featured .capacity-kicker { color: var(--blue-mid); }
 .capacity-type { font-family: var(--font); font-size: clamp(28px, 3vw, 38px); font-weight: 700; line-height: 1.1; color: var(--navy); margin-bottom: 8px; }
-.capacity-card.is-featured .capacity-type { color: #fff; }
+.capacity-card.is-featured .capacity-type { color: #fff; white-space: nowrap; }
 .capacity-desc { font-size: 15px; color: var(--text-muted); line-height: 1.55; margin-bottom: 24px; }
 .capacity-card.is-featured .capacity-desc { color: rgba(255,255,255,.7); }
 .capacity-points { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; padding: 0; }
@@ -134,30 +131,22 @@ a { text-decoration: none; color: inherit; }
 .capacity-card.is-featured .capacity-cta { background: #5884E7; color: #fff; padding: 14px 24px; width: 100%; font-size: 15px; border: 1px solid #5884E7; }
 .capacity-card.is-featured .capacity-cta:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
 
-/* ── PAIN POINTS ── */
-.pain-section { background: var(--white); border-top: 1px solid var(--gray-200); }
-.pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
-.pain-card { padding: 24px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); text-align: left; }
-.pain-kicker { width: 28px; height: 28px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; background: var(--blue-light); color: var(--blue); font-family: var(--font); font-size: 13px; font-weight: 700; }
-.pain-title { font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-.pain-desc { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
-.pain-summary { margin-top: 28px; padding: 18px 22px; background: linear-gradient(135deg, var(--blue-light) 0%, #E8F0FF 100%); border: 1px solid var(--blue-mid); border-radius: var(--radius); font-size: 16px; line-height: 1.65; color: var(--navy); }
-.pain-summary strong { color: var(--blue); }
 
-/* ── USE CASE ROWS ── */
-.use-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
-.use-rows { display: flex; flex-direction: column; gap: 48px; margin-top: 40px; }
-.use-row { display: flex; gap: 40px; align-items: center; }
-.use-row:nth-child(even) { flex-direction: row-reverse; }
-.use-row-img { width: 50%; border-radius: var(--radius); object-fit: cover; flex-shrink: 0; aspect-ratio: 4/3; }
-.use-row-text { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.use-tag { display: inline-block; font-family: var(--font); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: var(--blue-light); color: var(--blue); margin-bottom: 12px; align-self: flex-start; }
-.use-row-text h3 { font-family: var(--font); font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-.use-row-text p { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
-.use-rec { font-size: 15px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
-.use-rec strong { color: var(--blue); }
-.use-link { font-family: var(--font); font-size: 15px; font-weight: 600; color: #fff; display: inline-flex; align-items: center; align-self: flex-start; padding: 12px 22px; border-radius: 4px; background: var(--blue); border: 1px solid var(--blue); transition: all .2s; }
-.use-link:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
+/* ── USE CASE BENTO ── */
+.use-section { background: var(--white); }
+.use-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 420px 340px; gap: 12px; margin-top: 40px; }
+.use-card { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--navy); cursor: pointer; }
+.use-card.wide { grid-column: span 12; }
+.use-card.narrow { grid-column: span 6; }
+.use-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.use-card:hover img { transform: scale(1.05); }
+.use-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,25,83,.76) 0%, rgba(14,25,83,.32) 32%, rgba(14,25,83,.06) 60%, transparent 100%); }
+.use-card-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 24px; }
+.use-card h3 { font-family: var(--font); font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.use-card.wide h3 { font-size: 20px; }
+.use-card p { font-size: 15px; color: rgba(255,255,255,.88); line-height: 1.45; margin: 0; }
+.use-card-rec { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 5px 12px; border-radius: 4px; margin-bottom: 10px; }
+.use-card-rec svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
 /* ── PRODUCTS (old-house layout) ── */
 .products-section { background: var(--gray-50); padding-top: 56px; }
@@ -204,20 +193,20 @@ a { text-decoration: none; color: inherit; }
 .product-card .product-cta { min-width: 0; width: 100%; justify-content: center; font-size: 14px; min-height: 44px; }
 
 /* ── BEFORE YOU BUY — shed checklist ── */
-.byb-section { background: var(--white); border-top: 1px solid var(--gray-200); padding-top: 56px; padding-bottom: 56px; }
+.byb-section { background: var(--gray-50); padding-top: 56px; padding-bottom: 56px; }
 .byb-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--gray-200); }
 .byb-card { padding: 40px 36px; border-bottom: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); position: relative; transition: background .25s ease; }
 .byb-card:nth-child(2n) { border-right: none; }
 .byb-card:nth-last-child(-n+2) { border-bottom: none; }
-.byb-card:first-child { grid-column: 1 / -1; border-right: none; border-left: 3px solid var(--blue); }
+.byb-card:first-child { border-left: none; }
 .byb-card:hover { background: #FCFDFF; }
 .byb-card-num { font-family: var(--font); font-size: 64px; font-weight: 700; color: rgba(88,132,231,.10); line-height: 1; position: absolute; top: 20px; right: 24px; }
 .byb-card h4 { font-family: var(--font); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-.byb-card p { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin: 0; max-width: 540px; }
+.byb-card p { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin: 0; }
 .byb-card .byb-start { font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-light); padding: 3px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; letter-spacing: .04em; }
 
 /* ── SERVICES (exact copy from shed) ── */
-.services-section { background: var(--white); padding-top: 60px; padding-bottom: 44px; }
+.services-section { background: var(--white); padding-top: 56px; padding-bottom: 56px; }
 .services-heading { text-align: left; margin-bottom: 18px; }
 .services-heading h2 { margin: 0; font-family: var(--font); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -.01em; color: var(--navy); }
 .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
@@ -228,7 +217,7 @@ a { text-decoration: none; color: inherit; }
 .service-desc { margin: 0; font-size: 16px; line-height: 1.5; color: var(--text-body); }
 
 /* ── FAQ (shed style) ── */
-.faq-section { background: var(--white); padding-top: 46px; padding-bottom: 28px; }
+.faq-section { background: var(--white); padding-top: 56px; padding-bottom: 56px; }
 .faq-list { margin-top: 28px; background: transparent; border: none; border-radius: 0; overflow: visible; }
 .faq-item { border-bottom: 1px solid var(--gray-200); transition: border-color .2s ease; }
 .faq-item:first-child { border-top: 1px solid var(--gray-200); }
@@ -270,9 +259,8 @@ a { text-decoration: none; color: inherit; }
   .decision-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .capacity-grid { grid-template-columns: 1fr; gap: 12px; }
   .capacity-card.is-featured { transform: none; }
-  .pain-grid { grid-template-columns: 1fr 1fr; }
-  .use-row, .use-row:nth-child(even) { flex-direction: column; }
-  .use-row-img { width: 100%; }
+  .use-grid { grid-template-columns: 1fr; grid-auto-rows: 280px; }
+  .use-card.wide, .use-card.narrow { grid-column: span 1; }
   .products-grid { gap: 14px; margin-top: 28px; }
   .product-bottom-row { grid-template-columns: 1fr; gap: 14px; }
   .product-feature, .product-card { display: flex; flex-direction: column; align-items: stretch; gap: 14px; padding: 18px 18px 20px; min-height: auto; height: auto; }
@@ -290,7 +278,7 @@ a { text-decoration: none; color: inherit; }
   .byb-section { padding: 40px 0; }
   .byb-grid { grid-template-columns: 1fr; margin-top: 28px; }
   .byb-card { padding: 28px 24px; border-right: none; }
-  .byb-card:first-child { border-left: 3px solid var(--blue); }
+  .byb-card:first-child { border-left: none; }
   .byb-card:nth-child(2n) { border-right: none; }
   .byb-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
   .byb-card:last-child { border-bottom: none; }
@@ -330,20 +318,15 @@ a { text-decoration: none; color: inherit; }
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&q=80" alt="Finished attic room with daylight and sloped ceiling" width="1400" height="933" loading="eager">
+  <img class="hero-bg" src="Mini%20Split%20for%20Attic/Mini%20Split%20for%20Attic%20banner.webp" alt="Finished attic room with daylight and sloped ceiling" width="2800" height="1200" loading="eager">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
       <h1>Mini Split for <em>Attic</em></h1>
-      <p class="hero-text">Add year-round heating and cooling to a finished attic without relying on weak top-floor ductwork. Compare concealed ducted, ceiling cassette, wall-mounted, and multi-zone options based on your layout.</p>
+      <p class="hero-text">Attics run hotter in summer and colder in winter than any other room. A mini split fixes that without touching your existing ductwork.</p>
       <div class="hero-actions">
         <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="btn btn-navy btn-lg">Shop Concealed Ducted</a>
         <a href="#compare" class="btn btn-outline-white btn-lg">Compare Attic Setups</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="hero-stat-num">From $849</div><div class="hero-stat-label">Wall-mounted starting price</div></div>
-        <div><div class="hero-stat-num">4 System Types</div><div class="hero-stat-label">Matched to your attic layout</div></div>
-        <div><div class="hero-stat-num">Year-Round</div><div class="hero-stat-label">Heating &amp; cooling in one unit</div></div>
       </div>
     </div>
   </div>
@@ -355,31 +338,30 @@ a { text-decoration: none; color: inherit; }
     <div class="section-header">
       <span class="section-label">What's Your Setup?</span>
       <h2 class="section-title">Find the Right Mini Split Setup for Your Attic</h2>
-      <p class="section-desc">Choose attic systems by layout first: concealed ducted for slopes, cassette for open lofts, wall-mounted for simple one-room installs, and multi-zone for attic-plus-room projects.</p>
     </div>
     <div class="decision-grid">
       <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="18" y2="10"/></svg></div>
+        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V10l7-6 7 6v10"/><path d="M5 10l7 4 7-4" stroke-dasharray="2 2"/></svg></div>
         <div class="decision-label">Sloped Ceiling or Knee Wall</div>
-        <div class="decision-hint">Best for knee walls, ceiling cavities, and attic layouts where wall-mounted placement is limited.</div>
+        <div class="decision-hint">Unit hides inside the structure.</div>
         <div class="decision-cta">See Concealed Ducted</div>
       </a>
       <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18v14H3z"/><path d="M3 6h18"/><circle cx="12" cy="13" r="3"/><path d="M12 10v-1m0 8v1m-4-4H7m10 0h-1"/></svg></div>
         <div class="decision-label">Open Loft or Flat Ceiling</div>
-        <div class="decision-hint">Best for attic lofts or bonus rooms with enough flat ceiling area for a cleaner look.</div>
+        <div class="decision-hint">Mounts flush into the ceiling.</div>
         <div class="decision-cta">See Ceiling Cassette</div>
       </a>
       <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20V8h16v12"/><rect x="7" y="10" width="10" height="4" rx="1"/><path d="M10 14v2m4-2v2"/></svg></div>
         <div class="decision-label">One Finished Bedroom</div>
-        <div class="decision-hint">Best for one attic room with enough clean wall height and a simpler install path.</div>
+        <div class="decision-hint">Mounts high on the wall.</div>
         <div class="decision-cta">Shop Wall-Mounted</div>
       </a>
       <a href="https://dellahome.com/collections/mini-split-multi-zone" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg></div>
+        <div class="decision-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v3.5a1 1 0 01-1 1H14"/><circle cx="17.5" cy="17.5" r=".5" fill="currentColor"/></svg></div>
         <div class="decision-label">Attic Plus More Rooms</div>
-        <div class="decision-hint">One outdoor unit for an attic and nearby rooms on the same upper floor.</div>
+        <div class="decision-hint">One outdoor unit, multiple rooms.</div>
         <div class="decision-cta">See Multi-Zone</div>
       </a>
     </div>
@@ -392,53 +374,36 @@ a { text-decoration: none; color: inherit; }
     <div class="section-header">
       <span class="section-label">Compare System Types</span>
       <h2 class="section-title">Choose by Your Attic Layout</h2>
-      <p class="section-desc">Attic layout decides the system type. Slopes and knee walls point to concealed ducted, open lofts to cassette, and simple bedrooms to wall-mounted.</p>
+      <p class="section-desc">Your ceiling shape picks the system type.</p>
     </div>
     <div class="capacity-grid">
       <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="capacity-card">
         <span class="capacity-kicker">Simplest Install</span>
         <div class="capacity-type">Wall-Mounted</div>
-        <p class="capacity-desc">Best for a single finished attic bedroom with enough clean wall height and a simpler install path.</p>
-        <ul class="capacity-points"><li>One finished room</li><li>Easiest install path</li><li>Most affordable option</li><li>9K–18K BTU range</li></ul>
+        <p class="capacity-desc">One finished room with enough wall height for a high-wall unit.</p>
+        <ul class="capacity-points"><li>Easiest install path</li><li>Most affordable option</li><li>9K–18K BTU range</li></ul>
         <span class="capacity-cta">Shop Wall-Mounted</span>
       </a>
       <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="capacity-card is-featured">
         <span class="capacity-badge">Best for Most Attics</span>
         <span class="capacity-kicker">Sloped Ceilings &amp; Knee Walls</span>
         <div class="capacity-type">Concealed Ducted</div>
-        <p class="capacity-desc">Hides the air handler inside knee walls or ceiling cavities. Only small supply grilles are visible in the room.</p>
-        <ul class="capacity-points"><li>Slopes, knee walls, dormers</li><li>Hidden installation</li><li>Flexible duct placement</li><li>9.5K–18K BTU range</li></ul>
+        <p class="capacity-desc">Air handler hides inside the knee wall or ceiling cavity. Only small grilles show.</p>
+        <ul class="capacity-points"><li>Slopes, knee walls, dormers</li><li>Completely hidden install</li><li>9.5K–18K BTU range</li></ul>
         <span class="capacity-cta">Shop Concealed Ducted</span>
       </a>
       <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="capacity-card">
         <span class="capacity-kicker">Open Layouts</span>
         <div class="capacity-type">Ceiling Cassette</div>
-        <p class="capacity-desc">Best for attic lofts or bonus rooms with enough flat ceiling area for wide air distribution.</p>
-        <ul class="capacity-points"><li>Open lofts &amp; bonus rooms</li><li>Wide air distribution</li><li>Clean ceiling-mount look</li><li>12K–24K BTU range</li></ul>
+        <p class="capacity-desc">Mounts flush into a flat ceiling section for wider air spread.</p>
+        <ul class="capacity-points"><li>Open lofts &amp; bonus rooms</li><li>Wide air distribution</li><li>12K–24K BTU range</li></ul>
         <span class="capacity-cta">Shop Ceiling Cassette</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- WHY ATTICS ARE DIFFERENT -->
-<section class="section pain-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Why It's Different</span>
-      <h2 class="section-title">Why Attics Need a Different Setup</h2>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card"><span class="pain-kicker">01</span><div class="pain-title">Roof Heat Builds Fast</div><div class="pain-desc">Attics absorb more sun and usually run hotter than the rooms below.</div></div>
-      <div class="pain-card"><span class="pain-kicker">02</span><div class="pain-title">Weak Airflow Up Top</div><div class="pain-desc">Even when ductwork reaches the attic, cooling and heating are often weakest there.</div></div>
-      <div class="pain-card"><span class="pain-kicker">03</span><div class="pain-title">Angles Limit Placement</div><div class="pain-desc">Knee walls, dormers, slopes, and ceiling height all affect what system type will fit cleanly.</div></div>
-      <div class="pain-card"><span class="pain-kicker">04</span><div class="pain-title">Insulation Gaps Change Sizing</div><div class="pain-desc">Attic insulation varies widely. Poor insulation or direct sun exposure can push sizing up by one tier.</div></div>
-    </div>
-    <div class="pain-summary">In attics, <strong>layout matters more than square footage alone</strong>. Sloped spaces often point to concealed ducted, open lofts to cassette, and simpler one-room bedrooms to wall-mounted.</div>
-  </div>
-</section>
-
-<!-- MATCH BY ROOM -->
+<!-- MATCH BY ROOM — bento -->
 <section class="section use-section">
   <div class="container">
     <div class="section-header">
@@ -446,23 +411,31 @@ a { text-decoration: none; color: inherit; }
       <h2 class="section-title">Best Mini Split Setups for Common Attic Scenarios</h2>
       <p class="section-desc">Find the setup that fits how your attic is actually being used.</p>
     </div>
-    <div class="use-rows">
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=640&q=80" alt="Attic with sloped ceiling and knee wall" loading="lazy">
-        <div class="use-row-text"><span class="use-tag">Most Common</span><h3>Ducted Mini Split in Attic with Sloped Ceiling</h3><p>Slopes, knee walls, and low clearance can rule out a wall unit. Concealed ducted hides the air handler inside the structure and uses small grilles instead.</p><div class="use-rec">Recommended: <strong>Concealed Ducted</strong></div><a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="use-link">Shop Concealed Ducted</a></div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=640&q=80" alt="Open attic loft" loading="lazy">
-        <div class="use-row-text"><span class="use-tag">Open Layout</span><h3>Ceiling Cassette for Open Attic Loft</h3><p>Open attic lofts with enough flat ceiling area often fit ceiling cassette best for wider air spread and a cleaner look.</p><div class="use-rec">Recommended: <strong>Ceiling Cassette</strong></div><a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="use-link">Shop Ceiling Cassette</a></div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640&q=80" alt="Finished attic bedroom" loading="lazy">
-        <div class="use-row-text"><span class="use-tag">Simple Install</span><h3>One Finished Attic Bedroom</h3><p>For a single attic bedroom or guest room with enough usable wall height, wall-mounted is often the simplest and most affordable path.</p><div class="use-rec">Recommended: <strong>Wall-Mounted</strong></div><a href="https://dellahome.com/collections/wall-mounted-mini-split" class="use-link">Shop Wall-Mounted</a></div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&q=80" alt="Upper floor with multiple rooms" loading="lazy">
-        <div class="use-row-text"><span class="use-tag">Multi-Room</span><h3>Attic Plus Nearby Rooms</h3><p>If the attic is part of a larger upstairs project, multi-zone gives you one outdoor unit and separate control across multiple rooms.</p><div class="use-rec">Recommended: <strong>Multi-Zone System</strong></div><a href="https://dellahome.com/collections/mini-split-multi-zone" class="use-link">Browse Multi-Zone Systems</a></div>
-      </div>
+    <div class="use-grid">
+      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="use-card wide">
+        <img src="Mini%20Split%20for%20Attic/Sloped%20Ceiling.webp" alt="Attic with sloped ceiling and knee wall" loading="lazy">
+        <div class="use-card-body">
+          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Concealed Ducted</span>
+          <h3>Sloped ceiling or knee wall</h3>
+          <p>Low clearance rules out a wall unit. Concealed ducted hides the air handler inside the structure and uses small grilles instead.</p>
+        </div>
+      </a>
+      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="use-card narrow">
+        <img src="Mini%20Split%20for%20Attic/Open%20Loft%20%20Flat%20Ceiling.webp" alt="Open attic loft with flat ceiling" loading="lazy">
+        <div class="use-card-body">
+          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Ceiling Cassette</span>
+          <h3>Open loft with flat ceiling</h3>
+          <p>Wide air spread and a cleaner look for open layouts.</p>
+        </div>
+      </a>
+      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="use-card narrow">
+        <img src="Mini%20Split%20for%20Attic/One%20Finished%20Bedroom.webp" alt="Finished attic bedroom" loading="lazy" style="object-position:30% 25%">
+        <div class="use-card-body">
+          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Wall-Mounted</span>
+          <h3>One finished bedroom</h3>
+          <p>Simplest and most affordable when wall height allows.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -520,7 +493,7 @@ a { text-decoration: none; color: inherit; }
     <div class="byb-grid">
       <div class="byb-card">
         <span class="byb-card-num">01</span>
-        <h4>Insulation &amp; Air Sealing <span class="byb-start">Start here</span></h4>
+        <h4>Insulation &amp; Air Sealing</h4>
         <p>Attic insulation changes comfort, runtime, and BTU sizing faster than almost any other condition. Poor sealing or thin insulation can push the right system up an entire size tier.</p>
       </div>
       <div class="byb-card">
@@ -537,11 +510,6 @@ a { text-decoration: none; color: inherit; }
         <span class="byb-card-num">04</span>
         <h4>Electrical Access</h4>
         <p>Attic circuits may need to be added or upgraded depending on system voltage and amperage. Confirm panel capacity first.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-card-num">05</span>
-        <h4>Choose by Layout First</h4>
-        <p>Ducted for slopes, cassette for open lofts, wall-mounted for one-room installs, and multi-zone for attic-plus-room projects.</p>
       </div>
     </div>
   </div>
