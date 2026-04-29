@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -22,21 +22,22 @@
 :root {
   --navy: #0E1953;
   --blue: #5884E7;
+  --blue-cta-hover: #6B95EF;
   --blue-surface: #F4F7FF;
   --blue-light: #EDF2FF;
   --blue-mid: #C5D5F5;
   --gray-50: #F8F9FB;
   --gray-100: #F0F2F6;
-  --gray-200: #E2E6EE;
+  --gray-200: #DEE4EF;
   --text-body: #1A2550;
   --text-muted: #5C6A8A;
   --white: #fff;
   --font: 'Roboto', sans-serif;
   --radius: 12px;
   --radius-lg: 16px;
-  --shadow-sm: 0 1px 3px rgba(14,25,83,.06), 0 1px 2px rgba(14,25,83,.04);
-  --shadow: 0 4px 16px rgba(14,25,83,.08), 0 1px 4px rgba(14,25,83,.04);
-  --shadow-hover: 0 8px 30px rgba(14,25,83,.12), 0 2px 8px rgba(14,25,83,.06);
+  --shadow-sm: 0 1px 2px rgba(14,25,83,.04), 0 1px 1px rgba(14,25,83,.03);
+  --shadow: 0 6px 18px rgba(14,25,83,.06), 0 2px 6px rgba(14,25,83,.04);
+  --shadow-hover: 0 10px 22px rgba(14,25,83,.08), 0 3px 8px rgba(14,25,83,.04);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -51,17 +52,22 @@ img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.section { padding: 80px 0; }
+.section { padding: 56px 0; }
 
 .section-label {
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 10px;
-  display: block;
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--blue-light);
+  white-space: nowrap;
 }
 .section-title {
   font-family: var(--font);
@@ -93,12 +99,16 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 .btn-navy {
-  background: var(--navy);
+  background: var(--blue);
   color: #fff;
+  border: 1px solid var(--blue);
+  box-shadow: none;
 }
 .btn-navy:hover {
-  background: #1a2a6c;
-  box-shadow: rgba(0,0,0,.25) 0 2px 10px;
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
+  box-shadow: none;
 }
 .btn-outline {
   background: transparent;
@@ -116,8 +126,9 @@ a { text-decoration: none; color: inherit; }
   border: 2px solid rgba(255,255,255,.3);
 }
 .btn-outline-white:hover {
-  border-color: #fff;
-  background: rgba(255,255,255,.1);
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-light);
 }
 .btn-lg { padding: 16px 32px; font-size: 17px; }
 
@@ -138,15 +149,17 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 30% 15%;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(14,25,83,.80) 0%,
-    rgba(14,25,83,.40) 50%,
-    transparent 100%
+    95deg,
+    rgba(14,25,83,.72) 0%,
+    rgba(14,25,83,.38) 30%,
+    rgba(14,25,83,.10) 50%,
+    rgba(14,25,83,.02) 100%
   );
 }
 .hero-content {
@@ -156,7 +169,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-inner {
   padding: 72px 0;
-  max-width: 1000px;
+  max-width: 780px;
 }
 .hero h1 {
   font-family: var(--font);
@@ -176,7 +189,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.7;
   color: rgba(255,255,255,.78);
   margin-bottom: 24px;
-  max-width: 920px;
+  max-width: 700px;
 }
 .hero-actions {
   display: flex;
@@ -184,46 +197,44 @@ a { text-decoration: none; color: inherit; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.hero-link {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255,255,255,.65);
-  border-bottom: 1px solid rgba(255,255,255,.3);
-  padding-bottom: 2px;
-  transition: all .2s;
+.hero-actions .btn-lg {
+  min-height: 50px;
+  padding: 14px 26px;
+  font-size: 16px;
 }
-.hero-link:hover {
-  color: #fff;
-  border-color: rgba(255,255,255,.7);
+.hero-actions .btn-navy {
+  border: 1px solid var(--blue);
+  box-shadow: none;
 }
-.hero-stats {
-  display: flex;
-  gap: 40px;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,.1);
+.hero-actions .btn-navy:hover {
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
+  box-shadow: none;
+  transform: none;
 }
-.hero-stat-num {
-  font-family: var(--font);
-  font-size: 27px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
+.hero-actions .btn-outline-white {
+  color: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.04);
 }
-.hero-stat-label {
-  font-size: 15px;
-  color: rgba(255,255,255,.5);
-  margin-top: 4px;
+.hero-actions .btn-outline-white:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: var(--blue-light);
 }
 
 /* ============================================
    CAPACITY CARDS
 ============================================ */
-.capacity-section { background: var(--gray-50); }
+.capacity-section {
+  background: var(--gray-50);
+  padding-bottom: 56px;
+}
 .capacity-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr .95fr;
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
   margin-top: 40px;
 }
 .capacity-card {
@@ -236,32 +247,28 @@ a { text-decoration: none; color: inherit; }
 }
 .capacity-card:hover {
   background: var(--gray-50);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  transform: none;
+  box-shadow: var(--shadow-sm);
 }
 .capacity-card.is-featured {
-  background: var(--navy);
+  background: #162663;
   color: #fff;
-  transform: scaleY(1.02);
+  transform: none;
   z-index: 2;
-  box-shadow: 0 16px 40px rgba(14,25,83,.25);
+  box-shadow: 0 4px 14px rgba(14,25,83,.06);
   border: 2px solid var(--blue);
-}
-.capacity-card.is-support {
-  background: linear-gradient(180deg, #FCFDFF 0%, #F3F7FF 100%);
-  border: 1px solid var(--blue-mid);
 }
 .capacity-badge {
   position: absolute;
   top: 16px; right: 16px;
-  background: var(--blue);
+  background: #5884E7;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .capacity-kicker {
   font-size: 12px;
@@ -319,411 +326,40 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   color: var(--navy);
   letter-spacing: .02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  background: #fff;
+  transition: all .2s;
+}
+.capacity-card:hover .capacity-cta {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-light);
 }
 .capacity-card.is-featured .capacity-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: var(--navy);
+  background: #5884E7;
+  color: #fff;
   padding: 14px 24px;
   border-radius: 4px;
   width: 100%;
   font-size: 15px;
+  border: 1px solid #5884E7;
   transition: all .2s;
 }
 .capacity-card.is-featured .capacity-cta:hover {
-  background: var(--blue);
-  color: #fff;
-}
-.capacity-card.is-support .capacity-kicker { color: var(--blue); }
-.capacity-card.is-support .capacity-points li::before { color: var(--blue); }
-
-/* ============================================
-   SIZING TABLE
-============================================ */
-.sizing-section {
-  background: var(--white);
-  border-top: 1px solid var(--gray-200);
-}
-.table-wrap {
-  margin-top: 36px;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-.sizing-table { width: 100%; border-collapse: collapse; }
-.sizing-table thead { background: var(--navy); }
-.sizing-table th {
-  padding: 14px 22px;
-  text-align: left;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.7);
-}
-.sizing-table td {
-  padding: 18px 22px;
-  border-bottom: 1px solid var(--gray-100);
-  background: var(--white);
-}
-.sizing-table tr:last-child td { border-bottom: none; }
-.sizing-table tr:hover td { background: var(--gray-50); }
-.shed-name { font-size: 15px; font-weight: 600; color: var(--navy); }
-.shed-hint { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
-.btu-val { font-size: 15px; font-weight: 600; color: var(--navy); }
-.use-val { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
-.table-note {
-  margin-top: 14px;
-  padding: 12px 16px;
-  background: var(--blue-light);
-  border-radius: var(--radius);
-  font-size: 14px;
-  color: var(--text-muted);
-  border-left: 3px solid var(--blue);
-}
-
-/* ============================================
-   WHY BASEMENTS DIFFER
-============================================ */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 40px;
-}
-.why-card {
-  background: #FCFBF8;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 24px 20px;
-}
-.why-kicker {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  background: var(--blue-light);
+  background: #fff;
   color: var(--blue);
-  font-size: 13px;
-  font-weight: 700;
-}
-.why-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.why-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-.why-summary {
-  margin-top: 28px;
-  padding: 18px 22px;
-  background: linear-gradient(135deg, var(--blue-light) 0%, #E8F0FF 100%);
-  border: 1px solid var(--blue-mid);
-  border-radius: var(--radius);
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--navy);
-}
-.why-summary strong { color: var(--blue); }
-
-/* ============================================
-   CHECKLIST
-============================================ */
-.checklist-section { background: var(--gray-50); }
-.checklist-grid {
-  display: grid;
-  gap: 12px;
-  max-width: 900px;
-  margin-top: 40px;
-}
-.check-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-left: 3px solid transparent;
-  border-radius: var(--radius);
-  padding: 28px 32px;
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 20px;
-  align-items: start;
-  transition: all .25s ease;
-}
-.check-card:hover {
-  box-shadow: var(--shadow);
-  border-left-color: var(--blue);
-  transform: translateX(4px);
-}
-.check-num {
-  font-family: var(--font);
-  font-size: 32px;
-  font-weight: 700;
-  color: rgba(88,132,231,.2);
-  line-height: 1;
-}
-.check-body h3 {
-  font-family: var(--font);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.check-body p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.secondary-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 28px;
-}
-.secondary-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-}
-.secondary-kicker {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 3px 9px;
-  border-radius: 4px;
-  background: var(--blue-light);
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.secondary-card h3 {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.secondary-card p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ============================================
-   USE CASES 鈥?Bento Grid
-============================================ */
-.use-cases-section { background: var(--white); }
-.use-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  margin-top: 40px;
-}
-.use-row {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-.use-row:nth-child(even) { flex-direction: row-reverse; }
-.use-row-img {
-  width: 50%;
-  border-radius: 12px;
-  object-fit: cover;
-  flex-shrink: 0;
-  aspect-ratio: 4/3;
-}
-.use-row-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.use-tag {
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 4px;
-  background: var(--blue-light);
-  color: var(--blue);
-  margin-bottom: 12px;
-  align-self: flex-start;
-}
-.use-row-text h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-  line-height: 1.35;
-}
-.use-row-text p {
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 6px;
-}
-.use-rec {
-  font-size: 15px;
-  color: var(--navy);
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-.use-rec strong { color: var(--blue); }
-.use-link {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--blue);
-  padding: 10px 16px;
-  border-radius: 8px;
-  background: var(--blue-light);
-  border: 1px solid rgba(88,132,231,.18);
-  transition: all .15s ease;
-}
-.use-link:hover {
-  background: var(--navy);
-  color: #fff;
-  border-color: var(--navy);
-}
-
-/* ============================================
-   PRODUCTS 鈥?1 featured + 2 stacked
-============================================ */
-.products-section { background: var(--gray-50); }
-.products-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 20px;
-  margin-top: 40px;
-}
-.product-feature {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all .25s;
-}
-.product-feature:hover {
   border-color: var(--blue);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
 }
-.product-img-wrap {
-  position: relative;
-  background: linear-gradient(180deg, #F8FAFF 0%, #EEF3FF 100%);
-  padding: 28px;
-  overflow: hidden;
-}
-.product-feature .product-img-wrap { aspect-ratio: 4/3; }
-.product-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: contain;
-  transition: transform .3s;
-}
-.product-feature:hover .product-img-wrap img,
-.product-card:hover .product-img-wrap img { transform: scale(1.04); }
-.product-badge {
-  position: absolute;
-  top: 12px; left: 12px;
-  background: var(--navy);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 4px;
-}
-.product-body {
-  padding: 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.product-name {
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.35;
-  margin-bottom: 6px;
-}
-.product-feature .product-name { font-size: 22px; margin-bottom: 10px; }
-.product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
-.product-rating strong { color: var(--navy); font-weight: 700; }
-.product-spec { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
-.product-lead { font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
-.product-price {
-  font-family: var(--font);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-  margin-top: auto;
-}
-.product-emphasis {
-  font-family: var(--font);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--blue);
-  margin-bottom: 14px;
-}
-.product-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 4px;
-  background: var(--navy);
-  color: #fff;
-  transition: all .2s;
-  align-self: flex-start;
-}
-.product-feature:hover .product-cta,
-.product-card:hover .product-cta { background: var(--blue); }
-.product-stack { display: grid; gap: 20px; }
-.product-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  padding: 18px;
-  transition: all .25s;
-}
-.product-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
-}
-.product-card .product-img-wrap {
-  width: 160px; min-width: 160px;
-  border-radius: var(--radius);
-  aspect-ratio: 1;
-  padding: 16px;
-  background: var(--gray-50);
-}
-.product-card .product-body { padding: 0; }
 
 .support-path {
   margin-top: 18px;
@@ -759,7 +395,319 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   SERVICES
+   USE CASES — Bento Grid
+============================================ */
+.use-cases-section {
+  background: var(--white);
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 340px;
+  gap: 12px;
+  margin-top: 40px;
+}
+.use-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--navy);
+}
+.use-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.use-card:hover img { transform: scale(1.05); }
+.use-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(14,25,83,.76) 0%,
+    rgba(14,25,83,.32) 32%,
+    rgba(14,25,83,.06) 60%,
+    transparent 100%
+  );
+}
+.use-card-body {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  padding: 24px;
+}
+.use-card h3 {
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.use-card p {
+  font-size: 15px;
+  color: rgba(255,255,255,.94);
+  line-height: 1.35;
+  margin: 0;
+  max-width: 360px;
+}
+
+/* ============================================
+   BEFORE YOU BUY — 2x2 Editorial Grid
+============================================ */
+.checklist-section {
+  background: var(--gray-50);
+  padding-top: 28px;
+  padding-bottom: 56px;
+}
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--gray-200);
+}
+.check-card {
+  padding: 40px 36px;
+  border-bottom: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+  position: relative;
+  transition: background .25s ease;
+}
+.check-card:nth-child(2n) { border-right: none; }
+.check-card:nth-last-child(-n+2) { border-bottom: none; }
+.check-card:hover { background: #FCFDFF; }
+.check-num {
+  font-family: var(--font);
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(88,132,231,.10);
+  line-height: 1;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+}
+.check-body h3 {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.check-body p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ============================================
+   PRODUCTS — 1 featured + 2 stacked
+============================================ */
+.products-section {
+  background: var(--gray-50);
+  padding-top: 56px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .95fr);
+  gap: 24px;
+  margin-top: 38px;
+  align-items: stretch;
+}
+.product-feature {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 28px 24px;
+  min-height: 100%;
+  height: 100%;
+  transition: all .25s;
+}
+.product-feature:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+.product-img-wrap {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-feature .product-img-wrap {
+  flex: 0 0 58%;
+  width: auto;
+  max-width: 500px;
+  min-height: auto;
+  padding-top: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.product-img-wrap img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .3s;
+}
+.product-feature .product-img-wrap img { max-height: 430px; }
+.product-feature .product-badge {
+  position: static;
+  align-self: flex-start;
+}
+.product-feature:hover .product-img-wrap img,
+.product-card:hover .product-img-wrap img { transform: scale(1.04); }
+.product-badge {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 2;
+  background: var(--blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.product-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+.product-copy,
+.product-action {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.product-copy { gap: 8px; }
+.product-action {
+  gap: 12px;
+  align-items: flex-start;
+}
+.product-name {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 0;
+}
+.product-feature .product-body {
+  flex: 1;
+  max-width: 340px;
+  padding: 0;
+  gap: 12px;
+  align-self: center;
+  justify-content: flex-start;
+  padding-top: 18px;
+}
+.product-feature .product-name { font-size: 19px; }
+.product-feature .product-copy { gap: 6px; }
+.product-feature .product-action { gap: 12px; }
+.product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 0; line-height: 1.35; }
+.product-rating strong { color: var(--navy); font-weight: 700; }
+.product-card .product-rating { font-size: 12px; }
+.product-card .product-rating strong { font-weight: 600; }
+.product-spec { font-size: 13px; color: var(--text-muted); line-height: 1.45; margin-bottom: 0; }
+.product-price {
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 4px;
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+  transition: all .2s;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+.product-feature .product-cta {
+  min-width: 198px;
+  min-height: 48px;
+  padding: 12px 22px;
+}
+.product-card .product-cta {
+  min-width: 198px;
+  min-height: 48px;
+  padding: 12px 22px;
+}
+.product-feature .product-cta:hover,
+.product-card .product-cta:hover {
+  background: #fff;
+  color: var(--blue);
+  border-color: var(--blue);
+}
+.product-stack { display: grid; gap: 18px; }
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  min-height: 212px;
+  transition: all .25s;
+}
+.product-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+.product-card .product-img-wrap {
+  width: 212px; min-width: 212px;
+  padding-top: 36px;
+  align-self: center;
+}
+.product-card .product-img-wrap img { max-height: 164px; }
+.product-card .product-body {
+  flex: 1;
+  padding: 0;
+  gap: 12px;
+  align-self: center;
+  justify-content: space-between;
+}
+.product-card .product-copy { gap: 6px; }
+.product-card .product-action { gap: 12px; }
+.product-card .product-name {
+  font-size: 15px;
+  line-height: 1.3;
+}
+.product-card .product-price {
+  font-size: 18px;
+}
+
+/* ============================================
+   SERVICES (exact copy from shed)
 ============================================ */
 .services-section {
   background: var(--white);
@@ -770,23 +718,8 @@ a { text-decoration: none; color: inherit; }
   text-align: left;
   margin-bottom: 18px;
 }
-.services-heading .section-label,
-.faq-section .section-label {
-  font-family: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--blue);
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--blue-light);
-  white-space: nowrap;
-  margin-bottom: 12px;
-}
 .services-heading h2 {
+  margin: 0;
   font-family: var(--font);
   font-size: clamp(23px, 3vw, 33px);
   font-weight: 600;
@@ -838,7 +771,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   FAQ
+   FAQ (shed style)
 ============================================ */
 .faq-section {
   background: var(--white);
@@ -882,8 +815,7 @@ a { text-decoration: none; color: inherit; }
 .faq-q:hover h3,
 .faq-item.open .faq-q h3 { color: var(--blue); }
 .faq-icon {
-  width: 18px;
-  height: 18px;
+  width: 18px; height: 18px;
   flex-shrink: 0;
   position: relative;
 }
@@ -913,7 +845,7 @@ a { text-decoration: none; color: inherit; }
 .faq-item.open .faq-a { display: block; }
 
 /* ============================================
-   BOTTOM CTA
+   BOTTOM CTA (shed style)
 ============================================ */
 .bottom-cta {
   background: transparent;
@@ -950,12 +882,6 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 .bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
-.bottom-cta .btn-navy {
-  background: var(--blue);
-  color: #fff;
-  border: 1px solid var(--blue);
-  box-shadow: none;
-}
 .bottom-cta .btn-navy:hover {
   background: #fff;
   color: var(--blue);
@@ -967,29 +893,129 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE
 ============================================ */
 @media (max-width: 768px) {
-  .section { padding: 48px 0; }
+  .section { padding: 40px 0; }
   .container { padding: 0 20px; }
-  .hero { min-height: 520px; }
-  .hero-inner { padding: 52px 0; }
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  .hero { min-height: 500px; }
+  .hero-inner { padding: 42px 0; max-width: 340px; }
+  .hero h1 { font-size: 26px; margin-bottom: 14px; }
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: none;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-actions .btn-lg {
+    min-width: 170px;
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 14px;
+    justify-content: center;
+  }
   .capacity-grid { grid-template-columns: 1fr; gap: 12px; }
   .capacity-card.is-featured { transform: none; }
-  .why-grid { grid-template-columns: 1fr; }
-  .secondary-grid { grid-template-columns: 1fr; }
-  .use-row { flex-direction: column !important; gap: 20px; }
-  .use-row-img { width: 100%; }
-  .checklist-grid { margin-top: 28px; }
-  .check-card { grid-template-columns: 44px 1fr; padding: 20px; gap: 14px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .product-card { flex-direction: column; align-items: stretch; }
-  .product-card .product-img-wrap { width: 100%; min-width: 0; }
   .support-path { flex-direction: column; align-items: flex-start; }
+  .use-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+  .checklist-section { padding-top: 40px; padding-bottom: 40px; }
+  .checklist-grid { margin-top: 28px; grid-template-columns: 1fr; }
+  .check-card { padding: 28px 24px; }
+  .check-card:nth-child(2n) { border-right: none; }
+  .check-card { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .check-card:last-child { border-bottom: none; }
+  .check-num { display: none; }
+  .products-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+  .product-stack { gap: 14px; }
+  .product-feature,
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 18px 18px 20px;
+    min-height: auto;
+    height: auto;
+  }
+  .product-feature .product-img-wrap,
+  .product-card .product-img-wrap {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: auto;
+    padding-top: 34px;
+    align-self: stretch;
+  }
+  .product-feature .product-img-wrap img,
+  .product-card .product-img-wrap img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
+  .product-feature .product-badge,
+  .product-card .product-badge {
+    left: 0;
+    transform: none;
+  }
+  .product-feature .product-body,
+  .product-card .product-body {
+    max-width: none;
+    width: 100%;
+    gap: 10px;
+    align-self: stretch;
+    align-items: center;
+    text-align: center;
+  }
+  .product-feature .product-copy,
+  .product-card .product-copy {
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .product-feature .product-action,
+  .product-card .product-action {
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+  }
+  .product-feature .product-name,
+  .product-card .product-name {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .product-feature .product-rating,
+  .product-card .product-rating { font-size: 12px; }
+  .product-feature .product-spec,
+  .product-card .product-spec {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .product-feature .product-price,
+  .product-card .product-price { font-size: 17px; }
+  .product-feature .product-cta,
+  .product-card .product-cta {
+    min-width: 148px;
+    width: auto;
+    max-width: none;
+    padding: 8px 14px;
+    font-size: 12px;
+    align-self: center;
+  }
   .services-section {
     padding-top: 36px;
     padding-bottom: 26px;
   }
-  .services-heading { margin-bottom: 18px; }
-  .services-heading h2 { font-size: 23px; }
+  .services-heading {
+    margin-bottom: 18px;
+  }
+  .services-heading h2 {
+    font-size: 23px;
+  }
   .services-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1001,20 +1027,81 @@ a { text-decoration: none; color: inherit; }
   .service-icon-wrap {
     width: 52px;
     height: 52px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+  }
+  .service-title {
+    font-size: 16px;
+  }
+  .service-desc {
+    font-size: 15px;
   }
   .faq-section {
-    padding-top: 38px;
+    padding-top: 30px;
     padding-bottom: 24px;
   }
-  .bottom-cta-card { padding: 24px 18px; }
-  .sizing-table th, .sizing-table td { padding: 12px 14px; font-size: 14px; }
+  .bottom-cta { padding: 0 0 24px; }
+  .bottom-cta-card { padding: 20px 16px; }
+  .bottom-cta h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bottom-cta p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    max-width: 280px;
+  }
+  .bottom-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .bottom-cta .btn-lg {
+    width: 100%;
+    max-width: 210px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .capacity-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .capacity-grid { grid-template-columns: 1fr; gap: 12px; }
+  .use-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 280px; }
+  .checklist-grid { grid-template-columns: 1fr; }
+  .check-card { border-right: none; }
   .products-grid { grid-template-columns: 1fr; }
-  .use-row { gap: 24px; }
+  .product-feature {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    height: auto;
+  }
+  .product-feature .product-img-wrap {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+    min-height: auto;
+    padding-top: 0;
+    align-self: center;
+  }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
+
+/* ============================================
+   SUBTLE ANIMATIONS
+============================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-inner > * { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation-delay: 0.08s; }
+  .hero-text { animation-delay: 0.16s; }
+  .hero-actions { animation-delay: 0.24s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 </style>
 </head>
@@ -1022,25 +1109,15 @@ a { text-decoration: none; color: inherit; }
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1400&q=80" alt="Finished basement family room with sofa, lighting, and lower-level comfort" width="1400" height="933" loading="eager">
+  <img class="hero-bg" src="Mini%20Split%20for%20Basement/Mini%20Split%20for%20Basement%20Banner.webp" alt="Finished basement family room with a DELLA wall-mounted mini split" width="1792" height="1024" loading="eager">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
       <h1>Mini Split for <em>Basement</em></h1>
-      <p class="hero-text">Most finished basements start with a single-zone, wall-mounted mini split. 12,000 BTU is the most common place to start, and humidity plus drainage usually matter more here than they do in other rooms.</p>
+      <p class="hero-text">Basements stay damp and uncomfortable because your main HVAC was never designed to reach them. A mini split fixes that without touching your ductwork.</p>
       <div class="hero-actions">
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K - Most Common Pick</a>
-        <a href="#capacity" class="hero-link">Find your basement BTU</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">12K first</div>
-          <div class="hero-stat-label">The most common finished basement starting point</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">Humidity matters</div>
-          <div class="hero-stat-label">Drainage and moisture planning matter more here</div>
-        </div>
+        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Start with 12K</a>
+        <a href="#capacity" class="btn btn-outline-white btn-lg">Compare 9K vs 12K vs 18K</a>
       </div>
     </div>
   </div>
@@ -1050,192 +1127,116 @@ a { text-decoration: none; color: inherit; }
 <section class="section capacity-section" id="capacity">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Start Here</span>
-      <h2 class="section-title">Choose your BTU by basement size and layout</h2>
-      <p class="section-desc">Start with the main finished basement area you need to condition. Most buyers still land on 12K first, then move down to 9K or up to 18K and 24K as the layout opens up.</p>
+      <span class="section-label">Find Your BTU</span>
+      <h2 class="section-title">Choose by Your Main Basement Space</h2>
+      <p class="section-desc">Size by the room you actually use, not the full basement footprint. Humidity and layout matter more than square footage alone.</p>
     </div>
     <div class="capacity-grid">
       <a href="https://dellahome.com/collections/9000-btu-mini-split" class="capacity-card">
         <span class="capacity-kicker">Smaller Rooms</span>
         <div class="capacity-btu">9,000 BTU</div>
-        <p class="capacity-desc">Best for smaller enclosed basement offices, guest rooms, or compact finished rooms.</p>
+        <p class="capacity-desc">Enclosed office, guest room, or compact finished room.</p>
         <ul class="capacity-points">
-          <li>Office or guest room</li>
-          <li>Smaller finished basement zone</li>
+          <li>Enclosed finished rooms</li>
+          <li>Up to 400 sq ft</li>
         </ul>
         <span class="capacity-cta">View 9K Options</span>
       </a>
       <a href="https://dellahome.com/collections/12000-btu-mini-split" class="capacity-card is-featured">
-        <span class="capacity-badge">Most Recommended</span>
-        <span class="capacity-kicker">Most Common Starting Point</span>
+        <span class="capacity-badge">Most Common</span>
+        <span class="capacity-kicker">The Starting Point</span>
         <div class="capacity-btu">12,000 BTU</div>
-        <p class="capacity-desc">The clearest default for most finished basements, family rooms, media rooms, and everyday lower-level spaces.</p>
+        <p class="capacity-desc">Family rooms, media rooms, and most lower-level living spaces.</p>
         <ul class="capacity-points">
-          <li>Finished family rooms</li>
-          <li>Media rooms and open seating zones</li>
-          <li>The safest default in most layouts</li>
+          <li>Most finished basements start here</li>
+          <li>Up to 550 sq ft</li>
         </ul>
         <span class="capacity-cta">Shop 12K Options</span>
       </a>
       <a href="https://dellahome.com/collections/18000-btu-mini-split" class="capacity-card">
-        <span class="capacity-kicker">Open Finished Basements</span>
+        <span class="capacity-kicker">Larger Open Basements</span>
         <div class="capacity-btu">18,000 BTU</div>
-        <p class="capacity-desc">Move up for larger open rec rooms, family-room basements, or heavier moisture and body-heat loads.</p>
+        <p class="capacity-desc">Open rec rooms or basements with heavier moisture and heat loads.</p>
         <ul class="capacity-points">
-          <li>Open rec rooms</li>
-          <li>Basements with stronger load swings</li>
+          <li>Larger open layouts</li>
+          <li>Up to 1,000 sq ft</li>
         </ul>
         <span class="capacity-cta">View 18K Options</span>
       </a>
-      <a href="https://dellahome.com/collections/24000-btu-mini-split" class="capacity-card is-support">
-        <span class="capacity-kicker">Upper-End Fit</span>
-        <div class="capacity-btu">24,000 BTU</div>
-        <p class="capacity-desc">Reserved for larger open finished basements at the upper end of this scenario.</p>
-        <ul class="capacity-points">
-          <li>Large open lower levels</li>
-          <li>Not the default starting point</li>
-        </ul>
-        <span class="capacity-cta">Explore 24K</span>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES — Bento Grid -->
+<section class="section use-cases-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Match by Room</span>
+      <h2 class="section-title">Common Basement Setups</h2>
+      <p class="section-desc">Find the room that sounds like yours.</p>
+    </div>
+    <div class="use-grid">
+      <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-card">
+        <img src="Mini%20Split%20for%20Basement/Media%20Room.webp" alt="Finished basement media room with sectional sofa and TV" loading="lazy">
+        <div class="use-card-body">
+          <h3>Family room or media room</h3>
+          <p>The most common basement project. 12K covers the main seating area with wall-mounted as the default path.</p>
+        </div>
+      </a>
+      <a href="https://dellahome.com/collections/9000-btu-mini-split" class="use-card">
+        <img src="Mini%20Split%20for%20Basement/Office.webp" alt="Smaller finished basement home office with desk" loading="lazy">
+        <div class="use-card-body">
+          <h3>Office or guest room</h3>
+          <p>Smaller enclosed rooms with controlled humidity stay comfortably in the 9K range.</p>
+        </div>
+      </a>
+      <a href="https://dellahome.com/collections/18000-btu-mini-split" class="use-card">
+        <img src="Mini%20Split%20for%20Basement/Home%20Gym.webp" alt="Finished basement home gym with weights and equipment" loading="lazy">
+        <div class="use-card-body">
+          <h3>Home gym</h3>
+          <p>Body heat and sweat push the load above what square footage alone suggests. Start at 12K, move to 18K when it runs hot.</p>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- WHY BASEMENTS DIFFER -->
-<section class="section sizing-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Why It Changes</span>
-      <h2 class="section-title">Why basements need a different plan</h2>
-      <p class="section-desc">Below-grade spaces bring moisture, drainage, and oversizing risk into the buying decision much earlier.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="why-kicker">01</span>
-        <div class="why-title">Humidity changes the buying decision</div>
-        <div class="why-desc">Basements often need better moisture control, not just more raw cooling power.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-kicker">02</span>
-        <div class="why-title">Do not oversize a basement mini split</div>
-        <div class="why-desc">Buying too large can shorten cycles and leave humidity behind while the room still feels clammy.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-kicker">03</span>
-        <div class="why-title">Plan the condensate route early</div>
-        <div class="why-desc">Finished basements often need a clean drain path or a condensate pump before install day.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-kicker">04</span>
-        <div class="why-title">Below-grade walls shape the install path</div>
-        <div class="why-desc">Concrete and masonry walls can change the best lineset route and mounting strategy fast.</div>
-      </div>
-    </div>
-    <div class="why-summary">For most finished basements, <strong>humidity control and drainage planning</strong> matter more than they do in upstairs rooms. Start with 12K in the main open area, then adjust by layout and moisture load.</div>
-  </div>
-</section>
-
-<!-- USE CASES -->
-<section class="section use-cases-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Match by Use</span>
-      <h2 class="section-title">Choose by the basement area you actually use</h2>
-      <p class="section-desc">Finished basements behave differently depending on whether the load comes from a media room, guest room, gym, or one large open rec space.</p>
-    </div>
-    <div class="use-rows">
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=640&q=80" alt="Finished basement family room with sofa and media setup" loading="lazy">
-        <div class="use-row-text">
-          <span class="use-tag">Most common</span>
-          <h3>12K for a family room or media room</h3>
-          <p>One of the most common finished basement setups. Start with the main open seating zone, not the full footprint of the house.</p>
-          <div class="use-rec">Recommended: <strong>12,000 BTU wall-mounted first</strong></div>
-          <a href="https://dellahome.com/collections/12000-btu-mini-split" class="use-link">Shop 12K Options</a>
-        </div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640&q=80" alt="Smaller finished basement office or guest room" loading="lazy">
-        <div class="use-row-text">
-          <span class="use-tag">Smaller room</span>
-          <h3>9K for an office or guest room</h3>
-          <p>Smaller enclosed basement rooms stay in the 9K path more often than open layouts, especially when the humidity load is under control.</p>
-          <div class="use-rec">Recommended: <strong>9,000 BTU for enclosed finished rooms</strong></div>
-          <a href="https://dellahome.com/collections/9000-btu-mini-split" class="use-link">Shop 9K Options</a>
-        </div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=640&q=80" alt="Finished basement home gym with workout equipment" loading="lazy">
-        <div class="use-row-text">
-          <span class="use-tag">Gym use</span>
-          <h3>12K or 18K for a home gym</h3>
-          <p>Body heat, airflow, and moisture load can push the answer above what square footage alone suggests in a basement workout room.</p>
-          <div class="use-rec">Recommended: <strong>Start at 12K and move up when the room runs hot</strong></div>
-          <a href="https://dellahome.com/collections/18000-btu-mini-split" class="use-link">See 18K Options</a>
-        </div>
-      </div>
-      <div class="use-row">
-        <img class="use-row-img" src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=640&q=80" alt="Large finished basement rec room with open seating" loading="lazy">
-        <div class="use-row-text">
-          <span class="use-tag">Upper-end fit</span>
-          <h3>18K or 24K for a larger open rec room</h3>
-          <p>Bigger below-grade open plans are where 18K enters the conversation first, with 24K reserved for the upper end of the scenario.</p>
-          <div class="use-rec">Recommended: <strong>18K first, then 24K only when the open load is clearly larger</strong></div>
-          <a href="https://dellahome.com/collections/24000-btu-mini-split" class="use-link">Explore 24K</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CHECKLIST -->
+<!-- BEFORE YOU BUY -->
 <section class="section checklist-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Planning Guide</span>
-      <h2 class="section-title">Basement planning checklist</h2>
-      <p class="section-desc">Before you lock in the system size, confirm the basement-specific details that affect comfort and install fit most.</p>
+      <span class="section-label">Before You Buy</span>
+      <h2 class="section-title">What Makes Basement Installs Different</h2>
+      <p class="section-desc">Basements bring humidity, drainage, and below-grade conditions that other rooms skip entirely.</p>
     </div>
     <div class="checklist-grid">
       <div class="check-card">
         <span class="check-num">01</span>
         <div class="check-body">
-          <h3>Dry mode and dehumidification</h3>
-          <p>Basement buyers should care about moisture control almost as much as temperature control.</p>
+          <h3>Humidity and Oversizing Risk</h3>
+          <p>Buying too large causes short-cycling: the air cools fast but shuts off before pulling moisture out. The room still feels clammy. Size for humidity, not just temperature.</p>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">02</span>
         <div class="check-body">
-          <h3>Condensate route or pump</h3>
-          <p>Figure out early whether gravity drainage works or if the finished basement needs a condensate pump.</p>
+          <h3>Condensate Drainage</h3>
+          <p>If the unit sits below the nearest drain, gravity won't work. Plan for a condensate pump before install day, not after.</p>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">03</span>
         <div class="check-body">
-          <h3>Avoid oversizing</h3>
-          <p>Do not jump straight to the biggest unit just because the basement feels damp. Moisture load and room layout still matter.</p>
+          <h3>Insulation and Layout</h3>
+          <p>Uninsulated concrete sweats in summer and holds cold in winter. Open layouts need more BTU than enclosed rooms at the same square footage.</p>
         </div>
       </div>
       <div class="check-card">
         <span class="check-num">04</span>
         <div class="check-body">
-          <h3>Concrete wall and lineset path</h3>
-          <p>Below-grade walls and finished ceilings can shape the cleanest placement for both the indoor unit and the refrigerant run.</p>
+          <h3>Electrical, Lineset, and Mounting</h3>
+          <p>Most systems need a dedicated 208-230V circuit. Concrete walls affect the lineset route. Start wall-mounted; consider ceiling cassette only when wall space is limited.</p>
         </div>
-      </div>
-    </div>
-    <div class="secondary-grid">
-      <div class="secondary-card">
-        <span class="secondary-kicker">Secondary option</span>
-        <h3>Ceiling cassette</h3>
-        <p>Consider it only when wall space is limited or the finished basement remodel clearly calls for a cleaner ceiling-based look.</p>
-      </div>
-      <div class="secondary-card">
-        <span class="secondary-kicker">Edge case</span>
-        <h3>2-zone basement setup</h3>
-        <p>Only step into 2-zone when the basement is clearly split into two separately used areas, such as a media room plus office.</p>
       </div>
     </div>
   </div>
@@ -1245,9 +1246,9 @@ a { text-decoration: none; color: inherit; }
 <section class="section products-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Product picks</span>
-      <h2 class="section-title">Start with the product path that fits your basement</h2>
-      <p class="section-desc">Keep 12K as the default starting point. Use 9K for smaller finished rooms, 18K for larger open basements, and 24K only when the lower-level load is clearly bigger.</p>
+      <span class="section-label">Top Picks</span>
+      <h2 class="section-title">Basement Picks</h2>
+      <p class="section-desc">Once you know the load, start here.</p>
     </div>
     <div class="products-grid">
       <a href="https://dellahome.com/products/della-optima-series-12000-btu-25-seer2-ultra-hyper-heat-mini-split-ac-up-to-550-sq-ft" class="product-feature">
@@ -1256,13 +1257,15 @@ a { text-decoration: none; color: inherit; }
           <img src="https://dellahome.com/cdn/shop/files/048-TPH-12K2V-25S-01.jpg?v=1750937277&width=800" alt="DELLA Optima Series 12000 BTU ultra hyper heat mini split" loading="lazy">
         </div>
         <div class="product-body">
-          <div class="product-name">Optima Series 12,000 BTU 25 SEER2 Ultra Hyper Heat</div>
-          <div class="product-rating"><strong>★★★★★ 5.0</strong> (3 reviews)</div>
-          <div class="product-spec">Up to 550 Sq.Ft. | Finished basements, family rooms, and media rooms</div>
-          <p class="product-lead">The clearest starting point for most finished basement buyers.</p>
-          <div class="product-price">$1,249.96</div>
-          <div class="product-emphasis">Best Starting Point</div>
-          <span class="product-cta">View 12K Optima</span>
+          <div class="product-copy">
+            <div class="product-name">Optima Series 12,000 BTU 25 SEER2 Ultra Hyper Heat</div>
+            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (3 reviews)</div>
+            <div class="product-spec">Up to 550 Sq.Ft. | Finished basements, family rooms, and media rooms</div>
+          </div>
+          <div class="product-action">
+            <div class="product-price">$1,249.96</div>
+            <span class="product-cta">Shop 12K Optima</span>
+          </div>
         </div>
       </a>
       <div class="product-stack">
@@ -1272,12 +1275,15 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/048-TL-9K1VB-19S-01.jpg?v=1750225850&width=800" alt="DELLA Vario Series 9000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
-            <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
-            <div class="product-rating"><strong>★★★★★ 4.8</strong> (18 reviews)</div>
-            <div class="product-spec">Up to 400 Sq.Ft. | Smaller finished basement rooms</div>
-            <div class="product-price">$729.96</div>
-            <div class="product-emphasis">Smaller-Room Pick</div>
-            <span class="product-cta">View 9K Vario</span>
+            <div class="product-copy">
+              <div class="product-name">Vario Series 9,000 BTU 20 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8</strong> (18 reviews)</div>
+              <div class="product-spec">Up to 400 Sq.Ft. | Smaller finished basement rooms</div>
+            </div>
+            <div class="product-action">
+              <div class="product-price">$729.96</div>
+              <span class="product-cta">Shop 9K Vario</span>
+            </div>
           </div>
         </a>
         <a href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" class="product-card">
@@ -1286,28 +1292,23 @@ a { text-decoration: none; color: inherit; }
             <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?v=1753232832&width=800" alt="DELLA Vario Series 18000 BTU mini split heat pump" loading="lazy">
           </div>
           <div class="product-body">
-            <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
-            <div class="product-rating"><strong>★★★★★ 5.0</strong> (23 reviews)</div>
-            <div class="product-spec">Up to 1,000 Sq.Ft. | Larger open finished basements</div>
-            <div class="product-price">$1,049.96</div>
-            <div class="product-emphasis">Higher-Load Pick</div>
-            <span class="product-cta">View 18K Vario</span>
+            <div class="product-copy">
+              <div class="product-name">Vario Series 18,000 BTU 21 SEER2</div>
+              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (23 reviews)</div>
+              <div class="product-spec">Up to 1,000 Sq.Ft. | Larger open finished basements</div>
+            </div>
+            <div class="product-action">
+              <div class="product-price">$1,049.96</div>
+              <span class="product-cta">Shop 18K Vario</span>
+            </div>
           </div>
         </a>
       </div>
     </div>
-    <div class="support-path">
-      <div class="support-path-copy">
-        <span class="support-path-kicker">24K support path</span>
-        <div class="support-path-title">Use 24K only for the upper end of the basement scenario</div>
-        <div class="support-path-desc">Large open finished basements can justify 24K, but it should stay a secondary path rather than the default starting point.</div>
-      </div>
-      <a href="https://dellahome.com/collections/24000-btu-mini-split" class="btn btn-outline">Explore 24K</a>
-    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES (exact copy from shed) -->
 <section class="section services-section">
   <div class="container">
     <div class="services-heading">
@@ -1353,7 +1354,7 @@ a { text-decoration: none; color: inherit; }
     <div class="section-header">
       <span class="section-label">Quick Answers</span>
       <h2 class="section-title">Mini Split FAQ for Basement Buyers</h2>
-      <p class="section-desc">Quick answers before you buy.</p>
+      <p class="section-desc">Common questions about sizing, humidity, and install for basements.</p>
     </div>
     <div class="faq-list">
       <div class="faq-item">
@@ -1406,13 +1407,12 @@ a { text-decoration: none; color: inherit; }
 <section class="bottom-cta">
   <div class="container">
     <div class="bottom-cta-card">
-      <h2>Start with 12K if the basement works like a real room</h2>
-      <p>For most finished basements, 12K is the cleanest starting point. Use 9K for smaller enclosed rooms, 18K for larger open layouts, and 24K only when the lower-level load is clearly bigger.</p>
+      <h2>Still Damp and Uncomfortable Down There?</h2>
+      <p>Most basement buyers land on 12K and get the sizing right the first time. Free shipping, lifetime compressor warranty, 30-day returns.</p>
       <div class="bottom-cta-buttons">
-        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K Options</a>
-        <a href="https://dellahome.com/collections/9000-btu-mini-split" class="btn btn-outline btn-lg">See 9K</a>
-        <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-lg">See 18K Options</a>
-        <a href="https://dellahome.com/collections/24000-btu-mini-split" class="btn btn-outline btn-lg">Explore 24K</a>
+        <a href="https://dellahome.com/collections/12000-btu-mini-split" class="btn btn-navy btn-lg">Shop 12K Basement Picks</a>
+        <a href="#capacity" class="btn btn-outline btn-lg">See If 9K Is Enough</a>
+        <a href="https://dellahome.com/collections/18000-btu-mini-split" class="btn btn-outline btn-lg">See If You Need 18K</a>
       </div>
     </div>
   </div>
