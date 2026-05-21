@@ -119,6 +119,8 @@ Current copied local placeholders:
 - `memorial-mobile.png`: mobile hero image.
 - `memorial-subscribe.png`: compact visual banner.
 - `memorial-category.png`: category/product lifestyle visual.
+- `Spectral-Regular.woff2`, `Spectral-PageFly-Medium.woff2`, `Spectral-Bold.woff2`: PageFly heading and product-card display fonts.
+- `Poppins-400.woff2` and `Poppins-600.woff2`: PageFly body, button, tab, and support-copy fonts.
 
 Use these only as layout placeholders. Before Shopify publish, replace campaign-specific holiday copy, dates, discount text, and sale badges with evergreen mini-split decision graphics or topic-specific Della product imagery.
 
@@ -127,16 +129,21 @@ Product cards should also use local copies of the PDP images in demo files so br
 ## Typography System
 
 Use:
-- Font family: `Roboto`, fallback `Arial`, `sans-serif`.
+- Heading font: `Spectral Regular`, fallback `Georgia`, `serif`.
+- Emphasized display/product price font: `Spectral Bold`, fallback `Georgia`, `serif`.
+- Body/button/subheading font: `Poppins`, fallback `Arial`, `sans-serif`.
 - Body: 16-17px desktop, 16px mobile, line-height 1.6.
-- H1: 40-58px desktop, 34-44px mobile, font-weight 700, line-height 1.05-1.1.
-- H2: 25-36px desktop, 28-32px mobile, font-weight 700.
-- H3/product title: 15-18px, font-weight 700.
-- Label/eyebrow: 12px, uppercase, 0.13-0.14em letter spacing, blue text on light-blue pill.
+- H1: 40-58px desktop, 34-44px mobile, `Spectral Regular`, line-height 1.08-1.12.
+- H2: 25-36px desktop, 28-32px mobile, `Spectral Regular`.
+- H3/category headings: `Spectral Regular`.
+- Product titles: `Spectral Regular`; product prices and small badges can use `Spectral Bold`.
+- Buttons, tabs, labels, body copy: `Poppins` 400 or 600.
+- Label/eyebrow: 12px, uppercase, no added letter spacing.
 
 Avoid:
 - 70-90px oversized SaaS hero type.
-- Negative letter spacing beyond subtle `-0.02em`.
+- Roboto or generic Google-font defaults.
+- Negative letter spacing.
 - Decorative display fonts.
 - Paragraph-first page openings.
 
