@@ -194,72 +194,52 @@ h3 {
 }
 .hero {
   position: relative;
-  height: auto;
-  min-height: 0;
-  padding: 0;
-  display: block;
-  background: #fff;
+  min-height: clamp(500px, 35.7vw, 620px);
+  display: flex;
+  align-items: center;
+  background: #f8f6f1;
   overflow: hidden;
 }
 .hero::before,
 .hero::after { display: none; }
-.hero-banner {
-  position: relative;
-  display: block;
-}
-.hero-banner picture,
-.hero-banner img {
-  display: block;
+.hero-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
-}
-.hero-banner img {
-  aspect-ratio: 2.8;
+  height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
-.decision-panel {
-  background: #fff;
-  padding: 34px 0 0;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
-.decision-panel-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 34px;
+.hero-inner {
+  max-width: 700px;
+  padding: 72px 0;
 }
-.decision-panel h1 {
-  max-width: 780px;
+.hero h1 {
+  max-width: 680px;
+  color: var(--navy);
 }
-.decision-panel .lead {
-  max-width: 760px;
-  margin-top: 12px;
+.hero-text {
+  max-width: 640px;
+  margin-top: 16px;
+  margin-bottom: 24px;
   color: var(--text-muted);
   font-size: 18px;
+  line-height: 1.65;
 }
-.decision-actions {
+.hero-actions {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.hero-proof {
-  display: flex;
-  gap: 18px;
-  margin-top: 16px;
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 600;
-}
-.hero-proof span {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
-.hero-proof span::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue);
+.hero-actions .btn {
+  min-height: 50px;
+  padding: 14px 26px;
+  font-size: 16px;
 }
 .commerce-nav {
   background: #fff;
@@ -592,13 +572,12 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 .bottom-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 
 @media (max-width: 1024px) {
-  .hero { height: auto; min-height: 0; background: #fff; }
+  .hero { min-height: 520px; }
+  .hero-bg { object-position: 42% center; }
   .product-grid,
   .scenario-grid,
   .notes-grid,
   .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .decision-panel-inner { grid-template-columns: 1fr; align-items: start; }
-  .decision-actions { justify-content: flex-start; }
   .pf-feature { grid-template-columns: 1fr; }
   .category-feature { grid-template-columns: 1fr; }
   .support-band,
@@ -622,16 +601,16 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .announcement-strip span { white-space: normal; }
   h1 { font-size: clamp(32px, 9.6vw, 40px); }
   .hero {
-    height: auto;
-    min-height: auto;
-    padding: 0;
-    align-items: flex-start;
-    background: #fff;
+    min-height: 560px;
+    align-items: center;
+    background: #f8f6f1;
   }
-  .hero-banner img { aspect-ratio: 1; }
-  .decision-panel { padding-top: 28px; }
-  .decision-panel .lead { font-size: 17px; }
-  .hero-proof { flex-direction: column; gap: 8px; }
+  .hero-bg { object-position: left center; }
+  .hero-inner { max-width: 340px; padding: 42px 0; }
+  .hero h1 { font-size: clamp(30px, 8.2vw, 34px); line-height: 1.08; }
+  .hero-text { font-size: 16px; line-height: 1.6; margin-top: 14px; margin-bottom: 20px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero-actions .btn { width: auto; min-width: 190px; min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
   .setup-compare,
@@ -680,24 +659,12 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   </div>
 
   <section class="hero">
-    <div class="hero-banner">
-      <picture>
-        <source media="(max-width: 680px)" srcset="memorial-mobile.png">
-        <img src="memorial-hero.jpg" alt="Della Memorial Day Sale banner placeholder for Della landing page design reference" loading="eager">
-      </picture>
-    </div>
-    <div class="decision-panel">
-      <div class="container decision-panel-inner">
-        <div>
-          <span class="section-label">Della mini split buying guide</span>
-          <h1>Single&#8209;Zone vs Multi&#8209;Zone Mini Split: Which Setup Fits Your Home?</h1>
-          <p class="lead">Choose a single-zone mini split for one room or dedicated space. Choose a multi-zone mini split when one outdoor unit needs to serve 2 to 5 rooms.</p>
-          <div class="hero-proof" aria-label="Quick setup logic">
-            <span>1 room: single-zone</span>
-            <span>2-5 rooms: multi-zone</span>
-          </div>
-        </div>
-        <div class="decision-actions">
+    <img class="hero-bg" src="single-zone-vs-multi-zone-hero.jpg" alt="Bright home interior with a wall-mounted Della mini split and open wall space for setup guidance" width="2800" height="1000" loading="eager">
+    <div class="container hero-content">
+      <div class="hero-inner">
+        <h1>Single&#8209;Zone vs Multi&#8209;Zone Mini Split: Which Setup Fits Your Home?</h1>
+        <p class="hero-text">Choose a single-zone mini split for one room or dedicated space. Choose a multi-zone mini split when one outdoor unit needs to serve 2 to 5 rooms.</p>
+        <div class="hero-actions">
           <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
           <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
         </div>
