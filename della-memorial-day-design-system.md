@@ -8,8 +8,55 @@ Purpose: reusable design rules for Della topical landing pages in `C:\Users\1804
 This is a page-level extraction, not just a mood note. It records the visible content structure, reusable UI rules, typography assumptions, product-card grammar, spacing, CTA hierarchy, and what must not be copied from the campaign.
 
 Limitations:
-- The reference is a live Shopify campaign page. Some exact CSS class names and private theme files are not exposed in the text extraction.
-- Exact values below combine the Memorial Day page evidence with the current Della scenario pages in this folder, which use the same Della page family: Roboto, navy `#0E1953`, action blue `#5884E7`, light-blue support panels, 4px buttons, and white product cards.
+- The current live Shopify page is PageFly-generated, so most exact style values are emitted through runtime class names and PageFly assets rather than clean source CSS.
+- The extraction below is based on the live PageFly template files `pf-ef33e2e6.liquid.txt` and `page.pf-ef33e2e6.json.txt`, plus the current Della scenario pages in this folder.
+
+## Confirmed PageFly Source
+
+Evidence that this is the current 2026 Memorial Day page:
+- Shopify admin page `Memorial Day Sale` is visible as of `May 18, 2026 at 11:52 PM PDT`.
+- The page is bound to template `pf-ef33e2e6`.
+- The exported JSON section is `pf-ef33e2e6`.
+- The campaign copy says `May. 19 - May. 26`, `Save 10% on Orders $300+ or 12% on Orders $2,000+`, and `2X reward points`.
+- PageFly page setting: `pageId` = `ef33e2e6-faec-494b-b829-e47b938fc106`, `pageTitle` = `Promotions`, PageFly version `4.26.3.31`.
+
+Confirmed PageFly section order:
+1. `pf-f432`: desktop and mobile full hero image.
+   - Desktop image ratio `2.8`.
+   - Mobile image ratio `1`.
+   - Rule: Della campaign heroes are banner-led, not split-screen SaaS layouts.
+2. `pf-3195`: horizontal anchor/category strip.
+   - Desktop shows 6 items.
+   - Tablet shows 4 items.
+   - Mobile shows 2 items.
+   - Rule: use compact horizontal navigation for major paths.
+3. `pf-829c`: visual subscription/lead-capture banner.
+   - Separate desktop and mobile assets.
+   - Rule: support conversions should be visual and compact, not long copy blocks.
+4. `pf-6172`: image-left/content-right feature block.
+   - Uses one large image, concise heading/copy/list, and underline CTA with arrow.
+   - Rule: when adding explanatory content, pair it with a real visual.
+5. `pf-26c3`, `pf-4726`, `pf-5f4a`, `pf-60a1`, `pf-aaba`: product merchandising sections.
+   - Tabs are horizontal.
+   - Product list slider shows 4 cards on desktop/laptop, 2 on tablet/mobile.
+   - Product card sequence is image, badge, title, Loox rating, price, hidden coupon, CTA.
+   - Rule: product areas should feel like collection merchandising, not editorial cards.
+6. `pf-2915`, `pf-2b8c`: two-card visual guide/social sections.
+   - Rule: secondary image blocks are clean, large, and low-copy.
+7. `pf-3f4b`: FAQ accordion.
+   - Split into two columns on desktop.
+   - Rule: FAQ is near the bottom and compact.
+8. `pf-1623`: trust badge slider.
+   - Desktop/tablet show 4 items, mobile shows 2.
+   - Actual trust copy includes financing, but this decision page must omit `0% APR`.
+
+Confirmed reusable visual grammar:
+- Hero: desktop ratio around `2.8`, separate mobile crop, image-first.
+- Navigation strip: horizontal slider/grid, not oversized feature cards.
+- Product section: centered heading, tabs, category visual/copy, product cards.
+- Product grid density: 4 cards desktop, 2 cards mobile.
+- Trust badges: light-blue cards, icon above/left, short text, slider/grid behavior.
+- FAQ: accordion, late-page, concise.
 
 ## Visible Memorial Day Page Structure
 
@@ -146,7 +193,7 @@ Desktop:
 Mobile:
 - 16px side padding.
 - Section rhythm: 48-56px.
-- Product cards stack one column.
+- Product merchandising follows PageFly density: 2 cards per row on mobile when titles and buttons still fit.
 - Horizontal room selector can scroll, but touch targets must stay large.
 
 Reference pattern:
