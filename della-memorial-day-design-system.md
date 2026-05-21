@@ -115,7 +115,7 @@ The reference page is an ecommerce campaign page with this sequence:
 When the user asks to match the Memorial Day PageFly page, copy the useful PageFly assets into the local demo folder and reference the local files directly. Do not leave critical visuals dependent on Shopify CDN loading during review.
 
 Current copied local placeholders:
-- `single-zone-vs-multi-zone-hero.jpg`: topic-specific desktop/mobile hero background, generated at 2800x1000 to match the Memorial Day desktop banner ratio and leave clean copy space on the left.
+- `single-zone-vs-multi-zone-hero.jpg`: topic-specific desktop/mobile hero background, generated at 2800x1000 to match the Memorial Day desktop banner ratio, leave clean copy space on the left, and visually compare one room served by one outdoor unit against multiple rooms served by one outdoor unit.
 - `memorial-subscribe.png`: compact visual banner.
 - `memorial-category.png`: category/product lifestyle visual.
 - `Spectral-Regular.woff2`, `Spectral-PageFly-Medium.woff2`, `Spectral-Bold.woff2`: PageFly heading and product-card display fonts.
@@ -229,6 +229,7 @@ Memorial uses a full campaign image. For non-promo topic pages:
 Use:
 - The approved scenario-page hero grammar: one full-width background image, foreground copy block, H1, one or two short sentences, and two CTAs.
 - A wide ecommerce banner image with the Memorial Day desktop ratio (`2800x1000`, about `2.8:1`). Keep the left side clean for copy and place the product/room visual to the right.
+- Topic-specific hero imagery. For comparison pages, the background should show the comparison concept visually, not only a generic lifestyle room.
 - Memorial Day typography and button style: Spectral for the H1, Poppins for body/buttons, blue or navy commerce buttons, 4px radius, compact button height.
 - A slim Della benefit strip above the hero when the page is used as an ad landing page.
 - Room-count path selector directly below the hero.
