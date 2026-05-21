@@ -50,7 +50,7 @@ a { color: inherit; text-decoration: none; }
 .page { overflow: hidden; background: var(--white); }
 .container { width: min(1200px, calc(100% - 64px)); margin: 0 auto; }
 .section { padding: 72px 0; }
-.section-alt { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.section-alt { background: #F7F8FB; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
 .section-head {
   display: flex;
   align-items: flex-end;
@@ -125,36 +125,169 @@ h3 {
 .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
 .btn-sm { min-height: 40px; padding: 9px 16px; font-size: 14px; }
 
+.announcement-strip {
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.announcement-strip .container {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+.announcement-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.announcement-strip i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: inline-block;
+}
 .hero {
   position: relative;
-  height: clamp(430px, 35.7vw, 560px);
-  min-height: 430px;
+  height: auto;
+  min-height: 0;
   padding: 0;
+  display: block;
+  background: #F5FBFF;
+  overflow: hidden;
+}
+.hero::before,
+.hero::after { display: none; }
+.hero-banner {
+  position: relative;
+  min-height: clamp(430px, 35.7vw, 560px);
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(14,25,83,.95) 0%, rgba(14,25,83,.84) 42%, rgba(14,25,83,.22) 70%, rgba(255,255,255,.02) 100%),
+    linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.88) 44%, rgba(255,255,255,.22) 68%, rgba(255,255,255,.04) 100%),
     url("Placement and Installation.png") center / cover no-repeat;
 }
-.hero::after {
+.hero-banner::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,0) 42%, rgba(0,0,0,.12));
+  background: radial-gradient(circle at 86% 20%, rgba(88,132,231,.24), transparent 34%);
   pointer-events: none;
 }
 .hero .container { position: relative; z-index: 1; }
-.hero-copy {
-  max-width: 650px;
+.hero-layout {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 48px;
+  align-items: center;
 }
-.hero-copy .section-label { color: #AFC6FF; }
+.hero-copy {
+  max-width: 620px;
+}
+.hero-copy .section-label { color: var(--blue); }
 .hero h1 {
-  color: #fff;
+  color: var(--navy);
   text-wrap: balance;
 }
-.hero-copy .lead { margin: 18px 0 24px; font-size: 20px; color: rgba(255,255,255,.92); }
+.hero-copy .lead { margin: 18px 0 24px; font-size: 20px; color: #2f3a66; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero .btn-outline { background: rgba(255,255,255,.96); border-color: #fff; }
+.hero .btn-outline { background: rgba(255,255,255,.96); border-color: var(--gray-200); }
+.hero-proof {
+  display: flex;
+  gap: 18px;
+  margin-top: 22px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+.hero-proof span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-proof span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.hero-visual {
+  position: relative;
+  min-height: 380px;
+}
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 24px;
+  width: 72%;
+  height: 70%;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(226,230,238,.8);
+}
+.hero-main-product {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 76%;
+  height: 78%;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+}
+.hero-main-product img {
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(14,25,83,.12));
+}
+.hero-mini {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42%;
+  background: var(--navy);
+  color: #fff;
+  padding: 22px;
+  z-index: 2;
+}
+.hero-mini strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.hero-mini span {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255,255,255,.78);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.hero-tile {
+  position: absolute;
+  right: 7%;
+  bottom: 0;
+  width: 28%;
+  height: 124px;
+  background: var(--trust-bg);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 2;
+}
+.hero-tile img {
+  max-height: 92px;
+  object-fit: contain;
+}
 .commerce-nav {
   background: #fff;
   padding: 18px 0 34px;
@@ -210,6 +343,52 @@ h3 {
 .trust-card a { color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 
 .quick-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; }
+.pf-feature {
+  display: grid;
+  grid-template-columns: .94fr 1.06fr;
+  gap: 34px;
+  align-items: center;
+}
+.pf-feature-image {
+  aspect-ratio: 1.16;
+  overflow: hidden;
+  background: var(--gray-50);
+}
+.pf-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pf-feature-copy h2 {
+  max-width: 640px;
+}
+.pf-feature-copy p {
+  margin-top: 14px;
+  color: var(--text-muted);
+  max-width: 660px;
+}
+.pf-feature-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.pf-feature-list div {
+  border-top: 1px solid var(--gray-200);
+  padding-top: 14px;
+}
+.pf-feature-list strong {
+  display: block;
+  color: var(--navy);
+  font-size: 18px;
+}
+.pf-feature-list span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
 .quick-card {
   border: 1px solid var(--gray-200);
   background: #fff;
@@ -437,6 +616,11 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .scenario-grid,
   .notes-grid,
   .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+  .hero { height: auto; padding: 0; }
+  .hero-banner { padding: 56px 0; }
+  .hero-visual { min-height: 330px; }
+  .pf-feature { grid-template-columns: 1fr; }
   .category-feature { grid-template-columns: 1fr; }
   .support-band,
   .quick-grid,
@@ -447,18 +631,32 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   body { font-size: 16px; }
   .container { width: min(100% - 32px, 1200px); }
   .section { padding: 52px 0; }
+  .announcement-strip .container { justify-content: flex-start; overflow-x: auto; gap: 22px; }
   h1 { font-size: clamp(32px, 9.6vw, 40px); }
   .hero {
     height: auto;
-    min-height: 560px;
-    padding: 44px 0 54px;
+    min-height: auto;
+    padding: 0;
     align-items: flex-start;
+    background: #F5FBFF;
+  }
+  .hero-banner {
+    min-height: 0;
+    padding: 42px 0 34px;
     background:
-      linear-gradient(180deg, rgba(14,25,83,.98) 0%, rgba(14,25,83,.88) 48%, rgba(14,25,83,.52) 78%, rgba(14,25,83,.18) 100%),
+      linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 52%, rgba(255,255,255,.34) 100%),
       url("Placement and Installation.png") center bottom / cover no-repeat;
   }
+  .hero-visual { min-height: 300px; }
+  .hero-visual::before { inset: 36px 0 22px 24px; }
+  .hero-main-product { width: 82%; height: 72%; padding: 20px; }
+  .hero-mini { width: 50%; padding: 16px; }
+  .hero-tile { width: 36%; height: 100px; right: 0; padding: 12px; }
+  .hero-mini strong { font-size: 15px; }
+  .hero-mini span { font-size: 12px; }
   .hero-copy { padding-bottom: 26px; }
   .hero-copy .lead { font-size: 18px; }
+  .hero-proof { flex-direction: column; gap: 8px; }
   .hero-actions,
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
@@ -467,6 +665,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .notes-grid,
   .trust-grid,
   .support-links { grid-template-columns: 1fr; }
+  .pf-feature-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .path-strip { overflow: visible; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .path-link:nth-child(2n) { border-right: 0; }
@@ -498,15 +697,41 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 </head>
 <body>
 <main class="page">
-  <section class="hero">
+  <div class="announcement-strip" aria-label="Della store benefits">
     <div class="container">
-      <div class="hero-copy">
-        <span class="section-label">Della mini split buying guide</span>
-        <h1>Single&#8209;Zone vs Multi&#8209;Zone Mini Split: Which Setup Fits Your Home?</h1>
-        <p class="lead">Choose a single-zone mini split for one room or dedicated space. Choose a multi-zone mini split when one outdoor unit needs to serve 2 to 5 rooms.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
+      <span><i></i> Free Shipping</span>
+      <span><i></i> Ships in 24 hours</span>
+      <span><i></i> Lifetime Warranty on mini split systems</span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-banner">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <span class="section-label">Della mini split buying guide</span>
+          <h1>Single&#8209;Zone vs Multi&#8209;Zone Mini Split: Which Setup Fits Your Home?</h1>
+          <p class="lead">Choose a single-zone mini split for one room or dedicated space. Choose a multi-zone mini split when one outdoor unit needs to serve 2 to 5 rooms.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
+            <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
+          </div>
+          <div class="hero-proof" aria-label="Quick setup logic">
+            <span>1 room: single-zone</span>
+            <span>2-5 rooms: multi-zone</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-main-product">
+            <img src="https://dellahome.com/cdn/shop/files/1D2-TL_D912_97c2ca99-30af-40f9-beaf-88a087342319.jpg?crop=center&height=900&v=1767063221&width=900" alt="" loading="eager" onerror="this.onerror=null;this.src='Placement and Installation.png';">
+          </div>
+          <div class="hero-mini">
+            <strong>Start with rooms, then confirm capacity.</strong>
+            <span>BTU, voltage, line set, and indoor unit mix are checked on the PDP.</span>
+          </div>
+          <div class="hero-tile">
+            <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1757656638&width=500" alt="" loading="eager" onerror="this.onerror=null;this.src='Placement and Installation.png';">
+          </div>
         </div>
       </div>
     </div>
@@ -551,14 +776,20 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   </section>
 
   <section class="section">
-    <div class="container quick-grid">
-      <div class="quick-card dark">
-        <h2>Quick answer</h2>
-        <p>Use single-zone for one room, a garage, a home office, or an addition. Use multi-zone when one outdoor unit should serve 2 to 5 rooms.</p>
-      </div>
-      <div class="quick-card">
-        <h3>Start with room count, then check the layout.</h3>
-        <p>Outdoor space, line-set routing, mode control, room distance, and redundancy can change the right path after the room count points you in a direction.</p>
+    <div class="container">
+      <div class="pf-feature">
+        <a class="pf-feature-image" href="https://dellahome.com/collections/mini-split-multi-zone">
+          <img src="Placement and Installation.png" alt="Della mini split installed in a finished garage" loading="lazy">
+        </a>
+        <div class="pf-feature-copy">
+          <span class="section-label">Quick answer</span>
+          <h2>Start with the room count.</h2>
+          <p>Use single-zone for one dedicated room. Use multi-zone when one outdoor unit should serve 2 to 5 rooms. Then confirm outdoor-unit space, line-set route, capacity, and mode control before choosing a product.</p>
+          <div class="pf-feature-list">
+            <div><strong>One dedicated space</strong><span>Bedroom, garage, office, sunroom, basement, or one addition.</span></div>
+            <div><strong>Several separated rooms</strong><span>Two upstairs bedrooms, three bedrooms, or whole-home ductless planning.</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1134,16 +1365,6 @@ tabs.forEach((tab) => {
     collectionLink.href = collections[target];
   });
 });
-function swapMissingProductImages() {
-  document.querySelectorAll('.product-media img').forEach((img) => {
-    if (!img.complete || img.naturalWidth === 0) {
-      img.classList.add('fallback-image');
-      img.src = 'Placement and Installation.png';
-    }
-  });
-}
-window.setTimeout(swapMissingProductImages, 1500);
-window.setTimeout(swapMissingProductImages, 3500);
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a single-zone or multi-zone mini split better for one room?", "acceptedAnswer": {"@type": "Answer", "text": "A single-zone mini split is usually the better choice for one room because it uses one indoor unit and one outdoor unit dedicated to that space."}}, {"@type": "Question", "name": "Can one outdoor unit run multiple indoor units?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A multi-zone mini split connects multiple indoor units to one outdoor unit, typically serving 2 to 5 separate zones depending on the system."}}, {"@type": "Question", "name": "Is it better to install one multi-zone system or multiple single-zone systems?", "acceptedAnswer": {"@type": "Answer", "text": "Choose one multi-zone system when you want fewer outdoor units. Choose multiple single-zone systems when redundancy, separate operation, or long distances between rooms matter more."}}, {"@type": "Question", "name": "Can different rooms heat and cool at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "Each indoor unit can usually have its own temperature setting, but connected zones normally share the same system mode, heating or cooling."}}, {"@type": "Question", "name": "Does a multi-zone mini split use more electricity?", "acceptedAnswer": {"@type": "Answer", "text": "Electricity use depends on sizing, installation, climate, room load, and how zones are used. Multi-zone systems can reduce waste when shoppers condition only the rooms they need."}}, {"@type": "Question", "name": "How many zones do I need for my home?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the number of separate rooms you want to control. One room usually means single-zone; two rooms starts with 2-zone; three to five rooms usually starts with multi-zone."}}]}</script>
 </body>

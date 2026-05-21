@@ -52,6 +52,8 @@ Confirmed PageFly section order:
 
 Confirmed reusable visual grammar:
 - Hero: desktop ratio around `2.8`, separate mobile crop, image-first.
+- Public Memorial Day page is closer to a finished graphic banner than to a component hero; topical pages should mimic the banner composition without copying promotion copy.
+- For mini-split decision pages, hero imagery should be product-led where possible: product packshots or system imagery carry the first screen better than a generic room photo.
 - Navigation strip: horizontal slider/grid, not oversized feature cards.
 - Product section: centered heading, tabs, category visual/copy, product cards.
 - Product grid density: 4 cards desktop, 2 cards mobile.
@@ -205,8 +207,8 @@ Reference pattern:
 Memorial uses a full campaign image. For non-promo topic pages:
 
 Use:
-- Wide image-led commerce hero with text over a real product/use-case background.
-- Short H1, one-sentence answer, two CTAs, and a compact decision note.
+- Wide ecommerce banner with a 2.8-ish desktop ratio, real product/use-case image, short H1, one-sentence answer, and two CTAs.
+- A slim Della benefit strip above the hero when the page is used as an ad landing page.
 - Room-count path selector directly below the hero.
 - A hint of trust/shop content visible in the first viewport.
 
@@ -314,19 +316,20 @@ Copy/adapt:
 ## Application To Single-Zone vs Multi-Zone
 
 Required module order:
-1. Commerce hero with direct answer.
-2. 1-5 room collection strip.
-3. Trust cards.
-4. Quick answer.
-5. Single vs multi comparison table.
-6. Product tabs with 4 visible product cards.
-7. One multi-zone vs multiple single-zone.
-8. Buyer notes.
-9. Scenario cards.
-10. Cost and installation planning.
-11. Support confidence block.
-12. Six-item FAQ.
-13. Bottom collection strip.
+1. Della benefit strip.
+2. Commerce banner hero with direct answer.
+3. 1-5 room collection strip.
+4. Trust cards.
+5. Quick answer decision band.
+6. Single vs multi comparison table.
+7. Product tabs with 4 visible product cards.
+8. One multi-zone vs multiple single-zone.
+9. Buyer notes.
+10. Scenario cards.
+11. Cost and installation planning.
+12. Support confidence block.
+13. Six-item FAQ.
+14. Bottom collection strip.
 
 Success criteria:
 - Looks like Della ecommerce, not a generic AI blog.
