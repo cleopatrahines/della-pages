@@ -110,6 +110,20 @@ The reference page is an ecommerce campaign page with this sequence:
 10. Footer
    - Newsletter, Della slogan `Make every room your comfort zone.`, shop/support/about links, payment icons.
 
+## Local Demo Asset Rule
+
+When the user asks to match the Memorial Day PageFly page, copy the useful PageFly assets into the local demo folder and reference the local files directly. Do not leave critical visuals dependent on Shopify CDN loading during review.
+
+Current copied local placeholders:
+- `memorial-hero.jpg`: desktop hero image.
+- `memorial-mobile.png`: mobile hero image.
+- `memorial-subscribe.png`: compact visual banner.
+- `memorial-category.png`: category/product lifestyle visual.
+
+Use these only as layout placeholders. Before Shopify publish, replace campaign-specific holiday copy, dates, discount text, and sale badges with evergreen mini-split decision graphics or topic-specific Della product imagery.
+
+Product cards should also use local copies of the PDP images in demo files so browser review does not show empty product-media boxes.
+
 ## Typography System
 
 Use:

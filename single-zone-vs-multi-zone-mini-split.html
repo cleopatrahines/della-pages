@@ -157,49 +157,53 @@ h3 {
   min-height: 0;
   padding: 0;
   display: block;
-  background: #F5FBFF;
+  background: #fff;
   overflow: hidden;
 }
 .hero::before,
 .hero::after { display: none; }
 .hero-banner {
   position: relative;
-  min-height: clamp(430px, 35.7vw, 560px);
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.88) 44%, rgba(255,255,255,.22) 68%, rgba(255,255,255,.04) 100%),
-    url("Placement and Installation.png") center / cover no-repeat;
+  display: block;
 }
-.hero-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 86% 20%, rgba(88,132,231,.24), transparent 34%);
-  pointer-events: none;
+.hero-banner picture,
+.hero-banner img {
+  display: block;
+  width: 100%;
 }
-.hero .container { position: relative; z-index: 1; }
-.hero-layout {
+.hero-banner img {
+  aspect-ratio: 2.8;
+  object-fit: cover;
+}
+.decision-panel {
+  background: #fff;
+  padding: 34px 0 0;
+}
+.decision-panel-inner {
   display: grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 34px;
 }
-.hero-copy {
-  max-width: 620px;
+.decision-panel h1 {
+  max-width: 780px;
 }
-.hero-copy .section-label { color: var(--blue); }
-.hero h1 {
-  color: var(--navy);
-  text-wrap: balance;
+.decision-panel .lead {
+  max-width: 760px;
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 18px;
 }
-.hero-copy .lead { margin: 18px 0 24px; font-size: 20px; color: #2f3a66; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero .btn-outline { background: rgba(255,255,255,.96); border-color: var(--gray-200); }
+.decision-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 .hero-proof {
   display: flex;
   gap: 18px;
-  margin-top: 22px;
+  margin-top: 16px;
   color: var(--navy);
   font-size: 14px;
   font-weight: 700;
@@ -215,78 +219,6 @@ h3 {
   height: 7px;
   border-radius: 50%;
   background: var(--blue);
-}
-.hero-visual {
-  position: relative;
-  min-height: 380px;
-}
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 24px;
-  width: 72%;
-  height: 70%;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(226,230,238,.8);
-}
-.hero-main-product {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 76%;
-  height: 78%;
-  background: transparent;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 34px;
-}
-.hero-main-product img {
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 18px 28px rgba(14,25,83,.12));
-}
-.hero-mini {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 42%;
-  background: var(--navy);
-  color: #fff;
-  padding: 22px;
-  z-index: 2;
-}
-.hero-mini strong {
-  display: block;
-  font-size: 18px;
-  line-height: 1.25;
-}
-.hero-mini span {
-  display: block;
-  margin-top: 7px;
-  color: rgba(255,255,255,.78);
-  font-size: 14px;
-  line-height: 1.45;
-}
-.hero-tile {
-  position: absolute;
-  right: 7%;
-  bottom: 0;
-  width: 28%;
-  height: 124px;
-  background: var(--trust-bg);
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  z-index: 2;
-}
-.hero-tile img {
-  max-height: 92px;
-  object-fit: contain;
 }
 .commerce-nav {
   background: #fff;
@@ -353,6 +285,18 @@ h3 {
   aspect-ratio: 1.16;
   overflow: hidden;
   background: var(--gray-50);
+}
+.image-banner {
+  padding: 0 0 56px;
+  background: #fff;
+}
+.image-banner picture,
+.image-banner img {
+  display: block;
+  width: 100%;
+}
+.image-banner img {
+  border: 0;
 }
 .pf-feature-image img {
   width: 100%;
@@ -605,21 +549,13 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 .bottom-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 
 @media (max-width: 1024px) {
-  .hero {
-    height: clamp(430px, 50vw, 540px);
-    min-height: 430px;
-    background:
-      linear-gradient(90deg, rgba(14,25,83,.96) 0%, rgba(14,25,83,.84) 58%, rgba(14,25,83,.30) 100%),
-      url("Placement and Installation.png") center / cover no-repeat;
-  }
+  .hero { height: auto; min-height: 0; background: #fff; }
   .product-grid,
   .scenario-grid,
   .notes-grid,
   .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-layout { grid-template-columns: 1fr; gap: 24px; }
-  .hero { height: auto; padding: 0; }
-  .hero-banner { padding: 56px 0; }
-  .hero-visual { min-height: 330px; }
+  .decision-panel-inner { grid-template-columns: 1fr; align-items: start; }
+  .decision-actions { justify-content: flex-start; }
   .pf-feature { grid-template-columns: 1fr; }
   .category-feature { grid-template-columns: 1fr; }
   .support-band,
@@ -631,33 +567,28 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   body { font-size: 16px; }
   .container { width: min(100% - 32px, 1200px); }
   .section { padding: 52px 0; }
-  .announcement-strip .container { justify-content: flex-start; overflow-x: auto; gap: 22px; }
+  .announcement-strip .container {
+    min-height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 8px 18px;
+  }
+  .announcement-strip span { white-space: normal; }
   h1 { font-size: clamp(32px, 9.6vw, 40px); }
   .hero {
     height: auto;
     min-height: auto;
     padding: 0;
     align-items: flex-start;
-    background: #F5FBFF;
+    background: #fff;
   }
-  .hero-banner {
-    min-height: 0;
-    padding: 42px 0 34px;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 52%, rgba(255,255,255,.34) 100%),
-      url("Placement and Installation.png") center bottom / cover no-repeat;
-  }
-  .hero-visual { min-height: 300px; }
-  .hero-visual::before { inset: 36px 0 22px 24px; }
-  .hero-main-product { width: 82%; height: 72%; padding: 20px; }
-  .hero-mini { width: 50%; padding: 16px; }
-  .hero-tile { width: 36%; height: 100px; right: 0; padding: 12px; }
-  .hero-mini strong { font-size: 15px; }
-  .hero-mini span { font-size: 12px; }
-  .hero-copy { padding-bottom: 26px; }
-  .hero-copy .lead { font-size: 18px; }
+  .hero-banner img { aspect-ratio: 1; }
+  .decision-panel { padding-top: 28px; }
+  .decision-panel .lead { font-size: 17px; }
   .hero-proof { flex-direction: column; gap: 8px; }
-  .hero-actions,
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
   .setup-compare,
@@ -701,37 +632,31 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
     <div class="container">
       <span><i></i> Free Shipping</span>
       <span><i></i> Ships in 24 hours</span>
-      <span><i></i> Lifetime Warranty on mini split systems</span>
+      <span><i></i> Lifetime Warranty</span>
     </div>
   </div>
 
   <section class="hero">
     <div class="hero-banner">
-      <div class="container hero-layout">
-        <div class="hero-copy">
+      <picture>
+        <source media="(max-width: 680px)" srcset="memorial-mobile.png">
+        <img src="memorial-hero.jpg" alt="Della Memorial Day Sale banner placeholder for Della landing page design reference" loading="eager">
+      </picture>
+    </div>
+    <div class="decision-panel">
+      <div class="container decision-panel-inner">
+        <div>
           <span class="section-label">Della mini split buying guide</span>
           <h1>Single&#8209;Zone vs Multi&#8209;Zone Mini Split: Which Setup Fits Your Home?</h1>
           <p class="lead">Choose a single-zone mini split for one room or dedicated space. Choose a multi-zone mini split when one outdoor unit needs to serve 2 to 5 rooms.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
-            <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
-          </div>
           <div class="hero-proof" aria-label="Quick setup logic">
             <span>1 room: single-zone</span>
             <span>2-5 rooms: multi-zone</span>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-main-product">
-            <img src="https://dellahome.com/cdn/shop/files/1D2-TL_D912_97c2ca99-30af-40f9-beaf-88a087342319.jpg?crop=center&height=900&v=1767063221&width=900" alt="" loading="eager" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-          </div>
-          <div class="hero-mini">
-            <strong>Start with rooms, then confirm capacity.</strong>
-            <span>BTU, voltage, line set, and indoor unit mix are checked on the PDP.</span>
-          </div>
-          <div class="hero-tile">
-            <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1757656638&width=500" alt="" loading="eager" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-          </div>
+        <div class="decision-actions">
+          <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
+          <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
         </div>
       </div>
     </div>
@@ -775,11 +700,20 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
     </div>
   </section>
 
+  <section class="image-banner" aria-label="Memorial Day PageFly image placeholder">
+    <div class="container">
+      <picture>
+        <source media="(max-width: 680px)" srcset="memorial-subscribe.png">
+        <img src="memorial-subscribe.png" alt="Della PageFly image banner placeholder" loading="lazy">
+      </picture>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="pf-feature">
         <a class="pf-feature-image" href="https://dellahome.com/collections/mini-split-multi-zone">
-          <img src="Placement and Installation.png" alt="Della mini split installed in a finished garage" loading="lazy">
+          <img src="memorial-category.png" alt="Della mini split category visual placeholder from Memorial Day Sale page" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
         </a>
         <div class="pf-feature-copy">
           <span class="section-label">Quick answer</span>
@@ -845,7 +779,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
           <div class="product-panel is-active" data-panel="one">
             <div class="category-feature">
               <a class="category-image" href="https://dellahome.com/collections/mini-split-single-zone">
-                <img src="Placement and Installation.png" alt="Single-Zone Mini Splits" loading="lazy">
+                <img src="memorial-category.png" alt="Single-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
               </a>
               <div class="category-copy">
                 <p class="category-kicker">1 Room / Single-Zone</p>
@@ -858,7 +792,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/048-TP-9K1V-24S-01.jpg?v=1757656638&width=700" alt="DELLA Optima Series 9000 BTU 24 SEER2 Ultra Heat Mini Split AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-one-1.jpg" alt="DELLA Optima Series 9000 BTU 24 SEER2 Ultra Heat Mini Split AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft">DELLA Optima Series 9000 BTU 24 SEER2 Ultra Heat Mini Split AC</a>
@@ -874,7 +808,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?crop=center&height=700&v=1753232832&width=700" alt="DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-one-2.jpg" alt="DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC</a>
@@ -890,7 +824,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac">
-                <img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=700" alt="DELLA Motto Series 12000 BTU 17 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-one-3.jpg" alt="DELLA Motto Series 12000 BTU 17 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac">DELLA Motto Series 12000 BTU 17 SEER2 Mini Split Heat Pump AC</a>
@@ -906,7 +840,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/M.jpg?crop=center&height=700&v=1750938870&width=700" alt="DELLA Serena Series 18000 BTU 22 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-one-4.jpg" alt="DELLA Serena Series 18000 BTU 22 SEER2 Mini Split Heat Pump AC" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">DELLA Serena Series 18000 BTU 22 SEER2 Mini Split Heat Pump AC</a>
@@ -924,7 +858,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
           <div class="product-panel" data-panel="two">
             <div class="category-feature">
               <a class="category-image" href="https://dellahome.com/collections/2-zone-mini-split">
-                <img src="Placement and Installation.png" alt="2-Zone Mini Splits" loading="lazy">
+                <img src="memorial-category.png" alt="2-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
               </a>
               <div class="category-copy">
                 <p class="category-kicker">2 Rooms / 2-Zone</p>
@@ -937,7 +871,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D2-TP_D99_2711b21e-3c45-450a-ae39-bd485203440e.jpg?crop=center&height=700&v=1755843983&width=700" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-two-1.jpg" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft">DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+9K)</a>
@@ -953,7 +887,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D2-TL_D912_97c2ca99-30af-40f9-beaf-88a087342319.jpg?crop=center&height=700&v=1767063221&width=700" alt="DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-two-2.jpg" alt="DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K+12K)</a>
@@ -969,7 +903,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D3-CC_T_e52ae078-2560-488b-8430-acdab6394c3e.jpg?crop=center&height=700&v=1755745031&width=700" alt="DELLA 18000 BTU Dual Zone Ceiling Cassette Mini Split AC (9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-two-3.jpg" alt="DELLA 18000 BTU Dual Zone Ceiling Cassette Mini Split AC (9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft">DELLA 18000 BTU Dual Zone Ceiling Cassette Mini Split AC (9K+12K)</a>
@@ -985,7 +919,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-27000-btu-dual-zone-mini-split-ac-9k-18k-up-to-1400-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D2-TP_D99_2711b21e-3c45-450a-ae39-bd485203440e.jpg?crop=center&height=700&v=1755843983&width=700" alt="DELLA Optima Series 27000 BTU Dual Zone Mini Split AC (9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-two-4.jpg" alt="DELLA Optima Series 27000 BTU Dual Zone Mini Split AC (9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-27000-btu-dual-zone-mini-split-ac-9k-18k-up-to-1400-sq-ft">DELLA Optima Series 27000 BTU Dual Zone Mini Split AC (9K+18K)</a>
@@ -1003,7 +937,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
           <div class="product-panel" data-panel="three">
             <div class="category-feature">
               <a class="category-image" href="https://dellahome.com/collections/3-zone-mini-split">
-                <img src="Placement and Installation.png" alt="3-Zone Mini Splits" loading="lazy">
+                <img src="memorial-category.png" alt="3-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
               </a>
               <div class="category-copy">
                 <p class="category-kicker">3 Rooms / 3-Zone</p>
@@ -1016,7 +950,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D3-TL_T9912_446cf294-beb5-4875-a441-a2080050a4bb.jpg?crop=center&height=700&v=1767063190&width=700" alt="DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-three-1.jpg" alt="DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft">DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K+9K+9K)</a>
@@ -1032,7 +966,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D3-TL_T9912_446cf294-beb5-4875-a441-a2080050a4bb.jpg?crop=center&height=700&v=1767063190&width=700" alt="DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-three-2.jpg" alt="DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12K)</a>
@@ -1048,7 +982,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D3-CC_T_e52ae078-2560-488b-8430-acdab6394c3e.jpg?crop=center&height=700&v=1755745031&width=700" alt="DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+12K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-three-3.jpg" alt="DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+12K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft">DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+12K+12K)</a>
@@ -1064,7 +998,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D4-TL_Q99912_5c777df1-ffc5-4909-8a31-de97a339e90b.jpg?crop=center&height=700&v=1767063107&width=700" alt="DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-three-4.jpg" alt="DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft">DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (12K+12K+18K)</a>
@@ -1082,7 +1016,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
           <div class="product-panel" data-panel="four">
             <div class="category-feature">
               <a class="category-image" href="https://dellahome.com/collections/4-zone-mini-split">
-                <img src="Placement and Installation.png" alt="4-Zone Mini Splits" loading="lazy">
+                <img src="memorial-category.png" alt="4-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
               </a>
               <div class="category-copy">
                 <p class="category-kicker">4 Rooms / 4-Zone</p>
@@ -1095,7 +1029,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/35000-btu-quad-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-9k-up-to-1600-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D4-CC_Q_87643329-e79c-4009-ae59-703a12df6e67.jpg?crop=center&height=700&v=1755745068&width=700" alt="DELLA 35000 BTU Quad Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-four-1.jpg" alt="DELLA 35000 BTU Quad Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/35000-btu-quad-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-9k-up-to-1600-sq-ft">DELLA 35000 BTU Quad Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K)</a>
@@ -1111,7 +1045,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-35000-btu-quad-zone-mini-split-ac-9k-9k-9k-12k-up-to-1750-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D4-TL_Q99912_5c777df1-ffc5-4909-8a31-de97a339e90b.jpg?crop=center&height=700&v=1767063107&width=700" alt="DELLA Vario Series 35000 BTU Quad Zone Mini Split AC (9K+9K+9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-four-2.jpg" alt="DELLA Vario Series 35000 BTU Quad Zone Mini Split AC (9K+9K+9K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-35000-btu-quad-zone-mini-split-ac-9k-9k-9k-12k-up-to-1750-sq-ft">DELLA Vario Series 35000 BTU Quad Zone Mini Split AC (9K+9K+9K+12K)</a>
@@ -1127,7 +1061,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-42000-btu-quad-zone-mini-split-ac-9k-9k-9k-18k-up-to-2200-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D2-TP_D99_2711b21e-3c45-450a-ae39-bd485203440e.jpg?crop=center&height=700&v=1755843983&width=700" alt="DELLA Optima Series 42000 BTU Quad Zone Mini Split AC (9K+9K+9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-four-3.jpg" alt="DELLA Optima Series 42000 BTU Quad Zone Mini Split AC (9K+9K+9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-42000-btu-quad-zone-mini-split-ac-9k-9k-9k-18k-up-to-2200-sq-ft">DELLA Optima Series 42000 BTU Quad Zone Mini Split AC (9K+9K+9K+18K)</a>
@@ -1143,7 +1077,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/42000-btu-quad-zone-ceiling-cassette-mini-split-ac-12k-12k-12k-18k-up-to-2650-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D4-CC_Q_87643329-e79c-4009-ae59-703a12df6e67.jpg?crop=center&height=700&v=1755745068&width=700" alt="DELLA 42000 BTU Quad Zone Ceiling Cassette Mini Split AC (12K+12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-four-4.jpg" alt="DELLA 42000 BTU Quad Zone Ceiling Cassette Mini Split AC (12K+12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/42000-btu-quad-zone-ceiling-cassette-mini-split-ac-12k-12k-12k-18k-up-to-2650-sq-ft">DELLA 42000 BTU Quad Zone Ceiling Cassette Mini Split AC (12K+12K+12K+18K)</a>
@@ -1161,7 +1095,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
           <div class="product-panel" data-panel="five">
             <div class="category-feature">
               <a class="category-image" href="https://dellahome.com/collections/5-zone-mini-split">
-                <img src="Placement and Installation.png" alt="5-Zone Mini Splits" loading="lazy">
+                <img src="memorial-category.png" alt="5-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
               </a>
               <div class="category-copy">
                 <p class="category-kicker">5 Rooms / 5-Zone</p>
@@ -1174,7 +1108,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-45000-btu-five-zone-mini-split-ac-9k-9k-9k-9k-9k-up-to-2000-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D5-TL_F999918_76eb6164-fe8e-4793-b145-60729473e35d.jpg?crop=center&height=700&v=1768008556&width=700" alt="DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-five-1.jpg" alt="DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+9K+9K+9K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-45000-btu-five-zone-mini-split-ac-9k-9k-9k-9k-9k-up-to-2000-sq-ft">DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+9K+9K+9K)</a>
@@ -1190,7 +1124,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/optima-series-42000-btu-five-zone-mini-split-ac-9k-9k-12k-12k-12k-up-to-2450-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D2-TP_D99_2711b21e-3c45-450a-ae39-bd485203440e.jpg?crop=center&height=700&v=1755843983&width=700" alt="DELLA Optima Series 42000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-five-2.jpg" alt="DELLA Optima Series 42000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+12K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/optima-series-42000-btu-five-zone-mini-split-ac-9k-9k-12k-12k-12k-up-to-2450-sq-ft">DELLA Optima Series 42000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+12K)</a>
@@ -1206,7 +1140,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/42000-btu-five-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-9k-18k-up-to-2600-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D5-CC_F_f6f529b4-2ce5-4a8e-87c4-470367ef7ee1.jpg?crop=center&height=700&v=1755745100&width=700" alt="DELLA 42000 BTU Five Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-five-3.jpg" alt="DELLA 42000 BTU Five Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/42000-btu-five-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-9k-18k-up-to-2600-sq-ft">DELLA 42000 BTU Five Zone Ceiling Cassette Mini Split AC (9K+9K+9K+9K+18K)</a>
@@ -1222,7 +1156,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
             <article class="product-card">
               <a class="product-media" href="https://dellahome.com/products/vario-series-45000-btu-five-zone-mini-split-ac-9k-9k-12k-12k-18k-up-to-2900-sq-ft">
-                <img src="https://dellahome.com/cdn/shop/files/1D5-TL_F999918_76eb6164-fe8e-4793-b145-60729473e35d.jpg?crop=center&height=700&v=1768008556&width=700" alt="DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
+                <img src="product-five-4.jpg" alt="DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+18K)" loading="lazy" onerror="this.onerror=null;this.classList.add('fallback-image');this.src='Placement and Installation.png';">
               </a>
               <div class="product-body">
                 <a class="product-name" href="https://dellahome.com/products/vario-series-45000-btu-five-zone-mini-split-ac-9k-9k-12k-12k-18k-up-to-2900-sq-ft">DELLA Vario Series 45000 BTU Five Zone Mini Split AC (9K+9K+12K+12K+18K)</a>
