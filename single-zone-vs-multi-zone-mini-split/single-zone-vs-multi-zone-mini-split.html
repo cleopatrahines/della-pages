@@ -320,32 +320,46 @@ h3 {
 .pf-feature-copy h2 {
   max-width: 640px;
 }
-.pf-feature-copy p {
+.pf-feature-copy > p {
   margin-top: 14px;
   color: var(--text-muted);
   max-width: 660px;
 }
 .pf-feature-list {
-  margin-top: 20px;
+  margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 .pf-feature-list div {
-  border-top: 1px solid var(--gray-200);
-  padding-top: 14px;
+  min-height: 194px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .pf-feature-list strong {
   display: block;
   color: var(--navy);
+  font-family: var(--font-button);
   font-size: 18px;
+  line-height: 1.2;
 }
 .pf-feature-list span {
   display: block;
-  margin-top: 4px;
+  margin-top: 8px;
   color: var(--text-muted);
   font-size: 14px;
-  line-height: 1.45;
+  line-height: 1.5;
+}
+.pf-feature-list .btn {
+  width: 100%;
+  margin-top: auto;
+  min-height: 42px;
+  padding: 10px 14px;
+  font-size: 14px;
 }
 .quick-card {
   border: 1px solid var(--gray-200);
@@ -692,11 +706,11 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
         </a>
         <div class="pf-feature-copy">
           <span class="section-label">Quick answer</span>
-          <h2>Start with the room count.</h2>
-          <p>Use single-zone for one dedicated room. Use multi-zone when one outdoor unit should serve 2 to 5 rooms. Then confirm outdoor-unit space, line-set route, capacity, and mode control before choosing a product.</p>
+          <h2>One room or multiple rooms?</h2>
+          <p>Choose single-zone for one dedicated room. Choose multi-zone when one outdoor unit needs to serve 2 to 5 rooms.</p>
           <div class="pf-feature-list">
-            <div><strong>One dedicated space</strong><span>Bedroom, garage, office, sunroom, basement, or one addition.</span></div>
-            <div><strong>Several separated rooms</strong><span>Two upstairs bedrooms, three bedrooms, or whole-home ductless planning.</span></div>
+            <div><strong>Single-Zone</strong><span>Best for one bedroom, garage, office, sunroom, basement, or addition.</span><a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a></div>
+            <div><strong>Multi-Zone</strong><span>Best for two to five separated rooms with fewer outdoor units outside.</span><a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a></div>
           </div>
         </div>
       </div>
