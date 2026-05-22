@@ -243,7 +243,38 @@ h3 {
 }
 .commerce-nav {
   background: #fff;
-  padding: 18px 0 34px;
+  padding: 0 0 28px;
+  position: relative;
+  z-index: 4;
+}
+.path-panel {
+  margin-top: -34px;
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) 1fr;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(14,25,82,.08);
+}
+.path-heading {
+  padding: 18px 22px;
+  background: var(--blue-surface);
+  border-right: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.path-heading span {
+  color: var(--blue);
+  font-family: var(--font-button);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.path-heading strong {
+  margin-top: 5px;
+  color: var(--navy);
+  font-family: var(--font-button);
+  font-size: 18px;
+  line-height: 1.25;
 }
 .path-strip {
   margin-top: 0;
@@ -251,16 +282,16 @@ h3 {
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  border: 1px solid var(--gray-200);
   background: #fff;
 }
 .path-link {
-  min-height: 88px;
-  padding: 18px 20px;
+  min-height: 78px;
+  padding: 16px 18px;
   border-right: 1px solid var(--gray-200);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: background .18s ease, color .18s ease;
 }
 .path-link:last-child { border-right: 0; }
 .path-link b { color: var(--navy); font-size: 18px; line-height: 1.2; }
@@ -578,7 +609,11 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .support-links { grid-template-columns: 1fr; }
   .pf-feature-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
+  .path-heading { border-right: 0; border-bottom: 1px solid var(--gray-200); padding: 14px 16px; }
+  .path-heading strong { font-size: 16px; }
   .path-strip { overflow: visible; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path-link { min-height: 66px; padding: 14px 16px; }
   .path-link:nth-child(2n) { border-right: 0; }
   .path-link:nth-child(n+3) { border-top: 1px solid var(--gray-200); }
   .path-link:last-child { grid-column: span 2; }
@@ -634,13 +669,16 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
   <section class="commerce-nav" aria-label="Della shopping paths">
     <div class="container">
-      <nav class="path-strip" aria-label="Shop by room count">
-        <a class="path-link" href="https://dellahome.com/collections/mini-split-single-zone"><b>1 Room</b><span>Single-Zone</span></a>
-        <a class="path-link" href="https://dellahome.com/collections/2-zone-mini-split"><b>2 Rooms</b><span>2-Zone</span></a>
-        <a class="path-link" href="https://dellahome.com/collections/3-zone-mini-split"><b>3 Rooms</b><span>3-Zone</span></a>
-        <a class="path-link" href="https://dellahome.com/collections/4-zone-mini-split"><b>4 Rooms</b><span>4-Zone</span></a>
-        <a class="path-link" href="https://dellahome.com/collections/5-zone-mini-split"><b>5 Rooms</b><span>5-Zone</span></a>
-      </nav>
+      <div class="path-panel">
+        <div class="path-heading"><span>Shop by room count</span><strong>Start with your rooms</strong></div>
+        <nav class="path-strip" aria-label="Shop by room count">
+          <a class="path-link" href="https://dellahome.com/collections/mini-split-single-zone"><b>1 Room</b><span>Single-Zone</span></a>
+          <a class="path-link" href="https://dellahome.com/collections/2-zone-mini-split"><b>2 Rooms</b><span>2-Zone</span></a>
+          <a class="path-link" href="https://dellahome.com/collections/3-zone-mini-split"><b>3 Rooms</b><span>3-Zone</span></a>
+          <a class="path-link" href="https://dellahome.com/collections/4-zone-mini-split"><b>4 Rooms</b><span>4-Zone</span></a>
+          <a class="path-link" href="https://dellahome.com/collections/5-zone-mini-split"><b>5 Rooms</b><span>5-Zone</span></a>
+        </nav>
+      </div>
     </div>
   </section>
 
