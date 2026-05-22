@@ -371,29 +371,55 @@ h3 {
 .quick-card.dark p { color: #fff; }
 .quick-card p { margin-top: 10px; color: var(--text-muted); }
 
-.compare-table-wrap { border: 1px solid var(--gray-200); overflow-x: auto; background: #fff; }
-.compare-table { width: 100%; min-width: 860px; border-collapse: collapse; }
-.compare-table th {
+.setup-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.setup-choice-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+.setup-choice-card h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  line-height: 1.12;
+}
+.setup-choice-card .setup-subtitle {
+  margin-top: 8px;
+  font-family: var(--font-button);
+  color: var(--blue);
+  font-size: 14px;
+}
+.setup-choice-card ul {
+  margin: 20px 0 22px;
+  padding-left: 18px;
+}
+.setup-choice-card li {
+  margin-bottom: 9px;
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.setup-choice-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+.setup-note {
+  margin-top: 16px;
   background: var(--trust-bg);
+  padding: 18px 22px;
   color: var(--navy);
-  text-align: left;
-  padding: 17px 20px;
   font-size: 15px;
+  line-height: 1.55;
 }
-.compare-table th a {
-  color: var(--navy);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.setup-note strong {
+  font-family: var(--font-button);
 }
-.compare-table th a:hover { color: var(--blue); }
-.compare-table td {
-  border-top: 1px solid var(--gray-200);
-  padding: 17px 20px;
-  vertical-align: top;
-  color: var(--text-muted);
-  font-size: 15px;
-}
-.compare-table td:first-child { color: var(--navy); font-weight: 600; width: 190px; }
 
 .product-tabs-wrap {
   background: #fff;
@@ -625,12 +651,14 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .hero-actions .btn { width: auto; min-width: 190px; min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
+  .setup-choice-grid,
   .setup-compare,
   .scenario-grid,
   .notes-grid,
   .support-links { grid-template-columns: 1fr; }
   .pf-feature-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .setup-choice-card { min-height: auto; padding: 20px; }
   .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid var(--gray-200); padding: 14px 16px; }
   .path-heading strong { font-size: 16px; }
@@ -727,23 +755,33 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="section-label">Compare setups</span>
-          <h2>Single-zone vs multi-zone at a glance</h2>
+          <span class="section-label">Choose your setup</span>
+          <h2>Which mini split setup should you choose?</h2>
         </div>
       </div>
-      <div class="compare-table-wrap">
-        <table class="compare-table">
-          <thead><tr><th>Factor</th><th><a href="https://dellahome.com/collections/mini-split-single-zone">Single-Zone Mini Split</a></th><th><a href="https://dellahome.com/collections/mini-split-multi-zone">Multi-Zone Mini Split</a></th></tr></thead>
-          <tbody>
-            <tr><td>System layout</td><td>One indoor unit and one outdoor unit.</td><td>Two to five indoor units connected to one outdoor unit.</td></tr>
-            <tr><td>Best for</td><td>One bedroom, garage, office, sunroom, or addition.</td><td>Bedrooms, separated rooms, main floors, and multi-room homes.</td></tr>
-            <tr><td>Cost and install</td><td>Lowest equipment path and simpler routing for one space.</td><td>Higher upfront equipment cost, but fewer outdoor units as rooms increase.</td></tr>
-            <tr><td>Efficiency pattern</td><td>Strong fit when one room needs dedicated comfort.</td><td>Works well when zones are sized correctly and used as needed.</td></tr>
-            <tr><td>Outdoor units and risk</td><td>One condenser per room; one issue usually affects one room.</td><td>Fewer outdoor condensers; one outdoor-unit issue may affect several zones.</td></tr>
-            <tr><td>Mode control</td><td>Operates as an independent system.</td><td>Separate temperature settings, but connected zones usually share heating or cooling mode.</td></tr>
-          </tbody>
-        </table>
+      <div class="setup-choice-grid">
+        <article class="setup-choice-card">
+          <h3>Single-Zone Mini Split</h3>
+          <p class="setup-subtitle">One indoor unit. One outdoor unit. One dedicated space.</p>
+          <ul>
+            <li>Best for one bedroom, garage, office, sunroom, or addition.</li>
+            <li>Simpler equipment path and line-set routing for one space.</li>
+            <li>A system issue usually affects only that room.</li>
+          </ul>
+          <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-single-zone">View Single-Zone Options</a>
+        </article>
+        <article class="setup-choice-card">
+          <h3>Multi-Zone Mini Split</h3>
+          <p class="setup-subtitle">Two to five indoor units connected to one outdoor unit.</p>
+          <ul>
+            <li>Best for bedrooms, separated rooms, main floors, and multi-room homes.</li>
+            <li>Uses fewer outdoor condensers as room count increases.</li>
+            <li>Each room can have its own temperature setting.</li>
+          </ul>
+          <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-multi-zone">Compare Multi-Zone Systems</a>
+        </article>
       </div>
+      <p class="setup-note"><strong>Buyer note:</strong> Multi-zone systems still need correct capacity matching, line-set planning, and shared heating/cooling mode planning. Multiple single-zone systems may be better when rooms need fully separate operation.</p>
     </div>
   </section>
 
