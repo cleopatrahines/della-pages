@@ -371,29 +371,30 @@ h3 {
 .quick-card.dark p { color: #fff; }
 .quick-card p { margin-top: 10px; color: var(--text-muted); }
 
-.setup-detail-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-.setup-detail-card {
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  padding: 20px;
-  min-height: 178px;
-}
-.setup-detail-card h3 {
-  font-family: var(--font-button);
+.compare-table-wrap { border: 1px solid var(--gray-200); overflow-x: auto; background: #fff; }
+.compare-table { width: 100%; min-width: 820px; border-collapse: collapse; }
+.compare-table th {
+  background: var(--trust-bg);
   color: var(--navy);
-  font-size: 18px;
-  line-height: 1.25;
+  text-align: left;
+  padding: 17px 20px;
+  font-size: 15px;
 }
-.setup-detail-card p {
-  margin-top: 10px;
+.compare-table th a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.compare-table th a:hover { color: var(--blue); }
+.compare-table td {
+  border-top: 1px solid var(--gray-200);
+  padding: 18px 20px;
+  vertical-align: top;
   color: var(--text-body);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
 }
+.compare-table td:first-child { color: var(--navy); font-weight: 600; width: 170px; }
 
 .product-tabs-wrap {
   background: #fff;
@@ -625,14 +626,12 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .hero-actions .btn { width: auto; min-width: 190px; min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
-  .setup-detail-grid,
   .setup-compare,
   .scenario-grid,
   .notes-grid,
   .support-links { grid-template-columns: 1fr; }
   .pf-feature-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .setup-detail-card { min-height: auto; padding: 18px; }
   .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid var(--gray-200); padding: 14px 16px; }
   .path-heading strong { font-size: 16px; }
@@ -729,15 +728,20 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="section-label">Planning details</span>
-          <h2>What changes when you add more rooms?</h2>
+          <span class="section-label">Compare setup paths</span>
+          <h2>Single-zone or multi-zone: the key differences</h2>
         </div>
       </div>
-      <div class="setup-detail-grid">
-        <article class="setup-detail-card"><h3>Outdoor units</h3><p>Single-zone adds one condenser per room. Multi-zone keeps several rooms on one outdoor unit.</p></article>
-        <article class="setup-detail-card"><h3>Line-set planning</h3><p>More zones mean more line-set routes, indoor-unit locations, and installer planning.</p></article>
-        <article class="setup-detail-card"><h3>Capacity matching</h3><p>Multi-zone systems need the outdoor unit and indoor heads matched to the rooms they serve.</p></article>
-        <article class="setup-detail-card"><h3>Mode control</h3><p>Connected zones can have separate temperature settings, but usually share heating or cooling mode.</p></article>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead><tr><th>Decision point</th><th><a href="https://dellahome.com/collections/mini-split-single-zone">Single-Zone Mini Split</a></th><th><a href="https://dellahome.com/collections/mini-split-multi-zone">Multi-Zone Mini Split</a></th></tr></thead>
+          <tbody>
+            <tr><td>Best fit</td><td>One dedicated room, garage, office, sunroom, or addition.</td><td>Two to five separated rooms served by one outdoor unit.</td></tr>
+            <tr><td>Outdoor setup</td><td>One outdoor unit per room.</td><td>Fewer outdoor units for multiple rooms.</td></tr>
+            <tr><td>Install planning</td><td>Simpler line-set routing for one space.</td><td>More planning for line sets, indoor locations, and capacity matching.</td></tr>
+            <tr><td>Operation</td><td>Fully independent system.</td><td>Separate temperature settings, but connected zones usually share heating or cooling mode.</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
