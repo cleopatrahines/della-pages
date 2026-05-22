@@ -161,8 +161,8 @@ Use these as the working Della topical-page tokens:
 --gray-100: #F0F2F6;
 --gray-200: #E2E6EE;
 --gray-300: #C9D1E3;
---text-body: #1A2550;
---text-muted: #5C6A8A;
+--text-body: #0E1952;
+--text-muted: #0E1952;
 --white: #FFFFFF;
 ```
 
