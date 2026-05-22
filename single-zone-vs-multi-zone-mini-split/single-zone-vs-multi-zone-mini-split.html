@@ -413,7 +413,7 @@ h3 {
 .product-toolbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
   padding: 0 0 26px;
 }
@@ -434,8 +434,10 @@ h3 {
   color: var(--navy);
   font: 600 14px/1 var(--font-button);
   cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
 }
 .tab-btn.is-active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.tab-btn:not(.is-active):hover { background: #fff; color: var(--blue); border-color: var(--blue); }
 .product-panel { display: none; padding: 0; }
 .product-panel.is-active { display: block; }
 .category-feature {
@@ -674,7 +676,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .path-link:last-child { grid-column: span 2; }
   .product-toolbar,
   .section-head { align-items: flex-start; flex-direction: column; }
-  .product-toolbar { align-items: center; }
+  .product-toolbar { align-items: stretch; }
   .product-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: 100%; gap: 4px; padding: 4px; }
   .tab-btn { min-height: 38px; padding: 0 6px; font-size: 12px; }
   .category-feature { gap: 16px; margin-bottom: 18px; }
@@ -781,7 +783,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
 
   <section class="section" id="products">
     <div class="container">
-      <div class="section-head centered">
+      <div class="section-head">
         <div>
           <span class="section-label">Shop by room count</span>
           <h2>Find the Della setup that matches your rooms</h2>
