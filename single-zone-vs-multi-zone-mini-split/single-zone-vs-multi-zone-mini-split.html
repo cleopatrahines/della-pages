@@ -267,34 +267,6 @@ h3 {
 .path-link span { color: var(--text-muted); font-size: 14px; }
 .path-link:hover { background: var(--blue-surface); }
 
-.trust-strip { padding: 18px 0 0; }
-.trust-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.trust-card {
-  min-height: 104px;
-  background: var(--trust-bg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 24px 28px;
-}
-.trust-main { display: flex; align-items: center; gap: 16px; }
-.trust-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #37636c;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-}
-.trust-icon svg { width: 21px; height: 21px; stroke: currentColor; stroke-width: 1.8; fill: none; }
-.trust-title { color: var(--navy); font-size: 18px; font-weight: 600; line-height: 1.25; }
-.trust-sub { color: var(--navy); font-size: 16px; line-height: 1.35; }
-.trust-card a { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
-
 .quick-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; }
 .pf-feature {
   display: grid;
@@ -306,18 +278,6 @@ h3 {
   aspect-ratio: 1.16;
   overflow: hidden;
   background: var(--gray-50);
-}
-.image-banner {
-  padding: 0 0 56px;
-  background: #fff;
-}
-.image-banner picture,
-.image-banner img {
-  display: block;
-  width: 100%;
-}
-.image-banner img {
-  border: 0;
 }
 .pf-feature-image img {
   width: 100%;
@@ -576,8 +536,7 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .hero-bg { object-position: 42% center; }
   .product-grid,
   .scenario-grid,
-  .notes-grid,
-  .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pf-feature { grid-template-columns: 1fr; }
   .category-feature { grid-template-columns: 1fr; }
   .support-band,
@@ -616,7 +575,6 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .setup-compare,
   .scenario-grid,
   .notes-grid,
-  .trust-grid,
   .support-links { grid-template-columns: 1fr; }
   .pf-feature-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
@@ -624,7 +582,6 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
   .path-link:nth-child(2n) { border-right: 0; }
   .path-link:nth-child(n+3) { border-top: 1px solid var(--gray-200); }
   .path-link:last-child { grid-column: span 2; }
-  .trust-card,
   .product-toolbar,
   .section-head { align-items: flex-start; flex-direction: column; }
   .product-toolbar { align-items: center; }
@@ -681,41 +638,6 @@ details p { margin-top: 10px; max-width: 840px; color: var(--text-muted); }
         <a class="path-link" href="https://dellahome.com/collections/4-zone-mini-split"><b>4 Rooms</b><span>4-Zone</span></a>
         <a class="path-link" href="https://dellahome.com/collections/5-zone-mini-split"><b>5 Rooms</b><span>5-Zone</span></a>
       </nav>
-
-      <div class="trust-strip">
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-main">
-              <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5"/><path d="M12 12v9"/></svg></span>
-              <div><div class="trust-title">Free Shipping</div><div class="trust-sub">Ships in 24 hours</div></div>
-            </div>
-            <a href="https://dellahome.com/policies/shipping-policy">Learn more</a>
-          </div>
-          <div class="trust-card">
-            <div class="trust-main">
-              <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-2"/><path d="M6 13h3v5H6zM15 13h3v5h-3z"/><path d="M11 19h4"/></svg></span>
-              <div><div class="trust-title">24/7 Live Chat</div><div class="trust-sub">Weekday technical help</div></div>
-            </div>
-            <a href="https://support.dellahome.com/">Learn more</a>
-          </div>
-          <div class="trust-card">
-            <div class="trust-main">
-              <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-3-3 2.4-2.4Z"/></svg></span>
-              <div><div class="trust-title">Lifetime Warranty</div><div class="trust-sub">Mini split systems</div></div>
-            </div>
-            <a href="https://dellahome.com/pages/registration">Learn more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="image-banner" aria-label="Memorial Day PageFly image placeholder">
-    <div class="container">
-      <picture>
-        <source media="(max-width: 680px)" srcset="memorial-subscribe.png">
-        <img src="memorial-subscribe.png" alt="Della PageFly image banner placeholder" loading="lazy">
-      </picture>
     </div>
   </section>
 

@@ -117,7 +117,6 @@ When the user asks to match the Memorial Day PageFly page, copy the useful PageF
 Current copied local placeholders:
 - `memorial-hero.jpg`: extracted desktop hero image from the Memorial Day Sale PageFly page, temporarily used as this topic page's hero placeholder.
 - `memorial-mobile.png`: extracted mobile hero image from the Memorial Day Sale PageFly page.
-- `memorial-subscribe.png`: compact visual banner.
 - `memorial-category.png`: category/product lifestyle visual.
 - `Spectral-Regular.woff2`, `Spectral-PageFly-Medium.woff2`, `Spectral-Bold.woff2`: PageFly heading and product-card display fonts.
 - `Poppins-400.woff2` and `Poppins-600.woff2`: PageFly body, button, tab, and support-copy fonts.
@@ -344,17 +343,16 @@ Required module order:
 1. Della benefit strip.
 2. Commerce banner hero with direct answer.
 3. 1-5 room collection strip.
-4. Trust cards.
-5. Quick answer decision band.
-6. Single vs multi comparison table.
-7. Product tabs with 4 visible product cards.
-8. One multi-zone vs multiple single-zone.
-9. Buyer notes.
-10. Scenario cards.
-11. Cost and installation planning.
-12. Support confidence block.
-13. Six-item FAQ.
-14. Bottom collection strip.
+4. Quick answer decision band.
+5. Single vs multi comparison table.
+6. Product tabs with 4 visible product cards.
+7. One multi-zone vs multiple single-zone.
+8. Buyer notes.
+9. Scenario cards.
+10. Cost and installation planning.
+11. Support confidence block.
+12. Six-item FAQ.
+13. Bottom collection strip.
 
 Success criteria:
 - Looks like Della ecommerce, not a generic AI blog.
