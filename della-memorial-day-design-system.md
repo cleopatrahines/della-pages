@@ -115,13 +115,13 @@ The reference page is an ecommerce campaign page with this sequence:
 When the user asks to match the Memorial Day PageFly page, copy the useful PageFly assets into the local demo folder and reference the local files directly. Do not leave critical visuals dependent on Shopify CDN loading during review.
 
 Current copied local placeholders:
-- `memorial-hero.jpg`: extracted desktop hero image from the Memorial Day Sale PageFly page, temporarily used as this topic page's hero placeholder.
-- `memorial-mobile.png`: extracted mobile hero image from the Memorial Day Sale PageFly page.
+- `banner desktop.webp`: topic-specific desktop hero image for the Single-Zone vs Multi-Zone page.
+- `banner mobile.webp`: topic-specific mobile hero image for the Single-Zone vs Multi-Zone page.
 - `memorial-category.png`: category/product lifestyle visual.
 - `Spectral-Regular.woff2`, `Spectral-PageFly-Medium.woff2`, `Spectral-Bold.woff2`: PageFly heading and product-card display fonts.
 - `Poppins-400.woff2` and `Poppins-600.woff2`: PageFly body, button, tab, and support-copy fonts.
 
-Use these only as layout placeholders. Before Shopify publish, replace campaign-specific holiday copy, dates, discount text, and sale badges with evergreen mini-split decision graphics or topic-specific Della product imagery.
+Use Memorial Day assets only as layout placeholders. For final topic pages, replace campaign-specific holiday copy, dates, discount text, and sale badges with evergreen mini-split decision graphics or topic-specific Della product imagery.
 
 Product cards should also use local copies of the PDP images in demo files so browser review does not show empty product-media boxes.
 
