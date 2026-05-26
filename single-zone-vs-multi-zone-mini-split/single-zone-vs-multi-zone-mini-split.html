@@ -266,14 +266,16 @@ h3 {
   margin-top: -34px;
   display: grid;
   grid-template-columns: minmax(210px, 260px) 1fr;
-  border: 1px solid var(--gray-200);
+  border: 1px solid rgba(226,230,238,.72);
   background: #fff;
-  box-shadow: 0 12px 28px rgba(14,25,82,.08);
+  box-shadow: 0 18px 42px rgba(14,25,82,.1);
+  border-radius: 4px;
+  overflow: hidden;
 }
 .path-heading {
   padding: 18px 22px;
-  background: var(--blue-surface);
-  border-right: 1px solid var(--gray-200);
+  background: #fff;
+  border-right: 1px solid rgba(226,230,238,.56);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -302,7 +304,7 @@ h3 {
 .path-link {
   min-height: 78px;
   padding: 16px 18px;
-  border-right: 1px solid var(--gray-200);
+  border-right: 1px solid rgba(226,230,238,.52);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -311,70 +313,86 @@ h3 {
 .path-link:last-child { border-right: 0; }
 .path-link b { color: var(--navy); font-size: 18px; line-height: 1.2; }
 .path-link span { color: var(--text-muted); font-size: 14px; }
-.path-link:hover { background: var(--blue-surface); }
+.path-link:hover { background: var(--blue-light); }
 .path-link:hover b,
 .path-link:hover span { color: var(--blue); }
 
-.quick-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; }
-.pf-feature {
+.quick-answer-relaxed {
   display: grid;
-  grid-template-columns: .94fr 1.06fr;
-  gap: 34px;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 48px;
   align-items: center;
 }
-.pf-feature-image {
-  aspect-ratio: 1.16;
+.quick-answer-relaxed__media {
+  display: block;
+  aspect-ratio: 1.18;
   overflow: hidden;
   background: var(--gray-50);
+  border-radius: 4px;
 }
-.pf-feature-image img {
+.quick-answer-relaxed__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.pf-feature-copy h2 {
+.quick-answer-relaxed__content h2 {
   max-width: 640px;
 }
-.pf-feature-copy > p {
+.quick-answer-relaxed__content > p {
   margin-top: 14px;
   color: var(--text-muted);
-  max-width: 660px;
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.65;
 }
-.pf-feature-list {
-  margin-top: 22px;
+.quick-answer-relaxed__list,
+.split-bullet-list {
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
 }
-.pf-feature-list div {
-  min-height: 194px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.pf-feature-list strong {
-  display: block;
+.quick-answer-relaxed__list li,
+.split-bullet-list li {
+  position: relative;
+  padding-left: 20px;
   color: var(--navy);
-  font-family: var(--font-button);
-  font-size: 18px;
-  line-height: 1.2;
+  font-size: 15px;
+  line-height: 1.45;
 }
-.pf-feature-list span {
-  display: block;
-  margin-top: 8px;
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.5;
+.quick-answer-relaxed__list li::before,
+.split-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .56em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
 }
-.pf-feature-list .btn {
-  width: 100%;
-  margin-top: auto;
-  min-height: 42px;
-  padding: 10px 14px;
-  font-size: 14px;
+.quick-answer-relaxed__actions,
+.split-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 26px;
+}
+.inline-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--navy);
+  font: 600 14px/1 var(--font-button);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: gap .18s ease, color .18s ease;
+}
+.inline-arrow-link:hover {
+  gap: 10px;
+  color: var(--blue);
 }
 .quick-card {
   border: 1px solid var(--gray-200);
@@ -397,85 +415,66 @@ h3 {
   white-space: nowrap;
   border: 0;
 }
-.compare-table-wrap { border: 1px solid var(--gray-200); overflow-x: auto; background: #fff; }
-.compare-table { width: 100%; min-width: 820px; border-collapse: collapse; }
-.compare-table th {
-  background: var(--trust-bg);
-  color: var(--navy);
-  text-align: left;
-  padding: 17px 20px;
-  font-size: 15px;
+.setup-summary-compact {
+  background: var(--blue-surface);
 }
-.compare-table th a {
-  color: var(--navy);
-  text-decoration: none;
-  transition: color .18s ease;
-}
-.compare-table th a:hover { color: var(--blue); }
-.compare-table td {
-  border-top: 1px solid var(--gray-200);
-  padding: 18px 20px;
-  vertical-align: top;
-  color: var(--text-body);
-  font-size: 15px;
-  line-height: 1.5;
-}
-.compare-table td:first-child { color: var(--navy); font-weight: 600; width: 170px; }
-.compare-note {
-  margin-top: 14px;
-  background: var(--trust-bg);
-  padding: 16px 20px;
-  color: var(--navy);
-  font-size: 15px;
-  line-height: 1.55;
-}
-.compare-note strong {
-  font-family: var(--font-button);
-}
-.setup-compare-cards {
-  display: none;
-}
-.setup-compare-card {
-  border: 1px solid var(--gray-200);
+.setup-summary-compact__inner {
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: center;
+  padding: 34px 38px;
   background: #fff;
+  box-shadow: 0 14px 36px rgba(14,25,83,.06);
 }
-.setup-compare-card h3 {
-  padding: 20px 20px 18px;
-  font-size: 24px;
-  line-height: 1.15;
-  border-bottom: 1px solid var(--gray-200);
+.setup-summary-compact__copy h2 {
+  margin-top: 0;
+  font-size: clamp(28px, 2.7vw, 36px);
+  line-height: 1.08;
 }
-.setup-compare-card h3 a {
-  color: var(--navy);
-  text-decoration: none;
-}
-.setup-compare-card.featured h3 {
-  background: var(--navy);
-}
-.setup-compare-card.featured h3 a {
-  color: #fff;
-}
-.setup-compare-card dl {
-  display: grid;
-}
-.setup-compare-card dl div {
-  display: grid;
-  gap: 6px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--gray-200);
-}
-.setup-compare-card dl div:last-child {
-  border-bottom: 0;
-}
-.setup-compare-card dt {
-  color: var(--blue);
-  font: 600 12px/1 var(--font-button);
-  text-transform: uppercase;
-}
-.setup-compare-card dd {
+.setup-summary-compact__copy p {
+  max-width: 430px;
+  margin-top: 12px;
   color: var(--text-muted);
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.65;
+}
+.setup-summary-compact__columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+.setup-summary-compact__column h3 {
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.setup-summary-compact__column ul {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+}
+.setup-summary-compact__column li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.setup-summary-compact__column li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .56em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
 }
 
 .product-tabs-wrap {
@@ -518,26 +517,12 @@ h3 {
 .product-panel { display: none; padding: 0; }
 .product-panel.is-active { display: block; }
 .category-feature {
-  display: grid;
-  grid-template-columns: .96fr 1.04fr;
-  gap: 28px;
-  align-items: center;
-  margin-bottom: 26px;
+  display: block;
+  margin-bottom: 18px;
   background: #fff;
 }
-.category-image {
-  display: block;
-  aspect-ratio: 1.54;
-  overflow: hidden;
-  background: var(--gray-50);
-}
-.category-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .category-copy {
-  padding: 16px 0;
+  padding: 0;
   width: 100%;
   max-width: none;
 }
@@ -549,20 +534,27 @@ h3 {
   margin-bottom: 8px;
 }
 .category-copy h3 {
-  font-size: 28px;
+  font-size: clamp(24px, 2.3vw, 28px);
   line-height: 1.15;
 }
 .category-copy p {
   margin-top: 12px;
   color: var(--text-muted);
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 .text-link {
   display: inline-flex;
-  margin-top: 18px;
+  margin-top: 12px;
+  gap: 6px;
   color: var(--navy);
   font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.text-link::after {
+  content: "→";
 }
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .product-card {
@@ -641,14 +633,14 @@ h3 {
 }
 
 .sizing-next {
-  margin-top: 32px;
-  border: 1px solid var(--gray-200);
-  background: var(--blue-surface);
+  margin-top: 0;
+  background: var(--trust-bg);
   display: grid;
-  grid-template-columns: minmax(320px, .75fr) 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 28px;
   align-items: center;
-  padding: 28px 30px;
+  min-height: 132px;
+  padding: 28px 34px;
 }
 .sizing-next-label {
   display: inline-flex;
@@ -666,36 +658,15 @@ h3 {
   color: var(--text-muted);
   font-size: 15px;
   line-height: 1.62;
-}
-.sizing-next-list {
-  list-style: none;
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-}
-.sizing-next-list li {
-  position: relative;
-  padding-left: 24px;
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.45;
-}
-.sizing-next-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: .52em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue);
+  max-width: 740px;
 }
 .sizing-next-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0;
 }
 
 .split-grid,
@@ -729,18 +700,16 @@ h3 {
 .scene-rows {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 24px;
   margin-top: 32px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
 }
 .scene-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 360px;
-  border-bottom: 1px solid var(--gray-200);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(14,25,83,.05);
 }
-.scene-row:last-child { border-bottom: 0; }
 .scene-row:nth-child(even) .scene-img { order: 2; }
 .scene-row:nth-child(even) .scene-body { order: 1; background: #fff; }
 .scene-img {
@@ -1176,6 +1145,67 @@ h3 {
   color: var(--blue);
 }
 
+.outdoor-decision-split,
+.installation-support-split {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 72px 0;
+  color: var(--navy);
+}
+.outdoor-decision-split__inner,
+.installation-support-split__inner {
+  display: grid;
+  grid-template-columns: 1.04fr .96fr;
+  gap: 48px;
+  align-items: center;
+}
+.installation-support-split__inner {
+  grid-template-columns: .96fr 1.04fr;
+}
+.outdoor-decision-split__media,
+.installation-support-split__media {
+  display: block;
+  margin: 0;
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  background: var(--blue-surface);
+  border-radius: 4px;
+}
+.outdoor-decision-split__media img,
+.installation-support-split__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+.outdoor-decision-split__copy,
+.installation-support-split__copy {
+  max-width: 520px;
+}
+.outdoor-decision-split__copy h2,
+.installation-support-split__copy h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(32px, 3vw, 38px);
+  line-height: 1.08;
+}
+.outdoor-decision-split__copy > p,
+.installation-support-split__copy > p {
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.installation-support-split {
+  background: var(--blue-surface);
+  width: 100%;
+}
+.installation-support-split__inner {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
 .services-section {
   background: var(--white);
   padding-top: 56px;
@@ -1336,36 +1366,21 @@ h3 {
   .notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .scene-row { min-height: 320px; }
-  .pf-feature { grid-template-columns: 1fr; }
-  .category-feature { grid-template-columns: 1fr; }
+  .quick-answer-relaxed,
   .support-band,
   .quick-grid,
   .split-grid,
-  .sizing-next { grid-template-columns: 1fr; }
-  .setup-guide-premium {
-    width: min(100% - 40px, 920px);
-  }
-  .setup-guide-premium__header,
-  .setup-guide-premium__decision,
-  .setup-guide-premium__installation {
+  .sizing-next,
+  .setup-summary-compact__inner,
+  .outdoor-decision-split__inner,
+  .installation-support-split__inner {
     grid-template-columns: 1fr;
   }
-  .setup-guide-premium__intro {
-    max-width: 640px;
-  }
-  .setup-guide-premium__visual {
-    aspect-ratio: 4 / 3;
-  }
-  .setup-guide-premium__visual img {
-    min-height: 340px;
-  }
-  .setup-guide-premium__choices {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .setup-guide-premium__install-copy h3,
-  .setup-guide-premium__install-copy > p:not(.setup-guide-premium__eyebrow) {
-    max-width: 620px;
-  }
+  .quick-answer-relaxed,
+  .outdoor-decision-split__inner,
+  .installation-support-split__inner { gap: 28px; }
+  .sizing-next-actions { justify-content: flex-start; }
+  .installation-support-split__inner { width: min(100% - 40px, 920px); }
 }
 @media (max-width: 680px) {
   body { font-size: 16px; }
@@ -1395,7 +1410,7 @@ h3 {
   .hero-actions .btn { width: auto; min-width: 190px; min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
-  .setup-compare,
+  .setup-summary-compact__columns,
   .scenario-grid,
   .notes-grid,
   .support-links { grid-template-columns: 1fr; }
@@ -1409,95 +1424,30 @@ h3 {
   .scene-img { min-height: 250px; }
   .scene-body { padding: 24px; }
   .scene-body h3 { font-size: 24px; }
-  .setup-guide-premium {
+  .outdoor-decision-split,
+  .installation-support-split {
     width: min(100% - 32px, 100%);
     padding: 52px 0;
   }
-  .setup-guide-premium__header {
-    gap: 14px;
-    margin-bottom: 24px;
+  .quick-answer-relaxed {
+    gap: 24px;
   }
-  .setup-guide-premium__heading h2 {
-    font-size: clamp(28px, 9vw, 32px);
-    line-height: 1.12;
-  }
-  .setup-guide-premium__intro {
-    font-size: 15.5px;
-    line-height: 1.58;
-  }
-  .setup-guide-premium__decision {
-    gap: 16px;
-  }
-  .setup-guide-premium__visual {
-    min-height: 260px;
-    aspect-ratio: auto;
-  }
-  .setup-guide-premium__visual img {
-    min-height: 260px;
-  }
-  .setup-guide-premium__visual-caption {
-    right: 18px;
-    bottom: 18px;
-    left: 18px;
-  }
-  .setup-guide-premium__visual-caption span {
-    font-size: 22px;
-  }
-  .setup-guide-premium__visual-caption small {
-    font-size: 14.5px;
-  }
-  .setup-guide-premium__choices,
-  .setup-guide-premium__guidance-items,
-  .setup-guide-premium__checklist {
-    grid-template-columns: 1fr;
-  }
-  .setup-guide-premium__choices {
-    gap: 16px;
-  }
-  .setup-guide-premium__choice {
-    padding: 22px;
-  }
-  .setup-guide-premium__choice h3 {
-    font-size: 23px;
-  }
-  .setup-guide-premium__chips {
-    margin-bottom: 20px;
-  }
-  .setup-guide-premium__button {
+  .installation-support-split {
     width: 100%;
   }
-  .setup-guide-premium__guidance {
-    margin-top: 18px;
-    padding: 24px 20px;
+  .installation-support-split__inner {
+    width: min(100% - 32px, 100%);
   }
-  .setup-guide-premium__guidance h3 {
-    font-size: 22px;
-  }
-  .setup-guide-premium__guidance-items {
-    gap: 18px;
-  }
-  .setup-guide-premium__installation {
-    margin-top: 18px;
-    padding: 24px 20px;
-  }
-  .setup-guide-premium__install-copy h3 {
-    font-size: 26px;
-  }
-  .setup-guide-premium__support-actions {
-    gap: 10px;
-  }
-  .setup-guide-premium__check-item {
-    min-height: 0;
-    padding: 20px;
-  }
-  .compare-table-wrap { display: none; }
-  .setup-compare-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 22px;
-  }
-  .pf-feature-list { grid-template-columns: 1fr; }
+  .quick-answer-relaxed,
+  .outdoor-decision-split__inner,
+  .installation-support-split__inner { gap: 24px; }
+  .quick-answer-relaxed__media,
+  .outdoor-decision-split__media,
+  .installation-support-split__media { min-height: 260px; aspect-ratio: auto; }
+  .quick-answer-relaxed__media img,
+  .outdoor-decision-split__media img,
+  .installation-support-split__media img { min-height: 260px; }
+  .setup-summary-compact__inner { padding: 26px 22px; gap: 24px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid var(--gray-200); padding: 14px 16px; }
@@ -1530,9 +1480,11 @@ h3 {
     scroll-snap-align: start;
   }
   .collection-cta { width: 100%; }
-  .sizing-next { padding: 22px; margin-top: 24px; gap: 18px; }
+  .sizing-next { padding: 22px; margin-top: 0; gap: 18px; }
   .sizing-next h3 { font-size: 24px; }
+  .sizing-next-actions { justify-content: flex-start; }
   .sizing-next-actions .btn { width: 100%; }
+  .sizing-next-actions .inline-arrow-link { width: auto; }
   .category-feature { gap: 16px; margin-bottom: 18px; }
   .category-copy { padding: 0; }
   .category-copy h3 { font-size: 23px; }
@@ -1596,64 +1548,25 @@ h3 {
 
   <section class="section">
     <div class="container">
-      <div class="pf-feature">
-        <a class="pf-feature-image" href="https://dellahome.com/collections/mini-split-multi-zone">
+      <div class="quick-answer-relaxed">
+        <a class="quick-answer-relaxed__media" href="https://dellahome.com/collections/mini-split-multi-zone">
           <img src="memorial-category.png" alt="Della mini split category visual" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
         </a>
-        <div class="pf-feature-copy">
+        <div class="quick-answer-relaxed__content">
           <span class="section-label">Quick answer</span>
           <h2>One room or multiple rooms?</h2>
           <p>Choose single-zone for one dedicated room. Choose multi-zone when one outdoor unit needs to serve 2 to 5 rooms.</p>
-          <div class="pf-feature-list">
-            <div><strong>Single-Zone</strong><span>Best for one bedroom, garage, office, sunroom, basement, or addition.</span><a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-single-zone">View Single-Zone Options</a></div>
-            <div><strong>Multi-Zone</strong><span>Best for two to five separated rooms with fewer outdoor units outside.</span><a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-multi-zone">Compare Multi-Zone Systems</a></div>
+          <ul class="quick-answer-relaxed__list">
+            <li>1 room: Single-Zone</li>
+            <li>2 to 5 rooms: Multi-Zone</li>
+            <li>Still unsure: start with room count</li>
+          </ul>
+          <div class="quick-answer-relaxed__actions">
+            <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
+            <a class="inline-arrow-link" href="https://dellahome.com/collections/mini-split-multi-zone">Compare Multi-Zone →</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="section-label">Shop by setup</span>
-          <h2>Choose Your Mini Split Setup</h2>
-        </div>
-      </div>
-      <div class="compare-table-wrap">
-        <table class="compare-table">
-          <caption class="sr-only">Compare single-zone and multi-zone mini split setups</caption>
-          <thead><tr><th>Setup</th><th><a href="https://dellahome.com/collections/mini-split-single-zone">Single-Zone Mini Split</a></th><th><a href="https://dellahome.com/collections/mini-split-multi-zone">Multi-Zone Mini Split</a></th></tr></thead>
-          <tbody>
-            <tr><td>Best use</td><td>One room or dedicated space.</td><td>2 to 5 rooms with one outdoor unit.</td></tr>
-            <tr><td>Outdoor setup</td><td>One condenser per room.</td><td>Fewer condensers outside.</td></tr>
-            <tr><td>Install planning</td><td>Simpler one-room routing.</td><td>More line-set and capacity planning.</td></tr>
-            <tr><td>Room control</td><td>Fully separate system.</td><td>Separate temperatures, shared system mode.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="setup-compare-cards" aria-label="Single-zone and multi-zone mini split setup comparison">
-        <article class="setup-compare-card">
-          <h3><a href="https://dellahome.com/collections/mini-split-single-zone">Single-Zone Mini Split</a></h3>
-          <dl>
-            <div><dt>Best use</dt><dd>One room or dedicated space.</dd></div>
-            <div><dt>Outdoor setup</dt><dd>One condenser per room.</dd></div>
-            <div><dt>Install planning</dt><dd>Simpler one-room routing.</dd></div>
-            <div><dt>Room control</dt><dd>Fully separate system.</dd></div>
-          </dl>
-        </article>
-        <article class="setup-compare-card featured">
-          <h3><a href="https://dellahome.com/collections/mini-split-multi-zone">Multi-Zone Mini Split</a></h3>
-          <dl>
-            <div><dt>Best use</dt><dd>2 to 5 rooms with one outdoor unit.</dd></div>
-            <div><dt>Outdoor setup</dt><dd>Fewer condensers outside.</dd></div>
-            <div><dt>Install planning</dt><dd>More line-set and capacity planning.</dd></div>
-            <div><dt>Room control</dt><dd>Separate temperatures, shared system mode.</dd></div>
-          </dl>
-        </article>
-      </div>
-      <p class="compare-note"><strong>Buyer note:</strong> Choose multi-zone when fewer outdoor units matter most. Choose multiple single-zone systems when rooms need fully separate operation or you want more redundancy.</p>
     </div>
   </section>
 
@@ -1680,9 +1593,6 @@ h3 {
 
           <div class="product-panel is-active" id="panel-one" data-panel="one" role="tabpanel" aria-labelledby="tab-one" aria-hidden="false">
             <div class="category-feature">
-              <a class="category-image" href="https://dellahome.com/collections/mini-split-single-zone">
-                <img src="memorial-category.png" alt="Single-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-              </a>
               <div class="category-copy">
                 <p class="category-kicker">1 Room / Single-Zone</p>
                 <h3>Single-Zone Mini Splits</h3>
@@ -1759,9 +1669,6 @@ h3 {
           </div>
           <div class="product-panel" id="panel-two" data-panel="two" role="tabpanel" aria-labelledby="tab-two" aria-hidden="true">
             <div class="category-feature">
-              <a class="category-image" href="https://dellahome.com/collections/2-zone-mini-split">
-                <img src="memorial-category.png" alt="2-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-              </a>
               <div class="category-copy">
                 <p class="category-kicker">2 Rooms / 2-Zone</p>
                 <h3>2-Zone Mini Splits</h3>
@@ -1838,9 +1745,6 @@ h3 {
           </div>
           <div class="product-panel" id="panel-three" data-panel="three" role="tabpanel" aria-labelledby="tab-three" aria-hidden="true">
             <div class="category-feature">
-              <a class="category-image" href="https://dellahome.com/collections/3-zone-mini-split">
-                <img src="memorial-category.png" alt="3-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-              </a>
               <div class="category-copy">
                 <p class="category-kicker">3 Rooms / 3-Zone</p>
                 <h3>3-Zone Mini Splits</h3>
@@ -1917,9 +1821,6 @@ h3 {
           </div>
           <div class="product-panel" id="panel-four" data-panel="four" role="tabpanel" aria-labelledby="tab-four" aria-hidden="true">
             <div class="category-feature">
-              <a class="category-image" href="https://dellahome.com/collections/4-zone-mini-split">
-                <img src="memorial-category.png" alt="4-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-              </a>
               <div class="category-copy">
                 <p class="category-kicker">4 Rooms / 4-Zone</p>
                 <h3>4-Zone Mini Splits</h3>
@@ -1996,9 +1897,6 @@ h3 {
           </div>
           <div class="product-panel" id="panel-five" data-panel="five" role="tabpanel" aria-labelledby="tab-five" aria-hidden="true">
             <div class="category-feature">
-              <a class="category-image" href="https://dellahome.com/collections/5-zone-mini-split">
-                <img src="memorial-category.png" alt="5-Zone Mini Splits" loading="lazy" onerror="this.onerror=null;this.src='Placement and Installation.png';">
-              </a>
               <div class="category-copy">
                 <p class="category-kicker">5 Rooms / 5-Zone</p>
                 <h3>5-Zone Mini Splits</h3>
@@ -2074,21 +1972,53 @@ h3 {
             </div>
           </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section setup-summary-compact">
+    <div class="container">
+      <div class="setup-summary-compact__inner">
+        <div class="setup-summary-compact__copy">
+          <span class="section-label">Setup comparison</span>
+          <h2>Single-zone or multi-zone?</h2>
+          <p>Use this quick check after choosing your room count.</p>
+        </div>
+        <div class="setup-summary-compact__columns" aria-label="Single-zone and multi-zone setup comparison">
+          <article class="setup-summary-compact__column">
+            <h3>Single-Zone</h3>
+            <ul>
+              <li>One room</li>
+              <li>One outdoor unit per room</li>
+              <li>Simpler one-room route</li>
+              <li>Fully separate system</li>
+            </ul>
+          </article>
+          <article class="setup-summary-compact__column">
+            <h3>Multi-Zone</h3>
+            <ul>
+              <li>2 to 5 rooms</li>
+              <li>Fewer outdoor units</li>
+              <li>More line-set planning</li>
+              <li>Separate temperatures, shared mode</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
       <aside class="sizing-next" aria-labelledby="sizing-next-title">
         <div class="sizing-next-copy">
           <span class="sizing-next-label">BTU next step</span>
-          <h3 id="sizing-next-title">Not sure which BTU combination fits your rooms?</h3>
-          <p>Use room count as the starting point, then confirm room size, insulation, ceiling height, sun exposure, and climate before choosing a 9K, 12K, 18K, or mixed-zone setup.</p>
-          <div class="sizing-next-actions">
-            <a class="btn btn-primary btn-sm" href="#products">Review room tabs</a>
-            <a class="btn btn-outline btn-sm" href="https://dellahome.com/pages/find-a-installer">Find Installer</a>
-          </div>
+          <h3 id="sizing-next-title">Not sure which BTU fits?</h3>
+          <p>Measure each room separately, then check insulation, sun exposure, ceiling height, and line-set route before choosing the final system.</p>
         </div>
-        <ul class="sizing-next-list">
-          <li>Measure each room separately instead of using only the total home size.</li>
-          <li>Check heat gain from windows, sun exposure, ceiling height, and insulation.</li>
-          <li>Confirm line-set route and outdoor unit capacity before picking the final system.</li>
-        </ul>
+        <div class="sizing-next-actions">
+          <a class="btn btn-primary btn-sm" href="#products">Review room tabs</a>
+          <a class="inline-arrow-link" href="https://dellahome.com/pages/find-a-della-partner-hvac-installer">Find Installer →</a>
+        </div>
       </aside>
     </div>
   </section>
@@ -2147,128 +2077,48 @@ h3 {
     </div>
   </section>
 
-  <section class="setup-guide-premium" aria-labelledby="setup-guide-premium-title">
-    <div class="setup-guide-premium__header">
-      <div class="setup-guide-premium__heading">
-        <p class="setup-guide-premium__eyebrow">SETUP GUIDE</p>
-        <h2 id="setup-guide-premium-title">Choose the right setup before checkout</h2>
-      </div>
-      <p class="setup-guide-premium__intro">Compare outdoor unit space, room layout, system independence, and installation planning before choosing your Della mini split setup.</p>
-    </div>
-
-    <div class="setup-guide-premium__decision">
-      <figure class="setup-guide-premium__visual">
+  <section class="outdoor-decision-split" aria-labelledby="outdoor-decision-title">
+    <div class="outdoor-decision-split__inner">
+      <figure class="outdoor-decision-split__media">
         <img src="setup-guide-outdoor.webp" alt="Della mini split outdoor setup for single-zone and multi-zone planning" loading="lazy">
-        <figcaption class="setup-guide-premium__visual-caption">
-          <span>One outdoor unit or separate systems?</span>
-          <small>Start with room distance, outdoor space, and how independently each room needs to run.</small>
-        </figcaption>
       </figure>
-
-      <div class="setup-guide-premium__choices" aria-label="Mini split setup choices">
-        <article class="setup-guide-premium__choice">
-          <p class="setup-guide-premium__kicker">CLEANER EXTERIOR</p>
-          <h3>One Multi-Zone System</h3>
-          <p>Best for nearby rooms when one outdoor unit can serve multiple indoor zones.</p>
-          <div class="setup-guide-premium__chips" aria-label="Multi-zone benefits">
-            <span>Fewer outdoor units</span>
-            <span>Nearby rooms</span>
-            <span>One coordinated setup</span>
-          </div>
-          <a class="setup-guide-premium__button setup-guide-premium__button--primary" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
-        </article>
-
-        <article class="setup-guide-premium__choice">
-          <p class="setup-guide-premium__kicker">MORE INDEPENDENCE</p>
-          <h3>Multiple Single-Zone Systems</h3>
-          <p>Best for separated rooms, different schedules, or backup-sensitive spaces.</p>
-          <div class="setup-guide-premium__chips" aria-label="Single-zone benefits">
-            <span>Separate outdoor units</span>
-            <span>Independent operation</span>
-            <span>More redundancy</span>
-          </div>
-          <a class="setup-guide-premium__button setup-guide-premium__button--primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
-        </article>
-      </div>
-    </div>
-
-    <div class="setup-guide-premium__guidance" aria-labelledby="setup-guide-premium-guidance-title">
-      <h3 id="setup-guide-premium-guidance-title">Still deciding? Check these first.</h3>
-      <div class="setup-guide-premium__guidance-items">
-        <div class="setup-guide-premium__guidance-item">
-          <span class="setup-guide-premium__dot" aria-hidden="true"></span>
-          <div>
-            <h4>Room layout matters</h4>
-            <p>Distance, schedules, and room separation can change the better path.</p>
-          </div>
+      <div class="outdoor-decision-split__copy">
+        <span class="section-label">Setup guide</span>
+        <h2 id="outdoor-decision-title">One outdoor unit or separate systems?</h2>
+        <p>Choose multi-zone when nearby rooms can share one outdoor unit. Choose multiple single-zone systems when rooms are separated, scheduled differently, or need more backup.</p>
+        <ul class="split-bullet-list">
+          <li>Cleaner exterior: Multi-Zone</li>
+          <li>More independence: Multiple Single-Zone</li>
+          <li>Different schedules: Compare room layout</li>
+        </ul>
+        <div class="split-actions">
+          <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
+          <a class="inline-arrow-link" href="https://dellahome.com/collections/mini-split-single-zone">Compare Single-Zone →</a>
         </div>
-        <div class="setup-guide-premium__guidance-item">
-          <span class="setup-guide-premium__dot" aria-hidden="true"></span>
-          <div>
-            <h4>Outdoor space matters</h4>
-            <p>One multi-zone system looks cleaner outside. Multiple systems need more condenser space.</p>
-          </div>
-        </div>
-        <div class="setup-guide-premium__guidance-item">
-          <span class="setup-guide-premium__dot" aria-hidden="true"></span>
-          <div>
-            <h4>BTU load still matters</h4>
-            <p>Each indoor unit still needs to match the room size and load.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="setup-guide-premium__installation">
-      <div class="setup-guide-premium__install-copy">
-        <p class="setup-guide-premium__eyebrow">INSTALLATION PLANNING</p>
-        <h3>Plan installation before checkout</h3>
-        <p>Confirm route, power, and installer needs before choosing your setup.</p>
-        <div class="setup-guide-premium__support-actions">
-          <a class="setup-guide-premium__button setup-guide-premium__button--primary" href="https://dellahome.com/pages/find-a-della-partner-hvac-installer">Find Partner HVAC Installer</a>
-          <a class="setup-guide-premium__button setup-guide-premium__button--outline" href="https://dellahome.com/pages/contact">Contact Della Support</a>
-        </div>
-      </div>
-
-      <div class="setup-guide-premium__checklist" aria-label="Installation planning checklist">
-        <article class="setup-guide-premium__check-item">
-          <span aria-hidden="true"></span>
-          <h4>Room count</h4>
-          <p>Single-zone starts lower for one room. Multi-zone can reduce outdoor units as rooms increase.</p>
-        </article>
-        <article class="setup-guide-premium__check-item">
-          <span aria-hidden="true"></span>
-          <h4>Line-set route</h4>
-          <p>Room distance, wall paths, and outdoor placement can change labor and material needs.</p>
-        </article>
-        <article class="setup-guide-premium__check-item">
-          <span aria-hidden="true"></span>
-          <h4>Electrical requirements</h4>
-          <p>Confirm voltage, breaker space, and disconnect requirements before choosing a setup.</p>
-        </article>
-        <article class="setup-guide-premium__check-item">
-          <span aria-hidden="true"></span>
-          <h4>Installed quote</h4>
-          <p>Compare total installed cost, not just equipment price.</p>
-        </article>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="support-band">
-        <div class="support-copy">
-          <span class="section-label">Buy with confidence</span>
-          <h2>Plan your installation with fewer surprises.</h2>
-          <p>Mini split decisions go beyond room count. Use Della support paths when you need installer help, rebate checks, or warranty registration.</p>
-        </div>
-        <div class="support-links">
-          <div class="support-card"><span class="support-icon">01</span><h3>Find Installer</h3><p>Partner HVAC installer support.</p><a class="btn btn-sm btn-outline" href="https://dellahome.com/pages/find-a-installer" aria-label="Open Find Installer">Open</a></div>
-          <div class="support-card"><span class="support-icon">02</span><h3>Check Rebates</h3><p>Review available rebate paths.</p><a class="btn btn-sm btn-outline" href="https://dellahome.com/pages/us-rebate-center" aria-label="Open Check Rebates">Open</a></div>
-          <div class="support-card"><span class="support-icon">03</span><h3>Register Warranty</h3><p>Register mini split systems.</p><a class="btn btn-sm btn-outline" href="https://dellahome.com/pages/registration" aria-label="Open Register Warranty">Open</a></div>
+  <section class="installation-support-split" aria-labelledby="installation-support-title">
+    <div class="installation-support-split__inner">
+      <div class="installation-support-split__copy">
+        <span class="section-label">Installation support</span>
+        <h2 id="installation-support-title">Plan installation before checkout</h2>
+        <p>Mini split decisions go beyond room count. Confirm the route, power, and installed quote before choosing the final setup.</p>
+        <ul class="split-bullet-list">
+          <li>Line-set route</li>
+          <li>Electrical requirements</li>
+          <li>Installed quote</li>
+        </ul>
+        <div class="split-actions">
+          <a class="inline-arrow-link" href="https://dellahome.com/pages/find-a-della-partner-hvac-installer">Find Partner HVAC Installer →</a>
+          <a class="inline-arrow-link" href="https://dellahome.com/pages/us-rebate-center">Check Rebates →</a>
+          <a class="inline-arrow-link" href="https://dellahome.com/pages/registration">Register Warranty →</a>
         </div>
       </div>
+      <figure class="installation-support-split__media">
+        <img src="installation-support.webp" alt="Della mini split installation planning support" loading="lazy" onerror="this.onerror=null;this.src='setup-guide-outdoor.webp';">
+      </figure>
     </div>
   </section>
 
