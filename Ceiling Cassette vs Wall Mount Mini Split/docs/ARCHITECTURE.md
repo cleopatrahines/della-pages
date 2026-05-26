@@ -13,13 +13,14 @@ The page is a standalone static artifact:
 The page moves from fast decision to evidence to product action:
 
 1. Verdict
-2. Fit decision
-3. Comparison details
-4. Room scenarios
-5. Product cards
-6. Installation constraints
-7. Support/trust
-8. FAQ/final CTA
+2. Commerce path selection
+3. Quick answer
+4. Comparison details
+5. Room scenarios
+6. Product tabs
+7. Installation and value
+8. Support/trust
+9. FAQ/final CTA
 
 ## Shopify Migration
 

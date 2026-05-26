@@ -17,14 +17,16 @@ The page should feel like a DTC ecommerce decision page, not a blog article. It 
 
 ## Page Structure
 
-1. Hero: one-sentence verdict, two collection CTAs, product-form comparison visual.
-2. Quick decision strip: who should choose each indoor unit type.
-3. Comparison table: appearance, installation, airflow, maintenance, cost, best spaces.
-4. Room scenarios: bedroom, open living area, finished basement, remodel.
-5. Product merchandising: ceiling cassette cards and wall mount cards.
-6. Installation fit notes: ceiling clearance, attic/joist access, wall space, drain line.
-7. Trust/support strip: free shipping, installer finder, support, warranty/rebate links.
-8. FAQ and final CTA.
+1. Announcement strip: Della trust points.
+2. Hero: comparison visual, concise verdict, two collection CTAs.
+3. Path panel: install-type commerce navigation.
+4. Quick answer: product image plus short decision guidance.
+5. Setup summary and comparison table: the core SEO answer.
+6. Room scene rows: four real residential install situations.
+7. Product merchandising: two tabs, ceiling cassette and wall mount.
+8. Installation and value: cost path and install complexity.
+9. Trust/support strip: shipping, financing, live chat, installer path.
+10. FAQ and bottom CTA.
 
 ## Product Cards
 
@@ -35,7 +37,7 @@ Follow the existing local comparison page card pattern:
 - price
 - `View Product` button
 
-Show current transaction price only. Do not show compare-at price, coupon code, or sale badges.
+Show current transaction price only. Do not show compare-at price, coupon code, or sale badges. Use two product tabs instead of two stacked product blocks so the page feels more like a DTC commerce landing page.
 
 ## Responsive Rules
 

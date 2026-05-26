@@ -8,3 +8,4 @@
 - Confirmed current transaction price display only, with no coupon, sale badge, or compare-at price.
 - Confirmed standalone HTML demo plus project docs and Shopify handoff notes.
 - Confirmed commit scope: new page directory, plus root `index.html` only if adding a GitHub Pages entry is needed.
+- Revised first version after external structure review: added commerce path panel, quick answer module, setup summary, four scene rows, two-tab product merchandising, installation/value section, expanded FAQ, and bottom CTA.

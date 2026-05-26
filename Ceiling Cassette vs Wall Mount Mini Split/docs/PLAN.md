@@ -47,7 +47,8 @@ Files involved:
 Acceptance criteria:
 - Above-fold verdict and CTAs are visible.
 - Product cards include image, title, tags, price, and `View Product`.
-- Comparison sections match the approved 8-module structure.
+- Product cards are organized into two tabs by indoor unit type.
+- Comparison sections match the revised 10-section structure.
 
 Validation:
 - Browser preview at desktop and mobile widths.
