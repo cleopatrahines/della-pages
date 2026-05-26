@@ -1139,23 +1139,21 @@ h3 {
   .section-head { align-items: flex-start; flex-direction: column; }
   .product-toolbar { align-items: stretch; }
   .product-tabs {
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     width: 100%;
-    gap: 6px;
+    gap: 4px;
     padding: 5px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
   }
   .product-tabs::-webkit-scrollbar { display: none; }
   .tab-btn {
-    flex: 0 0 auto;
-    min-width: 96px;
+    width: 100%;
+    min-width: 0;
     min-height: 40px;
-    padding: 0 14px;
-    font-size: 13px;
-    scroll-snap-align: start;
+    padding: 0 6px;
+    font-size: 12px;
+    white-space: nowrap;
   }
   .collection-cta { width: 100%; }
   .sizing-next { padding: 22px; margin-top: 0; gap: 18px; }
