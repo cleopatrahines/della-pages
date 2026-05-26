@@ -17,10 +17,12 @@ Local assets:
 - `assets/Poppins-400.woff2`
 - `assets/Poppins-600.woff2`
 - eight product card images
+- desktop/mobile hero banners
+- five lifestyle room-fit images
 
 ## Constraints
 
 - Keep source portable for later Shopify PageFly/Liquid migration.
 - Avoid framework dependencies.
 - Avoid promotional data that expires quickly.
-- Keep current static prices documented as launch-time values that require pre-publish review.
+- Use PDP CTAs for current pricing unless Shopify dynamic product data is connected.

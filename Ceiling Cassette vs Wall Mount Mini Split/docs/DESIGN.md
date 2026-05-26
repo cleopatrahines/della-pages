@@ -18,31 +18,33 @@ The page should feel like a DTC ecommerce decision page, not a blog article. It 
 ## Page Structure
 
 1. Announcement strip: Della trust points.
-2. Hero: comparison visual, concise verdict, two collection CTAs.
-3. Path panel: install-type commerce navigation.
-4. Quick answer: product image plus short decision guidance.
-5. Setup summary and comparison table: the core SEO answer.
-6. Room scene rows: four real residential install situations.
-7. Product merchandising: two tabs, ceiling cassette and wall mount.
-8. Installation and value: cost path and install complexity.
-9. Trust/support strip: shipping, financing, live chat, installer path.
-10. FAQ and bottom CTA.
+2. Hero: full-bleed lifestyle banner, concise verdict, two collection CTAs.
+3. Path panel: overlay commerce navigation for Ceiling Cassette, Wall Mount, Compare Fit, and Find Installer.
+4. Quick answer: two path cards, one for ceiling cassette and one for wall mount.
+5. Decision checker: five install-fit questions with a recommended starting path.
+6. Head-to-head comparison: compact 8-row comparison with stacked mobile cards.
+7. Choose by room: lifestyle scene cards for open living, bedroom/office/rental, sunroom, retrofit, and remodel.
+8. Installation feasibility: installer checks for both indoor unit types.
+9. Product path: two collection cards followed by popular comparison picks.
+10. Mix indoor unit styles, services, FAQ, and bottom CTA.
 
 ## Product Cards
 
-Follow the existing local comparison page card pattern:
+Use product merchandising as a decision path instead of a sale grid:
+- two collection path cards first
+- popular side-by-side picks after the collection decision
 - image
 - product name
 - compact spec tags
-- price
-- `View Product` button
+- system type and best-fit use case
+- `See Current Price` or `View Product` button
 
-Show current transaction price only. Do not show compare-at price, coupon code, or sale badges. Use two product tabs instead of two stacked product blocks so the page feels more like a DTC commerce landing page.
+Do not show demo pricing notes, compare-at price, coupon code, or sale badges. If Shopify dynamic product data is not wired, use `See Current Price` as the PDP CTA.
 
 ## Responsive Rules
 
 - Desktop product grid: four cards per row.
-- Mobile product grid: two cards per row when text still fits.
+- Mobile comparison picks: one card group per row; paired product options stack inside the group when needed.
 - CTAs must stay at least 44px tall.
 - No horizontal scroll.
 - Text should not overlap imagery or buttons.

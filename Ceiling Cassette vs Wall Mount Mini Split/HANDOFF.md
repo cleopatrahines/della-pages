@@ -24,18 +24,9 @@ Set canonical to:
 
 ## Product Data
 
-The local demo uses static prices checked on 2026-05-26:
+The local demo does not hard-code prices. Product CTAs use `See Current Price` or `View Product` so the evergreen page does not become stale when PDP pricing changes.
 
-- 12K ceiling cassette: `$1,394.96`
-- 18K ceiling cassette: `$1,784.96`
-- 18K dual-zone ceiling cassette: `$2,769.96`
-- 27K tri-zone ceiling cassette: `$3,779.96`
-- 12K wall mount: `$799.96`
-- 18K wall mount: `$1,049.96`
-- 18K dual-zone wall mount: `$2,039.96`
-- 28K tri-zone wall mount: `$2,484.96`
-
-Before Shopify publish, re-check current PDP pricing or replace the static product cards with Shopify dynamic product data.
+For Shopify publish, either keep this CTA pattern or replace the popular pick cards with dynamic Shopify product data.
 
 ## Tracking
 
@@ -45,6 +36,8 @@ Recommended events:
 - `cta_click_collection_ceiling_cassette`
 - `product_click_wall_mount`
 - `product_click_ceiling_cassette`
+- `decision_checker_answer`
+- `decision_checker_result`
 - `faq_expand`
 - `support_link_click`
 
@@ -54,6 +47,6 @@ Recommended events:
 - Confirm old blog redirect is active.
 - Confirm mobile CTAs are visible and tappable.
 - Confirm no sale-specific copy remains.
-- Confirm product prices are current.
+- Confirm no static price copy or demo pricing note remains.
 - Confirm images have meaningful alt text.
 - Confirm page title and meta description are set in Shopify.

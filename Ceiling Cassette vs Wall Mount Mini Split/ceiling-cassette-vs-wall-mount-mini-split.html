@@ -32,34 +32,10 @@
   --font-body: 'Poppins', Arial, sans-serif;
   --shadow: 0 8px 24px rgba(14,25,83,.08), 0 1px 5px rgba(14,25,83,.05);
 }
-@font-face {
-  font-family: 'Spectral Regular';
-  src: url('assets/Spectral-Regular.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Spectral Bold';
-  src: url('assets/Spectral-Bold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/Poppins-400.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/Poppins-600.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
+@font-face { font-family: 'Spectral Regular'; src: url('assets/Spectral-Regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Spectral Bold'; src: url('assets/Spectral-Bold.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('assets/Poppins-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('assets/Poppins-600.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -84,16 +60,10 @@ button { font: inherit; }
   justify-content: space-between;
   align-items: flex-end;
   gap: 28px;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
-.section-head.centered {
-  display: block;
-  text-align: center;
-}
-.section-head.centered .section-copy {
-  margin-left: auto;
-  margin-right: auto;
-}
+.section-head.centered { display: block; text-align: center; }
+.section-head.centered .section-copy { margin-left: auto; margin-right: auto; }
 .section-label {
   display: inline-flex;
   color: var(--blue);
@@ -125,12 +95,11 @@ h3 {
   margin-bottom: 10px;
   font-family: var(--font-heading);
   color: var(--navy);
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.25;
   font-weight: 400;
 }
-.section-copy,
-.lead {
+.section-copy, .lead {
   color: var(--text-muted);
   max-width: 720px;
   font-size: 16px;
@@ -151,20 +120,13 @@ h3 {
   transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary,
-.btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
-.btn-primary:hover,
-.btn-navy:hover { background: #fff; color: var(--navy); border-color: var(--navy); }
-.btn-blue { background: var(--blue); color: #fff; border-color: var(--blue); }
-.btn-blue:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
+.btn-primary, .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
+.btn-primary:hover, .btn-navy:hover { background: #fff; color: var(--navy); border-color: var(--navy); }
 .btn-outline { background: #fff; color: var(--navy); border-color: var(--gray-200); }
 .btn-outline:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue); }
+.text-link { color: var(--blue); font-weight: 600; font-size: 14px; }
 
-.announcement-strip {
-  background: var(--navy);
-  color: #fff;
-  font-size: 13px;
-}
+.announcement-strip { background: var(--navy); color: #fff; font-size: 13px; }
 .announcement-strip .container {
   min-height: 38px;
   display: flex;
@@ -172,256 +134,41 @@ h3 {
   justify-content: center;
   gap: 34px;
 }
-.announcement-strip span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-.announcement-strip i {
-  width: 6px;
-  height: 6px;
-  display: inline-block;
-  border-radius: 50%;
-  background: var(--blue);
-}
+.announcement-strip span { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.announcement-strip i { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: inline-block; }
 
 .hero {
   position: relative;
-  min-height: 560px;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.9) 43%, rgba(244,247,255,.82) 100%),
-    radial-gradient(circle at 86% 20%, rgba(88,132,231,.2), transparent 34%),
-    #F7F8FB;
+  min-height: clamp(520px, 35.7vw, 620px);
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  background: #F7F8FB;
 }
-.hero .container {
-  min-height: 560px;
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
-  align-items: center;
-  gap: 44px;
+.hero picture, .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.hero-copy,
-.unit-scene,
-.comparison-stage { min-width: 0; }
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 14px;
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.hero-kicker::before {
+.hero-bg { object-fit: cover; object-position: center; }
+.hero::before {
   content: "";
-  width: 28px;
-  height: 2px;
-  background: var(--blue);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.86) 40%, rgba(255,255,255,.34) 68%, rgba(255,255,255,0) 100%);
+  z-index: 1;
 }
+.hero-content { position: relative; z-index: 2; }
+.hero-inner { max-width: 600px; padding: 56px 0; }
 .hero-text {
+  max-width: 560px;
   margin-bottom: 22px;
   color: var(--text-muted);
   font-size: 17px;
   line-height: 1.65;
 }
-.hero-verdict {
-  margin: 22px 0;
-  padding: 18px 20px;
-  border-left: 4px solid var(--blue);
-  background: #fff;
-  box-shadow: var(--shadow);
-  color: var(--navy);
-  font-size: 15px;
-  line-height: 1.6;
-}
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-.hero-proof {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-  color: var(--text-muted);
-  font-size: 13px;
-}
-.hero-proof span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-.hero-proof span::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-}
-.hero-visual {
-  position: relative;
-  min-height: 420px;
-}
-.comparison-stage {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  min-height: 396px;
-  padding: 18px;
-  border: 1px solid rgba(201,209,227,.8);
-  background: rgba(255,255,255,.88);
-  box-shadow: var(--shadow);
-}
-.unit-scene {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 360px;
-  padding: 18px;
-  border: 1px solid var(--gray-200);
-  background: linear-gradient(180deg, #fff, #F8FAFF);
-}
-.scene-ceiling {
-  height: 46px;
-  margin: -18px -18px 20px;
-  background:
-    linear-gradient(90deg, rgba(14,25,83,.08) 1px, transparent 1px) 0 0 / 42px 42px,
-    linear-gradient(180deg, #E8EDF8, #F8FAFF);
-  border-bottom: 1px solid var(--gray-200);
-}
-.scene-wall {
-  position: relative;
-  min-height: 68px;
-  margin-bottom: 12px;
-  background: linear-gradient(180deg, #EEF3FF 0 42%, #fff 42% 100%);
-  border-bottom: 1px solid var(--gray-200);
-}
-.scene-wall::before {
-  content: "";
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  top: 34%;
-  height: 2px;
-  background: rgba(14,25,83,.15);
-}
-.unit-card-img {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.unit-card-img img {
-  width: 100%;
-  max-height: 190px;
-  object-fit: contain;
-}
-.visual-label {
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  z-index: 2;
-  padding: 7px 9px;
-  border-radius: 4px;
-  background: var(--navy);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-}
-.wall .visual-label { background: var(--blue); }
-.unit-caption {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--gray-200);
-}
-.unit-caption strong {
-  display: block;
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 20px;
-  line-height: 1.25;
-}
-.unit-caption span {
-  display: block;
-  margin-top: 5px;
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.45;
-}
-.stage-badge {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 54px;
-  height: 54px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--navy);
-  color: #fff;
-  font-family: var(--font-heading-bold);
-  font-size: 18px;
-  box-shadow: 0 8px 18px rgba(14,25,83,.18);
-}
-
-.decision-strip {
-  margin-top: -38px;
-  position: relative;
-  z-index: 4;
-}
-.decision-panel {
-  display: grid;
-  grid-template-columns: 240px repeat(2, minmax(0, 1fr));
-  border: 1px solid rgba(226,230,238,.8);
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-.decision-title {
-  padding: 22px 24px;
-  background: var(--navy);
-  color: #fff;
-}
-.decision-title span {
-  display: block;
-  color: rgba(255,255,255,.74);
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.decision-title strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.2;
-}
-.decision-card {
-  padding: 22px 24px;
-  border-left: 1px solid var(--gray-200);
-}
-.decision-card h3 {
-  margin-bottom: 8px;
-  font-size: 23px;
-}
-.decision-card p {
-  margin-bottom: 14px;
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-.decision-card a {
-  color: var(--blue);
-  font-size: 14px;
-  font-weight: 600;
-}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .commerce-nav {
   position: relative;
@@ -453,254 +200,126 @@ h3 {
   font-weight: 400;
   line-height: 1.2;
 }
-.path-strip {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
+.path-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .path-link {
-  min-height: 94px;
+  min-height: 92px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 3px;
-  padding: 16px 18px;
+  padding: 16px 20px;
   border-right: 1px solid rgba(255,255,255,.18);
   transition: background .18s ease;
 }
 .path-link:last-child { border-right: 0; }
 .path-link:hover { background: rgba(255,255,255,.1); }
-.path-link b {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.2;
-}
-.path-link span {
-  color: rgba(255,255,255,.72);
-  font-size: 12px;
-}
+.path-link b { font-family: var(--font-heading); font-size: 21px; font-weight: 400; line-height: 1.2; }
+.path-link span { color: rgba(255,255,255,.72); font-size: 12px; }
 
-.quick-answer {
-  display: grid;
-  grid-template-columns: minmax(320px, .82fr) minmax(0, 1.18fr);
-  gap: 34px;
-  align-items: center;
-}
-.quick-answer__media {
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 34px;
-  border: 1px solid var(--gray-200);
-  background: linear-gradient(180deg, #fff, var(--blue-surface));
-}
-.quick-answer__media img {
-  max-height: 300px;
-  object-fit: contain;
-}
-.quick-answer__list {
-  display: grid;
-  gap: 10px;
-  margin: 22px 0;
-  padding: 0;
-  list-style: none;
-}
-.quick-answer__list li {
-  padding: 12px 14px;
-  border-left: 3px solid var(--blue);
-  background: var(--blue-surface);
-  color: var(--navy);
-  font-size: 14px;
-}
-.quick-answer__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.setup-summary-compact {
-  margin-bottom: 30px;
-  padding: 30px;
-  background: var(--trust-bg);
-}
-.setup-summary-compact__inner {
-  display: grid;
-  grid-template-columns: .88fr 1.12fr;
-  gap: 30px;
-  align-items: start;
-}
-.setup-summary-compact__columns {
+.path-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 18px;
 }
-.summary-column {
-  padding: 22px;
+.path-card {
+  min-height: 360px;
+  display: grid;
+  grid-template-rows: 180px 1fr;
+  border: 1px solid var(--gray-200);
   background: #fff;
-  border: 1px solid rgba(201,209,227,.8);
 }
-.summary-column h3 { font-size: 24px; }
-.summary-column ul {
-  margin: 0;
+.path-card__media {
+  background: var(--blue-surface);
+  overflow: hidden;
+}
+.path-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.path-card__body { padding: 26px; }
+.path-card ul {
+  margin: 16px 0 20px;
   padding-left: 18px;
   color: var(--text-muted);
   font-size: 14px;
-  line-height: 1.65;
 }
+.path-card li + li { margin-top: 7px; }
 
-.scene-rows {
+.decision-checker {
   display: grid;
-  gap: 18px;
+  grid-template-columns: minmax(0, .95fr) minmax(320px, .55fr);
+  gap: 28px;
+  align-items: stretch;
 }
-.scene-row {
-  display: grid;
-  grid-template-columns: minmax(260px, .9fr) minmax(0, 1.1fr);
-  min-height: 320px;
+.checker-panel {
   border: 1px solid var(--gray-200);
   background: #fff;
+  padding: 26px;
 }
-.scene-row:nth-child(even) {
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
+.checker-grid {
+  display: grid;
+  gap: 14px;
 }
-.scene-row:nth-child(even) .scene-img { order: 2; }
-.scene-row:nth-child(even) .scene-body { order: 1; }
-.scene-img {
-  display: flex;
+.checker-question {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
   align-items: center;
-  justify-content: center;
-  padding: 34px;
-  background: linear-gradient(180deg, #fff, var(--blue-surface));
-  overflow: hidden;
-}
-.scene-img img {
-  max-height: 250px;
-  object-fit: contain;
-}
-.scene-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 34px;
-}
-.scene-room-label {
-  display: inline-flex;
-  align-self: flex-start;
-  margin-bottom: 12px;
-  padding: 6px 8px;
+  padding: 16px;
+  background: var(--blue-surface);
   border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 600;
 }
-.scene-body p {
-  color: var(--text-muted);
-}
-.scene-recommendation {
-  display: inline-flex;
-  align-self: flex-start;
-  margin: 8px 0 16px;
-  padding: 7px 10px;
-  background: var(--blue-light);
+.checker-question strong {
+  display: block;
   color: var(--navy);
+  font-size: 15px;
+}
+.checker-question span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.checker-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+.checker-options button {
+  min-height: 40px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 4px;
+  cursor: pointer;
   font-size: 13px;
   font-weight: 600;
 }
-.scene-cta {
-  color: var(--blue);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.product-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-.product-tabs {
-  display: inline-flex;
-  gap: 6px;
-  padding: 6px;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-}
-.tab-btn {
-  min-height: 40px;
-  padding: 8px 16px;
-  border: 0;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--navy);
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-}
-.tab-btn.is-active {
+.checker-options button.is-selected {
   background: var(--navy);
+  border-color: var(--navy);
   color: #fff;
 }
-.product-panel { display: none; }
-.product-panel.is-active { display: block; }
-.category-feature {
+.checker-result {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  align-items: end;
-}
-.category-feature__copy { max-width: 860px; }
-.category-feature .text-link {
-  color: var(--blue);
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.sizing-next {
-  margin-top: 24px;
-  padding: 24px 28px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 20px;
-  align-items: center;
+  padding: 28px;
   background: var(--trust-bg);
+  border: 1px solid rgba(201,209,227,.8);
 }
-.sizing-next h3 { margin-bottom: 4px; }
-.sizing-next p {
-  margin-bottom: 0;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-.cost-panel {
-  display: grid;
-  grid-template-columns: .95fr 1.05fr;
-  gap: 34px;
-  align-items: center;
-}
-.cost-visual {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-.cost-card {
-  padding: 24px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-}
-.cost-card strong {
+.checker-result strong {
   display: block;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 400;
+  line-height: 1.15;
 }
-.cost-card span {
-  display: block;
-  margin-top: 6px;
-  color: var(--text-muted);
-  font-size: 14px;
-}
+.checker-result p { color: var(--text-muted); margin-bottom: 0; }
+.checker-result .btn { width: 100%; }
 
 .comparison-table-wrap {
   overflow-x: auto;
@@ -714,7 +333,7 @@ h3 {
 }
 .comparison-table th,
 .comparison-table td {
-  padding: 18px 20px;
+  padding: 17px 20px;
   border-bottom: 1px solid var(--gray-200);
   vertical-align: top;
   text-align: left;
@@ -727,247 +346,224 @@ h3 {
   font-weight: 400;
 }
 .comparison-table th:first-child {
-  width: 22%;
+  width: 21%;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--blue);
 }
-.comparison-table td:first-child {
-  color: var(--navy);
-  font-weight: 600;
-}
-.comparison-table td {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.55;
-}
+.comparison-table td:first-child { color: var(--navy); font-weight: 600; }
+.comparison-table td { color: var(--text-muted); font-size: 14px; line-height: 1.55; }
 .comparison-table tr:last-child td { border-bottom: 0; }
-.table-note {
-  margin-top: 14px;
-  color: var(--text-muted);
-  font-size: 13px;
-}
+.table-note { margin-top: 14px; color: var(--text-muted); font-size: 13px; }
 
-.scenario-grid {
+.room-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
 }
-.scenario-card {
-  min-height: 240px;
-  padding: 24px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-}
-.scenario-card span {
-  display: inline-flex;
-  margin-bottom: 12px;
-  padding: 6px 8px;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 600;
-}
-.scenario-card p {
-  margin-bottom: 0;
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.product-block + .product-block { margin-top: 48px; }
-.category-feature {
-  display: block;
-  margin-bottom: 18px;
-}
-.category-kicker {
-  margin-bottom: 6px;
-  color: var(--blue);
-  font-size: 13px;
-}
-.category-feature h3 {
-  margin-bottom: 8px;
-  font-size: clamp(24px, 2.3vw, 30px);
-}
-.category-feature p {
-  max-width: 920px;
-  margin-bottom: 0;
-  color: var(--text-muted);
-  font-size: 15px;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-.product-card {
-  min-width: 0;
+.room-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #E6EAF2;
+  min-height: 360px;
+  border: 1px solid var(--gray-200);
   background: #fff;
-  transition: border-color .18s ease, box-shadow .18s ease;
 }
-.product-card:hover {
-  border-color: var(--blue);
-  box-shadow: 0 8px 20px rgba(14,25,83,.08);
-}
-.product-media {
-  min-height: 232px;
-  aspect-ratio: 1 / .92;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px 20px 12px;
-  background: #fff;
+.room-card__media {
+  height: 150px;
+  background: var(--blue-surface);
   overflow: hidden;
 }
-.product-media img {
-  max-height: 196px;
-  object-fit: contain;
+.room-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform .3s ease;
 }
-.product-card:hover .product-media img { transform: scale(1.04); }
-.product-body {
+.room-card:hover .room-card__media img { transform: scale(1.04); }
+.room-card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  padding: 16px 18px 18px;
+  padding: 18px;
 }
-.product-name {
-  min-height: 66px;
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 15px;
-  line-height: 1.35;
-}
-.product-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 12px 0;
-}
-.product-meta span {
-  padding: 6px 7px;
+.room-tag {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 5px 7px;
   border: 1px solid var(--gray-200);
   background: var(--gray-50);
-  color: var(--text-body);
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
 }
-.product-fit {
-  margin: 0 0 12px;
+.room-card h3 { font-size: 19px; }
+.room-card p { color: var(--text-muted); font-size: 13px; line-height: 1.55; }
+.room-card .text-link { margin-top: auto; }
+
+.feasibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.feasibility-card {
+  padding: 28px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+}
+.check-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.check-list li {
+  padding: 11px 12px;
+  background: var(--blue-surface);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.check-list strong { color: var(--navy); }
+
+.collection-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 34px;
+}
+.collection-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+}
+.collection-card img {
+  width: 180px;
+  height: 150px;
+  object-fit: contain;
+  background: var(--blue-surface);
+}
+.collection-card p { color: var(--text-muted); font-size: 14px; }
+.pick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.pick-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+}
+.pick-card__head {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--blue-surface);
+  color: var(--navy);
+  font-weight: 600;
+}
+.pick-option {
+  flex: 1;
+  padding: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+.pick-option img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.pick-option h4 {
+  min-height: 54px;
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+.pick-option p {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.pick-option .btn {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 10px;
+  font-size: 13px;
+}
+
+.mix-panel {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  background: var(--trust-bg);
+}
+.mix-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.mix-step {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(201,209,227,.8);
+}
+.mix-step strong {
+  display: block;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 400;
+}
+.mix-step span {
+  display: block;
+  margin-top: 6px;
   color: var(--text-muted);
   font-size: 13px;
   line-height: 1.5;
 }
-.product-price {
-  margin-top: auto;
-  margin-bottom: 14px;
-  color: var(--navy);
-  font-family: var(--font-heading-bold);
-  font-size: 20px;
-  font-weight: 400;
-}
-.product-cta {
-  width: 100%;
-  min-height: 48px;
-  background: var(--navy);
-  color: #fff;
-  border-color: var(--navy);
-}
-.product-cta:hover {
-  background: #fff;
-  color: var(--navy);
-  border-color: var(--navy);
-  transform: none;
-}
 
-.fit-notes {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 34px;
-  align-items: start;
-}
-.fit-panel {
-  padding: 30px;
-  background: var(--trust-bg);
-}
-.fit-panel p {
-  margin-bottom: 20px;
-  color: var(--text-muted);
-}
-.fit-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-.fit-item {
-  padding: 20px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-}
-.fit-item strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 400;
-}
-.fit-item span {
-  display: block;
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.support-strip {
-  background: var(--navy);
-  color: #fff;
-}
-.support-strip h2,
-.support-strip h3 { color: #fff; }
-.support-strip .section-copy { color: rgba(255,255,255,.78); }
-.support-grid {
+.services-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 28px;
 }
-.support-card {
-  min-height: 168px;
-  padding: 22px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.08);
+.service-card {
+  min-height: 190px;
+  padding: 26px 22px;
+  text-align: center;
+  border: 1px solid var(--gray-200);
+  background: #fff;
 }
-.support-card strong {
-  display: block;
-  margin-bottom: 8px;
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 400;
-}
-.support-card p {
-  margin-bottom: 12px;
-  color: rgba(255,255,255,.76);
-  font-size: 14px;
-  line-height: 1.55;
-}
-.support-card a {
-  color: #fff;
-  font-size: 14px;
+.service-icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--trust-bg);
+  color: var(--navy);
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
+.service-card h3 { font-size: 21px; }
+.service-card p { margin-bottom: 0; color: var(--text-muted); font-size: 14px; line-height: 1.55; }
 
-.faq-grid {
+.faq-section .section-head { display: block; text-align: center; }
+.faq-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
@@ -977,100 +573,73 @@ h3 {
   background: #fff;
 }
 .faq-q {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 18px;
   padding: 18px 20px;
-  border: 0;
-  background: #fff;
-  color: var(--navy);
   cursor: pointer;
-  text-align: left;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-question {
+  color: var(--navy);
   font-family: var(--font-heading);
   font-size: 19px;
+  line-height: 1.3;
 }
-.faq-q span:last-child {
+.faq-icon {
   width: 24px;
   height: 24px;
-  display: inline-grid;
-  place-items: center;
   flex: 0 0 auto;
   border: 1px solid var(--gray-200);
-  color: var(--blue);
-  font-family: var(--font-body);
-  font-size: 16px;
+  position: relative;
 }
+.faq-icon::before {
+  content: "+";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+}
+.faq-item[open] .faq-icon::before { content: "-"; }
 .faq-a {
-  display: none;
   padding: 0 20px 20px;
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
 }
-.faq-item.is-open .faq-a { display: block; }
-.faq-item.is-open .faq-q span:last-child { background: var(--blue-light); }
-.final-cta {
-  margin-top: 34px;
-  padding: 28px;
+.faq-a p { margin-bottom: 0; }
+
+.bottom-strip {
+  padding: 34px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 22px;
+  gap: 24px;
   align-items: center;
   background: var(--blue-surface);
   border: 1px solid var(--gray-200);
 }
-.final-cta p {
-  margin-bottom: 0;
-  color: var(--text-muted);
-}
-.final-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.bottom-strip p { margin-bottom: 0; color: var(--text-muted); }
+.bottom-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .container { width: min(100% - 40px, 1200px); }
-  .hero .container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 56px 0;
-  }
-  .hero,
-  .hero .container { min-height: auto; }
-  .hero-visual { min-height: auto; }
+  .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .path-panel { grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
-  .path-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .quick-answer,
-  .setup-summary-compact__inner,
-  .cost-panel { grid-template-columns: 1fr; }
-  .decision-panel { grid-template-columns: 1fr; }
-  .decision-card { border-left: 0; border-top: 1px solid var(--gray-200); }
-  .scene-row,
-  .scene-row:nth-child(even) { grid-template-columns: 1fr; }
-  .scene-row:nth-child(even) .scene-img,
-  .scene-row:nth-child(even) .scene-body { order: initial; }
-  .scenario-grid,
-  .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .fit-notes { grid-template-columns: 1fr; }
+  .decision-checker,
+  .mix-panel { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
 @media (max-width: 767px) {
-  .container {
-    width: calc(100% - 32px);
-    max-width: 100%;
-  }
+  .container { width: calc(100% - 32px); max-width: 100%; }
   .section { padding: 52px 0; }
   .section-head { display: block; }
-  h1 {
-    max-width: 340px;
-    font-size: clamp(30px, 7.5vw, 34px);
-    overflow-wrap: normal;
-    word-break: normal;
-  }
+  h1 { max-width: 340px; font-size: clamp(31px, 8.2vw, 36px); }
   h2 { font-size: 29px; }
   .btn { width: 100%; min-height: 46px; }
   .announcement-strip .container {
@@ -1081,22 +650,30 @@ h3 {
     padding-top: 8px;
     padding-bottom: 8px;
   }
-  .hero .container { padding: 44px 0 58px; }
-  .hero-copy,
-  .hero-text,
-  .hero-verdict {
-    width: calc(100vw - 48px);
-    max-width: 342px;
+  .hero {
+    min-height: 540px;
+    align-items: flex-start;
   }
-  .hero-text { font-size: 16px; }
-  .hero-actions { flex-direction: column; }
-  .comparison-stage {
-    grid-template-columns: 1fr;
-    padding: 12px;
-    width: calc(100vw - 32px);
-    max-width: 100%;
-    overflow: hidden;
-  }
+  .hero-bg { object-position: 46% center; }
+  .hero::before { background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.86) 58%, rgba(255,255,255,.2) 100%); }
+  .hero-inner { max-width: 342px; padding: 48px 0; }
+  .hero-text { font-size: 16px; line-height: 1.6; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .commerce-nav { margin-top: -24px; }
+  .path-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path-link { min-height: 70px; padding: 14px 16px; }
+  .path-link:nth-child(2n) { border-right: 0; }
+  .path-link:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.18); }
+  .path-cards,
+  .feasibility-grid,
+  .collection-paths,
+  .mix-steps,
+  .faq-list,
+  .bottom-strip { grid-template-columns: 1fr; }
+  .path-card { grid-template-rows: 160px 1fr; }
+  .decision-checker { grid-template-columns: 1fr; }
+  .checker-question { grid-template-columns: 1fr; }
+  .checker-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .comparison-table-wrap { overflow: visible; }
   .comparison-table,
   .comparison-table tbody,
@@ -1107,15 +684,9 @@ h3 {
     min-width: 0;
   }
   .comparison-table thead { display: none; }
-  .comparison-table tr {
-    border-bottom: 1px solid var(--gray-200);
-    padding: 0;
-  }
+  .comparison-table tr { border-bottom: 1px solid var(--gray-200); }
   .comparison-table tr:last-child { border-bottom: 0; }
-  .comparison-table td {
-    border-bottom: 0;
-    padding: 14px 16px;
-  }
+  .comparison-table td { border-bottom: 0; padding: 14px 16px; }
   .comparison-table td:first-child {
     background: var(--blue-surface);
     color: var(--blue);
@@ -1131,79 +702,23 @@ h3 {
     font-size: 18px;
     line-height: 1.25;
   }
-  .comparison-table td:nth-child(2)::before { content: "Ceiling Cassette Mini Split"; }
-  .comparison-table td:nth-child(3)::before { content: "Wall Mount Mini Split"; }
-  .unit-scene { min-height: 260px; }
-  .stage-badge {
-    top: 50%;
-    left: 50%;
-    right: auto;
-    width: 44px;
-    height: 44px;
-    font-size: 15px;
-  }
-  .decision-strip { margin-top: -28px; }
-  .commerce-nav { margin-top: -24px; }
-  .path-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .path-link {
-    min-height: 70px;
-    padding: 14px 16px;
-  }
-  .path-link:nth-child(2n) { border-right: 0; }
-  .path-link:last-child { grid-column: span 2; border-top: 1px solid rgba(255,255,255,.18); }
-  .quick-answer__media {
-    min-height: 240px;
-    padding: 24px;
-  }
-  .quick-answer__media img { max-height: 210px; }
-  .quick-answer__actions,
-  .product-toolbar,
-  .category-feature,
-  .sizing-next { display: grid; grid-template-columns: 1fr; }
-  .product-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-  }
-  .tab-btn { width: 100%; }
-  .setup-summary-compact { padding: 22px; }
-  .setup-summary-compact__columns,
-  .cost-visual { grid-template-columns: 1fr; }
-  .scene-img {
-    min-height: 230px;
-    padding: 24px;
-  }
-  .scene-body { padding: 24px; }
-  .decision-title,
-  .decision-card { padding: 20px; }
-  .scenario-grid,
-  .support-grid,
-  .fit-list,
-  .faq-grid,
-  .final-cta { grid-template-columns: 1fr; }
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-  .product-media {
-    min-height: 136px;
-    padding: 14px 10px 6px;
-  }
-  .product-media img { max-height: 116px; }
-  .product-body { padding: 12px; }
-  .product-name {
-    min-height: 76px;
-    font-size: 13px;
-    line-height: 1.28;
-  }
-  .product-meta { gap: 4px; margin: 8px 0; }
-  .product-meta span { font-size: 11px; padding: 5px 6px; }
-  .product-fit { font-size: 12px; line-height: 1.45; }
-  .product-price { font-size: 17px; margin-bottom: 10px; }
-  .product-cta { min-height: 40px; padding: 9px 8px; font-size: 13px; }
-  .fit-panel { padding: 24px; }
-  .support-card { min-height: auto; }
-  .final-actions { width: 100%; }
+  .comparison-table td:nth-child(2)::before { content: "Ceiling Cassette"; }
+  .comparison-table td:nth-child(3)::before { content: "Wall Mount"; }
+  .room-grid { grid-template-columns: 1fr; }
+  .room-card { min-height: auto; }
+  .room-card__media { height: 190px; }
+  .collection-card { grid-template-columns: 1fr; }
+  .collection-card img { width: 100%; height: 170px; }
+  .pick-grid { grid-template-columns: 1fr; gap: 12px; }
+  .pick-card__head { min-height: 54px; padding: 12px; font-size: 13px; }
+  .pick-option { padding: 12px; }
+  .pick-option img { height: 100px; }
+  .pick-option h4 { min-height: 74px; font-size: 13px; line-height: 1.3; }
+  .pick-option p { font-size: 11px; }
+  .pick-option .btn { min-height: 40px; padding: 8px 6px; font-size: 12px; }
+  .mix-panel { padding: 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .bottom-actions { width: 100%; }
 }
 </style>
 <script type="application/ld+json">
@@ -1213,10 +728,10 @@ h3 {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is a ceiling cassette mini split better than a wall mount mini split?",
+      "name": "What is the main difference between a ceiling cassette and a wall mount mini split?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not for every home. A wall mount mini split is usually the default choice because it is easier to place and simpler to install. A ceiling cassette is better when the room has usable ceiling space and the homeowner wants a cleaner built-in look or more even open-room airflow."
+        "text": "A ceiling cassette sits in or near the ceiling and can distribute air from a more central position. A wall mount mini split is installed high on a wall and sends air across the room from that location."
       }
     },
     {
@@ -1224,23 +739,7 @@ h3 {
       "name": "Is a ceiling cassette mini split more expensive than a wall mount?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ceiling cassette systems often have a higher unit price and a more complex installation path because ceiling access, framing, and drainage need to be planned. Wall mount systems are usually more budget-friendly for standard rooms."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which type is better for a large open room?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A ceiling cassette can be better for a large open room when the ceiling has suitable space and a central placement can distribute air more evenly. A wall mount can still work when there is a clear wall location and the airflow direction fits the layout."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I install a ceiling cassette myself?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A ceiling cassette installation should be planned with a qualified HVAC installer because it involves ceiling opening, support, refrigerant lines, wiring, and condensate drainage."
+        "text": "Ceiling cassette systems often have a higher unit price and a more complex installation path because ceiling access, framing, service access, and condensate drainage need to be planned."
       }
     },
     {
@@ -1248,15 +747,7 @@ h3 {
       "name": "Which mini split type is easier to maintain?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wall-mounted mini splits are usually easier to access for routine filter cleaning because the front panel is on the wall. Ceiling cassette service access depends on ceiling height and panel placement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I mix ceiling cassette and wall-mounted units in a multi-zone system?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Some multi-zone plans can use different indoor unit styles when the system compatibility, capacity, and line-set plan support it. Confirm the specific combination with product documentation or an installer before purchase."
+        "text": "Wall-mounted mini splits are usually easier to access for routine filter cleaning. Ceiling cassette service access depends on ceiling height, panel placement, and the installed location."
       }
     }
   ]
@@ -1274,49 +765,18 @@ h3 {
   </div>
 
   <section class="hero">
-    <div class="container">
-      <div class="hero-copy">
-        <span class="hero-kicker">Mini split indoor unit guide</span>
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/banner-mobile.webp">
+      <img class="hero-bg" src="assets/banner-desktop.webp" alt="Modern home interior with Della wall-mounted mini splits" width="2800" height="1000" loading="eager">
+    </picture>
+    <div class="container hero-content">
+      <div class="hero-inner">
+        <span class="section-label">Mini split indoor unit guide</span>
         <h1>Ceiling Cassette vs Wall Mount Mini Split</h1>
-        <p class="hero-text">Choose a ceiling cassette for large open spaces and a cleaner built-in look. Choose a wall mount for simpler installation, easier access, and most standard rooms.</p>
-        <div class="hero-verdict">
-          <strong>Quick verdict:</strong> ceiling cassette is the design-forward choice when the ceiling plan works. Wall mount is the practical default when budget, install speed, and maintenance access matter most.
-        </div>
+        <p class="hero-text">Choose a ceiling cassette when the room needs a cleaner built-in look and the ceiling plan can support it. Choose a wall mount when you want simpler placement, easier access, and a faster path for most standard rooms.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
           <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
-        </div>
-        <div class="hero-proof">
-          <span>Decision-first guide</span>
-          <span>Product paths included</span>
-          <span>No promotion-only claims</span>
-        </div>
-      </div>
-      <div class="hero-visual" aria-label="Ceiling cassette and wall mount mini split visual comparison">
-        <div class="comparison-stage">
-          <article class="unit-scene cassette">
-            <span class="visual-label">Built-in ceiling look</span>
-            <div class="scene-ceiling"></div>
-            <div class="unit-card-img">
-              <img src="assets/cc-12k.jpg" width="700" height="700" alt="Della ceiling cassette mini split product">
-            </div>
-            <div class="unit-caption">
-              <strong>Ceiling Cassette</strong>
-              <span>Best when ceiling access, room layout, and visual finish matter.</span>
-            </div>
-          </article>
-          <article class="unit-scene wall">
-            <span class="visual-label">Fast wall placement</span>
-            <div class="scene-wall"></div>
-            <div class="unit-card-img">
-              <img src="assets/wm-12k-vario.jpg" width="700" height="700" alt="Della wall-mounted mini split product">
-            </div>
-            <div class="unit-caption">
-              <strong>Wall Mount</strong>
-              <span>Best for bedrooms, offices, garages, and additions.</span>
-            </div>
-          </article>
-          <div class="stage-badge">VS</div>
         </div>
       </div>
     </div>
@@ -1325,13 +785,12 @@ h3 {
   <section class="commerce-nav" aria-label="Della shopping paths">
     <div class="container">
       <div class="path-panel">
-        <div class="path-heading"><span>Shop by install type</span><strong>Start with your space</strong></div>
-        <nav class="path-strip" aria-label="Shop mini splits by installation type">
-          <a class="path-link" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><b>Ceiling Cassette</b><span>Single-Zone</span></a>
-          <a class="path-link" href="https://dellahome.com/collections/wall-mounted-mini-split"><b>Wall Mount</b><span>Single-Zone</span></a>
-          <a class="path-link" href="#products"><b>Dual-Zone</b><span>2 Rooms</span></a>
-          <a class="path-link" href="#products"><b>Tri-Zone</b><span>3 Rooms</span></a>
-          <a class="path-link" href="#comparison"><b>Compare All</b><span>All Types</span></a>
+        <div class="path-heading"><span>Shop by fit</span><strong>Start with the install path</strong></div>
+        <nav class="path-strip" aria-label="Shop mini splits by fit">
+          <a class="path-link" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><b>Ceiling Cassette</b><span>Built-in ceiling look</span></a>
+          <a class="path-link" href="https://dellahome.com/collections/wall-mounted-mini-split"><b>Wall Mount</b><span>Simple wall placement</span></a>
+          <a class="path-link" href="#decision-checker"><b>Compare Fit</b><span>5-question checker</span></a>
+          <a class="path-link" href="https://dellahome.com/pages/find-a-installer"><b>Find Installer</b><span>Confirm the plan</span></a>
         </nav>
       </div>
     </div>
@@ -1339,461 +798,293 @@ h3 {
 
   <section class="section">
     <div class="container">
-      <div class="quick-answer">
-        <a class="quick-answer__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split">
-          <img src="assets/cc-12k.jpg" width="700" height="700" alt="Della ceiling cassette mini split product">
-        </a>
-        <div class="quick-answer__content">
-          <span class="section-label">Quick answer</span>
-          <h2>Which type fits your space?</h2>
-          <p class="section-copy">A ceiling cassette sits in the ceiling and sends air in multiple directions, which works well for open rooms, finished living areas, or layouts where you want to keep walls clear. A wall mount installs high on a wall, sends air across the room, and usually offers easier access with a lower install path.</p>
-          <ul class="quick-answer__list">
-            <li><strong>Open floor plan or large room:</strong> start with Ceiling Cassette.</li>
-            <li><strong>Bedroom, office, garage, or rental:</strong> start with Wall Mount.</li>
-            <li><strong>Not sure:</strong> use the decision guide and table below.</li>
-          </ul>
-          <div class="quick-answer__actions">
+      <div class="section-head centered">
+        <span class="section-label">Quick answer</span>
+        <h2>Two paths, two very different install questions</h2>
+        <p class="section-copy">Do not start with the product photo. Start with whether the room can support the installation type.</p>
+      </div>
+      <div class="path-cards">
+        <article class="path-card">
+          <a class="path-card__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split">
+            <img src="assets/scene-remodel.webp" alt="Finished room with ceiling cassette style indoor unit">
+          </a>
+          <div class="path-card__body">
+            <h3>Choose Ceiling Cassette if...</h3>
+            <ul>
+              <li>You want a cleaner ceiling-integrated look.</li>
+              <li>The room has usable ceiling cavity, attic access, or plenum space.</li>
+              <li>The layout is open and wall placement feels awkward.</li>
+              <li>You are planning a remodel or finished living area.</li>
+            </ul>
             <a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-            <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">View Wall Mounts</a>
           </div>
-        </div>
+        </article>
+        <article class="path-card">
+          <a class="path-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split">
+            <img src="assets/scene-office.webp" alt="Home office with wall-mounted mini split">
+          </a>
+          <div class="path-card__body">
+            <h3>Choose Wall Mount if...</h3>
+            <ul>
+              <li>You want the easier install and service path.</li>
+              <li>The ceiling is finished, hard to open, or unavailable.</li>
+              <li>The room is a bedroom, office, garage, rental, or retrofit.</li>
+              <li>Filter access and budget matter more than a hidden look.</li>
+            </ul>
+            <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section comparison-section" id="comparison">
+  <section class="section section-alt" id="decision-checker">
+    <div class="container">
+      <div class="decision-checker">
+        <div class="checker-panel">
+          <span class="section-label">Decision checker</span>
+          <h2>Answer five install questions</h2>
+          <p class="section-copy">Select the answer that best matches the room. The result is a starting point, not a replacement for installer confirmation.</p>
+          <div class="checker-grid" aria-label="Mini split indoor unit decision checker">
+            <div class="checker-question" data-question="ceiling">
+              <div><strong>Ceiling access</strong><span>Is there usable ceiling cavity, attic, or plenum space?</span></div>
+              <div class="checker-options"><button type="button" data-choice="cassette">Yes</button><button type="button" data-choice="wall">No</button></div>
+            </div>
+            <div class="checker-question" data-question="wall">
+              <div><strong>Wall space</strong><span>Is there a clean high wall location for the indoor unit?</span></div>
+              <div class="checker-options"><button type="button" data-choice="wall">Yes</button><button type="button" data-choice="cassette">No</button></div>
+            </div>
+            <div class="checker-question" data-question="layout">
+              <div><strong>Room layout</strong><span>Is the room open, wide, or design-led?</span></div>
+              <div class="checker-options"><button type="button" data-choice="cassette">Open</button><button type="button" data-choice="wall">Defined</button></div>
+            </div>
+            <div class="checker-question" data-question="retrofit">
+              <div><strong>Retrofit complexity</strong><span>Is the ceiling already finished, old, or hard to modify?</span></div>
+              <div class="checker-options"><button type="button" data-choice="wall">Yes</button><button type="button" data-choice="cassette">No</button></div>
+            </div>
+            <div class="checker-question" data-question="maintenance">
+              <div><strong>Maintenance access</strong><span>Do you want the easiest filter and front-panel access?</span></div>
+              <div class="checker-options"><button type="button" data-choice="wall">Yes</button><button type="button" data-choice="cassette">No</button></div>
+            </div>
+          </div>
+        </div>
+        <aside class="checker-result" aria-live="polite">
+          <div>
+            <span class="section-label">Recommended start</span>
+            <strong id="checker-title">Start with Wall Mount</strong>
+            <p id="checker-copy">Wall mount is the default until the room clearly supports ceiling cassette access and the cleaner built-in look is worth the extra planning.</p>
+          </div>
+          <a id="checker-link" class="btn btn-primary" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comparison">
     <div class="container">
       <div class="section-head">
         <div>
           <span class="section-label">Head-to-head comparison</span>
           <h2>What changes between ceiling cassette and wall mount?</h2>
         </div>
-        <p class="section-copy">Both are ductless mini split indoor unit styles. The better choice usually comes down to placement, ceiling access, airflow needs, and how visible you want the indoor unit to be.</p>
-      </div>
-      <div class="setup-summary-compact">
-        <div class="setup-summary-compact__inner">
-          <div>
-            <span class="section-label">Decision checker</span>
-            <h2>Ceiling cassette or wall mount?</h2>
-            <p class="section-copy">Use ceiling cassette when the ceiling plan is part of the project. Use wall mount when the room needs a direct, serviceable comfort upgrade without extra ceiling work.</p>
-          </div>
-          <div class="setup-summary-compact__columns">
-            <article class="summary-column">
-              <h3>Ceiling Cassette</h3>
-              <ul>
-                <li>Flush-mounted in the ceiling</li>
-                <li>Multi-direction airflow</li>
-                <li>Best for open or finished spaces</li>
-                <li>More installation planning</li>
-                <li>Cleaner visual impact</li>
-              </ul>
-            </article>
-            <article class="summary-column">
-              <h3>Wall Mount</h3>
-              <ul>
-                <li>Mounted high on a wall</li>
-                <li>Directional airflow</li>
-                <li>Best for bedrooms, offices, garages</li>
-                <li>Easier access and maintenance</li>
-                <li>More budget-friendly path</li>
-              </ul>
-            </article>
-          </div>
-        </div>
+        <p class="section-copy">Both are ductless mini split indoor unit styles. The decision is less about which looks better in a product photo and more about which one fits the room and installation plan.</p>
       </div>
       <div class="comparison-table-wrap">
         <table class="comparison-table">
           <thead>
             <tr>
-              <th>Decision point</th>
-              <th>Ceiling Cassette Mini Split</th>
-              <th>Wall Mount Mini Split</th>
+              <th>Feature</th>
+              <th>Ceiling Cassette</th>
+              <th>Wall Mount</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Installation location</td>
-              <td>Ceiling flush mount with a lower-profile finish.</td>
-              <td>High wall mount with the indoor head visible.</td>
-            </tr>
-            <tr>
-              <td>Airflow direction</td>
-              <td>Multi-direction airflow from a ceiling location.</td>
-              <td>Forward and downward directional airflow from the wall.</td>
-            </tr>
-            <tr>
-              <td>Best room type</td>
-              <td>Open plans, larger rooms, finished living areas, and spaces where wall clutter matters.</td>
-              <td>Bedrooms, offices, garages, sunrooms, and standard defined rooms.</td>
-            </tr>
-            <tr>
-              <td>Installation complexity</td>
-              <td>Higher planning need because ceiling framing, opening, and drainage must be confirmed.</td>
-              <td>Moderate planning need with wall bracket, line set, and clear wall placement.</td>
-            </tr>
-            <tr>
-              <td>Maintenance access</td>
-              <td>Panel access depends on ceiling height and placement.</td>
-              <td>Front panel access is usually easier for routine filter cleaning.</td>
-            </tr>
-            <tr>
-              <td>Cost path</td>
-              <td>Often higher due to unit price and installation complexity.</td>
-              <td>Often lower because placement and service access are simpler.</td>
-            </tr>
-            <tr>
-              <td>Visual impact</td>
-              <td>Nearly invisible compared with a wall-mounted indoor head.</td>
-              <td>Visible on the wall but familiar and easy to inspect.</td>
-            </tr>
-            <tr>
-              <td>SEER2 examples</td>
-              <td>Della ceiling cassette products shown here reach up to 22 SEER2.</td>
-              <td>Della wall mount products shown here reach up to 23 SEER2.</td>
-            </tr>
+            <tr><td>Installation location</td><td>Ceiling or drop-ceiling area.</td><td>High on a wall.</td></tr>
+            <tr><td>Airflow direction</td><td>Multi-direction airflow from a central point.</td><td>Directional airflow across the room.</td></tr>
+            <tr><td>Best room type</td><td>Open living rooms, remodels, and design-led spaces.</td><td>Bedrooms, offices, rentals, garages, and retrofits.</td></tr>
+            <tr><td>Install complexity</td><td>Higher: ceiling opening, support, drainage, access.</td><td>Moderate: wall bracket, line-set route, electrical.</td></tr>
+            <tr><td>Maintenance access</td><td>Depends on ceiling height and panel location.</td><td>Usually easier from the front panel.</td></tr>
+            <tr><td>Visual impact</td><td>Lower profile and more integrated.</td><td>Visible indoor unit on the wall.</td></tr>
+            <tr><td>Cost path</td><td>Often higher when unit price and installation complexity are combined.</td><td>Often more budget-friendly for standard rooms.</td></tr>
+            <tr><td>Della product examples</td><td>12K, 18K, dual-zone, and tri-zone ceiling cassette options.</td><td>Vario, Serena, and Optima wall-mounted options.</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note">Always confirm final sizing, electrical, line-set routing, and drainage with a qualified installer before purchase.</p>
+      <p class="table-note">Always confirm final sizing, line-set routing, drainage, electrical, and outdoor condenser placement with a qualified installer.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="rooms">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="section-label">Choose by room</span>
+        <h2>Match the indoor unit to the space</h2>
+        <p class="section-copy">These are starting points for common Della shoppers. The final decision still depends on ceiling access, wall placement, BTU sizing, and installer review.</p>
+      </div>
+      <div class="room-grid">
+        <article class="room-card">
+          <a class="room-card__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><img src="assets/scene-open-living.webp" alt="Open living area with large windows"></a>
+          <div class="room-card__body"><span class="room-tag">Open living area</span><h3>Cleaner look, broader room feel</h3><p>Start with cassette when wall placement would disrupt the room or airflow needs to feel less directional.</p><a class="text-link" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a></div>
+        </article>
+        <article class="room-card">
+          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-office.webp" alt="Bedroom or office with wall-mounted mini split"></a>
+          <div class="room-card__body"><span class="room-tag">Bedroom / office / rental</span><h3>Simple comfort for one room</h3><p>Start with wall mount when the room needs practical comfort and easy filter access.</p><a class="text-link" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a></div>
+        </article>
+        <article class="room-card">
+          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-sunroom.webp" alt="Sunroom with glass walls and Della mini split"></a>
+          <div class="room-card__body"><span class="room-tag">Sunroom with glass walls</span><h3>Let wall space decide first</h3><p>If there is a clean wall location, wall mount is usually the faster route. If not, check whether cassette access is realistic.</p><a class="text-link" href="#decision-checker">Check fit</a></div>
+        </article>
+        <article class="room-card">
+          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-retrofit.webp" alt="Finished basement or retrofit room"></a>
+          <div class="room-card__body"><span class="room-tag">Old house / basement / retrofit</span><h3>Avoid ceiling work when it gets risky</h3><p>Wall mount is often the cleaner project when plaster, framing, or finished ceilings make cassette work expensive.</p><a class="text-link" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a></div>
+        </article>
+        <article class="room-card">
+          <a class="room-card__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><img src="assets/scene-remodel.webp" alt="Remodel space with ceiling cassette mini split"></a>
+          <div class="room-card__body"><span class="room-tag">New build / remodel</span><h3>Plan cassette before the ceiling closes</h3><p>Cassette is easiest to justify when framing, drain routing, electrical, and service access are planned early.</p><a class="text-link" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="installation">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label">Installation feasibility</span>
+          <h2>What should your installer check?</h2>
+        </div>
+        <p class="section-copy">This is where many ceiling cassette vs wall mount decisions become obvious. If the ceiling path is not practical, wall mount usually wins.</p>
+      </div>
+      <div class="feasibility-grid">
+        <article class="feasibility-card">
+          <h3>Ceiling Cassette installer checks</h3>
+          <ul class="check-list">
+            <li><strong>Ceiling cavity:</strong> enough space for the cassette body and panel.</li>
+            <li><strong>Framing and opening:</strong> joists, beams, and ceiling finish can support the location.</li>
+            <li><strong>Condensate drainage:</strong> drain routing, slope, or pump needs are planned.</li>
+            <li><strong>Service access:</strong> filters and panels can be reached after installation.</li>
+            <li><strong>Line-set route:</strong> refrigerant lines and wiring can reach the outdoor unit cleanly.</li>
+          </ul>
+        </article>
+        <article class="feasibility-card">
+          <h3>Wall Mount installer checks</h3>
+          <ul class="check-list">
+            <li><strong>Wall placement:</strong> enough high wall space with clear airflow.</li>
+            <li><strong>Line-set route:</strong> a practical path to the outdoor condenser.</li>
+            <li><strong>Electrical:</strong> power and disconnect requirements are understood.</li>
+            <li><strong>Outdoor condenser:</strong> placement has clearance and service access.</li>
+            <li><strong>Condensate drainage:</strong> drain route is simple and protected.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="products">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label">Shop the paths</span>
+          <h2>Start with the collection, then compare popular picks</h2>
+        </div>
+        <p class="section-copy">Collection pages are the best next step because they show current availability, pricing, variants, and full product details.</p>
+      </div>
+      <div class="collection-paths">
+        <article class="collection-card">
+          <img src="assets/cc-12k.jpg" alt="Della ceiling cassette mini split collection">
+          <div><h3>Ceiling Cassette Mini Splits</h3><p>Best for ceiling-integrated installs, open rooms, and remodels where the indoor unit should be less visible.</p><a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a></div>
+        </article>
+        <article class="collection-card">
+          <img src="assets/wm-12k-vario.jpg" alt="Della wall-mounted mini split collection">
+          <div><h3>Wall-Mounted Mini Splits</h3><p>Best for standard rooms, bedrooms, offices, garages, rentals, and faster wall-placement projects.</p><a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a></div>
+        </article>
+      </div>
+      <div class="section-head">
+        <div>
+          <span class="section-label">Popular comparison picks</span>
+          <h2>Compare similar Della options</h2>
+        </div>
+      </div>
+      <div class="pick-grid">
+        <article class="pick-card">
+          <div class="pick-card__head">12K single-zone, up to 550 sq ft</div>
+          <div class="pick-option"><img src="assets/cc-12k.jpg" alt="DELLA 12K ceiling cassette mini split"><h4>DELLA 12K 22 SEER2 Ceiling Cassette</h4><p>Ceiling-integrated path for smaller finished spaces.</p><a class="btn btn-navy" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">See Current Price</a></div>
+          <div class="pick-option"><img src="assets/wm-12k-vario.jpg" alt="DELLA Vario 12K wall mount mini split"><h4>DELLA Vario Series 12K 23 SEER2 Wall Mount</h4><p>Wall-mounted path for bedrooms, offices, and additions.</p><a class="btn btn-outline" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">See Current Price</a></div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-card__head">18K single-zone, up to 1,000 sq ft</div>
+          <div class="pick-option"><img src="assets/cc-18k.jpg" alt="DELLA 18K ceiling cassette mini split"><h4>DELLA 18K 20.5 SEER2 Ceiling Cassette</h4><p>Ceiling path for larger single rooms and open spaces.</p><a class="btn btn-navy" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">See Current Price</a></div>
+          <div class="pick-option"><img src="assets/wm-18k-serena.jpg" alt="DELLA Serena 18K wall mount mini split"><h4>DELLA Serena Series 18K 22 SEER2 Wall Mount</h4><p>Wall-mounted comfort for larger rooms.</p><a class="btn btn-outline" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">See Current Price</a></div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-card__head">Dual-zone systems</div>
+          <div class="pick-option"><img src="assets/cc-dual-zone.jpg" alt="DELLA dual-zone ceiling cassette mini split"><h4>DELLA 18K Dual-Zone Ceiling Cassette</h4><p>Two-room cassette path when both rooms support ceiling access.</p><a class="btn btn-navy" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft">View Product</a></div>
+          <div class="pick-option"><img src="assets/wm-dual-zone.jpg" alt="DELLA Optima dual-zone wall mount mini split"><h4>DELLA Optima 18K Dual-Zone Wall Mount</h4><p>Two-room wall-mounted path with easier indoor unit placement.</p><a class="btn btn-outline" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">View Product</a></div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-card__head">Tri-zone systems</div>
+          <div class="pick-option"><img src="assets/cc-tri-zone.jpg" alt="DELLA tri-zone ceiling cassette mini split"><h4>DELLA 27K Tri-Zone Ceiling Cassette</h4><p>Three-zone cassette path for planned ceiling access.</p><a class="btn btn-navy" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft">View Product</a></div>
+          <div class="pick-option"><img src="assets/wm-tri-zone.jpg" alt="DELLA Vario tri-zone wall mount mini split"><h4>DELLA Vario 28K Tri-Zone Wall Mount</h4><p>Three-room wall-mounted path with broad product flexibility.</p><a class="btn btn-outline" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">View Product</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="mix-panel">
+        <div>
+          <span class="section-label">Mixed indoor units</span>
+          <h2>You can plan one home around more than one indoor style</h2>
+          <p class="section-copy">A living room can be a strong cassette candidate while a bedroom, office, garage, or rental room stays wall-mounted. The key is confirming system compatibility, total capacity, line-set routing, and installer approval before purchase.</p>
+          <a class="btn btn-primary" href="https://dellahome.com/pages/find-a-installer">Confirm with an installer</a>
+        </div>
+        <div class="mix-steps">
+          <div class="mix-step"><strong>Living room</strong><span>Use cassette when ceiling access and open-room airflow make the cleaner finish worth it.</span></div>
+          <div class="mix-step"><strong>Bedroom or office</strong><span>Use wall mount when the room needs direct comfort and easy filter access.</span></div>
+          <div class="mix-step"><strong>Compatibility</strong><span>Match indoor units, outdoor capacity, refrigerant lines, controls, and documentation.</span></div>
+          <div class="mix-step"><strong>Installer review</strong><span>Confirm line lengths, electrical, drainage, and outdoor condenser placement before ordering.</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="container">
       <div class="section-head centered">
-        <span class="section-label">Choose by room</span>
-        <h2>Match the indoor unit to the space, not just the product type</h2>
-        <p class="section-copy">The same home can use different indoor unit styles in different rooms. Start with the room layout and installation constraints, then choose the product path.</p>
+        <span class="section-label">Premium Della services</span>
+        <h2>Shop with support behind the install plan</h2>
       </div>
-      <div class="scene-rows">
-        <article class="scene-row">
-          <a class="scene-img" href="https://dellahome.com/collections/ceiling-cassette-mini-split">
-            <img src="assets/cc-12k.jpg" width="700" height="700" alt="Della ceiling cassette mini split for an open living area">
-          </a>
-          <div class="scene-body">
-            <span class="scene-room-label">Open living area with attic or plenum</span>
-            <h3>You want air everywhere without taking over the walls.</h3>
-            <p>When a ceiling location is available, a cassette can keep wall space open and distribute comfort from a more central position.</p>
-            <span class="scene-recommendation">Best fit: Ceiling Cassette</span>
-            <a class="scene-cta" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-          </div>
-        </article>
-        <article class="scene-row">
-          <a class="scene-img" href="https://dellahome.com/collections/wall-mounted-mini-split">
-            <img src="assets/wm-12k-vario.jpg" width="700" height="700" alt="Della wall-mounted mini split for a bedroom or office">
-          </a>
-          <div class="scene-body">
-            <span class="scene-room-label">Apartment, rental, bedroom, or office</span>
-            <h3>One room needs quiet, targeted comfort.</h3>
-            <p>When you cannot open the ceiling or simply want a direct room upgrade, wall mount is the more practical route.</p>
-            <span class="scene-recommendation">Best fit: Wall Mount</span>
-            <a class="scene-cta" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
-          </div>
-        </article>
-        <article class="scene-row">
-          <a class="scene-img" href="https://dellahome.com/collections/ceiling-cassette-mini-split">
-            <img src="assets/cc-18k.jpg" width="700" height="700" alt="Della ceiling cassette mini split for a remodel or finished living area">
-          </a>
-          <div class="scene-body">
-            <span class="scene-room-label">New build or full remodel</span>
-            <h3>The ceiling plan is still flexible, and the finished look matters.</h3>
-            <p>A cassette is easiest to justify when framing, drainage, and access can be planned before the room is finished.</p>
-            <span class="scene-recommendation">Best fit: Ceiling Cassette</span>
-            <a class="scene-cta" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-          </div>
-        </article>
-        <article class="scene-row">
-          <a class="scene-img" href="https://dellahome.com/collections/wall-mounted-mini-split">
-            <img src="assets/wm-18k-serena.jpg" width="700" height="700" alt="Della wall-mounted mini split for a retrofit or old house">
-          </a>
-          <div class="scene-body">
-            <span class="scene-room-label">Old house, retrofit, garage, or sunroom</span>
-            <h3>You need it fast and easy to maintain.</h3>
-            <p>If there is no plenum space, no attic access, or the ceiling is hard to modify, wall mount keeps the project simpler.</p>
-            <span class="scene-recommendation">Best fit: Wall Mount</span>
-            <a class="scene-cta" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section product-section" id="products">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="section-label">Shop by indoor unit style</span>
-          <h2>Compare Della mini split options</h2>
-        </div>
-        <p class="section-copy">These product cards use current static prices for the demo. Re-check pricing before Shopify publish or replace them with dynamic Shopify product data.</p>
-      </div>
-
-      <div class="product-toolbar">
-        <div class="product-tabs" role="tablist" aria-label="Mini split product style">
-          <button class="tab-btn is-active" id="tab-cassette" type="button" data-product-tab="cassette" role="tab" aria-selected="true" aria-controls="panel-cassette">Ceiling Cassette</button>
-          <button class="tab-btn" id="tab-wall" type="button" data-product-tab="wall" role="tab" aria-selected="false" aria-controls="panel-wall">Wall Mount</button>
-        </div>
-        <a class="btn btn-outline" id="activeCollectionLink" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop All Ceiling Cassette</a>
-      </div>
-
-      <div class="product-panel is-active" id="panel-cassette" data-product-panel="cassette" role="tabpanel" aria-labelledby="tab-cassette">
-        <div class="category-feature">
-          <div class="category-feature__copy">
-            <p class="category-kicker">Built-in ceiling look</p>
-            <h3>Ceiling Cassette Mini Splits</h3>
-            <p>Best when the room has usable ceiling space, the indoor unit should feel less visible, or an open area benefits from a ceiling-centered placement.</p>
-          </div>
-          <a class="text-link" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop all ceiling cassette</a>
-        </div>
-        <div class="product-grid">
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">
-              <img src="assets/cc-12k.jpg" width="700" height="700" alt="DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Mini Split</a>
-              <div class="product-meta">
-                <span>12K BTU</span><span>22 SEER2</span><span>Up to 550 Sq.Ft.</span><span>Single-Zone</span>
-              </div>
-              <p class="product-fit">Best for a finished room where the ceiling plan supports cassette placement.</p>
-              <div class="product-price">$1,394.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft" aria-label="View product: DELLA 12,000 BTU Ceiling Cassette Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">
-              <img src="assets/cc-18k.jpg" width="700" height="700" alt="DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Mini Split</a>
-              <div class="product-meta">
-                <span>18K BTU</span><span>20.5 SEER2</span><span>Up to 1000 Sq.Ft.</span><span>Single-Zone</span>
-              </div>
-              <p class="product-fit">Best for larger single rooms, open areas, or design-led upgrades.</p>
-              <div class="product-price">$1,784.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft" aria-label="View product: DELLA 18,000 BTU Ceiling Cassette Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft">
-              <img src="assets/cc-dual-zone.jpg" width="700" height="700" alt="DELLA 18,000 BTU Dual Zone Ceiling Cassette Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft">DELLA 18,000 BTU Dual Zone Ceiling Cassette Mini Split</a>
-              <div class="product-meta">
-                <span>2-Zone</span><span>9K + 12K</span><span>Up to 950 Sq.Ft.</span><span>Cassette</span>
-              </div>
-              <p class="product-fit">Best for two rooms where both spaces can support ceiling cassette placement.</p>
-              <div class="product-price">$2,769.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft" aria-label="View product: DELLA 18,000 BTU Dual Zone Ceiling Cassette Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft">
-              <img src="assets/cc-tri-zone.jpg" width="700" height="700" alt="DELLA 27,000 BTU Tri Zone Ceiling Cassette Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft">DELLA 27,000 BTU Tri Zone Ceiling Cassette Mini Split</a>
-              <div class="product-meta">
-                <span>3-Zone</span><span>9K + 9K + 9K</span><span>Up to 1200 Sq.Ft.</span><span>Cassette</span>
-              </div>
-              <p class="product-fit">Best for multi-room plans where each room has confirmed ceiling access.</p>
-              <div class="product-price">$3,779.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft" aria-label="View product: DELLA 27,000 BTU Tri Zone Ceiling Cassette Mini Split">View Product</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="product-panel" id="panel-wall" data-product-panel="wall" role="tabpanel" aria-labelledby="tab-wall" hidden>
-        <div class="category-feature">
-          <div class="category-feature__copy">
-            <p class="category-kicker">Default for most homes</p>
-            <h3>Wall-Mounted Mini Splits</h3>
-            <p>Best when you want a practical, familiar indoor unit for a bedroom, office, garage, addition, or multi-zone layout with simpler placement.</p>
-          </div>
-          <a class="text-link" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop all wall mounts</a>
-        </div>
-        <div class="product-grid">
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">
-              <img src="assets/wm-12k-vario.jpg" width="700" height="700" alt="DELLA Vario Series 12,000 BTU 23 SEER2 Wall-Mounted Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">DELLA Vario Series 12,000 BTU 23 SEER2 Mini Split</a>
-              <div class="product-meta">
-                <span>12K BTU</span><span>23 SEER2</span><span>Up to 550 Sq.Ft.</span><span>Wall Mount</span>
-              </div>
-              <p class="product-fit">Best for bedrooms, offices, additions, and many single-room upgrades.</p>
-              <div class="product-price">$799.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" aria-label="View product: DELLA Vario Series 12,000 BTU Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">
-              <img src="assets/wm-18k-serena.jpg" width="700" height="700" alt="DELLA Serena Series 18,000 BTU 22 SEER2 Wall-Mounted Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">DELLA Serena Series 18,000 BTU 22 SEER2 Mini Split</a>
-              <div class="product-meta">
-                <span>18K BTU</span><span>22 SEER2</span><span>Up to 1000 Sq.Ft.</span><span>Wall Mount</span>
-              </div>
-              <p class="product-fit">Best for larger rooms where a wall location gives direct comfort coverage.</p>
-              <div class="product-price">$1,049.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft" aria-label="View product: DELLA Serena Series 18,000 BTU Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">
-              <img src="assets/wm-dual-zone.jpg" width="700" height="700" alt="DELLA Optima Series 18,000 BTU Dual Zone Wall-Mounted Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">DELLA Optima Series 18,000 BTU Dual Zone Mini Split</a>
-              <div class="product-meta">
-                <span>2-Zone</span><span>9K + 12K</span><span>Up to 950 Sq.Ft.</span><span>Wall Mount</span>
-              </div>
-              <p class="product-fit">Best for two rooms where wall-mounted indoor units are easier to place.</p>
-              <div class="product-price">$2,039.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft" aria-label="View product: DELLA Optima Series 18,000 BTU Dual Zone Mini Split">View Product</a>
-            </div>
-          </article>
-          <article class="product-card">
-            <a class="product-media" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">
-              <img src="assets/wm-tri-zone.jpg" width="700" height="700" alt="DELLA Vario Series 28,000 BTU Tri Zone Wall-Mounted Mini Split" loading="lazy">
-            </a>
-            <div class="product-body">
-              <a class="product-name" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">DELLA Vario Series 28,000 BTU Tri Zone Mini Split</a>
-              <div class="product-meta">
-                <span>3-Zone</span><span>9K + 9K + 12K</span><span>Up to 1350 Sq.Ft.</span><span>Wall Mount</span>
-              </div>
-              <p class="product-fit">Best for a practical three-room plan with one shared outdoor unit.</p>
-              <div class="product-price">$2,484.96</div>
-              <a class="btn btn-navy product-cta" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft" aria-label="View product: DELLA Vario Series 28,000 BTU Tri Zone Mini Split">View Product</a>
-            </div>
-          </article>
-        </div>
-      </div>
-      <div class="sizing-next">
-        <div>
-          <h3>Not sure which BTU to choose?</h3>
-          <p>As a general shopping reference, 12K models here cover up to 550 sq ft and 18K models cover up to 1,000 sq ft. High ceilings, sun exposure, insulation, and climate can change the final sizing.</p>
-        </div>
-        <a class="btn btn-outline" href="#comparison">Review the comparison</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="cost-panel">
-        <div>
-          <span class="section-label">Installation and value</span>
-          <h2>Installation cost depends on more than the indoor unit price</h2>
-          <p class="section-copy">Wall mount is usually the simpler install path because it needs wall placement, a bracket, and a planned line-set route. Ceiling cassette often adds ceiling opening, framing clearance, service access, and condensate drainage planning. Treat product price and installation complexity as one decision.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://dellahome.com/pages/find-a-installer">Find Partner HVAC Installer</a>
-            <a class="btn btn-outline" href="#products">View Products</a>
-          </div>
-        </div>
-        <div class="cost-visual">
-          <article class="cost-card">
-            <strong>Wall mount</strong>
-            <span>Often more budget-friendly because placement, access, and service are usually simpler.</span>
-          </article>
-          <article class="cost-card">
-            <strong>Ceiling cassette</strong>
-            <span>Often higher because ceiling work, drain routing, and access planning can add complexity.</span>
-          </article>
-          <article class="cost-card">
-            <strong>Ceiling clearance</strong>
-            <span>Confirm cavity or plenum space before choosing a cassette.</span>
-          </article>
-          <article class="cost-card">
-            <strong>Drain line</strong>
-            <span>Both styles need drainage planning; cassette makes this a first-order install question.</span>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section support-strip">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="section-label">Purchase confidence</span>
-          <h2>Plan the system, then shop with support behind it</h2>
-        </div>
-        <p class="section-copy">For a high-consideration HVAC purchase, the best page path is product fit, installer fit, and support confidence before checkout.</p>
-      </div>
-      <div class="support-grid">
-        <article class="support-card">
-          <strong>Free & fast shipping</strong>
-          <p>Keep the product path direct after the comparison with Della's sitewide shipping support.</p>
-          <a href="https://dellahome.com/">Shop Della</a>
-        </article>
-        <article class="support-card">
-          <strong>Flexible financing</strong>
-          <p>Use Della's financing path when the better long-term fit has a higher installed project cost.</p>
-          <a href="https://dellahome.com/">View options</a>
-        </article>
-        <article class="support-card">
-          <strong>24/7 live chat support</strong>
-          <p>Ask fit, sizing, and product-path questions before you choose between cassette and wall mount.</p>
-          <a href="https://dellahome.com/pages/support">Get support</a>
-        </article>
-        <article class="support-card">
-          <strong>Installer and rebate paths</strong>
-          <p>Use installer and rebate resources when ceiling access, multi-zone layout, or incentives affect the final choice.</p>
-          <a href="https://dellahome.com/pages/find-a-installer">Find an installer</a>
-        </article>
+      <div class="services-grid">
+        <article class="service-card"><div class="service-icon">01</div><h3>Free & Fast Shipping</h3><p>Move from comparison to product selection without a complicated shipping path.</p></article>
+        <article class="service-card"><div class="service-icon">02</div><h3>Flexible Financing</h3><p>Use financing when the right indoor unit style changes the project budget.</p></article>
+        <article class="service-card"><div class="service-icon">03</div><h3>24/7 Live Chat Support</h3><p>Ask sizing, product, and fit questions before you choose a collection path.</p></article>
+        <article class="service-card"><div class="service-icon">04</div><h3>Installer Resources</h3><p>Use the installer path when ceiling access, drainage, or multi-zone planning needs review.</p></article>
       </div>
     </div>
   </section>
 
   <section class="section faq-section">
     <div class="container">
-      <div class="section-head centered">
+      <div class="section-head">
         <span class="section-label">FAQ</span>
         <h2>Ceiling cassette vs wall mount mini split questions</h2>
-        <p class="section-copy">Use these answers to narrow the choice before you move into a collection or talk with an installer.</p>
+        <p class="section-copy">Use these answers to narrow the choice before you move into a Della collection or talk with an installer.</p>
       </div>
-      <div class="faq-grid">
-        <article class="faq-item is-open">
-          <button class="faq-q" type="button" aria-expanded="true"><span>Is a ceiling cassette mini split better than a wall mount mini split?</span><span>+</span></button>
-          <div class="faq-a">Not automatically. Wall mount is the default for most homes because it is simpler to place and easier to service. Ceiling cassette is better when the ceiling plan works and the room benefits from a cleaner built-in look.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Is a ceiling cassette mini split more expensive than a wall mount?</span><span>+</span></button>
-          <div class="faq-a">Often, yes. Ceiling cassette systems can have a higher product price and a more involved installation path because ceiling opening, framing clearance, and drainage need to be planned.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Which type is better for a large open room?</span><span>+</span></button>
-          <div class="faq-a">Ceiling cassette can be better when the ceiling has suitable space and a central location can distribute air across the room. Wall mount can still work if the room has a clear wall location and directional airflow makes sense.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Can I install a ceiling cassette myself?</span><span>+</span></button>
-          <div class="faq-a">A ceiling cassette should be planned with a qualified HVAC installer because the project can involve ceiling opening, support, refrigerant line routing, wiring, and condensate drainage.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Are wall mount mini splits noisy?</span><span>+</span></button>
-          <div class="faq-a">Wall-mounted mini splits are commonly used in bedrooms, offices, and living spaces. Actual sound depends on model, fan speed, installation quality, and room conditions.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Does Della make both ceiling cassette and wall mount mini splits?</span><span>+</span></button>
-          <div class="faq-a">Yes. Della offers ceiling cassette and wall-mounted mini split options, including single-zone and multi-zone systems.</div>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false"><span>Which mini split type is easier to maintain?</span><span>+</span></button>
-          <div class="faq-a">Wall mount is usually easier to access for routine filter cleaning because the front panel is on the wall. Ceiling cassette access depends on ceiling height and the installed location.</div>
-        </article>
+      <div class="faq-list">
+        <details class="faq-item" open><summary class="faq-q"><span class="faq-question">What is the main difference between a ceiling cassette and a wall mount mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A ceiling cassette installs in or near the ceiling for a lower-profile look. A wall mount installs high on a wall and is usually easier to access for cleaning and service.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is a ceiling cassette mini split more expensive than a wall mount?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Often, yes. Ceiling cassette projects can have higher product and installation complexity because the ceiling opening, framing, service access, and drainage need to be planned.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Which type is better for a large open room?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Ceiling cassette is often worth checking first if the room is open and the ceiling can support the indoor unit. Wall mount can still work when the airflow direction and wall placement make sense.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can I install a ceiling cassette myself?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A ceiling cassette should be planned with a qualified HVAC installer because it can involve ceiling work, drainage, wiring, refrigerant lines, and service access.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Which mini split type is easier to maintain?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Wall-mounted mini splits are usually easier to reach for routine filter cleaning. Ceiling cassette access depends on ceiling height and panel location.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can I mix ceiling cassette and wall-mounted units in one home?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Some multi-zone plans can use different indoor unit styles, but compatibility, capacity, line-set routing, and installer confirmation are required before purchase.</p></div></details>
       </div>
-      <div class="final-cta">
+      <div class="bottom-strip">
         <div>
           <h3>Ready to choose the right mini split for your space?</h3>
-          <p>Start with your installation type, then match by BTU, room size, and installation plan.</p>
+          <p>Start with the installation type, then match by BTU, room size, and installer plan.</p>
         </div>
-        <div class="final-actions">
+        <div class="bottom-actions">
           <a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
           <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
         </div>
@@ -1803,43 +1094,33 @@ h3 {
 </main>
 
 <script>
-  const collectionLinks = {
-    cassette: {
-      label: 'Shop All Ceiling Cassette',
-      href: 'https://dellahome.com/collections/ceiling-cassette-mini-split'
-    },
-    wall: {
-      label: 'Shop All Wall Mounts',
-      href: 'https://dellahome.com/collections/wall-mounted-mini-split'
+  const checkerState = {};
+  const resultTitle = document.getElementById('checker-title');
+  const resultCopy = document.getElementById('checker-copy');
+  const resultLink = document.getElementById('checker-link');
+  function updateCheckerResult() {
+    const values = Object.values(checkerState);
+    const cassette = values.filter((value) => value === 'cassette').length;
+    const wall = values.filter((value) => value === 'wall').length;
+    if (cassette > wall) {
+      resultTitle.textContent = 'Start with Ceiling Cassette';
+      resultCopy.textContent = 'Your answers point toward a ceiling-integrated path. Confirm ceiling cavity, framing, drainage, service access, and system compatibility before ordering.';
+      resultLink.href = 'https://dellahome.com/collections/ceiling-cassette-mini-split';
+      resultLink.textContent = 'Shop Ceiling Cassette';
+    } else {
+      resultTitle.textContent = 'Start with Wall Mount';
+      resultCopy.textContent = 'Your answers point toward the simpler wall-mounted path. Confirm wall placement, line-set routing, electrical, drainage, and outdoor condenser location.';
+      resultLink.href = 'https://dellahome.com/collections/wall-mounted-mini-split';
+      resultLink.textContent = 'Shop Wall Mount';
     }
-  };
-
-  document.querySelectorAll('[data-product-tab]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const target = button.dataset.productTab;
-      document.querySelectorAll('[data-product-tab]').forEach((tab) => {
-        const isActive = tab === button;
-        tab.classList.toggle('is-active', isActive);
-        tab.setAttribute('aria-selected', String(isActive));
+  }
+  document.querySelectorAll('.checker-question').forEach((question) => {
+    question.querySelectorAll('button').forEach((button) => {
+      button.addEventListener('click', () => {
+        checkerState[question.dataset.question] = button.dataset.choice;
+        question.querySelectorAll('button').forEach((item) => item.classList.toggle('is-selected', item === button));
+        updateCheckerResult();
       });
-      document.querySelectorAll('[data-product-panel]').forEach((panel) => {
-        const isActive = panel.dataset.productPanel === target;
-        panel.classList.toggle('is-active', isActive);
-        panel.hidden = !isActive;
-      });
-      const activeLink = document.getElementById('activeCollectionLink');
-      if (activeLink && collectionLinks[target]) {
-        activeLink.href = collectionLinks[target].href;
-        activeLink.textContent = collectionLinks[target].label;
-      }
-    });
-  });
-
-  document.querySelectorAll('.faq-q').forEach((button) => {
-    button.addEventListener('click', () => {
-      const item = button.closest('.faq-item');
-      const isOpen = item.classList.toggle('is-open');
-      button.setAttribute('aria-expanded', String(isOpen));
     });
   });
 </script>

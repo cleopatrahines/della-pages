@@ -5,24 +5,34 @@
 Each section is independent and can be moved into a Shopify section or PageFly block later:
 
 - `.hero`
-- `.decision-strip`
-- `.comparison-section`
-- `.scenario-grid`
-- `.product-section`
-- `.fit-notes`
-- `.support-strip`
+- `.path-panel`
+- `.path-card`
+- `.decision-checker`
+- `.comparison-wrap`
+- `.room-grid`
+- `.feasibility-grid`
+- `.collection-paths`
+- `.pick-grid`
+- `.mix-panel`
+- `.services-grid`
 - `.faq-section`
+- `.bottom-strip`
 
 ## Reusable Components
 
 - `.btn`
-- `.product-card`
-- `.metric-card`
-- `.decision-card`
-- `.faq-item`
+- `.nav-card`
+- `.path-card`
+- `.checker-row`
+- `.room-card`
+- `.check-card`
+- `.collection-card`
+- `.pick-card`
+- `.mini-product`
+- `.service-card`
 
 ## Maintenance Notes
 
-- Update prices in one product-card block per product.
+- Keep product prices out of the static demo unless Shopify dynamic product data is connected.
 - Product images are local for demo reliability.
 - Collection URLs and PDP URLs are hard-coded for intent clarity.

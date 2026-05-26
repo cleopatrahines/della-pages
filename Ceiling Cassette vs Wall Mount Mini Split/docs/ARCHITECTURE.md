@@ -12,15 +12,16 @@ The page is a standalone static artifact:
 
 The page moves from fast decision to evidence to product action:
 
-1. Verdict
-2. Commerce path selection
-3. Quick answer
-4. Comparison details
-5. Room scenarios
-6. Product tabs
-7. Installation and value
-8. Support/trust
-9. FAQ/final CTA
+1. Full-bleed verdict hero
+2. Overlay commerce path selection
+3. Two-path quick answer
+4. Five-question decision checker
+5. Compact head-to-head comparison
+6. Lifestyle room-fit scenarios
+7. Installation feasibility checks
+8. Collection-first product path and popular picks
+9. Mixed indoor unit guidance
+10. Services, FAQ, and final CTA
 
 ## Shopify Migration
 

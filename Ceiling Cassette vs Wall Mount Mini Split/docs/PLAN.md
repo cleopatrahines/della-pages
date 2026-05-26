@@ -36,7 +36,7 @@ Risk note:
 Goal: create the local HTML demo and local assets.
 
 Spec summary:
-- Inputs: product URLs, image URLs, current PDP prices, brand tokens, existing product card pattern.
+- Inputs: product URLs, image URLs, Della lifestyle assets, brand tokens, existing Single-Zone comparison page patterns.
 - Outputs: standalone HTML and local assets.
 - Boundaries: no dynamic Shopify product data.
 
@@ -45,10 +45,13 @@ Files involved:
 - `assets/*`
 
 Acceptance criteria:
-- Above-fold verdict and CTAs are visible.
-- Product cards include image, title, tags, price, and `View Product`.
-- Product cards are organized into two tabs by indoor unit type.
-- Comparison sections match the revised 10-section structure.
+- Above-fold full-bleed lifestyle hero, verdict, and two collection CTAs are visible.
+- Overlay commerce nav includes only Ceiling Cassette, Wall Mount, Compare Fit, and Find Installer.
+- Quick answer is two path cards.
+- Decision checker asks five install-fit questions and updates the recommendation.
+- Comparison section has 7-8 rows and becomes stacked cards on mobile.
+- Product area starts with two collection path cards, then popular comparison picks; no static demo pricing notes remain.
+- Installation feasibility and mixed-indoor-unit modules are present.
 
 Validation:
 - Browser preview at desktop and mobile widths.
@@ -59,7 +62,7 @@ Expected evidence:
 - Static check confirms expected links and local assets.
 
 Risk note:
-- Product prices are static and must be checked before Shopify publish.
+- PDP pricing should be dynamic in Shopify or handled through `See Current Price` links.
 
 ## Step 3: Verification And GitHub Publish
 

@@ -36,7 +36,10 @@ Wall mount is the default choice for most homes because it is easier to place, s
 Included:
 - Standalone HTML page.
 - Local product images and fonts.
-- Product cards with current transaction prices, BTU, area, system type, and use case.
+- Full-bleed lifestyle hero with desktop/mobile `picture` sources.
+- Overlay commerce navigation for Ceiling Cassette, Wall Mount, Compare Fit, and Find Installer.
+- Two quick-answer path cards, a five-question decision checker, stacked mobile comparison cards, lifestyle room-fit cards, installation feasibility checks, collection path cards, and popular comparison picks.
+- Product picks with BTU, area, system type, use case, and `See Current Price` / `View Product` CTAs.
 - Shopify handoff notes.
 - Docs-first planning and acceptance harness.
 
@@ -51,7 +54,9 @@ Excluded:
 - Page opens locally and through GitHub Pages.
 - H1 and title target the comparison keyword.
 - Above the fold gives a clear recommendation and two collection CTAs.
-- Product cards mirror the existing Della comparison page pattern.
+- Hero uses local desktop/mobile lifestyle banners and no product mockup comparison stage.
+- Product area starts with two collection path cards, then shows popular picks without static demo pricing notes.
 - All critical visuals load from local files.
+- Mobile hero, commerce nav, comparison, product cards, FAQ, and bottom CTA do not create horizontal overflow.
 - No old blog URL competes as the intended final canonical target.
 - Only scoped files are staged and committed.
