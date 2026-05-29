@@ -119,11 +119,11 @@
     }
 
     .section {
-      padding: 64px 0;
+      padding: 23px 0;
     }
 
     .section.compact {
-      padding: 46px 0;
+      padding: 23px 0;
     }
 
     .section-head {
@@ -304,14 +304,14 @@
 
     .hero-copy {
       max-width: 560px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 26px;
     }
 
     .hero-actions .btn {
@@ -462,18 +462,26 @@
 
     .hero-chips {
       position: absolute;
-      top: 280px;
-      right: 54px;
-      display: grid;
-      grid-template-columns: repeat(2, max-content);
+      top: 178px;
+      right: 74px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 8px;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      gap: 6px;
     }
 
     .chip {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       min-height: 34px;
-      padding: 8px 12px;
+      min-width: 52px;
+      padding: 8px 11px;
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.94);
       color: var(--navy);
@@ -483,9 +491,20 @@
       box-shadow: none;
     }
 
+    .hero-chip-caption {
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-shadow: 0 1px 8px rgba(255,255,255,.75);
+    }
+
     .btu-selector {
       background: var(--white);
-      padding-top: 34px;
+    }
+
+    .btu-selector.section.compact {
+      padding-top: 46px;
     }
 
     .btu-strip {
@@ -560,8 +579,14 @@
     td {
       padding: 12px 14px;
       border-bottom: 1px solid var(--gray-200);
-      text-align: left;
+      border-right: 1px solid var(--gray-200);
+      text-align: center;
       vertical-align: middle;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
     }
 
     th {
@@ -585,9 +610,9 @@
     .notes-panel {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
-      gap: 30px;
+      gap: 24px;
       align-items: center;
-      padding: 28px;
+      padding: 24px;
       border-radius: 8px;
       background: var(--white);
       box-shadow: 0 8px 20px rgba(14,25,83,.05);
@@ -595,12 +620,12 @@
 
     .home-visual {
       position: relative;
-      min-height: 300px;
+      min-height: 316px;
       overflow: hidden;
       border: 1px solid var(--gray-200);
       border-radius: 6px;
       background:
-        linear-gradient(180deg, rgba(14,25,83,.04), rgba(14,25,83,.18)),
+        linear-gradient(180deg, rgba(14,25,83,.02), rgba(14,25,83,.10)),
         url("./home-situations-multi-zone-different-schedules.webp") center center / cover no-repeat;
     }
 
@@ -608,7 +633,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.32));
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.08));
     }
 
     .house-roof {
@@ -658,30 +683,35 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: var(--blue);
-      color: var(--white);
+      background: #0E1953;
+      color: #FFFFFF;
       font-weight: 800;
       font-size: 13px;
-      z-index: 1;
-      box-shadow: 0 8px 16px rgba(88, 132, 231, 0.28);
+      z-index: 2;
+      box-shadow: 0 8px 18px rgba(14, 25, 83, 0.18);
     }
 
-    .pin-1 { left: 18%; top: 22%; }
-    .pin-2 { right: 18%; top: 25%; }
-    .pin-3 { left: 50%; top: 45%; }
-    .pin-4 { left: 28%; bottom: 24%; }
-    .pin-5 { right: 24%; bottom: 22%; }
+    .pin-1 { left: 13%; top: 34%; }
+    .pin-2 { left: 22%; top: 17%; }
+    .pin-3 { left: 55%; top: 12%; }
+    .pin-4 { left: 44%; top: 48%; }
+    .pin-5 { right: 16%; bottom: 22%; }
+
+    .notes-panel h2 {
+      font-size: clamp(34px, 3vw, 40px);
+      line-height: 1.1;
+    }
 
     .notes-list {
       display: grid;
-      gap: 16px;
-      margin-top: 22px;
+      gap: 13px;
+      margin-top: 18px;
     }
 
     .note-item {
       display: grid;
       grid-template-columns: 34px 1fr;
-      gap: 12px;
+      gap: 10px;
       align-items: start;
     }
 
@@ -691,19 +721,21 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: var(--blue);
-      color: var(--white);
+      background: #0E1953;
+      color: #FFFFFF;
       font-size: 13px;
       font-weight: 800;
+      box-shadow: 0 8px 18px rgba(14, 25, 83, 0.18);
     }
 
     .note-item strong {
       display: block;
       margin-bottom: 2px;
       color: var(--navy);
+      font-weight: 600;
     }
 
-    .note-item span {
+    .note-item div span {
       color: var(--text-muted);
       font-size: 14px;
       line-height: 1.45;
@@ -711,8 +743,8 @@
 
     .room-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      grid-auto-rows: 188px;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: clamp(230px, 17vw, 255px);
       gap: 12px;
     }
 
@@ -734,33 +766,33 @@
     }
 
     .room-card.open {
-      grid-column: 1 / span 2;
-      grid-row: 1;
+      grid-column: 5 / span 4;
+      grid-row: 2;
     }
 
     .room-card.bed {
-      grid-column: 3 / span 1;
+      grid-column: 6 / span 3;
       grid-row: 1;
     }
 
     .room-card.office {
-      grid-column: 4 / span 1;
+      grid-column: 9 / span 4;
       grid-row: 1;
     }
 
     .room-card.garage {
-      grid-column: 5 / span 1;
-      grid-row: 1;
+      grid-column: 1 / span 4;
+      grid-row: 2;
     }
 
     .room-card.sun {
-      grid-column: 4 / span 2;
+      grid-column: 9 / span 4;
       grid-row: 2;
     }
 
     .room-card.living {
-      grid-column: 1 / span 3;
-      grid-row: 2;
+      grid-column: 1 / span 5;
+      grid-row: 1;
     }
 
     .room-card::before {
@@ -768,133 +800,198 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(14, 25, 83, 0), rgba(14, 25, 83, 0.7)),
-        var(--room-bg, url("./home-situations-multi-zone-different-schedules.webp")) center center / cover no-repeat;
+        linear-gradient(180deg, rgba(14, 25, 83, 0.02) 0%, rgba(14, 25, 83, 0.18) 45%, rgba(14, 25, 83, 0.62) 100%),
+        var(--room-bg, url("./home-situations-multi-zone-different-schedules.webp")) var(--room-pos, center center) / cover no-repeat;
       transform: scale(1.01);
     }
 
-    .room-card.living { --room-bg: url("./home-situations-multi-zone-different-schedules.webp"); }
-    .room-card.bed { --room-bg: url("./home-situations-2-zone-bedroom-office.webp"); }
-    .room-card.office { --room-bg: url("./home-situations-single-zone-office.webp"); }
-    .room-card.garage { --room-bg: url("./setup-guide-outdoor.webp"); }
-    .room-card.open { --room-bg: url("./banner desktop.webp"); }
-    .room-card.sun { --room-bg: url("./multi-zone-vs-multiple-single-zone-scene.webp"); }
+    .room-card.living { --room-bg: url("./banner desktop.webp"); --room-pos: center center; }
+    .room-card.bed { --room-bg: url("../Mini Split for Apartment images/The bedroom your AC doesn't reach.webp"); --room-pos: center center; }
+    .room-card.office { --room-bg: url("./home-situations-single-zone-office.webp"); --room-pos: center center; }
+    .room-card.garage { --room-bg: url("../The Workshop.png"); --room-pos: center center; }
+    .room-card.open { --room-bg: url("../Mini Split for Apartment images/Mini Split for Apartment Banner.webp"); --room-pos: center center; }
+    .room-card.sun { --room-bg: url("../Mini Split for Sunroom/Mini Split for Sunroom Banner.webp"); --room-pos: center center; }
 
     .room-card-content {
       position: absolute;
-      left: 22px;
-      right: 18px;
-      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .room-card h3 {
       color: var(--white);
       font-family: var(--font-button);
-      font-size: 24px;
+      font-size: clamp(22px, 2vw, 26px);
       font-weight: 600;
       line-height: 1.1;
       text-shadow: 0 1px 12px rgba(0,0,0,0.35);
     }
 
-    .room-card p {
+    .room-card.small h3 {
+      font-size: 22px;
+    }
+
+    .room-card .room-range {
+      display: block;
       margin-top: 7px;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.92);
       font-weight: 600;
-      font-size: 18px;
-      line-height: 1.2;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+      font-size: 14px;
+      line-height: 1.25;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.34);
     }
 
     .room-card .text-link {
       display: inline-flex;
-      margin-top: 8px;
-      color: var(--white);
-      font-size: 12px;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.4);
-    }
-
-    .split-note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 6px;
-      background: var(--blue-surface);
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      width: fit-content;
+      margin-top: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+      opacity: 1;
+      text-shadow: none;
     }
 
-    .split-note p {
-      color: var(--text-muted);
+    .room-card .text-link:hover {
+      background: var(--white);
+      color: var(--blue);
     }
 
     .right-size {
-      background: var(--gray-50);
+      background: var(--white);
+    }
+
+    .right-size.section {
+      padding: 23px 0;
+    }
+
+    #right-size .container {
+      padding: 24px 0 26px;
+    }
+
+    #right-size .section-head {
+      margin-bottom: 12px;
+    }
+
+    #right-size .section-head h2 {
+      font-size: clamp(28px, 2.35vw, 33px);
+      line-height: 1.08;
+    }
+
+    #right-size .section-copy {
+      max-width: 620px;
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .right-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 18px;
     }
 
     .right-card {
-      min-height: 178px;
-      padding: 22px 20px;
+      min-height: 128px;
+      padding: 22px 22px;
       border: 1px solid var(--gray-200);
-      border-radius: 8px;
+      border-radius: 10px;
       background: var(--white);
-      text-align: center;
+      text-align: left;
+      box-shadow: none;
     }
 
     .right-card.is-right {
-      border-color: var(--blue);
+      border-color: rgba(88,132,231,.45);
       background: #F8FBFF;
-      box-shadow: 0 6px 16px rgba(14,25,83,.05);
+      box-shadow: none;
+    }
+
+    .right-card-head {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
     }
 
     .state-icon {
-      width: 34px;
-      height: 34px;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
       display: grid;
       place-items: center;
-      margin: 0 auto 12px;
+      margin: 0;
       border-radius: 50%;
-      background: #ff705d;
+      background: #5884E7;
       color: var(--white);
       font-weight: 900;
     }
 
     .is-right .state-icon {
-      background: var(--blue);
+      background: #0E1953;
     }
 
     .right-card h3 {
       font-family: Poppins, Arial, sans-serif;
-      font-size: 18px;
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0;
     }
 
     .right-card p {
-      margin: 12px auto 0;
-      max-width: 260px;
+      margin: 0;
+      max-width: 280px;
       color: var(--text-muted);
       font-size: 14px;
+      line-height: 1.55;
     }
 
     .right-card ul {
-      display: inline-grid;
-      gap: 4px;
-      margin: 14px 0 0;
-      padding-left: 18px;
+      display: grid;
+      gap: 7px;
+      margin: 12px 0 0;
+      padding: 0;
       color: var(--text-muted);
       text-align: left;
       font-size: 13px;
+      line-height: 1.45;
+      list-style: none;
+    }
+
+    .right-card li {
+      position: relative;
+      padding-left: 13px;
+    }
+
+    .right-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .66em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #5884E7;
+    }
+
+    .right-card.is-right li::before {
+      background: #0E1953;
     }
 
     .state-icon svg {
-      width: 17px;
-      height: 17px;
+      width: 14px;
+      height: 14px;
       stroke: currentColor;
       stroke-width: 2.2;
       fill: none;
@@ -906,12 +1003,35 @@
       background: var(--white);
     }
 
+    #shop-by-btu {
+      --shop-row-gap: 16px;
+    }
+
+    #shop-by-btu .section-head {
+      margin-bottom: var(--shop-row-gap);
+    }
+
+    #shop-by-btu .section-label {
+      margin-bottom: var(--shop-row-gap);
+    }
+
+    #shop-by-btu .section-head h2 {
+      margin-bottom: var(--shop-row-gap);
+    }
+
+    #shop-by-btu .section-copy {
+      max-width: 680px;
+      margin-top: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
     .product-toolbar {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       gap: 18px;
-      padding: 0 0 22px;
+      padding: 0 0 16px;
       margin-bottom: 0;
     }
 
@@ -919,14 +1039,14 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      padding: 6px;
-      border: 1px solid var(--gray-200);
+      padding: 5px;
+      border-radius: 6px;
       background: var(--blue-surface);
     }
 
     .tab-button {
-      min-height: 42px;
-      padding: 0 16px;
+      min-height: 44px;
+      padding: 0 15px;
       border: 1px solid transparent;
       border-radius: 4px;
       background: transparent;
@@ -941,10 +1061,34 @@
       border-color: var(--navy);
     }
 
-    .tab-note {
-      color: var(--text-muted);
+    .tab-button:not([aria-selected="true"]):hover {
+      background: rgba(88,132,231,.10);
+    }
+
+    .toolbar-collection-link {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      margin-left: auto;
+      padding: 9px 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--navy);
       font-size: 14px;
-      text-align: right;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .toolbar-collection-link:hover {
+      background: var(--blue-light);
+      color: var(--blue);
+      border-color: var(--blue);
+      transform: translateY(-1px);
     }
 
     .tab-panel {
@@ -956,31 +1100,42 @@
     }
 
     .category-feature {
-      display: block;
-      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
       padding: 0;
       background: var(--white);
     }
 
+    .category-feature > div {
+      display: grid;
+      gap: var(--shop-row-gap);
+    }
+
     .category-kicker {
+      margin: 0;
       color: var(--blue);
-      font-size: 13px;
+      font-size: 12px;
       font-family: var(--font-button);
-      font-weight: 400;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: .04em;
     }
 
     .category-feature h3 {
-      margin-top: 4px;
+      margin: 0;
       font-size: 26px;
+      line-height: 1.1;
     }
 
     .category-feature p:not(.category-kicker) {
-      margin-top: 8px;
+      margin: 0;
       color: var(--text-muted);
       max-width: 900px;
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.45;
     }
 
     .product-grid {
@@ -993,7 +1148,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      border: 1px solid #e6eaf2;
+      border: 1px solid #e9edf5;
       border-radius: 6px;
       background: var(--white);
       overflow: hidden;
@@ -1001,57 +1156,34 @@
     }
 
     .product-card:hover {
-      border-color: var(--blue);
-      box-shadow: 0 6px 16px rgba(14,25,83,.06);
+      border-color: rgba(14,25,83,.28);
+      box-shadow: none;
     }
 
     .product-media {
       position: relative;
-      min-height: 236px;
-      aspect-ratio: 1 / .92;
+      min-height: 210px;
+      height: 214px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 0;
-      background:
-        linear-gradient(180deg, rgba(244, 247, 255, 0.4), rgba(255, 255, 255, 0.96));
+      background: var(--white);
       overflow: hidden;
-      padding: 28px 20px 12px;
+      padding: 18px 18px 10px;
     }
 
     .product-media::before,
     .product-media::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-    }
-
-    .product-media::before {
-      top: 50px;
-      width: 68%;
-      height: 48px;
-      border: 1px solid #d8e0f0;
-      border-radius: 5px;
-      background: linear-gradient(180deg, #ffffff, #eef3ff);
-      box-shadow: 0 10px 24px rgba(14, 25, 83, 0.06);
-    }
-
-    .product-media::after {
-      bottom: 46px;
-      width: 42%;
-      height: 78px;
-      border: 1px solid #d8e0f0;
-      border-radius: 4px;
-      background:
-        radial-gradient(circle at 50% 50%, transparent 0 18px, #c4cede 19px 22px, transparent 23px),
-        linear-gradient(180deg, #ffffff, #edf2ff);
-      opacity: 0.72;
+      display: none;
+      content: none;
     }
 
     .product-media img {
       position: relative;
       z-index: 1;
-      max-height: 196px;
+      max-width: 92%;
+      max-height: 184px;
       object-fit: contain;
       transition: transform .3s ease;
     }
@@ -1073,7 +1205,7 @@
       margin: 0;
       color: var(--navy);
       font-family: var(--font-heading);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       line-height: 1.35;
       display: -webkit-box;
@@ -1105,9 +1237,9 @@
     .price {
       margin-top: auto;
       margin-bottom: 14px;
-      color: var(--navy);
-      font-family: var(--font-heading-bold);
-      font-size: 20px;
+      color: var(--text-muted);
+      font-family: var(--font-button);
+      font-size: 15px;
       font-weight: 400;
     }
 
@@ -1133,77 +1265,48 @@
       margin-top: 14px;
     }
 
-    .large-space-note {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 22px;
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
-      background: var(--blue-surface);
-    }
-
-    .large-space-note h4 {
-      margin: 0;
-      color: var(--navy);
-      font-family: Spectral, Georgia, serif;
-      font-size: 22px;
-    }
-
-    .large-space-note p {
-      margin-top: 10px;
-      color: var(--text-muted);
-    }
-
     .installer-section {
       background: var(--gray-50);
+      padding-top: 23px;
+      padding-bottom: 23px;
     }
 
     .installer-grid {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
-      gap: 34px;
+      gap: 28px;
       align-items: center;
+    }
+
+    .installer-grid h2 {
+      font-size: clamp(30px, 2.8vw, 36px);
+      line-height: 1.1;
+    }
+
+    .installer-grid .section-copy {
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .installer-visual {
       position: relative;
-      min-height: 300px;
+      min-height: 288px;
       border-radius: 6px;
       overflow: hidden;
-      background: url("./setup-guide-outdoor.webp") center center / cover no-repeat;
+      background: url("../single-zone-vs-multi-zone-mini-split/mini-split-installation-planning-scene.webp") center 30% / cover no-repeat;
     }
 
     .installer-visual::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(14,25,83,0.02), rgba(14,25,83,0.16));
-    }
-
-    .outdoor-big {
-      display: none;
-    }
-
-    .outdoor-big::before {
-      content: "";
-      position: absolute;
-      left: 38px;
-      top: 24px;
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
-      border: 9px solid #687792;
-    }
-
-    .line-set {
-      display: none;
+      background: linear-gradient(180deg, rgba(14,25,83,0.02), rgba(14,25,83,0.08));
     }
 
     .checklist {
       display: grid;
-      gap: 14px;
-      margin: 24px 0 0;
+      gap: 13px;
+      margin: 18px 0 0;
       padding: 0;
       list-style: none;
     }
@@ -1211,114 +1314,73 @@
     .checklist li {
       display: grid;
       grid-template-columns: 28px 1fr;
-      gap: 12px;
+      gap: 10px;
       align-items: start;
       color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .check {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: var(--blue);
+      background: #0E1953;
       color: var(--white);
       font-size: 13px;
       font-weight: 900;
     }
 
-    .installer-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-top: 26px;
-    }
-
-    .installer-actions .btn {
-      min-height: 48px;
-      padding: 12px 24px;
-      font-size: 15px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .installer-actions .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .installer-actions .btn-primary {
-      background: var(--navy);
-      color: var(--white);
-      border-color: var(--navy);
-    }
-
-    .installer-actions .btn-primary:hover {
+    .services-section {
       background: var(--white);
-      color: var(--navy);
-      border-color: var(--navy);
+      padding-top: 23px;
+      padding-bottom: 23px;
     }
 
-    .installer-actions .btn-secondary {
-      min-height: 50px;
-      max-width: 100%;
-      background: var(--white);
-      color: var(--navy);
-      border-color: var(--gray-200);
-      font: 600 15px/1.2 var(--font-button);
+    .services-section .section-head {
+      display: block;
+      margin-bottom: 28px;
+      text-align: left;
     }
 
-    .installer-actions .btn-secondary:hover {
-      background: var(--blue-light);
-      border-color: var(--blue);
-      color: var(--navy);
+    .services-section .section-head.centered {
+      text-align: left;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
     }
 
     .service-card {
+      background: transparent;
+      border: 0;
+      padding: 10px 16px;
       min-height: 142px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 22px;
       border-radius: 8px;
-      background: var(--trust-bg);
-      text-align: center;
     }
 
     .service-card h3 {
-      font-family: Poppins, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.3;
+      color: var(--navy);
+      font-family: var(--font-button);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.28;
     }
 
     .service-icon {
       width: 44px;
       height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid rgba(88, 132, 231, 0.55);
-      border-radius: 50%;
-      color: var(--blue);
-    }
-
-    .service-icon svg {
-      width: 25px;
-      height: 25px;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      object-fit: contain;
+      margin-bottom: 12px;
     }
 
     .faq-section {
@@ -1397,18 +1459,18 @@
     @media (max-width: 900px) and (min-width: 761px) {
       .room-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: 186px;
+        grid-auto-rows: 220px;
       }
 
       .room-card.open,
-      .room-card.living {
-        grid-column: span 2;
+      .room-card.living,
+      .room-card.sun {
+        grid-column: span 1;
       }
 
       .room-card.bed,
       .room-card.office,
-      .room-card.garage,
-      .room-card.sun {
+      .room-card.garage {
         grid-column: span 1;
       }
 
@@ -1421,12 +1483,13 @@
         grid-row: auto;
       }
 
-      .room-card h3 {
+      .room-card h3,
+      .room-card.small h3 {
         font-size: 21px;
       }
 
-      .room-card p {
-        font-size: 15px;
+      .room-card .room-range {
+        font-size: 13px;
       }
     }
 
@@ -1436,7 +1499,7 @@
       }
 
       .section {
-        padding: 52px 0;
+        padding: 23px 0;
       }
 
       .top-strip-inner {
@@ -1467,13 +1530,11 @@
         font-size: 29px;
       }
 
-      .hero-actions,
-      .installer-actions {
+      .hero-actions {
         flex-direction: column;
       }
 
-      .hero-actions .btn,
-      .installer-actions .btn {
+      .hero-actions .btn {
         width: 100%;
       }
 
@@ -1499,13 +1560,22 @@
       .hero-chips {
         left: 50%;
         right: auto;
-        top: 214px;
-        grid-template-columns: repeat(2, max-content);
+        top: 132px;
         transform: translateX(-50%);
       }
 
-      .hero-chips .chip:nth-child(n+3) {
-        display: none;
+      .hero-chip-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 290px;
+        gap: 6px;
+      }
+
+      .chip {
+        min-width: 48px;
+        min-height: 32px;
+        padding: 7px 9px;
+        font-size: 12px;
       }
 
       .btu-strip {
@@ -1525,20 +1595,38 @@
 
       .notes-panel {
         padding: 18px;
+        gap: 22px;
       }
 
       .home-visual {
-        min-height: 300px;
+        min-height: 250px;
+      }
+
+      .note-pin,
+      .note-num {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+      }
+
+      .note-item {
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+      }
+
+      .note-item div span {
+        font-size: 13px;
+        line-height: 1.38;
       }
 
       .room-grid {
         grid-template-columns: 1fr;
-        grid-auto-rows: 190px;
+        grid-auto-rows: 200px;
       }
 
       #room-match .section-head h2 {
-        max-width: 330px;
-        font-size: 27px;
+        max-width: 360px;
+        font-size: 29px;
       }
 
       #room-match .section-copy {
@@ -1557,14 +1645,70 @@
         grid-row: auto;
       }
 
-      .split-note {
-        align-items: flex-start;
-        flex-direction: column;
+      .room-card-content {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .room-card h3,
+      .room-card.small h3 {
+        font-size: 22px;
+      }
+
+      .room-card .room-range {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      .room-card .text-link {
+        margin-top: 12px;
+        font-size: 12px;
       }
 
       .right-grid,
       .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .right-size.section {
+        padding: 23px 0;
+      }
+
+      #right-size .container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 18px 0;
+      }
+
+      #right-size .section-head h2 {
+        font-size: 30px;
+      }
+
+      #right-size .section-copy {
+        max-width: 340px;
+        margin-top: 7px;
+        font-size: 14px;
+      }
+
+      .right-card {
+        min-height: 0;
+        padding: 20px 18px;
+      }
+
+      .services-grid {
+        gap: 12px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 14px 10px;
+      }
+
+      .service-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
       }
 
       .product-toolbar,
@@ -1573,18 +1717,30 @@
         flex-direction: column;
       }
 
-      .tab-note {
-        text-align: left;
+      .product-toolbar {
+        gap: 10px;
+        padding-bottom: 14px;
       }
 
       .tab-list {
         width: 100%;
         overflow-x: auto;
         flex-wrap: nowrap;
+        scrollbar-width: none;
       }
 
       .tab-button {
         flex: 0 0 auto;
+      }
+
+      .toolbar-collection-link {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .category-feature {
+        gap: 0;
+        margin-bottom: 14px;
       }
 
       .product-grid {
@@ -1601,6 +1757,15 @@
         -webkit-line-clamp: 4;
       }
 
+      .product-media {
+        height: 190px;
+        min-height: 190px;
+      }
+
+      .product-media img {
+        max-height: 160px;
+      }
+
       .product-specs {
         font-size: 12px;
       }
@@ -1615,13 +1780,7 @@
       }
 
       .installer-visual {
-        min-height: 260px;
-      }
-
-      .outdoor-big {
-        left: 34px;
-        width: 150px;
-        height: 104px;
+        min-height: 240px;
       }
     }
 
@@ -1629,6 +1788,10 @@
       .product-grid {
         grid-template-columns: 1fr;
         gap: 14px;
+      }
+
+      .toolbar-collection-link {
+        align-self: stretch;
       }
 
       h1 {
@@ -1643,8 +1806,8 @@
     }
     .faq-section {
       background: var(--white);
-      padding-top: 58px;
-      padding-bottom: 44px;
+      padding-top: 23px;
+      padding-bottom: 23px;
     }
 
     .faq-section .section-head {
@@ -1757,7 +1920,7 @@
   <header class="top-strip" aria-label="Della service benefits">
     <div class="container top-strip-inner">
       <div class="strip-item"><span class="strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span>Free Shipping Sitewide</div>
-      <div class="strip-item"><span class="strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M8.5 12.5l2.2 2.2 4.8-5"></path></svg></span>Find Partner HVAC Installer</div>
+      <div class="strip-item"><span class="strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M8.5 12.5l2.2 2.2 4.8-5"></path></svg></span>Lifetime Coverage (Mini Splits)</div>
       <div class="strip-item"><span class="strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0"></path><path d="M5 12v4a2 2 0 0 0 2 2h1v-6H5z"></path><path d="M19 12v4a2 2 0 0 1-2 2h-1v-6h3z"></path><path d="M9 20h4"></path></svg></span>24/7 Live Chat Support</div>
     </div>
   </header>
@@ -1766,12 +1929,11 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy-wrap">
-          <span class="section-label">Mini split size guide</span>
-          <h1>Mini Split Size Guide: Find the Right BTU for Your Room</h1>
-          <p class="hero-copy">Start with your room size, then adjust for insulation, sun exposure, ceiling height, and how the room is used. Compare 9K, 12K, 18K, 24K, and 36K mini split options.</p>
+          <h1>Find the Right Mini Split Size from the Start.</h1>
+          <p class="hero-copy">Match your room size to a starting 9K, 12K, 18K, 24K, or 36K Della mini split.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#btu-selector">Find My Starting BTU</a>
-            <a class="btn btn-secondary" href="#shop-by-btu">Shop by BTU</a>
+            <a class="btn btn-primary" href="#btu-selector">Find My BTU</a>
+            <a class="btn btn-secondary" href="#shop-by-btu">Shop Mini Splits</a>
           </div>
         </div>
         <div class="hero-visual" aria-label="Modern room with wall-mounted Della-style mini split and sizing cues">
@@ -1781,10 +1943,14 @@
             <img src="https://dellahome.com/cdn/shop/files/9K1VR-22S-MX-I-O_01.jpg?crop=center&height=1200&v=1776763354&width=1200" width="220" height="80" alt="">
           </div>
           <div class="hero-chips" aria-hidden="true">
-            <span class="chip">12K BTU</span>
-            <span class="chip">401-550 sq ft</span>
-            <span class="chip">Bedroom / Office</span>
-            <span class="chip">Adjust for sun</span>
+            <div class="hero-chip-row">
+              <span class="chip">9K</span>
+              <span class="chip">12K</span>
+              <span class="chip">18K</span>
+              <span class="chip">24K</span>
+              <span class="chip">36K</span>
+            </div>
+            <span class="hero-chip-caption">Match your space in square feet</span>
           </div>
           <div class="sofa" aria-hidden="true"></div>
           <div class="table" aria-hidden="true"></div>
@@ -1902,14 +2068,6 @@
       <div class="container">
         <div class="notes-panel">
           <div class="home-visual" aria-hidden="true">
-            <div class="house-roof"></div>
-            <div class="house-body">
-              <div class="room-cell"></div>
-              <div class="room-cell"></div>
-              <div class="room-cell"></div>
-              <div class="room-cell"></div>
-            </div>
-            <div class="outdoor-unit"></div>
             <span class="note-pin pin-1">1</span>
             <span class="note-pin pin-2">2</span>
             <span class="note-pin pin-3">3</span>
@@ -1918,14 +2076,14 @@
           </div>
           <div>
             <span class="section-label">Sizing notes</span>
-            <h2>What Can Change Your BTU Size?</h2>
-            <p class="section-copy" style="margin-top: 14px;">Square footage is the starting point. Room conditions can move your BTU choice up or down.</p>
+            <h2>What Changes Your BTU?</h2>
+            <p class="section-copy" style="margin-top: 14px;">Start with square footage, then check these conditions before moving up a BTU tier.</p>
             <div class="notes-list">
-              <div class="note-item"><span class="note-num">1</span><div><strong>Insulation</strong><span>Poor insulation may require moving up one BTU tier.</span></div></div>
-              <div class="note-item"><span class="note-num">2</span><div><strong>Sun exposure</strong><span>South-facing rooms or large windows can add heat load.</span></div></div>
-              <div class="note-item"><span class="note-num">3</span><div><strong>Ceiling height</strong><span>Taller ceilings increase the air volume that needs conditioning.</span></div></div>
-              <div class="note-item"><span class="note-num">4</span><div><strong>Open layout</strong><span>Connected spaces may need a larger capacity or a different system plan.</span></div></div>
-              <div class="note-item"><span class="note-num">5</span><div><strong>Heat load</strong><span>Garages, gyms, kitchens, and sunrooms may need extra capacity.</span></div></div>
+              <div class="note-item"><span class="note-num">1</span><div><strong>Insulation</strong><span>Poor insulation may need one tier up.</span></div></div>
+              <div class="note-item"><span class="note-num">2</span><div><strong>Sun exposure</strong><span>Strong sun or large windows add heat load.</span></div></div>
+              <div class="note-item"><span class="note-num">3</span><div><strong>Ceiling height</strong><span>Tall ceilings add more air volume.</span></div></div>
+              <div class="note-item"><span class="note-num">4</span><div><strong>Open layout</strong><span>Connected spaces may need more capacity.</span></div></div>
+              <div class="note-item"><span class="note-num">5</span><div><strong>Heat load</strong><span>Garages, kitchens, gyms, and sunrooms run hotter.</span></div></div>
             </div>
           </div>
         </div>
@@ -1935,59 +2093,52 @@
     <section class="section" id="room-match">
       <div class="container">
         <div class="section-head">
-          <h2>Choose by How the Room Is Used</h2>
-          <p class="section-copy">Match the way the room behaves, then use the chart above to confirm the starting BTU range.</p>
+          <h2>Match Your Room to a Starting BTU</h2>
+          <p class="section-copy">Use room type as a second check after square footage. Special rooms may need one BTU tier higher.</p>
         </div>
         <div class="room-grid">
-          <article class="room-card open large">
-            <div class="room-card-content">
-              <h3>Open Living Room</h3>
-              <p>Often 18K-24K</p>
-              <a class="text-link" href="#shop-by-btu" data-switch-tab="18k">View 18K options &rarr;</a>
-            </div>
-          </article>
           <article class="room-card bed small">
             <div class="room-card-content">
-              <h3>Bedroom / Office</h3>
-              <p>Usually 9K-12K</p>
-              <a class="text-link" href="#shop-by-btu" data-switch-tab="12k">View 12K options &rarr;</a>
+              <h3>Bedroom</h3>
+              <p class="room-range">Usually 9K-12K</p>
+              <a class="text-link" href="#shop-by-btu" data-switch-tab="12k">Shop 12K &rarr;</a>
             </div>
           </article>
           <article class="room-card office small">
             <div class="room-card-content">
-              <h3>Studio</h3>
-              <p>Often starts at 12K</p>
-              <a class="text-link" href="#shop-by-btu" data-switch-tab="12k">View 12K options &rarr;</a>
+              <h3>Home Office</h3>
+              <p class="room-range">Usually 9K-12K</p>
+              <a class="text-link" href="#shop-by-btu" data-switch-tab="9k">Shop 9K &rarr;</a>
+            </div>
+          </article>
+          <article class="room-card living large">
+            <div class="room-card-content">
+              <h3>Living Room</h3>
+              <p class="room-range">Often 18K-24K</p>
+              <a class="text-link" href="#shop-by-btu" data-switch-tab="18k">Shop 18K &rarr;</a>
             </div>
           </article>
           <article class="room-card garage small">
             <div class="room-card-content">
               <h3>Garage / Shed</h3>
-              <p>Usually 12K-18K</p>
-              <a class="text-link" href="#sizing-notes">View sizing notes &rarr;</a>
+              <p class="room-range">Usually 12K-18K</p>
+              <a class="text-link" href="#sizing-notes">Check sizing notes &rarr;</a>
             </div>
           </article>
-          <article class="room-card living large">
+          <article class="room-card open large">
             <div class="room-card-content">
-              <h3>Large Open Area</h3>
-              <p>Usually 24K-36K</p>
-              <a class="text-link" href="#shop-by-btu" data-switch-tab="36k">View large-space options &rarr;</a>
+              <h3>Open Area</h3>
+              <p class="room-range">Often 24K-36K</p>
+              <a class="text-link" href="#shop-by-btu" data-switch-tab="24k">Shop 24K &rarr;</a>
             </div>
           </article>
           <article class="room-card sun large">
             <div class="room-card-content">
               <h3>Sunroom / Attic</h3>
-              <p>May need one tier higher</p>
-              <a class="text-link" href="#shop-by-btu" data-switch-tab="24k">Compare 18K and 24K &rarr;</a>
+              <p class="room-range">May need one tier higher</p>
+              <a class="text-link" href="#shop-by-btu" data-switch-tab="24k">Compare 18K / 24K &rarr;</a>
             </div>
           </article>
-        </div>
-        <div class="split-note">
-          <div>
-            <strong>Sizing more than one room?</strong>
-            <p>Start with this guide for each room's BTU range, then compare single-zone vs. multi-zone system options.</p>
-          </div>
-          <a class="text-link" href="../single-zone-vs-multi-zone-mini-split/single-zone-vs-multi-zone-mini-split.html">Compare Single-Zone vs. Multi-Zone Mini Splits &rarr;</a>
         </div>
       </div>
     </section>
@@ -1995,38 +2146,43 @@
     <section class="right-size section" id="right-size">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Right-size check</span>
-          <h2>Bigger Is Not Always Better</h2>
-          <p class="section-copy">A right-sized system should run steadily enough to manage comfort and humidity. Use this check before comparing product models.</p>
+          <h2>Right Size. Right Comfort.</h2>
+          <p class="section-copy">Bigger isn&rsquo;t always better. Use this check before comparing products.</p>
         </div>
         <div class="right-grid">
           <article class="right-card">
-            <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10"></path><path d="M17 7L7 17"></path></svg></div>
-            <h3>Too Small</h3>
-            <p>May run constantly and struggle on high-load days.</p>
+            <div class="right-card-head">
+              <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10"></path><path d="M17 7L7 17"></path></svg></div>
+              <h3>Too Small</h3>
+            </div>
+            <p>Runs constantly and costs more.</p>
             <ul>
               <li>Longer run times</li>
               <li>Higher energy use</li>
-              <li>Less comfort on hot days</li>
+              <li>More wear</li>
             </ul>
           </article>
           <article class="right-card is-right">
-            <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></div>
-            <h3>Right Size</h3>
-            <p>Supports steadier comfort and better humidity control.</p>
+            <div class="right-card-head">
+              <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></div>
+              <h3>Right Size</h3>
+            </div>
+            <p>Runs steadily for balanced comfort.</p>
             <ul>
-              <li>More consistent comfort</li>
-              <li>Better humidity control</li>
-              <li>More balanced operation</li>
+              <li>Better efficiency</li>
+              <li>Even cooling</li>
+              <li>Humidity control</li>
             </ul>
           </article>
           <article class="right-card">
-            <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10"></path><path d="M17 7L7 17"></path></svg></div>
-            <h3>Too Large</h3>
-            <p>May short cycle, cool unevenly, and reduce humidity control.</p>
+            <div class="right-card-head">
+              <div class="state-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10"></path><path d="M17 7L7 17"></path></svg></div>
+              <h3>Too Large</h3>
+            </div>
+            <p>Short cycles and wastes money.</p>
             <ul>
               <li>Short cycling</li>
-              <li>Uneven comfort</li>
+              <li>Poor humidity control</li>
               <li>Higher upfront cost</li>
             </ul>
           </article>
@@ -2039,7 +2195,7 @@
         <div class="section-head">
           <span class="section-label">Shop by starting BTU</span>
           <h2>Shop Mini Splits by BTU</h2>
-          <p class="section-copy">Choose the BTU tab that matches your starting range, then open product details to compare features and installation needs.</p>
+          <p class="section-copy">Choose your starting BTU, then compare matching Della mini split options.</p>
         </div>
         <div class="product-toolbar">
           <div class="tab-list" role="tablist" aria-label="Mini split products by BTU">
@@ -2049,7 +2205,7 @@
             <button class="tab-button" id="tab-24k" type="button" role="tab" aria-selected="false" aria-controls="panel-24k" data-tab="24k">24K BTU</button>
             <button class="tab-button" id="tab-36k" type="button" role="tab" aria-selected="false" aria-controls="panel-36k" data-tab="36k">36K BTU</button>
           </div>
-          <p class="tab-note">36K includes one large-space path plus sizing support.</p>
+          <a class="toolbar-collection-link" id="current-collection-link" href="https://dellahome.com/collections/12000-btu-mini-split" target="_blank" rel="noopener">View All 12K Options</a>
         </div>
         <div id="product-panels"></div>
       </div>
@@ -2058,38 +2214,44 @@
     <section class="installer-section section" id="installer-checklist">
       <div class="container installer-grid">
         <div class="installer-visual" aria-hidden="true">
-          <div class="outdoor-big"></div>
-          <div class="line-set"></div>
         </div>
         <div>
           <span class="section-label">Before checkout</span>
-          <h2>Before You Order, Confirm These With Your Installer</h2>
-          <p class="section-copy" style="margin-top: 14px;">A few quick checks help your mini split fit the room, the wall, and the electrical setup.</p>
+          <h2>Installer Checklist</h2>
+          <p class="section-copy" style="margin-top: 14px;">A few quick checks help your install go smoothly.</p>
           <ul class="checklist">
-            <li><span class="check">&check;</span><span>Outdoor unit placement has clear airflow and solid mounting.</span></li>
-            <li><span class="check">&check;</span><span>Line-set route and drain path are short, direct, and practical.</span></li>
-            <li><span class="check">&check;</span><span>Electrical panel and breaker can support the selected system.</span></li>
-            <li><span class="check">&check;</span><span>Indoor wall location allows good airflow across the room.</span></li>
+            <li><span class="check">&check;</span><span>Outdoor unit has clear airflow and solid mounting.</span></li>
+            <li><span class="check">&check;</span><span>Line-set route is short and direct where possible.</span></li>
+            <li><span class="check">&check;</span><span>Electrical panel has the correct breaker and power.</span></li>
+            <li><span class="check">&check;</span><span>Indoor wall location is clear for best airflow.</span></li>
           </ul>
-          <div class="installer-actions">
-            <a class="btn btn-primary" href="https://dellahome.com/pages/find-a-installer" target="_blank" rel="noopener">Find Partner HVAC Installer</a>
-            <a class="btn btn-secondary" href="https://dellahome.com/pages/contact" target="_blank" rel="noopener">Contact Della Support</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section compact" id="premium-services">
+    <section class="section services-section" id="premium-services">
       <div class="container">
-        <div class="section-head centered">
+        <div class="section-head">
           <span class="section-label">Service confidence</span>
           <h2>Premium Della Services</h2>
         </div>
         <div class="services-grid">
-          <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span><h3>Free & Fast Shipping</h3></article>
-          <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10h18"></path><path d="M7 15h4"></path></svg></span><h3>Pay in 6 Months, 0% APR</h3></article>
-          <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0"></path><path d="M5 12v4a2 2 0 0 0 2 2h1v-6H5z"></path><path d="M19 12v4a2 2 0 0 1-2 2h-1v-6h3z"></path><path d="M9 20h4"></path></svg></span><h3>24x7 Live Chat Support</h3></article>
-          <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M8.5 12.5l2.2 2.2 4.8-5"></path></svg></span><h3>Lifetime Coverage<br>(Mini Splits)</h3></article>
+          <article class="service-card">
+            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-40_488310fc-d38a-4d43-bcc2-b1b5e44d2fa4.png?v=1764578865" alt="" loading="lazy" aria-hidden="true">
+            <h3>Free &amp; Fast Shipping</h3>
+          </article>
+          <article class="service-card">
+            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250609-092813.png?v=1749432513&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
+            <h3>Pay in 6 Months, 0% APR</h3>
+          </article>
+          <article class="service-card">
+            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250922-160254_998da76a-d533-49ca-a79b-0ce8b4a70261.png?v=1765275088&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
+            <h3>24×7 Live Chat Support</h3>
+          </article>
+          <article class="service-card">
+            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-45_b280ec24-a703-42bb-b37e-aa83a9a6c424.png?v=1765275087&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
+            <h3>Lifetime Coverage<br>(Mini Splits)</h3>
+          </article>
         </div>
       </div>
     </section>
@@ -2143,7 +2305,7 @@
       "9k": {
         label: "9K BTU",
         title: "9K Mini Splits",
-        intro: "For small bedrooms, offices, and enclosed rooms up to about 400 sq ft.",
+        intro: "Small enclosed rooms up to about 400 sq ft.",
         items: [
           {
             title: "DELLA Serena CloudAir Series 9000 BTU 22 SEER2 Mini Split Heat Pump AC",
@@ -2178,7 +2340,7 @@
       "12k": {
         label: "12K BTU",
         title: "12K Mini Splits",
-        intro: "For bedrooms, studios, and main rooms around 401-550 sq ft.",
+        intro: "Bedrooms, studios, and main rooms around 401&ndash;550 sq ft.",
         items: [
           {
             title: "DELLA Optima Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC",
@@ -2213,7 +2375,7 @@
       "18k": {
         label: "18K BTU",
         title: "18K Mini Splits",
-        intro: "For larger rooms and open areas around 551-1,000 sq ft.",
+        intro: "Larger rooms and open living areas around 551&ndash;1,000 sq ft.",
         items: [
           {
             title: "DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC",
@@ -2248,7 +2410,7 @@
       "24k": {
         label: "24K BTU",
         title: "24K Mini Splits",
-        intro: "For large open spaces around 1,001-1,500 sq ft.",
+        intro: "Large open spaces and great rooms around 1,001&ndash;1,500 sq ft.",
         items: [
           {
             title: "DELLA Vario Series 24000 BTU 21 SEER2 Mini Split Heat Pump AC",
@@ -2283,7 +2445,7 @@
       "36k": {
         label: "36K BTU",
         title: "36K Mini Splits",
-        intro: "For very large or high-load spaces around 1,501-2,500 sq ft. Confirm layout and airflow before choosing.",
+        intro: "Very large or high-load spaces around 1,501&ndash;2,500 sq ft. Confirm layout before checkout.",
         items: [
           {
             title: "DELLA Vario Series 36000 BTU 19 SEER2 Mini Split Heat Pump AC R-454B",
@@ -2299,7 +2461,7 @@
     function productDisplayTitle(product) {
       const title = product.title;
       const sizeMatch = title.match(/(9000|12000|18000|23000|24000|36000|23,000)\s*BTU/i);
-      const size = sizeMatch ? sizeMatch[1].replace(",", "").replace("000", "K") : "";
+      const size = sizeMatch ? `${parseInt(sizeMatch[1].replace(",", ""), 10) / 1000}K` : "";
       const seerMatch = title.match(/(\d+(?:\.\d+)?)\s*SEER2/i);
       const seer = seerMatch ? `${seerMatch[1]} SEER2` : "";
       let series = "Mini Split";
@@ -2334,20 +2496,26 @@
       const panels = document.getElementById("product-panels");
       panels.innerHTML = Object.entries(products).map(([key, group]) => `
         <section class="tab-panel ${key === "12k" ? "is-active" : ""}" id="panel-${key}" role="tabpanel" aria-labelledby="tab-${key}" ${key === "12k" ? "" : "hidden"}>
-          <div class="category-feature">
+          <div class="category-feature compact-path">
             <div>
               <p class="category-kicker">${group.label} / starting path</p>
               <h3>${group.title}</h3>
               <p>${group.intro}</p>
             </div>
-            <a class="text-link" href="${collections[key]}" target="_blank" rel="noopener">View All ${group.label} Options &rarr;</a>
           </div>
           <div class="product-grid">
             ${group.items.map(productCard).join("")}
-            ${key === "36k" ? `<aside class="large-space-note"><h4>Confirm before choosing 36K</h4><p>Large open areas and high-load spaces can vary a lot. Confirm layout, airflow path, and installation requirements before checkout.</p><a class="text-link" href="https://dellahome.com/pages/find-a-installer" target="_blank" rel="noopener">Find Partner HVAC Installer &rarr;</a></aside>` : ""}
           </div>
         </section>
       `).join("");
+    }
+
+    function updateCollectionLink(key) {
+      const link = document.getElementById("current-collection-link");
+      if (!link || !products[key] || !collections[key]) return;
+      const label = products[key].label.replace(" BTU", "");
+      link.href = collections[key];
+      link.textContent = `View All ${label} Options`;
     }
 
     function activateTab(key, shouldScroll) {
@@ -2361,6 +2529,7 @@
         panel.classList.toggle("is-active", selected);
         panel.hidden = !selected;
       });
+      updateCollectionLink(key);
       if (shouldScroll) {
         document.getElementById("shop-by-btu").scrollIntoView({ behavior: "smooth", block: "start" });
       }
