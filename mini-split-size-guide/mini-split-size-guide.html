@@ -1641,6 +1641,116 @@
         font-size: 15px;
       }
     }
+    .faq-section {
+      background: var(--white);
+      padding-top: 58px;
+      padding-bottom: 44px;
+    }
+
+    .faq-section .section-head {
+      display: block;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .faq-list {
+      background: transparent;
+      border: none;
+      margin-top: 28px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-q {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 18px;
+      align-items: center;
+      gap: 24px;
+      padding: 18px 0;
+      color: var(--navy);
+      min-height: auto;
+    }
+
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item .faq-q::after,
+    .faq-item[open] .faq-q::after {
+      content: none;
+    }
+
+    .faq-question {
+      min-width: 0;
+      color: var(--navy);
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.35;
+      transition: color .18s ease;
+    }
+
+    .faq-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .faq-icon::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--navy);
+      border-bottom: 2px solid var(--navy);
+      transform: translate(-50%, -62%) rotate(45deg);
+      transform-origin: center;
+      transition: transform .2s ease, border-color .18s ease;
+    }
+
+    .faq-item[open] .faq-question,
+    .faq-q:hover .faq-question {
+      color: var(--blue);
+    }
+
+    .faq-item[open] .faq-icon::before,
+    .faq-q:hover .faq-icon::before {
+      border-color: var(--blue);
+    }
+
+    .faq-item[open] .faq-icon::before {
+      transform: translate(-50%, -38%) rotate(-135deg);
+    }
+
+    .faq-a {
+      padding: 0 0 18px;
+    }
+
+    .faq-a p {
+      max-width: none;
+      padding: 0;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      white-space: normal;
+    }
   </style>
 </head>
 <body>
@@ -1984,35 +2094,36 @@
       </div>
     </section>
 
-    <section class="faq-section section compact" id="faq">
+    <section class="section faq-section" id="faq">
       <div class="container">
         <div class="section-head">
+          <span class="section-label">FAQ</span>
           <h2>Mini Split Size Guide FAQs</h2>
         </div>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>What size mini split do I need?</summary>
-            <p>Start with the room size range, then adjust for insulation, sun exposure, ceiling height, layout, and room use. For many Della shoppers, the first decision is choosing between 9K, 12K, 18K, 24K, and 36K BTU collection paths.</p>
+            <summary class="faq-q"><span class="faq-question">What size mini split do I need?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Start with the room size range, then adjust for insulation, sun exposure, ceiling height, layout, and room use. For many Della shoppers, the first decision is choosing between 9K, 12K, 18K, 24K, and 36K BTU collection paths.</p></div>
           </details>
           <details class="faq-item">
-            <summary>Is 12,000 BTU enough for a bedroom or studio?</summary>
-            <p>12K is a common starting point for rooms around 401-550 sq ft. If the room has poor insulation, large windows, or high sun exposure, review the adjustment factors before choosing.</p>
+            <summary class="faq-q"><span class="faq-question">Is 12,000 BTU enough for a bedroom or studio?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>12K is a common starting point for rooms around 401-550 sq ft. If the room has poor insulation, large windows, or high sun exposure, review the adjustment factors before choosing.</p></div>
           </details>
           <details class="faq-item">
-            <summary>When should I move from 12K to 18K?</summary>
-            <p>Consider moving up when the space is larger than the 12K range, has an open connection to nearby rooms, or carries extra heat load from sun, equipment, or frequent activity. An installer can confirm edge cases.</p>
+            <summary class="faq-q"><span class="faq-question">When should I move from 12K to 18K?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Consider moving up when the space is larger than the 12K range, has an open connection to nearby rooms, or carries extra heat load from sun, equipment, or frequent activity. An installer can confirm edge cases.</p></div>
           </details>
           <details class="faq-item">
-            <summary>Is a 24K mini split too large for one room?</summary>
-            <p>It can be too large for smaller enclosed rooms. 24K is better treated as a large open-space starting point, not a universal upgrade.</p>
+            <summary class="faq-q"><span class="faq-question">Is a 24K mini split too large for one room?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>It can be too large for smaller enclosed rooms. 24K is better treated as a large open-space starting point, not a universal upgrade.</p></div>
           </details>
           <details class="faq-item">
-            <summary>Can one 36K mini split cool multiple rooms?</summary>
-            <p>A large-capacity unit may help a very open layout, but separated rooms usually need a different system plan. For independent comfort in multiple rooms, compare single-zone and multi-zone options before buying.</p>
+            <summary class="faq-q"><span class="faq-question">Can one 36K mini split cool multiple rooms?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>A large-capacity unit may help a very open layout, but separated rooms usually need a different system plan. For independent comfort in multiple rooms, compare single-zone and multi-zone options before buying.</p></div>
           </details>
           <details class="faq-item">
-            <summary>Why should I not oversize a mini split?</summary>
-            <p>An oversized system may short cycle, which can create uneven comfort and weaker humidity control. The goal is a right-sized system, not simply the largest BTU available.</p>
+            <summary class="faq-q"><span class="faq-question">Why should I not oversize a mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>An oversized system may short cycle, which can create uneven comfort and weaker humidity control. The goal is a right-sized system, not simply the largest BTU available.</p></div>
           </details>
         </div>
       </div>
