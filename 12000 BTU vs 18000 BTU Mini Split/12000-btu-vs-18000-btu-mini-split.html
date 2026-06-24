@@ -738,12 +738,16 @@
 
     .scenario-card img {
       width: 100%;
-      height: 180px;
+      height: 216px;
       object-fit: cover;
     }
 
     .scenario-card:nth-child(2) img {
-      object-position: 78% center;
+      object-position: 96% center;
+    }
+
+    .scenario-card:nth-child(4) img {
+      object-position: right center;
     }
 
     .scenario-body {
@@ -920,7 +924,7 @@
     }
 
     .bottom-cta {
-      padding: 74px 0 86px;
+      padding: 38px 0 44px;
       background: var(--blue-surface);
     }
 
@@ -946,6 +950,34 @@
 
     .mobile-sticky {
       display: none;
+    }
+
+    @media (min-width: 641px) {
+      .factors-section {
+        padding: 44px 0 46px;
+      }
+
+      .right-size-section {
+        padding: 40px 0 42px;
+      }
+
+      .products-section {
+        padding-top: 56px;
+        padding-bottom: 46px;
+      }
+
+      .scenarios-section {
+        padding: 44px 0 38px;
+      }
+
+      .services-section {
+        padding-top: 34px;
+        padding-bottom: 26px;
+      }
+
+      .faq-section {
+        padding-top: 38px;
+      }
     }
 
     @media (max-width: 1080px) {
@@ -1065,7 +1097,6 @@
     }
     @media (max-width: 640px) {
       body {
-        padding-bottom: 72px;
         font-size: 15px;
       }
 
@@ -1116,8 +1147,8 @@
         font-size: 15px;
       }
 .choice-card {
-        grid-template-columns: 78px minmax(0, 1fr);
-        gap: 14px;
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 10px;
         padding: 20px;
       }
 
@@ -1171,19 +1202,7 @@
       }
 
       .mobile-sticky {
-        position: fixed;
-        z-index: 30;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        height: 64px;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.96);
-        border-top: 1px solid var(--gray-200);
-        box-shadow: 0 -10px 30px rgba(14, 25, 83, 0.08);
+        display: none;
       }
 
       .mobile-sticky .btn {
@@ -1296,28 +1315,28 @@
           <article class="scenario-card">
             <img src="assets/scenario-bedroom-home-office.webp" alt="Della mini split in home office">
             <div class="scenario-body">
-              <h3>Bedroom or home office &rarr;</h3>
+              <h3>Bedroom or home office</h3>
               <span class="tag">Start with 12K</span>
             </div>
           </article>
           <article class="scenario-card">
             <img src="assets/scenario-small-living-room.webp" alt="Della mini split in small living room">
             <div class="scenario-body">
-              <h3>Small living room &rarr;</h3>
-              <span class="tag">Check layout first</span>
+              <h3>Small living room</h3>
+              <span class="tag">Closed: 12K &middot; Open: 18K</span>
             </div>
           </article>
           <article class="scenario-card">
             <img src="assets/scenario-garage-sunroom.webp" alt="Bright sunroom with large windows">
             <div class="scenario-body">
-              <h3>Garage or sunroom &rarr;</h3>
+              <h3>Garage or sunroom</h3>
               <span class="tag">Check 18K</span>
             </div>
           </article>
           <article class="scenario-card">
             <img src="assets/scenario-open-living-dining.webp" alt="Open living area with large windows">
             <div class="scenario-body">
-              <h3>Open living and dining area &rarr;</h3>
+              <h3>Open living/dining area</h3>
               <span class="tag">Start with 18K</span>
             </div>
           </article>
@@ -1332,7 +1351,7 @@
           <div>
             <h2>What can move the decision?</h2>
           </div>
-          <p class="section-copy">Two rooms with the same square footage can feel completely different. These are the details that make people second-guess 12K vs 18K.</p>
+        <p class="section-copy">Same square footage can feel different. These details can move the choice between 12K and 18K.</p>
         </div>
         <div class="factor-grid">
       <article class="factor-card">
@@ -1447,7 +1466,7 @@
       <div class="container right-size-grid">
         <div class="right-size-copy">
           <h2>Bigger Is Not Always Better</h2>
-          <p>Choosing 18K just to be safe can backfire in a smaller enclosed room. The goal is not the biggest number; it is a system that can run steadily and match the room's real load.</p>
+          <p>Sizing up just to be safe can backfire. The goal is steady comfort that matches the room's real load.</p>
           <a class="btn btn-outline" href="#shop-12k-18k">Shop 12K or 18K</a>
         </div>
         <div class="right-panels">
