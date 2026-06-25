@@ -300,46 +300,26 @@
       font-size: 16px;
       line-height: 1.5;
     }
-
     .choice-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-auto-rows: 1fr;
-      gap: 24px;
+      gap: 28px;
     }
-
     .choice-card {
-      display: grid;
-      grid-template-columns: 96px minmax(0, 1fr);
-      gap: 22px;
-      align-items: start;
-      min-height: 302px;
-      background: var(--white);
-      border: 1px solid var(--gray-200);
+      display: flex;
+      min-height: 250px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 30px;
+      background: #fff;
+      border: 1px solid #DCE4F2;
       border-radius: 8px;
       box-shadow: 0 8px 22px rgba(14, 25, 83, 0.06);
-      padding: 30px 30px 28px;
-    }
-
-    .choice-icon {
-      display: flex;
-      width: 96px;
-      height: 96px;
-      align-items: center;
-      justify-content: center;
-      color: #5884E7;
-      align-self: start;
-    }
-
-    .choice-icon svg {
-      display: block;
-      width: 92px;
-      height: 92px;
-      stroke: currentColor;
     }
 
     .choice-body {
       display: flex;
+      width: 100%;
       min-width: 0;
       height: 100%;
       flex-direction: column;
@@ -348,7 +328,7 @@
 
     .choice-card strong {
       display: block;
-      margin-bottom: 16px;
+      margin: 0 0 14px;
       color: var(--navy);
       font-family: var(--font-body);
       font-size: 20px;
@@ -358,11 +338,10 @@
 
     .check-list {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
-      margin-bottom: 22px;
     }
 
     .check-list li {
@@ -386,7 +365,7 @@
       align-items: center;
       justify-content: center;
       min-height: 46px;
-      margin-top: auto;
+      margin-top: 18px;
       padding: 11px 20px;
       background: var(--navy);
       border-radius: 4px;
@@ -1031,38 +1010,29 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .choice-grid {
+        gap: 20px;
+      }
+
       .choice-card {
-        grid-template-columns: 86px minmax(0, 1fr);
-        min-height: 0;
+        min-height: auto;
+        padding: 22px 20px;
       }
 
-      .choice-icon {
-        width: 82px;
-        height: 82px;
+      .choice-card strong {
+        font-size: 20px;
+        line-height: 1.25;
       }
 
-      .choice-icon svg {
-        width: 78px;
-        height: 78px;
+      .check-list li {
+        font-size: 15px;
+        line-height: 1.45;
       }
 
       .choice-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      margin-top: 18px;
-      padding: 13px 22px;
-      background: var(--navy);
-      border-radius: 4px;
-      color: var(--white);
-      font-family: var(--font-button);
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.2;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
+        width: 100%;
+        margin-top: 16px;
+      }
     }
 
     @media (max-width: 1080px) {
@@ -1117,6 +1087,10 @@
         overflow-wrap: anywhere;
       }
 
+      h2 {
+        font-size: 29px;
+      }
+
       .hero {
         padding: 38px 0 44px;
       }
@@ -1148,44 +1122,7 @@
         padding: 13px 22px;
         font-size: 15px;
       }
-.choice-card {
-        grid-template-columns: 62px minmax(0, 1fr);
-        gap: 10px;
-        padding: 20px;
-      }
-
-      .choice-icon {
-        width: 62px;
-        height: 62px;
-      }
-
-      .choice-icon svg {
-        width: 60px;
-        height: 60px;
-      }
-
-      .check-list {
-        margin-bottom: 16px;
-      }
-
-      .choice-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      margin-top: 18px;
-      padding: 13px 22px;
-      background: var(--navy);
-      border-radius: 4px;
-      color: var(--white);
-      font-family: var(--font-button);
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.2;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-.product-grid,
+      .product-grid,
       .scenario-grid,
       .services-grid {
         grid-template-columns: 1fr;
@@ -1255,17 +1192,6 @@
         </div>
         <div class="choice-grid">
           <article class="choice-card">
-            <div class="choice-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 31L32 14L53 31"/>
-                <path d="M16 28.5L32 16L48 28.5"/>
-                <path d="M18.5 29V50H45.5V29"/>
-                <path d="M27 50V37H37V50"/>
-                <path d="M23 34H29V40H23Z"/>
-                <path d="M35 34H41V40H35Z"/>
-                <path d="M16 50H48"/>
-              </svg>
-            </div>
             <div class="choice-body">
               <strong>Start with 12000 BTU if...</strong>
               <ul class="check-list">
@@ -1279,17 +1205,6 @@
             </div>
           </article>
           <article class="choice-card">
-            <div class="choice-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 31L30 14L56 31"/>
-                <path d="M14 29L30 16.5L50 29"/>
-                <path d="M16 29V50H50V29"/>
-                <path d="M24 50V38H33V50"/>
-                <path d="M38 35H45V41H38Z"/>
-                <path d="M50 36H56V50"/>
-                <path d="M16 50H56"/>
-              </svg>
-            </div>
             <div class="choice-body">
               <strong>Start with 18000 BTU if...</strong>
               <ul class="check-list">
