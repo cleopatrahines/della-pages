@@ -58,7 +58,7 @@
   --dc-body: "Della Compare Poppins", Arial, sans-serif;
   --dc-container: 1200px;
   --dc-gutter: 32px;
-  --dc-section: 76px;
+  --dc-section: 72px;
   --dc-radius: 4px;
   color: var(--dc-text);
   background: var(--dc-white);
@@ -90,6 +90,11 @@
 
 .della-compare__section { padding-block: var(--dc-section); }
 .della-compare__section--compact { padding-block: 56px; }
+.della-compare__section[data-section="quick-answer"] { padding: 56px 0 0; }
+.della-compare__section[data-section="project-fit"] { padding: 56px 0 0; }
+.della-compare__section[data-section="key-differences"] { padding: 72px 0 0; }
+.della-compare__section[data-section="installation-requirements"] { padding: 56px 0 0; }
+.della-compare__section[data-section="recommended-systems"] { padding: 72px 0 0; }
 .della-compare__section--soft { background: var(--dc-blue-surface); }
 .della-compare__section--cyan { background: var(--dc-trust-bg); }
 .della-compare__section-head { max-width: none; margin-bottom: 32px; text-align: left; }
@@ -142,10 +147,10 @@
 .della-compare__decision-card,
 .della-compare__install-card,
 .della-compare__closing-card { min-width: 0; border: 1px solid var(--dc-gray-200); background: var(--dc-white); }
-.della-compare__decision-card { display: grid; min-height: 340px; grid-template-columns: 38% 1fr; align-items: start; padding: 28px; }
-.della-compare__decision-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--dc-gray-50); }
-.della-compare__decision-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.della-compare__decision-copy { padding-left: 24px; }
+.della-compare__decision-card { display: grid; min-height: 250px; grid-template-columns: 42% 1fr; align-items: stretch; padding: 20px 28px 20px 0; }
+.della-compare__decision-media { position: relative; overflow: hidden; background: var(--dc-gray-50); }
+.della-compare__decision-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.della-compare__decision-copy { align-self: center; padding-left: 24px; }
 .della-compare__decision-copy h3 { min-height: 28px; margin-bottom: 10px; font-size: 22px; line-height: 1.25; }
 .della-compare__decision-copy .della-compare__checklist { grid-auto-rows: 44px; font-size: 14px; }
 .della-compare__checklist { display: grid; gap: 8px; padding: 0; list-style: none; }
@@ -184,11 +189,13 @@
 .della-compare__comparison-card dt { margin-bottom: 3px; color: var(--dc-blue-hover); font-size: 12px; font-weight: 600; }
 .della-compare__comparison-card dd { margin: 0; color: var(--dc-muted); font-size: 14px; }
 
-.della-compare__install-card { display: flex; flex-direction: column; padding: 16px; border-radius: 8px; }
+.della-compare__install-card { --dc-install-pad: 16px; --dc-install-bleed: -16px; display: flex; flex-direction: column; padding: var(--dc-install-pad); overflow: hidden; border-radius: 8px; }
 .della-compare__install-card h3 { margin-bottom: 8px; color: var(--dc-navy); font-size: 19px; line-height: 1.25; text-align: center; }
-.della-compare__diagram { display: grid; min-height: 0; aspect-ratio: 3 / 2; grid-template-rows: minmax(0, 1fr) auto; place-items: center; overflow: hidden; margin-bottom: 12px; padding: 0; background: var(--dc-white); }
-.della-compare__diagram img { width: 100%; height: 100%; min-height: 0; object-fit: cover; transform: scale(1.02); }
-.della-compare__diagram-note { margin: 2px 0 0; color: var(--dc-muted); font-size: 10px; text-align: center; }
+.della-compare__diagram { display: block; min-height: 0; margin: var(--dc-install-bleed) var(--dc-install-bleed) 12px; background: var(--dc-white); }
+.della-compare__diagram img { display: block; width: 100%; height: auto; min-height: 0; border-radius: 12px; }
+.della-compare__diagram--cassette { overflow: hidden; border-radius: 12px; }
+.della-compare__diagram--cassette img { clip-path: inset(3px round 10px); }
+.della-compare__diagram-note { margin: 8px var(--dc-install-pad) 0; color: var(--dc-muted); font-size: 10px; text-align: center; }
 .della-compare__install-card .della-compare__checklist { gap: 9px; margin: 0 10px 4px; }
 .della-compare__install-card .della-compare__checklist li { padding-left: 26px; color: var(--dc-muted); font-size: 14px; line-height: 1.35; }
 .della-compare__install-card .della-compare__checklist li::before { top: .15em; left: 0; width: 15px; height: 15px; border: 2px solid var(--dc-blue); border-radius: 50%; transform: none; }
@@ -223,7 +230,7 @@
 .della-compare__price { margin-top: auto; margin-bottom: 14px; color: var(--dc-navy); font-family: var(--dc-heading); font-size: 21px; font-weight: 700; line-height: 1.25; }
 .della-compare__price-prefix { margin-right: 4px; font-family: var(--dc-body); font-size: 12px; font-weight: 600; text-transform: uppercase; }
 
-.della-compare__services { padding-block: 52px; background: var(--dc-white); }
+.della-compare__services { padding: 56px 0 0; background: var(--dc-white); }
 .della-compare__services .della-compare__section-head { margin-bottom: 28px; }
 .della-compare__service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
 .della-compare__service-card { display: flex; min-width: 0; min-height: 142px; flex-direction: column; align-items: center; justify-content: center; padding: 10px 16px; background: var(--dc-white); text-align: center; }
@@ -231,7 +238,7 @@
 .della-compare__service-card svg { color: var(--dc-navy); }
 .della-compare__service-card h3 { margin: 0; font-family: var(--dc-body); font-size: 18px; font-weight: 400; line-height: 1.28; }
 
-.della-compare__faq { padding-top: 58px; padding-bottom: 44px; }
+.della-compare__faq { padding: 48px 0 32px; }
 .della-compare__faq .della-compare__section-head { margin-bottom: 28px; }
 .della-compare__faq-list { border-top: 1px solid var(--dc-gray-200); }
 .della-compare__faq-item { border-bottom: 1px solid var(--dc-gray-200); }
@@ -244,7 +251,7 @@
 .della-compare__faq-item[open] .della-compare__faq-icon { transform: translateY(3px) rotate(225deg); }
 .della-compare__faq-answer { max-width: none; margin: 0; padding: 0 40px 18px 0; color: var(--dc-muted); font-size: 15px; line-height: 1.7; }
 
-.della-compare__closing { padding-top: 38px; padding-bottom: 44px; background: var(--dc-blue-surface); }
+.della-compare__closing { padding: 32px 0 72px; background: var(--dc-blue-surface); }
 .della-compare__closing > .della-compare__container > .della-compare__title { margin-bottom: 28px; }
 .della-compare__closing-card { display: flex; min-height: 230px; flex-direction: column; align-items: flex-start; padding: 28px; border-color: rgba(88, 132, 231, .24); border-radius: 8px; box-shadow: 0 8px 24px rgba(14, 25, 83, .06); }
 .della-compare__closing-card h3 { margin-bottom: 16px; font-size: 24px; line-height: 1.22; }
@@ -273,15 +280,27 @@
 }
 
 @media (max-width: 767px) {
-  .della-compare { --dc-gutter: 16px; --dc-section: 52px; }
-  .della-compare__section--compact { padding-block: 44px; }
+  .della-compare { --dc-gutter: 16px; --dc-section: 48px; }
+  .della-compare__title { font-size: 28px; }
+  .della-compare__section--compact { padding-block: 40px; }
+  .della-compare__section[data-section="quick-answer"] { padding-top: 40px; }
+  .della-compare__section[data-section="project-fit"] { padding-top: 40px; }
+  .della-compare__section[data-section="key-differences"] { padding-top: 48px; }
+  .della-compare__section[data-section="installation-requirements"] { padding-top: 40px; }
+  .della-compare__section[data-section="recommended-systems"] { padding-top: 48px; }
+  .della-compare__services { padding-top: 40px; }
+  .della-compare__faq { padding: 40px 0 24px; }
+  .della-compare__closing { padding: 24px 0 48px; }
   .della-compare__section-head { margin-bottom: 24px; }
   .della-compare__lede { font-size: 16px; }
   .della-compare__hero { min-height: 0; }
   .della-compare__hero { aspect-ratio: 4 / 5; }
   .della-compare__hero-copy { width: min(100%, 620px); padding: 46px 0; }
-  .della-compare__hero-layout { min-height: 0; }
-  .della-compare__hero h1 { font-size: clamp(36px, 10vw, 44px); }
+  .della-compare__hero-layout { min-height: 100%; }
+  .della-compare__hero h1 { font-size: 32px; }
+  .della-compare__hero-copy p { font-size: 16px; }
+  .della-compare__product-card .della-compare__button { min-height: 44px; padding: 10px 12px; font-size: 14px; }
+  .della-compare__product-toolbar .della-compare__collection-cta { min-height: 44px; padding: 10px 14px; font-size: 14px; }
   .della-compare__hero-actions { flex-wrap: wrap; }
   .della-compare__quick-grid,
   .della-compare__install-grid,
@@ -289,11 +308,13 @@
   .della-compare__comparison-visuals { grid-template-columns: 1fr; }
   .della-compare__project-grid { grid-template-columns: 1fr; }
   .della-compare__decision-card { min-height: 0; grid-template-columns: 1fr; padding: 18px; }
+  .della-compare__decision-media { aspect-ratio: 4 / 3; }
+  .della-compare__decision-media img { position: static; }
   .della-compare__decision-copy { padding: 16px 0 0; }
   .della-compare__decision-copy .della-compare__checklist { grid-auto-rows: auto; }
   .della-compare__comparison-table-wrap { display: none; }
   .della-compare__comparison-cards { display: grid; gap: 12px; }
-  .della-compare__install-card { padding: 18px; }
+  .della-compare__install-card { --dc-install-pad: 18px; --dc-install-bleed: -18px; padding: var(--dc-install-pad); }
   .della-compare__service-grid { grid-template-columns: 1fr; gap: 12px; }
   .della-compare__service-card { min-height: auto; padding: 14px 10px; }
   .della-compare__service-icon { width: 40px; height: 40px; margin-bottom: 10px; }
@@ -301,7 +322,7 @@
 }
 
 @media (max-width: 430px) {
-  .della-compare__hero-copy { padding-block: 38px 28px; }
+  .della-compare__hero-copy { padding-block: 33px; }
   .della-compare__hero-actions { display: grid; grid-template-columns: 1fr; }
   .della-compare__hero-actions .della-compare__button { width: 100%; }
   .della-compare__button { width: 100%; min-height: 46px; padding-inline: 16px; }

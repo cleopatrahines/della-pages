@@ -88,9 +88,8 @@ Do not copy the mockups literally where this document defines an override.
 - Desktop side padding: 32px.
 - Tablet side padding: 24px.
 - Mobile side padding: 16px.
-- Standard desktop section padding: 72-80px.
-- Compact sections: 48-64px.
-- Mobile section padding: 48-56px, with tighter spacing for Trust, FAQ, and Bottom CTA.
+- Desktop decision-boundary rhythm: Hero -> Quick Answer 56px; Quick Answer -> Project Fit 56px; Project Fit -> Key Differences 72px; Key Differences -> Installation 56px; Installation -> Products 72px; Products -> Why Shop Della? 56px; Why Shop Della? -> FAQ 48px; FAQ -> Bottom CTA 64px (32px below FAQ + 32px above CTA).
+- Mobile decision-boundary rhythm: use 48px for normal transitions and 40px for closely related modules; FAQ -> Bottom CTA uses 48px (24px + 24px).
 - Common grid gap: 16-24px.
 - Avoid repeated heavy card shells around entire sections.
 - The five decision sections before Products should feel connected, not like isolated presentation slides.

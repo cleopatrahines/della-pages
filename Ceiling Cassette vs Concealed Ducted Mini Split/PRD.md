@@ -222,8 +222,8 @@ Required content direction:
 
 CTA labels:
 
-- `Shop Ceiling Cassette Mini Splits`
-- `Shop Concealed Ducted Mini Splits`
+- `Shop Ceiling Cassette`
+- `Shop Concealed Ducted`
 
 Hero message direction:
 
