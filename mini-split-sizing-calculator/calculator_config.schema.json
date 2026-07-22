@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dellahome.com/schemas/calculator_config.schema.json",
+  "title": "DELLA Mini Split Sizing Calculator Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "config_version",
+    "engine_version",
+    "compatible_engine_versions",
+    "compatible_product_dataset_versions",
+    "base_btu_per_sqft",
+    "minimum_base_load_btu",
+    "factors",
+    "confidence_ranges",
+    "capacity_bins_btu",
+    "complexity_rules",
+    "fallback_thresholds",
+    "climate_margins",
+    "ranking_weights",
+    "merchandising",
+    "display_policy",
+    "input_validation"
+  ],
+  "properties": {
+    "config_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "engine_version": { "type": "string", "pattern": "^della-sizing-engine-\\d+\\.\\d+\\.\\d+$" },
+    "compatible_engine_versions": {
+      "type": "array", "minItems": 1,
+      "items": { "type": "string", "pattern": "^della-sizing-engine-\\d+\\.\\d+\\.\\d+$" }
+    },
+    "compatible_product_dataset_versions": {
+      "type": "array", "minItems": 1,
+      "items": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" }
+    },
+    "base_btu_per_sqft": { "type": "number", "exclusiveMinimum": 0 },
+    "minimum_base_load_btu": { "type": "number", "exclusiveMinimum": 0 },
+    "factors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ceiling", "climate", "envelope", "sun", "internal_gains", "special_space"],
+      "properties": {
+        "ceiling": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "reference_height_ft", "minimum", "maximum", "complexity_flag_above_ft"],
+          "properties": {
+            "mode": { "const": "average_height_divided_by_8" },
+            "reference_height_ft": { "type": "number", "exclusiveMinimum": 0 },
+            "minimum": { "type": "number", "exclusiveMinimum": 0 },
+            "maximum": { "type": "number", "exclusiveMinimum": 0 },
+            "complexity_flag_above_ft": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "climate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["cold", "marine", "mixed", "hot_dry", "hot_humid"],
+          "properties": {
+            "cold": { "type": "number", "exclusiveMinimum": 0 },
+            "marine": { "type": "number", "exclusiveMinimum": 0 },
+            "mixed": { "type": "number", "exclusiveMinimum": 0 },
+            "hot_dry": { "type": "number", "exclusiveMinimum": 0 },
+            "hot_humid": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "envelope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minimum", "maximum", "insulation_delta", "airtightness_delta", "glazing_delta"],
+          "properties": {
+            "minimum": { "type": "number", "exclusiveMinimum": 0 },
+            "maximum": { "type": "number", "exclusiveMinimum": 0 },
+            "insulation_delta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["excellent", "good", "standard", "poor", "very_poor"],
+              "patternProperties": { ".*": { "type": "number" } }
+            },
+            "airtightness_delta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["very_tight", "average", "drafty", "very_drafty"],
+              "patternProperties": { ".*": { "type": "number" } }
+            },
+            "glazing_delta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["low", "average", "high", "glass_heavy"],
+              "patternProperties": { ".*": { "type": "number" } }
+            }
+          }
+        },
+        "sun": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["shaded", "average", "high_western"],
+          "patternProperties": { ".*": { "type": "number", "exclusiveMinimum": 0 } }
+        },
+        "internal_gains": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["included_occupants", "extra_occupant_btu", "kitchen_btu", "watts_to_btu", "usage_factor"],
+          "properties": {
+            "included_occupants": { "type": "integer", "minimum": 0 },
+            "extra_occupant_btu": { "type": "number", "minimum": 0 },
+            "kitchen_btu": { "type": "number", "minimum": 0 },
+            "watts_to_btu": { "type": "number", "exclusiveMinimum": 0 },
+            "usage_factor": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["continuous", "frequent", "intermittent"],
+              "patternProperties": { ".*": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 } }
+            }
+          }
+        },
+        "special_space": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sunroom_provisional_multiplier"],
+          "properties": {
+            "sunroom_provisional_multiplier": { "type": "number", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "confidence_ranges": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["high", "medium", "low"],
+      "properties": {
+        "high": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "medium": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "low": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+      }
+    },
+    "capacity_bins_btu": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": { "type": "integer", "exclusiveMinimum": 0 }
+    },
+    "complexity_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standard_max_rooms", "advanced_min_rooms", "absolute_max_rooms",
+        "single_room_review_area_sqft", "single_zone_automatic_max_btu",
+        "multi_room_review_total_btu", "small_load_review_btu", "ceiling_review_above_ft"
+      ],
+      "patternProperties": { ".*": { "type": "number", "exclusiveMinimum": 0 } }
+    },
+    "fallback_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preferred_min_capacity_ratio", "preferred_max_capacity_ratio", "conditional_max_capacity_ratio"],
+      "properties": {
+        "preferred_min_capacity_ratio": { "type": "number", "minimum": 1 },
+        "preferred_max_capacity_ratio": { "type": "number", "minimum": 1 },
+        "conditional_max_capacity_ratio": { "type": "number", "minimum": 1 }
+      }
+    },
+    "climate_margins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["winter_safety_margin_f", "summer_safety_margin_f"],
+      "patternProperties": { ".*": { "type": "number", "minimum": 0 } }
+    },
+    "ranking_weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capacity_fit", "zone_or_head_match", "climate_fit", "inventory", "efficiency"],
+      "patternProperties": { ".*": { "type": "number", "minimum": 0 } }
+    },
+    "merchandising": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_merchandising_priority", "allowed_roles"],
+      "properties": {
+        "default_merchandising_priority": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "allowed_roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["best_match", "higher_efficiency", "value_choice", "cold_climate_upgrade"] }
+        }
+      }
+    },
+    "display_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_product_cards", "mobile_cards_per_row", "allow_dynamic_roles", "load_rounding_increment_btu"],
+      "properties": {
+        "maximum_product_cards": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "mobile_cards_per_row": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "allow_dynamic_roles": { "type": "boolean" },
+        "load_rounding_increment_btu": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "input_validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_area_sqft", "confirm_area_above_sqft", "minimum_ceiling_ft", "maximum_ceiling_ft",
+        "confirm_occupants_above", "maximum_occupants",
+        "confirm_equipment_watts_above", "maximum_equipment_watts", "zip_code_pattern"
+      ],
+      "properties": {
+        "minimum_area_sqft": { "type": "number", "exclusiveMinimum": 0 },
+        "confirm_area_above_sqft": { "type": "number", "exclusiveMinimum": 0 },
+        "minimum_ceiling_ft": { "type": "number", "exclusiveMinimum": 0 },
+        "maximum_ceiling_ft": { "type": "number", "exclusiveMinimum": 0 },
+        "confirm_occupants_above": { "type": "integer", "minimum": 1 },
+        "maximum_occupants": { "type": "integer", "minimum": 1 },
+        "confirm_equipment_watts_above": { "type": "number", "exclusiveMinimum": 0 },
+        "maximum_equipment_watts": { "type": "number", "exclusiveMinimum": 0 },
+        "zip_code_pattern": { "type": "string", "minLength": 1 }
+      }
+    },
+    "notes": { "type": "object" }
+  }
+}

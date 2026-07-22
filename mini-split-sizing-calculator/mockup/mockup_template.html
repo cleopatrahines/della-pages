@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Split Sizing Calculator: Find the Right BTU | DELLA</title>
+<meta name="description" content="Use DELLA’s mini split BTU calculator to estimate the right system size for your room based on climate, square footage, ceiling height, insulation, and sun exposure.">
+<!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral/Poppins woff2. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-deep:#0B133D; --navy:#0E1952; --blue:#5884E7; --blue-link:#2440B3;
+  --box-blue:#F0F5FF; --line:#E6E6E6; --muted:#606167; --body:#1C1C1C;
+  --m-hh:#DD7A4F; --m-hd:#E8B54B; --m-mx:#8FBF7F; --m-mr:#6FA8CF; --m-cd:#33549C;
+  --serif:'Spectral',Georgia,serif; --sans:'Poppins',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--body);background:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--navy);line-height:1.2}
+a{color:var(--blue-link)}
+.sec{padding:56px 0}
+.sec-head{text-align:center;margin-bottom:30px}
+.sec-head h2{font-size:clamp(26px,3vw,36px)}
+.sec-head .sub{margin-top:8px;font-size:14px;color:var(--muted)}
+.note-line{font-size:12.5px;color:var(--muted);text-align:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 36px;border-radius:40px;font-family:var(--sans);font-weight:500;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,color .15s}
+.pill-navy{background:var(--navy);color:#fff}
+.pill-navy:hover{background:#1A2A6E}
+.pill-white{background:#fff;color:var(--navy)}
+.pill-white:hover{background:#DCE5FA}
+.pill-line{background:transparent;color:var(--navy);border-color:var(--navy)}
+.pill-line:hover{background:var(--navy);color:#fff}
+.pill:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,.tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.shell-note{background:#F5F5F5;color:#9A9A9A;font-size:11px;text-align:center;padding:7px;letter-spacing:.04em}
+.mock-ribbon{position:fixed;bottom:14px;left:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
+
+/* 1 · H1 */
+.page-head{padding:42px 0 8px;text-align:center}
+.page-head h1{font-size:clamp(30px,3.6vw,44px)}
+.page-head .note-line{margin-top:10px}
+
+/* 2 · calculator zone */
+.calc-zone{padding:26px 0 10px}
+.calc-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:8px}
+.calc-form{padding:28px 30px 32px}
+.qlabel{font-size:13px;font-weight:500;color:var(--navy)}
+.ptabs{display:flex;border-bottom:1px solid var(--line);margin:6px 0 20px}
+.tab{background:transparent;border:none;padding:9px 22px 12px;font-family:var(--sans);font-size:14px;color:var(--navy);cursor:pointer}
+.tab.active{color:var(--blue-link);text-decoration:underline;text-underline-offset:6px;font-weight:500}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px 18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;font-weight:500;color:var(--navy)}
+.field .hint{color:var(--muted);font-weight:400;font-size:11.5px}
+input[type=text],input[type=number],select{height:48px;border:1px solid #D9D9D9;border-radius:4px;padding:0 14px;font-family:var(--sans);font-size:14.5px;color:var(--body);background:#fff;width:100%}
+input:hover,select:hover{border-color:var(--navy)}
+.climate-chip{display:none;margin:12px 0 0;font-size:13px;color:var(--navy);border-left:3px solid var(--blue);padding:5px 13px;background:var(--box-blue)}
+.field-error{font-size:12px;color:#B3402E;display:none}
+details.advanced{border-top:1px solid var(--line);margin-top:20px}
+details.advanced summary{cursor:pointer;padding:14px 0;font-size:13.5px;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between}
+details.advanced summary::after{content:"+";font-size:17px;color:var(--blue-link)}
+details.advanced[open] summary::after{content:"–"}
+.advanced-body{padding:2px 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:13px 18px}
+.check-row{display:flex;align-items:center;gap:9px;font-size:13px;padding-top:2px}
+.check-row input{width:16px;height:16px;accent-color:var(--navy)}
+.calc-actions{margin-top:24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.room-list{margin-top:12px;display:none;flex-direction:column;gap:6px}
+.room-pill{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:4px;padding:9px 14px;font-size:13px;background:#FAFAFA}
+.room-pill b{color:var(--navy);font-weight:500}
+.room-pill button{background:none;border:none;color:var(--blue-link);text-decoration:underline;font-family:var(--sans);font-size:12px;cursor:pointer}
+.adv-note{display:none;font-size:12.5px;color:#7A5200;background:#FFF7E4;border-left:3px solid #E0B84E;padding:9px 14px;margin-top:12px}
+
+/* map card */
+.map-card{padding:20px 22px 18px}
+.map-card svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;justify-content:center}
+.lg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--body);border:none;background:none;cursor:pointer;padding:3px 6px;font-family:var(--sans)}
+.lg i{width:13px;height:13px;border-radius:3px;display:inline-block}
+.lg.active{outline:2px solid var(--navy);outline-offset:1px;border-radius:3px}
+
+/* result card */
+.result-card{background:var(--navy-deep);color:#fff;border-radius:8px;padding:28px 30px;margin-top:24px;text-align:center}
+.result-card .r-cap{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#8A97C6;font-weight:500}
+.r-big{font-family:var(--serif);font-size:54px;font-weight:600;color:#fff;line-height:1.08;margin:4px 0 6px}
+.r-load{font-size:14px;color:#C6CEE9}
+.r-load b{color:#fff;font-weight:600}
+.r-row{font-size:12.5px;color:#9AA6CE;margin-top:4px}
+.conf-chip{display:inline-block;margin-top:10px;padding:3px 14px;border:1px solid rgba(255,255,255,.35);border-radius:40px;font-size:11.5px;color:#fff}
+.why-box{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:12px;text-align:left}
+.why-box summary{cursor:pointer;list-style:none;font-size:13px;color:#fff;font-weight:500;text-align:center}
+.why-box summary::after{content:" +";color:#8A97C6}
+.why-box[open] summary::after{content:" –"}
+.why-box ul{list-style:none;margin-top:8px;font-size:12.5px;color:#C6CEE9;display:flex;flex-direction:column;gap:4px}
+.why-box li::before{content:"·  ";color:var(--blue)}
+.dual-path{margin-top:12px;border-left:3px solid var(--blue);padding:7px 13px;font-size:12.5px;color:#D8DEF2;background:rgba(255,255,255,.06);text-align:left}
+.result-ctas{display:flex;gap:16px;margin-top:18px;align-items:center;justify-content:center;flex-wrap:wrap}
+.rooms-result{font-size:12.5px;color:#C6CEE9;display:flex;flex-direction:column;gap:3px;margin:8px 0 4px}
+.calc-note{padding:16px 0 0}
+
+/* products */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 26px}
+.prod-card{display:flex;flex-direction:column;position:relative}
+.prod-img{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid #F0F0F0;border-radius:6px}
+.prod-img img{max-width:90%;max-height:90%;object-fit:contain}
+.role-tag{position:absolute;top:10px;left:10px;background:var(--navy-deep);color:#fff;font-size:10.5px;font-weight:500;letter-spacing:.04em;padding:4px 11px;border-radius:3px;text-transform:uppercase;z-index:2}
+.prod-title{font-family:var(--serif);font-size:14.5px;line-height:1.5;color:var(--navy);margin-top:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:65px}
+.prod-specs{font-size:11.5px;color:var(--muted);margin-top:5px}
+.prod-price{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--navy);margin-top:7px}
+.prod-volt{font-size:10.5px;color:var(--muted);line-height:1.55;margin-top:5px}
+.prod-card .pill{margin-top:13px;align-self:stretch;min-height:42px;font-size:13px}
+.prod-empty{text-align:center;padding:6px 0 0}
+.prod-empty p{font-size:14px}
+.chip-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.chip-links a{border:1px solid var(--navy);border-radius:40px;padding:9px 24px;font-size:13px;color:var(--navy);text-decoration:none}
+.chip-links a:hover{background:var(--navy);color:#fff}
+.no-match-box{max-width:640px;margin:0 auto;text-align:center;display:none}
+
+/* sizing chart */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px;background:#fff}
+th{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);background:#FAFAFA}
+td{padding:16px 20px;border-bottom:1px solid #F0F0F0;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+td:first-child{font-family:var(--serif);font-weight:600;color:var(--navy);white-space:nowrap;font-size:16px}
+.shop-link{font-weight:600;font-size:13px;color:var(--blue-link);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+/* feature box — MSFL grammar, Della skin */
+.feature-box{background:var(--box-blue);border-radius:10px;padding:40px 44px}
+.feature-box h2{font-size:clamp(22px,2.4vw,28px);text-align:center}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px;margin:22px auto 26px;max-width:880px}
+.check-item{display:flex;gap:10px;font-size:13.5px;align-items:baseline}
+.check-item::before{content:"✓";color:var(--blue-link);font-weight:600;flex:none}
+.feature-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+details.faq{border-bottom:1px solid var(--line)}
+details.faq summary{cursor:pointer;list-style:none;padding:17px 4px;font-size:14px;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;gap:16px}
+details.faq summary::after{content:"+";color:var(--navy);font-size:17px;flex:none}
+details.faq[open] summary::after{content:"–"}
+details.faq p{padding:0 4px 17px;font-size:13px;color:var(--muted)}
+
+/* trust row */
+.trust-row{display:flex;justify-content:center;gap:70px;flex-wrap:wrap;padding:36px 0;border-top:1px solid var(--line)}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:9px;font-size:12.5px;color:var(--navy);text-align:center}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@media (max-width:960px){
+  .calc-grid,.faq-grid,.check-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:1fr 1fr;gap:26px 16px}
+  .sec{padding:42px 0}
+  .container{padding:0 16px}
+  .trust-row{gap:30px}
+  .feature-box{padding:30px 22px}
+}
+@media (max-width:560px){
+  .field-grid,.advanced-body{grid-template-columns:1fr}
+  .r-big{font-size:44px}
+  .calc-form{padding:20px 16px 26px}
+  .prod-title{font-size:12.5px;min-height:56px}
+  .prod-card .pill{padding:8px 10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="shell-note">Theme shell placeholder — the live page keeps the standard Barrel header, announcement bar, and footer</div>
+
+<!-- 1 · H1 (MSFL grammar) -->
+<header class="page-head">
+  <div class="container">
+    <h1>Mini Split Sizing Calculator</h1>
+    <p class="note-line">* Estimate your BTU cooling load from room size, climate, insulation, and sun — then see matching in-stock DELLA systems. Free, no signup.</p>
+  </div>
+</header>
+
+<!-- 2 · calculator: form left, map + result right -->
+<section class="calc-zone" id="calculator">
+  <div class="container">
+    <div class="calc-grid">
+
+      <form class="panel calc-form" id="calcForm" autocomplete="off" onsubmit="return false">
+        <span class="qlabel">What are you sizing?</span>
+        <div class="ptabs" role="tablist" aria-label="Project type">
+          <button type="button" class="tab active" id="ptOne" role="tab" aria-selected="true" onclick="setProjectType('one')">One Room</button>
+          <button type="button" class="tab" id="ptMulti" role="tab" aria-selected="false" onclick="setProjectType('multi')">Multiple Rooms</button>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" inputmode="numeric" maxlength="5" placeholder="e.g. 40202" aria-describedby="zipErr" onblur="resolveZip()" oninput="if(this.value.length===5)resolveZip()">
+            <span class="field-error" id="zipErr">Enter a valid 5-digit ZIP Code.</span>
+          </div>
+          <div class="field">
+            <label for="intent">Primary heat source?</label>
+            <select id="intent">
+              <option value="cooling">No, mainly cooling</option>
+              <option value="primary">Yes, primary heating and cooling</option>
+              <option value="supplemental">Supplemental heating only</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="field" id="roomNameWrap" style="display:none">
+            <label for="roomName">Room name <span class="hint">(optional)</span></label>
+            <input type="text" id="roomName" placeholder="e.g. Living room">
+          </div>
+          <div class="field">
+            <label for="sqft">Space area (sq. ft.)</label>
+            <input type="number" id="sqft" min="20" max="4000" placeholder="e.g. 450" aria-describedby="sqftErr">
+            <span class="field-error" id="sqftErr">Enter the room area in square feet (20 or more).</span>
+          </div>
+          <div class="field">
+            <label for="ceiling">Ceiling height</label>
+            <select id="ceiling">
+              <option value="8" selected>8 ft (standard)</option>
+              <option value="7">7 ft</option>
+              <option value="9">9 ft</option>
+              <option value="10">10 ft</option>
+              <option value="11">11 ft</option>
+              <option value="12">12 ft</option>
+              <option value="13">Over 12 ft (use the average)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="insulation">Insulation grade</label>
+            <select id="insulation">
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="standard" selected>Standard</option>
+              <option value="poor">Poor</option>
+              <option value="very_poor">Very poor / uninsulated</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sun">Sun exposure</label>
+            <select id="sun">
+              <option value="shaded">Heavily shaded</option>
+              <option value="average" selected>Average</option>
+              <option value="high_western">Strong / western exposure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="glazing">Amount of windows</label>
+            <select id="glazing">
+              <option value="low">Few</option>
+              <option value="average" selected>Average</option>
+              <option value="high">Many</option>
+              <option value="glass_heavy">Glass-heavy / floor-to-ceiling</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="occupants">How many occupants?</label>
+            <select id="occupants">
+              <option value="2" selected>2 or less</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6+</option>
+            </select>
+          </div>
+        </div>
+        <div class="climate-chip" id="climateChip" aria-live="polite"></div>
+        <div class="field" id="manualRegionWrap" style="display:none;margin-top:10px">
+          <label for="manualRegion">We couldn’t find that ZIP. Choose your region (or click the map):</label>
+          <select id="manualRegion" onchange="setManualRegion()">
+            <option value="">Select a region…</option>
+            <option value="hot_humid">Hot &amp; humid</option>
+            <option value="hot_dry">Hot &amp; dry</option>
+            <option value="mixed">Mixed / moderate</option>
+            <option value="marine">Marine</option>
+            <option value="cold">Cold / very cold</option>
+          </select>
+        </div>
+
+        <details class="advanced">
+          <summary onclick="track('advanced_factors_opened',{})">Advanced factors — air tightness, kitchen, extra equipment</summary>
+          <div class="advanced-body">
+            <div class="field">
+              <label for="airtightness">Windows &amp; doors air tightness</label>
+              <select id="airtightness">
+                <option value="very_tight">Very tight</option>
+                <option value="average" selected>Average</option>
+                <option value="drafty">Drafty</option>
+                <option value="very_drafty">Very drafty</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="unitPref">Preferred indoor unit type</label>
+              <select id="unitPref">
+                <option value="wall_mounted" selected>Wall-mounted</option>
+                <option value="ceiling_cassette">Ceiling cassette</option>
+                <option value="concealed_ducted">Concealed ducted</option>
+                <option value="floor_mounted">Floor / ceiling</option>
+                <option value="">Not sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="watts">Extra device heat wattage (W)</label>
+              <input type="number" id="watts" min="0" max="15000" placeholder="0">
+            </div>
+            <div class="field">
+              <label for="usage">Equipment usage</label>
+              <select id="usage">
+                <option value="continuous">Continuous</option>
+                <option value="frequent">Frequent</option>
+                <option value="intermittent" selected>Intermittent</option>
+              </select>
+            </div>
+            <label class="check-row"><input type="checkbox" id="kitchen"> Is there a kitchen?</label>
+            <label class="check-row"><input type="checkbox" id="sunroom"> Glass room / sunroom</label>
+            <label class="check-row"><input type="checkbox" id="garage"> Garage with frequent door opening</label>
+            <label class="check-row"><input type="checkbox" id="stairs"> Open stairs / connected upper floor</label>
+          </div>
+        </details>
+
+        <div class="room-list" id="roomList" aria-live="polite"></div>
+        <div class="adv-note" id="advNote">Five- and six-room projects are Advanced: fewer exact pre-configured bundles exist, and your project may need multiple systems or DELLA support review.</div>
+
+        <div class="calc-actions">
+          <button class="pill pill-navy" id="calcBtn" onclick="onCalculate()">Calculate BTU</button>
+          <button class="pill pill-line" id="addRoomBtn" style="display:none" onclick="onAddRoom()">Save &amp; Add Another Room</button>
+        </div>
+      </form>
+
+      <div>
+        <div class="panel map-card">
+          __US_MAP_SVG__
+          <div class="legend" role="group" aria-label="Climate regions">
+            <button class="lg" data-region="hot_humid" onclick="legendPick('hot_humid')"><i style="background:var(--m-hh)"></i>Hot &amp; Humid</button>
+            <button class="lg" data-region="hot_dry" onclick="legendPick('hot_dry')"><i style="background:var(--m-hd)"></i>Hot &amp; Dry</button>
+            <button class="lg" data-region="mixed" onclick="legendPick('mixed')"><i style="background:var(--m-mx)"></i>Mixed</button>
+            <button class="lg" data-region="marine" onclick="legendPick('marine')"><i style="background:var(--m-mr)"></i>Marine</button>
+            <button class="lg" data-region="cold" onclick="legendPick('cold')"><i style="background:var(--m-cd)"></i>Cold</button>
+          </div>
+        </div>
+
+        <div class="result-card" id="resultCard" aria-live="polite" aria-label="Sizing result">
+          <div id="resultBody">
+            <div class="r-cap">Recommended capacity</div>
+            <div class="r-big">—</div>
+            <div class="r-load">Estimated cooling load: <b>—</b></div>
+            <div class="r-row">Fill in your room and press Calculate BTU.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- 3 · disclaimer line (Pioneer grammar) -->
+    <p class="note-line calc-note">* This calculator is meant to be used as a general sizing guide only. It does not replace a professional Manual J load calculation. Electrical requirements vary by model — confirm voltage on the product page.</p>
+  </div>
+</section>
+
+<!-- 4 · matching products -->
+<section class="sec" id="matching">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Matching DELLA Systems</h2>
+      <div class="sub" id="matchSub">Calculate above and we’ll show only in-stock systems that fit your load and climate.</div>
+    </div>
+    <div class="prod-empty" id="prodEmpty">
+      <div class="chip-links">
+        <a href="https://dellahome.com/collections/9000-btu-mini-split">9,000 BTU</a>
+        <a href="https://dellahome.com/collections/12000-btu-mini-split">12,000 BTU</a>
+        <a href="https://dellahome.com/collections/18000-btu-mini-split">18,000 BTU</a>
+        <a href="https://dellahome.com/collections/24000-btu-mini-split">24,000 BTU</a>
+        <a href="https://dellahome.com/collections/36000-btu-mini-split">36,000 BTU</a>
+      </div>
+    </div>
+    <div class="prod-grid" id="prodGrid" style="display:none"></div>
+    <div class="no-match-box" id="noMatchBox"></div>
+  </div>
+</section>
+
+<!-- 5 · sizing chart (TheTradeTable grammar) -->
+<section class="sec" id="sizing-chart" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Mini Split Sizing Chart by Room Size</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">BTU capacity</th><th scope="col">Square feet</th><th scope="col">Typical spaces</th><th scope="col"></th></tr></thead>
+        <tbody>
+          <tr><td>9,000 BTU</td><td>Up to 450 sq. ft.</td><td>Bedroom, home office, small den</td><td><a class="shop-link" href="https://dellahome.com/collections/9000-btu-mini-split">Shop 9K →</a></td></tr>
+          <tr><td>12,000 BTU</td><td>450 – 600 sq. ft.</td><td>Large bedroom, studio, garage bay</td><td><a class="shop-link" href="https://dellahome.com/collections/12000-btu-mini-split">Shop 12K →</a></td></tr>
+          <tr><td>18,000 BTU</td><td>600 – 900 sq. ft.</td><td>Living room, open kitchen-diner</td><td><a class="shop-link" href="https://dellahome.com/collections/18000-btu-mini-split">Shop 18K →</a></td></tr>
+          <tr><td>24,000 BTU</td><td>900 – 1,200 sq. ft.</td><td>Great room, large apartment zone</td><td><a class="shop-link" href="https://dellahome.com/collections/24000-btu-mini-split">Shop 24K →</a></td></tr>
+          <tr><td>36,000 BTU</td><td>1,200 – 1,500 sq. ft.</td><td>Open-plan main floor, workshop</td><td><a class="shop-link" href="https://dellahome.com/collections/36000-btu-mini-split">Shop 36K →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note-line" style="margin-top:12px">Reference values for 8-ft ceilings and standard insulation. Multiple rooms? Size each room separately, then match a <a href="https://dellahome.com/collections/mini-split-multi-zone">multi-zone bundle</a>.</p>
+  </div>
+</section>
+
+<!-- 6 · feature box (MSFL grammar, Della skin) -->
+<section class="sec" style="padding-top:16px">
+  <div class="container">
+    <div class="feature-box">
+      <h2>What Changes Your Mini Split BTU Requirement?</h2>
+      <div class="check-grid">
+        <span class="check-item">Climate — your ZIP adjusts the load and filters cold-rated series</span>
+        <span class="check-item">Ceiling height — more air volume needs more capacity</span>
+        <span class="check-item">Insulation &amp; air tightness — leaky rooms need up to 30% more</span>
+        <span class="check-item">Sun &amp; glass — strong western sun adds real load</span>
+        <span class="check-item">People, kitchen &amp; equipment — internal heat adds BTU on top</span>
+        <span class="check-item">Between two sizes? You get both paths, never a forced upsize</span>
+      </div>
+      <div class="feature-actions">
+        <a class="pill pill-navy" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
+        <a class="pill pill-line" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · FAQ -->
+<section class="sec" id="faq" style="padding-top:8px">
+  <div class="container">
+    <div class="sec-head"><h2>Mini Split Sizing Calculator FAQs</h2></div>
+    <div class="faq-grid">
+      <details class="faq"><summary>How accurate is this mini split calculator?</summary><p>It uses the same room factors professionals start with — area, climate, ceiling height, insulation, sun, glass, and internal heat — and shows an estimated range with a confidence level. Complex spaces are flagged for review instead of forced into a single number.</p></details>
+      <details class="faq"><summary>Is this the same as an HVAC load calculator?</summary><p>It provides a practical pre-purchase estimate of your room’s HVAC cooling load. It does not replace a professional Manual J calculation for complex or whole-home projects.</p></details>
+      <details class="faq"><summary>Should I size up to be safe?</summary><p>Usually no. An oversized mini split short-cycles: it cools fast but removes less humidity and wastes energy. We recommend at most 15% above your estimated load and tell you when a bigger step-up is the only in-stock option.</p></details>
+      <details class="faq"><summary>Can I calculate multiple rooms?</summary><p>Yes. Choose “Multiple Rooms,” size each room separately, and we match your combination against DELLA’s pre-configured multi-zone bundles — up to six rooms and 55,000 BTU.</p></details>
+      <details class="faq"><summary>Does my climate affect mini split size?</summary><p>Twice. Hot-humid climates raise the cooling load, and cold winters narrow which DELLA series can heat reliably. Your ZIP Code handles both automatically.</p></details>
+      <details class="faq"><summary>What if my result falls between two sizes?</summary><p>You’ll see both paths and the conditions that favor each — for example, take the larger size with strong western sun or frequent guests. Never a falsely precise single answer.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · trust row -->
+<div class="container">
+  <div class="trust-row">
+    <div class="trust-item"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M1 4h9v8H1zM10 7h3l2 2v3h-5z" stroke="#0E1952" stroke-width="1.1"/></svg>Free &amp; Fast Shipping</div>
+    <div class="trust-item"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l5.5 2v4c0 3.4-2.3 6-5.5 7-3.2-1-5.5-3.6-5.5-7v-4z" stroke="#0E1952" stroke-width="1.1"/></svg>Lifetime Parts Coverage</div>
+    <div class="trust-item"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1112 0v3a2 2 0 01-2 2H9" stroke="#0E1952" stroke-width="1.1"/></svg>24/7 Live Support</div>
+    <div class="trust-item"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M3 13l2.5-6L11 4l-2.5 6L3 13z" stroke="#0E1952" stroke-width="1.1"/></svg>Installer Support</div>
+  </div>
+</div>
+
+<div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
+<div class="mock-ribbon">MOCKUP v4 · engine 1.0.0 · trust copy pending approval</div>
+
+<script>
+/* ============ injected data (build-time) ============ */
+const CFG = __INJECT_CONFIG__;
+const CATALOG = __INJECT_CATALOG__;
+const CLIMATE = __INJECT_CLIMATE__;
+const STATE_CLIMATE = __INJECT_STATE_CLIMATE__;
+
+function track(ev, data){ (window.dataLayer = window.dataLayer||[]).push({event:ev, ...data}); }
+const REGION_NAMES = {hot_humid:'Hot & humid', hot_dry:'Hot & dry', mixed:'Mixed', marine:'Marine', cold:'Cold'};
+
+/* ============ climate ============ */
+let climate = null;
+function highlightLegend(type){
+  document.querySelectorAll('.lg').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
+}
+function resolveZip(){
+  const el = document.getElementById('zip');
+  const err = document.getElementById('zipErr');
+  const chip = document.getElementById('climateChip');
+  const manual = document.getElementById('manualRegionWrap');
+  const z = el.value.trim();
+  if(!/^\d{5}$/.test(z)){ err.style.display = z ? 'block':'none'; chip.style.display='none'; return; }
+  err.style.display='none';
+  const rec = CLIMATE.exact[z] || CLIMATE.prefix3[z.slice(0,3)];
+  if(!rec){ climate=null; chip.style.display='none'; manual.style.display='block'; return; }
+  manual.style.display='none';
+  const [code, tcode] = rec.split(':');
+  const zone = CLIMATE.zones[code];
+  climate = { type: CLIMATE.types[tcode], code, winter: zone.winter_design_temp_f, summer: zone.summer_design_temp_f, source:'zip' };
+  chip.innerHTML = `<b>${REGION_NAMES[climate.type]} climate</b> — winter design ${climate.winter}°F, summer design ${climate.summer}°F (ZIP ${z})`;
+  chip.style.display='block';
+  highlightLegend(climate.type);
+  track('zip_resolved',{climate:climate.type});
+}
+function setRegion(type, sourceLabel){
+  climate = { type, code:null, winter:null, summer:null, source:'manual' };
+  const chip = document.getElementById('climateChip');
+  chip.innerHTML = `<b>${REGION_NAMES[type]} region set ${sourceLabel}.</b> Enter a ZIP for design-temperature checks.`;
+  chip.style.display='block';
+  document.getElementById('manualRegionWrap').style.display='none';
+  highlightLegend(type);
+}
+function setManualRegion(){
+  const v = document.getElementById('manualRegion').value;
+  if(v) setRegion(v, 'manually');
+}
+function legendPick(type){ setRegion(type, 'from the legend'); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  const map=document.getElementById('usClimateMap');
+  if(!map) return;
+  map.addEventListener('click', e=>{
+    const el=e.target.closest('[class]');
+    if(!el) return;
+    for(const cls of el.classList){
+      if(STATE_CLIMATE[cls]){ setRegion(STATE_CLIMATE[cls], 'from the map ('+cls.toUpperCase()+')'); return; }
+    }
+  });
+});
+
+/* ============ engine (port of della-sizing-engine-1.0.0) ============ */
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const rd=v=>Math.round(v/CFG.display_policy.load_rounding_increment_btu)*CFG.display_policy.load_rounding_increment_btu;
+
+function roomLoad(room, climateType){
+  const f=CFG.factors;
+  const base=Math.max(CFG.minimum_base_load_btu, room.sqft*CFG.base_btu_per_sqft);
+  const ceil=clamp(room.ceiling/f.ceiling.reference_height_ft, f.ceiling.minimum, f.ceiling.maximum);
+  const cf=f.climate[climateType];
+  const env=clamp(1+f.envelope.insulation_delta[room.insulation]+f.envelope.airtightness_delta[room.airtightness]+f.envelope.glazing_delta[room.glazing], f.envelope.minimum, f.envelope.maximum);
+  const sun=f.sun[room.sun];
+  const ig=f.internal_gains;
+  const people=Math.max(0,room.occupants-ig.included_occupants)*ig.extra_occupant_btu;
+  const kitchen=room.kitchen?ig.kitchen_btu:0;
+  const equip=room.watts? room.watts*ig.watts_to_btu*ig.usage_factor[room.usage] : 0;
+  let point=base*ceil*cf*env*sun+people+kitchen+equip;
+  const flags=[];
+  if(room.sunroom){ point*=f.special_space.sunroom_provisional_multiplier; flags.push('sunroom'); }
+  if(room.ceiling>CFG.complexity_rules.ceiling_review_above_ft) flags.push('ceiling over 12 ft');
+  if(room.sqft>CFG.complexity_rules.single_room_review_area_sqft) flags.push('large open space');
+  if(room.glazing==='glass_heavy') flags.push('glass-heavy room');
+  if(room.garage) flags.push('garage door use');
+  if(room.stairs) flags.push('open stairs');
+  const conf = flags.length? 'low' : (room.defaulted? 'medium':'high');
+  const band = CFG.confidence_ranges[conf];
+  return {base, ceil, cf, env, sun, people, kitchen, equip, point, lower:point*(1-band), upper:point*(1+band), conf, flags};
+}
+function binLabel(q){
+  if(q>CFG.complexity_rules.single_zone_automatic_max_btu) return null;
+  if(q<CFG.complexity_rules.small_load_review_btu) return 'below';
+  for(const b of CFG.capacity_bins_btu) if(q<=b) return b;
+  return null;
+}
+function climateOk(minF,maxF){
+  if(!climate || climate.source==='manual' || climate.summer==null) return true;
+  if(maxF < climate.summer + CFG.climate_margins.summer_safety_margin_f) return false;
+  const intent=document.getElementById('intent').value;
+  if(intent==='primary' && minF > climate.winter - CFG.climate_margins.winter_safety_margin_f) return false;
+  return true;
+}
+function singleCandidates(q, unitPref){
+  const pm=CFG.fallback_thresholds.preferred_max_capacity_ratio, cm=CFG.fallback_thresholds.conditional_max_capacity_ratio;
+  const out=[];
+  for(const p of CATALOG.single){
+    if(unitPref && p.unit!==unitPref) continue;
+    if(!climateOk(p.minF,p.maxF)) continue;
+    const r=p.btu/q;
+    if(p.btu<q || r>cm) continue;
+    const capFit=clamp(1-(r-1)/(cm-1),0,1);
+    const score=40*capFit+25+20+10+5*clamp((p.seer2||0)/25,0,1);
+    out.push({...p, ratio:r, status:r<=pm?'preferred':'step_up', score});
+  }
+  out.sort((a,b)=>b.score-a.score || (a.h<b.h?-1:1));
+  return out;
+}
+
+/* ============ UI state ============ */
+let projectType='one';
+let rooms=[];
+function setProjectType(t){
+  projectType=t;
+  document.getElementById('ptOne').classList.toggle('active',t==='one');
+  document.getElementById('ptMulti').classList.toggle('active',t==='multi');
+  document.getElementById('ptOne').setAttribute('aria-selected',t==='one');
+  document.getElementById('ptMulti').setAttribute('aria-selected',t==='multi');
+  document.getElementById('roomNameWrap').style.display = t==='multi'?'flex':'none';
+  document.getElementById('addRoomBtn').style.display = t==='multi'?'inline-flex':'none';
+  document.getElementById('roomList').style.display = t==='multi'?'flex':'none';
+  document.getElementById('calcBtn').textContent = t==='multi'?'Calculate System':'Calculate BTU';
+  track('project_type_selected',{type:t});
+}
+function readRoomForm(){
+  const sqft=parseFloat(document.getElementById('sqft').value);
+  const sErr=document.getElementById('sqftErr');
+  if(!sqft || sqft<CFG.input_validation.minimum_area_sqft){ sErr.style.display='block'; return null; }
+  sErr.style.display='none';
+  const watts=parseFloat(document.getElementById('watts').value)||0;
+  if(watts>CFG.input_validation.confirm_equipment_watts_above){
+    if(!confirm(`You entered ${watts} watts of equipment heat — that’s unusually high for one room. Keep it?`)) return null;
+  }
+  if(sqft>CFG.input_validation.confirm_area_above_sqft){
+    if(!confirm(`${sqft} sq. ft. is a very large single room. Continue with a provisional estimate?`)) return null;
+  }
+  return {
+    name: document.getElementById('roomName').value.trim() || `Room ${rooms.length+1}`,
+    sqft, ceiling: parseFloat(document.getElementById('ceiling').value),
+    insulation: document.getElementById('insulation').value,
+    sun: document.getElementById('sun').value,
+    glazing: document.getElementById('glazing').value,
+    occupants: parseInt(document.getElementById('occupants').value,10),
+    airtightness: document.getElementById('airtightness').value,
+    watts, usage: document.getElementById('usage').value,
+    kitchen: document.getElementById('kitchen').checked,
+    sunroom: document.getElementById('sunroom').checked,
+    garage: document.getElementById('garage').checked,
+    stairs: document.getElementById('stairs').checked,
+    defaulted:false,
+  };
+}
+function requireClimate(){
+  if(climate) return true;
+  resolveZip();
+  if(climate) return true;
+  document.getElementById('zipErr').textContent='Enter your ZIP Code (or click your state on the map) so we can adjust for climate.';
+  document.getElementById('zipErr').style.display='block';
+  document.getElementById('zip').focus();
+  return false;
+}
+function onAddRoom(){
+  if(!requireClimate()) return;
+  const room=readRoomForm(); if(!room) return;
+  if(rooms.length>=CFG.complexity_rules.absolute_max_rooms){ alert('This calculator supports up to six rooms. For larger projects, contact DELLA support.'); return; }
+  if(rooms.length+1>=CFG.complexity_rules.advanced_min_rooms) document.getElementById('advNote').style.display='block';
+  rooms.push(room);
+  renderRoomList();
+  document.getElementById('roomName').value=''; document.getElementById('sqft').value='';
+  track('room_added',{count:rooms.length});
+}
+function removeRoom(i){ rooms.splice(i,1); renderRoomList(); if(rooms.length<CFG.complexity_rules.advanced_min_rooms-1) document.getElementById('advNote').style.display='none'; }
+function renderRoomList(){
+  const el=document.getElementById('roomList');
+  el.innerHTML=rooms.map((r,i)=>{
+    const res=roomLoad(r,climate.type);
+    return `<div class="room-pill"><span><b>${r.name}</b> · ${r.sqft} sq ft → ${fmt(rd(res.point))} BTU/h</span><button onclick="removeRoom(${i})" aria-label="Remove ${r.name}">Remove</button></div>`;
+  }).join('');
+}
+
+/* ============ result rendering ============ */
+function confChip(c){ return `<span class="conf-chip">${c[0].toUpperCase()+c.slice(1)} confidence · ±${Math.round(CFG.confidence_ranges[c]*100)}%</span>`; }
+function whyList(res, room){
+  const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
+  if(res.cf!==1) items.push(`${REGION_NAMES[climate.type]} climate ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
+  if(res.ceil!==1) items.push(`${room.ceiling} ft ceilings ${res.ceil>1?'add':'trim'} ${Math.abs(Math.round((res.ceil-1)*100))}%`);
+  if(res.env!==1) items.push(`Envelope (insulation, air, glass) ${res.env>1?'adds':'trims'} ${Math.abs(Math.round((res.env-1)*100))}%`);
+  if(res.sun!==1) items.push(`Sun exposure ${res.sun>1?'adds':'trims'} ${Math.abs(Math.round((res.sun-1)*100))}%`);
+  if(res.people) items.push(`Extra occupants add ${fmt(res.people)} BTU/h`);
+  if(res.kitchen) items.push(`Kitchen adds ${fmt(res.kitchen)} BTU/h`);
+  if(res.equip) items.push(`Equipment adds ${fmt(res.equip)} BTU/h`);
+  return items.map(i=>`<li>${i}</li>`).join('');
+}
+
+function onCalculate(){
+  if(!requireClimate()) return;
+  if(projectType==='one'){ calcSingle(); } else { calcMulti(); }
+}
+
+function calcSingle(){
+  const room=readRoomForm(); if(!room) return;
+  const res=roomLoad(room,climate.type);
+  const q=res.point, bin=binLabel(q);
+  const unitPref=document.getElementById('unitPref').value;
+  const body=document.getElementById('resultBody');
+  let html='';
+  const crosses = CFG.capacity_bins_btu.some(b=>res.lower<=b && b<res.upper);
+
+  if(bin===null){
+    html=`<div class="r-cap">Recommended capacity</div>
+    <div class="r-big" style="font-size:28px;line-height:1.25;padding:10px 0 4px">Professional review</div>
+    <div class="r-load">Estimated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>${confChip(res.conf)}
+    <div class="dual-path">This space exceeds the automatic single-zone range (36,000 BTU/h). Consider two indoor units, separate zones, or a professional sizing review.</div>
+    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/mini-split-multi-zone">Explore Multi-Zone</a></div>`;
+    renderProducts([],null,'above');
+  } else if(bin==='below'){
+    html=`<div class="r-cap">Recommended capacity</div>
+    <div class="r-big">9,000 BTU</div>
+    <div class="r-row" style="margin-top:0">Smallest DELLA option — your estimated need is below 9,000 BTU</div>
+    <div class="r-load" style="margin-top:8px">Estimated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>${confChip(res.conf)}
+    <div class="dual-path">A 9K unit will cool this space, but check that it can run low enough for steady comfort — our team can confirm the right fit before you buy.</div>
+    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/9000-btu-mini-split">Find Matching Products</a></div>`;
+    renderProducts([],null,'below');
+  } else {
+    const cands=singleCandidates(q,unitPref);
+    const best=cands.length?cands.find(c=>c.minF===Math.max(...cands.map(x=>x.minF))):null;
+    const showBin = best? best.btu : bin;
+    html=`<div class="r-cap">Recommended capacity</div>
+    <div class="r-big">${fmt(showBin)} BTU</div>
+    <div class="r-load">Estimated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>
+    ${confChip(res.conf)}
+    <div class="r-row" style="margin-top:9px">${climate.source==='zip' ? `Climate fit: series rated for your area${document.getElementById('intent').value==='primary'?' and winter design '+climate.winter+'°F':''}` : 'Region set manually — matches are not climate-confirmed'}</div>
+    <details class="why-box"><summary>Why this size?</summary><ul>${whyList(res,room)}</ul></details>`;
+    if(best && best.status==='step_up') html+=`<div class="dual-path">Capacity step-up due to available equipment sizes: the closest in-stock unit is ${fmt(best.btu)} BTU (${Math.round((best.ratio-1)*100)}% above your load).</div>`;
+    if(crosses) html+=`<div class="dual-path">Your range crosses a size boundary. The smaller size fits a well-shaded, well-insulated room; take the larger one with strong western sun, weaker insulation, or frequent guests.</div>`;
+    if(res.flags.length) html+=`<div class="dual-path">Flagged for review: ${res.flags.join(', ')}. We recommend confirming with DELLA support before purchase.</div>`;
+    html+=`<div class="result-ctas"><a class="pill pill-white" href="#matching">Find Matching Products</a></div>`;
+    renderProducts(cands,q,'ok');
+  }
+  body.innerHTML=html;
+  track('btu_calculator_completed',{type:'one'});
+  track('result_viewed',{});
+}
+
+function renderProducts(cands,q,state){
+  const grid=document.getElementById('prodGrid'), empty=document.getElementById('prodEmpty'), nm=document.getElementById('noMatchBox'), sub=document.getElementById('matchSub');
+  nm.style.display='none';
+  if(state!=='ok' || !cands.length){
+    grid.style.display='none';
+    if(state==='ok'){
+      empty.style.display='none'; nm.style.display='block';
+      nm.innerHTML=`<h3 style="font-size:22px">No exact in-stock match right now</h3><p style="margin-top:10px;font-size:13.5px;color:var(--muted)">No ${climate&&document.getElementById('intent').value==='primary'?'cold-climate ':''}product currently fits your load within our safe sizing rules (up to 25% above your estimate). We won’t oversize your room automatically.</p>
+      <div class="chip-links"><a href="https://dellahome.com/collections/mini-split-single-zone">View All Single-Zone</a><a href="https://dellahome.com/pages/contact-us">Contact DELLA Support</a></div>`;
+    } else { empty.style.display='block'; }
+    return;
+  }
+  empty.style.display='none'; grid.style.display='grid';
+  /* No forced upgrade: best match = mildest qualifying series. */
+  const mildest=Math.max(...cands.map(c=>c.minF));
+  const best=cands.find(c=>c.minF===mildest);
+  const roles=new Map([[best.h,'Best Match']]);
+  const eff=cands.find(c=>!roles.has(c.h) && (c.seer2||0)>(best.seer2||0));
+  if(eff) roles.set(eff.h,'Higher Efficiency');
+  const val=cands.filter(c=>!roles.has(c.h)&&c.price).sort((a,b)=>a.price-b.price)[0];
+  if(val && best.price && val.price<best.price) roles.set(val.h,'Value Choice');
+  const cold=cands.find(c=>!roles.has(c.h)&&c.minF<best.minF);
+  if(cold) roles.set(cold.h,'Cold Climate Upgrade');
+  const ordered=[best, ...cands.filter(c=>roles.has(c.h)&&c.h!==best.h), ...cands.filter(c=>!roles.has(c.h))].slice(0,CFG.display_policy.maximum_product_cards);
+  sub.textContent=`Matched to your estimated load of ${fmt(rd(q))} BTU/h${climate.source==='zip'?' and your local climate':''} — in stock now.`;
+  grid.innerHTML=ordered.map(p=>{
+    const role=roles.get(p.h);
+    return `<div class="prod-card">
+      <div class="prod-img">${role?`<span class="role-tag">${role}</span>`:''}<img src="${p.img}" alt="${p.t}" loading="lazy"></div>
+      <div class="prod-title">${p.t}</div>
+      <div class="prod-specs">${fmt(p.btu)} BTU${p.seer2?` · SEER2 ${p.seer2}`:''} · ${p.series} · ${p.minF}°F to ${p.maxF}°F</div>
+      ${p.price?`<div class="prod-price">$${p.price.toLocaleString('en-US',{minimumFractionDigits:2})}</div>`:''}
+      <div class="prod-volt">${p.volt?`Voltage: ${p.volt}`:'Voltage varies by model — confirm on the product page.'}</div>
+      <a class="pill pill-navy" href="https://dellahome.com/products/${p.h}" onclick="track('matching_product_clicked',{handle:'${p.h}'})">View Product</a>
+    </div>`;
+  }).join('');
+}
+
+function calcMulti(){
+  const draft=document.getElementById('sqft').value ? readRoomForm() : null;
+  if(draft) { rooms.push(draft); renderRoomList(); document.getElementById('sqft').value=''; }
+  if(rooms.length<2){ alert('Add at least two rooms (save each with “Save & Add Another Room”), or switch to One Room.'); return; }
+  const results=rooms.map(r=>({room:r, res:roomLoad(r,climate.type)}));
+  const heads=results.map(x=>{ for(const b of CFG.capacity_bins_btu.slice(0,-1)) if(x.res.point<=b) return b; return null; });
+  const total=results.reduce((s,x)=>s+x.res.point,0);
+  const body=document.getElementById('resultBody');
+  const roomsHtml=`<div class="rooms-result">${results.map((x,i)=>`<span><b style="color:#fff">${x.room.name}</b> — ${fmt(rd(x.res.point))} BTU/h → ${heads[i]?fmt(heads[i])+' BTU head':'over bundle range'}</span>`).join('')}</div>`;
+
+  if(heads.some(h=>h===null) || total>CFG.complexity_rules.multi_room_review_total_btu){
+    body.innerHTML=`<div class="r-cap">Your rooms (${rooms.length})</div>${roomsHtml}
+    <div class="r-load">Total estimated load: <b>${fmt(rd(total))} BTU/h</b></div>
+    <div class="dual-path">${heads.some(h=>h===null)?'One of your rooms needs more capacity than any bundled indoor head (24,000 BTU).':'Your total exceeds the largest DELLA multi-zone system (55,000 BTU).'} The right plan is usually two systems. Our team will map it free of charge.</div>
+    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/pages/contact-us">Plan My System With DELLA</a></div>`;
+    renderProducts([],null,'multi-review'); return;
+  }
+  const key=heads.slice().sort((a,b)=>a-b).join('-');
+  const bundle=CATALOG.multi[key];
+  const bundleOk=bundle && climateOk(bundle.minF,bundle.maxF);
+  let html=`<div class="r-cap">Recommended configuration</div>
+  <div class="r-big" style="font-size:36px">${heads.slice().sort((a,b)=>a-b).map(h=>h/1000+'K').join(' + ')}</div>
+  <div class="r-load">Total estimated load: <b>${fmt(rd(total))} BTU/h</b></div>${roomsHtml}`;
+  if(bundleOk){
+    html+=`<div class="dual-path">Exact pre-configured bundle available${bundle.n>1?` (${bundle.n} in-stock options)`:''} — one outdoor unit, ${heads.length} indoor heads, validated by DELLA.</div>
+    <div class="result-ctas"><a class="pill pill-white" href="#matching">Find Matching Products</a></div>`;
+    renderMultiProducts(key);
+  } else {
+    html+=`<div class="dual-path">No ${bundle?'climate-qualified ':''}exact bundle for this room combination. We won’t force one by resizing your rooms. Compare multiple single-zone systems, or let DELLA support configure it.</div>
+    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/mini-split-single-zone">Compare Single-Zone</a></div>`;
+    renderProducts([],null,'multi-nomatch');
+  }
+  body.innerHTML=html;
+  track('btu_calculator_completed',{type:'multi',rooms:rooms.length});
+}
+function renderMultiProducts(key){
+  const grid=document.getElementById('prodGrid'), empty=document.getElementById('prodEmpty');
+  const b=CATALOG.multi[key];
+  empty.style.display='none'; document.getElementById('noMatchBox').style.display='none'; grid.style.display='grid';
+  document.getElementById('matchSub').textContent=`Pre-configured ${key.split('-').length}-zone bundles matching your rooms — in stock now.`;
+  grid.innerHTML=`<div class="prod-card" style="grid-column:span 2">
+    <div class="prod-img"><span class="role-tag">Best Match</span><img src="${b.img}" alt="${b.t}" loading="lazy"></div>
+    <div class="prod-title">${b.t}</div>
+    <div class="prod-specs">${fmt(b.out)} BTU outdoor${b.seer2?` · SEER2 ${b.seer2}`:''} · ${b.series} · ${b.minF}°F to ${b.maxF}°F</div>
+    ${b.price?`<div class="prod-price">$${b.price.toLocaleString('en-US',{minimumFractionDigits:2})}</div>`:''}
+    <div class="prod-volt">Voltage varies by model — confirm on the product page.</div>
+    <a class="pill pill-navy" href="https://dellahome.com/products/${b.h}" onclick="track('matching_product_clicked',{handle:'${b.h}'})">View Product</a>
+  </div>
+  <div class="prod-card" style="grid-column:span 2;justify-content:center;text-align:center;border:1px solid var(--line);border-radius:6px;padding:34px 24px;background:#FAFAFA">
+    <p style="font-size:13px;color:var(--muted)">${b.n>1?`${b.n-1} more validated option${b.n>2?'s':''} for this exact configuration.`:'See every multi-zone configuration.'}</p>
+    <a class="pill pill-navy" style="margin-top:16px;align-self:center" href="https://dellahome.com/collections/${key.split('-').length}-zone-mini-split">Browse ${key.split('-').length}-Zone Systems</a>
+  </div>`;
+}
+setProjectType('one');
+</script>
+</body>
+</html>
