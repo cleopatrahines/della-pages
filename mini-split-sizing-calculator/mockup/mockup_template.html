@@ -5,20 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mini Split Sizing Calculator: Find the Right BTU | DELLA</title>
 <meta name="description" content="Use DELLA’s mini split BTU calculator to estimate the right system size for your room based on climate, square footage, ceiling height, insulation, and sun exposure.">
-<!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral/Poppins woff2. -->
+<!-- MOCKUP: Google Fonts for review only; production loads the same fonts the HVAC Product Finder uses. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy-deep:#0B133D; --navy:#0E1952; --blue:#5884E7; --blue-link:#2440B3;
-  --box-blue:#F0F5FF; --line:#E6E6E6; --muted:#606167; --body:#1C1C1C;
-  --m-hh:#DD7A4F; --m-hd:#E8B54B; --m-mx:#8FBF7F; --m-mr:#6FA8CF; --m-cd:#33549C;
-  --serif:'Spectral',Georgia,serif; --sans:'Poppins',Arial,sans-serif;
+  /* tokens lifted from hvac-product-finder.css (live theme asset) */
+  --navy:#0B1D46; --navy-deep:#07163A; --blue:#5D8DEB; --blue-strong:#286ED7; --blue-link:#286ED7;
+  --sky:#EEF5FC; --page:#F7F9FD; --box-blue:#EEF5FC; --line:#CED8E6; --muted:#697791; --body:#111C36;
+  --shadow:0 18px 42px rgba(11,29,70,.11);
+  --m-hh:#E4574D; --m-hd:#F08A4B; --m-mx:#F4C542; --m-mr:#3F9C60; --m-cd:#2F55B8;
+  --serif:'Libre Caslon Display',Georgia,serif; --sans:'DM Sans',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--body);background:#fff}
+body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--body);background:var(--page)}
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--navy);line-height:1.2}
 a{color:var(--blue-link)}
@@ -27,13 +29,13 @@ a{color:var(--blue-link)}
 .sec-head h2{font-size:clamp(26px,3vw,36px)}
 .sec-head .sub{margin-top:8px;font-size:14px;color:var(--muted)}
 .note-line{font-size:12.5px;color:var(--muted);text-align:center}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 36px;border-radius:40px;font-family:var(--sans);font-weight:500;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,color .15s}
-.pill-navy{background:var(--navy);color:#fff}
-.pill-navy:hover{background:#1A2A6E}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 30px;border-radius:8px;font-family:var(--sans);font-weight:500;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,color .15s}
+.pill-navy{background:var(--blue-strong);color:#fff}
+.pill-navy:hover{background:#1E56AC}
 .pill-white{background:#fff;color:var(--navy)}
 .pill-white:hover{background:#DCE5FA}
-.pill-line{background:transparent;color:var(--navy);border-color:var(--navy)}
-.pill-line:hover{background:var(--navy);color:#fff}
+.pill-line{background:#fff;color:var(--navy);border-color:var(--line)}
+.pill-line:hover{border-color:var(--navy)}
 .pill:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,.tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .shell-note{background:#F5F5F5;color:#9A9A9A;font-size:11px;text-align:center;padding:7px;letter-spacing:.04em}
 .mock-ribbon{position:fixed;bottom:14px;left:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
@@ -46,12 +48,12 @@ a{color:var(--blue-link)}
 /* 2 · calculator zone */
 .calc-zone{padding:26px 0 10px}
 .calc-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start}
-.panel{background:#fff;border:1px solid var(--line);border-radius:8px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
 .calc-form{padding:28px 30px 32px}
 .qlabel{font-size:13px;font-weight:500;color:var(--navy)}
 .ptabs{display:flex;border-bottom:1px solid var(--line);margin:6px 0 20px}
 .tab{background:transparent;border:none;padding:9px 22px 12px;font-family:var(--sans);font-size:14px;color:var(--navy);cursor:pointer}
-.tab.active{color:var(--blue-link);text-decoration:underline;text-underline-offset:6px;font-weight:500}
+.tab.active{color:var(--blue-strong);text-decoration:underline;text-underline-offset:6px;font-weight:700}
 .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px 18px}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:13px;font-weight:500;color:var(--navy)}
@@ -76,11 +78,13 @@ details.advanced[open] summary::after{content:"–"}
 
 /* map card */
 .map-card{padding:20px 22px 18px}
-.map-card svg{width:100%;height:auto;display:block}
-.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;justify-content:center}
-.lg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--body);border:none;background:none;cursor:pointer;padding:3px 6px;font-family:var(--sans)}
-.lg i{width:13px;height:13px;border-radius:3px;display:inline-block}
-.lg.active{outline:2px solid var(--navy);outline-offset:1px;border-radius:3px}
+.climate-map{width:100%;height:auto;display:block;border-radius:6px}
+.region-rows{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.region-row{display:flex;align-items:center;gap:10px;width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-family:var(--sans);font-size:13px;color:var(--body);cursor:pointer;text-align:left;transition:border-color .12s,box-shadow .12s}
+.region-row:hover{border-color:var(--blue-strong)}
+.region-row.active{border-color:var(--blue-strong);box-shadow:0 0 0 1px var(--blue-strong)}
+.region-row i{width:11px;height:11px;border-radius:50%;display:inline-block;flex:none}
+.region-row .chev{margin-left:auto;color:var(--muted)}
 
 /* result card */
 .result-card{background:var(--navy-deep);color:#fff;border-radius:8px;padding:28px 30px;margin-top:24px;text-align:center}
@@ -89,7 +93,7 @@ details.advanced[open] summary::after{content:"–"}
 .r-load{font-size:14px;color:#C6CEE9}
 .r-load b{color:#fff;font-weight:600}
 .r-row{font-size:12.5px;color:#9AA6CE;margin-top:4px}
-.conf-chip{display:inline-block;margin-top:10px;padding:3px 14px;border:1px solid rgba(255,255,255,.35);border-radius:40px;font-size:11.5px;color:#fff}
+.conf-chip{display:inline-block;margin-top:10px;padding:3px 14px;border:1px solid rgba(255,255,255,.35);border-radius:8px;font-size:11.5px;color:#fff}
 .why-box{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:12px;text-align:left}
 .why-box summary{cursor:pointer;list-style:none;font-size:13px;color:#fff;font-weight:500;text-align:center}
 .why-box summary::after{content:" +";color:#8A97C6}
@@ -115,8 +119,8 @@ details.advanced[open] summary::after{content:"–"}
 .prod-empty{text-align:center;padding:6px 0 0}
 .prod-empty p{font-size:14px}
 .chip-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-.chip-links a{border:1px solid var(--navy);border-radius:40px;padding:9px 24px;font-size:13px;color:var(--navy);text-decoration:none}
-.chip-links a:hover{background:var(--navy);color:#fff}
+.chip-links a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 24px;font-size:13px;color:var(--navy);text-decoration:none}
+.chip-links a:hover{border-color:var(--navy)}
 .no-match-box{max-width:640px;margin:0 auto;text-align:center;display:none}
 
 /* sizing chart */
@@ -269,11 +273,11 @@ details.faq p{padding:0 4px 17px;font-size:13px;color:var(--muted)}
           <label for="manualRegion">We couldn’t find that ZIP. Choose your region (or click the map):</label>
           <select id="manualRegion" onchange="setManualRegion()">
             <option value="">Select a region…</option>
-            <option value="hot_humid">Hot &amp; humid</option>
-            <option value="hot_dry">Hot &amp; dry</option>
-            <option value="mixed">Mixed / moderate</option>
-            <option value="marine">Marine</option>
-            <option value="cold">Cold / very cold</option>
+            <option value="hot_humid">Region #1 (Red) – Hot &amp; Humid</option>
+            <option value="hot_dry">Region #2 (Orange) – Warm</option>
+            <option value="mixed">Region #3 (Yellow) – Mixed</option>
+            <option value="marine">Region #4 (Green) – Cool</option>
+            <option value="cold">Region #5 (Blue) – Cold</option>
           </select>
         </div>
 
@@ -329,14 +333,15 @@ details.faq p{padding:0 4px 17px;font-size:13px;color:var(--muted)}
 
       <div>
         <div class="panel map-card">
-          __US_MAP_SVG__
-          <div class="legend" role="group" aria-label="Climate regions">
-            <button class="lg" data-region="hot_humid" onclick="legendPick('hot_humid')"><i style="background:var(--m-hh)"></i>Hot &amp; Humid</button>
-            <button class="lg" data-region="hot_dry" onclick="legendPick('hot_dry')"><i style="background:var(--m-hd)"></i>Hot &amp; Dry</button>
-            <button class="lg" data-region="mixed" onclick="legendPick('mixed')"><i style="background:var(--m-mx)"></i>Mixed</button>
-            <button class="lg" data-region="marine" onclick="legendPick('marine')"><i style="background:var(--m-mr)"></i>Marine</button>
-            <button class="lg" data-region="cold" onclick="legendPick('cold')"><i style="background:var(--m-cd)"></i>Cold</button>
+          <img class="climate-map" src="https://dellahome.com/cdn/shop/t/100/assets/hvac-product-finder-map.png" alt="United States climate regions map" loading="eager">
+          <div class="region-rows" role="group" aria-label="Climate regions">
+            <button class="region-row" data-region="hot_humid" onclick="regionPick('hot_humid')"><i style="background:var(--m-hh)"></i>Region #1 (Red) – Hot &amp; Humid<span class="chev">›</span></button>
+            <button class="region-row" data-region="hot_dry" onclick="regionPick('hot_dry')"><i style="background:var(--m-hd)"></i>Region #2 (Orange) – Warm<span class="chev">›</span></button>
+            <button class="region-row" data-region="mixed" onclick="regionPick('mixed')"><i style="background:var(--m-mx)"></i>Region #3 (Yellow) – Mixed<span class="chev">›</span></button>
+            <button class="region-row" data-region="marine" onclick="regionPick('marine')"><i style="background:var(--m-mr)"></i>Region #4 (Green) – Cool<span class="chev">›</span></button>
+            <button class="region-row" data-region="cold" onclick="regionPick('cold')"><i style="background:var(--m-cd)"></i>Region #5 (Blue) – Cold<span class="chev">›</span></button>
           </div>
+          <div class="map-note" style="font-size:11.5px;color:var(--muted);margin-top:10px;text-align:center">Your ZIP Code selects a region automatically. You can still change it here.</div>
         </div>
 
         <div class="result-card" id="resultCard" aria-live="polite" aria-label="Sizing result">
@@ -445,22 +450,21 @@ details.faq p{padding:0 4px 17px;font-size:13px;color:var(--muted)}
 </div>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v4 · engine 1.0.0 · trust copy pending approval</div>
+<div class="mock-ribbon">MOCKUP v5 · finder design system · engine 1.0.0</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
 const CFG = __INJECT_CONFIG__;
 const CATALOG = __INJECT_CATALOG__;
 const CLIMATE = __INJECT_CLIMATE__;
-const STATE_CLIMATE = __INJECT_STATE_CLIMATE__;
 
 function track(ev, data){ (window.dataLayer = window.dataLayer||[]).push({event:ev, ...data}); }
-const REGION_NAMES = {hot_humid:'Hot & humid', hot_dry:'Hot & dry', mixed:'Mixed', marine:'Marine', cold:'Cold'};
+const REGION_NAMES = {hot_humid:'Region #1 (Red) – Hot & Humid', hot_dry:'Region #2 (Orange) – Warm', mixed:'Region #3 (Yellow) – Mixed', marine:'Region #4 (Green) – Cool', cold:'Region #5 (Blue) – Cold'};
 
 /* ============ climate ============ */
 let climate = null;
 function highlightLegend(type){
-  document.querySelectorAll('.lg').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
+  document.querySelectorAll('.region-row').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
 }
 function resolveZip(){
   const el = document.getElementById('zip');
@@ -476,7 +480,7 @@ function resolveZip(){
   const [code, tcode] = rec.split(':');
   const zone = CLIMATE.zones[code];
   climate = { type: CLIMATE.types[tcode], code, winter: zone.winter_design_temp_f, summer: zone.summer_design_temp_f, source:'zip' };
-  chip.innerHTML = `<b>${REGION_NAMES[climate.type]} climate</b> — winter design ${climate.winter}°F, summer design ${climate.summer}°F (ZIP ${z})`;
+  chip.innerHTML = `<b>${REGION_NAMES[climate.type]}</b> — winter design ${climate.winter}°F, summer design ${climate.summer}°F (ZIP ${z})`;
   chip.style.display='block';
   highlightLegend(climate.type);
   track('zip_resolved',{climate:climate.type});
@@ -493,18 +497,7 @@ function setManualRegion(){
   const v = document.getElementById('manualRegion').value;
   if(v) setRegion(v, 'manually');
 }
-function legendPick(type){ setRegion(type, 'from the legend'); }
-document.addEventListener('DOMContentLoaded', ()=>{
-  const map=document.getElementById('usClimateMap');
-  if(!map) return;
-  map.addEventListener('click', e=>{
-    const el=e.target.closest('[class]');
-    if(!el) return;
-    for(const cls of el.classList){
-      if(STATE_CLIMATE[cls]){ setRegion(STATE_CLIMATE[cls], 'from the map ('+cls.toUpperCase()+')'); return; }
-    }
-  });
-});
+function regionPick(type){ setRegion(type, 'from the map'); }
 
 /* ============ engine (port of della-sizing-engine-1.0.0) ============ */
 const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
@@ -638,7 +631,7 @@ function renderRoomList(){
 function confChip(c){ return `<span class="conf-chip">${c[0].toUpperCase()+c.slice(1)} confidence · ±${Math.round(CFG.confidence_ranges[c]*100)}%</span>`; }
 function whyList(res, room){
   const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
-  if(res.cf!==1) items.push(`${REGION_NAMES[climate.type]} climate ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
+  if(res.cf!==1) items.push(`Your climate region ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
   if(res.ceil!==1) items.push(`${room.ceiling} ft ceilings ${res.ceil>1?'add':'trim'} ${Math.abs(Math.round((res.ceil-1)*100))}%`);
   if(res.env!==1) items.push(`Envelope (insulation, air, glass) ${res.env>1?'adds':'trims'} ${Math.abs(Math.round((res.env-1)*100))}%`);
   if(res.sun!==1) items.push(`Sun exposure ${res.sun>1?'adds':'trims'} ${Math.abs(Math.round((res.sun-1)*100))}%`);
