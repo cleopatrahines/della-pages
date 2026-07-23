@@ -480,7 +480,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
       <div class="gr-track" id="grCar" aria-label="Google reviews"></div>
       <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slide('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
     </div>
-    <p class="note-line" style="margin-top:14px">Rating and count are live Google Business Profile figures; review card copy in this mockup is placeholder — production renders real reviews through the installed reviews app.</p>
+    <p class="note-line" style="margin-top:14px">All figures and review texts are from DELLA’s Google Business Profile. Production renders the continuously updated feed through the installed reviews app.</p>
   </div>
 </section>
 
@@ -498,7 +498,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 </section>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v11 · Reputon-style reviews (real 4.3/315, placeholder card copy)</div>
+<div class="mock-ribbon">MOCKUP v12 · real Google reviews (storepages source)</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -677,11 +677,14 @@ function renderBestsellers(){
 const G_ICON=`<svg class="gi" viewBox="0 0 512 512"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"/><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15C83.93 439.12 163.74 492 256 492z" fill="#34a853"/><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"/><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20 163.75 20 83.93 72.89 45.1 150.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"/></svg>`;
 const AVATAR='https://cdn.grw.reputon.com/img/profile_photo.png';
 const SAMPLE_REVIEWS=[
-  {n:'AI Summary',d:'Based on 315 reviews',t:'<p>Fast shipping</p><p>Helpful sizing support</p><p>Competitive pricing</p>',ai:true},
-  {n:'Sample reviewer',d:'2 months ago',t:'Ordered a 12K Serena for the garage office. Shipping was quick, the unit arrived well packed, and their chat team helped me confirm the size before ordering.'},
-  {n:'Sample reviewer',d:'4 months ago',t:'Great price compared to the big-box stores. The sizing calculator matched what my installer recommended. Would order again for the upstairs rooms.'},
-  {n:'Sample reviewer',d:'6 months ago',t:'Multi-zone bundle arrived complete with line sets. Customer service answered every question about breaker sizing and placement.'},
-  {n:'Sample reviewer',d:'8 months ago',t:'Second DELLA unit we have bought. Both running strong through a hot Texas summer. Delivery to the curb was smooth with the LTL carrier.'},
+  {n:'AI Summary',d:'Based on 315 reviews · 71% five-star',ai:true,
+   t:'<p>High marks for product selection, design, quality, and assembly</p><p>Shipping is fast and reliable, prices are competitive</p><p>Website is easy to navigate</p>'},
+  {n:'Lorran',d:'Google review',stars:5,
+   t:'"A Five Star review for our customer service experience!" Elizabeth was incredibly helpful and answered our questions based on careful research and collaboration with the experts. You can\'t get better than that! Plus, the shipments arrived ahead of our expectations.'},
+  {n:'JT',d:'Google review',stars:0,
+   t:'The website was easy to navigate and intuitive, making it simple to choose the correct mini-split size. Pricing was fair, shipping was prompt, and everything arrived well-packaged. The installation process was smooth thanks to the many helpful videos available from Della and other YouTubers. Highly recommend.'},
+  {n:'Anonymous reviewer',d:'Google review',stars:4,
+   t:'Products are great so far. Fairly easy to install, and ordering the right set up was easy. Shipping time was longer than estimated which is why I rated a 4 star instead of 5. If the shipping process was better I would have given it 5 stars.'},
 ];
 function renderReviews(){
   document.getElementById('grCar').innerHTML = SAMPLE_REVIEWS.map(r=>`
@@ -691,7 +694,7 @@ function renderReviews(){
         <div><div class="gr-name">${r.n}</div><div class="gr-date">${r.d}</div></div>
         <div class="gr-logo">${r.ai?G_ICON:`<span class="pb">Powered by <b style="color:#4285F4;font-size:11px">Google</b></span>${G_ICON}`}</div>
       </div>
-      <div class="gr-starline"><span class="gr-star5">${r.ai?'★':'★★★★★'}</span>${r.ai?'':'<span class="gr-verified"><i>✓</i>Verified</span>'}</div>
+      <div class="gr-starline">${r.ai?'<span class="gr-star5">★</span>':(r.stars?`<span class="gr-star5">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>`:'')}${r.ai?'':'<span class="gr-verified"><i>✓</i>Verified</span>'}</div>
       <div class="gr-text">${r.t}</div>
       ${r.ai?'':'<button class="gr-more" type="button">Show more</button>'}
     </div>`).join('');
