@@ -56,12 +56,8 @@ input[type=text],input[type=number],select{height:52px;border:1px solid #D9D9D9;
 input:hover,select:hover{border-color:var(--navy)}
 .climate-chip{display:none;margin:14px 0 0;font-size:14.5px;color:var(--navy);border-left:3px solid var(--blue);padding:5px 13px;background:var(--box-blue)}
 .field-error{font-size:13px;color:#B3402E;display:none}
-details.advanced{border-top:1px solid var(--line);margin-top:22px}
-details.advanced summary{cursor:pointer;padding:16px 0;font-size:15px;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between}
-details.advanced summary::after{content:"+";font-size:17px;color:var(--blue-link)}
-details.advanced[open] summary::after{content:"–"}
-.advanced-body{padding:4px 0 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
-.check-row{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:2px}
+.check-line{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid #EEF1F5}
+.check-row{display:flex;align-items:center;gap:9px;font-size:14.5px}
 .check-row input{width:16px;height:16px;accent-color:var(--navy)}
 
 /* map + result */
@@ -74,21 +70,22 @@ details.advanced[open] summary::after{content:"–"}
 .region-row i{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
 .region-row .chev{margin-left:auto;color:var(--muted)}
 .map-note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
-.result-card{background:var(--navy-deep);color:#fff;border-radius:8px;padding:34px 36px;margin-top:28px;text-align:center}
-.result-card .r-cap{font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:#8A97C6;font-weight:500}
-.r-big{font-family:var(--serif);font-size:60px;font-weight:500;color:#fff;line-height:1.15;letter-spacing:-1.3px;margin:4px 0 6px}
-.r-load{font-size:16.5px;color:#C6CEE9}
+.result-card{background:var(--navy-deep);color:#fff;border-radius:8px;padding:24px 26px;margin-top:22px;text-align:center}
+.result-card .r-cap{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#8A97C6;font-weight:500}
+.r-big{font-family:var(--serif);font-size:42px;font-weight:500;color:#fff;line-height:1.2;letter-spacing:-1.3px;margin:2px 0 3px}
+.r-load{font-size:15px;color:#C6CEE9}
 .r-load b{color:#fff;font-weight:600}
-.r-row{font-size:14px;color:#9AA6CE;margin-top:5px}
-.conf-chip{display:inline-block;margin-top:12px;padding:4px 16px;border:1px solid rgba(255,255,255,.35);border-radius:8px;font-size:13px;color:#fff}
-.why-box{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:12px;text-align:left}
-.why-box summary{cursor:pointer;list-style:none;font-size:14.5px;color:#fff;font-weight:500;text-align:center}
+.r-row{font-size:13px;color:#9AA6CE;margin-top:3px}
+.conf-inline{font-size:13px;color:#9AA6CE}
+.why-box{margin-top:11px;border-top:1px solid rgba(255,255,255,.14);padding-top:9px;text-align:left}
+.why-box summary{cursor:pointer;list-style:none;font-size:13px;color:#fff;font-weight:500;text-align:center}
 .why-box summary::after{content:" +";color:#8A97C6}
 .why-box[open] summary::after{content:" –"}
-.why-box ul{list-style:none;margin-top:9px;font-size:14px;color:#C6CEE9;display:flex;flex-direction:column;gap:4px}
+.why-box ul{list-style:none;margin-top:7px;font-size:13px;color:#C6CEE9;display:flex;flex-direction:column;gap:4px}
 .why-box li::before{content:"·  ";color:var(--blue)}
-.dual-path{margin-top:14px;border-left:3px solid var(--blue);padding:9px 15px;font-size:14px;color:#D8DEF2;background:rgba(255,255,255,.06);text-align:left}
-.result-ctas{display:flex;gap:16px;margin-top:20px;align-items:center;justify-content:center;flex-wrap:wrap}
+.dual-path{margin-top:10px;border-left:3px solid var(--blue);padding:7px 12px;font-size:12.5px;color:#D8DEF2;background:rgba(255,255,255,.06);text-align:left}
+.result-ctas{display:flex;gap:14px;margin-top:14px;align-items:center;justify-content:center;flex-wrap:wrap}
+.result-ctas .pill{min-height:46px;padding:10px 28px;font-size:15px}
 .calc-note{padding:20px 0 0}
 
 /* top sellers carousel — MSFL Top sales grammar */
@@ -304,37 +301,41 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
           </select>
         </div>
 
-        <details class="advanced">
-          <summary onclick="track('advanced_factors_opened',{})">Advanced factors — air tightness, kitchen, extra equipment</summary>
-          <div class="advanced-body">
-            <div class="field">
-              <label for="airtightness">Windows &amp; doors air tightness</label>
-              <select id="airtightness">
-                <option value="very_tight">Very tight</option>
-                <option value="average" selected>Average</option>
-                <option value="drafty">Drafty</option>
-                <option value="very_drafty">Very drafty</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="watts">Extra device heat wattage (W)</label>
-              <input type="number" id="watts" min="0" max="15000" placeholder="0">
-            </div>
-            <div class="field">
-              <label for="usage">Equipment usage</label>
-              <select id="usage">
-                <option value="continuous">Continuous</option>
-                <option value="frequent">Frequent</option>
-                <option value="intermittent" selected>Intermittent</option>
-              </select>
-            </div>
-            <div class="field" aria-hidden="true"></div>
-            <label class="check-row"><input type="checkbox" id="kitchen"> Is there a kitchen?</label>
-            <label class="check-row"><input type="checkbox" id="sunroom"> Glass room / sunroom</label>
-            <label class="check-row"><input type="checkbox" id="garage"> Garage with frequent door opening</label>
-            <label class="check-row"><input type="checkbox" id="stairs"> Open stairs / connected upper floor</label>
+        <div class="field-grid" style="margin-top:18px">
+          <div class="field">
+            <label for="airtightness">Windows &amp; doors air tightness</label>
+            <select id="airtightness">
+              <option value="very_tight">Very tight</option>
+              <option value="average" selected>Average</option>
+              <option value="drafty">Drafty</option>
+              <option value="very_drafty">Very drafty</option>
+            </select>
           </div>
-        </details>
+          <div class="field">
+            <label for="kitchenSel">Is there a kitchen?</label>
+            <select id="kitchenSel">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="watts">Extra device heat wattage (W)</label>
+            <input type="number" id="watts" min="0" max="15000" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="usage">Equipment usage</label>
+            <select id="usage">
+              <option value="continuous">Continuous</option>
+              <option value="frequent">Frequent</option>
+              <option value="intermittent" selected>Intermittent</option>
+            </select>
+          </div>
+        </div>
+        <div class="check-line">
+          <label class="check-row"><input type="checkbox" id="sunroom"> Glass room / sunroom</label>
+          <label class="check-row"><input type="checkbox" id="garage"> Garage with frequent door opening</label>
+          <label class="check-row"><input type="checkbox" id="stairs"> Open stairs / connected upper floor</label>
+        </div>
 
       </form>
 
@@ -498,7 +499,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 </section>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v12 · real Google reviews (storepages source)</div>
+<div class="mock-ribbon">MOCKUP v13 · compact result card + expanded form (MSFL)</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -595,14 +596,13 @@ function readRoomForm(){
     occupants: parseInt(document.getElementById('occupants').value,10),
     airtightness: document.getElementById('airtightness').value,
     watts, usage: document.getElementById('usage').value,
-    kitchen: document.getElementById('kitchen').checked,
+    kitchen: document.getElementById('kitchenSel').value==='yes',
     sunroom: document.getElementById('sunroom').checked,
     garage: document.getElementById('garage').checked,
     stairs: document.getElementById('stairs').checked,
   };
 }
 function requireClimate(){ return true; } /* a default region is always active, MSFL-style */
-function confChip(c){ return `<span class="conf-chip">${c[0].toUpperCase()+c.slice(1)} confidence · ±${Math.round(CFG.confidence_ranges[c]*100)}%</span>`; }
 function whyList(res, room){
   const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
   if(res.cf!==1) items.push(`Your climate region ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
@@ -624,9 +624,9 @@ function onCalculate(){
   let html='';
   if(bin===null){
     html=`<div class="r-cap">Recommended capacity</div>
-    <div class="r-big" style="font-size:28px;line-height:1.25;padding:10px 0 4px">Professional review</div>
+    <div class="r-big" style="font-size:24px;line-height:1.3;padding:6px 0 2px">Professional review</div>
     <div class="r-load">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>${confChip(res.conf)}
+    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div><span class="conf-inline"></span>
     <div class="dual-path">This space exceeds the automatic single-zone range (36,000 BTU/h). Consider two indoor units, separate zones, or a professional sizing review.</div>
     <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/mini-split-multi-zone" onclick="track('matching_product_clicked',{bin:'multi'})">Find Matching Products</a></div>`;
   } else if(bin==='below'){
@@ -634,20 +634,17 @@ function onCalculate(){
     <div class="r-big">9,000 BTU</div>
     <div class="r-row" style="margin-top:0">Smallest DELLA option — your estimated need is below 9,000 BTU</div>
     <div class="r-load" style="margin-top:8px">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>${confChip(res.conf)}
+    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div><span class="conf-inline"></span>
     <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/9000-btu-mini-split" onclick="track('matching_product_clicked',{bin:9000})">Find Matching Products</a></div>`;
   } else {
     html=`<div class="r-cap">Recommended capacity</div>
     <div class="r-big">${fmt(bin)} BTU</div>
     <div class="r-load">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div>
-    ${confChip(res.conf)}
-    <div class="r-row" style="margin-top:9px">${climate.source==='zip' ? `Climate: series rated for your area${document.getElementById('intent').value==='primary'?' and winter design '+climate.winter+'°F':''}` : 'Region set manually'} · Electrical: confirm voltage on the product page</div>
+    <div class="r-row">Estimated range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h · <span class="conf-inline">${res.conf==='high'?'High':'Low'} confidence</span></div>
     <details class="why-box"><summary>Why this size?</summary><ul>${whyList(res,room)}</ul></details>`;
-    if(room.watts>CFG.input_validation.confirm_equipment_watts_above) html+=`<div class="dual-path">${fmt(room.watts)} W of equipment heat is unusually high for one room — double-check before relying on this estimate.</div>`;
-    if(room.sqft>CFG.input_validation.confirm_area_above_sqft) html+=`<div class="dual-path">${fmt(room.sqft)} sq. ft. is a very large single space — treat this as a provisional estimate.</div>`;
-    if(crosses) html+=`<div class="dual-path">Your range crosses a size boundary. The smaller size fits a well-shaded, well-insulated room; take the larger one with strong western sun, weaker insulation, or frequent guests.</div>`;
-    if(res.flags.length) html+=`<div class="dual-path">Flagged for review: ${res.flags.join(', ')}. We recommend confirming with DELLA support before purchase.</div>`;
+    if(crosses) html+=`<div class="dual-path">Your range crosses a size boundary — take the larger size with strong western sun, weaker insulation, or frequent guests.</div>`;
+    if(res.flags.length) html+=`<div class="dual-path">Flagged for review: ${res.flags.join(', ')}. Confirm with DELLA support before purchase.</div>`;
+    if(room.watts>CFG.input_validation.confirm_equipment_watts_above) html+=`<div class="dual-path">${fmt(room.watts)} W of equipment heat is unusually high for one room.</div>`;
     html+=`<div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/${BIN_COLLECTIONS[bin]}" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a></div>`;
   }
   body.innerHTML=html;
