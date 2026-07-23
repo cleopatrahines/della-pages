@@ -20,7 +20,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);font-size:16px;line-height:1.5;color:var(--body);background:var(--page)}
-.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.container{max-width:1440px;margin:0 auto;padding:0 36px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;color:#0E1952;line-height:1.4;letter-spacing:-1.3px}
 a{color:var(--blue-link)}
 .sec{padding:68px 0}
@@ -44,7 +44,7 @@ a{color:var(--blue-link)}
 
 /* calculator zone */
 .calc-zone{padding:32px 0 12px}
-.calc-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:start}
+.calc-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:30px;align-items:start}
 .panel{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
 .calc-form{padding:38px 40px 42px}
 .form-note{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.55}
@@ -63,7 +63,6 @@ details.advanced[open] summary::after{content:"–"}
 .advanced-body{padding:4px 0 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
 .check-row{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:2px}
 .check-row input{width:16px;height:16px;accent-color:var(--navy)}
-.calc-actions{margin-top:28px}
 
 /* map + result */
 .map-card{padding:24px 26px 22px}
@@ -94,15 +93,22 @@ details.advanced[open] summary::after{content:"–"}
 
 /* top sellers carousel — MSFL Top sales grammar */
 .carousel-wrap{position:relative}
-.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 84px)/4);gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
 .carousel::-webkit-scrollbar{display:none}
-.prod-card{scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 18px 22px}
-.prod-img{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.prod-card{scroll-snap-align:start;display:flex;flex-direction:column}
+.prod-img{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden}
 .prod-img img{max-width:92%;max-height:92%;object-fit:contain}
-.prod-title{font-family:var(--serif);font-size:16px;letter-spacing:-.4px;line-height:1.45;color:var(--navy);margin-top:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:68px}
-.prod-price{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);margin-top:8px}
+.prod-title{font-family:var(--serif);font-size:16px;letter-spacing:-.4px;line-height:1.45;margin-top:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:70px}
+.prod-title a{color:var(--navy);text-decoration:none}
+.prod-title a:hover{text-decoration:underline}
+.loox-row{display:flex;align-items:center;gap:4px;margin-top:6px;min-height:20px}
+.loox-stars{color:#F0B429;font-size:14px;letter-spacing:1px}
+.loox-count{color:var(--muted);font-size:13.5px}
+.prod-price{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);margin-top:7px}
 .prod-price s{font-family:var(--sans);font-weight:400;font-size:14px;color:var(--muted);margin-left:8px}
-.prod-card .pill{margin-top:14px;align-self:stretch;min-height:48px;font-size:14.5px}
+.atc-form{margin-top:13px}
+.atc-btn{width:100%;min-height:50px;border-radius:40px;background:#0E1952;color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:-.2px;transition:background .15s}
+.atc-btn:hover{background:#1C2C6B}
 .car-btn{position:absolute;top:38%;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,29,70,.14);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);z-index:3}
 .car-prev{left:-14px}.car-next{right:-14px}
 .car-btn:hover{border-color:var(--blue-strong)}
@@ -218,7 +224,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
           </div>
           <div class="field">
             <label for="sqft">Space area (sq. ft.)</label>
-            <input type="number" id="sqft" min="20" max="4000" placeholder="e.g. 450" aria-describedby="sqftErr">
+            <input type="number" id="sqft" min="20" max="4000" value="400" aria-describedby="sqftErr">
             <span class="field-error" id="sqftErr">Enter the room area in square feet (20 or more).</span>
           </div>
           <div class="field">
@@ -316,9 +322,6 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
           </div>
         </details>
 
-        <div class="calc-actions">
-          <button class="pill pill-navy" id="calcBtn" onclick="onCalculate()">Calculate BTU</button>
-        </div>
       </form>
 
       <div>
@@ -480,7 +483,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 </section>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v8 · MSFL structure · review cards are placeholder copy</div>
+<div class="mock-ribbon">MOCKUP v10 · PageFly product cards + live ATC · review cards are placeholder copy</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -515,14 +518,16 @@ function resolveZip(){
   chip.style.display='block';
   highlightLegend(climate.type);
   track('zip_resolved',{climate:climate.type});
+  onCalculate();
 }
-function setRegion(type, sourceLabel){
+function setRegion(type, sourceLabel, silent){
   climate = { type, code:null, winter:null, summer:null, source:'manual' };
   const chip = document.getElementById('climateChip');
   chip.innerHTML = `<b>${REGION_NAMES[type]} set ${sourceLabel}.</b> Enter a ZIP for design-temperature checks.`;
   chip.style.display='block';
   document.getElementById('manualRegionWrap').style.display='none';
   highlightLegend(type);
+  if(!silent) onCalculate();
 }
 function setManualRegion(){ const v=document.getElementById('manualRegion').value; if(v) setRegion(v,'manually'); }
 function regionPick(type){ setRegion(type,'from the map'); }
@@ -567,12 +572,6 @@ function readRoomForm(){
   if(!sqft || sqft<CFG.input_validation.minimum_area_sqft){ sErr.style.display='block'; return null; }
   sErr.style.display='none';
   const watts=parseFloat(document.getElementById('watts').value)||0;
-  if(watts>CFG.input_validation.confirm_equipment_watts_above){
-    if(!confirm(`You entered ${watts} watts of equipment heat — that’s unusually high for one room. Keep it?`)) return null;
-  }
-  if(sqft>CFG.input_validation.confirm_area_above_sqft){
-    if(!confirm(`${sqft} sq. ft. is a very large single room. Continue with a provisional estimate?`)) return null;
-  }
   return {
     sqft, ceiling: parseFloat(document.getElementById('ceiling').value),
     insulation: document.getElementById('insulation').value,
@@ -587,15 +586,7 @@ function readRoomForm(){
     stairs: document.getElementById('stairs').checked,
   };
 }
-function requireClimate(){
-  if(climate) return true;
-  resolveZip();
-  if(climate) return true;
-  document.getElementById('zipErr').textContent='Enter your ZIP Code (or click your region on the map) so we can adjust for climate.';
-  document.getElementById('zipErr').style.display='block';
-  document.getElementById('zip').focus();
-  return false;
-}
+function requireClimate(){ return true; } /* a default region is always active, MSFL-style */
 function confChip(c){ return `<span class="conf-chip">${c[0].toUpperCase()+c.slice(1)} confidence · ±${Math.round(CFG.confidence_ranges[c]*100)}%</span>`; }
 function whyList(res, room){
   const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
@@ -638,6 +629,8 @@ function onCalculate(){
     ${confChip(res.conf)}
     <div class="r-row" style="margin-top:9px">${climate.source==='zip' ? `Climate: series rated for your area${document.getElementById('intent').value==='primary'?' and winter design '+climate.winter+'°F':''}` : 'Region set manually'} · Electrical: confirm voltage on the product page</div>
     <details class="why-box"><summary>Why this size?</summary><ul>${whyList(res,room)}</ul></details>`;
+    if(room.watts>CFG.input_validation.confirm_equipment_watts_above) html+=`<div class="dual-path">${fmt(room.watts)} W of equipment heat is unusually high for one room — double-check before relying on this estimate.</div>`;
+    if(room.sqft>CFG.input_validation.confirm_area_above_sqft) html+=`<div class="dual-path">${fmt(room.sqft)} sq. ft. is a very large single space — treat this as a provisional estimate.</div>`;
     if(crosses) html+=`<div class="dual-path">Your range crosses a size boundary. The smaller size fits a well-shaded, well-insulated room; take the larger one with strong western sun, weaker insulation, or frequent guests.</div>`;
     if(res.flags.length) html+=`<div class="dual-path">Flagged for review: ${res.flags.join(', ')}. We recommend confirming with DELLA support before purchase.</div>`;
     html+=`<div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/${BIN_COLLECTIONS[bin]}" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a></div>`;
@@ -655,10 +648,15 @@ function slide(id,dir){
 function renderBestsellers(){
   document.getElementById('bsCar').innerHTML = BESTSELLERS.map(p=>`
     <div class="prod-card">
-      <div class="prod-img"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>
-      <div class="prod-title">${p.t}</div>
+      <a class="prod-img" href="https://dellahome.com/products/${p.h}"><img src="${p.img}" alt="${p.t}" loading="lazy"></a>
+      <h3 class="prod-title"><a href="https://dellahome.com/products/${p.h}" onclick="track('matching_product_clicked',{handle:'${p.h}',src:'top_sales'})">${p.t}</a></h3>
+      <div class="loox-row">${p.rating?`<span class="loox-stars">★★★★★</span><span class="loox-count">(${p.raters})</span>`:''}</div>
       <div class="prod-price">$${p.price.toLocaleString('en-US',{minimumFractionDigits:2})}${p.cap&&p.cap>p.price?`<s>$${p.cap.toLocaleString('en-US',{minimumFractionDigits:2})}</s>`:''}</div>
-      <a class="pill pill-navy" href="https://dellahome.com/products/${p.h}" onclick="track('matching_product_clicked',{handle:'${p.h}',src:'top_sales'})">View Product</a>
+      <form class="atc-form" method="post" action="https://dellahome.com/cart/add" onsubmit="track('add_to_cart_after_calculator',{handle:'${p.h}'})">
+        <input type="hidden" name="id" value="${p.vid}">
+        <input type="hidden" name="quantity" value="1">
+        <button class="atc-btn" type="submit"${p.vid?'':' disabled'}>Add To Cart</button>
+      </form>
     </div>`).join('');
 }
 const SAMPLE_REVIEWS=[
@@ -683,6 +681,15 @@ function renderReviews(){
 }
 renderBestsellers();
 renderReviews();
+/* MSFL-style defaults: preset region + values, result visible immediately, live recalc on change */
+setRegion('mixed', 'as the default — enter your ZIP for precision', true);
+document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow) – Mixed set as the default.</b> Enter your ZIP Code for design-temperature precision.';
+document.querySelectorAll('#calcForm input, #calcForm select').forEach(el=>{
+  if(el.id==='zip') return;
+  el.addEventListener('change', ()=>onCalculate());
+  if(el.type==='number') el.addEventListener('input', ()=>onCalculate());
+});
+onCalculate();
 </script>
 </body>
 </html>
