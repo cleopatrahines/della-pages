@@ -142,24 +142,38 @@ details.faq[open] .pfa-minus{display:block}
 details.faq[open] .pfa-plus{display:none}
 details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1.6}
 
-/* google reviews — Reputon carousel grammar */
-.gr-head{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
-.gr-brand{display:flex;flex-direction:column;gap:2px}
-.gr-brand b{font-size:17px;color:var(--navy);font-weight:600}
-.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--body)}
-.gr-stars{color:#FBBC05;letter-spacing:2px;font-size:15px}
-.gr-count{font-size:13.5px;color:var(--muted)}
+/* google reviews — Reputon widget clone */
+.gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.gr-brand b{font-size:16px;color:#1C1C1C;font-weight:700;font-family:var(--sans)}
+.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#1C1C1C;margin-top:4px}
+.gr-score .num{font-weight:700;font-size:16px}
+.gr-stars{color:#FBBC05;letter-spacing:1px;font-size:16px}
+.gr-count{font-size:13.5px;color:#5F6368;display:flex;align-items:center;gap:5px}
+.gr-count svg{height:16px;width:auto;display:inline-block;vertical-align:middle}
+.gr-write{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:var(--navy);text-decoration:none;font-weight:500}
+.gr-write:hover{border-color:var(--navy)}
 .gr-wrap{position:relative}
-.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 56px)/3);gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
 .gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
-.gr-top{display:flex;align-items:center;gap:12px;width:100%}
-.gr-avatar{width:40px;height:40px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--blue-strong);flex:none}
-.gr-name{font-size:14.5px;font-weight:500;color:var(--navy)}
-.gr-date{font-size:12.5px;color:var(--muted)}
-.gr-g{margin-left:auto;font-weight:700;font-size:18px;color:#4285F4;font-family:Arial}
-.gr-text{font-size:14px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
-.gr-verified{font-size:12px;color:#117A59;font-weight:500}
+.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.gr-top{display:flex;align-items:flex-start;gap:11px;width:100%}
+.gr-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;background:var(--sky);display:flex;align-items:center;justify-content:center;color:var(--blue-strong);font-weight:600;font-size:18px}
+.gr-avatar img{width:100%;height:100%;object-fit:cover}
+.gr-name{font-size:14.5px;font-weight:600;color:#1C1C1C;font-family:var(--sans)}
+.gr-date{font-size:12.5px;color:#80868B}
+.gr-logo{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.gr-logo .pb{font-size:10px;color:#9AA0A6;display:flex;align-items:center;gap:4px}
+.gr-logo .pb svg{height:12px;width:auto}
+.gr-logo .gi{width:20px;height:20px}
+.gr-starline{display:flex;align-items:center;gap:8px}
+.gr-star5{color:#FBBC05;font-size:15px;letter-spacing:1px}
+.gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#117A59;font-weight:600}
+.gr-verified i{width:14px;height:14px;border-radius:50%;background:#117A59;color:#fff;font-size:9px;font-style:normal;display:inline-flex;align-items:center;justify-content:center}
+.gr-text{font-size:14px;color:#3C4043;line-height:1.6;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.gr-more{font-size:12.5px;color:#80868B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:var(--sans);text-align:left;padding:0}
+.gr-ai .gr-avatar{background:#EAF1FF}
+.gr-ai .gr-text p{display:flex;align-items:center;gap:7px;margin:3px 0;color:#3C4043}
+.gr-ai .gr-text p::before{content:"✓";color:#117A59;font-weight:700}
 
 /* premium services — Galaxy clone */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
@@ -456,9 +470,10 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
     <div class="gr-head">
       <div class="gr-brand">
         <b>dellahome.com</b>
-        <div class="gr-score"><span>4.3</span><span class="gr-stars">★★★★<span style="opacity:.35">★</span></span><span class="gr-count">315 reviews on <b style="color:#4285F4">G</b><b style="color:#EA4335">o</b><b style="color:#FBBC05">o</b><b style="color:#4285F4">g</b><b style="color:#34A853">l</b><b style="color:#EA4335">e</b></span></div>
+        <div class="gr-score"><span class="num">4.3</span><span class="gr-stars">★★★★<span style="opacity:.35">★</span></span></div>
+        <div class="gr-count" style="margin-top:3px">315 reviews on <svg viewBox="0 0 56 19" fill="none"><g><path d="M23.83 9.91c0 2.63-2.06 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.52 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77-1.39 0-2.58 1.12-2.58 2.77 0 1.62 1.19 2.76 2.58 2.76 1.38 0 2.58-1.14 2.58-2.76Z" fill="#EA4335"/><path d="M33.71 9.91c0 2.63-2.05 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.53 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77s-2.57 1.12-2.57 2.77c0 1.62 1.19 2.76 2.57 2.76 1.39 0 2.58-1.14 2.58-2.76Z" fill="#FBBC05"/><path d="M43.18 5.62v8.2c0 3.37-1.99 4.75-4.34 4.75-2.21 0-3.54-1.48-4.05-2.7l1.75-.72c.31.74 1.07 1.62 2.3 1.62 1.5 0 2.44-.93 2.44-2.68v-.65h-.07c-.45.55-1.32 1.04-2.4 1.04-2.29 0-4.38-2-4.38-4.55 0-2.58 2.09-4.59 4.38-4.59 1.09 0 1.95.49 2.4 1.02h.07v-.74h1.9Zm-1.76 4.3c0-1.6-1.07-2.78-2.44-2.78-1.38 0-2.54 1.18-2.54 2.78 0 1.6 1.16 2.75 2.54 2.75 1.37 0 2.44-1.16 2.44-2.75Z" fill="#4285F4"/><path d="M46.32.81v13.39h-1.95V.81h1.95Z" fill="#34A853"/><path d="M53.95 11.41 55.5 12.45c-.5.74-1.71 2.02-3.8 2.02-2.6 0-4.53-2-4.53-4.56 0-2.72 1.95-4.57 4.3-4.57 2.37 0 3.53 1.89 3.91 2.9l.21.52-6.1 2.53c.47.92 1.19 1.38 2.21 1.38 1.02 0 1.73-.5 2.25-1.26Zm-4.8-1.64 4.09-1.7c-.23-.57-.9-.97-1.7-.97-1.01 0-2.43.9-2.39 2.67Z" fill="#EA4335"/><path d="M7.27 8.72V6.78h6.53c.06.34.1.74.1 1.17 0 1.46-.4 3.25-1.68 4.53-1.25 1.3-2.84 1.99-4.95 1.99A7.14 7.14 0 0 1 .07 7.38 7.14 7.14 0 0 1 7.27.29c2.16 0 3.7.85 4.86 1.95l-1.37 1.37a4.97 4.97 0 0 0-3.5-1.38 5.06 5.06 0 0 0-5.08 5.15 5.06 5.06 0 0 0 5.09 5.16c1.85 0 2.9-.75 3.58-1.42.55-.55.91-1.33 1.05-2.4H7.27Z" fill="#4285F4"/></g></svg></div>
       </div>
-      <a class="pill pill-white" style="min-height:44px;border:1px solid var(--line)" href="https://www.google.com/storepages?q=dellahome.com&c=US" target="_blank" rel="noopener">Write a review</a>
+      <a class="gr-write" href="https://www.google.com/storepages?q=dellahome.com&c=US" target="_blank" rel="noopener">Write a review</a>
     </div>
     <div class="gr-wrap">
       <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slide('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
@@ -483,7 +498,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 </section>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v10 · PageFly product cards + live ATC · review cards are placeholder copy</div>
+<div class="mock-ribbon">MOCKUP v11 · Reputon-style reviews (real 4.3/315, placeholder card copy)</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -659,8 +674,10 @@ function renderBestsellers(){
       </form>
     </div>`).join('');
 }
+const G_ICON=`<svg class="gi" viewBox="0 0 512 512"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"/><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15C83.93 439.12 163.74 492 256 492z" fill="#34a853"/><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"/><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20 163.75 20 83.93 72.89 45.1 150.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"/></svg>`;
+const AVATAR='https://cdn.grw.reputon.com/img/profile_photo.png';
 const SAMPLE_REVIEWS=[
-  {n:'AI Summary',d:'Based on 315 reviews',t:'✓ Fast shipping\n✓ Helpful sizing support\n✓ Competitive pricing',ai:true},
+  {n:'AI Summary',d:'Based on 315 reviews',t:'<p>Fast shipping</p><p>Helpful sizing support</p><p>Competitive pricing</p>',ai:true},
   {n:'Sample reviewer',d:'2 months ago',t:'Ordered a 12K Serena for the garage office. Shipping was quick, the unit arrived well packed, and their chat team helped me confirm the size before ordering.'},
   {n:'Sample reviewer',d:'4 months ago',t:'Great price compared to the big-box stores. The sizing calculator matched what my installer recommended. Would order again for the upstairs rooms.'},
   {n:'Sample reviewer',d:'6 months ago',t:'Multi-zone bundle arrived complete with line sets. Customer service answered every question about breaker sizing and placement.'},
@@ -668,15 +685,15 @@ const SAMPLE_REVIEWS=[
 ];
 function renderReviews(){
   document.getElementById('grCar').innerHTML = SAMPLE_REVIEWS.map(r=>`
-    <div class="gr-card">
+    <div class="gr-card${r.ai?' gr-ai':''}">
       <div class="gr-top">
-        <div class="gr-avatar">${r.ai?'✦':r.n[0]}</div>
+        <div class="gr-avatar">${r.ai?'✦':`<img src="${AVATAR}" alt="" loading="lazy">`}</div>
         <div><div class="gr-name">${r.n}</div><div class="gr-date">${r.d}</div></div>
-        <div class="gr-g">G</div>
+        <div class="gr-logo">${r.ai?G_ICON:`<span class="pb">Powered by <b style="color:#4285F4;font-size:11px">Google</b></span>${G_ICON}`}</div>
       </div>
-      <div class="gr-stars">★★★★★</div>
-      <div class="gr-text">${r.t.replace(/\n/g,'<br>')}</div>
-      ${r.ai?'':'<div class="gr-verified">✔ Verified</div>'}
+      <div class="gr-starline"><span class="gr-star5">${r.ai?'★':'★★★★★'}</span>${r.ai?'':'<span class="gr-verified"><i>✓</i>Verified</span>'}</div>
+      <div class="gr-text">${r.t}</div>
+      ${r.ai?'':'<button class="gr-more" type="button">Show more</button>'}
     </div>`).join('');
 }
 renderBestsellers();
