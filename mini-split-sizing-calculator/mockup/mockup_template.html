@@ -557,8 +557,7 @@ function onCalculate(){
     html=`<div class="r-cap">Recommended Equipment Capacity</div>
     <div class="r-big">${fmt(bin)} BTU</div>
     <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
-    <ul class="r-why" id="rWhy"><li>Estimated range ${fmt(rd(res.lower))} to ${fmt(rd(res.upper))} BTU/h</li>${whyList(res,room)}</ul>`;
-    if(crosses) html+=`<div class="r-warn">Close to a size boundary. Take the larger size with strong sun, weak insulation, or frequent guests.</div>`;
+    <ul class="r-why" id="rWhy"><li>Estimated range ${fmt(rd(res.lower))} to ${fmt(rd(res.upper))} BTU/h</li>${crosses?'<li>Close to a size boundary. Take the larger size with strong sun, weak insulation, or frequent guests.</li>':''}${whyList(res,room)}</ul>`;
     if(res.flags.length) html+=`<div class="r-warn">Flagged for review: ${res.flags.join(', ')}. Confirm with DELLA support before purchase.</div>`;
     const k=bin/1000;
     html+=`<a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=${bin}+BTU+mini+split" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a>
