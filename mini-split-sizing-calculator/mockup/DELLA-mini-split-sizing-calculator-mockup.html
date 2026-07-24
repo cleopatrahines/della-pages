@@ -63,8 +63,7 @@ input:hover,select:hover{border-color:#8A8A8A}
 .r-big{font-family:var(--serif);font-size:40px;font-weight:500;color:var(--navy);line-height:1.2;letter-spacing:-1px;margin:2px 0}
 .r-load{font-size:14px;color:#333}
 .r-load b{color:var(--blue-strong);font-weight:600}
-.r-meta{font-size:12px;color:#8A8A8A;margin-top:6px}
-.r-meta button{background:none;border:none;font-family:var(--sans);font-size:12px;color:var(--blue-link);text-decoration:underline;cursor:pointer;padding:0}
+.r-why-btn{background:none;border:none;font-family:var(--sans);font-size:12.5px;color:var(--blue-link);text-decoration:underline;cursor:pointer;padding:0}
 .r-why{display:none;text-align:left;margin:8px auto 0;max-width:340px;font-size:12.5px;color:var(--muted);list-style:none}
 .r-why li{margin:3px 0 3px 16px}
 .r-warn{font-size:12.5px;color:#8A5B00;margin-top:8px}
@@ -850,17 +849,15 @@ function onCalculate(){
   } else if(bin==='below'){
     html=`<div class="r-cap">Recommended Equipment Capacity</div>
     <div class="r-big">9,000 BTU</div>
-    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-meta">Below 9,000 BTU. 9K is DELLA’s smallest option · <button type="button" onclick="toggleWhy()">Why this size?</button></div>
-    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy"><li>Your load is under 9,000 BTU/h and 9K is DELLA’s smallest size</li>${whyList(res,room)}</ul>
     <a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=9000+BTU+mini+split" onclick="track('matching_product_clicked',{bin:9000})">Find Matching Products</a>
     <div class="r-alt">Cooling several rooms? <a href="https://dellahome.com/search?type=product&q=9K">See multi-zone systems with a 9K head</a></div>`;
   } else {
     html=`<div class="r-cap">Recommended Equipment Capacity</div>
     <div class="r-big">${fmt(bin)} BTU</div>
-    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-meta">Estimated range ${fmt(rd(res.lower))} to ${fmt(rd(res.upper))} BTU/h · <button type="button" onclick="toggleWhy()">Why this size?</button></div>
-    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>`;
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy"><li>Estimated range ${fmt(rd(res.lower))} to ${fmt(rd(res.upper))} BTU/h</li>${whyList(res,room)}</ul>`;
     if(crosses) html+=`<div class="r-warn">Close to a size boundary. Take the larger size with strong sun, weak insulation, or frequent guests.</div>`;
     if(res.flags.length) html+=`<div class="r-warn">Flagged for review: ${res.flags.join(', ')}. Confirm with DELLA support before purchase.</div>`;
     const k=bin/1000;
