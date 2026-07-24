@@ -5,196 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mini Split Sizing Calculator: Find the Right BTU | DELLA</title>
 <meta name="description" content="Use DELLA’s mini split BTU calculator to estimate the right system size for your room based on climate, square footage, ceiling height, insulation, and sun exposure.">
-<!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral + Inter 18pt woff2 (same faces as the LA Galaxy page). -->
+<!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral + Inter 18pt woff2. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0B1D46; --navy-deep:#07163A; --blue:#5D8DEB; --blue-strong:#286ED7; --blue-link:#286ED7;
-  --sky:#EEF5FC; --page:#F7F9FD; --box-blue:#EEF5FC; --line:#CED8E6; --muted:#4D5757; --body:#0E1952;
-  --shadow:0 18px 42px rgba(11,29,70,.11);
+  --navy:#0E1952; --navy-deep:#0E1953; --blue:#5D8DEB; --blue-strong:#286ED7; --blue-link:#286ED7;
+  --line:#E3E3E3; --muted:#4D5757; --body:#0E1952;
   --m-hh:#E4574D; --m-hd:#F08A4B; --m-mx:#F4C542; --m-mr:#3F9C60; --m-cd:#2F55B8;
   --serif:'Spectral',Georgia,serif; --sans:'Inter',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-size:16px;line-height:1.5;color:var(--body);background:var(--page)}
+body{font-family:var(--sans);font-size:16px;line-height:1.5;color:var(--body);background:#fff}
 .container{max-width:1440px;margin:0 auto;padding:0 36px}
+.container-narrow{max-width:880px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;color:#0E1952;line-height:1.4;letter-spacing:-1.3px}
 a{color:var(--blue-link)}
-.sec{padding:68px 0}
-.sec-head{text-align:center;margin-bottom:36px}
+.sec{padding:60px 0}
+.sec-head{text-align:center;margin-bottom:32px}
 .sec-head h2{font-size:clamp(24px,3vw,35px)}
-.sec-head .sub{margin-top:10px;font-size:16px;color:var(--body)}
-.note-line{font-size:14px;color:var(--muted);text-align:center}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 36px;border-radius:8px;font-family:var(--sans);font-weight:500;font-size:16px;letter-spacing:-.2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,color .15s}
+.note-line{font-size:13.5px;color:var(--muted);text-align:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 32px;border-radius:8px;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:-.2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s}
 .pill-navy{background:var(--blue-strong);color:#fff}
 .pill-navy:hover{background:#1E56AC}
-.pill-white{background:#fff;color:var(--navy)}
-.pill-white:hover{background:#DCE5FA}
-.pill:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.pill:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .shell-note{background:#F5F5F5;color:#9A9A9A;font-size:11px;text-align:center;padding:7px;letter-spacing:.04em}
 .mock-ribbon{position:fixed;bottom:14px;left:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
 
 /* H1 */
-.page-head{padding:52px 0 10px;text-align:center}
+.page-head{padding:46px 0 6px;text-align:center}
 .page-head h1{font-size:clamp(28px,3.4vw,40px)}
-.page-head .note-line{margin-top:12px;font-size:15px}
+.page-head .note-line{margin-top:10px;font-size:14.5px}
 
-/* calculator zone */
-.calc-zone{padding:32px 0 12px}
-.calc-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:30px;align-items:start}
-.panel{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
-.calc-form{padding:38px 40px 42px}
-.form-note{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.55}
-.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
-.field{display:flex;flex-direction:column;gap:7px}
-.field label{font-size:15px;font-weight:500;color:var(--navy)}
-.field .hint{color:var(--muted);font-weight:400;font-size:13px}
-input[type=text],input[type=number],select{height:52px;border:1px solid #D9D9D9;border-radius:6px;padding:0 16px;font-family:var(--sans);font-size:16px;color:var(--body);background:#fff;width:100%}
-input:hover,select:hover{border-color:var(--navy)}
-.climate-chip{display:none;margin:14px 0 0;font-size:14.5px;color:var(--navy);border-left:3px solid var(--blue);padding:5px 13px;background:var(--box-blue)}
-.field-error{font-size:13px;color:#B3402E;display:none}
-.check-line{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid #EEF1F5}
-.check-row{display:flex;align-items:center;gap:9px;font-size:14.5px}
-.check-row input{width:16px;height:16px;accent-color:var(--navy)}
+/* calculator — MSFL grammar: no cards, fields straight on the page */
+.calc-zone{padding:30px 0 8px}
+.calc-grid{display:grid;grid-template-columns:53% 43.5%;justify-content:space-between;align-items:start}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:13.5px;font-weight:500;color:#333}
+input[type=text],input[type=number],select{height:46px;border:1px solid #CFCFCF;border-radius:5px;padding:0 13px;font-family:var(--sans);font-size:15px;color:var(--body);background:#fff;width:100%}
+input:hover,select:hover{border-color:#8A8A8A}
+.climate-chip{display:none;margin-top:12px;font-size:13px;color:var(--muted)}
+.climate-chip b{color:var(--navy);font-weight:600}
+.field-error{font-size:12.5px;color:#B3402E;display:none}
+.check-line{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}
+.check-row{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#333}
+.check-row input{width:15px;height:15px;accent-color:var(--blue-strong)}
+.calc-disc{font-size:12px;color:#8A8A8A;margin-top:22px;line-height:1.6}
 
-/* map + result */
-.map-card{padding:24px 26px 22px}
-.climate-map{width:100%;height:auto;display:block;border-radius:6px}
-.region-rows{display:flex;flex-direction:column;gap:9px;margin-top:16px}
-.region-row{display:flex;align-items:center;gap:11px;width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;padding:13px 17px;font-family:var(--sans);font-size:15px;color:var(--body);cursor:pointer;text-align:left;transition:border-color .12s,box-shadow .12s}
-.region-row:hover{border-color:var(--blue-strong)}
-.region-row.active{border-color:var(--blue-strong);box-shadow:0 0 0 1px var(--blue-strong)}
-.region-row i{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
-.region-row .chev{margin-left:auto;color:var(--muted)}
-.map-note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
-.result-card{background:var(--navy-deep);color:#fff;border-radius:8px;padding:24px 26px;margin-top:22px;text-align:center}
-.result-card .r-cap{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#8A97C6;font-weight:500}
-.r-big{font-family:var(--serif);font-size:42px;font-weight:500;color:#fff;line-height:1.2;letter-spacing:-1.3px;margin:2px 0 3px}
-.r-load{font-size:15px;color:#C6CEE9}
-.r-load b{color:#fff;font-weight:600}
-.r-row{font-size:13px;color:#9AA6CE;margin-top:3px}
-.conf-inline{font-size:13px;color:#9AA6CE}
-.why-box{margin-top:11px;border-top:1px solid rgba(255,255,255,.14);padding-top:9px;text-align:left}
-.why-box summary{cursor:pointer;list-style:none;font-size:13px;color:#fff;font-weight:500;text-align:center}
-.why-box summary::after{content:" +";color:#8A97C6}
-.why-box[open] summary::after{content:" –"}
-.why-box ul{list-style:none;margin-top:7px;font-size:13px;color:#C6CEE9;display:flex;flex-direction:column;gap:4px}
-.why-box li::before{content:"·  ";color:var(--blue)}
-.dual-path{margin-top:10px;border-left:3px solid var(--blue);padding:7px 12px;font-size:12.5px;color:#D8DEF2;background:rgba(255,255,255,.06);text-align:left}
-.result-ctas{display:flex;gap:14px;margin-top:14px;align-items:center;justify-content:center;flex-wrap:wrap}
-.result-ctas .pill{min-height:46px;padding:10px 28px;font-size:15px}
-.calc-note{padding:20px 0 0}
+/* right column: map + legend + compact result */
+.climate-map-svg svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:10px;justify-content:center}
+.lg{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#333;border:none;background:none;cursor:pointer;padding:3px 2px;font-family:var(--sans)}
+.lg i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.lg.active{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.result-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-top:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.r-cap{font-size:14px;color:#333}
+.r-big{font-family:var(--serif);font-size:40px;font-weight:500;color:var(--navy);line-height:1.2;letter-spacing:-1px;margin:2px 0}
+.r-load{font-size:14px;color:#333}
+.r-load b{color:var(--blue-strong);font-weight:600}
+.r-meta{font-size:12px;color:#8A8A8A;margin-top:6px}
+.r-meta button{background:none;border:none;font-family:var(--sans);font-size:12px;color:var(--blue-link);text-decoration:underline;cursor:pointer;padding:0}
+.r-why{display:none;text-align:left;margin:8px auto 0;max-width:340px;font-size:12.5px;color:var(--muted);list-style:none}
+.r-why li{margin:3px 0 3px 16px}
+.r-warn{font-size:12.5px;color:#8A5B00;margin-top:8px}
+.result-card .pill{margin-top:14px;width:100%}
 
-/* top sellers carousel — MSFL Top sales grammar */
+/* top sellers — Galaxy “Championship Level Cooling” card grammar */
 .carousel-wrap{position:relative}
-.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 90px)/4);gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
 .carousel::-webkit-scrollbar{display:none}
-.prod-card{scroll-snap-align:start;display:flex;flex-direction:column}
-.prod-img{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden}
-.prod-img img{max-width:92%;max-height:92%;object-fit:contain}
-.prod-title{font-family:var(--serif);font-size:16px;letter-spacing:-.4px;line-height:1.45;margin-top:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:70px}
-.prod-title a{color:var(--navy);text-decoration:none}
+.prod-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left}
+.prod-img{display:block;aspect-ratio:1/1}
+.prod-img img{width:100%;height:100%;object-fit:contain}
+.prod-title{font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.5;color:#0E1952;text-transform:capitalize;margin-top:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:81px}
+.prod-title a{color:#0E1952;text-decoration:none}
 .prod-title a:hover{text-decoration:underline}
-.loox-row{display:flex;align-items:center;gap:4px;margin-top:6px;min-height:20px}
-.loox-stars{color:#F0B429;font-size:14px;letter-spacing:1px}
-.loox-count{color:var(--muted);font-size:13.5px}
-.prod-price{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);margin-top:7px}
-.prod-price s{font-family:var(--sans);font-weight:400;font-size:14px;color:var(--muted);margin-left:8px}
-.atc-form{margin-top:13px}
-.atc-btn{width:100%;min-height:50px;border-radius:40px;background:#0E1952;color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:-.2px;transition:background .15s}
-.atc-btn:hover{background:#1C2C6B}
-.car-btn{position:absolute;top:38%;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,29,70,.14);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);z-index:3}
+.loox-row{display:flex;align-items:center;gap:2px;margin-top:6px;min-height:18px}
+.loox-row svg{width:15px;height:15px;fill:#FFB800}
+.loox-count{color:#4D5757;font-size:14px;margin-left:4px}
+.prod-price{font-family:var(--serif);font-weight:700;font-size:18px;color:#0E1952;margin-top:8px}
+.prod-price s{font-family:var(--sans);font-weight:400;font-size:13.5px;color:var(--muted);margin-left:8px}
+.atc-form{margin-top:12px}
+.atc-btn{width:100%;padding:10px 20px;border-radius:50px;background:#0E1952;color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:17px;line-height:1.5;text-transform:capitalize;transition:background .15s}
+.atc-btn:hover{background:#25367D}
+.car-btn{position:absolute;top:34%;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,29,70,.14);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);z-index:3}
 .car-prev{left:-14px}.car-next{right:-14px}
 .car-btn:hover{border-color:var(--blue-strong)}
 
-/* collapsible SEO content */
-.fold-list{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-details.fold{background:#fff;border:1px solid var(--line);border-radius:8px;padding:0 24px}
-details.fold summary{cursor:pointer;list-style:none;padding:20px 0;font-size:17px;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:center;letter-spacing:-.2px}
-details.fold summary svg{flex:none;width:15px;height:15px;fill:var(--navy)}
-details.fold .pfa-minus{display:none}
-details.fold[open] .pfa-minus{display:block}
-details.fold[open] .pfa-plus{display:none}
-details.fold .fold-body{padding:2px 0 24px;font-size:15px;color:var(--body);line-height:1.65}
-details.fold .fold-body p{margin-bottom:10px;color:var(--muted)}
-.mini-table{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
-.mini-table th{font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
-.mini-table td{padding:12px;border-bottom:1px solid #F0F0F0}
-.mini-table td:first-child{font-family:var(--serif);font-weight:500;color:var(--navy);white-space:nowrap;letter-spacing:-.4px}
-.mini-table a{font-weight:500}
-.fold-body ul{margin:6px 0 0 18px;color:var(--muted)}
-.fold-body li{margin-bottom:6px}
+/* what-size editorial */
+.article{font-size:15.5px;line-height:1.75;color:#333}
+.article p{margin-bottom:16px}
+.article b{color:var(--navy);font-weight:600}
+.article a{font-weight:500}
+.read-more-body{display:none}
+.read-toggle{background:none;border:none;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--blue-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
 
-/* FAQ — PageFly Accordion3 grammar, heading on top */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;align-items:start}
-.faq-col{display:flex;flex-direction:column;gap:14px}
+/* faq — single column */
+.faq-list{display:flex;flex-direction:column;gap:12px}
 details.faq{background:#fff;border:1px solid var(--line);border-radius:8px;padding:0 22px}
-details.faq summary{cursor:pointer;list-style:none;padding:19px 0;font-size:15.5px;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:center;letter-spacing:-.2px}
+details.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-size:16px;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:center;letter-spacing:-.2px}
 details.faq summary svg{flex:none;width:14px;height:14px;fill:var(--navy)}
 details.faq .pfa-minus{display:none}
 details.faq[open] .pfa-minus{display:block}
 details.faq[open] .pfa-plus{display:none}
-details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1.6}
+details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
 /* google reviews — Reputon widget clone */
 .gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.gr-brand b{font-size:16px;color:#1C1C1C;font-weight:700;font-family:var(--sans)}
+.gr-brand b{font-size:16px;color:#1C1C1C;font-weight:700}
 .gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#1C1C1C;margin-top:4px}
 .gr-score .num{font-weight:700;font-size:16px}
 .gr-stars{color:#FBBC05;letter-spacing:1px;font-size:16px}
-.gr-count{font-size:13.5px;color:#5F6368;display:flex;align-items:center;gap:5px}
-.gr-count svg{height:16px;width:auto;display:inline-block;vertical-align:middle}
+.gr-count{font-size:13.5px;color:#5F6368;display:flex;align-items:center;gap:5px;margin-top:3px}
+.gr-count svg{height:16px;width:auto}
 .gr-write{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:var(--navy);text-decoration:none;font-weight:500}
 .gr-write:hover{border-color:var(--navy)}
 .gr-wrap{position:relative}
 .gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
 .gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-height:210px}
 .gr-top{display:flex;align-items:flex-start;gap:11px;width:100%}
-.gr-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;background:var(--sky);display:flex;align-items:center;justify-content:center;color:var(--blue-strong);font-weight:600;font-size:18px}
+.gr-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;background:#EAF1FF;display:flex;align-items:center;justify-content:center;color:var(--blue-strong);font-weight:600;font-size:18px}
 .gr-avatar img{width:100%;height:100%;object-fit:cover}
-.gr-name{font-size:14.5px;font-weight:600;color:#1C1C1C;font-family:var(--sans)}
+.gr-name{font-size:14.5px;font-weight:600;color:#1C1C1C}
 .gr-date{font-size:12.5px;color:#80868B}
 .gr-logo{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px}
 .gr-logo .pb{font-size:10px;color:#9AA0A6;display:flex;align-items:center;gap:4px}
-.gr-logo .pb svg{height:12px;width:auto}
 .gr-logo .gi{width:20px;height:20px}
 .gr-starline{display:flex;align-items:center;gap:8px}
 .gr-star5{color:#FBBC05;font-size:15px;letter-spacing:1px}
 .gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#117A59;font-weight:600}
 .gr-verified i{width:14px;height:14px;border-radius:50%;background:#117A59;color:#fff;font-size:9px;font-style:normal;display:inline-flex;align-items:center;justify-content:center}
 .gr-text{font-size:14px;color:#3C4043;line-height:1.6;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
 .gr-more{font-size:12.5px;color:#80868B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:var(--sans);text-align:left;padding:0}
-.gr-ai .gr-avatar{background:#EAF1FF}
-.gr-ai .gr-text p{display:flex;align-items:center;gap:7px;margin:3px 0;color:#3C4043}
+.gr-ai .gr-text p{display:flex;align-items:flex-start;gap:7px;margin:3px 0}
 .gr-ai .gr-text p::before{content:"✓";color:#117A59;font-weight:700}
 
-/* premium services — Galaxy clone */
+/* premium services — Galaxy exact clone: navy cards, left aligned, square */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.svc-item{text-align:center;padding:10px 8px}
-.svc-item img{width:64px;height:64px;object-fit:contain;margin-bottom:14px}
-.svc-item h3{font-size:20px;letter-spacing:-.6px;margin-bottom:6px}
-.svc-item p{font-size:14px;color:var(--muted);line-height:1.55;max-width:30ch;margin:0 auto}
+.svc-item{background:#0E1953;padding:24px 16px;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.svc-item img{width:50px;height:50px;object-fit:cover;margin-bottom:10px}
+.svc-item h3{font-size:20px;line-height:1.4;color:#fff;letter-spacing:-.5px;margin-bottom:8px;text-transform:capitalize}
+.svc-item p{font-size:15px;line-height:1.4;color:#fff}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 @media (max-width:960px){
-  .calc-grid,.faq-grid{grid-template-columns:1fr}
-  .carousel{grid-auto-columns:calc((100% - 28px)/2)}
-  .gr-track{grid-auto-columns:calc((100% - 28px)/2)}
-  .svc-grid{grid-template-columns:1fr 1fr;gap:24px}
-  .sec{padding:48px 0}
+  .calc-grid{grid-template-columns:1fr;gap:28px}
+  .carousel{grid-auto-columns:calc((100% - 20px)/2);gap:20px}
+  .gr-track{grid-auto-columns:calc((100% - 24px)/2)}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .sec{padding:44px 0}
   .container{padding:0 16px}
 }
 @media (max-width:560px){
-  .field-grid,.advanced-body{grid-template-columns:1fr}
-  .r-big{font-size:48px}
-  .calc-form{padding:24px 18px 30px}
-  .carousel{grid-auto-columns:calc((100% - 28px)/2)}
+  .field-grid{grid-template-columns:1fr}
+  .carousel{grid-auto-columns:calc((100% - 16px)/2);gap:16px}
+  .prod-title{font-size:16px;min-height:72px}
+  .atc-btn{font-size:15px}
   .gr-track{grid-auto-columns:92%}
-  .svc-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .svc-grid{grid-template-columns:1fr}
   .car-btn{display:none}
 }
 </style>
@@ -207,17 +180,16 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 <header class="page-head">
   <div class="container">
     <h1>Mini Split Sizing Calculator</h1>
-    <p class="note-line">* Estimate your BTU cooling load from room size, climate, insulation, and sun. Free, no signup.</p>
+    <p class="note-line">* Please enter the data for each individual room separately to ensure accurate BTU calculation.</p>
   </div>
 </header>
 
-<!-- 2 · calculator: form left, map + result right (MSFL layout) -->
+<!-- 2 · calculator: fields on the page (MSFL), map + compact result right -->
 <section class="calc-zone" id="calculator">
   <div class="container">
     <div class="calc-grid">
 
-      <form class="panel calc-form" id="calcForm" autocomplete="off" onsubmit="return false">
-        <p class="form-note">* Note: Please enter the data for each individual room separately to ensure accurate BTU calculation. Cooling several rooms with one system? See <a href="https://dellahome.com/collections/mini-split-multi-zone">multi-zone mini splits</a>.</p>
+      <form id="calcForm" autocomplete="off" onsubmit="return false">
         <div class="field-grid">
           <div class="field">
             <label for="zip">ZIP Code</label>
@@ -234,7 +206,7 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
             </select>
           </div>
           <div class="field">
-            <label for="sqft">Space area (sq. ft.)</label>
+            <label for="sqft">Space (sq. ft.)</label>
             <input type="number" id="sqft" min="20" max="4000" value="400" aria-describedby="sqftErr">
             <span class="field-error" id="sqftErr">Enter the room area in square feet (20 or more).</span>
           </div>
@@ -278,6 +250,15 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
             </select>
           </div>
           <div class="field">
+            <label for="airtightness">Windows &amp; doors air tightness</label>
+            <select id="airtightness">
+              <option value="very_tight">Very tight</option>
+              <option value="average" selected>Average</option>
+              <option value="drafty">Drafty</option>
+              <option value="very_drafty">Very drafty</option>
+            </select>
+          </div>
+          <div class="field">
             <label for="occupants">How many occupants?</label>
             <select id="occupants">
               <option value="2" selected>2 or less</option>
@@ -285,30 +266,6 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6+</option>
-            </select>
-          </div>
-        </div>
-        <div class="climate-chip" id="climateChip" aria-live="polite"></div>
-        <div class="field" id="manualRegionWrap" style="display:none;margin-top:10px">
-          <label for="manualRegion">We couldn’t find that ZIP. Choose your region (or click the map):</label>
-          <select id="manualRegion" onchange="setManualRegion()">
-            <option value="">Select a region…</option>
-            <option value="hot_humid">Region #1 (Red) – Hot &amp; Humid</option>
-            <option value="hot_dry">Region #2 (Orange) – Warm</option>
-            <option value="mixed">Region #3 (Yellow) – Mixed</option>
-            <option value="marine">Region #4 (Green) – Cool</option>
-            <option value="cold">Region #5 (Blue) – Cold</option>
-          </select>
-        </div>
-
-        <div class="field-grid" style="margin-top:18px">
-          <div class="field">
-            <label for="airtightness">Windows &amp; doors air tightness</label>
-            <select id="airtightness">
-              <option value="very_tight">Very tight</option>
-              <option value="average" selected>Average</option>
-              <option value="drafty">Drafty</option>
-              <option value="very_drafty">Very drafty</option>
             </select>
           </div>
           <div class="field">
@@ -334,46 +291,339 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
         <div class="check-line">
           <label class="check-row"><input type="checkbox" id="sunroom"> Glass room / sunroom</label>
           <label class="check-row"><input type="checkbox" id="garage"> Garage with frequent door opening</label>
-          <label class="check-row"><input type="checkbox" id="stairs"> Open stairs / connected upper floor</label>
+          <label class="check-row"><input type="checkbox" id="stairs"> Open stairs to another floor</label>
         </div>
-
+        <div class="climate-chip" id="climateChip" aria-live="polite"></div>
+        <p class="calc-disc">* The suggested BTU values are provided as a general sizing guide only. Specific conditions and unique variables in real-world installations may significantly influence the result. For precise load calculations, we recommend consulting a licensed HVAC professional — this tool does not replace a Manual J calculation.</p>
       </form>
 
       <div>
-        <div class="panel map-card">
-          <img class="climate-map" src="https://dellahome.com/cdn/shop/t/100/assets/hvac-product-finder-map.png" alt="United States climate regions map" loading="eager">
-          <div class="region-rows" role="group" aria-label="Climate regions">
-            <button class="region-row" data-region="hot_humid" onclick="regionPick('hot_humid')"><i style="background:var(--m-hh)"></i>Region #1 (Red) – Hot &amp; Humid<span class="chev">›</span></button>
-            <button class="region-row" data-region="hot_dry" onclick="regionPick('hot_dry')"><i style="background:var(--m-hd)"></i>Region #2 (Orange) – Warm<span class="chev">›</span></button>
-            <button class="region-row" data-region="mixed" onclick="regionPick('mixed')"><i style="background:var(--m-mx)"></i>Region #3 (Yellow) – Mixed<span class="chev">›</span></button>
-            <button class="region-row" data-region="marine" onclick="regionPick('marine')"><i style="background:var(--m-mr)"></i>Region #4 (Green) – Cool<span class="chev">›</span></button>
-            <button class="region-row" data-region="cold" onclick="regionPick('cold')"><i style="background:var(--m-cd)"></i>Region #5 (Blue) – Cold<span class="chev">›</span></button>
-          </div>
-          <div class="map-note">Your ZIP Code selects a region automatically. You can still change it here.</div>
+        <div class="climate-map-svg" aria-label="United States climate regions map — click your state"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" role="img" aria-label="United States climate regions map" id="usClimateMap">
+  <defs>
+<style type="text/css">
+.state {fill:#D8D5CB;cursor:pointer;transition:opacity .12s}
+.state:hover{opacity:.75}
+.ak,.co,.ct,.ia,.id,.il,.in,.ma,.me,.mi,.mn,.mt,.nd,.ne,.nh,.nm,.nv,.ny,.oh,.pa,.ri,.sd,.ut,.vt,.wi,.wy{fill:#33549C}
+.al,.ar,.dc,.de,.ga,.ks,.ky,.md,.mo,.ms,.nc,.nj,.ok,.sc,.tn,.va,.wv{fill:#8FBF7F}
+.fl,.hi,.la,.tx{fill:#DD7A4F}
+.or,.wa{fill:#6FA8CF}
+.az,.ca{fill:#E8B54B}
+                        /* default color for all states not specified below */
+.borders {stroke:#FFFFFF; stroke-width:1}    /* color and width of borders between states */
+.dccircle {display:yes}                      /* set display to yes to show the circle for the District of Columbia, or none to hide it */
+.separator1 {stroke:#B0B0B0; stroke-width:2} /* color and width of lines around Alaska and Hawaii */
+
+/* Individual states can be colored as follows:
+.ks,.mt,.pa {fill:#0000FF}
+.ca,.de {fill:#FF0000}
+In this example, Kansas, Montana and Pennsylvania are colored blue, and California and Delaware are colored red.
+Place this code in the empty space below. */
+
+
+
+</style>
+</defs>
+
+<g class="state">
+
+<path class="al" d="m 643,467.4 .4,-7.3 -.9,-1.2 -1.7,-.7 -2.5,-2.8 .5,-2.9 48.8,-5.1 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 -45.7,4 1.3,2 -1.3,67 4.4,33.2 .9,-.5 1.3,.1 .6,.4 .8,-.1 2,-3.8 v -2.3 l 1.1,-1.1 1.4,.5 3.4,6.4 v .9 l -3.3,2.2 3.5,-.4 4.9,-1.6 z">
+</path>
+
+<!-- The scale of Alaska is 42% that of the contiguous United States, so its area is reduced to about 17.6%. The Islands of Four Mountains, Andreanof Islands, Rat Islands and Near Islands are not shown. -->
+<path class="ak" d="m 15.8,572 h 2.4 l .7,.7 -1,1.2 -1.9,.2 -2.5,1.3 -3.7,-.1 2.2,-.9 .3,-1.1 2.5,-.3 z m 8.3,-1.7 1.3,.5 h .9 l .5,1.2 .3,-.6 .9,.2 1.1,1.5 0,.5 -4.2,1.9 -2.4,-.1 -1,-.5 -1.1,.7 -2,0 -1.1,-1.4 4.7,-.5 z m 5.4,-.1 1,.1 .7,.7 v 1 l -1.3,.1 -.9,-1.1 z m 2.5,.3 1.3,-.1 -.1,1 -1.1,.6 z m .3,2.2 3.4,-.1 .2,1.1 -1.3,.1 -.3,-.5 -.8,.6 -.4,-.6 -.9,-.2 z m 166.3,7.6 2.1,.1 -1,1.9 -1.1,-.1 -.4,-.8 .5,-1.3 m -1.1,-2.9 .6,-1.3 -.2,-2.3 2.4,-.5 4.5,4.4 1.3,3.4 1.9,1.6 .3,5.1 -1.4,0 -1.3,-2.3 -3.1,-2.4 h -.6 l 1.1,2.8 1.7,.2 .2,2.1 -.9,.1 -4.1,-4.4 -.1,-.9 1.9,-1 0,-1 -.5,-.8 -1.6,-.6 -1.7,-1.3 1.4,.1 .5,-.4 -.6,-.9 -.6,.5 z m -3.6,-9.1 1.3,.1 2.4,2.5 -.2,.8 -.8,-.1 -.1,1.8 .5,.5 0,1.5 -.8,.3 -.4,1.2 -.8,-.4 -.4,-2.2 1.1,-1.4 -2.1,-2.2 .1,-1.2 z m 1.5,-1.5 1.9,.2 2.5,.1 3.4,3.2 -.2,.5 -1.1,.6 -1.1,-.2 -.1,-.7 -1.2,-1.6 -.3,.7 1,1.3 -.2,1.2 -.8,-.1 -1.3,.2 -.1,-1.7 -2.6,-2.8 z m -12.7,-8.9 .9,-.4 h 1.6 l .7,-.5 4.1,2.2 .1,1.5 -.5,.5 h -.8 l -1.4,-.7 1.1,1.3 1.8,0 .5,2 -.9,0 -2.2,-1.5 -1.1,-.2 .6,1.3 .1,.9 .8,-.6 1.7,1.2 1.3,-.1 -.2,.8 1.9,4.3 0,3.4 .4,2.1 -.8,.3 -1.2,-2 -.5,-1.5 -1.6,-1.6 -.2,-2.7 -.6,-1.7 h -.7 l .3,1.1 0,.5 -1.4,1 .1,-3.3 -1.6,-1.6 -1.3,-2.3 -1.2,-1.2 z m 7.2,-2.3 1.1,1.8 2.4,-.1 1,2.1 -.6,.6 2,3.2 v 1.3 l -1.2,.8 v .7 l -2,1.9 -.5,-1.4 -.1,-1.3 .6,-.7 v -1.1 l -1.5,-1.9 -.5,-3.7 -.9,-1.5 z m -56.7,-18.3 -4,4.1 v 1.6 l 2.1,-.8 .8,-1.9 2.2,-2.4 z m -31.6,16.6 0,.6 1.8,1.2 .2,-1.4 .6,.9 3.5,.1 .7,-.6 .2,-1.8 -.5,-.7 -1.4,0 0,-.8 .4,-.6 v -.4 l -1.5,-.3 -3.3,3.6 z m -8.1,6.2 1.5,5.8 h 2.1 l 2.4,-2.5 .3,1.2 6.3,-4 .7,-1 -1,-1.1 v -.7 l .5,-1.3 -.9,-.1 -2,1 0,-1.2 -2.7,-.6 -2.4,.3 -.2,3.4 -.8,-2 -1.5,-.1 -1,.6 z m -2.2,8.2 .1,-.7 2.1,-1.3 .6,.3 1.3,.2 1.3,1.2 -2.2,-.2 -.4,-.6 -1,.6 z m -5.2,3.3 -1.1,.8 1.5,1.4 .8,-.7 -.1,-1.3 z m -6.3,-7.9 1.4,.1 .4,.6 -1.8,.1 z m -13.9,11.9 v .5 l .7,.1 -.1,-.6 z m -.4,-3.2 -1,1 v .5 l .7,1.1 1,-1 -.7,-.1 z m -2,-.8 -.3,1 -1.3,.1 -.4,.2 0,1.3 -.5,.9 .6,0 .7,-.9 .8,-.1 .9,-1 .2,-1.3 z m -4.4,-2 -.2,1.8 1.4,.8 1.2,-.6 0,-1 1.7,-.3 -.1,-.6 -.9,-.2 -.7,.6 -.9,-.5 z m -4.9,-.1 1,.7 -.3,1.2 -1.4,-1.1 z m -4.2,1.3 1.4,.1 -.7,.8 z m -3.5,3 1.8,1.1 -1.7,.1 z m -25.4,-31.2 1.2,.6 -.8,.6 z m -.7,-6.3 .4,1.2 .8,-1.2 z m 24.3,-19.3 1.5,-.1 .9,.4 1.1,-.5 1.3,-.1 1.6,.8 .8,1.9 -.1,.9 -1.2,2 -2.4,-.2 -2.1,-1.8 -1,-.4 -1.1,-2 z m -21.1,-14.4 .1,1.9 2,2 v .5 l -.8,-.2 -1.7,-.8 -.3,-1.1 -.3,-1.6 z m 18.3,-23.3 v 1.2 l 1.9,1.8 h 2.3 l .6,1.1 v 1.6 l 2.1,1.9 1.8,1.2 -.1,.7 -.7,1.1 -1.4,-1.2 -2.1,.1 -.8,-.8 -.9,-2.1 -1.5,-2.2 -2.6,-.1 -1,-.7 1,-2.1 z m 16.8,-4.5 1,0 .1,1.1 h -1 z m 16.2,19.7 .9,.1 0,1.2 -1.7,-.5 z m 127.8,77.7 -1.2,.4 -.1,1.1 h 1.2 z m -157.6,-4.5 -1.3,-.4 -4.1,.6 -2.8,1.4 -.1,1.9 1.9,.7 1.5,-.9 1.7,-.1 4.7,1.4 .1,-1.3 -1.6,-1.1 z m 2.1,2.3 -.4,-1.4 1.2,.2 .1,1.4 1.8,0 .4,-2.5 .3,2.4 2.5,-.1 3.2,-3.3 .8,.1 -.7,1.3 1.4,.9 4.2,-.2 2.6,-1.2 1.4,-.1 .3,1.5 .6,-.5 .4,-1.4 5.9,.2 1.9,-1.6 -1.3,-1.1 .6,-1.2 2.6,.2 -.2,-1.2 2.5,.2 .7,-1.1 1.1,.2 4.6,-1.9 .2,-1.7 5.6,-2.4 2,-1.9 1.2,-.6 1.3,.8 2.3,-.9 1.1,-1.9 .5,-1.3 1.7,-.9 1.5,-.7 .4,-1.4 -1.1,-1.7 -2.2,-.2 -.2,-1.3 .8,-1.6 1.4,-.2 1.3,-1.5 1.9,-.1 3.4,-3.2 .4,-1.4 1.5,-2.3 3.8,-4.1 2.5,-.9 1.9,-.9 2.1,.8 1.4,2.6 -1.5,0 -1.4,-1.5 -3,2 -1.7,.1 -.2,3.1 -3.1,4.9 .6,2 2.3,0 -.6,1 -1.4,.1 -2.4,1.8 0,.9 1.9,1 3.4,-.6 1.4,-1.7 1.4,.1 3,-1.7 .5,-2.3 1.6,-.1 6.3,.8 1,-1.1 1,-4.5 -1.6,1.1 .6,-2.2 -1.6,-1.4 .8,-1.5 .1,1.5 3.4,0 .7,-1 1.6,-.1 -.3,1.7 1.9,.1 -1.9,1.3 4.1,1.1 -3.5,.4 -1.3,1.2 .9,1.4 4.6,-1.7 2.3,1.7 .7,-.9 .6,1.4 4,2.3 h 2.9 l 3.9,-.5 4.3,1.1 2,1.9 4.5,.4 1.8,-1.5 .8,2.4 -1.8,.7 1.2,1.2 7.4,3.8 1.4,2.5 5.4,4.1 3.3,-2 -.6,-2.2 -3.5,-2 3.1,1.2 .5,-.7 .9,1.3 0,2.7 2.1,-.6 2.1,1.8 -2.5,-9.8 1.2,1.3 1.4,6 2.2,2.5 2.4,-.4 1.8,3.5 h .9 l .6,5.6 3.4,.5 1.6,2.2 1.8,1.1 .4,2.8 -1.8,2.6 2.9,1.6 1.2,-2.4 -.2,3.1 -.8,.9 1.4,1.7 .7,-2.4 -.2,-1.2 .8,.2 .6,2.3 -1,1.4 .6,2.6 .5,.4 .3,-1.6 .7,.6 -.3,2 1.2,.2 -.4,.9 1.7,-.1 0,-1 h -1 l .1,-1.7 -.8,-.6 1.7,-.3 .5,-.8 0,-1.6 .5,1.3 -.6,1.8 1.2,3.9 1.8,.1 2.2,-4.2 .1,-1.9 -1.3,-4 -.1,-1.2 .5,-1.2 -.7,-.7 -1.7,.1 -2.5,-2 -1.7,0 -2,-1.4 -1.5,0 -.5,-1.6 -1.4,-.3 -.2,-1.5 -1,-.5 .1,-1.7 -5.1,-7.4 -1.8,-1.5 v -1.2 l -4.3,-3.5 -.7,-1.1 -1.6,-2 -1.9,-.6 0,-2.2 -1.2,-1.3 -1.7,-.7 -2.1,1.3 -1.6,2.1 -.4,2.4 -1.5,.1 -2.5,2.7 -.8,-.3 v -2.5 l -2.4,-2.2 -2.3,-2 -.5,-2 -2.5,-1.3 .2,-2.2 -2.8,-.1 -.7,1.1 -1.2,0 -.7,-.7 -1.2,.8 -1.8,-1.2 0,-85.8 -6.9,-4.1 -1.8,-.5 -2.2,1.1 -2.2,.1 -2.3,-1.6 -4.3,-.6 -5.8,-3.6 -5.7,-.4 -2,.5 -.2,-1.8 -1.8,-.7 1.1,-1 -.2,-.9 -3.2,-1.1 h -2.4 l -.4,.4 -.9,-.6 .1,-2.6 -.8,-.9 -2.5,2.9 -.8,-.1 v -.8 l 1.7,-.8 v -.8 l -1.9,-2.4 -1.1,-.1 -4.5,3.1 h -3.9 l .4,-.9 -1.8,-.1 -5.2,3.4 -1.8,0 -.6,-.8 -2.7,1.5 -3.6,3.7 -2.8,2.7 -1.5,1.2  -2.6,.1 -2.2,-.4 -2.3,-1.3 v 0 l -2.8,3.9 -.1,2.4 2.6,2.4 2.1,4.5 .2,5.3 2.9,2 3.4,.4 .7,.8 -1.5,2.3 .7,2.7 -1.7,-2.6 v -2.4 l -1.5,-.3 .1,1.2 .7,2.1 2.9,3.7 h -1.4 l -2.2,1.1 -6.2,-2.5 -.1,-2 1.4,-1.3 0,-1.4 -2.1,-.5 -2.3,.2 -4.8,.2 1.5,2.3 -1.9,-1.8 -8.4,1.2 -.8,1.5 4.9,4.7 -.8,1.4 -.3,2 -.7,.8 -.1,1.9 4.4,3.6 4.1,.2 4.6,1.9 h 2 l .8,-.6 3.8,.1 .1,-.8 1.2,1.1 .1,2 -2.5,-.1 .1,3.3 .5,3.2 -2.9,2.7 -1.9,-.1 -2,-.8 -1,.1 -3.1,2.1 -1.7,.2 -1.4,-2.8 -3.1,0 -2.2,2 -.5,1.8 -3.3,1.8 -5.3,4.3 -.3,3.1 .7,2.2 1,1.2 1,-.4 .9,1 -.8,.6 -1.5,.9 1.1,1.5 -2.6,1.1 .8,2.2 1.7,2.3 .8,4.1 4,1.5 2.6,-.8 1.7,-1.1 .5,2.1 .3,4.4 -1.9,1.4 0,4.4 -.6,.9 h -1.7 l 1.7,1.2 2.1,-.1 .4,-1 4.6,-.6 2,2.6 1.3,-.7 1.3,5.1 1,.5 1,-.7 .1,-2.4 .9,-1 .7,1.1 .2,1.6 1.6,.4 4.7,-1.2 .2,1.2 -2,1.1 -1.6,1.7 -2.8,7 -4.3,2 -1.4,1.5 -.3,1.4 -1,-.6 -9.3,3.3 -1.8,4.1 -1.3,-.4 .5,-1.1 -1.5,-1.4 -3.5,-.2 -5.3,3.2 -2.2,1.3 -2.3,0 -.5,2.4 z">
+</path>
+
+<path class="az" d="m 139.6,387.6 3,-2.2 .8,-2.4 -1,-1.6 -1.8,-.2 -1.1,-1.6 1.1,-6.9 1.6,-.3 2.4,-3.2 1.6,-7 2.4,-3.6 4.8,-1.7 1.3,-1.3 -.4,-1.9 -2.3,-2.5 -1.2,-5.8 -1.4,-1.8 -1.3,-3.4 .9,-2.1 1.4,-3 .5,-2.9 -.5,-4.9 1,-13.6 3.5,-.6 3.7,1.4 1.2,2.7 h 2 l 2.4,-2.9 3.4,-17.5 46.2,8.2 40,6 -17.4,124.1 -37.3,-5.4 -64.2,-37.5 .5,-2.9 2,-1.8 z">
+</path>
+
+<path class="ar" d="m 584.2,367 .9,-2.2 1.2,.5 .7,-1 -.8,-.7 .3,-1.5 -1.1,-.9 .6,-1 -.1,-1.5 -1.1,-.1 .8,-.8 1.3,.8 .3,-1.4 -.4,-1.1 .1,-.7 2,.6 -.4,-1.5 1.6,-1.3 -.5,-.9 -1.1,.1 -.6,-.9 .9,-.9 1.6,-.2 .5,-.8 1.4,-.2 -.1,-.8 -.9,-.9 v -.5 h 1.5 l .4,-.7 -1.4,-1 -.1,-.6 -11.2,.8 2.8,-5.1 1.7,-1.5 v -2.2 l -1.6,-2.5 -39.8,2 -39.1,.7 4.1,24.4 -.7,39 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9 52.3,-1.3 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 v -.8 l -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1 z">
+</path>
+
+<path class="ca" d="m 69.4,365.6 3.4,5.2 -1.4,.1 -1.8,-1.9 z m 1.9,-9.8 1.8,4.1 2.6,1 .7,-.6 -1.3,-2.5 -2.6,-2.4 z m -19.9,-19 v 2.4 l 2,1.2 4.4,-.2 1,-1 -3.1,-.2 z m -5.9,.1 3.3,.5 1.4,2.2 h -3.8 z m 47.9,45.5 -1,-3 .2,-3 -.4,-7.9 -1.8,-4.8 -1.2,-1.4 -.6,-1.5 -7,-8.6 -3.6,.1 -2,-1.9 1.1,-1.8 -.7,-3.7 -2.2,-1.2 -3.9,-.6 -2.8,-1.3 -1.5,-1.9 -4.5,-6.6 -2.7,-2.2 -3.7,-.5 -3.1,-2.3 -4.7,-1.5 -2.8,-.3 -2.5,-2.5 .2,-2.8 .8,-4.8 1.8,-5.1 -1.4,-1.6 -4,-9.4 -2.7,-3.7 -.4,-3 -1.6,-2.3 .2,-2.5 -2,-5 -2.9,-2.7 .6,-7.1 2.4,-.8 1.8,-3.1 -.4,-3.2 -1,-.9 h -2.5 l -2.5,-3.3 -1.5,-3.5 v -7.5 l 1.2,-4.2 .2,-2.1 2.5,.2 -.1,1.6 -.8,.7 v 2.5 l 3.7,3.2 v -4.7 l -1.4,-3.4 .5,-1.1 -1,-1.7 2.8,-1.5 -1.9,-3 -1.4,.5 -1.5,3.8 .5,1.3 -.8,1 -.9,-.1 -5.4,-6.1 .7,-5.6 -1.1,-3.9 -6.5,-12.8 .8,-10.7 2.3,-3.6 .2,-6.4 -5.5,-11.1 .3,-5.2 6.9,-7.5 1.7,-2.4 -.1,-1.4 4,-9.2 .1,-8.4 .9,-2.5 66.1,18.6 -16.4,63.1 1.1,3.5 70.4,105 -.9,2.1 1.3,3.4 1.4,1.8 1.2,5.8 2.3,2.5 .4,1.9 -1.3,1.3 -4.8,1.7 -2.4,3.6 -1.6,7 -2.4,3.2 -1.6,.3 -1.1,6.9 1.1,1.6 1.8,.2 1,1.6 -.8,2.4 -3,2.2 -2.2,-.1 z">
+</path>
+
+<path class="co" d="m 374.6,323.3 -16.5,-1 -51.7,-4.8 -52.6,-6.5 11.5,-88.3 44.9,5.7 37.5,3.4 33.1,2.4 -1.4,22.1 z">
+</path>
+
+<path class="ct" d="m 873.5,178.9 .4,-1.1 -3.2,-12.3 -.1,-.3 -14.9,3.4 v .7 l -.9,.3 -.5,-.7 -10.5,2.4 2.8,16.3 1.8,1.5 -3.5,3.4 1.7,2.2 5.4,-4.5 1.7,-1.3 h .8 l 2.4,-3.1 1.4,.1 2.9,-1.1 h 2.1 l 5.3,-2.7 2.8,-.9 1,-1 1.5,.5 z">
+</path>
+
+<path class="de" d="m 822.2,226.6 -1.6,.3 -1.5,1.1 -1.2,2.1 7.6,27.1 10.9,-2.3 -2.2,-7.6 -1.1,.5 -3.3,-2.6 -.5,-1.7 -1.8,-1 -.2,-3.7 -2.1,-2.2 -1.1,-.8 -1.2,-1.1 -.4,-3.2 .3,-2.1 1,-2.2 z">
+</path>
+
+<path class="fl" d="m 751.7,445.1 -4,-.7 -1.7,-.9 -2.2,1.4 v 2.5 l 1.4,2.1 -.5,4.3 -2.1,.6 -1,-1.1 -.6,-3.2 -50.1,3.3 -3.3,-6 -48.8,5.1 -.5,2.9 2.5,2.8 1.7,.7 .9,1.2 -.4,7.3 -1.1,.6 .5,.4 1,-.3 .7,-.8 10.5,-2.7 9.2,-.5 8.1,1.9 8.5,5 2.4,.8 2.2,2 -.1,2.7 h 2.4 l 1.9,-1 2.5,.1 2,-.8 2.9,-2 3.1,-2.9 1.1,-.4 .6,.5 h 1.4 l .5,-.8 -.5,-1.2 -.6,-.6 .2,-.8 2,-1.1 5,-.4 .8,1 1,.1 2.3,1 3,1.8 1.2,1.7 1.1,1.2 2.8,1.4 v 2.4 l 2.8,1.9 1,.1 1.6,1.4 .7,1.6 1,.2 .8,2.1 .7,.6 1,-1.1 2.9,.1 .5,1.4 1.1,.9 v 1.3 l 2.9,2.2 .2,9.6 -1.8,5.8 1,1.2 -.2,3.4 -.8,1.4 .7,1.2 2.3,2.3 .3,1.5 .8,1 -.4,-1.9 1.3,-.6 .8,-3.6 -3,-1.2 .1,-.6 2.6,-.4 .9,2.6 1.1,.6 .1,-2 1.1,.3 .6,.8 -.1,.7 -2.9,4.2 -.2,1.1 -1.7,1.9 v 1.1 l 3.7,3.8 5.3,7.9 1.8,2.1 v 1.8 l 2.8,4.6 2.3,.6 .7,-1.2 -2.1,.3 -3,-4.5 .2,-1.4 1.5,-.8 v -1.5 l -.6,-1.3 .9,-.9 .4,.9 .7,.5 v 4 l -1.2,-.6 -.8,.9 1.4,1.6 1,2.6 1.2,-.6 2.3,1.2 2.1,2.2 1.6,5.1 3.1,4.8 .8,-1.3 2.8,-.5 3.2,1.3 .3,1.7 3.3,3.8 .1,1.1 2.2,2.7 -.7,.5 v 2.7 l 2.7,1.4 h 1.5 l 2.7,-1.8 1.5,.3 1.1,.4 2.3,-1.7 .2,-.7 1.2,.3 2.4,-1.7 1.3,-2.3 -.7,-3.2 -.2,-1.3 1.1,-4 .6,-.2 .6,1.6 .8,-1.8 -.8,-7.2 -.4,-10.5 -1,-6.8 -.7,-1.7 -6.6,-11.1 -5.2,-9.1 -2.2,-3.3 -1.3,-3.6 -.2,-3.4 .9,-.3 v -.9 l -1.1,-2.2 -4,-4 -7.6,-9.7 -5.7,-10.4 -4.3,-10.7 -.6,-3.7 -1.2,-1 -.5,-3.8 z m 9.2,134.5 1.7,-.1 -.7,-1 z m 7.3,-1.1 v -.7 l 1.6,-.2 3.7,-3.3 1.5,-.6 2.4,-.9 .3,1.3 1.7,.8 -2.6,1.2 h -2.4 l -3.9,2.5 z m 17.2,-7.6 -3,1.4 -1,1.3 1.1,.1 z m 3.8,-2.9 -1.1,.3 -1.4,2 1.1,-.2 1.5,-1.6 z m 8.3,-15.7 -1.7,5.6 -.8,1 -1,2.6 -1.2,1.6 -.7,1.7 -1.9,2.2 v .9 l 2.7,-2.8 2.4,-3.5 .6,-2 2.1,-4.9 z">
+</path>
+
+<path class="ga" d="m 761.8,414.1 v 1.4 l -4.2,6.2 -1.2,.2 1.5,.5 v 2 l -.9,1.1 -.6,6 -2.3,6.2 .5,2 .7,5.1 -3.6,.3 -4,-.7 -1.7,-.9 -2.2,1.4 v 2.5 l 1.4,2.1 -.5,4.3 -2.1,.6 -1,-1.1 -.6,-3.2 -50.1,3.3 -3.3,-6 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 22.9,-2.9 21.4,-3 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4 z">
+</path>
+
+<!-- Hawaii is shown in the same scale as the contiguous United States. The Northwestern Hawaiian Islands are not shown. -->
+<path class="hi" d="m 317,553.7 -.2,3.2 1.7,1.9 .1,1.2 -4.8,4.5 -.1,1.2 1.9,3.2 1.7,4.2 v 2.6 l -.5,1.2 .1,3.4 4.1,2.1 1.1,1.1 1.2,-1.1 2.1,-3.6 4.5,-2.9 3.3,-.5 2.5,-1 1.7,-1.2 3.2,-3.5 -2.8,-1.1 -1.4,-1.4 .1,-1.7 -.5,-.6 h -2 l .2,-2.5 -.7,-1.2 -2.6,-2.3 -4.5,-1.9 -2.8,-.2 -3.3,-2.7 -1.2,-.6 z m -15.3,-17 -1.1,1.5 -.1,1.7 2.7,2.4 1.9,.5 .6,1 .4,3 3.6,.2 5.3,-2.6 -.1,-2.5 -1.4,-.5 -3.5,-2.6 -1.8,-.3 -2.9,1.3 -1.5,-2.7 z m -1.5,11.5 .9,-1.4 2.5,-.3 .6,1.8 z m -7,-8.7 1.7,4 3.1,-.6 .3,-2 -1.4,-1.5 z m -4.1,-6.7 -1.1,2.4 h 5 l 4.8,1.6 2.5,-1.6 .2,-1.5 -4.8,.2 z m -16,-10.6 -1.9,2.1 -2.9,.6 .8,2.2 2.2,2.8 .1,1 2.1,-.3 2.3,.1 1.7,1.2 3.5,-.8 v -.7 l -1,-.8 -.5,-2.1 -.8,-.3 -.5,1 -1.2,-1.3 .2,-1.4 -1.8,-3.3 -1.1,-.7 z m -31.8,-12.4 -4.2,2.9 .2,2.3 2.4,1.2 1.9,1.3 2.7,.4 2.6,-2.2 -.2,-1.9 .8,-1.7 v -1.4 l -1,-.9 z m -10.8,4.8 -.3,1.2 -1.9,.9 -.6,1.8 1,.8 1.1,-1.5 1.9,-.6 .4,-2.6 z">
+</path>
+
+<path class="id" d="m 165.3,183.1 -24.4,-5.4 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6 1.1,-4.3 -.7,-4 12.7,-56.1 14.2,3 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1 -8.5,54.8 -47.9,-8.2 z">
+</path>
+
+<path class="il" d="m 623.5,265.9 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9 v .9 l -2.2,2.7 .1,1.1 1.5,2.2 -.1,.9 -3.7,.6 -.6,1.2 -1.2,-.6 -1,.5 -.4,3.3 1.7,1.8 -.4,2.4 -1.5,.3 -6.9,-3 -4,3.7 .3,1.8 h -2.8 l -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7 .7,-.7 .1,-2.3 -.7,-.9 1,-1.5 1.8,-.6 .9,-.3 1,-1.2 v -2.4 l 1.7,-2.4 .5,-.5 .1,-3.5 -.9,-1.4 -1,-.3 -1.1,-1.6 1,-4 3,-.8 h 2.4 l 4.2,-1.8 1.7,-2.2 .1,-2.4 1.1,-1.3 1.3,-3.2 -.1,-2.6 -2.8,-3.5 h -1.2 l -.9,-1.1 .2,-1.6 -1.7,-1.7 -2.5,-1.3 .5,-.6 45.9,-2.8 .1,4.6 3.4,4.6 1.2,4.1 1.6,3.2 z">
+</path>
+
+<path class="in" d="m 629.2,214.8 -5.1,2.3 -4.7,-1.4 4.1,50.2 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9 -6.6,-57.2 -.1,-1.4 -32.4,3.4 z">
+</path>
+
+<path class="ia" d="m 556.9,183 2.1,1.6 .6,1.1 -1.6,3.3 -.1,2.5 2,5.5 2.7,1.5 3.3,.7 1.3,2.8 -.5,.6 2.5,1.3 1.7,1.7 -.2,1.6 .9,1.1 h 1.2 l 2.8,3.5 .1,2.6 -1.3,3.2 -1.1,1.3 -.1,2.4 -1.7,2.2 -4.2,1.8 h -2.4 l -3,.8 -1,4 1.1,1.6 1,.3 .9,1.4 -.1,3.5 -.5,.5 -1.7,2.4 v 2.4 l -1,1.2 -.9,.3 -1.8,.6 -1,1.5 .7,.9 -.1,2.3 -.7,.7 -1.5,-.8 -1.1,-1.1 -.6,-1.6 -1.7,-1.3 -14.3,.8 -27.2,1.2 -25.9,-.1 -1.8,-4.4 .7,-2.2 -.8,-3.3 .2,-2.9 -1.3,-.7 -.4,-6.1 -2.8,-5 -.2,-3.7 -2.2,-4.3 -1.3,-3.7 v -1.4 l -.6,-1.7 v -2.3 l -.5,-.9 -.7,-1.7 -.3,-1.3 -1.3,-1.2 1,-4.3 1.7,-5.1 -.7,-2 -1.3,-.4 -.4,-1.6 1,-.5 .1,-1.1 -1.3,-1.5 .1,-1.6 2.2,.1 h 28.2 l 36.3,-.9 18.6,-.7 z">
+</path>
+
+<path class="ks" d="m 459.1,259.5 -43.7,-1.2 -36,-2 -4.8,67 67.7,2.9 62,.1 -.5,-48.1 -3.2,-.7 -2.6,-4.7 -2.5,-2.5 .5,-2.3 2.7,-2.6 .1,-1.2 -1.5,-2.1 -.9,1 -2,-.6 -2.9,-3 z">
+</path>
+
+<path class="ky" d="m 692.1,322.5 -20.5,1.4 -5.2,.8 -17.4,1 -2.6,.8 -22.6,2 -.7,-.6 h -3.7 l 1.2,3.2 -.6,.9 -23.3,1.5 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 -.3,-1.8 4,-3.7 6.9,3 1.5,-.3 .4,-2.4 -1.7,-1.8 .4,-3.3 1,-.5 1.2,.6 .6,-1.2 3.7,-.6 .1,-.9 -1.5,-2.2 -.1,-1.1 2.2,-2.7 0,-.9 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9 1.3,.5 2.2,.1 1.9,-.8 2.9,1.2 2.2,3.4 v 1 l 4.1,.7 2.3,-.2 1.9,2.1 2.2,.2 v -1 l 1.9,-.8 3,.8 1.2,.8 1.3,-.7 h .9 l .6,-1.7 3.4,-1.8 .5,.8 .8,2.9 3.5,1.4 1.2,2.1 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1 -4.9,6.6 -2.9,1 -3,3 -.4,2.2 -2.1,1.3 -.1,1.7 -1.4,1.4 -1.8,.5 -.5,1.9 -1,.4 -6.9,4.2 z m -98,11.3 -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1 z">
+</path>
+
+<path class="la" d="m 602.5,472.8 -1.2,-1.8 .3,-1.3 -4.8,-6.8 .9,-4.6 1,-1.4 .1,-1.4 -36,2 1.7,-11.9 2.4,-4.8 6,-8.4 -1.8,-2.5 h 2 v -3.3 l -2.4,-2.5 .5,-1.7 -1.2,-1 -1.6,-7.1 .6,-1.4 -52.3,1.3 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1 1.6,-1.3 5.3,-.9 6.1,-.1 9.6,3.8 8,1 1.5,-1.4 1.8,-.2 4.8,2.2 1.6,-.4 1.1,-1.5 -4.2,-1.8 -2.2,1 -1.1,-.2 -1.4,-2 3.3,-2.2 1.6,-.1 v 1.7 l 1.5,-.1 3.4,-.3 .4,2.3 1.1,.4 .6,1.9 4.8,1 1.7,1.6 v .7 h -1.2 l -1.5,1.7 1.7,1.2 5.4,1 2.7,2.8 4.4,-1 -3.7,.2 -.1,-.6 2.8,-.7 .2,-1.8 1.2,-.3 v -1.4 l 1.1,.1 v 1.6 l 2.5,.1 .8,-1.9 .9,.3 .2,2.5 1.2,.2 -1.8,2 2.6,-.9 2,-1.1 2.9,-3.3 h -.7 l -1.3,1.2 -.4,-.1 -.5,-.8 .9,-1.2 v -2.3 l 1.1,-.8 .7,.7 1,-.8 1,-.1 .6,1.3 -.6,1.9 h 2.4 l 5.1,1.7 .5,1.3 1.6,1.4 2.8,.1 1.3,.7 1.8,-1 .9,-1.7 v -1.7 h -1.4 l -1.2,-1.4 -1.1,-1.1 -3.2,-.9 -2.6,.2 -4.2,-2.4 v -2.3 l 1.3,-1 2.4,.6 -3.1,-1.6 .2,-.8 h 3.6 l 2.6,-3.5 -2.6,-1.8 .8,-1.5 -1.2,-.8 h -.8 l -2,2.1 v 2.1 l -.6,.7 -1.1,-.1 -1.6,-1.4 h -1.3 v -1.5 l .6,-.7 .8,.7 1.7,-1.6 .7,-1.6 .8,-.3 z m -10.3,-2.7 1.9,1 .8,1.1 2.5,.1 1.5,.8 .2,1.4 -.4,.6 -.9,-1.5 -1.4,1.2 -.9,1.4 -2.8,.8 -1.6,.1 -3.7,-1 .1,-1.7 2,-2 1.1,-2.4 z m -4.7,1.2 v 1.1 l -1.8,2 h -1.2 v -2.2 l 1.6,-1.5 z">
+</path>
+
+<path class="me" d="m 875,128.7 .6,4 3.2,2 .8,2.2 2.3,1.4 1.4,-.3 1,-3 -.8,-2.9 1.6,-.9 .5,-2.8 -.6,-1.3 3.3,-1.9 -2.2,-2.3 .9,-2.4 1.4,-2.2 .5,3.2 1.6,-2 1.3,.9 1.2,-.8 v -1.7 l 3.2,-1.3 .3,-2.9 2.5,-.2 2.7,-3.7 v -.7 l -.9,-.5 -.1,-3.3 .6,-1.1 .2,1.6 1,-.5 -.2,-3.2 -.9,.3 -.1,1.2 -1.2,-1.4 .9,-1.4 .6,.1 1.1,-.4 .5,2.8 2,-.3 2.9,.7 v -1 l -1.1,-1.2 1.3,.1 .1,-2.3 .6,.8 .3,1.9 2.1,1.5 .2,-1 .9,-.2 -.3,-.8 .8,-.6 -.1,-1.6 -1.6,-.2 -2,.7 1.4,-1.6 .7,-.8 1.3,-.2 .4,1.3 1.7,1.6 .4,-2.1 2.3,-1.2 -.9,-1.3 .1,-1.7 1.1,.5 h .7 l 1.7,-1.4 .4,-2.3 2.2,.3 .1,-.7 .2,-1.6 .5,1.4 1.5,-1 2.3,-4.1 -.1,-2.2 -1.4,-2 -3,-3.2 h -1.9 l -.8,2.2 -2.9,-3 .3,-.8 v -1.5 l -1.6,-4.5 -.8,-.2 -.7,.4 h -4.8 l -.3,-3.6 -8.1,-26 -7.3,-3.7 -2.9,-.1 -6.7,6.6 -2.7,-1 -1,-3.9 h -2.7 l -6.9,19.5 .7,6.2 -1.7,2.4 -.4,4.6 1.3,3.7 .8,.2 v 1.6 l -1.6,4.5 -1.5,1.4 -1.3,2.2 -.4,7.8 -2.4,-1 -1.5,.4 z m 34.6,-24.7 -1,.8 v 1.3 l .7,-.8 .9,.8 .4,-.5 1.1,.2 -1,-.8 .4,-.8 z m -1.7,2.6 -1,1.1 .5,.4 -.1,1 h 1.1 v -1.8 z m -3,-1.6 .9,1.3 1,.5 .3,-1 v -1.8 l -1.3,-.7 -.4,1.2 z m -1,5 -1.7,-1.7 1.6,-2.4 .8,.3 .2,1.1 1,.8 v 1.1 l -1,1 z">
+</path>
+
+<path class="md" d="m 822.9,269.3 0,-1.7 h -.8 l 0,1.8 z m 11.8,-3.9 1.2,-2.2 .1,-2.5 -.6,-.6 -.7,.9 -.2,2.1 -.8,1.4 -.3,1.1 -4.6,1.6 -.7,.8 -1.3,.2 -.4,.9 -1.3,.6 -.3,-2.5 .4,-.7 -.8,-.5 .2,-1.5 -1.6,1 v -2 l 1.2,-.3 -1.9,-.4 -.7,-.8 .4,-1.3 -.8,-.6 -.7,1.6 .5,.8 -.7,.6 -1.1,.5 -2,-1 -.2,-1.2 -1,-1.1 -1.4,-1.7 1.5,-.8 -1,-.6 v -.9 l .6,-1 1.7,-.3 -1.4,-.6 -.1,-.7 -1.3,-.1 -.4,1.1 -.6,.3 .1,-3.4 1,-1 .8,.7 .1,-1.6 -1,-.9 -.9,1.1 -1,1.4 -.6,-1 .2,-2.4 .9,-1 .9,.9 1.2,-.7 -.4,-1.7 -1,1 -.9,-2.1 -.2,-1.7 1.1,-2.4 1.1,-1.4 1.4,-.2 -.5,-.8 .5,-.6 -.3,-.7 .2,-2.1 -1.5,.4 -.8,1.1 1,1.3 -2.6,3.6 -.9,-.4 -.7,.9 -.6,2.2 -1.8,.5 1.3,.6 1.3,1.3 -.2,.7 .9,1.2 -1.1,1 .5,.3 -.5,1.3 v 2.1 l -.5,1.3 .9,1.1 .7,3.4 1.3,1.4 1.6,1.4 .4,2.8 1.6,2 .4,1.4 v 1 h -.7 l -1.5,-1.2 -.4,.2 -1.2,-.2 -1.7,-1.4 -1.4,-.3 -1,.5 -1.2,-.3 -.4,.2 -1.7,-.8 -1,-1 -1,-1.3 -.6,-.2 -.8,.7 -1.6,1.3 -1.1,-.8 -.4,-2.3 .8,-2.1 -.3,-.5 .3,-.4 -.7,-1 1,-.1 1,-.9 .4,-1.8 1.7,-2.6 -2.6,-1.8 -1,1.7 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 -.9,-.4 .2,-1.6 -1,-.5 -.2,-.7 h -.7 l -.8,-1.2 .2,-1 -2.6,.4 -2.2,-1.6 -1.4,.3 -.9,1.4 h -1.3 l -1.7,2.9 -3.3,.4 -1.9,-1 -2.6,3.8 -2.2,-.3 -3.1,3.9 -.9,1.6 -1.8,1.6 -1.7,-11.4 60.5,-11.8 7.6,27.1 10.9,-2.3 0,5.3 -.1,3.1 -1,1.8 z m -13.4,-1.8 -1.3,.9 .8,1.8 1.7,.8 -.4,-1.6 z">
+</path>
+
+<path class="ma" d="m 899.9,174.2 h 3.4 l .9,-.6 .1,-1.3 -1.9,-1.8 .4,1 -1.5,1.5 h -2.3 l .1,.8 z m -9,1.8 -1.2,-.6 1,-.8 .6,-2.1 1.2,-1 .8,-.2 .6,.9 1.1,.2 .6,-.6 .5,1.9 -1.3,.3 -2.8,.7 z m -34.9,-23.4 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3 1.7,3.3 1,.4 1.1,-1.3 .8,1.3 v 1.1 l -3,2.4 .2,.8 -.9,1 .4,.8 -1.3,.3 .9,1.2 -.8,.7 .6,1 .9,-.2 .3,-.8 1.1,.6 h 1.8 l 2.5,2.6 .2,2.6 1.8,.1 .8,1.1 .6,2 1,.7 h 1.9 l 1.9,-.1 .8,-.9 1.6,-1.2 1.1,-.3 -1.2,-2.1 -.3,.9 -1.5,-3.6 h -.8 l -.4,.9 -1.2,-1 1.3,-1.1 1.8,.4 2.3,2.1 1.3,2.7 1.2,3.3 -1,2.8 v -1.8 l -.7,-1 -3.5,2.3 -.9,-.3 -1.6,1 -.1,1.2 -2.2,1.2 -2,2.1 -2,1.9 h -1.2 l 3.3,-3.3 .5,-1.9 -.5,-.6 -.3,-1.3 -.9,-.1 -.1,1.3 -1,1.2 h -1.2 l -.3,1.1 .4,1.2 -1.2,1.1 -1.1,-.2 -.4,1 -1.4,-3 -1.3,-1.1 -2.6,-1.3 -.6,-2.2 h -.8 l -.7,-2.6 -6.5,2 -.1,-.3 -14.9,3.4 v .7 l -.9,.3 -.5,-.7 -10.5,2.4 -.7,-1 .5,-15 z">
+</path>
+
+<path class="mi" d="m 663.3,209.8 .1,1.4 21.4,-3.5 .5,-1.2 3.9,-5.9 v -4.3 l .8,-2.1 2.2,-.8 2,-7.8 1,-.5 1,.6 -.2,.6 -1.1,.8 .3,.9 .8,.4 1.9,-1.4 .4,-9.8 -1.6,-2.3 -1.2,-3.7 v -2.5 l -2.3,-4.4 v -1.8 l -1.2,-3.3 -2.3,-3 -2.9,-1 -4.8,3 -2.5,4.6 -.2,.9 -3,3.5 -1.5,-.2 -2.9,-2.8 -.1,-3.4 1.5,-1.9 2,-.2 1.2,-1.7 .2,-4 .8,-.8 1.1,-.1 .9,-1.7 -.2,-9.6 -.3,-1.3 -1.2,-1.2 -1.7,-1 -.1,-1.8 .7,-.6 1.8,.8 -.3,-1.7 -1.9,-2.7 -.7,-1.6 -1.1,-1.1 h -2.2 l -8.1,-2.9 -1.4,-1.7 -3.1,-.3 -1.2,.3 -4.4,-2.3 h -1.4 l .5,1 -2.7,-.1 .1,.6 .6,.6 -2.5,2.1 .1,1.8 1.5,2.3 1.5,.2 v .6 l -1.5,.5 -2.1,-.1 -2.8,2.5 .1,2.5 .4,5.8 -2.2,3.4 .8,-4.5 -.8,-.6 -.9,5.3 -1,-2.3 .5,-2.3 -.5,-1 .6,-1.3 -.6,-1.1 1,-1 v -1.2 l -1.3,.6 -1.3,3.1 -.7,.7 -1.3,2.4 -1.7,-.2 -.1,1.2 h -1.6 l .2,1.5 .2,2 -3,1.2 .1,1.3 1,1.7 -.1,5.2 -1.3,4.4 -1.7,2.5 1.2,1.4 .8,3.5 -1,2.5 -.2,2.1 1.7,3.4 2.5,4.9 1.2,1.9 1.6,6.9 -.1,8.8 -.9,3.9 -2,3.2 -.9,3.7 -2,3 -1.2,1 z m -95.8,-96.8 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 .8,-1.8 2.9,-4.6 1.6,-6 2.3,-2 -.5,-1.6 .5,-.9 1,1.6 -.3,2.2 2.9,-2.2 .2,-2.3 2.1,.6 .8,-1.6 .7,.6 -.7,1.5 -1,.5 -1,2 1.4,1.8 1.1,-.5 -.5,-.7 1,-1.5 1.9,-1.7 h .8 l .2,-2.6 2,-1.8 7.9,-.5 1.9,-3.1 3.8,-.3 3.8,1.2 4.2,2.7 .7,-.2 -.2,-3.5 .7,-.2 4.5,1.1 1.5,-.2 2.9,-.7 1.7,.4 1.8,.1 v -1.1 l -.7,-.9 -1.5,-.2 -1.1,-.8 .5,-1.4 -.8,-.3 -2.6,.1 -.1,-1 1.1,-.8 .6,.8 .5,-1.8 -.7,-.7 .7,-.2 -1.4,-1.3 .3,-1.3 .1,-1.9 h -1.3 l -1.5,1 -1.9,.1 -.5,1.8 -1.9,.2 -.3,-1.2 -2.2,.1 -1,1.2 -.7,-.1 -.2,-.8 -2.6,.4 -.1,-4.8 1,-2 -.7,-.1 -1.8,1.1 h -2.2 l -3.8,2.7 -6.2,.3 -4.1,.8 -1.9,1.5 -1.4,1.3 -2.5,1.7 -.3,.8 -.6,-1.7 -1.3,-.6 v .6 l .7,.7 v 1.3 l -1.5,-.6 h -.6 l -.3,1.2 -2,-1.9 -1.3,-.2 -1.3,1.5 -3.2,-.1 -.5,-1.4 -2,-1.9 -1.3,-1.6 v -.7 l -1.1,-1.4 -2.6,-1.2 -3.3,-.1 -1.1,-.9 h -1.4 l -.7,.4 -2.2,2.2 -.7,1.1 -1,-.7 .2,-1 .8,-2.1 3.2,-5 .8,-.2 1.7,-1.9 .7,-1.6 3,-.6 .8,-.6 -.1,-1 -.5,-.5 -4.5,.2 -2,.5 -2.6,1.2 -1.2,1.2 -1.7,2.2 -1.8,1 -3.3,3.4 -.4,1.6 -7.4,4.6 -4,.5 -1.8,.4 -2.3,3 -1.8,.7 -4.4,2.3 z m 100.7,3.8 3.8,.1 .6,-.5 -.2,-2 -1.7,-1.8 -1.9,.1 -.1,.5 1.1,.4 -1.6,.8 -.3,1 -.6,-.6 -.4,.8 z m -75.1,-41.9 -2.3,.2 -2.7,1.9 -7.1,5.3 .8,1 1.8,.3 2.8,-2 -1.1,-.5 2.3,-1.6 h 1 l 3,-1.9 -.1,-.9 z m 41.1,62.8 v 1 l 2.1,1.6 -.2,-2.4 z m -.7,2.8 1.1,.1 v .9 h -1 z m 21.4,-21.3 v .9 l .8,-.2 v -.5 z m 4.7,3.1 -.1,-1.1 -1.6,-.2 -.6,-.4 h -.9 l -.4,.3 .9,.4 1.1,1.1 z m -18,1.2 -.1,1.1 -.3,.7 .2,2.2 .4,.3 .7,.1 .5,-.9 .1,-1.6 -.3,-.6 -.1,-1.1 z">
+</path>
+
+<path class="mn" d="m 464.7,68.6 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1 -.1,2.2 -.9,2 -3.1,1.9 -.3,1.2 1.7,2.5 .4,1.8 2.6,.6 1.5,1.9 -.2,39.5 h 28.2 l 36.3,-.9 18.6,-.7 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 v 0 l -1.2,-2.2 4.3,-3.1 3.1,-3.7 1.6,-.8 4.7,-5.9 6.3,-5.8 3.9,-2.1 6.3,-2.7 7.6,-4.5 -.6,-.4 -3.7,.7 -2.8,.1 -1,-1.6 -1.4,-.9 -9.8,1.2 -1,-2.8 -1.6,-.1 -1.7,.8 -3.7,3.1 h -4.1 l -2.1,-1 -.3,-1.7 -3.9,-.8 -.6,-1.6 -.7,-1.3 -1,.9 -2.6,.1 -9.9,-5.5 h -2.9 l -.8,-.7 -3.1,1.3 -.8,1.3 -3.3,.8 -1.3,-.2 v -1.7 l -.7,-.9 h -5.9 l -.4,-1.4 h -2.6 l -1.1,.4 -2.4,-1.7 .3,-1.4 -.6,-2.4 -.7,-1.1 -.2,-3 -1,-3.1 -2.1,-1.6 h -2.9 l .1,8 -30.9,-.4 z">
+</path>
+
+<path class="ms" d="m 623.8,468.6 -5,.1 -2.4,-1.5 -7.9,2.5 -.9,-.7 -.5,.2 -.1,1.6 -.6,.1 -2.6,2.7 -.7,-.1 -.6,-.7 -1.2,-1.8 .3,-1.3 -4.8,-6.8 .9,-4.6 1,-1.4 .1,-1.4 -36,2 1.7,-11.9 2.4,-4.8 6,-8.4 -1.8,-2.5 h 2 v -3.3 l -2.4,-2.5 .5,-1.7 -1.2,-1 -1.6,-7.1 .6,-1.4 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 v -.8 l -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1 38.3,-2.6 1.3,2 -1.3,67 4.4,33.2 z">
+</path>
+
+<path class="mo" d="m 555.3,248.9 -1.1,-1.1 -.6,-1.6 -1.7,-1.3 -14.3,.8 -27.2,1.2 -25.9,-.1 1.3,1.3 -.3,1.4 2.1,3.7 3.9,6.3 2.9,3 2,.6 .9,-1 1.5,2.1 -.1,1.2 -2.7,2.6 -.5,2.3 2.5,2.5 2.6,4.7 3.2,.7 .5,48.1 .2,10.8 39.1,-.7 39.8,-2 1.6,2.5 v 2.2 l -1.7,1.5 -2.8,5.1 11.2,-.8 1,-2 1.2,-.5 v -.7 l -1.2,-1.1 -.6,-1 1.7,.2 .8,-.7 -1.4,-1.5 1.4,-.5 .1,-1 -.6,-1 v -1.3 l -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1 .8,.7 .8,-1 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 h -2.8 l -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7 z">
+</path>
+
+<path class="mt" d="m 247,130.5 57.3,7.9 51,5.3 2,-20.7 5.2,-66.7 -53.5,-5.6 -54.3,-7.7 -65.9,-12.5 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1 z">
+</path>
+
+<path class="ne" d="m 402.5,191.1 38,1.6 3.4,3.2 1.7,.2 2.1,2 1.8,-.1 1.8,-2 1.5,.6 1,-.7 .7,.5 .9,-.4 .7,.4 .9,-.4 1,.5 1.4,-.6 2,.6 .6,1.1 6.1,2.2 1.2,1.3 .9,2.6 1.8,.7 1.5,-.2 .5,.9 v 2.3 l .6,1.7 v 1.4 l 1.3,3.7 2.2,4.3 .2,3.7 2.8,5 .4,6.1 1.3,.7 -.2,2.9 .8,3.3 -.7,2.2 1.8,4.4 1.3,1.3 -.3,1.4 2.1,3.7 3.9,6.3 h -32.4 l -43.7,-1.2 -36,-2 1.4,-22.1 -33.1,-2.4 3.7,-44.2 z">
+</path>
+
+<path class="nv" d="m 167.6,296.8 -3.4,17.5 -2.4,2.9 h -2 l -1.2,-2.7 -3.7,-1.4 -3.5,.6 -1,13.6 .5,4.9 -.5,2.9 -1.4,3 -70.4,-105 -1.1,-3.5 16.4,-63.1 47,11.2 24.4,5.4 23.3,4.7 z">
+</path>
+
+<path class="nh" d="m 862.6,93.6 -1.3,.1 -1,-1.1 -1.9,1.4 -.5,6.1 1.2,2.3 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3 .8,-4.8 -2.3,-1.4 -.8,-2.2 -3.2,-2 -.6,-4 -11.9,-36.8 z">
+</path>
+
+<path class="nj" d="m 842.5,195.4 -14.6,-4.9 -1.8,2.5 .1,2.2 -3,5.4 1.5,1.8 -.7,2 -1,1 .5,3.6 2.7,.9 1,2.8 2.1,1.1 4.2,3.2 -3.3,2.6 -1.6,2.3 -1.8,3 -1.6,.6 -1.4,1.7 -1,2.2 -.3,2.1 .8,.9 .4,2.3 1.2,.6 2.4,1.5 1.8,.8 1.6,.8 .1,1.1 .8,.1 1.1,-1.2 .8,.4 2.1,.2 -.2,2.9 .2,2.5 1.8,-.7 1.5,-3.9 1.6,-4.8 2.9,-2.8 .6,-3.5 -.6,-1.2 1.7,-2.9 v -1.2 l -.7,-1.1 1.2,-2.7 -.3,-3.6 -.6,-8.2 -1.2,-1.4 v 1.4 l .5,.6 h -1.1 l -.6,-.4 -1.3,-.2 -.9,.6 -1.2,-1.6 .7,-1.7 v -1 l 1.7,-.7 .8,-2.1 z">
+</path>
+
+<path class="nm" d="m 357.5,332.9 h -.8 l -7.9,99.3 -31.8,-2.6 -34.4,-3.6 -.3,3 2,2.2 -30.8,-4.1 -1.4,10.2 -15.7,-2.2 17.4,-124.1 52.6,6.5 51.7,4.8 z">
+</path>
+
+<path class="ny" d="m 872.9,181.6 -1.3,.1 -.5,1 z m -30.6,22.7 .7,.6 1.3,-.3 1.1,.3 .9,-1.3 h 1.9 l 2.4,-.9 5.1,-2.1 -.5,-.5 -1.9,.8 -2,.9 .2,-.8 2.6,-1.1 .8,-1 1.2,.1 4.1,-2.3 v .7 l -4.2,3 4.5,-2.8 1.7,-2.2 1.5,-.1 4.5,-3.1 3.2,-3.1 3,-2.3 1,-1.2 -1.7,-.1 -1,1.2 -.2,.7 -.9,.7 -.8,-1.1 -1.7,1 -.1,.9 -.9,-.2 .5,-.9 -1.2,-.7 -.6,.9 .9,.3 .2,.5 -.3,.5 -1.4,2.6 h -1.9 l .9,-1.8 .9,-.6 .3,-1.7 1.4,-1.6 .9,-.8 1.5,-.7 -1.2,-.2 -.7,.9 h -.7 l -1.1,.8 -.2,1 -2.2,2.1 -.4,.9 -1.4,.9 -7.7,1.9 .2,.9 -.9,.7 -2,.3 -1,-.6 -.2,1.1 -1.1,-.4 .1,1 -1.2,-.1 -1.2,.5 -.2,1.1 h -1 l .2,1 h -.7 l .2,1 -1.8,.4 -1.5,2.3 z m -.8,-.4 -1.6,.4 v 1 l -.7,1.6 .6,.7 2.4,-2.3 -.1,-.9 z m -10.1,-95.2 -.6,1.9 1.4,.9 -.4,1.5 .5,3.2 2.2,2.3 -.4,2.2 .6,2 -.4,1 -.3,3.8 3.1,6.7 -.8,1.8 .9,2.2 .9,-1.6 1.9,1.5 3,14.2 -.5,2 1.1,1 -.5,15 .7,1 2.8,16.3 1.8,1.5 -3.5,3.4 1.7,2.2 -1.3,3.3 -1.5,1.7 -1.5,2.3 -.2,-.7 .4,-5.9 -14.6,-4.9 -1.6,-1.1 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6 4.3,-3.9 .6,-1.7 3.9,-2.5 .6,-2.4 2.3,-2 .8,-1.1 -1.7,-3.3 -1.7,-.5 -1.8,-3 -.2,-3.2 7.6,-3.9 8.2,-1.6 h 4.4 l 3.2,1.6 .9,-.1 1.8,-1.6 3.4,-.7 h 3 l 2.6,-1.3 2.5,-2.6 2.4,-3.1 1.9,-.4 1.1,-.5 .4,-3.2 -1.4,-2.7 -1.2,-.7 2,-1.3 -.1,-1.8 h -1.5 l -2.3,-1.4 -.1,-3.1 6.2,-6.1 .7,-2.4 3.7,-6.3 5.9,-6.4 2.1,-1.7 2.5,.1 20.6,-5.2 z">
+</path>
+
+<path class="nc" d="m 829,300.1 -29.1,6.1 -39.4,7.3 -29.4,3.5 v 5.2 l -1.5,-.1 -1.4,1.2 -2.4,5.2 -2.6,-1.1 -3.5,2.5 -.7,2.1 -1.5,1.2 -.8,-.8 -.1,-1.5 -.8,-.2 -4,3.3 -.6,3.4 -4.7,2.4 -.5,1.2 -3.2,2.6 -3.6,.5 -4.6,3 -.8,4.1 -1.3,.9 -1.5,-.1 -1.4,1.3 -.1,4.9 21.4,-3 4.4,-1.9 1.3,-.1 7.3,-4.3 23.2,-2.2 .4,.5 -.2,1.4 .7,.3 1.2,-1.5 3.3,3 .1,2.6 19.7,-2.8 24.5,17.1 4,-2.2 3,-.7 h 1.7 l 1.1,1.1 .8,-2 .6,-5 1.7,-3.9 5.4,-6.1 4.1,-3.5 5.4,-2.3 2.5,-.4 1.3,.4 .7,1.1 3.3,-6.6 3.3,-5.3 -.7,-.3 -4.4,6.8 -.5,-.8 2,-2.2 -.4,-1.5 -2,-.5 1,1.3 -1.2,.1 -1.2,-1.8 -1.2,2 -1.6,.2 1,-2.7 .7,-1.7 -.2,-2.9 -2.2,-.1 .9,-.9 1.1,.3 2.7,.1 .8,-.5 h 2.3 l 2,-1.9 .2,-3.2 1.3,-1.4 1.2,-.2 1.3,-1 -.5,-3.7 -2.2,-3.8 -2.7,-.2 -.9,1.6 -.5,-1 -2.7,.2 -1.2,.4 -1.9,1.2 -.3,-.4 h -.9 l -1.8,1.2 -2.6,.5 v -1.3 l .8,-1 1,.7 h 1 l 1.7,-2.1 3.7,-1.7 2,-2.2 h 2.4 l .8,1.3 1.7,.8 -.5,-1.5 -.3,-1.6 -2.8,-3.1 -.3,-1.4 -.4,1 -.9,-1.3 z m 7,31 2.7,-2.5 4.6,-3.3 v -3.7 l -.4,-3.1 -1.7,-4.2 1.5,1.4 1,3.2 .4,7.6 -1.7,.4 -3.1,2.4 -3.2,3.2 z m 1.9,-19.3 -.9,-.2 v 1 l 2.5,2.2 -.2,-1.4 z m 2.9,2.1 -1.4,-2.8 -2.2,-3.4 -2.4,-3 -2.2,-4.3 -.8,-.7 2.2,4.3 .3,1.3 3.4,5.5 1.8,2.1 z">
+</path>
+
+<path class="nd" d="m 464.7,68.6 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1 -29.5,-.4 -46,-2.1 -39.2,-2.9 5.2,-66.7 44.5,3.4 55.3,1.6 z">
+</path>
+
+<path class="oh" d="m 685.7,208.8 1.9,-.4 3,1.3 2.1,.6 .7,.9 h 1 l 1,-1.5 1.3,.8 h 1.5 l -.1,1 -3.1,.5 -2,1.1 1.9,.8 1.6,-1.5 2.4,-.4 2.2,1.5 1.5,-.1 2.5,-1.7 3.6,-2.1 5.2,-.3 4.9,-5.9 3.8,-3.1 9.3,-5.1 4.9,29.9 -2.2,1.2 1.4,2.1 -.1,2.2 .6,2 -1.1,3.4 -.1,5.4 -1,3.6 .5,1.1 -.4,2.2 -1.1,.5 -2,3.3 -1.8,2 h -.6 l -1.8,1.7 -1.3,-1.2 -1.5,1.8 -.3,1.2 h -1.3 l -1.3,2.2 .1,2.1 -1,.5 1.4,1.1 v 1.9 l -1,.2 -.7,.8 -1,.5 -.6,-2.1 -1.6,-.5 -1,2.3 -.3,2.2 -1.1,1.3 1.3,3.6 -1.5,.8 -.4,3.5 h -1.5 l -3.2,1.4 -1.2,-2.1 -3.5,-1.4 -.8,-2.9 -.5,-.8 -3.4,1.8 -.6,1.7 h -.9 l -1.3,.7 -1.2,-.8 -3,-.8 -1.9,.8 v 1 l -2.2,-.2 -1.9,-2.1 -2.3,.2 -4.1,-.7 v -1 l -2.2,-3.4 -2.9,-1.2 -1.9,.8 -2.2,-.1 -1.3,-.5 -6.6,-57.2 21.4,-3.5 z">
+</path>
+
+<path class="ok" d="m 501.5,398.6 -4.6,-3.8 -2.2,-.9 -.5,1.6 -5.1,.3 -.6,-1.5 -5,2.5 -1.6,-.7 -3.7,.3 -.6,1.7 -3.6,.9 -1.3,-1.2 -1.2,.1 -2,-1.8 -2.1,.7 -2,-.5 -1.8,-2 -2.5,4.2 -1.2,.8 -1,-1.8 .3,-2 -1.2,-.7 -2.3,2.5 -1.7,-1.2 -.1,-1.5 -1.3,.5 -2.6,-1.7 -3,2.6 -2.3,-1.1 .7,-2.1 -2.3,.1 -1.9,-3 -3.5,-1.1 -2,2.3 -2.3,-2.2 -1.4,.4 -2,.1 -3.5,-1.9 -2.3,.1 -1.2,-.7 -.5,-2.9 -2.3,-1.7 -1.1,1.5 -1.4,-1 -1.2,-.4 -1.1,1 -1.5,-.3 -2.5,-3 -2.7,-1.3 1.4,-42.7 -52.6,-3.2 .6,-10.6 16.5,1 67.7,2.9 62,.1 .2,10.8 4.1,24.4 -.7,39 z">
+</path>
+
+<path class="or" d="m 93.9,166.5 47,11.2 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1 -1.1,1.3 -1.5,-.2 -.5,-1.1 -1,-.1 -.7,.6 -2,-1.9 v 4.3 l -1.3,1.3 -1.1,3.5 -.1,2.3 -4.5,12.3 -13.2,31.3 -3.2,4.6 -1.6,-.1 .1,2.1 -5.2,7.1 -.3,3.3 1,1.3 .1,2.4 -1.2,1.1 -1.2,3 .1,5.7 1.2,2.9 z">
+</path>
+
+<path class="pa" d="m 826.3,189.4 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6 -4.2,3.4 -.9,.1 -2.7,3 -3.3,1.7 4.9,29.9 3.2,19.7 17.4,-2.9 60.5,-11.8 1.2,-2.1 1.5,-1.1 1.6,-.3 1.6,.6 1.4,-1.7 1.6,-.6 1.8,-3 1.6,-2.3 3.3,-2.6 -4.2,-3.2 -2.1,-1.1 -1,-2.8 -2.7,-.9 -.5,-3.6 1,-1 .7,-2 -1.5,-1.8 3,-5.4 -.1,-2.2 1.8,-2.5 z">
+</path>
+
+<path class="ri" d="m 883.2,170.7 -1.3,-1.1 -2.6,-1.3 -.6,-2.2 h -.8 l -.7,-2.6 -6.5,2 3.2,12.3 -.4,1.1 .4,1.8 5.6,-3.6 .1,-3 -.8,-.8 .4,-.6 -.1,-1.3 -.9,-.7 1.2,-.4 -.9,-1.6 1.8,.7 .3,1.4 .7,1.2 -1.4,-.8 1.1,1.7 -.3,1.2 -.6,-1.1 v 2.5 l .6,-.9 .4,.9 1.3,-1.5 -.2,-2.5 1.4,3.1 1,-.9 z m -4.7,12.2 h .9 l .5,-.6 -.8,-1.3 -.7,.7 z">
+</path>
+
+<path class="sc" d="m 772.3,350.2 -19.7,2.8 -.1,-2.6 -3.3,-3 -1.2,1.5 -.7,-.3 .2,-1.4 -.4,-.5 -23.2,2.2 -7.3,4.3 -1.3,.1 -4.4,1.9 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4 .8,-1.5 h .6 l 1.8,-1.5 .5,-2 3.2,-2.1 .3,-2.4 -1.2,-.9 .8,-.7 .8,.4 1.3,-.4 1.8,-2.1 3.8,-1.8 1.6,-2.4 .1,-.7 4.8,-4.4 -.1,-.5 -.9,-.8 1.1,-1.5 h .8 l .4,.5 .7,-.8 h 1.3 l .6,-1.5 2.3,-2.1 -.3,-5.4 .8,-2.3 3.6,-6.2 2.4,-2.2 2.2,-1.1 z">
+</path>
+
+<path class="sd" d="m 396.5,125.9 46,2.1 29.5,.4 -.1,2.2 -.9,2 -3.1,1.9 -.3,1.2 1.7,2.5 .4,1.8 2.6,.6 1.5,1.9 -.2,39.5 -2.2,-.1 -.1,1.6 1.3,1.5 -.1,1.1 -1,.5 .4,1.6 1.3,.4 .7,2 -1.7,5.1 -1,4.3 1.3,1.2 .3,1.3 .7,1.7 -1.5,.2 -1.8,-.7 -.9,-2.6 -1.2,-1.3 -6.1,-2.2 -.6,-1.1 -2,-.6 -1.4,.6 -1,-.5 -.9,.4 -.7,-.4 -.9,.4 -.7,-.5 -1,.7 -1.5,-.6 -1.8,2 -1.8,.1 -2.1,-2 -1.7,-.2 -3.4,-3.2 -38,-1.6 -51.1,-3.5 3.9,-43.9 2,-20.7 z">
+</path>
+
+<path class="tn" d="m 620.9,365.1 45.7,-4 22.9,-2.9 .1,-4.9 1.4,-1.3 1.5,.1 1.3,-.9 .8,-4.1 4.6,-3 3.6,-.5 3.2,-2.6 .5,-1.2 4.7,-2.4 .6,-3.4 4,-3.3 .8,.2 .1,1.5 .8,.8 1.5,-1.2 .7,-2.1 3.5,-2.5 2.6,1.1 2.4,-5.2 1.4,-1.2 1.5,.1 0,-5.2 .3,-.7 -4.6,.5 -.2,1 -28.9,3.3 -5.6,1.4 -20.5,1.4 -5.2,.8 -17.4,1 -2.6,.8 -22.6,2 -.7,-.6 h -3.7 l 1.2,3.2 -.6,.9 -23.3,1.5 -.8,1 -.8,-.7 h -1 v 1.3 l .6,1 -.1,1 -1.4,.5 1.4,1.5 -.8,.7 -1.7,-.2 .6,1 1.2,1.1 v .7 l -1.2,.5 -1,2 .1,.6 1.4,1 -.4,.7 h -1.5 v .5 l .9,.9 .1,.8 -1.4,.2 -.5,.8 -1.6,.2 -.9,.9 .6,.9 1.1,-.1 .5,.9 -1.6,1.3 .4,1.5 -2,-.6 -.1,.7 .4,1.1 -.3,1.4 -1.3,-.8 -.8,.8 1.1,.1 .1,1.5 -.6,1 1.1,.9 -.3,1.5 .8,.7 -.7,1 -1.2,-.5 -.9,2.2 -1.6,.7 z">
+</path>
+
+<path class="tx" d="m 282.3,429 .3,-3 34.4,3.6 31.8,2.6 7.9,-99.3 .8,0 52.6,3.2 -1.4,42.7 2.7,1.3 2.5,3 1.5,.3 1.1,-1 1.2,.4 1.4,1 1.1,-1.5 2.3,1.7 .5,2.9 1.2,.7 2.3,-.1 3.5,1.9 2,-.1 1.4,-.4 2.3,2.2 2,-2.3 3.5,1.1 1.9,3 2.3,-.1 -.7,2.1 2.3,1.1 3,-2.6 2.6,1.7 1.3,-.5 .1,1.5 1.7,1.2 2.3,-2.5 1.2,.7 -.3,2 1,1.8 1.2,-.8 2.5,-4.2 1.8,2 2,.5 2.1,-.7 2,1.8 1.2,-.1 1.3,1.2 3.6,-.9 .6,-1.7 3.7,-.3 1.6,.7 5,-2.5 .6,1.5 5.1,-.3 .5,-1.6 2.2,.9 4.6,3.8 6.4,1.9 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1 -3.5,.3 -8.4,3.9 -3.5,1.4 -1.8,1.8 -.7,-.5 2.1,-2.3 1.8,-.7 .5,-.9 -2.9,-.1 -.7,-.8 .8,-2 -.9,-1.8 h -.6 l -2.4,1.3 -1.9,2.6 .3,1.7 3.3,3.4 1.3,.3 v .8 l -2.3,1.6 -4.9,4 -4,3.9 -3.2,1.4 -5,3 -3.7,2 -4.5,1.9 -4.1,2.5 3.2,-3 v -1.1 l .6,-.8 -.2,-1.8 -1.5,-.1 -1.1,1.5 -2.6,1.3 -1.8,-1.2 -.3,-1.7 h -1.5 l .8,2.2 1.4,.7 1.2,.9 1.8,1.6 -.7,.8 -3.9,1.7 -1.7,.1 -1.2,-1.2 -.5,2.1 .5,1.1 -2.7,2 -1.5,.2 -.8,.7 -.4,1.7 -1.8,3.3 -1.6,.7 -1.6,-.6 -1.8,1.1 .3,1.4 1.3,.8 1,.8 -1.8,3.5 -.3,2.8 -1,1.7 -1.4,1 -2.9,.4 1.8,.6 1.9,-.6 -.4,3.2 -1.1,-.1 .2,1.2 .3,1.4 -1.3,.9 v 3.1 l 1.6,1.4 .6,3.1 -.4,2.2 -1,.4 .4,1.5 1.1,.4 .8,1.7 v 2.6 l 1.1,2.1 2.2,2.6 -.1,.7 -2.2,-.2 -1.6,1.4 .2,1.4 -.9,-.3 -1.4,-.2 -3.4,-3.7 -2.3,-.6 h -7.1 l -2.8,-.8 -3.6,-3 -1.7,-1 -2.1,.1 -3.2,-2.6 -5.4,-1.6 v -1.3 l -1.4,-1.8 -.9,-4.7 -1.1,-1.7 -1.7,-1.4 v -1.6 l -1.4,-.6 .6,-2.6 -.3,-2.2 -1.3,-1.4 .7,-3 -.8,-3.2 -1.7,-1.4 h -1.1 l -4,-3.5 .1,-1.9 -.8,-1.7 -.8,-.2 -.9,-2.4 -2,-1.6 -2.9,-2.5 -.2,-2.1 -1,-.7 .2,-1.6 .5,-.7 -1.4,-1.5 .1,-.7 -2,-2.2 .1,-2.1 -2.7,-4.9 -.1,-1.7 -1.8,-3.1 -5.1,-4.8 v -1.1 l -3.3,-1.7 -.1,-1.8 -1.2,-.4 v -.7 l -.8,-.2 -2.1,-2.8 h -.8 l -.7,-.6 -1.3,1.1 h -2.2 l -2.6,-1.1 h -4.6 l -4.2,-2.1 -1.3,1.9 -2.2,-.6 -3.3,1.2 -1.7,2.8 -2,3.2 -1.1,4.4 -1.4,1.2 -1.1,.1 -.9,1.6 -1.3,.6 -.1,1.8 -2.9,.1 -1.8,-1.5 h -1 l -2,-2.9 -3.6,-.5 -1.7,-2.3 -1.3,-.2 -2.1,-.8 -3.4,-3.4 .2,-.8 -1.6,-1.2 -1,-.1 -3.4,-3.1 -.1,-2 -2.3,-4 .2,-1.6 -.7,-1.3 .8,-1.5 -.1,-2.4 -2.6,-4.1 -.6,-4.2 -1.6,-1.6 v -1 l -1.2,-.2 -.7,-1.1 -2.4,-1.7 -.9,-.1 -1.9,-1.6 v -1.1 l -2.9,-1.8 -.6,-2.1 -2.6,-2.3 -3.2,-4.4 -3,-1.3 -2.1,-1.8 .2,-1.2 -1.3,-1.4 -1.7,-3.7 -2.4,-1 z m 174.9,138.3 .8,.1 -.6,-4.8 -3.5,-12.3 -.2,-8.1 4.9,-10.5 6.1,-8.2 7.2,-5.1 v -.7 h -.8 l -2.6,1 -3.6,2.3 -.7,1.5 -8.2,11.6 -2.8,7.9 v 8.8 l 3.6,12 z">
+</path>
+
+<path class="ut" d="m 233.2,217.9 3.3,-21.9 -47.9,-8.2 -21,109 46.2,8.2 40,6 11.5,-88.3 z">
+</path>
+
+<path class="vt" d="m 859.1,102.4 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6 -12.4,2.7 -1.1,-1 .5,-2 -3,-14.2 -1.9,-1.5 -.9,1.6 -.9,-2.2 .8,-1.8 -3.1,-6.7 .3,-3.8 .4,-1 -.6,-2 .4,-2.2 -2.2,-2.3 -.5,-3.2 .4,-1.5 -1.4,-.9 .6,-1.9 -.8,-1.7 27.3,-6.9 z">
+</path>
+
+<path class="va" d="m 834.7,265.4 -1.1,2.8 .5,1.1 .4,-1.1 .8,-3.1 z m -34.6,-7 -.7,-1 1,-.1 1,-.9 .4,-1.8 -.2,-.5 .1,-.5 -.3,-.7 -.6,-.5 -.4,-.1 -.5,-.4 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 -.4,.7 -.4,1.6 -.5,2.3 -10,-5.2 -.2,.9 .9,1.6 -.8,2.3 .1,2.9 -1.2,.8 -.5,2.1 -.9,.8 -1.4,1.8 -.9,.8 -1,2.5 -2.4,-1.1 -2.3,8.5 -1.3,1.6 -2.8,-.5 -1.3,-1.9 -2.3,-.7 -.1,4.7 -1.4,1.7 .4,1.5 -2.1,2.2 .4,1.9 -3.7,6.3 -1,3.3 1.5,1.2 -1.5,1.9 .1,1.4 -2.3,2 -.7,-1.1 -4.3,3.1 -1.5,-1 -.6,1.4 .8,.5 -.5,.9 -5.5,2.4 -3,-1.8 -.8,1.7 -1.9,1.8 -2.3,.1 -4.4,-2.3 -.1,-1.5 -1.5,-.7 .8,-1.2 -.7,-.6 -4.9,6.6 -2.9,1 -3,3 -.4,2.2 -2.1,1.3 -.1,1.7 -1.4,1.4 -1.8,.5 -.5,1.9 -1,.4 -6.9,4.2 28.9,-3.3 .2,-1 4.6,-.5 -.3,.7 29.4,-3.5 39.4,-7.3 29.1,-6.1 -.6,-1.2 .4,-.1 .9,.9 -.1,-1.4 -.3,-1.9 1.6,1.2 .9,2.1 v -1.3 l -3.4,-5.5 v -1.2 l -.7,-.8 -1.3,.7 .5,1.4 h -.8 l -.4,-1 -.6,.9 -.9,-1.1 -2.1,-.1 -.2,.7 1.5,2.1 -1.4,-.7 -.5,-1 -.4,.8 -.8,.1 -1.5,1.7 .3,-1.6 v -1.4 l -1.5,-.7 -1.8,-.5 -.2,-1.7 -.6,-1.3 -.6,1.1 -1.7,-1 -2,.3 .2,-.9 1.5,-.2 .9,.5 1.7,-.8 .9,.4 .5,1 v .7 l 1.9,.4 .3,.9 .9,.4 .9,1.2 1.4,-1.6 h .6 l -.1,-2.1 -1.3,1 -.6,-.9 1.5,-.2 -1.2,-.9 -1.2,.6 -.1,-1.7 -1.7,.2 -2.2,-1.1 -1.8,-2.2 3.6,2.2 .9,.3 1.7,-.8 -1.7,-.9 .6,-.6 -1,-.5 .8,-.2 -.3,-.9 1.1,.9 .4,-.8 .4,1.3 1.2,.8 .6,-.5 -.5,-.6 -.1,-2.5 -1.1,-.1 -1.6,-.8 .9,-1.1 -2,-.1 -.4,-.5 -1.4,.6 -1.4,-.8 -.5,-1.2 -2.1,-1.2 -2.1,-1.8 -2.2,-1.9 3,1.3 .9,1.2 2.1,.7 2.3,2.5 .2,-1.7 .6,1.3 2.3,.5 v -4 l -.8,-1.1 1.1,.4 .1,-1.6 -3.1,-1.4 -1.6,-.2 -1.3,-.2 .3,-1.2 -1.5,-.3 -.1,-.6 h -1.8 l -.2,.8 -.7,-1 h -2.7 l -1,-.4 -.2,-1 -1.2,-.6 -.4,-1.5 -.6,-.4 -.7,1.1 -.9,.2 -.9,.7 h -1.5 l -.9,-1.3 .4,-3.1 .5,-2.4 .6,.5 z m 21.9,11.6 .9,-.1 0,-.6 -.8,.1 z m 7.5,14.2 -1,2.7 1.2,-1.3 z m -1.8,-15.3 .7,.3 -.2,1.9 -.5,-.5 -1.3,1 1,.4 -1.8,4.4 .1,8.1 1.9,3.1 .5,-1.5 .4,-2.7 -.3,-2.3 .7,-.9 -.2,-1.4 1.2,-.6 -.6,-.5 .5,-.7 .8,1.1 -.2,1.1 -.4,3.9 1.1,-2.2 .4,-3.1 .1,-3 -.3,-2 .6,-2.3 1.1,-1.8 .1,-2.2 .3,-.9 -4.6,1.6 -.7,.8 z">
+</path>
+
+<path class="wa" d="m 161.9,83.6 .7,4 -1.1,4.3 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1 -2.1,-1.5 -1.2,.4 -2,-.1 -.7,-1.5 -1.6,-.3 2.5,-7.5 -.7,6 .5,.5 v -2 l .8,-.2 1.1,2.3 -.5,-2.2 1.2,-4.2 1.8,.4 -1.1,-2 -1,.3 -1.5,-.4 .2,-4.2 .2,1.5 .9,.5 .6,-1.6 h 3.2 l -2.2,-1.2 -1.7,-1.9 -1.4,1.6 1.2,-3.1 -.3,-4.6 -.2,-3.6 .9,-6.1 -.5,-2 -1.4,-2.1 .1,-4 .4,-2.7 2,-2.3 -.7,-1.4 .2,-.6 .9,.1 7.8,7.6 4.7,1.9 5.1,2.5 3.2,-.1 .2,3 1,-1.6 h .7 l .6,2.7 .5,-2.6 1.4,-.2 .5,.7 -1.1,.6 .1,1.6 .7,-1.5 h 1.1 l -.4,2.6 -1.1,-.8 .4,1.4 -.1,1.5 -.8,.7 -2.5,2.9 1.2,-3.4 -1.6,.4 -.4,2.1 -3.8,2.8 -.4,1 -2.1,2.2 -.1,1 h 2.2 l 2.4,-.2 .5,-.9 -3.9,.5 v -.6 l 2.6,-2.8 1.8,-.8 1.9,-.2 1,-1.6 3,-2.3 v -1.4 h 1.1 l .1,4 h -1.5 l -.6,.8 -1.1,-.9 .3,1.1 v 1.7 l -.7,.7 -.3,-1.6 -.8,.8 .7,.6 -.9,1.1 h 1.3 l .7,-.5 .1,2 -1,1.9 -.9,1 -.1,1.8 -1,-.2 -.2,-1.4 .9,-1.1 -.8,-.5 -.8,.7 -.7,2.2 -.8,.9 -.1,-2 .8,-1.1 -.2,-1.1 -1.2,1.2 .1,2.2 -.6,.4 -2.1,-.4 -1.3,1.2 2.2,-.6 -.2,2.2 1,-1.8 .4,1.4 .5,-1 .7,1.8 h .7 l .7,-.8 .6,-.1 2,-1.9 .2,-1.2 .8,.6 .3,.9 .7,-.3 .1,-1.2 h 1.3 l .2,-2.9 -.1,-2.7 .9,.3 -.7,-2.1 1.4,-.8 .2,-2.4 2.3,-2.2 1,.1 .3,-1.4 -1.2,-1.4 -.1,-3.5 -.8,.9 .7,2.9 -.6,.1 -.6,-1.9 -.6,-.5 .3,-2.3 1.8,-.1 .3,.7 .3,-1.6 -1.6,-1.7 -.6,-1.6 -.2,2 .9,1.1 -.7,.4 -1,-.8 -1.8,1.3 1.5,.5 .2,2.4 -.3,1.8 .9,-1.3 1.4,2.3 -.4,1.9 h -1.5 v -1.2 l -1.5,-1.2 .5,-3 -1.9,-2.6 2.7,-3 .6,-4.1 h .9 l 1.4,3.2 v -2.6 l 1.2,.3 v -3.3 l -.9,-.8 -1.2,2.5 -1,-3 1.3,-.1 -1.5,-4.9 1.9,-.6 25.4,7.5 31.7,8 23.6,5.5 z m -78.7,-39.4 h .5 l .1,.8 -.5,.3 .1,.6 -.7,.4 -.2,-.9 .5,-.4 z m 5,-4.3 -1.2,1.9 -.1,.8 .4,.2 .5,-.6 1.1,.1 z m -.4,-21.6 .5,.6 1.3,-.3 .2,-1 1.2,-1.8 -1,-.4 -.7,1.6 -.1,-1.6 -1.1,.2 -.7,1.4 z m 3.2,-5.5 .7,1.5 -.9,.2 -.8,.4 -.2,-2.4 z m -2.7,-1.6 -1.1,-.2 .5,1.4 z m -1,2.5 .8,.4 -.4,1.1 1.7,-.5 -.2,-2.2 -.9,-.2 z m -2.7,-.4 .3,2.7 1.6,1.3 .6,-1.9 -1.1,-2.2 z m 1.9,-1.1 -1.1,-1 -.9,.1 1.8,1.5 z m 3.2,-7 h -1.2 v .8 l 1.2,.6 z m -.9,32.5 .4,-2.7 h -1.1 l -.2,1.9 z">
+</path>
+
+<path class="wv" d="m 723.4,297.5 -.8,1.2 1.5,.7 .1,1.5 4.4,2.3 2.3,-.1 1.9,-1.8 .8,-1.7 3,1.8 5.5,-2.4 .5,-.9 -.8,-.5 .6,-1.4 1.5,1 4.3,-3.1 .7,1.1 2.3,-2 -.1,-1.4 1.5,-1.9 -1.5,-1.2 1,-3.3 3.7,-6.3 -.4,-1.9 2.1,-2.2 -.4,-1.5 1.4,-1.7 .1,-4.7 2.3,.7 1.3,1.9 2.8,.5 1.3,-1.6 2.3,-8.5 2.4,1.1 1,-2.5 .9,-.8 1.4,-1.8 .9,-.8 .5,-2.1 1.2,-.8 -.1,-2.9 .8,-2.3 -.9,-1.6 .2,-.9 10,5.2 .5,-2.3 .4,-1.6 .4,-.7 -.9,-.4 .2,-1.6 -1,-.5 -.2,-.7 h -.7 l -.8,-1.2 .2,-1 -2.6,.4 -2.2,-1.6 -1.4,.3 -.9,1.4 h -1.3 l -1.7,2.9 -3.3,.4 -1.9,-1 -2.6,3.8 -2.2,-.3 -3.1,3.9 -.9,1.6 -1.8,1.6 -1.7,-11.4 -17.4,2.9 -3.2,-19.7 -2.2,1.2 1.4,2.1 -.1,2.2 .6,2 -1.1,3.4 -.1,5.4 -1,3.6 .5,1.1 -.4,2.2 -1.1,.5 -2,3.3 -1.8,2 h -.6 l -1.8,1.7 -1.3,-1.2 -1.5,1.8 -.3,1.2 h -1.3 l -1.3,2.2 .1,2.1 -1,.5 1.4,1.1 v 1.9 l -1,.2 -.7,.8 -1,.5 -.6,-2.1 -1.6,-.5 -1,2.3 -.3,2.2 -1.1,1.3 1.3,3.6 -1.5,.8 -.4,3.5 h -1.5 l -3.2,1.4 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1 z">
+</path>
+
+<path class="wi" d="m 611,144 -2.9,.8 .2,2.3 -2.4,3.4 -.2,3.1 .6,.7 .8,-.7 .5,-1.6 2,-1.1 1.6,-4.2 3.5,-1.1 .8,-3.3 .7,-.9 .4,-2.1 1.8,-1.1 v -1.5 l 1,-.9 1.4,.1 v 2 l -1,.1 .5,1.2 -.7,2.2 -.6,.1 -1.2,4.5 -.7,.5 -2.8,7.2 -.3,4.2 .6,2 .1,1.3 -2.4,1.9 .3,1.9 -.9,3.1 .3,1.6 .4,3.7 -1.1,4.1 -1.5,5 1,1.5 -.3,.3 .8,1.7 -.5,1.1 1.1,.9 v 2.7 l 1.3,1.5 -.4,3 .3,4 -45.9,2.8 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 h 2.6 l 6.8,-2.6 .3,-1 h 1.2 l .7,-1.2 .4,.8 1.8,-.9 1.8,-1.7 .3,.5 1,-1 2.2,1.6 -.8,1.6 -1.2,1.4 .5,1.5 -1.4,1.6 .4,.9 2.3,-1.1 v -1.4 l 3.3,1.9 1.9,.7 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 z m -49.5,-37.3 -.5,.1 -1.5,1.6 .2,.5 1.5,-.6 v -.6 l .9,-.3 z m 1.6,-1.1 -1,.3 -.2,.7 .9,-.1 z m -1.3,-1.6 -.2,.9 h 1.7 l .6,-.4 .1,-1 z m 2.8,-3 -.3,1.9 1.2,-.5 .1,-1.4 z m 58.3,31.9 -2,.3 -.4,1.3 1.3,1.7 z">
+</path>
+
+<path class="wy" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7 -8.5,54.8 -3.3,21.9 32.1,4.8 44.9,5.7 37.5,3.4 3.7,-44.2 z">
+</path>
+
+<path class="dc" d="m 803.5,252 -2.6,-1.8 -1,1.7 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5 z">
+</path>
+
+</g>
+
+<g class="borders" fill="none">
+<path class="al-fl" d="m 687.6,447.4 -48.8,5.1 -.5,2.9 2.5,2.8 1.7,.7 .9,1.2 -.4,7.3 -1.1,.6"/>
+<path class="al-ga" d="m 666.6,361.1 12.9,45.8 2.9,6.1 1.8,1.9 v 3.2 l 1.7,1 .2,1.1 -2.2,3.8 -.3,3.7 -.5,2.6 2.4,5.7 -.6,6.3 .5,1.4 1.5,1.5 .7,2.2"/>
+<path class="al-ms" d="m 620.9,365.1 1.3,2 -1.3,67 4.4,33.2"/>
+<path class="al-tn" d="m 620.9,365.1 45.7,-4"/>
+<path class="ar-la" d="m 516.7,414.2 52.3,-1.3"/>
+<path class="ar-mo" d="m 591.7,344.9 -11.2,.8 2.8,-5.1 1.7,-1.5 v -2.2 l -1.6,-2.5 -39.8,2 -39.1,.7"/>
+<path class="ar-ms" d="m 569,412.9 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 0,-.8 -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1"/>
+<path class="ar-ok" d="m 507.9,400.5 .7,-39 -4.1,-24.4"/>
+<path class="ar-tn" d="m 582.6,367.7 1.6,-.7 .9,-2.2 1.2,.5 .7,-1 -.8,-.7 .3,-1.5 -1.1,-.9 .6,-1 -.1,-1.5 -1.1,-.1 .8,-.8 1.3,.8 .3,-1.4 -.4,-1.1 .1,-.7 2,.6 -.4,-1.5 1.6,-1.3 -.5,-.9 -1.1,.1 -.6,-.9 .9,-.9 1.6,-.2 .5,-.8 1.4,-.2 -.1,-.8 -.9,-.9 0,-.5 h 1.5 l .4,-.7 -1.4,-1 -.1,-.6"/>
+<path class="ar-tx" d="m 507.9,400.5 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9"/>
+<path class="az-ca" d="m 149,338.1 -.9,2.1 1.3,3.4 1.4,1.8 1.2,5.8 2.3,2.5 .4,1.9 -1.3,1.3 -4.8,1.7 -2.4,3.6 -1.6,7 -2.4,3.2 -1.6,.3 -1.1,6.9 1.1,1.6 1.8,.2 1,1.6 -.8,2.4 -3,2.2 -2.2,-.1"/>
+<path class="az-nm" d="m 253.8,311 -17.4,124.1"/>
+<path class="az-nv" d="m 167.6,296.8 -3.4,17.5 -2.4,2.9 h -2 l -1.2,-2.7 -3.7,-1.4 -3.5,.6 -1,13.6 .5,4.9 -.5,2.9 -1.4,3"/>
+<path class="az-ut" d="m 167.6,296.8 46.2,8.2 40,6"/>
+<path class="ca-nv" d="m 93.9,166.5 -16.4,63.1 1.1,3.5 70.4,105"/>
+<path class="ca-or" d="m 27.8,147.9 66.1,18.6"/>
+<path class="co-ks" d="m 379.4,256.3 -4.8,67"/>
+<path class="co-ne" d="m 347.7,231.8 33.1,2.4 -1.4,22.1"/>
+<path class="co-nm" d="m 253.8,311 52.6,6.5 51.7,4.8"/>
+<path class="co-ok" d="m 358.1,322.3 16.5,1"/>
+<path class="co-ut" d="m 265.3,222.7 -11.5,88.3"/>
+<path class="co-wy" d="m 265.3,222.7 44.9,5.7 37.5,3.4"/>
+<path class="ct-ma" d="m 843.8,171.3 10.5,-2.4 .5,.7 .9,-.3 0,-.7 14.9,-3.4 .1,.3"/>
+<path class="ct-ny" d="m 846.6,194.7 -1.7,-2.2 3.5,-3.4 -1.8,-1.5 -2.8,-16.3"/>
+<path class="ct-ri" d="m 870.7,165.5 3.2,12.3 -.4,1.1 .4,1.8"/>
+<path class="dc-md" d="m 801.8,254.6 1.7,-2.6 -2.6,-1.8 -1,1.7"/>
+<path class="dc-va" d="m 799.9,251.9 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5"/>
+<path class="de-md" d="m 817.9,230.1 7.6,27.1 10.9,-2.3"/>
+<path class="de-nj" d="m 823.8,227.2 -1,2.2 -.3,2.1"/>
+<path class="de-pa" d="m 817.9,230.1 1.2,-2.1 1.5,-1.1 1.6,-.3 1.6,.6"/>
+<path class="fl-ga" d="m 687.6,447.4 3.3,6 50.1,-3.3 .6,3.2 1,1.1 2.1,-.6 .5,-4.3 -1.4,-2.1 v -2.5 l 2.2,-1.4 1.7,.9 4,.7 3.6,-.3"/>
+<path class="ga-nc" d="m 689.5,358.2 21.4,-3"/>
+<path class="ga-sc" d="m 710.9,355.2 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4"/>
+<path class="ga-tn" d="m 666.6,361.1 22.9,-2.9"/>
+<path class="ia-il" d="m 556.8,249.7 .7,-.7 .1,-2.3 -.7,-.9 1,-1.5 1.8,-.6 .9,-.3 1,-1.2 0,-2.4 1.7,-2.4 .5,-.5 .1,-3.5 -.9,-1.4 -1,-.3 -1.1,-1.6 1,-4 3,-.8 h 2.4 l 4.2,-1.8 1.7,-2.2 .1,-2.4 1.1,-1.3 1.3,-3.2 -.1,-2.6 -2.8,-3.5 -1.2,0 -.9,-1.1 .2,-1.6 -1.7,-1.7 -2.5,-1.3 .5,-.6"/>
+<path class="ia-mn" d="m 473.6,182 28.2,0 36.3,-.9 18.6,-.7"/>
+<path class="ia-mo" d="m 484.5,246.8 25.9,.1 27.2,-1.2 14.3,-.8 1.7,1.3 .6,1.6 1.1,1.1 1.5,.8"/>
+<path class="ia-ne" d="m 484.5,246.8 -1.8,-4.4 .7,-2.2 -.8,-3.3 .2,-2.9 -1.3,-.7 -.4,-6.1 -2.8,-5 -.2,-3.7 -2.2,-4.3 -1.3,-3.7 v -1.4 l -.6,-1.7 v -2.3 l -.5,-.9"/>
+<path class="ia-sd" d="m 473.5,204.2 -.7,-1.7 -.3,-1.3 -1.3,-1.2 1,-4.3 1.7,-5.1 -.7,-2 -1.3,-.4 -.4,-1.6 1,-.5 .1,-1.1 -1.3,-1.5 .1,-1.6 2.2,.1"/>
+<path class="ia-wi" d="m 567.2,202 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6"/>
+<path class="id-mt" d="m 188.8,30.5 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1"/>
+<path class="id-nv" d="m 140.9,177.7 24.4,5.4 23.3,4.7"/>
+<path class="id-or" d="m 140.9,177.7 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6"/>
+<path class="id-ut" d="m 236.5,196 -47.9,-8.2"/>
+<path class="id-wa" d="m 174.6,27.5 -12.7,56.1 .7,4 -1.1,4.3"/>
+<path class="id-wy" d="m 245,141.2 -8.5,54.8"/>
+<path class="il-in" d="m 619.4,215.7 4.1,50.2 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9"/>
+<path class="il-ky" d="m 599.9,322.5 -.3,-1.8 4,-3.7 6.9,3 1.5,-.3 .4,-2.4 -1.7,-1.8 .4,-3.3 1,-.5 1.2,.6 .6,-1.2 3.7,-.6 .1,-.9 -1.5,-2.2 -.1,-1.1 2.2,-2.7 v -.9"/>
+<path class="il-mo" d="m 599.9,322.5 -2.8,0 -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7"/>
+<path class="il-wi" d="m 567.2,202 45.9,-2.8"/>
+<path class="in-ky" d="m 618.3,302.7 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9"/>
+<path class="in-mi" d="m 630.9,213.2 32.4,-3.4 .1,1.4"/>
+<path class="in-oh" d="m 670,268.4 -6.6,-57.2"/>
+<path class="ks-mo" d="m 504.3,326.3 -.5,-48.1 -3.2,-.7 -2.6,-4.7 -2.5,-2.5 .5,-2.3 2.7,-2.6 .1,-1.2 -1.5,-2.1 -.9,1 -2,-.6 -2.9,-3"/>
+<path class="ks-ne" d="m 379.4,256.3 36,2 43.7,1.2 h 32.4"/>
+<path class="ks-ok" d="m 374.6,323.3 67.7,2.9 62,.1"/>
+<path class="ky-mo" d="m 596.7,333.5 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 m -5.8,11.3 -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1"/>
+<path class="ky-oh" d="m 670,268.4 1.3,.5 2.2,.1 1.9,-.8 2.9,1.2 2.2,3.4 v 1 l 4.1,.7 2.3,-.2 1.9,2.1 2.2,.2 v -1 l 1.9,-.8 3,.8 1.2,.8 1.3,-.7 h .9 l .6,-1.7 3.4,-1.8 .5,.8 .8,2.9 3.5,1.4 1.2,2.1"/>
+<path class="ky-tn" d="m 596.7,333.5 23.3,-1.5 .6,-.9 -1.2,-3.2 h 3.7 l .7,.6 22.6,-2 2.6,-.8 17.4,-1 5.2,-.8 20.5,-1.4 5.6,-1.4 m -103.6,12.7 h 1"/>
+<path class="ky-va" d="m 697.7,321.1 6.9,-4.2 1,-.4 .5,-1.9 1.8,-.5 1.4,-1.4 .1,-1.7 2.1,-1.3 .4,-2.2 3,-3 2.9,-1 4.9,-6.6"/>
+<path class="ky-wv" d="m 709.3,279.4 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1"/>
+<path class="la-ms" d="m 569,412.9 -.6,1.4 1.6,7.1 1.2,1 -.5,1.7 2.4,2.5 v 3.3 l -2,0 1.8,2.5 -6,8.4 -2.4,4.8 -1.7,11.9 36,-2 -.1,1.4 -1,1.4 -.9,4.6 4.8,6.8 -.3,1.3 1.2,1.8 .6,.7"/>
+<path class="la-tx" d="m 516.7,414.2 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1"/>
+<path class="ma-nh" d="m 856,152.6 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3"/>
+<path class="ma-ny" d="m 843.8,171.3 -.7,-1 .5,-15"/>
+<path class="ma-ri" d="m 870.7,165.5 6.5,-2 .7,2.6 h .8 l .6,2.2 2.6,1.3 1.3,1.1 1.4,3"/>
+<path class="ma-vt" d="m 843.6,155.3 12.4,-2.7"/>
+<path class="md-pa" d="m 757.4,241.9 60.5,-11.8"/>
+<path class="md-va" d="m 822.9,269.3 -.8,.1 m 13.2,-4.3 -.6,.3 m -1.3,.2 -4.6,1.6 -.7,.8 m -28.2,-16.1 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 m 11.6,13.5 .3,-.4 -.7,-1 1,-.1 1,-.9 .4,-1.8"/>
+<path class="md-wv" d="m 757.4,241.9 1.7,11.4 1.8,-1.6 .9,-1.6 3.1,-3.9 2.2,.3 2.6,-3.8 1.9,1 3.3,-.4 1.7,-2.9 h 1.3 l .9,-1.4 1.4,-.3 2.2,1.6 2.6,-.4 -.2,1 .8,1.2 h .7 l .2,.7 1,.5 -.2,1.6 .9,.4"/>
+<path class="me-nh" d="m 881.9,138.3 -2.3,-1.4 -.8,-2.2 -3.2,-2 -.6,-4 -11.9,-36.8"/>
+<path class="mi-oh" d="m 663.4,211.2 21.4,-3.5"/>
+<path class="mi-wi" d="m 565.6,112.3 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3"/>
+<path class="mn-nd" d="m 462.3,61.3 2.4,7.3 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1"/>
+<path class="mn-sd" d="m 473.6,182 .2,-39.5 -1.5,-1.9 -2.6,-.6 -.4,-1.8 -1.7,-2.5 .3,-1.2 3.1,-1.9 .9,-2 .1,-2.2"/>
+<path class="mn-wi" d="m 556.7,180.4 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 -3.3,0 -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1"/>
+<path class="mo-ne" d="m 491.5,259.5 -3.9,-6.3 -2.1,-3.7 .3,-1.4 -1.3,-1.3"/>
+<path class="mo-ok" d="m 504.3,326.3 .2,10.8"/>
+<path class="mo-tn" d="m 591.7,344.9 1,-2 1.2,-.5 v -.7 l -1.2,-1.1 -.6,-1 1.7,.2 .8,-.7 -1.4,-1.5 1.4,-.5 .1,-1 -.6,-1 0,-1.3 m 1,0 .8,.7 .8,-1"/>
+<path class="ms-tn" d="m 582.6,367.7 38.3,-2.6"/>
+<path class="mt-nd" d="m 362.5,56.3 -5.2,66.7"/>
+<path class="mt-sd" d="m 357.3,123 -2,20.7"/>
+<path class="mt-wy" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7"/>
+<path class="nc-sc" d="m 710.9,355.2 4.4,-1.9 1.3,-.1 7.3,-4.3 23.2,-2.2 .4,.5 -.2,1.4 .7,.3 1.2,-1.5 3.3,3 .1,2.6 19.7,-2.8 24.5,17.1"/>
+<path class="nc-tn" d="m 731.1,317 0,5.2 -1.5,-.1 -1.4,1.2 -2.4,5.2 -2.6,-1.1 -3.5,2.5 -.7,2.1 -1.5,1.2 -.8,-.8 -.1,-1.5 -.8,-.2 -4,3.3 -.6,3.4 -4.7,2.4 -.5,1.2 -3.2,2.6 -3.6,.5 -4.6,3 -.8,4.1 -1.3,.9 -1.5,-.1 -1.4,1.3 -.1,4.9"/>
+<path class="nc-va" d="m 731.1,317 29.4,-3.5 39.4,-7.3 29.1,-6.1"/>
+<path class="nd-sd" d="m 357.3,123 39.2,2.9 46,2.1 29.5,.4"/>
+<path class="ne-sd" d="m 351.4,187.6 51.1,3.5 38,1.6 3.4,3.2 1.7,.2 2.1,2 1.8,-.1 1.8,-2 1.5,.6 1,-.7 .7,.5 .9,-.4 .7,.4 .9,-.4 1,.5 1.4,-.6 2,.6 .6,1.1 6.1,2.2 1.2,1.3 .9,2.6 1.8,.7 1.5,-.2"/>
+<path class="ne-wy" d="m 347.7,231.8 3.7,-44.2"/>
+<path class="nh-vt" d="m 857.9,100.1 1.2,2.3 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6"/>
+<path class="nj-ny" d="m 827.9,190.5 14.6,4.9 -.4,5.9"/>
+<path class="nj-pa" d="m 823.8,227.2 1.4,-1.7 1.6,-.6 1.8,-3 1.6,-2.3 3.3,-2.6 -4.2,-3.2 -2.1,-1.1 -1,-2.8 -2.7,-.9 -.5,-3.6 1,-1 .7,-2 -1.5,-1.8 3,-5.4 -.1,-2.2 1.8,-2.5"/>
+<path class="nm-ok" d="m 358.1,322.3 -.6,10.6"/>
+<path class="nm-tx" d="m 284.3,431.2 -2,-2.2 .3,-3 34.4,3.6 31.8,2.6 7.9,-99.3 .8,0"/>
+<path class="nv-or" d="m 93.9,166.5 47,11.2"/>
+<path class="nv-ut" d="m 188.6,187.8 -21,109"/>
+<path class="ny-pa" d="m 827.9,190.5 -1.6,-1.1 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6"/>
+<path class="ny-vt" d="m 843.6,155.3 -1.1,-1 .5,-2 -3,-14.2 -1.9,-1.5 -.9,1.6 -.9,-2.2 .8,-1.8 -3.1,-6.7 .3,-3.8 .4,-1 -.6,-2 .4,-2.2 -2.2,-2.3 -.5,-3.2 .4,-1.5 -1.4,-.9 .6,-1.9 -.8,-1.7"/>
+<path class="oh-pa" d="m 736.8,225.1 -4.9,-29.9"/>
+<path class="oh-wv" d="m 709.3,279.4 3.2,-1.4 h 1.5 l .4,-3.5 1.5,-.8 -1.3,-3.6 1.1,-1.3 .3,-2.2 1,-2.3 1.6,.5 .6,2.1 1,-.5 .7,-.8 1,-.2 v -1.9 l -1.4,-1.1 1,-.5 -.1,-2.1 1.3,-2.2 h 1.3 l .3,-1.2 1.5,-1.8 1.3,1.2 1.8,-1.7 h .6 l 1.8,-2 2,-3.3 1.1,-.5 .4,-2.2 -.5,-1.1 1,-3.6 .1,-5.4 1.1,-3.4 -.6,-2 .1,-2.2 -1.4,-2.1 2.2,-1.2"/>
+<path class="ok-tx" d="m 357.5,332.9 52.6,3.2 -1.4,42.7 2.7,1.3 2.5,3 1.5,.3 1.1,-1 1.2,.4 1.4,1 1.1,-1.5 2.3,1.7 .5,2.9 1.2,.7 2.3,-.1 3.5,1.9 2,-.1 1.4,-.4 2.3,2.2 2,-2.3 3.5,1.1 1.9,3 2.3,-.1 -.7,2.1 2.3,1.1 3,-2.6 2.6,1.7 1.3,-.5 .1,1.5 1.7,1.2 2.3,-2.5 1.2,.7 -.3,2 1,1.8 1.2,-.8 2.5,-4.2 1.8,2 2,.5 2.1,-.7 2,1.8 1.2,-.1 1.3,1.2 3.6,-.9 .6,-1.7 3.7,-.3 1.6,.7 5,-2.5 .6,1.5 5.1,-.3 .5,-1.6 2.2,.9 4.6,3.8 6.4,1.9"/>
+<path class="or-wa" d="m 161.5,91.9 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1"/>
+<path class="pa-wv" d="m 736.8,225.1 3.2,19.7 17.4,-2.9"/>
+<path class="sd-wy" d="m 351.4,187.6 3.9,-43.9"/>
+<path class="tn-va" d="m 697.7,321.1 28.9,-3.3 .2,-1 4.6,-.5 -.3,.7"/>
+<path class="ut-wy" d="m 236.5,196 -3.3,21.9 32.1,4.8"/>
+<path class="va-wv" d="m 722.7,296.9 .7,.6 -.8,1.2 1.5,.7 .1,1.5 4.4,2.3 2.3,-.1 1.9,-1.8 .8,-1.7 3,1.8 5.5,-2.4 .5,-.9 -.8,-.5 .6,-1.4 1.5,1 4.3,-3.1 .7,1.1 2.3,-2 -.1,-1.4 1.5,-1.9 -1.5,-1.2 1,-3.3 3.7,-6.3 -.4,-1.9 2.1,-2.2 -.4,-1.5 1.4,-1.7 .1,-4.7 2.3,.7 1.3,1.9 2.8,.5 1.3,-1.6 2.3,-8.5 2.4,1.1 1,-2.5 .9,-.8 1.4,-1.8 .9,-.8 .5,-2.1 1.2,-.8 -.1,-2.9 .8,-2.3 -.9,-1.6 .2,-.9 10,5.2 .5,-2.3 .4,-1.6 .4,-.7"/>
+</g>
+
+<circle class="state borders dccircle dc" cx="801.6" cy="252.1" r="5">
+</circle>
+
+<path class="separator1" fill="none" d="m 215,493 v 55 l 36,45 m -251,-168 h 147 l 68,68 h 85 l 54,54 v 46"/>
+
+</svg></div>
+        <div class="legend" role="group" aria-label="Climate regions">
+          <button class="lg" data-region="hot_humid" onclick="regionPick('hot_humid')"><i style="background:var(--m-hh)"></i>Region #1</button>
+          <button class="lg" data-region="hot_dry" onclick="regionPick('hot_dry')"><i style="background:var(--m-hd)"></i>Region #2</button>
+          <button class="lg" data-region="mixed" onclick="regionPick('mixed')"><i style="background:var(--m-mx)"></i>Region #3</button>
+          <button class="lg" data-region="marine" onclick="regionPick('marine')"><i style="background:var(--m-mr)"></i>Region #4</button>
+          <button class="lg" data-region="cold" onclick="regionPick('cold')"><i style="background:var(--m-cd)"></i>Region #5</button>
         </div>
 
         <div class="result-card" id="resultCard" aria-live="polite" aria-label="Sizing result">
           <div id="resultBody">
-            <div class="r-cap">Recommended capacity</div>
+            <div class="r-cap">Recommended Equipment Capacity</div>
             <div class="r-big">—</div>
-            <div class="r-load">Calculated cooling load: <b>—</b></div>
-            <div class="r-row">Fill in your room and press Calculate BTU.</div>
+            <div class="r-load">Calculated Cooling Load: <b>—</b></div>
           </div>
         </div>
       </div>
 
     </div>
-    <p class="note-line calc-note">* This calculator is meant to be used as a general sizing guide only. It does not replace a professional Manual J load calculation. Electrical requirements vary by model — confirm voltage on the product page.</p>
   </div>
 </section>
 
-<!-- 3 · Top sellers (MSFL Top sales grammar, best-sellers collection, 8 items / 4 visible / slidable) -->
+<!-- 3 · Top Sales — Galaxy Championship card grammar -->
 <section class="sec" id="top-sellers">
   <div class="container">
-    <div class="sec-head">
-      <h2>Top Sales</h2>
-      <div class="sub">DELLA best sellers — in stock and ready to ship from four US warehouses.</div>
-    </div>
+    <div class="sec-head"><h2>Top Sales</h2></div>
     <div class="carousel-wrap">
       <button class="car-btn car-prev" aria-label="Previous products" onclick="slide('bsCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
       <div class="carousel" id="bsCar" aria-label="Best sellers"></div>
@@ -382,97 +632,47 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
   </div>
 </section>
 
-<!-- 4 · collapsible SEO content -->
-<section class="sec" id="what-size" style="padding-top:16px">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Mini Split BTU Calculator: What Size Mini Split Do I Need?</h2>
-    </div>
-    <div class="fold-list">
-      <details class="fold">
-        <summary>Mini split sizing chart by room size
-          <svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          <svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
-        </summary>
-        <div class="fold-body">
-          <p>Starting points for a typical room with 8-foot ceilings and standard insulation. Your climate, ceilings, sun, and insulation can move the answer a full size — the calculator above handles that for you.</p>
-          <table class="mini-table">
-            <thead><tr><th>BTU capacity</th><th>Square feet</th><th>Typical spaces</th><th></th></tr></thead>
-            <tbody>
-              <tr><td>9,000 BTU</td><td>Up to 450 sq. ft.</td><td>Bedroom, home office, small den</td><td><a href="https://dellahome.com/collections/9000-btu-mini-split">Shop 9K →</a></td></tr>
-              <tr><td>12,000 BTU</td><td>450 – 600 sq. ft.</td><td>Large bedroom, studio, garage bay</td><td><a href="https://dellahome.com/collections/12000-btu-mini-split">Shop 12K →</a></td></tr>
-              <tr><td>18,000 BTU</td><td>600 – 900 sq. ft.</td><td>Living room, open kitchen-diner</td><td><a href="https://dellahome.com/collections/18000-btu-mini-split">Shop 18K →</a></td></tr>
-              <tr><td>24,000 BTU</td><td>900 – 1,200 sq. ft.</td><td>Great room, large apartment zone</td><td><a href="https://dellahome.com/collections/24000-btu-mini-split">Shop 24K →</a></td></tr>
-              <tr><td>36,000 BTU</td><td>1,200 – 1,500 sq. ft.</td><td>Open-plan main floor, workshop</td><td><a href="https://dellahome.com/collections/36000-btu-mini-split">Shop 36K →</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-      <details class="fold">
-        <summary>What changes your mini split BTU requirement?
-          <svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          <svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
-        </summary>
-        <div class="fold-body">
-          <ul>
-            <li><b>Climate</b> — your ZIP Code adjusts the load −10% to +10% and filters which series can heat your winters.</li>
-            <li><b>Ceiling height</b> — more air volume, more load: −10% to +50% versus the 8-foot standard.</li>
-            <li><b>Insulation and air tightness</b> — a leaky, uninsulated room can need 30% more than a modern one.</li>
-            <li><b>Sun and glass</b> — strong western sun and glass-heavy walls both add real load, counted separately.</li>
-            <li><b>People, kitchen, equipment</b> — each extra person adds 600 BTU/h, a kitchen 4,000, devices their wattage.</li>
-          </ul>
-        </div>
-      </details>
-      <details class="fold">
-        <summary>Sizing single-zone and multi-zone mini splits
-          <svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          <svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
-        </summary>
-        <div class="fold-body">
-          <p>One room needs one single-zone system, from 9,000 to 36,000 BTU. Several rooms usually share one outdoor unit: size each room separately with the calculator above, then match the combination to a pre-configured <a href="https://dellahome.com/collections/mini-split-multi-zone">DELLA multi-zone bundle</a> — two to six indoor heads, up to 55,000 BTU. Never size a multi-room project by total square footage alone.</p>
-        </div>
-      </details>
-      <details class="fold">
-        <summary>How this differs from a Manual J HVAC load calculation
-          <svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          <svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
-        </summary>
-        <div class="fold-body">
-          <p>This tool is a practical pre-purchase estimate. It considers the key drivers of room cooling load and tells you how confident the estimate is. It is not a substitute for ACCA Manual J, the professional standard that models wall assemblies, window performance, infiltration, and local design weather in detail.</p>
-          <p>For most single rooms, this estimate plus the built-in safety rules is enough to choose confidently. For whole-home projects, complex spaces, or code documentation, have a qualified HVAC professional run a full load calculation.</p>
-        </div>
-      </details>
+<!-- 4 · What size editorial (narrow, read more) -->
+<section class="sec" id="what-size" style="padding-top:24px">
+  <div class="container-narrow">
+    <div class="sec-head"><h2>Mini Split BTU Calculator: What Size Mini Split Do I Need?</h2></div>
+    <div class="article">
+      <p>For most single rooms, the answer lands between <b>9,000 and 24,000 BTU</b>. A quick rule of thumb is about 20 BTU per square foot: a 400 sq. ft. bedroom starts around 9,000 BTU, a 500 sq. ft. office around 12,000, and an open living area near 1,000 sq. ft. around 18,000. But square footage is only the starting point. Your climate region, ceiling height, insulation, sun exposure, and how many people use the room each move the answer — together they can shift it a full size up or down. That is exactly what the calculator above does: it starts from your square footage, then adjusts the HVAC load for the conditions of your actual room.</p>
+      <p>It also settles something product labels can’t. A unit marked “up to 550 sq. ft.” assumes a typical room with 8-foot ceilings and decent insulation. The same 550 sq. ft. with a vaulted ceiling and strong afternoon sun may genuinely need the next size up, while a shaded, well-insulated room can be comfortable with less. When your calculated load and a product label disagree, trust the load — it knows more about your room.</p>
+      <div class="read-more-body" id="readMoreBody">
+        <p><b>Why not just round up to be safe?</b> Because both sizing mistakes cost you. An undersized mini split runs flat-out on the hottest afternoons and never quite catches up. An oversized one has the opposite problem: it hits the target temperature so fast that it shuts off before pulling moisture out of the air, leaving the room cold but clammy — then restarts a few minutes later. That start-stop pattern, called short cycling, wears the compressor and wastes electricity. Modern inverter units soften this by ramping output up and down, but they can’t fully rescue a badly oversized system. Staying within about 15% of your calculated load is the sweet spot.</p>
+        <p><b>Cooling more than one room?</b> Size each room on its own — a wall unit can’t cool through closed doors or around corners, so adding your rooms into one total and buying a single bigger unit doesn’t work. Rooms that need their own comfort get their own indoor head, and a <a href="https://dellahome.com/collections/mini-split-multi-zone">multi-zone system</a> runs up to six of them from one outdoor unit. Run the calculator once per room, note each recommendation, and match the combination to a pre-configured bundle.</p>
+        <p><b>When should you slow down and double-check?</b> Sunrooms and glass-heavy spaces gain far more solar heat than a normal room. Vaulted ceilings add air volume the eye underestimates. Open floor plans past 1,500 sq. ft. often need two indoor units for even airflow, no matter what the math says. And if a mini split will be your primary heat in a cold-winter state, the outdoor temperature rating matters as much as BTU — DELLA’s cold-climate series are rated down to −13°F and −22°F. In these cases the calculator still gives you an honest starting point, but it flags the result so you can confirm with our team or a local installer before ordering. For whole-home projects or anything that needs code documentation, a professional Manual J load calculation is the right tool.</p>
+        <p>Ready when you are — the calculator is free, takes about a minute, and every recommendation links to in-stock DELLA systems.</p>
+      </div>
+      <button class="read-toggle" id="readToggle" onclick="toggleRead()">Read more</button>
     </div>
   </div>
 </section>
 
-<!-- 5 · FAQ (PageFly Accordion3 grammar, heading on top) -->
-<section class="sec" id="faq" style="padding-top:16px">
-  <div class="container">
+<!-- 5 · FAQ — single column, narrow -->
+<section class="sec" id="faq" style="padding-top:24px">
+  <div class="container-narrow">
     <div class="sec-head"><h2>Mini Split Sizing Calculator FAQs</h2></div>
-    <div class="faq-grid">
-      <div class="faq-col">
-        <details class="faq"><summary>How accurate is this mini split calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same room factors professionals start with — area, climate, ceiling height, insulation, sun, glass, and internal heat — and shows an estimated range with a confidence level. Complex spaces are flagged for review instead of forced into a single number.</p></details>
-        <details class="faq"><summary>Is this the same as an HVAC load calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It provides a practical pre-purchase estimate of your room’s HVAC cooling load. It does not replace a professional Manual J calculation for complex or whole-home projects.</p></details>
-        <details class="faq"><summary>Should I size up to be safe?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Usually no. An oversized mini split short-cycles: it cools fast but removes less humidity and wastes energy. We recommend at most 15% above your estimated load.</p></details>
-      </div>
-      <div class="faq-col">
-        <details class="faq"><summary>Can I calculate multiple rooms?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes — run the calculator for each room separately, then match the combination to a pre-configured DELLA multi-zone bundle, up to six rooms and 55,000 BTU.</p></details>
-        <details class="faq"><summary>Does my climate affect mini split size?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Twice. Hot-humid climates raise the cooling load, and cold winters narrow which DELLA series can heat reliably. Your ZIP Code handles both automatically.</p></details>
-        <details class="faq"><summary>What if my result falls between two sizes?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>You’ll see both paths and the conditions that favor each — for example, take the larger size with strong western sun or frequent guests. Never a falsely precise single answer.</p></details>
-      </div>
+    <div class="faq-list">
+      <details class="faq"><summary>How accurate is this calculator — is it a Manual J HVAC load calculation?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same starting factors a professional would — area, climate, ceiling height, insulation, sun, glass, and internal heat — and it shows an estimated range instead of a falsely precise single number. It is not a Manual J calculation; that professional standard models wall assemblies, window specs, and local design weather in detail. For one room, this estimate is a reliable way to choose. For whole-home or permit work, hire a pro.</p></details>
+      <details class="faq"><summary>Should I choose a 115V or 230V mini split?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Smaller sizes (9K–12K) come in both 115V and 230V versions; larger systems are 230V only. 115V runs on a standard household circuit, which makes it popular for bedrooms and DIY installs. 230V needs a dedicated double-pole breaker, like a dryer or range. Check your panel before ordering, and confirm the exact voltage and breaker requirement on the product page — it varies by model.</p></details>
+      <details class="faq"><summary>Can I install a mini split myself?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Many DELLA customers do. Mounting the indoor head, setting the outdoor unit, and routing the line set are manageable weekend work with basic tools, and DELLA offers a rental tool kit with the vacuum pump and gauges the refrigerant connection requires. The electrical hookup is where most DIYers bring in a licensed electrician. Installing it yourself does not void the warranty — register your system and follow the manual.</p></details>
+      <details class="faq"><summary>Will a mini split actually heat my room in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes — every DELLA mini split is a heat pump that heats and cools. What differs is how cold it can work outside: standard series are rated to 5°F, and the cold-climate series run down to −13°F or −22°F. Enter your ZIP Code above and the calculator only suggests series rated for your winters. In the very coldest regions, plan a backup heat source for the deepest cold snaps.</p></details>
+      <details class="faq"><summary>What if my space is open-concept or connects to other rooms?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>If the connected areas flow together through wide openings, measure them as one space and enter the total. If doors close between them, or one area sits around a corner where air won’t reach, treat them as separate rooms — each gets its own indoor unit, ideally on one multi-zone system. Open stairways to another floor are the trickiest case; check the “open stairs” box above and the calculator will flag the result for review.</p></details>
+      <details class="faq"><summary>How much does a mini split cost to run?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Less than almost any other electric heating or cooling. Efficiency is measured in SEER2 — DELLA systems range from 17 to 25, and a higher number means less electricity for the same comfort. Your actual bill depends on your climate, electric rate, and running hours, but a right-sized inverter unit typically costs far less to run than window units, portable ACs, or electric baseboard heat. One more reason not to oversize: a bigger unit than you need costs more to buy and to run.</p></details>
     </div>
   </div>
 </section>
 
-<!-- 6 · Google reviews (Reputon carousel grammar; real 4.3 / 315, sample card copy) -->
-<section class="sec" id="reviews" style="padding-top:16px">
+<!-- 6 · Google reviews -->
+<section class="sec" id="reviews" style="padding-top:24px">
   <div class="container">
     <div class="gr-head">
       <div class="gr-brand">
         <b>dellahome.com</b>
         <div class="gr-score"><span class="num">4.3</span><span class="gr-stars">★★★★<span style="opacity:.35">★</span></span></div>
-        <div class="gr-count" style="margin-top:3px">315 reviews on <svg viewBox="0 0 56 19" fill="none"><g><path d="M23.83 9.91c0 2.63-2.06 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.52 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77-1.39 0-2.58 1.12-2.58 2.77 0 1.62 1.19 2.76 2.58 2.76 1.38 0 2.58-1.14 2.58-2.76Z" fill="#EA4335"/><path d="M33.71 9.91c0 2.63-2.05 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.53 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77s-2.57 1.12-2.57 2.77c0 1.62 1.19 2.76 2.57 2.76 1.39 0 2.58-1.14 2.58-2.76Z" fill="#FBBC05"/><path d="M43.18 5.62v8.2c0 3.37-1.99 4.75-4.34 4.75-2.21 0-3.54-1.48-4.05-2.7l1.75-.72c.31.74 1.07 1.62 2.3 1.62 1.5 0 2.44-.93 2.44-2.68v-.65h-.07c-.45.55-1.32 1.04-2.4 1.04-2.29 0-4.38-2-4.38-4.55 0-2.58 2.09-4.59 4.38-4.59 1.09 0 1.95.49 2.4 1.02h.07v-.74h1.9Zm-1.76 4.3c0-1.6-1.07-2.78-2.44-2.78-1.38 0-2.54 1.18-2.54 2.78 0 1.6 1.16 2.75 2.54 2.75 1.37 0 2.44-1.16 2.44-2.75Z" fill="#4285F4"/><path d="M46.32.81v13.39h-1.95V.81h1.95Z" fill="#34A853"/><path d="M53.95 11.41 55.5 12.45c-.5.74-1.71 2.02-3.8 2.02-2.6 0-4.53-2-4.53-4.56 0-2.72 1.95-4.57 4.3-4.57 2.37 0 3.53 1.89 3.91 2.9l.21.52-6.1 2.53c.47.92 1.19 1.38 2.21 1.38 1.02 0 1.73-.5 2.25-1.26Zm-4.8-1.64 4.09-1.7c-.23-.57-.9-.97-1.7-.97-1.01 0-2.43.9-2.39 2.67Z" fill="#EA4335"/><path d="M7.27 8.72V6.78h6.53c.06.34.1.74.1 1.17 0 1.46-.4 3.25-1.68 4.53-1.25 1.3-2.84 1.99-4.95 1.99A7.14 7.14 0 0 1 .07 7.38 7.14 7.14 0 0 1 7.27.29c2.16 0 3.7.85 4.86 1.95l-1.37 1.37a4.97 4.97 0 0 0-3.5-1.38 5.06 5.06 0 0 0-5.08 5.15 5.06 5.06 0 0 0 5.09 5.16c1.85 0 2.9-.75 3.58-1.42.55-.55.91-1.33 1.05-2.4H7.27Z" fill="#4285F4"/></g></svg></div>
+        <div class="gr-count">315 reviews on <svg viewBox="0 0 56 19" fill="none"><g><path d="M23.83 9.91c0 2.63-2.06 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.52 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77-1.39 0-2.58 1.12-2.58 2.77 0 1.62 1.19 2.76 2.58 2.76 1.38 0 2.58-1.14 2.58-2.76Z" fill="#EA4335"/><path d="M33.71 9.91c0 2.63-2.05 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.53 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77s-2.57 1.12-2.57 2.77c0 1.62 1.19 2.76 2.57 2.76 1.39 0 2.58-1.14 2.58-2.76Z" fill="#FBBC05"/><path d="M43.18 5.62v8.2c0 3.37-1.99 4.75-4.34 4.75-2.21 0-3.54-1.48-4.05-2.7l1.75-.72c.31.74 1.07 1.62 2.3 1.62 1.5 0 2.44-.93 2.44-2.68v-.65h-.07c-.45.55-1.32 1.04-2.4 1.04-2.29 0-4.38-2-4.38-4.55 0-2.58 2.09-4.59 4.38-4.59 1.09 0 1.95.49 2.4 1.02h.07v-.74h1.9Zm-1.76 4.3c0-1.6-1.07-2.78-2.44-2.78-1.38 0-2.54 1.18-2.54 2.78 0 1.6 1.16 2.75 2.54 2.75 1.37 0 2.44-1.16 2.44-2.75Z" fill="#4285F4"/><path d="M46.32.81v13.39h-1.95V.81h1.95Z" fill="#34A853"/><path d="M53.95 11.41 55.5 12.45c-.5.74-1.71 2.02-3.8 2.02-2.6 0-4.53-2-4.53-4.56 0-2.72 1.95-4.57 4.3-4.57 2.37 0 3.53 1.89 3.91 2.9l.21.52-6.1 2.53c.47.92 1.19 1.38 2.21 1.38 1.02 0 1.73-.5 2.25-1.26Zm-4.8-1.64 4.09-1.7c-.23-.57-.9-.97-1.7-.97-1.01 0-2.43.9-2.39 2.67Z" fill="#EA4335"/><path d="M7.27 8.72V6.78h6.53c.06.34.1.74.1 1.17 0 1.46-.4 3.25-1.68 4.53-1.25 1.3-2.84 1.99-4.95 1.99A7.14 7.14 0 0 1 .07 7.38 7.14 7.14 0 0 1 7.27.29c2.16 0 3.7.85 4.86 1.95l-1.37 1.37a4.97 4.97 0 0 0-3.5-1.38 5.06 5.06 0 0 0-5.08 5.15 5.06 5.06 0 0 0 5.09 5.16c1.85 0 2.9-.75 3.58-1.42.55-.55.91-1.33 1.05-2.4H7.27Z" fill="#4285F4"/></g></svg></div>
       </div>
       <a class="gr-write" href="https://www.google.com/storepages?q=dellahome.com&c=US" target="_blank" rel="noopener">Write a review</a>
     </div>
@@ -481,12 +681,11 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
       <div class="gr-track" id="grCar" aria-label="Google reviews"></div>
       <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slide('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
     </div>
-    <p class="note-line" style="margin-top:14px">All figures and review texts are from DELLA’s Google Business Profile. Production renders the continuously updated feed through the installed reviews app.</p>
   </div>
 </section>
 
-<!-- 7 · Premium Della Services (Galaxy page clone) -->
-<section class="sec" id="services" style="padding-top:16px">
+<!-- 7 · Premium Della Services — Galaxy exact clone -->
+<section class="sec" id="services" style="padding-top:24px">
   <div class="container">
     <div class="sec-head"><h2>Premium Della Services</h2></div>
     <div class="svc-grid">
@@ -499,13 +698,14 @@ details.faq p{padding:0 0 19px;font-size:14.5px;color:var(--muted);line-height:1
 </section>
 
 <div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v13 · compact result card + expanded form (MSFL)</div>
+<div class="mock-ribbon">MOCKUP v14</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
 const CFG = {"config_version":"1.1.0","engine_version":"della-sizing-engine-1.0.0","compatible_engine_versions":["della-sizing-engine-1.0.0"],"compatible_product_dataset_versions":["1.2.0"],"base_btu_per_sqft":20,"minimum_base_load_btu":5000,"factors":{"ceiling":{"mode":"average_height_divided_by_8","reference_height_ft":8,"minimum":0.9,"maximum":1.5,"complexity_flag_above_ft":12},"climate":{"cold":0.9,"marine":0.95,"mixed":1.0,"hot_dry":1.05,"hot_humid":1.1},"envelope":{"minimum":0.8,"maximum":1.35,"insulation_delta":{"excellent":-0.1,"good":-0.05,"standard":0.0,"poor":0.1,"very_poor":0.2},"airtightness_delta":{"very_tight":-0.05,"average":0.0,"drafty":0.08,"very_drafty":0.15},"glazing_delta":{"low":-0.03,"average":0.0,"high":0.07,"glass_heavy":0.15}},"sun":{"shaded":0.9,"average":1.0,"high_western":1.1},"internal_gains":{"included_occupants":2,"extra_occupant_btu":600,"kitchen_btu":4000,"watts_to_btu":3.412,"usage_factor":{"continuous":1.0,"frequent":0.75,"intermittent":0.5}},"special_space":{"sunroom_provisional_multiplier":1.15}},"confidence_ranges":{"high":0.1,"medium":0.15,"low":0.25},"capacity_bins_btu":[9000,12000,18000,24000,36000],"complexity_rules":{"standard_max_rooms":4,"advanced_min_rooms":5,"absolute_max_rooms":6,"single_room_review_area_sqft":1500,"single_zone_automatic_max_btu":36000,"multi_room_review_total_btu":55000,"small_load_review_btu":7000,"ceiling_review_above_ft":12},"fallback_thresholds":{"preferred_min_capacity_ratio":1.0,"preferred_max_capacity_ratio":1.15,"conditional_max_capacity_ratio":1.25},"climate_margins":{"winter_safety_margin_f":5,"summer_safety_margin_f":3},"ranking_weights":{"capacity_fit":40,"zone_or_head_match":25,"climate_fit":20,"inventory":10,"efficiency":5},"merchandising":{"default_merchandising_priority":50,"allowed_roles":["best_match","higher_efficiency","value_choice","cold_climate_upgrade"]},"display_policy":{"maximum_product_cards":4,"mobile_cards_per_row":2,"allow_dynamic_roles":true,"load_rounding_increment_btu":100},"input_validation":{"minimum_area_sqft":20,"confirm_area_above_sqft":1200,"minimum_ceiling_ft":6,"maximum_ceiling_ft":20,"confirm_occupants_above":8,"maximum_occupants":20,"confirm_equipment_watts_above":3000,"maximum_equipment_watts":15000,"zip_code_pattern":"^[0-9]{5}$"},"notes":{"calibration_status":"DELLA Engine V1 policy assumptions per PRD 9.4. Fixture-based calibration and HVAC/product review required before launch (PRD 28.2).","input_validation_status":"input_validation thresholds are proposed defaults added by this config. They are not sourced from PRD tables and require the same calibration approval.","single_source_rule":"This file is the only source of engine coefficients. The product dataset JSON v1.1.0 no longer carries a runtime_config block. Presentation JavaScript must not duplicate these values.","v1_1_0_change":"multi_room_review_total_btu raised 48000 -> 55000: the 2026-07-22 storefront re-audit confirmed live 55,000 BTU five- and six-zone systems (catalog_coverage_report.md section 5). Shipped together with product dataset 1.2.0, which adds those 121 systems."}};
 const CLIMATE = {"types":{"HH":"hot_humid","HD":"hot_dry","MX":"mixed","MR":"marine","CD":"cold"},"zones":{"1A":{"winter_design_temp_f":46,"summer_design_temp_f":91},"2A":{"winter_design_temp_f":30,"summer_design_temp_f":93},"2B":{"winter_design_temp_f":34,"summer_design_temp_f":106},"3A":{"winter_design_temp_f":22,"summer_design_temp_f":94},"3B":{"winter_design_temp_f":30,"summer_design_temp_f":102},"3C":{"winter_design_temp_f":34,"summer_design_temp_f":83},"4A":{"winter_design_temp_f":12,"summer_design_temp_f":91},"4B":{"winter_design_temp_f":18,"summer_design_temp_f":96},"4C":{"winter_design_temp_f":24,"summer_design_temp_f":85},"5A":{"winter_design_temp_f":0,"summer_design_temp_f":89},"5B":{"winter_design_temp_f":2,"summer_design_temp_f":93},"5C":{"winter_design_temp_f":22,"summer_design_temp_f":82},"6A":{"winter_design_temp_f":-10,"summer_design_temp_f":87},"6B":{"winter_design_temp_f":-8,"summer_design_temp_f":90},"7":{"winter_design_temp_f":-18,"summer_design_temp_f":84},"8":{"winter_design_temp_f":-35,"summer_design_temp_f":78}},"exact":{"33101":"1A:HH","40202":"4A:MX","55411":"6A:CD","58102":"7:CD","98101":"4C:MR","79901":"3B:HD","95130":"3C:MR","10001":"4A:MX","60601":"5A:CD","77002":"2A:HH","02108":"5A:CD","90210":"3B:HD","75201":"3A:HH","19103":"4A:MX","80202":"5B:CD","97201":"4C:MR","28202":"3A:MX","89101":"3B:HD"},"prefix3":{"006":"1A:HH","007":"1A:HH","008":"1A:HH","009":"1A:HH","010":"5A:CD","011":"5A:CD","012":"5A:CD","013":"5A:CD","014":"5A:CD","015":"5A:CD","016":"5A:CD","017":"5A:CD","018":"5A:CD","019":"5A:CD","020":"5A:CD","021":"5A:CD","022":"5A:CD","023":"5A:CD","024":"5A:CD","025":"5A:CD","026":"5A:CD","027":"5A:CD","028":"5A:CD","029":"5A:CD","030":"5A:CD","031":"5A:CD","032":"6A:CD","033":"6A:CD","034":"5A:CD","035":"6A:CD","036":"6A:CD","037":"6A:CD","038":"5A:CD","039":"6A:CD","040":"6A:CD","041":"6A:CD","042":"6A:CD","043":"6A:CD","044":"6A:CD","045":"6A:CD","046":"6A:CD","047":"7:CD","048":"6A:CD","049":"6A:CD","050":"6A:CD","051":"6A:CD","052":"6A:CD","053":"6A:CD","054":"6A:CD","056":"6A:CD","057":"6A:CD","058":"6A:CD","059":"6A:CD","060":"5A:CD","061":"5A:CD","062":"5A:CD","063":"5A:CD","064":"5A:CD","065":"5A:CD","066":"5A:CD","067":"5A:CD","068":"5A:CD","069":"5A:CD","070":"4A:MX","071":"4A:MX","072":"4A:MX","073":"4A:MX","074":"5A:CD","075":"5A:CD","076":"5A:CD","077":"4A:MX","078":"5A:CD","079":"5A:CD","080":"4A:MX","081":"4A:MX","082":"4A:MX","083":"4A:MX","084":"4A:MX","085":"5A:CD","086":"5A:CD","087":"4A:MX","088":"5A:CD","089":"4A:MX","100":"4A:MX","101":"4A:MX","102":"4A:MX","103":"4A:MX","104":"4A:MX","105":"4A:MX","106":"4A:MX","107":"4A:MX","108":"4A:MX","109":"5A:CD","110":"4A:MX","111":"4A:MX","112":"4A:MX","113":"4A:MX","114":"4A:MX","115":"4A:MX","116":"4A:MX","117":"4A:MX","118":"4A:MX","119":"4A:MX","120":"5A:CD","121":"5A:CD","122":"5A:CD","123":"5A:CD","124":"6A:CD","125":"5A:CD","126":"5A:CD","127":"6A:CD","128":"6A:CD","129":"6A:CD","130":"5A:CD","131":"5A:CD","132":"5A:CD","133":"6A:CD","134":"6A:CD","135":"6A:CD","136":"6A:CD","137":"6A:CD","138":"6A:CD","139":"6A:CD","140":"5A:CD","141":"5A:CD","142":"5A:CD","143":"5A:CD","144":"5A:CD","145":"5A:CD","146":"5A:CD","147":"6A:CD","148":"6A:CD","149":"5A:CD","150":"5A:CD","151":"5A:CD","152":"5A:CD","153":"5A:CD","154":"5A:CD","155":"5A:CD","156":"5A:CD","157":"5A:CD","158":"6A:CD","159":"5A:CD","160":"5A:CD","161":"5A:CD","162":"5A:CD","163":"5A:CD","164":"5A:CD","165":"5A:CD","166":"5A:CD","167":"6A:CD","168":"5A:CD","169":"6A:CD","170":"5A:CD","171":"5A:CD","172":"5A:CD","173":"4A:MX","174":"4A:MX","175":"5A:CD","176":"5A:CD","177":"5A:CD","178":"5A:CD","179":"5A:CD","180":"5A:CD","181":"5A:CD","182":"5A:CD","183":"5A:CD","184":"6A:CD","185":"5A:CD","186":"5A:CD","187":"5A:CD","188":"6A:CD","189":"4A:MX","190":"4A:MX","191":"4A:MX","193":"4A:MX","194":"4A:MX","195":"5A:CD","196":"5A:CD","197":"4A:MX","198":"4A:MX","199":"4A:MX","200":"4A:MX","201":"4A:MX","202":"4A:MX","203":"4A:MX","204":"4A:MX","205":"4A:MX","206":"4A:MX","207":"4A:MX","208":"4A:MX","209":"4A:MX","210":"4A:MX","211":"4A:MX","212":"4A:MX","214":"4A:MX","215":"4A:MX","216":"4A:MX","217":"4A:MX","218":"4A:MX","219":"4A:MX","220":"4A:MX","221":"4A:MX","222":"4A:MX","223":"4A:MX","224":"4A:MX","225":"4A:MX","226":"4A:MX","227":"4A:MX","228":"4A:MX","229":"4A:MX","230":"4A:MX","231":"4A:MX","232":"4A:MX","233":"4A:MX","234":"4A:MX","235":"4A:MX","236":"4A:MX","237":"4A:MX","238":"4A:MX","239":"4A:MX","240":"4A:MX","241":"4A:MX","242":"4A:MX","243":"4A:MX","244":"4A:MX","245":"4A:MX","246":"4A:MX","247":"4A:MX","248":"4A:MX","249":"5A:CD","250":"4A:MX","251":"4A:MX","252":"4A:MX","253":"4A:MX","254":"4A:MX","255":"4A:MX","256":"4A:MX","257":"4A:MX","258":"5A:CD","259":"5A:CD","260":"5A:CD","261":"4A:MX","262":"5A:CD","263":"5A:CD","264":"5A:CD","265":"5A:CD","266":"5A:CD","267":"5A:CD","268":"5A:CD","270":"4A:MX","271":"4A:MX","272":"4A:MX","273":"4A:MX","274":"4A:MX","275":"4A:MX","276":"4A:MX","277":"4A:MX","278":"3A:MX","279":"3A:MX","280":"3A:MX","281":"3A:MX","282":"3A:MX","283":"3A:MX","284":"3A:HH","285":"3A:MX","286":"4A:MX","287":"4A:MX","288":"4A:MX","289":"4A:MX","290":"3A:MX","291":"3A:MX","292":"3A:MX","293":"3A:MX","294":"3A:HH","295":"3A:MX","296":"3A:MX","297":"3A:MX","298":"3A:MX","299":"3A:HH","300":"3A:MX","301":"3A:MX","302":"3A:MX","303":"3A:MX","304":"3A:HH","305":"4A:MX","306":"3A:MX","307":"4A:MX","308":"3A:MX","309":"3A:MX","310":"3A:HH","312":"3A:MX","313":"2A:HH","314":"2A:HH","315":"2A:HH","316":"2A:HH","317":"3A:HH","318":"3A:MX","319":"3A:MX","320":"2A:HH","321":"2A:HH","322":"2A:HH","323":"2A:HH","324":"2A:HH","325":"2A:HH","326":"2A:HH","327":"2A:HH","328":"2A:HH","329":"2A:HH","330":"1A:HH","331":"1A:HH","333":"1A:HH","334":"2A:HH","335":"2A:HH","336":"2A:HH","337":"2A:HH","338":"2A:HH","339":"2A:HH","341":"2A:HH","342":"2A:HH","344":"2A:HH","346":"2A:HH","347":"2A:HH","349":"2A:HH","350":"3A:MX","351":"3A:MX","352":"3A:MX","354":"3A:MX","355":"3A:MX","356":"3A:MX","357":"3A:MX","358":"3A:MX","359":"3A:MX","360":"3A:HH","361":"3A:HH","362":"3A:MX","363":"3A:HH","364":"3A:HH","365":"2A:HH","366":"2A:HH","367":"3A:HH","368":"3A:MX","369":"3A:HH","370":"4A:MX","371":"4A:MX","372":"4A:MX","373":"4A:MX","374":"4A:MX","376":"4A:MX","377":"4A:MX","378":"4A:MX","379":"4A:MX","380":"3A:MX","381":"3A:MX","382":"4A:MX","383":"3A:MX","384":"4A:MX","385":"4A:MX","386":"3A:MX","387":"3A:MX","388":"3A:MX","389":"3A:MX","390":"3A:MX","391":"3A:HH","392":"3A:HH","393":"3A:MX","394":"3A:HH","395":"2A:HH","396":"3A:HH","397":"3A:MX","398":"3A:HH","400":"4A:MX","401":"4A:MX","402":"4A:MX","403":"4A:MX","404":"4A:MX","405":"4A:MX","406":"4A:MX","407":"4A:MX","408":"4A:MX","409":"4A:MX","410":"4A:MX","411":"4A:MX","412":"4A:MX","413":"4A:MX","414":"4A:MX","415":"4A:MX","416":"4A:MX","417":"4A:MX","418":"4A:MX","420":"4A:MX","421":"4A:MX","422":"4A:MX","423":"4A:MX","424":"4A:MX","425":"4A:MX","426":"4A:MX","427":"4A:MX","430":"5A:CD","431":"5A:CD","432":"5A:CD","433":"5A:CD","434":"5A:CD","435":"5A:CD","436":"5A:CD","437":"5A:CD","438":"5A:CD","439":"5A:CD","440":"5A:CD","441":"5A:CD","442":"5A:CD","443":"5A:CD","444":"5A:CD","445":"5A:CD","446":"5A:CD","447":"5A:CD","448":"5A:CD","449":"5A:CD","450":"5A:CD","451":"4A:MX","452":"4A:MX","453":"5A:CD","454":"5A:CD","455":"5A:CD","456":"4A:MX","457":"5A:CD","458":"5A:CD","460":"5A:CD","461":"5A:CD","462":"5A:CD","463":"5A:CD","464":"5A:CD","465":"5A:CD","466":"5A:CD","467":"5A:CD","468":"5A:CD","469":"5A:CD","470":"4A:MX","471":"4A:MX","472":"4A:MX","473":"5A:CD","474":"4A:MX","475":"4A:MX","476":"4A:MX","477":"4A:MX","478":"5A:CD","479":"5A:CD","480":"5A:CD","481":"5A:CD","482":"5A:CD","483":"5A:CD","484":"5A:CD","485":"5A:CD","486":"5A:CD","487":"6A:CD","488":"5A:CD","489":"5A:CD","490":"5A:CD","491":"5A:CD","492":"5A:CD","493":"5A:CD","494":"5A:CD","495":"5A:CD","496":"6A:CD","497":"6A:CD","498":"6A:CD","499":"7:CD","500":"5A:CD","501":"5A:CD","502":"5A:CD","503":"5A:CD","504":"6A:CD","505":"6A:CD","506":"6A:CD","507":"6A:CD","508":"5A:CD","510":"6A:CD","511":"5A:CD","512":"6A:CD","513":"6A:CD","514":"6A:CD","515":"5A:CD","516":"5A:CD","520":"5A:CD","521":"6A:CD","522":"5A:CD","523":"5A:CD","524":"5A:CD","525":"5A:CD","526":"5A:CD","527":"5A:CD","528":"5A:CD","530":"6A:CD","531":"6A:CD","532":"6A:CD","534":"6A:CD","535":"6A:CD","537":"6A:CD","538":"6A:CD","539":"6A:CD","540":"6A:CD","541":"6A:CD","542":"6A:CD","543":"6A:CD","544":"6A:CD","545":"7:CD","546":"6A:CD","547":"6A:CD","548":"7:CD","549":"6A:CD","550":"6A:CD","551":"6A:CD","553":"6A:CD","554":"6A:CD","556":"7:CD","557":"7:CD","558":"7:CD","559":"6A:CD","560":"6A:CD","561":"6A:CD","562":"6A:CD","563":"6A:CD","564":"7:CD","565":"7:CD","566":"7:CD","567":"7:CD","570":"6A:CD","571":"6A:CD","572":"6A:CD","573":"6A:CD","574":"6A:CD","575":"5A:CD","576":"6A:CD","577":"6A:CD","580":"7:CD","581":"7:CD","582":"7:CD","583":"7:CD","584":"7:CD","585":"6A:CD","586":"6A:CD","587":"7:CD","588":"7:CD","590":"6B:CD","591":"6B:CD","592":"6B:CD","593":"6B:CD","594":"6B:CD","595":"6B:CD","596":"6B:CD","597":"6B:CD","598":"6B:CD","599":"6B:CD","600":"5A:CD","601":"5A:CD","602":"5A:CD","603":"5A:CD","604":"5A:CD","605":"5A:CD","606":"5A:CD","607":"5A:CD","608":"5A:CD","609":"5A:CD","610":"5A:CD","611":"5A:CD","612":"5A:CD","613":"5A:CD","614":"5A:CD","615":"5A:CD","616":"5A:CD","617":"5A:CD","618":"5A:CD","619":"5A:CD","620":"4A:MX","622":"4A:MX","623":"5A:CD","624":"4A:MX","625":"5A:CD","626":"5A:CD","627":"5A:CD","628":"4A:MX","629":"4A:MX","630":"4A:MX","631":"4A:MX","633":"4A:MX","634":"5A:CD","635":"5A:CD","636":"4A:MX","637":"4A:MX","638":"4A:MX","639":"4A:MX","640":"4A:MX","641":"4A:MX","644":"5A:CD","645":"5A:CD","646":"5A:CD","647":"4A:MX","648":"4A:MX","650":"4A:MX","651":"4A:MX","652":"4A:MX","653":"4A:MX","654":"4A:MX","655":"4A:MX","656":"4A:MX","657":"4A:MX","658":"4A:MX","660":"4A:MX","661":"4A:MX","662":"4A:MX","664":"4A:MX","665":"4A:MX","666":"4A:MX","667":"4A:MX","668":"4A:MX","669":"5A:CD","670":"4A:MX","671":"4A:MX","672":"4A:MX","673":"4A:MX","674":"4A:MX","675":"4A:MX","676":"5A:CD","677":"5A:CD","678":"4A:MX","679":"4A:MX","680":"5A:CD","681":"5A:CD","683":"5A:CD","684":"5A:CD","685":"5A:CD","686":"5A:CD","687":"5A:CD","688":"5A:CD","689":"5A:CD","690":"5A:CD","691":"5A:CD","692":"5A:CD","693":"5A:CD","700":"2A:HH","701":"2A:HH","703":"2A:HH","704":"2A:HH","705":"2A:HH","706":"2A:HH","707":"2A:HH","708":"2A:HH","710":"3A:HH","711":"3A:HH","712":"3A:HH","713":"2A:HH","714":"3A:HH","716":"3A:MX","717":"3A:MX","718":"3A:MX","719":"3A:MX","720":"3A:MX","721":"3A:MX","722":"3A:MX","723":"3A:MX","724":"3A:MX","725":"4A:MX","726":"4A:MX","727":"4A:MX","728":"3A:MX","729":"3A:MX","730":"3A:MX","731":"3A:MX","734":"3A:MX","735":"3A:MX","736":"3A:MX","737":"3A:MX","738":"3A:MX","739":"4B:MX","740":"3A:MX","741":"3A:MX","743":"3A:MX","744":"3A:MX","745":"3A:MX","746":"3A:MX","747":"3A:MX","748":"3A:MX","749":"3A:MX","750":"3A:HH","751":"3A:HH","752":"3A:HH","753":"3A:HH","754":"3A:HH","755":"3A:HH","756":"3A:HH","757":"3A:HH","758":"2A:HH","759":"2A:HH","760":"3A:HH","761":"3A:HH","762":"3A:MX","763":"3A:MX","764":"3A:MX","765":"2A:HH","766":"2A:HH","767":"2A:HH","768":"3B:HD","769":"3B:HD","770":"2A:HH","772":"2A:HH","773":"2A:HH","774":"2A:HH","775":"2A:HH","776":"2A:HH","777":"2A:HH","778":"2A:HH","779":"2A:HH","780":"2B:HH","781":"2A:HH","782":"2A:HH","783":"2A:HH","784":"2A:HH","785":"2A:HH","786":"2A:HH","787":"2A:HH","788":"2B:HH","789":"2A:HH","790":"4B:MX","791":"4B:MX","792":"3B:HD","793":"3B:HD","794":"3B:HD","795":"3B:HD","796":"3B:HD","797":"3B:HD","798":"3B:HD","799":"3B:HD","800":"5B:CD","801":"5B:CD","802":"5B:CD","803":"5B:CD","804":"7:CD","805":"5B:CD","806":"5B:CD","807":"5B:CD","808":"5B:CD","809":"5B:CD","810":"5B:CD","811":"6B:CD","812":"7:CD","813":"5B:CD","814":"5B:CD","815":"5B:CD","816":"6B:CD","820":"6B:CD","821":"6B:CD","822":"5B:CD","823":"6B:CD","824":"6B:CD","825":"6B:CD","826":"6B:CD","827":"6B:CD","828":"6B:CD","829":"6B:CD","830":"7:CD","831":"7:CD","832":"6B:CD","833":"5B:CD","834":"6B:CD","835":"5B:CD","836":"5B:CD","837":"5B:CD","838":"5B:CD","840":"5B:CD","841":"5B:CD","843":"6B:CD","844":"5B:CD","845":"5B:CD","846":"5B:CD","847":"5B:CD","850":"2B:HD","851":"2B:HD","852":"2B:HD","853":"2B:HD","855":"3B:HD","856":"3B:HD","857":"2B:HD","859":"5B:CD","860":"5B:CD","863":"4B:MX","864":"3B:HD","865":"5B:CD","870":"5B:CD","871":"4B:MX","873":"5B:CD","874":"5B:CD","875":"5B:CD","877":"5B:CD","878":"4B:MX","879":"4B:MX","880":"3B:HD","881":"4B:MX","882":"3B:HD","883":"4B:MX","884":"4B:MX","890":"3B:HD","891":"3B:HD","893":"5B:CD","894":"5B:CD","895":"5B:CD","897":"5B:CD","898":"5B:CD","900":"3B:HD","902":"3B:HD","903":"3B:HD","904":"3B:HD","905":"3B:HD","906":"3B:HD","907":"3B:HD","908":"3B:HD","910":"3B:HD","911":"3B:HD","912":"3B:HD","913":"3B:HD","914":"3B:HD","915":"3B:HD","916":"3B:HD","917":"3B:HD","918":"3B:HD","919":"3B:HD","920":"3B:HD","921":"3B:HD","922":"3B:HD","923":"3B:HD","924":"3B:HD","925":"3B:HD","926":"3B:HD","927":"3B:HD","928":"3B:HD","930":"3C:MR","931":"3C:MR","932":"3B:HD","933":"3B:HD","934":"3C:MR","935":"3B:HD","936":"3B:HD","937":"3B:HD","939":"3C:MR","940":"3C:MR","941":"3C:MR","943":"3C:MR","944":"3C:MR","945":"3B:HD","946":"3C:MR","947":"3C:MR","948":"3B:HD","949":"3C:MR","950":"3C:MR","951":"3C:MR","952":"3B:HD","953":"3B:HD","954":"3C:MR","955":"4C:MR","956":"3B:HD","957":"3B:HD","958":"3B:HD","959":"3B:HD","960":"3B:HD","961":"5B:CD","967":"1A:HH","968":"1A:HH","969":"1A:HH","970":"4C:MR","971":"4C:MR","972":"4C:MR","973":"4C:MR","974":"4C:MR","975":"4C:MR","976":"5B:CD","977":"5B:CD","978":"5B:CD","979":"5B:CD","980":"4C:MR","981":"4C:MR","982":"4C:MR","983":"4C:MR","984":"4C:MR","985":"4C:MR","986":"4C:MR","988":"5B:CD","989":"5B:CD","990":"5B:CD","991":"6B:CD","992":"5B:CD","993":"5B:CD","994":"5B:CD","995":"7:CD","996":"7:CD","997":"8:CD","998":"7:CD","999":"7:CD"},"note":"mockup subset: exact records for demo ZIPs + full prefix3 fallback; production loads della_zip_climate_v1.0.0.json (33,784 ZIPs)"};
 const BESTSELLERS = [{"h":"serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft","t":"DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-MS-9K1VR-22S-M-01-O.jpg?v=1780545014","price":1049.96,"cap":null,"avail":true,"vid":50340329029920,"rating":4.9,"raters":35},{"h":"tl-series-36000-btu-seer2-19-mini-split-heat-pump-ac-up-to-2500-sq-ft","t":"DELLA Vario Series 36000 BTU 19 SEER2 Mini Split Heat Pump AC (R-454B) - Up to 2500 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TL-9K1VB-19S-1_932732dc-a208-4bf9-bb0d-ee61d0856e0d.jpg?v=1780387243","price":2199.96,"cap":null,"avail":true,"vid":50072027136288,"rating":null,"raters":null},{"h":"serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft","t":"DELLA Serena Series 12000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 550 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-MS-9K1VR-22S-M-01-O.jpg?v=1780545014","price":799.96,"cap":null,"avail":true,"vid":50334430429472,"rating":5.0,"raters":12},{"h":"serena-series-24000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1500-sq-ft","t":"DELLA Serena Series 24000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1500 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-MS-9K1VR-22S-M-01-O.jpg?v=1780545014","price":1499.96,"cap":null,"avail":true,"vid":50341362630944,"rating":4.9,"raters":10},{"h":"optima-series-12000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-550-sq-ft","t":"DELLA Optima Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC  - Up to 550 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TP-9K1V-24S-01_73188811-246b-4da3-8025-4980a4af80f7.jpg?v=1780470971","price":894.96,"cap":null,"avail":true,"vid":50965287305504,"rating":5.0,"raters":5},{"h":"vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft","t":"DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TL-9K1VB-19S-1_932732dc-a208-4bf9-bb0d-ee61d0856e0d.jpg?v=1780387243","price":779.96,"cap":null,"avail":true,"vid":50314672013600,"rating":4.8,"raters":26},{"h":"della-motto-series-9100-btu-20-5-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft","t":"DELLA Motto Series 9100 BTU 20.5 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/9K1VRH-20S-JA-I_O_01-O.jpg?v=1780552721","price":649.96,"cap":null,"avail":true,"vid":50630651052320,"rating":4.8,"raters":19},{"h":"vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft","t":"DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12k) - Up to 1350 Sq.Ft.","img":"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/1D3-TL_T9912_0597eaf3-1189-496d-8194-bec1e7fa6ad5.jpg?v=1780905188","price":2484.96,"cap":null,"avail":true,"vid":50576037576992,"rating":5.0,"raters":2}];
+const STATE_CLIMATE = {"ma":"cold","ri":"cold","nh":"cold","me":"cold","vt":"cold","ct":"cold","ny":"cold","nj":"mixed","pa":"cold","de":"mixed","md":"mixed","dc":"mixed","va":"mixed","wv":"mixed","nc":"mixed","sc":"mixed","ga":"mixed","al":"mixed","tn":"mixed","fl":"hot_humid","ky":"mixed","ms":"mixed","ar":"mixed","oh":"cold","in":"cold","mi":"cold","ia":"cold","sd":"cold","mn":"cold","ne":"cold","mo":"mixed","wi":"cold","nd":"cold","mt":"cold","wy":"cold","id":"cold","il":"cold","ks":"mixed","co":"cold","la":"hot_humid","ok":"mixed","tx":"hot_humid","nm":"cold","ut":"cold","wa":"marine","nv":"cold","az":"hot_dry","ca":"hot_dry","or":"marine","hi":"hot_humid","ak":"cold"};
 
 function track(ev, data){ (window.dataLayer = window.dataLayer||[]).push({event:ev, ...data}); }
 const REGION_NAMES = {hot_humid:'Region #1 (Red) – Hot & Humid', hot_dry:'Region #2 (Orange) – Warm', mixed:'Region #3 (Yellow) – Mixed', marine:'Region #4 (Green) – Cool', cold:'Region #5 (Blue) – Cold'};
@@ -514,19 +714,17 @@ const BIN_COLLECTIONS = {9000:'9000-btu-mini-split',12000:'12000-btu-mini-split'
 /* ============ climate ============ */
 let climate = null;
 function highlightLegend(type){
-  document.querySelectorAll('.region-row').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
+  document.querySelectorAll('.lg').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
 }
 function resolveZip(){
   const el = document.getElementById('zip');
   const err = document.getElementById('zipErr');
   const chip = document.getElementById('climateChip');
-  const manual = document.getElementById('manualRegionWrap');
   const z = el.value.trim();
-  if(!/^\d{5}$/.test(z)){ err.style.display = z ? 'block':'none'; chip.style.display='none'; return; }
+  if(!/^\d{5}$/.test(z)){ err.style.display = z ? 'block':'none'; return; }
   err.style.display='none';
   const rec = CLIMATE.exact[z] || CLIMATE.prefix3[z.slice(0,3)];
-  if(!rec){ climate=null; chip.style.display='none'; manual.style.display='block'; return; }
-  manual.style.display='none';
+  if(!rec){ chip.innerHTML='We couldn’t find that ZIP — pick your region on the map instead.'; chip.style.display='block'; return; }
   const [code, tcode] = rec.split(':');
   const zone = CLIMATE.zones[code];
   climate = { type: CLIMATE.types[tcode], code, winter: zone.winter_design_temp_f, summer: zone.summer_design_temp_f, source:'zip' };
@@ -536,17 +734,26 @@ function resolveZip(){
   track('zip_resolved',{climate:climate.type});
   onCalculate();
 }
-function setRegion(type, sourceLabel, silent){
+function setRegion(type, silent){
   climate = { type, code:null, winter:null, summer:null, source:'manual' };
   const chip = document.getElementById('climateChip');
-  chip.innerHTML = `<b>${REGION_NAMES[type]} set ${sourceLabel}.</b> Enter a ZIP for design-temperature checks.`;
+  chip.innerHTML = `<b>${REGION_NAMES[type]}</b> selected. Enter your ZIP Code for design-temperature precision.`;
   chip.style.display='block';
-  document.getElementById('manualRegionWrap').style.display='none';
   highlightLegend(type);
   if(!silent) onCalculate();
 }
-function setManualRegion(){ const v=document.getElementById('manualRegion').value; if(v) setRegion(v,'manually'); }
-function regionPick(type){ setRegion(type,'from the map'); }
+function regionPick(type){ setRegion(type); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  const map=document.getElementById('usClimateMap');
+  if(!map) return;
+  map.addEventListener('click', e=>{
+    const el=e.target.closest('[class]');
+    if(!el || !el.classList) return;
+    for(const cls of el.classList){
+      if(STATE_CLIMATE[cls]){ setRegion(STATE_CLIMATE[cls]); return; }
+    }
+  });
+});
 
 /* ============ engine (della-sizing-engine-1.0.0, single-room path) ============ */
 const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
@@ -587,7 +794,6 @@ function readRoomForm(){
   const sErr=document.getElementById('sqftErr');
   if(!sqft || sqft<CFG.input_validation.minimum_area_sqft){ sErr.style.display='block'; return null; }
   sErr.style.display='none';
-  const watts=parseFloat(document.getElementById('watts').value)||0;
   return {
     sqft, ceiling: parseFloat(document.getElementById('ceiling').value),
     insulation: document.getElementById('insulation').value,
@@ -595,14 +801,14 @@ function readRoomForm(){
     glazing: document.getElementById('glazing').value,
     occupants: parseInt(document.getElementById('occupants').value,10),
     airtightness: document.getElementById('airtightness').value,
-    watts, usage: document.getElementById('usage').value,
+    watts: parseFloat(document.getElementById('watts').value)||0,
+    usage: document.getElementById('usage').value,
     kitchen: document.getElementById('kitchenSel').value==='yes',
     sunroom: document.getElementById('sunroom').checked,
     garage: document.getElementById('garage').checked,
     stairs: document.getElementById('stairs').checked,
   };
 }
-function requireClimate(){ return true; } /* a default region is always active, MSFL-style */
 function whyList(res, room){
   const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
   if(res.cf!==1) items.push(`Your climate region ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
@@ -614,8 +820,12 @@ function whyList(res, room){
   if(res.equip) items.push(`Equipment adds ${fmt(res.equip)} BTU/h`);
   return items.map(i=>`<li>${i}</li>`).join('');
 }
+function toggleWhy(){
+  const w=document.getElementById('rWhy');
+  if(w) w.style.display = w.style.display==='block' ? 'none' : 'block';
+}
 function onCalculate(){
-  if(!requireClimate()) return;
+  if(!climate) return;
   const room=readRoomForm(); if(!room) return;
   const res=roomLoad(room,climate.type);
   const q=res.point, bin=binLabel(q);
@@ -623,46 +833,50 @@ function onCalculate(){
   const crosses = CFG.capacity_bins_btu.some(b=>res.lower<=b && b<res.upper);
   let html='';
   if(bin===null){
-    html=`<div class="r-cap">Recommended capacity</div>
-    <div class="r-big" style="font-size:24px;line-height:1.3;padding:6px 0 2px">Professional review</div>
-    <div class="r-load">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div><span class="conf-inline"></span>
-    <div class="dual-path">This space exceeds the automatic single-zone range (36,000 BTU/h). Consider two indoor units, separate zones, or a professional sizing review.</div>
-    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/mini-split-multi-zone" onclick="track('matching_product_clicked',{bin:'multi'})">Find Matching Products</a></div>`;
+    html=`<div class="r-cap">Recommended Equipment Capacity</div>
+    <div class="r-big" style="font-size:22px;line-height:1.35;padding:6px 0">Professional review recommended</div>
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-warn">This space exceeds the automatic single-zone range (36,000 BTU/h) — consider two indoor units or separate zones.</div>
+    <a class="pill pill-navy" href="https://dellahome.com/collections/mini-split-multi-zone" onclick="track('matching_product_clicked',{bin:'multi'})">Find Matching Products</a>`;
   } else if(bin==='below'){
-    html=`<div class="r-cap">Recommended capacity</div>
+    html=`<div class="r-cap">Recommended Equipment Capacity</div>
     <div class="r-big">9,000 BTU</div>
-    <div class="r-row" style="margin-top:0">Smallest DELLA option — your estimated need is below 9,000 BTU</div>
-    <div class="r-load" style="margin-top:8px">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h</div><span class="conf-inline"></span>
-    <div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/9000-btu-mini-split" onclick="track('matching_product_clicked',{bin:9000})">Find Matching Products</a></div>`;
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-meta">Below 9,000 BTU — 9K is DELLA’s smallest option · <button type="button" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>
+    <a class="pill pill-navy" href="https://dellahome.com/collections/9000-btu-mini-split" onclick="track('matching_product_clicked',{bin:9000})">Find Matching Products</a>`;
   } else {
-    html=`<div class="r-cap">Recommended capacity</div>
+    html=`<div class="r-cap">Recommended Equipment Capacity</div>
     <div class="r-big">${fmt(bin)} BTU</div>
-    <div class="r-load">Calculated cooling load: <b>${fmt(rd(q))} BTU/h</b></div>
-    <div class="r-row">Estimated range ${fmt(rd(res.lower))} – ${fmt(rd(res.upper))} BTU/h · <span class="conf-inline">${res.conf==='high'?'High':'Low'} confidence</span></div>
-    <details class="why-box"><summary>Why this size?</summary><ul>${whyList(res,room)}</ul></details>`;
-    if(crosses) html+=`<div class="dual-path">Your range crosses a size boundary — take the larger size with strong western sun, weaker insulation, or frequent guests.</div>`;
-    if(res.flags.length) html+=`<div class="dual-path">Flagged for review: ${res.flags.join(', ')}. Confirm with DELLA support before purchase.</div>`;
-    if(room.watts>CFG.input_validation.confirm_equipment_watts_above) html+=`<div class="dual-path">${fmt(room.watts)} W of equipment heat is unusually high for one room.</div>`;
-    html+=`<div class="result-ctas"><a class="pill pill-white" href="https://dellahome.com/collections/${BIN_COLLECTIONS[bin]}" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a></div>`;
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
+    <div class="r-meta">Estimated range ${fmt(rd(res.lower))}–${fmt(rd(res.upper))} BTU/h · <button type="button" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>`;
+    if(crosses) html+=`<div class="r-warn">Close to a size boundary — take the larger size with strong sun, weak insulation, or frequent guests.</div>`;
+    if(res.flags.length) html+=`<div class="r-warn">Flagged for review: ${res.flags.join(', ')} — confirm with DELLA support before purchase.</div>`;
+    html+=`<a class="pill pill-navy" href="https://dellahome.com/collections/${BIN_COLLECTIONS[bin]}" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a>`;
   }
   body.innerHTML=html;
   track('btu_calculator_completed',{type:'one'});
-  track('result_viewed',{});
 }
 
-/* ============ carousels ============ */
+/* ============ carousels & toggles ============ */
 function slide(id,dir){
   const el=document.getElementById(id);
   el.scrollBy({left:dir*(el.clientWidth*0.8),behavior:'smooth'});
 }
+function toggleRead(){
+  const b=document.getElementById('readMoreBody'), t=document.getElementById('readToggle');
+  const open = b.style.display==='block';
+  b.style.display = open?'none':'block';
+  t.textContent = open?'Read more':'Read less';
+}
+const STAR='<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.2 5.8 20.9l1.6-7L2 9.2l7.1-.6L12 2z"/></svg>';
 function renderBestsellers(){
   document.getElementById('bsCar').innerHTML = BESTSELLERS.map(p=>`
     <div class="prod-card">
       <a class="prod-img" href="https://dellahome.com/products/${p.h}"><img src="${p.img}" alt="${p.t}" loading="lazy"></a>
       <h3 class="prod-title"><a href="https://dellahome.com/products/${p.h}" onclick="track('matching_product_clicked',{handle:'${p.h}',src:'top_sales'})">${p.t}</a></h3>
-      <div class="loox-row">${p.rating?`<span class="loox-stars">★★★★★</span><span class="loox-count">(${p.raters})</span>`:''}</div>
+      <div class="loox-row">${p.rating?STAR.repeat(5)+`<span class="loox-count">(${p.raters})</span>`:''}</div>
       <div class="prod-price">$${p.price.toLocaleString('en-US',{minimumFractionDigits:2})}${p.cap&&p.cap>p.price?`<s>$${p.cap.toLocaleString('en-US',{minimumFractionDigits:2})}</s>`:''}</div>
       <form class="atc-form" method="post" action="https://dellahome.com/cart/add" onsubmit="track('add_to_cart_after_calculator',{handle:'${p.h}'})">
         <input type="hidden" name="id" value="${p.vid}">
@@ -673,7 +887,7 @@ function renderBestsellers(){
 }
 const G_ICON=`<svg class="gi" viewBox="0 0 512 512"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"/><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15C83.93 439.12 163.74 492 256 492z" fill="#34a853"/><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"/><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20 163.75 20 83.93 72.89 45.1 150.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"/></svg>`;
 const AVATAR='https://cdn.grw.reputon.com/img/profile_photo.png';
-const SAMPLE_REVIEWS=[
+const REVIEWS=[
   {n:'AI Summary',d:'Based on 315 reviews · 71% five-star',ai:true,
    t:'<p>High marks for product selection, design, quality, and assembly</p><p>Shipping is fast and reliable, prices are competitive</p><p>Website is easy to navigate</p>'},
   {n:'Lorran',d:'Google review',stars:5,
@@ -683,8 +897,13 @@ const SAMPLE_REVIEWS=[
   {n:'Anonymous reviewer',d:'Google review',stars:4,
    t:'Products are great so far. Fairly easy to install, and ordering the right set up was easy. Shipping time was longer than estimated which is why I rated a 4 star instead of 5. If the shipping process was better I would have given it 5 stars.'},
 ];
+function toggleReview(btn){
+  const card=btn.closest('.gr-card');
+  card.classList.toggle('expanded');
+  btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
+}
 function renderReviews(){
-  document.getElementById('grCar').innerHTML = SAMPLE_REVIEWS.map(r=>`
+  document.getElementById('grCar').innerHTML = REVIEWS.map(r=>`
     <div class="gr-card${r.ai?' gr-ai':''}">
       <div class="gr-top">
         <div class="gr-avatar">${r.ai?'✦':`<img src="${AVATAR}" alt="" loading="lazy">`}</div>
@@ -693,14 +912,16 @@ function renderReviews(){
       </div>
       <div class="gr-starline">${r.ai?'<span class="gr-star5">★</span>':(r.stars?`<span class="gr-star5">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>`:'')}${r.ai?'':'<span class="gr-verified"><i>✓</i>Verified</span>'}</div>
       <div class="gr-text">${r.t}</div>
-      ${r.ai?'':'<button class="gr-more" type="button">Show more</button>'}
+      ${r.ai?'':'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>'}
     </div>`).join('');
 }
+
+/* init: MSFL-style defaults, live recalc */
 renderBestsellers();
 renderReviews();
-/* MSFL-style defaults: preset region + values, result visible immediately, live recalc on change */
-setRegion('mixed', 'as the default — enter your ZIP for precision', true);
-document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow) – Mixed set as the default.</b> Enter your ZIP Code for design-temperature precision.';
+setRegion('mixed', true);
+document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow) – Mixed</b> set as the default. Enter your ZIP Code or click your state for precision.';
+document.getElementById('climateChip').style.display='block';
 document.querySelectorAll('#calcForm input, #calcForm select').forEach(el=>{
   if(el.id==='zip') return;
   el.addEventListener('change', ()=>onCalculate());
