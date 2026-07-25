@@ -159,12 +159,20 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 }
 @media (max-width:560px){
   .field-grid{grid-template-columns:1fr}
+  input[type=text],input[type=number],select{font-size:16px;height:48px}
   .carousel{grid-auto-columns:calc((100% - 16px)/2);gap:16px}
   .prod-title{font-size:16px;min-height:72px}
   .atc-btn{font-size:15px}
   .gr-track{grid-auto-columns:92%}
   .svc-grid{grid-template-columns:1fr}
   .car-btn{display:none}
+  .result-card{padding:22px 16px}
+  .result-card .pill{min-width:0;width:100%}
+  .r-big{font-size:38px}
+  .lg{padding:6px 5px}
+  .container-narrow{padding:0 16px}
+  .article h3{font-size:21px}
+  details.faq{padding:0 16px}
 }
 </style>
 </head>
@@ -188,7 +196,7 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
         <div class="field-grid">
           <div class="field">
             <label for="zip">ZIP Code</label>
-            <input type="text" id="zip" inputmode="numeric" maxlength="5" placeholder="e.g. 40202" aria-describedby="zipErr" onblur="resolveZip()" oninput="if(this.value.length===5)resolveZip()">
+            <input type="text" id="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 40202" aria-describedby="zipErr" onblur="resolveZip()" oninput="if(this.value.length===5)resolveZip()">
             <span class="field-error" id="zipErr">Enter a valid 5-digit ZIP Code.</span>
           </div>
           <div class="field">
