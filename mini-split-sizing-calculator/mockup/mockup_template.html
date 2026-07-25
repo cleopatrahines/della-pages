@@ -135,8 +135,10 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 .gr-star5{color:#0B133D;font-size:14px;letter-spacing:2px}
 .gr-text{font-size:14px;line-height:19px;color:#000;margin-top:8px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 .gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
-.gr-more{font-size:12px;color:#73777B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:'Poppins',sans-serif;text-align:left;padding:6px 0 0}
+.gr-more{font-size:12px;color:#73777B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:'Poppins',sans-serif;text-align:left;padding:6px 0 0;margin-bottom:12px}
 .gr-prod{font-size:12.5px;color:#282828;padding-top:10px;border-top:1px solid #e2e2e2;margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-prod a{color:#282828;text-decoration:none}
+.gr-prod a:hover{text-decoration:underline}
 .gr-text{margin-bottom:10px}
 
 /* premium services — Galaxy exact clone: navy cards, left aligned, square */
@@ -611,7 +613,7 @@ function renderReviews(){
       <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span></div>
       <div class="gr-text">${r.x.replace(/\n/g,'<br>')}</div>
       ${r.x.length>200?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
-      ${r.p?`<div class="gr-prod">${r.p}</div>`:''}
+      ${r.p?`<div class="gr-prod">${r.u?`<a href="${r.u}">${r.p}</a>`:r.p}</div>`:''}
     </div>`).join('');
 }
 
