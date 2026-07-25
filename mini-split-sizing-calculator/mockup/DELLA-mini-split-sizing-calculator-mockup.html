@@ -8,7 +8,7 @@
 <!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral + Inter 18pt woff2. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#0E1952; --navy-deep:#0E1953; --blue:#5D8DEB; --blue-strong:#286ED7; --blue-link:#286ED7;
@@ -111,31 +111,32 @@ details.faq[open] .pfa-minus{display:block}
 details.faq[open] .pfa-plus{display:none}
 details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
-/* customer reviews — Loox store reviews, horizontal scroll */
+/* customer reviews — Loox store widget clone (values lifted from dellahome our-reviews widget) */
+.gr-sec{font-family:'Poppins',sans-serif;color:#000}
 .gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.gr-brand b{font-size:16px;color:#1C1C1C;font-weight:700}
-.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#1C1C1C;margin-top:4px}
-.gr-score .num{font-weight:700;font-size:16px}
-.gr-stars{color:#FBBC05;letter-spacing:1px;font-size:16px}
-.gr-count{font-size:13.5px;color:#5F6368;margin-top:3px}
-.gr-write{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:var(--navy);text-decoration:none;font-weight:500}
-.gr-write:hover{border-color:var(--navy)}
+.gr-brand b{font-size:16px;color:#000;font-weight:700}
+.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#000;margin-top:4px}
+.gr-score .num{font-weight:600;font-size:16px}
+.gr-stars{color:#0B133D;letter-spacing:2px;font-size:16px}
+.gr-count{font-size:13.5px;color:#73777B;margin-top:3px}
+.gr-write{border:1px solid #E8E8E8;background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:#0B133D;text-decoration:none;font-weight:500}
+.gr-write:hover{border-color:#0B133D}
 .gr-wrap{position:relative}
-.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
+.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px)/4);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
 .gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px}
-.gr-photo{margin:-20px -22px 8px;height:185px;background:#F4F4F4;border-radius:12px 12px 0 0;overflow:hidden}
+.gr-card{scroll-snap-align:start;background:#FFFEFB;border-radius:8px;padding:10px;display:flex;flex-direction:column}
+.gr-photo{border-radius:6px;height:185px;background:#F0F1F1;overflow:hidden;margin-bottom:10px}
 .gr-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.gr-name{font-size:14.5px;font-weight:600;color:#1C1C1C}
-.gr-date{font-size:12.5px;color:#80868B;margin-top:2px}
-.gr-starline{display:flex;align-items:center;gap:8px}
-.gr-star5{color:#FBBC05;font-size:15px;letter-spacing:1px}
-.gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#117A59;font-weight:600}
-.gr-verified i{width:14px;height:14px;border-radius:50%;background:#117A59;color:#fff;font-size:9px;font-style:normal;display:inline-flex;align-items:center;justify-content:center}
-.gr-text{font-size:14px;color:#3C4043;line-height:1.6;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.gr-name{font-weight:700;font-size:16px;color:#000;display:flex;align-items:center}
+.gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:400;line-height:18px;color:#0B133D;white-space:nowrap}
+.gr-verified svg{width:14px;height:14px;margin-left:8px;flex:none}
+.gr-date{color:#73777B;font-size:11px;padding:5px 0 0}
+.gr-starline{padding-top:10px}
+.gr-star5{color:#0B133D;font-size:14px;letter-spacing:2px}
+.gr-text{font-size:14px;line-height:19px;color:#000;margin-top:8px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 .gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
-.gr-more{font-size:12.5px;color:#80868B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:var(--sans);text-align:left;padding:0}
-.gr-prod{font-size:12px;color:#8A8A8A;margin-top:auto;padding-top:8px;border-top:1px solid #F0F0F0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-more{font-size:12px;color:#73777B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:'Poppins',sans-serif;text-align:left;padding:6px 0 0}
+.gr-prod{font-size:12.5px;color:#282828;padding-top:10px;border-top:1px solid #e2e2e2;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* premium services — Galaxy exact clone: navy cards, left aligned, square */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
@@ -667,7 +668,7 @@ Place this code in the empty space below. */
 </section>
 
 <!-- 6 · Google reviews -->
-<section class="sec" id="reviews" style="padding-top:24px">
+<section class="sec gr-sec" id="reviews" style="padding-top:24px">
   <div class="container">
     <div class="gr-head">
       <div class="gr-brand">
@@ -678,9 +679,9 @@ Place this code in the empty space below. */
       <a class="gr-write" href="https://dellahome.com/pages/our-reviews">See all reviews</a>
     </div>
     <div class="gr-wrap">
-      <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slide('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
+      <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slideLoop('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
       <div class="gr-track" id="grCar" aria-label="Customer reviews"></div>
-      <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slide('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
+      <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slideLoop('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </section>
@@ -864,6 +865,13 @@ function slide(id,dir){
   const el=document.getElementById(id);
   el.scrollBy({left:dir*(el.clientWidth*0.8),behavior:'smooth'});
 }
+function slideLoop(id,dir){
+  const el=document.getElementById(id);
+  const max=el.scrollWidth-el.clientWidth;
+  if(dir>0 && el.scrollLeft>=max-20){ el.scrollTo({left:0,behavior:'smooth'}); return; }
+  if(dir<0 && el.scrollLeft<=20){ el.scrollTo({left:max,behavior:'smooth'}); return; }
+  el.scrollBy({left:dir*(el.clientWidth*0.8),behavior:'smooth'});
+}
 function toggleRead(){
   const b=document.getElementById('readMoreBody'), t=document.getElementById('readToggle');
   const open = b.style.display==='block';
@@ -893,13 +901,15 @@ function toggleReview(btn){
   btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
 }
 function renderReviews(){
+  const VERIFIED='<span class="gr-verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B133D"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#FFFEFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>';
   document.getElementById('grCar').innerHTML = LOOX_REVIEWS.map(r=>`
     <div class="gr-card">
       ${r.img?`<div class="gr-photo"><img src="${r.img}" alt="Customer photo: ${r.p||'DELLA product'}" loading="lazy"></div>`:''}
-      <div><span class="gr-name">${r.n}</span></div>
-      <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span>${r.v?'<span class="gr-verified"><i>✓</i>Verified</span>':''}<span class="gr-date">${fmtDate(r.t)}</span></div>
+      <div class="gr-name">${r.n}${r.v?VERIFIED:''}</div>
+      <div class="gr-date">${fmtDate(r.t)}</div>
+      <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span></div>
       <div class="gr-text">${r.x.replace(/\n/g,'<br>')}</div>
-      ${r.x.length>150?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
+      ${r.x.length>200?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
       ${r.p?`<div class="gr-prod">${r.p}</div>`:''}
     </div>`).join('');
 }
