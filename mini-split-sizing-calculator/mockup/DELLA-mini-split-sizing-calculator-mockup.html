@@ -31,7 +31,6 @@ a{color:var(--blue-link)}
 .pill-navy{background:#0E1952;color:#fff}
 .pill-navy:hover{background:#25367D}
 .pill:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.shell-note{background:#F5F5F5;color:#9A9A9A;font-size:11px;text-align:center;padding:7px;letter-spacing:.04em}
 .mock-ribbon{position:fixed;bottom:14px;left:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
 
 /* H1 */
@@ -42,10 +41,11 @@ a{color:var(--blue-link)}
 /* calculator — MSFL grammar: no cards, fields straight on the page */
 .calc-zone{padding:30px 0 8px}
 .calc-grid{display:grid;grid-template-columns:53% 43.5%;justify-content:space-between;align-items:start}
-.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px}
-.field{display:flex;flex-direction:column;gap:5px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+.field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:13.5px;font-weight:500;color:#333}
 input[type=text],input[type=number],select{height:46px;border:1px solid #CFCFCF;border-radius:5px;padding:0 13px;font-family:var(--sans);font-size:15px;color:var(--body);background:#fff;width:100%}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%230E1952' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;padding-right:40px;text-overflow:ellipsis}
 input:hover,select:hover{border-color:#8A8A8A}
 .climate-chip{display:none;margin-top:12px;font-size:13px;color:var(--muted)}
 .climate-chip b{color:var(--navy);font-weight:600}
@@ -58,17 +58,17 @@ input:hover,select:hover{border-color:#8A8A8A}
 .lg{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#333;border:none;background:none;cursor:pointer;padding:3px 2px;font-family:var(--sans)}
 .lg i{width:11px;height:11px;border-radius:50%;display:inline-block}
 .lg.active{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
-.result-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-top:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.r-cap{font-size:14px;color:#333}
-.r-big{font-family:var(--serif);font-size:40px;font-weight:500;color:var(--navy);line-height:1.2;letter-spacing:-1px;margin:2px 0}
-.r-load{font-size:14px;color:#333}
+.result-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 28px;margin-top:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.r-cap{font-size:15px;color:#333}
+.r-big{font-family:var(--serif);font-size:44px;font-weight:500;color:var(--navy);line-height:1.25;letter-spacing:-1px;margin:6px 0}
+.r-load{font-size:15px;color:#333;line-height:1.6}
 .r-load b{color:var(--blue-strong);font-weight:600}
 .r-why-btn{background:none;border:none;font-family:var(--sans);font-size:12.5px;color:var(--blue-link);text-decoration:underline;cursor:pointer;padding:0}
 .r-why{display:none;text-align:left;margin:8px auto 0;max-width:340px;font-size:12.5px;color:var(--muted);list-style:none}
 .r-why li{margin:3px 0 3px 16px}
 .r-warn{font-size:12.5px;color:#8A5B00;margin-top:8px}
-.result-card .pill{margin-top:14px}
-.r-alt{font-size:12.5px;color:var(--muted);margin-top:9px}
+.result-card .pill{margin-top:18px;min-width:330px}
+.r-alt{font-size:13px;color:var(--muted);margin-top:12px}
 
 /* top sellers — Galaxy “Championship Level Cooling” card grammar */
 .carousel-wrap{position:relative}
@@ -111,37 +111,31 @@ details.faq[open] .pfa-minus{display:block}
 details.faq[open] .pfa-plus{display:none}
 details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
-/* google reviews — Reputon widget clone */
+/* customer reviews — Loox store reviews, horizontal scroll */
 .gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
 .gr-brand b{font-size:16px;color:#1C1C1C;font-weight:700}
 .gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#1C1C1C;margin-top:4px}
 .gr-score .num{font-weight:700;font-size:16px}
 .gr-stars{color:#FBBC05;letter-spacing:1px;font-size:16px}
-.gr-count{font-size:13.5px;color:#5F6368;display:flex;align-items:center;gap:5px;margin-top:3px}
-.gr-count svg{height:16px;width:auto}
+.gr-count{font-size:13.5px;color:#5F6368;margin-top:3px}
 .gr-write{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:var(--navy);text-decoration:none;font-weight:500}
 .gr-write:hover{border-color:var(--navy)}
 .gr-wrap{position:relative}
-.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
+.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px}
 .gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-height:210px}
-.gr-top{display:flex;align-items:flex-start;gap:11px;width:100%}
-.gr-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;background:#EAF1FF;display:flex;align-items:center;justify-content:center;color:var(--blue-strong);font-weight:600;font-size:18px}
-.gr-avatar img{width:100%;height:100%;object-fit:cover}
+.gr-card{scroll-snap-align:start;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 14px rgba(0,0,0,.06);padding:20px 22px;display:flex;flex-direction:column;gap:8px}
+.gr-photo{margin:-20px -22px 8px;height:185px;background:#F4F4F4;border-radius:12px 12px 0 0;overflow:hidden}
+.gr-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .gr-name{font-size:14.5px;font-weight:600;color:#1C1C1C}
-.gr-date{font-size:12.5px;color:#80868B}
-.gr-logo{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px}
-.gr-logo .pb{font-size:10px;color:#9AA0A6;display:flex;align-items:center;gap:4px}
-.gr-logo .gi{width:20px;height:20px}
+.gr-date{font-size:12.5px;color:#80868B;margin-top:2px}
 .gr-starline{display:flex;align-items:center;gap:8px}
 .gr-star5{color:#FBBC05;font-size:15px;letter-spacing:1px}
 .gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#117A59;font-weight:600}
 .gr-verified i{width:14px;height:14px;border-radius:50%;background:#117A59;color:#fff;font-size:9px;font-style:normal;display:inline-flex;align-items:center;justify-content:center}
-.gr-text{font-size:14px;color:#3C4043;line-height:1.6;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.gr-text{font-size:14px;color:#3C4043;line-height:1.6;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
 .gr-more{font-size:12.5px;color:#80868B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:var(--sans);text-align:left;padding:0}
-.gr-ai .gr-text p{display:flex;align-items:flex-start;gap:7px;margin:3px 0}
-.gr-ai .gr-text p::before{content:"✓";color:#117A59;font-weight:700}
+.gr-prod{font-size:12px;color:#8A8A8A;margin-top:auto;padding-top:8px;border-top:1px solid #F0F0F0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* premium services — Galaxy exact clone: navy cards, left aligned, square */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
@@ -172,7 +166,6 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 </head>
 <body>
 
-<div class="shell-note">Theme shell placeholder — the live page keeps the standard Barrel header, announcement bar, and footer</div>
 
 <!-- 1 · H1 -->
 <header class="page-head">
@@ -679,14 +672,14 @@ Place this code in the empty space below. */
     <div class="gr-head">
       <div class="gr-brand">
         <b>dellahome.com</b>
-        <div class="gr-score"><span class="num">4.3</span><span class="gr-stars">★★★★<span style="opacity:.35">★</span></span></div>
-        <div class="gr-count">315 reviews on <svg viewBox="0 0 56 19" fill="none"><g><path d="M23.83 9.91c0 2.63-2.06 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.52 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77-1.39 0-2.58 1.12-2.58 2.77 0 1.62 1.19 2.76 2.58 2.76 1.38 0 2.58-1.14 2.58-2.76Z" fill="#EA4335"/><path d="M33.71 9.91c0 2.63-2.05 4.56-4.58 4.56-2.52 0-4.58-1.93-4.58-4.56 0-2.65 2.06-4.57 4.58-4.57 2.53 0 4.58 1.92 4.58 4.57Zm-2 0c0-1.65-1.2-2.77-2.58-2.77s-2.57 1.12-2.57 2.77c0 1.62 1.19 2.76 2.57 2.76 1.39 0 2.58-1.14 2.58-2.76Z" fill="#FBBC05"/><path d="M43.18 5.62v8.2c0 3.37-1.99 4.75-4.34 4.75-2.21 0-3.54-1.48-4.05-2.7l1.75-.72c.31.74 1.07 1.62 2.3 1.62 1.5 0 2.44-.93 2.44-2.68v-.65h-.07c-.45.55-1.32 1.04-2.4 1.04-2.29 0-4.38-2-4.38-4.55 0-2.58 2.09-4.59 4.38-4.59 1.09 0 1.95.49 2.4 1.02h.07v-.74h1.9Zm-1.76 4.3c0-1.6-1.07-2.78-2.44-2.78-1.38 0-2.54 1.18-2.54 2.78 0 1.6 1.16 2.75 2.54 2.75 1.37 0 2.44-1.16 2.44-2.75Z" fill="#4285F4"/><path d="M46.32.81v13.39h-1.95V.81h1.95Z" fill="#34A853"/><path d="M53.95 11.41 55.5 12.45c-.5.74-1.71 2.02-3.8 2.02-2.6 0-4.53-2-4.53-4.56 0-2.72 1.95-4.57 4.3-4.57 2.37 0 3.53 1.89 3.91 2.9l.21.52-6.1 2.53c.47.92 1.19 1.38 2.21 1.38 1.02 0 1.73-.5 2.25-1.26Zm-4.8-1.64 4.09-1.7c-.23-.57-.9-.97-1.7-.97-1.01 0-2.43.9-2.39 2.67Z" fill="#EA4335"/><path d="M7.27 8.72V6.78h6.53c.06.34.1.74.1 1.17 0 1.46-.4 3.25-1.68 4.53-1.25 1.3-2.84 1.99-4.95 1.99A7.14 7.14 0 0 1 .07 7.38 7.14 7.14 0 0 1 7.27.29c2.16 0 3.7.85 4.86 1.95l-1.37 1.37a4.97 4.97 0 0 0-3.5-1.38 5.06 5.06 0 0 0-5.08 5.15 5.06 5.06 0 0 0 5.09 5.16c1.85 0 2.9-.75 3.58-1.42.55-.55.91-1.33 1.05-2.4H7.27Z" fill="#4285F4"/></g></svg></div>
+        <div class="gr-score"><span class="num">4.9</span><span class="gr-stars">★★★★★</span></div>
+        <div class="gr-count">1,702 reviews from verified DELLA buyers</div>
       </div>
-      <a class="gr-write" href="https://www.google.com/storepages?q=dellahome.com&c=US" target="_blank" rel="noopener">Write a review</a>
+      <a class="gr-write" href="https://dellahome.com/pages/our-reviews">See all reviews</a>
     </div>
     <div class="gr-wrap">
       <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slide('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
-      <div class="gr-track" id="grCar" aria-label="Google reviews"></div>
+      <div class="gr-track" id="grCar" aria-label="Customer reviews"></div>
       <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slide('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
     </div>
   </div>
@@ -705,8 +698,7 @@ Place this code in the empty space below. */
   </div>
 </section>
 
-<div class="shell-note">Theme footer placeholder — standard Barrel footer renders here</div>
-<div class="mock-ribbon">MOCKUP v15</div>
+<div class="mock-ribbon">MOCKUP v17</div>
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -893,34 +885,22 @@ function renderBestsellers(){
       </form>
     </div>`).join('');
 }
-const G_ICON=`<svg class="gi" viewBox="0 0 512 512"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"/><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15C83.93 439.12 163.74 492 256 492z" fill="#34a853"/><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"/><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20 163.75 20 83.93 72.89 45.1 150.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"/></svg>`;
-const AVATAR='https://cdn.grw.reputon.com/img/profile_photo.png';
-const REVIEWS=[
-  {n:'AI Summary',d:'Based on 315 reviews · 71% five-star',ai:true,
-   t:'<p>High marks for product selection, design, quality, and assembly</p><p>Shipping is fast and reliable, prices are competitive</p><p>Website is easy to navigate</p>'},
-  {n:'Lorran',d:'Google review',stars:5,
-   t:'"A Five Star review for our customer service experience!" Elizabeth was incredibly helpful and answered our questions based on careful research and collaboration with the experts. You can\'t get better than that! Plus, the shipments arrived ahead of our expectations.'},
-  {n:'JT',d:'Google review',stars:0,
-   t:'The website was easy to navigate and intuitive, making it simple to choose the correct mini-split size. Pricing was fair, shipping was prompt, and everything arrived well-packaged. The installation process was smooth thanks to the many helpful videos available from Della and other YouTubers. Highly recommend.'},
-  {n:'Anonymous reviewer',d:'Google review',stars:4,
-   t:'Products are great so far. Fairly easy to install, and ordering the right set up was easy. Shipping time was longer than estimated which is why I rated a 4 star instead of 5. If the shipping process was better I would have given it 5 stars.'},
-];
+const LOOX_REVIEWS=[{"n":"Troy J.","s":5,"t":1784755930696,"img":"https://images.loox.io/uploads/2026/7/22/Sad5t35IL.jpg","p":"DELLA Motto Series 18000 BTU 19 SEER2 Mini Split Heat Pump AC – Up to 1000 Sq.Ft.","v":true,"x":"Easy installation\nAll necessary components and product was included.\nWarranty was easy to set up.\nWill be buying again"},{"n":"William C.","s":5,"t":1784688796496,"img":"https://images.loox.io/uploads/2026/7/22/5j1DwsOE1.jpg","p":"DELLA Rental Install Kit","v":true,"x":"I was very worried about leaks. After toquing the fittings and filled with trepidation, I opened the valves. It worked out fine and passed the soapy water test."},{"n":"Thomas M.","s":5,"t":1784579625220,"img":"https://images.loox.io/uploads/2026/7/20/tEiYLnYn0.jpg","p":"DELLA Econo Series 23000 BTU 17 SEER2 Mini Split Heat Pump AC - Up to 1500 Sq.Ft.","v":true,"x":"This is my second Della unit.first one is 4 years old and no problems.expect the same from this one"},{"n":"Jerry V.","s":5,"t":1784396973668,"img":"https://images.loox.io/uploads/2026/7/18/4cMWEHTFn1.jpg","p":"DELLA Rental Install Kit","v":true,"x":"Everything was included that I needed to install the mini split. Worked perfectly"},{"n":"Scott W.","s":5,"t":1784329773949,"img":"https://images.loox.io/uploads/2026/7/21/cxLAADN2nr.jpg","p":"DELLA Motto Series 12000 BTU 20 SEER2 Mini Split Heat Pump AC – 115V, Up to 550 Sq.Ft.","v":true,"x":"Works great! Install was fairly straightforward and went well."},{"n":"Shawn M.","s":5,"t":1784315589476,"img":"https://images.loox.io/uploads/2026/7/17/t2hRI9Tv8_LslIwenlS_orig.jpg","p":"DELLA Ground Stand Bracket for 9000-18000 BTU Mini Split","v":true,"x":"The ground stand is great and super beefy.  I poured a slab and chose not to hang the mini split from my metal shop.  I was happy with the quality of the product, the ease of putting it together and the ability to adjust the height you want it at.  Great price and even better product.  Will definitely purchase again when I need another unit."},{"n":"Shawn M.","s":5,"t":1784314609068,"img":"https://images.loox.io/uploads/2026/7/17/f6KBkDzFF_2O5RZsCJL_orig.jpg","p":"DELLA Umbra Series 9100 BTU 20.5 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.","v":true,"x":"Great mini split.  I am a DIYer and have experience doing all kinds of things.  What made me go with Della was the ability to rent the equipment needed for install.  They made it simple shipped the products quickly and I had no serious issues with install.  It looks great in my room and works perfectly.  Only thing I will mention is to not use the torque wrench they send with the rental equipment as it didn't work for me and made me strip a flare out but I just used a flaring tool to make a new ..."},{"n":"Zoltan T.","s":5,"t":1784291045875,"img":"https://images.loox.io/uploads/2026/7/17/ZTgpjCCaF_-JCb6i32Z7_orig.jpg","p":"DELLA Mini Split Line Set","v":true,"x":"I love this so ixxy works with the all Della products."},{"n":"Dwain L.","s":5,"t":1784068718444,"img":"https://images.loox.io/uploads/2026/7/14/OxwPH-L5y.jpg","p":"DELLA Motto Series 12000 BTU 20 SEER2 Mini Split Heat Pump AC – 115V, Up to 550 Sq.Ft.","v":true,"x":"Love these units. I have 3 of them now and they do great"},{"n":"Shannon H.","s":5,"t":1783641135889,"img":"https://images.loox.io/uploads/2026/7/9/MsWgyBPOA.jpg","p":"DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+9K) - Up to 800 Sq.Ft.","v":true,"x":"Install and directions very easy to read"},{"n":"Zoltan T.","s":5,"t":1783634824894,"img":"https://images.loox.io/uploads/2026/7/9/CiQZgoyFC_YMTi7gsy9j_orig.jpg","p":"DELLA Rental Install Kit","v":true,"x":"Hi, I am first time using that kind of tools. I think is easy handing I get the very good direction how use. So all installation is perfect. I like it."},{"n":"Zoltan T.","s":5,"t":1783634583026,"img":"https://images.loox.io/uploads/2026/7/9/Cq2cVhbgKr.jpg","p":"DELLA Mini Split Line Set","v":true,"x":"I like your product easy to working with all parts And all products thank you that’s my first time install. I think I proud myself. I did a good job I think so."},{"n":"Dustin C.","s":5,"t":1783472877131,"img":"https://images.loox.io/uploads/2026/7/8/6qB8M78Hn.jpg","p":"DELLA Vario Series 9000 BTU SEER2 20 Mini Split AC Line Set with Installation Kit","v":true,"x":"These were added to my package to complete 2 rooms all parts were as stated and worked flawlessly."},{"n":"Dustin C.","s":5,"t":1783472771845,"img":"https://images.loox.io/uploads/2026/7/8/UusBwzBZh.jpg","p":"DELLA Vario Series 12000 BTU 23 SEER2 Mini Split AC Line Set with Installation Kit","v":true,"x":"These were added to my package to complete 2 rooms all parts were as stated and worked flawlessly."},{"n":"Dustin C.","s":5,"t":1783472687973,"img":"https://images.loox.io/uploads/2026/7/8/ksp09jh3q.jpg","p":"DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.","v":true,"x":"These were easy to install and cool very well. The best part is because you stay under 50’ of coolant lines you don’t have to higher a HVAC company to charge the lines. That’s it plug and play anyone with DIY skills can do it."},{"n":"Dustin C.","s":5,"t":1783472112703,"img":"https://images.loox.io/uploads/2026/7/8/XgiNKUtVR.jpg","p":"DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.","v":true,"x":"These were easy to install and cool very well. The best part is because you stay under 50’ of coolant lines you don’t have to higher a HVAC company to charge the lines. That’s it plug and play anyone with DIY skills can do it."},{"n":"Dustin C.","s":5,"t":1783471745229,"img":"https://images.loox.io/uploads/2026/7/8/BWdvWqYn7.jpg","p":"DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.","v":true,"x":"These were easy to install and cool our house way better than the old swamp cooler running 24/7. Me and my wife installed 3 condensers and 5 head units in one day and that included running all the electrical to the locations.   I still need to cover the lines, those get done next weekend! 😎🥶."},{"n":"D B.","s":5,"t":1783391512831,"img":"https://images.loox.io/uploads/2026/7/7/GSIaFjadB_xrH9s0-T0_orig.jpg","p":"DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.","v":false,"x":"Great mini split"},{"n":"Buddy B.","s":5,"t":1783387134602,"img":"https://images.loox.io/uploads/2026/7/7/wZfLHb1cV.jpg","p":"DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.","v":false,"x":"Just installed this mini split for my son, installation was pretty straight forward and now it keeps his game room very cool!"},{"n":"Davin B.","s":5,"t":1783385267270,"img":"https://images.loox.io/uploads/2026/7/7/an6bbvWCC.jpg","p":"DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.","v":false,"x":"Can’t share my experience with installation, my dad who’s a contractor installed it for me. However it does great in my upstairs man cave, it used be so hot and now it’s keeps it very cool and comfortable and is very quiet compared to my window unit, can hardly hear it even in turbo, will definitely get another one for my garage!\nThe only downside is the remote is pretty busy, but I just use the app"}];
+function fmtDate(t){const d=new Date(t);return (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();}
 function toggleReview(btn){
   const card=btn.closest('.gr-card');
   card.classList.toggle('expanded');
   btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
 }
 function renderReviews(){
-  document.getElementById('grCar').innerHTML = REVIEWS.map(r=>`
-    <div class="gr-card${r.ai?' gr-ai':''}">
-      <div class="gr-top">
-        <div class="gr-avatar">${r.ai?'✦':`<img src="${AVATAR}" alt="" loading="lazy">`}</div>
-        <div><div class="gr-name">${r.n}</div><div class="gr-date">${r.d}</div></div>
-        <div class="gr-logo">${r.ai?G_ICON:`<span class="pb">Powered by <b style="color:#4285F4;font-size:11px">Google</b></span>${G_ICON}`}</div>
-      </div>
-      <div class="gr-starline">${r.ai?'<span class="gr-star5">★</span>':(r.stars?`<span class="gr-star5">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>`:'')}${r.ai?'':'<span class="gr-verified"><i>✓</i>Verified</span>'}</div>
-      <div class="gr-text">${r.t}</div>
-      ${r.ai?'':'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>'}
+  document.getElementById('grCar').innerHTML = LOOX_REVIEWS.map(r=>`
+    <div class="gr-card">
+      ${r.img?`<div class="gr-photo"><img src="${r.img}" alt="Customer photo: ${r.p||'DELLA product'}" loading="lazy"></div>`:''}
+      <div><span class="gr-name">${r.n}</span></div>
+      <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span>${r.v?'<span class="gr-verified"><i>✓</i>Verified</span>':''}<span class="gr-date">${fmtDate(r.t)}</span></div>
+      <div class="gr-text">${r.x.replace(/\n/g,'<br>')}</div>
+      ${r.x.length>150?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
+      ${r.p?`<div class="gr-prod">${r.p}</div>`:''}
     </div>`).join('');
 }
 
