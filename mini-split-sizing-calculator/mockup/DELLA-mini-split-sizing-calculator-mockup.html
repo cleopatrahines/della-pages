@@ -31,7 +31,7 @@ a{color:var(--blue-link)}
 .pill-navy{background:#0E1952;color:#fff}
 .pill-navy:hover{background:#25367D}
 .pill:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.mock-ribbon{position:fixed;bottom:14px;left:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
+.mock-ribbon{position:fixed;bottom:14px;right:14px;background:var(--navy-deep);color:#fff;font-size:10.5px;padding:6px 11px;border-radius:4px;opacity:.85;z-index:50}
 
 /* H1 */
 .page-head{padding:46px 0 6px;text-align:center}
@@ -201,7 +201,7 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
             <span class="field-error" id="zipErr">Enter a valid 5-digit ZIP Code.</span>
           </div>
           <div class="field">
-            <label for="intent">Primary heat source?</label>
+            <label for="intent">Will this be your primary heat?</label>
             <select id="intent">
               <option value="cooling">No, mainly cooling</option>
               <option value="primary">Yes, primary heating and cooling</option>
@@ -229,10 +229,10 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
           <div class="field">
             <label for="insulation">Insulation grade</label>
             <select id="insulation">
-              <option value="excellent">Excellent</option>
+              <option value="excellent">Excellent (new build)</option>
               <option value="good">Good</option>
               <option value="standard" selected>Standard</option>
-              <option value="poor">Poor</option>
+              <option value="poor">Poor (older home)</option>
               <option value="very_poor">Very poor / uninsulated</option>
             </select>
           </div>
@@ -256,10 +256,10 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
           <div class="field">
             <label for="airtightness">Windows &amp; doors air tightness</label>
             <select id="airtightness">
-              <option value="very_tight">Very tight</option>
+              <option value="very_tight">Very tight (new windows)</option>
               <option value="average" selected>Average</option>
               <option value="drafty">Drafty</option>
-              <option value="very_drafty">Very drafty</option>
+              <option value="very_drafty">Very drafty (visible gaps)</option>
             </select>
           </div>
           <div class="field">
@@ -281,11 +281,11 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
           </div>
           <div class="field">
             <label for="watts">Extra device heat wattage (W)</label>
-            <input type="number" id="watts" min="0" max="15000" placeholder="0">
+            <input type="number" id="watts" min="0" max="15000" placeholder="0" oninput="syncUsageState()">
           </div>
           <div class="field">
             <label for="usage">Equipment usage</label>
-            <select id="usage">
+            <select id="usage" disabled>
               <option value="continuous">Continuous</option>
               <option value="frequent">Frequent</option>
               <option value="intermittent" selected>Intermittent</option>
@@ -926,11 +926,17 @@ function renderReviews(){
     </div>`).join('');
 }
 
+function syncUsageState(){
+  const w=parseFloat(document.getElementById('watts').value)||0;
+  document.getElementById('usage').disabled = w<=0;
+}
+
 /* init: MSFL-style defaults, live recalc */
 renderBestsellers();
 renderReviews();
+syncUsageState();
 setRegion('mixed', true);
-document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP Code or click your state for precision.';
+document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for precision, or click your state for a regional estimate.';
 document.getElementById('climateChip').style.display='block';
 document.querySelectorAll('#calcForm input, #calcForm select').forEach(el=>{
   if(el.id==='zip') return;
