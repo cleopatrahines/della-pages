@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>DELLA Mini Split 尺寸计算器：计算逻辑说明</title>
+<style>
+@page { size: A4; margin: 18mm 16mm; }
+body { font-family: "Noto Sans CJK SC", sans-serif; font-size: 11pt; line-height: 1.75; color: #222; max-width: 175mm; margin: 0 auto; }
+h1 { font-size: 19pt; color: #0E1952; border-bottom: 3px solid #0E1952; padding-bottom: 8px; letter-spacing: 1px; }
+h2 { font-size: 14pt; color: #0E1952; margin-top: 26px; border-left: 5px solid #286ED7; padding-left: 10px; }
+h3 { font-size: 12pt; color: #286ED7; margin-top: 18px; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt; }
+th, td { border: 1px solid #C9CFDD; padding: 6px 10px; text-align: left; }
+th { background: #EEF3FC; color: #0E1952; }
+.box { background: #F5F8FE; border: 1px solid #C9CFDD; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+.formula { background: #0E1952; color: #fff; padding: 10px 16px; border-radius: 6px; font-size: 11pt; letter-spacing: .5px; }
+.meta { color: #777; font-size: 9pt; margin-top: 30px; border-top: 1px solid #ddd; padding-top: 8px; }
+b { color: #0E1952; }
+.example { background: #FFF9EB; border: 1px solid #E8D9A8; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<h1>DELLA Mini Split 尺寸计算器：计算逻辑说明</h1>
+<p>这份文档解释计算器背后的每一步计算，以及页面上几个关键设计为什么这么做。所有数字都来自引擎配置文件（calculator_config.json 1.1.0），和线上代码完全一致。</p>
+
+<h2>一、这个计算器在算什么</h2>
+<p>空调的能力用 <b>BTU/h</b> 表示——每小时能从房间"搬走"多少热量。房间像一只不停进水的桶：太阳晒进来的热、墙壁漏进来的热、人身上散发的热、电器发出的热，都在往桶里灌。空调就是排水泵。<b>泵太小</b>，水位一直涨（最热的下午永远凉不下来）；<b>泵太大</b>，水一下抽干就停机，一会儿又启动，反复折腾（房间又冷又潮，机器还费电、易坏）。计算器做的事，就是算出你房间"每小时进多少水"，帮你选一台大小正好的泵。</p>
+
+<h2>二、七步算出你房间的热负荷</h2>
+
+<h3>第 1 步：按面积起步</h3>
+<p class="formula">基础负荷 = 房间面积（平方英尺）× 20 BTU（不低于 5,000）</p>
+<p>行业通行的起点：每平方英尺约需 20 BTU。例如 500 平方英尺的房间，起步就是 10,000 BTU/h。</p>
+
+<h3>第 2 步：层高修正（乘法）</h3>
+<p>20 BTU/平方英尺 这个经验值默认层高 8 英尺。层高更高，房间里的空气更多，按 <b>实际层高 ÷ 8</b> 来乘（限制在 0.9 到 1.5 倍之间）。10 英尺层高就是 ×1.25。超过 12 英尺会提示人工复核。</p>
+
+<h3>第 3 步：气候修正（乘法）</h3>
+<table>
+<tr><th>气候区</th><th>倍数</th><th>代表地区</th></tr>
+<tr><td>Region #5 寒冷（蓝）</td><td>× 0.9</td><td>北部各州</td></tr>
+<tr><td>Region #4 凉爽（绿）</td><td>× 0.95</td><td>华盛顿州、俄勒冈州</td></tr>
+<tr><td>Region #3 混合（黄）</td><td>× 1.0</td><td>中部、东南部大部</td></tr>
+<tr><td>Region #2 温暖干燥（橙）</td><td>× 1.05</td><td>加州、亚利桑那</td></tr>
+<tr><td>Region #1 炎热潮湿（红）</td><td>× 1.1</td><td>得州、佛州、路易斯安那</td></tr>
+</table>
+<p>用户输入 ZIP 邮编时，系统查的是 <b>美国能源部（DOE）按县划分的气候数据</b>（覆盖 33,784 个邮编），比点地图选州更精确。点州只是没有邮编时的粗略备选。</p>
+
+<h3>第 4 步：房屋围护修正（乘法）</h3>
+<p>保温、门窗气密性、窗户多少，三项各自加减，合成一个 0.8 到 1.35 之间的倍数：</p>
+<table>
+<tr><th>因素</th><th>最好情况</th><th>最差情况</th></tr>
+<tr><td>保温等级</td><td>极好 −10%</td><td>基本无保温 +20%</td></tr>
+<tr><td>门窗气密性</td><td>很严实 −5%</td><td>漏风明显 +15%</td></tr>
+<tr><td>窗户数量</td><td>很少 −3%</td><td>整面玻璃墙 +15%</td></tr>
+</table>
+
+<h3>第 5 步：日照修正（乘法）</h3>
+<p>常年背阴 ×0.9；普通 ×1.0；强烈西晒 ×1.1。</p>
+
+<h3>第 6 步：屋里的热源（加法）</h3>
+<table>
+<tr><th>热源</th><th>加多少</th></tr>
+<tr><td>人（前 2 人已含在基础值里）</td><td>每多 1 人 +600 BTU/h</td></tr>
+<tr><td>厨房（做饭的热量）</td><td>+4,000 BTU/h</td></tr>
+<tr><td>电器设备</td><td>瓦数 × 3.412 × 使用系数（一直开 1.0 / 常开 0.75 / 偶尔开 0.5）</td></tr>
+</table>
+
+<h3>第 7 步：特殊空间</h3>
+<p>玻璃阳光房整体再 ×1.15，并且结果会被标记"建议人工复核"——玻璃房晒进来的热量差异太大，公式只能给个起点。</p>
+
+<div class="example"><b>完整例子：</b>500 平方英尺卧室，8 英尺层高，混合气候区，各项都选"普通"，住 2 个人，没厨房没设备：<br>
+500 × 20 = 10,000，层高 ×1、气候 ×1、围护 ×1、日照 ×1，加 0 → <b>热负荷 10,000 BTU/h</b>。</div>
+
+<h2>三、从"热负荷"到"推荐买多大"</h2>
+<p>算出的负荷是个估计值，所以系统同时给出一个诚实的区间（±10%、±15% 或 ±25%，取决于你填的信息有多完整）。然后在 DELLA 的产品档位（9,000 / 12,000 / 18,000 / 24,000 / 36,000 BTU）里挑：</p>
+<div class="box">
+<b>选档规则：</b>机器容量 ÷ 你的负荷，在 <b>1.0～1.15 倍</b>之间最理想；1.15～1.25 倍可以接受；再大就是浪费钱又除湿差。上面例子的 10,000 BTU/h 负荷，12,000 BTU 的机器（1.2 倍）就是合理选择。<br><br>
+<b>超出范围时：</b>负荷超过 36,000 BTU/h 的大空间，不再自动推荐单台机器，而是建议拆成两台内机或多区域系统，并提示联系客服复核。
+</div>
+
+<h2>四、为什么点 Find Matching Products 是跳到站内搜索，而不是直接在下面摆出产品？</h2>
+<p>这是有意的设计，有四个原因：</p>
+<p><b>1. 库存每天在变。</b>如果把产品直接"焊死"在计算器页面里，就要不停有人盯着：缺货了要撤、新品上了要加，漏一次就会把没货的产品推荐给顾客。而站内搜索的结果永远是当下有货的最新列表，零维护。</p>
+<p><b>2. 同一个尺寸下有很多台机器。</b>"12,000 BTU"不是一台机器，而是一批：不同系列、不同能效（SEER2 17 到 25）、110V 和 220V 电压都有。哪台适合你，取决于你家的电路和预算——这一步应该由顾客在搜索结果页用筛选器自己挑，页面替你做主反而容易错。</p>
+<p><b>3. 多房间的组合没法预判。</b>计算器一次只算一个房间。如果你要给三个房间装，需要的是"带三个头的多区域套装"，具体哪个套装取决于三个房间各自的结果。所以结果卡下面还有一行小字，点它会搜索"12K"这样的关键词，正好命中所有带 12,000 BTU 内机头的多区域套装——单台和套装两条路都通。</p>
+<p><b>4. 行业第一名验证过这条路。</b>Google 搜索"mini split sizing calculator"排第一的竞争对手（minisplitsforless.com），用的正是同样的"算完跳搜索"模式。这不是偷懒，是经过市场验证的最优解。</p>
+
+<h2>五、这个计算器的能力边界</h2>
+<p>它用的输入因素（面积、气候、层高、保温、日照、内部热源）和专业暖通工程师做初步估算时一致，对<b>选购单房间壁挂机</b>来说足够可靠。但它不是 Manual J——那是需要逐面墙、逐扇窗建模的专业负荷计算标准。整栋房子的方案、需要报建文件的项目，页面上明确建议找持证暖通专业人员。宁可诚实说"这是估算"，也不假装精确到个位数。</p>
+
+<p class="meta">版本：引擎 della-sizing-engine-1.0.0 · 配置 calculator_config.json 1.1.0 · 产品数据集 v1.2.0（559 个产品）· 气候数据集 v1.0.0（33,784 个邮编，DOE/PNNL 县级数据）<br>生成日期：2026-07-28 · 本文档随代码仓库 github.com/cleopatrahines/della-pages 一同维护</p>
+
+</body>
+</html>
