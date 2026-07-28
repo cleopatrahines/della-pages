@@ -3,11 +3,11 @@
 <style type="text/css">
 .state {fill:#D8D5CB;cursor:pointer;transition:opacity .12s}
 .state:hover{opacity:.75}
-.ak,.co,.ct,.ia,.id,.il,.in,.ma,.me,.mi,.mn,.mt,.nd,.ne,.nh,.nm,.nv,.ny,.oh,.pa,.ri,.sd,.ut,.vt,.wi,.wy{fill:#33549C}
-.al,.ar,.dc,.de,.ga,.ks,.ky,.md,.mo,.ms,.nc,.nj,.ok,.sc,.tn,.va,.wv{fill:#8FBF7F}
-.fl,.hi,.la,.tx{fill:#DD7A4F}
-.or,.wa{fill:#6FA8CF}
-.az,.ca{fill:#E8B54B}
+.ak,.co,.ct,.ia,.id,.il,.in,.ma,.me,.mi,.mn,.mt,.nd,.ne,.nh,.nm,.nv,.ny,.oh,.pa,.ri,.sd,.ut,.vt,.wi,.wy{fill:#2F55B8}
+.al,.ar,.dc,.de,.ga,.ks,.ky,.md,.mo,.ms,.nc,.nj,.ok,.sc,.tn,.va,.wv{fill:#F4C542}
+.fl,.hi,.la,.tx{fill:#E4574D}
+.or,.wa{fill:#3F9C60}
+.az,.ca{fill:#F08A4B}
                         /* default color for all states not specified below */
 .borders {stroke:#FFFFFF; stroke-width:1}    /* color and width of borders between states */
 .dccircle {display:yes}                      /* set display to yes to show the circle for the District of Columbia, or none to hide it */

@@ -140,12 +140,13 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 .gr-prod a:hover{text-decoration:underline}
 .gr-text{margin-bottom:10px}
 
-/* premium services — Galaxy exact clone: navy cards, left aligned, square */
+/* premium services — light cards, round icon badges */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.svc-item{background:#0E1953;padding:24px 16px;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
-.svc-item img{width:50px;height:50px;object-fit:cover;margin-bottom:10px}
-.svc-item h3{font-size:20px;line-height:1.4;color:#fff;letter-spacing:-.5px;margin-bottom:8px;text-transform:capitalize}
-.svc-item p{font-size:15px;line-height:1.4;color:#fff}
+.svc-item{background:#F0F4FD;border-radius:12px;padding:34px 24px 30px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.svc-icon{width:64px;height:64px;border-radius:50%;background:#6C8CE0;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc-icon img{width:32px;height:32px;object-fit:contain}
+.svc-item h3{font-size:22px;line-height:1.4;color:#4A6BD8;letter-spacing:-.5px;margin-bottom:10px;text-transform:capitalize}
+.svc-item p{font-size:15px;line-height:1.5;color:#333}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 @media (max-width:960px){
@@ -280,11 +281,11 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
           </div>
           <div class="field">
             <label for="watts">Extra device heat wattage (W)</label>
-            <input type="number" id="watts" min="0" max="15000" placeholder="0" oninput="syncUsageState()">
+            <input type="number" id="watts" min="0" max="15000" placeholder="0">
           </div>
           <div class="field">
             <label for="usage">Equipment usage</label>
-            <select id="usage" disabled>
+            <select id="usage">
               <option value="continuous">Continuous</option>
               <option value="frequent">Frequent</option>
               <option value="intermittent" selected>Intermittent</option>
@@ -313,11 +314,11 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 <style type="text/css">
 .state {fill:#D8D5CB;cursor:pointer;transition:opacity .12s}
 .state:hover{opacity:.75}
-.ak,.co,.ct,.ia,.id,.il,.in,.ma,.me,.mi,.mn,.mt,.nd,.ne,.nh,.nm,.nv,.ny,.oh,.pa,.ri,.sd,.ut,.vt,.wi,.wy{fill:#33549C}
-.al,.ar,.dc,.de,.ga,.ks,.ky,.md,.mo,.ms,.nc,.nj,.ok,.sc,.tn,.va,.wv{fill:#8FBF7F}
-.fl,.hi,.la,.tx{fill:#DD7A4F}
-.or,.wa{fill:#6FA8CF}
-.az,.ca{fill:#E8B54B}
+.ak,.co,.ct,.ia,.id,.il,.in,.ma,.me,.mi,.mn,.mt,.nd,.ne,.nh,.nm,.nv,.ny,.oh,.pa,.ri,.sd,.ut,.vt,.wi,.wy{fill:#2F55B8}
+.al,.ar,.dc,.de,.ga,.ks,.ky,.md,.mo,.ms,.nc,.nj,.ok,.sc,.tn,.va,.wv{fill:#F4C542}
+.fl,.hi,.la,.tx{fill:#E4574D}
+.or,.wa{fill:#3F9C60}
+.az,.ca{fill:#F08A4B}
                         /* default color for all states not specified below */
 .borders {stroke:#FFFFFF; stroke-width:1}    /* color and width of borders between states */
 .dccircle {display:yes}                      /* set display to yes to show the circle for the District of Columbia, or none to hide it */
@@ -663,17 +664,15 @@ Place this code in the empty space below. */
   </div>
 </section>
 
-<!-- 5 · FAQ — single column, narrow -->
-<section class="sec" id="faq" style="padding-top:24px">
-  <div class="container-narrow">
-    <div class="sec-head"><h2>Mini Split Sizing Calculator FAQs</h2></div>
-    <div class="faq-list">
-      <details class="faq"><summary>How accurate is this mini split calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same starting factors a professional would: room area, climate, ceiling height, insulation, sun, glass, and internal heat. And it shows a range instead of a single falsely precise number. It is not a Manual J calculation, the professional standard that models wall assemblies, window specs, and local design weather in detail. For choosing a single-room unit it is reliable. For whole-home projects or permit paperwork, hire a pro.</p></details>
-      <details class="faq"><summary>Should I get a 115V or 230V mini split?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>9K and 12K sizes come in both voltages; larger systems are 230V only. 115V runs on a standard household circuit, which is why bedrooms and DIY installs favor it. 230V needs a dedicated double-pole breaker, like a dryer or range. Check your panel before ordering, and confirm the exact voltage and breaker requirement on the product page, because it varies by model.</p></details>
-      <details class="faq"><summary>Can I install a mini split myself?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Many DELLA customers do. Mounting the indoor head, setting the outdoor unit, and routing the line set are manageable weekend work with basic tools, and DELLA offers a rental tool kit with the vacuum pump and gauges the refrigerant connection requires. The electrical hookup is where most DIYers bring in a licensed electrician. Installing it yourself does not void the warranty as long as you register your system and follow the manual.</p></details>
-      <details class="faq"><summary>Will a mini split heat in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes. Every DELLA mini split is a heat pump that heats and cools. The difference is how cold it can keep working outside: standard series are rated to 5°F, and the cold-climate series run down to −13°F or −22°F. Enter your ZIP Code above and the calculator only suggests series rated for your winters. In the coldest regions, keep a backup heat source for the deepest cold snaps.</p></details>
-      <details class="faq"><summary>What size mini split for an open floor plan?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>If the space flows together through wide openings, measure it as one and enter the total square footage. If doors close between areas, or a corner blocks the airflow, treat each area as its own room; every room gets its own indoor unit, ideally on one multi-zone system. Past roughly 1,500 sq. ft., plan on two indoor units for even airflow no matter what the math says. Open stairways to another floor are the trickiest case, so set that field to Yes above and the calculator will flag the result for review.</p></details>
-      <details class="faq"><summary>How much does a mini split cost to run?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Less than almost any other electric heating or cooling. Efficiency is measured in SEER2, and DELLA systems range from 17 to 25; a higher number means less electricity for the same comfort. Your actual bill depends on your climate, electric rate, and running hours, but a right-sized inverter unit costs far less to run than window units, portable ACs, or electric baseboard heat.</p></details>
+<!-- 7 · Premium Della Services — Galaxy exact clone -->
+<section class="sec" id="services" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head"><h2>Premium Della Services</h2></div>
+    <div class="svc-grid">
+      <div class="svc-item"><div class="svc-icon"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-5_de627caa-d6cf-4b72-a0bd-a09f69d67c7c.png?v=1784277030" alt="Free and fast shipping icon" loading="lazy"></div><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-6_a6c9a6dc-abeb-43c8-bc86-489e9132bf71.png?v=1784277030" alt="30-day money-back icon" loading="lazy"></div><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-7_42c520ab-2a4b-404c-a109-f283ad670e7e.png?v=1784277030" alt="24/7 live support icon" loading="lazy"></div><h3>24/7 Live Support</h3><p>Get instant answers to your questions anytime, day or night.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-8_1e90dce3-b6cb-4f81-84f8-59295765b9f8.png?v=1784277029" alt="Lifetime warranty icon" loading="lazy"></div><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
     </div>
   </div>
 </section>
@@ -697,19 +696,20 @@ Place this code in the empty space below. */
   </div>
 </section>
 
-<!-- 7 · Premium Della Services — Galaxy exact clone -->
-<section class="sec" id="services" style="padding-top:24px">
-  <div class="container">
-    <div class="sec-head"><h2>Premium Della Services</h2></div>
-    <div class="svc-grid">
-      <div class="svc-item"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-5_de627caa-d6cf-4b72-a0bd-a09f69d67c7c.png?v=1784277030" alt="Free and fast shipping icon" loading="lazy"><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
-      <div class="svc-item"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-6_a6c9a6dc-abeb-43c8-bc86-489e9132bf71.png?v=1784277030" alt="30-day money-back icon" loading="lazy"><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
-      <div class="svc-item"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-7_42c520ab-2a4b-404c-a109-f283ad670e7e.png?v=1784277030" alt="24/7 live support icon" loading="lazy"><h3>24/7 Live Support</h3><p>Get instant answers to your questions anytime, day or night.</p></div>
-      <div class="svc-item"><img src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/LA_icon-8_1e90dce3-b6cb-4f81-84f8-59295765b9f8.png?v=1784277029" alt="Lifetime warranty icon" loading="lazy"><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
+<!-- 5 · FAQ — single column, narrow -->
+<section class="sec" id="faq" style="padding-top:24px">
+  <div class="container-narrow">
+    <div class="sec-head"><h2>Mini Split Sizing Calculator FAQs</h2></div>
+    <div class="faq-list">
+      <details class="faq"><summary>How accurate is this mini split calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same starting factors a professional would: room area, climate, ceiling height, insulation, sun, glass, and internal heat. And it shows a range instead of a single falsely precise number. It is not a Manual J calculation, the professional standard that models wall assemblies, window specs, and local design weather in detail. For choosing a single-room unit it is reliable. For whole-home projects or permit paperwork, hire a pro.</p></details>
+      <details class="faq"><summary>Should I get a 115V or 230V mini split?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>9K and 12K sizes come in both voltages; larger systems are 230V only. 115V runs on a standard household circuit, which is why bedrooms and DIY installs favor it. 230V needs a dedicated double-pole breaker, like a dryer or range. Check your panel before ordering, and confirm the exact voltage and breaker requirement on the product page, because it varies by model.</p></details>
+      <details class="faq"><summary>Can I install a mini split myself?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Many DELLA customers do. Mounting the indoor head, setting the outdoor unit, and routing the line set are manageable weekend work with basic tools, and DELLA offers a rental tool kit with the vacuum pump and gauges the refrigerant connection requires. The electrical hookup is where most DIYers bring in a licensed electrician. Installing it yourself does not void the warranty as long as you register your system and follow the manual.</p></details>
+      <details class="faq"><summary>Will a mini split heat in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes. Every DELLA mini split is a heat pump that heats and cools. The difference is how cold it can keep working outside: standard series are rated to 5°F, and the cold-climate series run down to −13°F or −22°F. Enter your ZIP Code above and the calculator only suggests series rated for your winters. In the coldest regions, keep a backup heat source for the deepest cold snaps.</p></details>
+      <details class="faq"><summary>What size mini split for an open floor plan?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>If the space flows together through wide openings, measure it as one and enter the total square footage. If doors close between areas, or a corner blocks the airflow, treat each area as its own room; every room gets its own indoor unit, ideally on one multi-zone system. Past roughly 1,500 sq. ft., plan on two indoor units for even airflow no matter what the math says. Open stairways to another floor are the trickiest case, so set that field to Yes above and the calculator will flag the result for review.</p></details>
+      <details class="faq"><summary>How much does a mini split cost to run?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Less than almost any other electric heating or cooling. Efficiency is measured in SEER2, and DELLA systems range from 17 to 25; a higher number means less electricity for the same comfort. Your actual bill depends on your climate, electric rate, and running hours, but a right-sized inverter unit costs far less to run than window units, portable ACs, or electric baseboard heat.</p></details>
     </div>
   </div>
 </section>
-
 
 <script>
 /* ============ injected data (build-time) ============ */
@@ -924,15 +924,9 @@ function renderReviews(){
     </div>`).join('');
 }
 
-function syncUsageState(){
-  const w=parseFloat(document.getElementById('watts').value)||0;
-  document.getElementById('usage').disabled = w<=0;
-}
-
 /* init: MSFL-style defaults, live recalc */
 renderBestsellers();
 renderReviews();
-syncUsageState();
 setRegion('mixed', true);
 document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for precision, or click your state for a regional estimate.';
 document.getElementById('climateChip').style.display='block';
