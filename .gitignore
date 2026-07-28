@@ -1,0 +1,6 @@
+# 内部文件：本地保留，不进公开仓库
+inventory_export_1.csv
+products_export_1.csv
+Shopify_Calculator_Metafields.csv
+*.xlsx
+对话记录.txt
