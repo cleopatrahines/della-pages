@@ -125,6 +125,7 @@ git push                      # 需要 GitHub token（找用户要，用完让�
 <tr><td>MSFL 计算器（交互对标）</td><td>minisplitsforless.com/pages/hvac-load-calculator</td></tr>
 <tr><td>Galaxy 页（视觉 token 来源）</td><td>dellahome.com/pages/della-x-la-galaxy-sweepstakes</td></tr>
 <tr><td>Loox 评论数据源</td><td><code>loox.io/widget/6U095hssyj/reviews?shop=dellahome-store.myshopify.com&amp;limit=20&amp;aggregate=true&amp;page=N</code>（服务端渲染，可分页抓取）</td></tr>
+<tr><td>Loox 评论图片规则</td><td>组件页给的是 375x500 缩略图，高分屏会糊；照片一律换成 <code>_orig</code> 变体（文件名后缀 <code>_orig.jpg</code>，1080px 级，替换前逐一 HEAD 验证存在）。视频封面帧源头只有 500px，无法提升，属正常</td></tr>
 <tr><td>Della 站内搜索行为</td><td>搜 "12000 BTU"=单机；搜 "12K"=带 12K 头的多联套装。这是产品推荐双链路的依据</td></tr>
 </table>
 

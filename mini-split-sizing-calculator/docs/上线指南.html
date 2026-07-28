@@ -70,7 +70,13 @@ th { background: #EEF3FC; color: #0E1952; }
 <div class="warn"><b>别在正式主题上直接试验。</b>永远先复制主题（见第三节开头）。</div>
 <div class="warn"><b>别手改注入产物。</b>以后想改文案、改样式，回到 GitHub 仓库改源文件（或直接让 Claude 改），改完重新走一遍上传。直接在 Shopify 里手改，下次更新会被覆盖。</div>
 
-<h2>六、出了问题怎么办</h2>
+<h2>六、已知的坑（上线时逐条核对）</h2>
+<div class="warn"><b>字体：</b>页面用 Spectral + Inter（站内 PageFly 已托管），新页面若字体没生效会退回系统字体、观感大变。上线预览时第一眼先看标题是不是衬线体。</div>
+<div class="warn"><b>ZIP 数据体积：</b>完整气候数据 33,784 个邮编约 1MB，不适合整包塞进主题 assets 让每个访客下载。正式版二选一：①压缩成前缀索引精简版；②走接口查询（站内 HVAC Finder 已有 Vercel API 先例 /api/climate-region?zip=）。这个决定要在做正式版时定，别拖到上线当天。</div>
+<div class="warn"><b>Loox 评论组件：</b>需要在 Loox 后台确认 store reviews widget 已开启；嵌入后核对显示的是全店评论（4.9/1702）而不是某个商品的评论。</div>
+<div class="warn"><b>搜索链接依赖：</b>Find Matching Products 依赖站内搜索对 "12000 BTU" 和 "12K" 的命中规律。如果以后装了搜索类 app（Boost 等）或改了产品命名规范，这两类链接要重新验证。上线检查清单里已包含这两项。</div>
+<div class="warn"><b>埋点：</b>页面里的 track() 事件（计算完成、点击找产品、加购）目前是空壳，上线时要接到店铺的分析工具（GA4 / Shopify analytics），否则后续没法评估这个页面赚不赚。</div>
+<h2>七、出了问题怎么办</h2>
 <div class="step"><b>页面显示不对：</b>先别慌，页面设回 Hidden（顾客就看不到了），然后把截图和问题描述发给 Claude。</div>
 <div class="step"><b>整个主题出问题：</b>去 <span class="path">Themes</span> 把之前的正式主题重新 <code>Publish</code>，网站立刻恢复原样。这就是为什么第三节坚持要你先复制主题。</div>
 <div class="step"><b>评论板块：</b>正式版会直接用店里已装的 Loox 应用的官方组件（就是 our-reviews 页面那个），评论自动更新，不用人管。</div>
