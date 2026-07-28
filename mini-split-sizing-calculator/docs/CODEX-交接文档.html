@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Split Sizing Calculator 项目交接文档（给 Codex）</title>
+<style>
+body { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 15px; line-height: 1.85; color: #222; max-width: 900px; margin: 0 auto; padding: 30px 20px 80px; }
+h1 { font-size: 26px; color: #0E1952; border-bottom: 3px solid #0E1952; padding-bottom: 10px; }
+h2 { font-size: 20px; color: #0E1952; margin-top: 38px; border-left: 6px solid #286ED7; padding-left: 12px; }
+h3 { font-size: 16px; color: #286ED7; margin-top: 20px; }
+code { background: #EEF1F6; padding: 2px 7px; border-radius: 4px; font-size: 13px; color: #0E1952; }
+pre { background: #0E1952; color: #E8ECF5; padding: 14px 18px; border-radius: 8px; font-size: 13px; overflow-x: auto; line-height: 1.6; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
+th, td { border: 1px solid #C9CFDD; padding: 7px 11px; text-align: left; vertical-align: top; }
+th { background: #EEF3FC; color: #0E1952; }
+.red { background: #FFF3F0; border: 1px solid #E8B3A8; border-radius: 8px; padding: 12px 18px; margin: 12px 0; }
+.red::before { content: "红线 "; color: #C0442E; font-weight: bold; }
+.tip { background: #F0F9F2; border: 1px solid #A8D8B0; border-radius: 8px; padding: 12px 18px; margin: 12px 0; }
+a { color: #286ED7; }
+</style>
+</head>
+<body>
+
+<h1>Mini Split Sizing Calculator 项目交接文档</h1>
+<p>本文档写给接手页面调整工作的 Codex（或任何后续协作者）。读完本页你应该知道：文件在哪、怎么改、怎么验证、怎么发布、哪些东西绝对不能碰。</p>
+
+<h2>一、项目概况</h2>
+<table>
+<tr><th>项</th><th>值</th></tr>
+<tr><td>目标</td><td>dellahome.com 的 SEO 工具页，抢占 "mini split sizing calculator" 关键词簇</td></tr>
+<tr><td>代码仓库</td><td><code>github.com/cleopatrahines/della-pages</code>（master 分支，项目在 <code>mini-split-sizing-calculator/</code> 目录）</td></tr>
+<tr><td>在线预览</td><td><code>cleopatrahines.github.io/della-pages/mini-split-sizing-calculator/mockup/DELLA-mini-split-sizing-calculator-mockup.html</code>（GitHub Pages，push 后一两分钟生效）</td></tr>
+<tr><td>当前阶段</td><td>视觉稿（mockup）迭代中；视觉冻结后进入 Shopify OS 2.0 section 正式实现（薄 Liquid section + 主题 assets，照站内 HVAC Product Finder 的架构）</td></tr>
+<tr><td>深度参考对象</td><td><a href="https://minisplitsforless.com/pages/hvac-load-calculator">MSFL 计算器</a>（该词 Google 第一名）。参考交互结构，不抄品牌样式</td></tr>
+</table>
+
+<h2>二、文件地图（改哪个、别改哪个）</h2>
+<table>
+<tr><th>文件</th><th>说明</th><th>能改吗</th></tr>
+<tr><td><code>mockup/mockup_template.html</code></td><td><b>唯一的源文件</b>。含全部 HTML/CSS/JS，其中 <code>__INJECT_CONFIG__</code> 等 5 个占位符在构建时被替换</td><td>✅ 所有页面改动都改这里</td></tr>
+<tr><td><code>mockup/DELLA-mini-split-sizing-calculator-mockup.html</code></td><td>注入产物（交付预览文件）。由模板+数据生成</td><td>❌ 手改会在下次注入时被覆盖</td></tr>
+<tr><td><code>calculator_config.json</code></td><td>引擎全部系数（1.1.0）。单一事实来源，JS 不得复制其数值</td><td>⚠️ 改系数需领导/暖通复核批准</td></tr>
+<tr><td><code>mockup/climate_data.json</code></td><td>ZIP→气候区演示子集（18 个精确 ZIP + 前缀兜底）。生产用完整数据集 <code>climate_dataset_v1.0.0/</code>（33,784 ZIP）</td><td>⚠️ 结构别动</td></tr>
+<tr><td><code>mockup/bestsellers_data.json</code></td><td>Top Sales 8 个产品（用户指定），含真实 variant id 可加购</td><td>⚠️ 换产品需用户指定</td></tr>
+<tr><td><code>mockup/loox_reviews.json</code></td><td>19 条真实 Loox 评论（已筛：只留空调整机、优先长评）。来源 loox.io 渲染接口</td><td>⚠️ 只能换成真实抓取的评论</td></tr>
+<tr><td><code>mockup/us_climate_map.svg</code> + <code>mockup/state_climate.json</code></td><td>矢量地图（州级着色）+ 州→气候区映射（DOE 县级数据聚合）</td><td>⚠️ 颜色必须与页面图例一致</td></tr>
+<tr><td><code>docs/</code></td><td>计算逻辑说明（HTML+PDF）、上线指南、本交接文档</td><td>✅ 内容更新后 PDF 需重新生成</td></tr>
+<tr><td><code>reference_engine.py</code>、<code>dataset_v1.2.0/</code>、<code>PRD.md</code></td><td>参考引擎、559 产品数据集、锁定 PRD（Rev 1.3）</td><td>❌ PRD 变更需用户批准</td></tr>
+</table>
+
+<h2>三、构建流程（每次改完模板必做）</h2>
+<pre>cd mini-split-sizing-calculator
+python3 - &lt;&lt;'EOF'
+import json, os
+tpl = open("mockup/mockup_template.html", encoding="utf-8").read()
+cfg = json.load(open("calculator_config.json"))
+climate = json.load(open("mockup/climate_data.json"))
+best = json.load(open("mockup/bestsellers_data.json"))
+state = json.load(open("mockup/state_climate.json"))
+loox = json.load(open("mockup/loox_reviews.json"))
+usmap = open("mockup/us_climate_map.svg", encoding="utf-8").read()
+out = (tpl.replace("__US_MAP_SVG__", usmap)
+         .replace("__INJECT_CONFIG__", json.dumps(cfg, separators=(",",":")))
+         .replace("__INJECT_CLIMATE__", json.dumps(climate, separators=(",",":")))
+         .replace("__INJECT_BESTSELLERS__", json.dumps(best, separators=(",",":")))
+         .replace("__INJECT_STATE_CLIMATE__", json.dumps(state, separators=(",",":")))
+         .replace("__INJECT_LOOX__", json.dumps(loox, separators=(",",":"), ensure_ascii=False).replace("&lt;/", "&lt;\\/")))
+assert "__INJECT_" not in out and "__US_MAP" not in out
+open("mockup/DELLA-mini-split-sizing-calculator-mockup.html","w",encoding="utf-8").write(out)
+EOF</pre>
+<p>然后三步验证，一步都不能省：</p>
+<ol>
+<li><b>JS 语法</b>：把交付文件里最后一个 <code>&lt;script&gt;</code> 抽出来跑 <code>node --check</code></li>
+<li><b>计算冒烟</b>：默认输入应得出 推荐 9,000 BTU / 载荷 8,000 BTU/h（完整 13 组用例见 <code>docs/计算逻辑说明_v2.pdf</code> 第五节，全部有精确预期值）</li>
+<li><b>视觉自检</b>：改了哪个板块，就用无头浏览器截那个板块的图和参考图对比，<b>确认一致再提交</b>。历史教训：Services 图标返工了四轮，都是因为没先自己看一眼</li>
+</ol>
+
+<h2>四、发布流程</h2>
+<pre>git add -A
+git commit -m "中文描述改动"   # 提交信息用中文，说清楚改了什么和为什么
+git push                      # 需要 GitHub token（找用户要，用完让用户撤销）</pre>
+<p>推送后 GitHub Pages 一两分钟自动更新。用户浏览器有缓存，提醒 Ctrl+F5。</p>
+
+<h2>五、设计规范（已定稿，不要偏离）</h2>
+<table>
+<tr><th>项</th><th>规范</th></tr>
+<tr><td>字体</td><td>标题 Spectral 400（-1.3px 字距）；正文 Inter 16px；评论板块整体 Poppins（Loox 组件原生字体）</td></tr>
+<tr><td>颜色</td><td>藏青 #0E1952（正文/按钮）、#0B133D（Loox 星星和 Verified）、链接蓝 #286ED7、评论卡白底+#E8E8E8 描边</td></tr>
+<tr><td>计算器</td><td>MSFL 语法：字段直接排在白底页上（无卡片面板）、12 个字段、有默认值、实时重算无按钮。左 53% 表单 / 右 43.5% 地图+结果卡</td></tr>
+<tr><td>结果卡</td><td>4 行结构（标题/大数字/载荷行+Why 内联/按钮）+多联入口小字。区间和提示都收在 Why this size 展开层里</td></tr>
+<tr><td>产品推荐</td><td>搜索逻辑：单机搜 "{bin} BTU mini split"；多联入口搜 "{k}K"（命中带该头的套装）；36K–55K 载荷推荐真实多联档（38/41/42/45/48/55K）；超 55K 才转人工</td></tr>
+<tr><td>Top Sales</td><td>Galaxy 页产品卡语法：裸卡、衬线 3 行标题、藏青星星、胶囊加购按钮（真实 /cart/add）、按钮钉底对齐</td></tr>
+<tr><td>评论</td><td>Loox 组件样式克隆（our-reviews 页）：照片顶满卡、姓名 16px 粗体、日期 11px 灰、藏青星星、产品名带上边框可点击、循环横滑</td></tr>
+<tr><td>Services</td><td>浅蓝 #EFF3FE 圆角卡、藕蓝圆徽章内嵌官方 LA_icon 白色图形（data URI，勿换成别的图标）</td></tr>
+<tr><td>板块顺序</td><td>计算器 → Top Sales → What Size（h3 24px，只露第一段）→ Services → 评论 → FAQ（宽度 1440 与评论对齐）</td></tr>
+<tr><td>移动端</td><td>输入框 ≥16px（防 iOS 缩放）、按钮全宽、轮播 proximity 吸附、断点 960/560</td></tr>
+</table>
+
+<h2>六、红线（违反任何一条都会返工）</h2>
+<div class="red"><b>文案零破折号。</b>全页任何文案不得出现 em dash（—）和 en dash（–）。数字区间写 "9,600 to 14,400"。</div>
+<div class="red"><b>评论数据禁止编造。</b>星级只显示数据里有的，日期不虚构，占位文案必须标注。评论只能来自真实抓取（Loox 接口）。</div>
+<div class="red"><b>不要堆文字。</b>用户领导明确不喜欢文字多的页面：章节少、每节短、能折叠就折叠。</div>
+<div class="red"><b>引擎系数只住在 calculator_config.json。</b>JS 里不得复制数值；改系数（含 20 BTU/sq.ft. 基准）需暖通复核批准。</div>
+<div class="red"><b>不要用 Pioneer 式深色重背景</b>；深度参考对象是 MSFL 的白底轻结构。</div>
+<div class="red"><b>不要用 della-page-builder skill</b>（用户明确排除）。</div>
+<div class="red"><b>表单不要加回已砍字段</b>（设备使用频率/车库/楼梯，2026-07-28 按第一性原则砍掉，引擎按瓦数全额计入）。</div>
+
+<h2>七、悬而未决的事项（动手前先确认状态）</h2>
+<table>
+<tr><th>事项</th><th>状态</th></tr>
+<tr><td>负荷基准 20 vs 竞品 26 BTU/sq.ft.</td><td>维持 20，已写入 PDF 作为暖通复核决策材料。复核有结论前不要改</td></tr>
+<tr><td>golden 测试用例的暖通人工批准</td><td>PRD 门禁，未完成</td></tr>
+<tr><td>气候数据集口径（IECC 政策设计温度）</td><td>需领导认可，未完成</td></tr>
+<tr><td>121 个 55K 产品的库存复核</td><td>等下次后台导出</td></tr>
+<tr><td>正式实现（DESIGN.md → PLAN.md → OS 2.0 section）</td><td>视觉冻结后开始，架构照 hvac-product-finder.liquid</td></tr>
+</table>
+
+<h2>八、常用参考</h2>
+<table>
+<tr><th>资源</th><th>位置</th></tr>
+<tr><td>计算逻辑+验收测试（13 组带精确预期值）</td><td><code>docs/计算逻辑说明_v2.pdf</code></td></tr>
+<tr><td>Shopify 上线操作手册</td><td><code>docs/上线指南.html</code></td></tr>
+<tr><td>PRD（锁定 Rev 1.3）</td><td><code>PRD.md</code></td></tr>
+<tr><td>MSFL 计算器（交互对标）</td><td>minisplitsforless.com/pages/hvac-load-calculator</td></tr>
+<tr><td>Galaxy 页（视觉 token 来源）</td><td>dellahome.com/pages/della-x-la-galaxy-sweepstakes</td></tr>
+<tr><td>Loox 评论数据源</td><td><code>loox.io/widget/6U095hssyj/reviews?shop=dellahome-store.myshopify.com&amp;limit=20&amp;aggregate=true&amp;page=N</code>（服务端渲染，可分页抓取）</td></tr>
+<tr><td>Della 站内搜索行为</td><td>搜 "12000 BTU"=单机；搜 "12K"=带 12K 头的多联套装。这是产品推荐双链路的依据</td></tr>
+</table>
+
+<div class="tip"><b>给 Codex 的最后提醒：</b>这个页面每一个数字、评论、价格、评分都是真实数据，是它的核心竞争力。遇到"需要一个数据但抓不到"的情况，宁可留白并说明，也不要编。改动前先看 git log（全中文提交信息，就是这个项目的完整决策史）。</div>
+
+<p style="color:#777;font-size:13px;margin-top:50px;border-top:1px solid #ddd;padding-top:10px">交接自 Claude · 2026-07-28 · 疑问处以 git 历史和 PRD.md 为准</p>
+
+</body>
+</html>
