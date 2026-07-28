@@ -90,6 +90,34 @@ b { color: #0E1952; }
 <h2>五、这个计算器的能力边界</h2>
 <p>它用的输入因素（面积、气候、层高、保温、日照、内部热源）和专业暖通工程师做初步估算时一致，对<b>选购单房间壁挂机</b>来说足够可靠。但它不是 Manual J——那是需要逐面墙、逐扇窗建模的专业负荷计算标准。整栋房子的方案、需要报建文件的项目，页面上明确建议找持证暖通专业人员。宁可诚实说"这是估算"，也不假装精确到个位数。</p>
 
+
+<h2 style="page-break-before:always">六、验收测试用例（截图对照表）</h2>
+<p>以下每组用例的"预期结果"都是用线上同一份代码实际运行得出的，不是手算。测试方法：<b>每组开始前刷新页面</b>（回到默认状态），按"操作"列填写，其余保持默认，然后对照结果卡截图核对。</p>
+
+<h3>基础用例（覆盖主路径，2026-07-28 已全部实测通过）</h3>
+<table>
+<tr><th>#</th><th>用例</th><th>操作（其余默认）</th><th>预期结果</th></tr>
+<tr><td>T1</td><td>默认盘</td><td>什么都不动</td><td>推荐 9,000 BTU，载荷 8,000 BTU/h</td></tr>
+<tr><td>T2</td><td>迈阿密极端</td><td>ZIP 33101；600 sq.ft.；保温 Poor；日照 Strong/western；窗户 Many；4 人；有厨房</td><td>Region #1 Hot &amp; Humid；推荐 24,000 BTU，载荷 22,200 BTU/h</td></tr>
+<tr><td>T3</td><td>明尼苏达小卧室</td><td>ZIP 55411；350 sq.ft.；主取暖选 Yes</td><td>Region #5 Cold（winter −10°F）；推荐 9,000 BTU，载荷 6,300 BTU/h</td></tr>
+<tr><td>T4</td><td>档位整千</td><td>900 sq.ft.</td><td>推荐 18,000 BTU，载荷 18,000 BTU/h</td></tr>
+<tr><td>T5</td><td>阳光房标记</td><td>Glass sunroom 选 Yes</td><td>推荐 12,000 BTU，载荷 9,200 BTU/h，黄字 Flagged for review: sunroom</td></tr>
+<tr><td>T6</td><td>大开间多联</td><td>2000 sq.ft.</td><td>推荐 41,000 BTU（多联），载荷 40,000 BTU/h，提示 multi-zone system 需两台以上内机</td></tr>
+<tr><td>T7</td><td>设备瓦数</td><td>瓦数填 2000</td><td>推荐 18,000 BTU，载荷 14,800 BTU/h</td></tr>
+</table>
+
+<h3>复杂用例（多因素叠加与边界行为）</h3>
+<table>
+<tr><th>#</th><th>用例</th><th>操作（其余默认）</th><th>预期结果</th><th>验证点</th></tr>
+<tr><td>C1</td><td>休斯顿顶配</td><td>ZIP 77002；550 sq.ft.；层高 10 ft；保温 Poor；气密 Drafty；窗户 Many；日照 Strong/western；5 人；有厨房；瓦数 800</td><td>Region #1 Hot &amp; Humid；推荐 36,000 BTU，载荷 29,300 BTU/h</td><td>八项因素同时叠加；1.25 倍备选档规则生效（36,000÷29,300≈1.23）</td></tr>
+<tr><td>C2</td><td>西雅图优质房</td><td>ZIP 98101；750 sq.ft.；层高 9 ft；保温 Good；气密 Very tight；窗户 Few；日照 Shaded</td><td>Region #4 Cool；推荐 18,000 BTU，载荷 12,600 BTU/h</td><td>负修正叠加；载荷落在 12K 与 18K 的目录空档，引擎按向上取整给 18K</td></tr>
+<tr><td>C3</td><td>高挑大客厅</td><td>ZIP 90210；1200 sq.ft.；层高选 Over 12 ft；日照 Strong/western</td><td>Region #2 Warm；推荐 42,000 BTU（多联），载荷 41,600 BTU/h</td><td>层高 1.5 倍上限；跨入多联档位区间</td></tr>
+<tr><td>C4</td><td>丹佛阳光房</td><td>ZIP 80202；450 sq.ft.；Glass sunroom 选 Yes；瓦数 500</td><td>Region #5 Cold；推荐 12,000 BTU，载荷 11,300 BTU/h，黄字 sunroom 标记</td><td>寒冷区 0.9 折减与阳光房 1.15 加成同时生效</td></tr>
+<tr><td>C5</td><td>法戈严寒主暖</td><td>ZIP 58102；800 sq.ft.；主取暖 Yes；保温 Poor；气密 Very drafty</td><td>Region #5 Cold（winter −18°F）；推荐 18,000 BTU，载荷 18,000 BTU/h</td><td>Zone 7 极寒邮编解析；主取暖意图下推荐仍成立</td></tr>
+<tr><td>C6</td><td>超目录极限</td><td>3000 sq.ft.</td><td>Professional review recommended，载荷 60,000 BTU/h，提示超过 DELLA 最大单系统 55,000 BTU</td><td>目录上限（55K）之外才转人工，与 MSFL 行为对齐</td></tr>
+</table>
+<p>说明：T6 与 C3 体现 2026-07-28 的行为升级——载荷在 36,000 到 55,000 BTU/h 之间时，从"仅建议人工复核"改为直接推荐目录中真实存在的多联容量档（38K/41K/42K/45K/48K/55K，共 313 个在售产品），点按钮搜索对应容量；超过 55,000 才转人工复核。</p>
+
 <p class="meta">版本：引擎 della-sizing-engine-1.0.0 · 配置 calculator_config.json 1.1.0 · 产品数据集 v1.2.0（559 个产品）· 气候数据集 v1.0.0（33,784 个邮编，DOE/PNNL 县级数据）<br>生成日期：2026-07-28 · 本文档随代码仓库 github.com/cleopatrahines/della-pages 一同维护</p>
 
 </body>
