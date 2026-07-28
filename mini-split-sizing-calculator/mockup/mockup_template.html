@@ -124,7 +124,7 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 .gr-wrap{position:relative}
 .gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px)/4);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#FFFEFB;border-radius:8px;padding:10px;display:flex;flex-direction:column}
+.gr-card{scroll-snap-align:start;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:10px;display:flex;flex-direction:column}
 .gr-photo{border-radius:6px;height:185px;background:#F0F1F1;overflow:hidden;margin-bottom:10px}
 .gr-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .gr-name{font-weight:700;font-size:16px;color:#000;display:flex;align-items:center}
@@ -613,7 +613,7 @@ function toggleReview(btn){
   btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
 }
 function renderReviews(){
-  const VERIFIED='<span class="gr-verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B133D"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#FFFEFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>';
+  const VERIFIED='<span class="gr-verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B133D"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>';
   document.getElementById('grCar').innerHTML = LOOX_REVIEWS.map(r=>`
     <div class="gr-card">
       ${r.img?`<div class="gr-photo"><img src="${r.img}" alt="Customer photo: ${r.p||'DELLA product'}" loading="lazy"></div>`:''}
