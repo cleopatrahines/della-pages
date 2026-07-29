@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mini Split 计算器页面：Shopify 上线指南</title>
 <style>
-body { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 16px; line-height: 1.9; color: #222; max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 16px; line-height: 1.9; color: #222; max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; overflow-wrap: anywhere; }
 h1 { font-size: 28px; color: #0E1952; border-bottom: 3px solid #0E1952; padding-bottom: 10px; }
 h2 { font-size: 21px; color: #0E1952; margin-top: 40px; border-left: 6px solid #286ED7; padding-left: 12px; }
 .step { background: #F5F8FE; border: 1px solid #C9CFDD; border-radius: 10px; padding: 16px 22px; margin: 14px 0; }
@@ -15,7 +16,7 @@ h2 { font-size: 21px; color: #0E1952; margin-top: 40px; border-left: 6px solid #
 .ok { background: #F0F9F2; border: 1px solid #A8D8B0; border-radius: 10px; padding: 14px 20px; margin: 14px 0; }
 code { background: #EEF1F6; padding: 2px 8px; border-radius: 4px; font-size: 14px; color: #0E1952; }
 .path { color: #286ED7; font-weight: 600; }
-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+table { border-collapse: collapse; display: block; width: 100%; margin: 12px 0; overflow-x: auto; font-size: 15px; }
 th, td { border: 1px solid #C9CFDD; padding: 8px 12px; text-align: left; }
 th { background: #EEF3FC; color: #0E1952; }
 </style>
@@ -33,7 +34,7 @@ th { background: #EEF3FC; color: #0E1952; }
 <div class="warn"><b>最重要的一句话：不要把视觉稿的 HTML 直接复制粘贴到 Shopify 里。</b>视觉稿里塞了开发用的测试数据（写死的产品、评论、地图），直接贴上去将来没法维护，样式还会和主题打架。正式上线要用下面说的"正式版三件套"。</div>
 
 <h2>二、上线的整体路线（两大步）</h2>
-<div class="step"><b class="n">1</b><b>先做正式版（这一步交给 Claude 做）。</b>视觉稿定稿后，Claude 会把它改造成 Shopify 认识的格式，叫"正式版三件套"：
+<div class="step"><b class="n">1</b><b>先做正式版（这一步交给 Codex 做）。</b>视觉稿定稿后，Codex 会把它改造成 Shopify 认识的格式，叫"正式版三件套"：
 <table>
 <tr><th>东西</th><th>是什么</th><th>放到 Shopify 哪里</th></tr>
 <tr><td>1 个 section 文件（.liquid）</td><td>页面的骨架</td><td>主题的 Sections 文件夹</td></tr>
@@ -43,18 +44,36 @@ th { background: #EEF3FC; color: #0E1952; }
 你们店里已经上线的 HVAC Product Finder 用的就是这个套路，照方抓药，风险最小。</div>
 <div class="step"><b class="n">2</b><b>再把三件套装进 Shopify（这一步你在后台点几下就行）。</b>具体步骤看下一节。</div>
 
-<h2>三、手把手：把正式版装进 Shopify 后台</h2>
+<div class="warn"><b>当前还不能按“可直接上线”移交。</b>仓库当前主要是视觉稿、数据和说明文档，正式版三件套尚未生成；主取暖规则、正式计算口径和暖通审核结论也要先确认。应当等 Codex 生成正式版、完成 Shopify 副本主题 QA，并把最终提交号写进交接记录后，再安排正式发布。</div>
+
+<h2>三、移交给领导：权限和交接包</h2>
+<div class="step">
+<p><b>GitHub 权限怎么给：</b>这个仓库是公开仓库，领导只查看、下载或审核代码时，直接发仓库链接即可，<b>不需要额外权限</b>。只有领导需要自己修改或推送代码时，才邀请为仓库 Collaborator；个人账号名下仓库的 Collaborator 同时具备读写权限，所以不要为了“方便查看”就开放写权限，也不要共享 GitHub 密码、Personal Access Token 或 SSH 私钥。</p>
+<p><b>Shopify 权限怎么给：</b>用领导自己的员工账号或协作者账号授权，不共享你的登录。上线负责人通常需要 <code>Online Store → Themes</code>、<code>Edit code</code>、<code>Blog posts and pages</code>；只有负责最终发布的人才需要主题发布权限。若要配置 Loox，只增加对应应用权限；不要顺手开放订单、客户、财务、安装应用或批准付费等无关权限。</p>
+</div>
+<table>
+<tr><th>要交接的东西</th><th>交接标准</th></tr>
+<tr><td>仓库与版本</td><td>仓库链接、正式上线提交号或 Release、GitHub Pages 预览地址</td></tr>
+<tr><td>正式版文件</td><td>Liquid section、JS/CSS/JSON assets、页面模板；不能用视觉稿 HTML 代替</td></tr>
+<tr><td>规则与审批</td><td>《计算逻辑说明.pdf》、锁定版 PRD、暖通审核结论、已批准的 golden cases</td></tr>
+<tr><td>QA 证据</td><td>桌面/手机测试、真实 ZIP、容量变化、商品跳转、加购、Loox、GA4 事件检查结果</td></tr>
+<tr><td>上线安排</td><td>副本主题名称、上线负责人、验收人、发布时间、正式主题回滚负责人</td></tr>
+<tr><td>已知问题</td><td>未解决项、暂时方案、不得修改的文件、出现问题时联系 Codex 所需的截图和报错信息</td></tr>
+</table>
+<div class="ok"><b>推荐的最小权限：</b>如果领导只是审核并在 Shopify 上线，发公开仓库链接 + 正式版文件，并给必要的 Shopify 权限就够了，不必给 GitHub 写权限。若领导后续负责代码维护，再单独邀请为 GitHub Collaborator。</div>
+
+<h2>四、手把手：把正式版装进 Shopify 后台</h2>
 <div class="warn"><b>动手前必做的保险动作：复制一份主题。</b>路径：<span class="path">Shopify 后台 → Online Store → Themes</span> → 在当前主题右边点 <code>…</code> → <code>Duplicate</code>。所有改动先在这个<b>副本</b>上做，确认没问题再发布。这样就算改坏了，正在营业的网站一根汗毛都不会少。</div>
 
 <div class="step"><b class="n">1</b>打开 <span class="path">Online Store → Themes</span>，找到刚复制的副本主题，点 <code>…</code> → <code>Edit code</code>（编辑代码）。</div>
-<div class="step"><b class="n">2</b>左边找到 <span class="path">Sections</span> 文件夹 → 点 <code>Add a new section</code> → 起名 <code>mini-split-sizing-calculator</code> → 把 Claude 给你的 .liquid 文件内容整个粘贴进去 → 点 <code>Save</code>。</div>
-<div class="step"><b class="n">3</b>左边找到 <span class="path">Assets</span> 文件夹 → 点 <code>Add a new asset</code> → 把 Claude 给你的 .js、.css、.json 文件一个一个上传进去。</div>
-<div class="step"><b class="n">4</b>回到 Shopify 后台首页，进 <span class="path">Online Store → Pages</span> → 点 <code>Add page</code> → 标题填 <code>Mini Split Sizing Calculator</code> → 右侧模板（Theme template）选 Claude 给你的那个新模板。</div>
+<div class="step"><b class="n">2</b>左边找到 <span class="path">Sections</span> 文件夹 → 点 <code>Add a new section</code> → 起名 <code>mini-split-sizing-calculator</code> → 把 Codex 给你的 .liquid 文件内容整个粘贴进去 → 点 <code>Save</code>。</div>
+<div class="step"><b class="n">3</b>左边找到 <span class="path">Assets</span> 文件夹 → 点 <code>Add a new asset</code> → 把 Codex 给你的 .js、.css、.json 文件一个一个上传进去。</div>
+<div class="step"><b class="n">4</b>回到 Shopify 后台首页，进 <span class="path">Online Store → Pages</span> → 点 <code>Add page</code> → 标题填 <code>Mini Split Sizing Calculator</code> → 右侧模板（Theme template）选 Codex 给你的那个新模板。</div>
 <div class="step"><b class="n">5</b>右下角确认网址（URL handle）是 <code>mini-split-sizing-calculator</code>，页面先设为 <b>Hidden（隐藏）</b>，点 <code>Save</code>。</div>
-<div class="step"><b class="n">6</b>点页面上的 <code>Preview</code>（预览）自己检查一遍，对照下面第四节的清单。</div>
+<div class="step"><b class="n">6</b>点页面上的 <code>Preview</code>（预览）自己检查一遍，对照下面第五节的清单。</div>
 <div class="step"><b class="n">7</b>都没问题后：把页面从 Hidden 改成 <b>Visible（可见）</b>；如果前面用的是副本主题，去 Themes 里把副本 <code>Publish</code>（发布）成正式主题。上线完成。</div>
 
-<h2>四、上线前的检查清单（一条条对着勾）</h2>
+<h2>五、上线前的检查清单（一条条对着勾）</h2>
 <div class="ok">
 <p>□ 电脑上打开页面，输一个真实邮编（比如 40202），看气候区提示对不对</p>
 <p>□ 改动面积、保温这些选项，看推荐结果会不会跟着变</p>
@@ -63,28 +82,29 @@ th { background: #EEF3FC; color: #0E1952; }
 <p>□ Top Sales 的加购按钮点一下，确认商品真的进了购物车</p>
 <p>□ 用手机打开一遍：表单好不好填、评论能不能左右滑</p>
 <p>□ 页面标题和描述（SEO）：Pages 编辑页最下面 <code>Edit website SEO</code>，确认标题含 "Mini Split Sizing Calculator"</p>
+<p>□ 记录上线提交号、主题副本名称、验收人、发布时间和回滚负责人</p>
 </div>
 
-<h2>五、千万别碰的东西</h2>
+<h2>六、千万别碰的东西</h2>
 <div class="warn"><b>别动</b> <code>theme.liquid</code>、<code>header</code>、<code>footer</code> 这些带"主题命脉"性质的文件——这个项目根本不需要改它们。</div>
-<div class="warn"><b>别在正式主题上直接试验。</b>永远先复制主题（见第三节开头）。</div>
-<div class="warn"><b>别手改注入产物。</b>以后想改文案、改样式，回到 GitHub 仓库改源文件（或直接让 Claude 改），改完重新走一遍上传。直接在 Shopify 里手改，下次更新会被覆盖。</div>
+<div class="warn"><b>别在正式主题上直接试验。</b>永远先复制主题（见第四节开头）。</div>
+<div class="warn"><b>别手改注入产物。</b>以后想改文案、改样式，回到 GitHub 仓库改源文件（或直接让 Codex 改），改完重新走一遍上传。直接在 Shopify 里手改，下次更新会被覆盖。</div>
 
-<h2>六、已知的坑（上线时逐条核对）</h2>
-<div class="warn"><b>字体：</b>页面用 Spectral + Inter（站内 PageFly 已托管），新页面若字体没生效会退回系统字体、观感大变。<br><b>解决：</b>正式版的 CSS 里会直接声明站内已托管的字体文件（@font-face 指向 PageFly 的 woff2 地址），不依赖别的页面加载。上线预览第一眼看标题是不是衬线体，不是就把截图发给 Claude，一处 CSS 就能修。</div>
-<div class="warn"><b>ZIP 数据体积：</b>完整气候数据 33,784 个邮编约 540KB，不适合整包塞进主题 assets 让每个访客下载。<br><b>解决（已定方案，实测验证）：</b>用<b>前缀索引精简版</b>——896 条三位前缀主值 + 2,808 条例外全量保留，实测 57KB（传输时 gzip 后仅 10KB，一张小图的体积），任何 ZIP 的查询结果和完整版一字不差（100% 精确）。直接作为一个 JSON 上传到主题 assets 即可，不依赖任何外部接口、不需要任何额外权限、没有维护成本。压缩脚本已在仓库里，正式版打包时 Claude 自动生成。<br>（说明：站内 HVAC Finder 有个 Vercel 气候接口，但那是领导团队的部署且只返回区域标签、没有本计算器需要的设计温度，不适用也无权限，不作为方案。）</div>
+<h2>七、已知的坑（上线时逐条核对）</h2>
+<div class="warn"><b>字体：</b>页面用 Spectral + Inter（站内 PageFly 已托管），新页面若字体没生效会退回系统字体、观感大变。<br><b>解决：</b>正式版的 CSS 里会直接声明站内已托管的字体文件（@font-face 指向 PageFly 的 woff2 地址），不依赖别的页面加载。上线预览第一眼看标题是不是衬线体，不是就把截图发给 Codex，一处 CSS 就能修。</div>
+<div class="warn"><b>ZIP 数据体积：</b>完整气候数据 33,784 个邮编约 540KB，不适合整包塞进主题 assets 让每个访客下载。<br><b>解决（已定方案，实测验证）：</b>用<b>前缀索引精简版</b>——896 条三位前缀主值 + 2,808 条例外全量保留，实测 57KB（传输时 gzip 后仅 10KB，一张小图的体积），任何 ZIP 的查询结果和完整版一字不差（100% 精确）。直接作为一个 JSON 上传到主题 assets 即可，不依赖任何外部接口、不需要任何额外权限、没有维护成本。压缩脚本已在仓库里，正式版打包时 Codex 自动生成。<br>（说明：站内 HVAC Finder 有个 Vercel 气候接口，但那是领导团队的部署且只返回区域标签、没有本计算器需要的设计温度，不适用也无权限，不作为方案。）</div>
 <div class="warn"><b>气候地图口径：</b>页面五色地图是州级简化示意和未输入 ZIP 时的 fallback，不是 DOE/IECC 1–8、A/B/C 官方县级地图。<br><b>解决：</b>保留地图下方的简化说明，不要宣传为官方气候区地图；正式版以 ZIP 对应的县级气候资料为主，地图点击只给区域级估算。</div>
 <div class="warn"><b>Loox 评论组件：</b>需要显示全店评论（4.9/1702）而不是某个商品的评论。<br><b>解决：</b>后台路径 Apps → Loox → Widgets，确认 Store Reviews（全店评论）组件已开启；嵌入代码里必须带 <code>data-loox-aggregate</code> 属性（our-reviews 页面用的就是这个写法，直接照抄它的嵌入块最稳）。嵌入后刷新页面核对头部是不是 4.9 分 1,702 条。</div>
-<div class="warn"><b>搜索链接依赖：</b>Find Matching Products 依赖站内搜索对 "12000 BTU" 和 "12K" 的命中规律。<br><b>解决：</b>验证方法=在站内搜索框分别搜 "12000 BTU"（应出单机）和 "12K"（应出带 12K 头的多联套装），上线检查清单里已包含。以后如果装了搜索类 app（Boost 等）或改了产品命名规范，重跑一遍这个验证；万一命中规律变了，把按钮链接改成对应 BTU 集合页（如 /collections/12000-btu-mini-split）作为兜底，Claude 改一行模板即可。</div>
-<div class="warn"><b>埋点：</b>页面里的 track() 事件（计算完成、点击找产品、加购）目前是空壳，不接上就没法评估这个页面赚不赚。<br><b>解决：</b>正式版由 Claude 把 track() 映射到 GA4 的 dataLayer（店铺已装 GA 的话零配置，事件名就用 btu_calculator_completed / matching_product_clicked / add_to_cart_after_calculator 三个）。上线当天验证方法：打开 GA4 的 Realtime 报告，自己在页面上算一次、点一次按钮，看这两个事件有没有跳出来。</div>
-<div class="warn"><b>Top Sales 的加购按钮：</b>视觉稿里写死了抓取时的 variant ID，产品改版或下架后按钮会失败。<br><b>解决：</b>正式版由 Claude 改为 Liquid 动态读取（all_products[handle].first_available_variant），产品信息永远和店里同步，写死 ID 的问题在正式版根本不存在。</div>
-<div class="warn"><b>多联档搜索链接未实测：</b>36K 以上六个容量档（38000/41000/42000/45000/48000/55000 BTU）的搜索命中只核对过产品标题含这些词，没在线上搜过。<br><b>解决：</b>上线检查时在站内搜索框把六个词各搜一遍确认出产品；哪个词命不中，就把那一档改成对应集合页链接，Claude 一行模板改完。</div>
-<h2>七、出了问题怎么办</h2>
-<div class="step"><b>页面显示不对：</b>先别慌，页面设回 Hidden（顾客就看不到了），然后把截图和问题描述发给 Claude。</div>
-<div class="step"><b>整个主题出问题：</b>去 <span class="path">Themes</span> 把之前的正式主题重新 <code>Publish</code>，网站立刻恢复原样。这就是为什么第三节坚持要你先复制主题。</div>
+<div class="warn"><b>搜索链接依赖：</b>Find Matching Products 依赖站内搜索对 "12000 BTU" 和 "12K" 的命中规律。<br><b>解决：</b>验证方法=在站内搜索框分别搜 "12000 BTU"（应出单机）和 "12K"（应出带 12K 头的多联套装），上线检查清单里已包含。以后如果装了搜索类 app（Boost 等）或改了产品命名规范，重跑一遍这个验证；万一命中规律变了，把按钮链接改成对应 BTU 集合页（如 /collections/12000-btu-mini-split）作为兜底，Codex 改一行模板即可。</div>
+<div class="warn"><b>埋点：</b>页面里的 track() 事件（计算完成、点击找产品、加购）目前是空壳，不接上就没法评估这个页面赚不赚。<br><b>解决：</b>正式版由 Codex 把 track() 映射到 GA4 的 dataLayer（店铺已装 GA 的话零配置，事件名就用 btu_calculator_completed / matching_product_clicked / add_to_cart_after_calculator 三个）。上线当天验证方法：打开 GA4 的 Realtime 报告，自己在页面上算一次、点一次按钮，看这两个事件有没有跳出来。</div>
+<div class="warn"><b>Top Sales 的加购按钮：</b>视觉稿里写死了抓取时的 variant ID，产品改版或下架后按钮会失败。<br><b>解决：</b>正式版由 Codex 改为 Liquid 动态读取（all_products[handle].first_available_variant），产品信息永远和店里同步，写死 ID 的问题在正式版根本不存在。</div>
+<div class="warn"><b>多联档搜索链接未实测：</b>36K 以上六个容量档（38000/41000/42000/45000/48000/55000 BTU）的搜索命中只核对过产品标题含这些词，没在线上搜过。<br><b>解决：</b>上线检查时在站内搜索框把六个词各搜一遍确认出产品；哪个词命不中，就把那一档改成对应集合页链接，Codex 一行模板改完。</div>
+<h2>八、出了问题怎么办</h2>
+<div class="step"><b>页面显示不对：</b>先别慌，页面设回 Hidden（顾客就看不到了），然后把截图、页面网址、操作步骤和报错信息发给 Codex。</div>
+<div class="step"><b>整个主题出问题：</b>去 <span class="path">Themes</span> 把之前的正式主题重新 <code>Publish</code>，网站立刻恢复原样。这就是为什么第四节坚持要你先复制主题。</div>
 <div class="step"><b>评论板块：</b>正式版会直接用店里已装的 Loox 应用的官方组件（就是 our-reviews 页面那个），评论自动更新，不用人管。</div>
 
-<p style="color:#777;font-size:13px;margin-top:50px;border-top:1px solid #ddd;padding-top:10px">本指南随仓库 github.com/cleopatrahines/della-pages 维护 · 2026-07-28 · 有任何一步卡住，把这份文档和报错截图发给 Claude 即可</p>
+<p style="color:#777;font-size:13px;margin-top:50px;border-top:1px solid #ddd;padding-top:10px">本指南随仓库 github.com/cleopatrahines/della-pages 维护 · 2026-07-29 · 有任何一步卡住，把这份文档、页面网址、操作步骤和报错截图发给 Codex 即可</p>
 
 </body>
 </html>
