@@ -38,15 +38,15 @@ a { color: #286ED7; }
 <h2>二、文件地图（改哪个、别改哪个）</h2>
 <table>
 <tr><th>文件</th><th>说明</th><th>能改吗</th></tr>
-<tr><td><code>mockup/mockup_template.html</code></td><td><b>唯一的源文件</b>。含全部 HTML/CSS/JS，其中 <code>__INJECT_CONFIG__</code> 等 5 个占位符在构建时被替换</td><td>✅ 所有页面改动都改这里</td></tr>
+<tr><td><code>mockup/mockup_template.html</code></td><td><b>唯一的源文件</b>。含全部 HTML/CSS/JS，其中 <code>__INJECT_CONFIG__</code> 等 6 个占位符在构建时被替换</td><td>✅ 所有页面改动都改这里</td></tr>
 <tr><td><code>mockup/DELLA-mini-split-sizing-calculator-mockup.html</code></td><td>注入产物（交付预览文件）。由模板+数据生成</td><td>❌ 手改会在下次注入时被覆盖</td></tr>
 <tr><td><code>calculator_config.json</code></td><td>引擎全部系数（1.1.0）。单一事实来源，JS 不得复制其数值</td><td>⚠️ 改系数需领导/暖通复核批准</td></tr>
 <tr><td><code>mockup/climate_data.json</code></td><td>ZIP→气候区演示子集（18 个精确 ZIP + 前缀兜底）。生产用完整数据集 <code>climate_dataset_v1.0.0/</code>（33,784 ZIP）</td><td>⚠️ 结构别动</td></tr>
 <tr><td><code>mockup/bestsellers_data.json</code></td><td>Top Sales 8 个产品（用户指定），含真实 variant id 可加购</td><td>⚠️ 换产品需用户指定</td></tr>
-<tr><td><code>mockup/loox_reviews.json</code></td><td>19 条真实 Loox 评论（已筛：只留空调整机、优先长评）。来源 loox.io 渲染接口</td><td>⚠️ 只能换成真实抓取的评论</td></tr>
-<tr><td><code>mockup/us_climate_map.svg</code> + <code>mockup/state_climate.json</code></td><td>矢量地图（州级着色）+ 州→气候区映射（DOE 县级数据聚合）</td><td>⚠️ 颜色必须与页面图例一致</td></tr>
+<tr><td><code>mockup/loox_reviews.json</code></td><td>16 条真实 Loox 评论（已筛：只留空调整机、优先长评）。来源 loox.io 渲染接口</td><td>⚠️ 只能换成真实抓取的评论</td></tr>
+<tr><td><code>mockup/us_climate_map.svg</code> + <code>mockup/state_climate.json</code></td><td>州级五区简化示意图（不是 DOE/IECC 官方县级地图）+ 未输入 ZIP 时的州级 fallback；正式 ZIP 结果以县级数据为准</td><td>⚠️ 颜色必须与页面图例一致，且必须保留简化地图说明</td></tr>
 <tr><td><code>docs/</code></td><td>计算逻辑说明（HTML+PDF）、上线指南、本交接文档</td><td>✅ 内容更新后 PDF 需重新生成</td></tr>
-<tr><td><code>reference_engine.py</code>、<code>dataset_v1.2.0/</code>、<code>PRD.md</code></td><td>参考引擎、559 产品数据集、锁定 PRD（Rev 1.3）</td><td>❌ PRD 变更需用户批准</td></tr>
+<tr><td><code>reference_engine.py</code>、<code>dataset_v1.2.0/</code>、<code>PRD.md</code></td><td>参考引擎、559 产品数据集；锁定 PRD（Rev 1.3）当前未包含在仓库中，需补齐后再作为依据</td><td>❌ PRD 变更需用户批准</td></tr>
 </table>
 
 <h2>三、构建流程（每次改完模板必做）</h2>
@@ -72,7 +72,7 @@ EOF</pre>
 <p>然后三步验证，一步都不能省：</p>
 <ol>
 <li><b>JS 语法</b>：把交付文件里最后一个 <code>&lt;script&gt;</code> 抽出来跑 <code>node --check</code></li>
-<li><b>计算冒烟</b>：默认输入应得出 推荐 9,000 BTU / 载荷 8,000 BTU/h（完整 13 组用例见 <code>docs/计算逻辑说明_v2.pdf</code> 第五节，全部有精确预期值）</li>
+<li><b>计算冒烟</b>：默认输入应得出 推荐 9,000 BTU / 载荷 8,000 BTU/h（文档内 13 组页面验收对照用例见 <code>docs/计算逻辑说明.pdf</code> 第六节；<code>generate_test_cases.py</code> 另可生成 34 组测试数据，两者用途不同）</li>
 <li><b>视觉自检</b>：改了哪个板块，就用无头浏览器截那个板块的图和参考图对比，<b>确认一致再提交</b>。历史教训：Services 图标返工了四轮，都是因为没先自己看一眼</li>
 </ol>
 
@@ -119,9 +119,10 @@ git push                      # 需要 GitHub token（找用户要，用完让�
 <h2>八、常用参考</h2>
 <table>
 <tr><th>资源</th><th>位置</th></tr>
-<tr><td>计算逻辑+验收测试（13 组带精确预期值）</td><td><code>docs/计算逻辑说明_v2.pdf</code></td></tr>
+<tr><td>计算逻辑+页面验收对照（13 组带精确预期值）</td><td><code>docs/计算逻辑说明.pdf</code></td></tr>
+<tr><td>测试数据生成器（34 组）</td><td><code>generate_test_cases.py</code></td></tr>
 <tr><td>Shopify 上线操作手册</td><td><code>docs/上线指南.html</code></td></tr>
-<tr><td>PRD（锁定 Rev 1.3）</td><td><code>PRD.md</code></td></tr>
+<tr><td>PRD（锁定 Rev 1.3，待补入仓库）</td><td><code>PRD.md</code></td></tr>
 <tr><td>MSFL 计算器（交互对标）</td><td>minisplitsforless.com/pages/hvac-load-calculator</td></tr>
 <tr><td>Galaxy 页（视觉 token 来源）</td><td>dellahome.com/pages/della-x-la-galaxy-sweepstakes</td></tr>
 <tr><td>Loox 评论数据源</td><td><code>loox.io/widget/6U095hssyj/reviews?shop=dellahome-store.myshopify.com&amp;limit=20&amp;aggregate=true&amp;page=N</code>（服务端渲染，可分页抓取）</td></tr>

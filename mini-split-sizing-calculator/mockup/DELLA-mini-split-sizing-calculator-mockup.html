@@ -43,8 +43,8 @@ a{color:var(--blue-link)}
 .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:13.5px;font-weight:500;color:#333}
-input[type=text],input[type=number],select{height:46px;border:1px solid #CFCFCF;border-radius:5px;padding:0 13px;font-family:var(--sans);font-size:15px;color:var(--body);background:#fff;width:100%}
-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%230E1952' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;padding-right:40px;text-overflow:ellipsis}
+input[type=text],input[type=number],select{height:48px;border:1px solid #CFCFCF;border-radius:5px;padding:0 13px;font-family:var(--sans);font-size:15px;line-height:1.4;color:var(--body);background:#fff;width:100%}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%230E1952' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;padding:10px 40px 10px 13px;text-overflow:ellipsis}
 input:hover,select:hover{border-color:#8A8A8A}
 .climate-chip{display:none;margin-top:12px;font-size:13px;color:var(--muted)}
 .climate-chip b{color:var(--navy);font-weight:600}
@@ -57,6 +57,7 @@ input:hover,select:hover{border-color:#8A8A8A}
 .lg{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#333;border:none;background:none;cursor:pointer;padding:3px 2px;font-family:var(--sans)}
 .lg i{width:11px;height:11px;border-radius:50%;display:inline-block}
 .lg.active{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.map-note{margin-top:5px;text-align:center;font-size:11.5px;line-height:1.45;color:#6B7280}
 .result-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 28px;margin-top:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .r-cap{font-size:15px;color:#333}
 .r-big{font-family:var(--serif);font-size:44px;font-weight:500;color:var(--navy);line-height:1.25;letter-spacing:-1px;margin:6px 0}
@@ -293,7 +294,7 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
       </form>
 
       <div>
-        <div class="climate-map-svg" aria-label="United States climate regions map. Click your state"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" role="img" aria-label="United States climate regions map" id="usClimateMap">
+        <div class="climate-map-svg" aria-label="Simplified five-region United States sizing map. Click your state"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" role="img" aria-label="United States climate regions map" id="usClimateMap">
   <defs>
 <style type="text/css">
 .state {fill:#D8D5CB;cursor:pointer;transition:opacity .12s}
@@ -601,6 +602,7 @@ Place this code in the empty space below. */
           <button class="lg" data-region="marine" onclick="regionPick('marine')"><i style="background:var(--m-mr)"></i>Region #4</button>
           <button class="lg" data-region="cold" onclick="regionPick('cold')"><i style="background:var(--m-cd)"></i>Region #5</button>
         </div>
+        <p class="map-note">Simplified 5-region sizing view. Enter your ZIP Code for a more precise climate estimate.</p>
 
         <div class="result-card" id="resultCard" aria-live="polite" aria-label="Sizing result">
           <div id="resultBody">
@@ -641,7 +643,7 @@ Place this code in the empty space below. */
         <h3>Sizing a mini split for more than one room</h3>
         <p>Size each room on its own. A wall unit cannot cool through closed doors or around corners, so adding your rooms into one total and buying a single bigger unit does not work. Each room that needs its own comfort gets its own indoor head, and a <a href="https://dellahome.com/collections/mini-split-multi-zone">multi-zone system</a> runs up to six of them from one outdoor unit. Run the calculator once per room and match the combination to a pre-configured bundle.</p>
         <h3>When to double-check before you order</h3>
-        <p>Sunrooms and glass-heavy spaces gain far more solar heat than a normal room, and vaulted ceilings add air volume the eye underestimates. If a mini split will be your primary heat in a cold-winter state, the outdoor temperature rating matters as much as BTU; DELLA’s cold-climate series are rated down to −13°F and −22°F. In these cases the calculator still gives you an honest starting point, but it flags the result so you can confirm with our team or a local installer before ordering.</p>
+        <p>Sunrooms and glass-heavy spaces gain far more solar heat than a normal room, and vaulted ceilings add air volume the eye underestimates. If a mini split will be your primary heat in a cold-winter state, the outdoor temperature rating matters as much as BTU. Use the calculator as a cooling-load starting point, then confirm the selected model’s low-temperature heating performance with our team or a local installer before ordering.</p>
       </div>
       <button class="read-toggle" id="readToggle" onclick="toggleRead()">Read more</button>
     </div>
@@ -688,7 +690,7 @@ Place this code in the empty space below. */
       <details class="faq"><summary>How accurate is this mini split calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same starting factors a professional would: room area, climate, ceiling height, insulation, sun, glass, and internal heat. And it shows a range instead of a single falsely precise number. It is not a Manual J calculation, the professional standard that models wall assemblies, window specs, and local design weather in detail. For choosing a single-room unit it is reliable. For whole-home projects or permit paperwork, hire a pro.</p></details>
       <details class="faq"><summary>Should I get a 115V or 230V mini split?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>9K and 12K sizes come in both voltages; larger systems are 230V only. 115V runs on a standard household circuit, which is why bedrooms and DIY installs favor it. 230V needs a dedicated double-pole breaker, like a dryer or range. Check your panel before ordering, and confirm the exact voltage and breaker requirement on the product page, because it varies by model.</p></details>
       <details class="faq"><summary>Can I install a mini split myself?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Many DELLA customers do. Mounting the indoor head, setting the outdoor unit, and routing the line set are manageable weekend work with basic tools, and DELLA offers a rental tool kit with the vacuum pump and gauges the refrigerant connection requires. The electrical hookup is where most DIYers bring in a licensed electrician. Installing it yourself does not void the warranty as long as you register your system and follow the manual.</p></details>
-      <details class="faq"><summary>Will a mini split heat in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes. Every DELLA mini split is a heat pump that heats and cools. The difference is how cold it can keep working outside: standard series are rated to 5°F, and the cold-climate series run down to −13°F or −22°F. Enter your ZIP Code above and the calculator only suggests series rated for your winters. In the coldest regions, keep a backup heat source for the deepest cold snaps.</p></details>
+      <details class="faq"><summary>Will a mini split heat in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes. DELLA mini split heat pumps provide heating as well as cooling, but low-temperature performance varies by series. Some cold-climate models are rated to operate at −13°F or −22°F. The calculator uses your ZIP Code to estimate climate conditions and cooling load; it does not verify a specific model’s heating capacity. If the system will be your primary heat, confirm the product’s low-temperature heating performance and consider backup heat for extreme cold.</p></details>
       <details class="faq"><summary>What size mini split for an open floor plan?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>If the space flows together through wide openings, measure it as one and enter the total square footage. If doors close between areas, or a corner blocks the airflow, treat each area as its own room; every room gets its own indoor unit, ideally on one multi-zone system. Past roughly 1,500 sq. ft., plan on two indoor units for even airflow no matter what the math says. Open stairways to another floor are the trickiest case. Size generously there and check with our support team before you order.</p></details>
       <details class="faq"><summary>How much does a mini split cost to run?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Less than almost any other electric heating or cooling. Efficiency is measured in SEER2, and DELLA systems range from 17 to 25; a higher number means less electricity for the same comfort. Your actual bill depends on your climate, electric rate, and running hours, but a right-sized inverter unit costs far less to run than window units, portable ACs, or electric baseboard heat.</p></details>
     </div>
@@ -732,7 +734,7 @@ function resolveZip(){
 function setRegion(type, silent){
   climate = { type, code:null, winter:null, summer:null, source:'manual' };
   const chip = document.getElementById('climateChip');
-  chip.innerHTML = `<b>${REGION_NAMES[type]}</b> selected. Enter your ZIP Code for design-temperature precision.`;
+  chip.innerHTML = `<b>${REGION_NAMES[type]}</b> selected. Enter your ZIP Code for a more precise climate estimate.`;
   chip.style.display='block';
   highlightLegend(type);
   if(!silent) onCalculate();
@@ -789,6 +791,7 @@ function readRoomForm(){
   sErr.style.display='none';
   return {
     sqft, ceiling: parseFloat(document.getElementById('ceiling').value),
+    intent: document.getElementById('intent').value,
     insulation: document.getElementById('insulation').value,
     sun: document.getElementById('sun').value,
     glazing: document.getElementById('glazing').value,
@@ -856,6 +859,9 @@ function onCalculate(){
     html+=`<a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=${bin}+BTU+mini+split" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a>
     <div class="r-alt">Cooling several rooms? <a href="https://dellahome.com/search?type=product&q=${k}K">See multi-zone systems with a ${k}K head</a></div>`;
   }
+  if(room.intent==='primary'){
+    html+=`<div class="r-warn">Sizing is based on estimated cooling load. Confirm the selected model’s low-temperature heating performance before using it as your primary heat source.</div>`;
+  }
   body.innerHTML=html;
   track('btu_calculator_completed',{type:'one'});
 }
@@ -918,7 +924,7 @@ function renderReviews(){
 renderBestsellers();
 renderReviews();
 setRegion('mixed', true);
-document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for precision, or click your state for a regional estimate.';
+document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for a more precise climate estimate, or click your state for a regional fallback.';
 document.getElementById('climateChip').style.display='block';
 document.querySelectorAll('#calcForm input, #calcForm select').forEach(el=>{
   if(el.id==='zip') return;

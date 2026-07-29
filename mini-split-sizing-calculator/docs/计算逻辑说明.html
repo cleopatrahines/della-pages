@@ -11,6 +11,7 @@ h2 { font-size: 14pt; color: #0E1952; margin-top: 26px; border-left: 5px solid #
 h3 { font-size: 12pt; color: #286ED7; margin-top: 18px; }
 table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt; }
 th, td { border: 1px solid #C9CFDD; padding: 6px 10px; text-align: left; }
+tr { break-inside: avoid; page-break-inside: avoid; }
 th { background: #EEF3FC; color: #0E1952; }
 .box { background: #F5F8FE; border: 1px solid #C9CFDD; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
 .formula { background: #0E1952; color: #fff; padding: 10px 16px; border-radius: 6px; font-size: 11pt; letter-spacing: .5px; }
@@ -41,7 +42,8 @@ a { color: #286ED7; }
 <tr><td>Region #2 温暖干燥（橙）</td><td>× 1.05</td><td>加州、亚利桑那</td></tr>
 <tr><td>Region #1 炎热潮湿（红）</td><td>× 1.1</td><td>得州、佛州、路易斯安那</td></tr>
 </table>
-<p>用户输入 ZIP 时，系统按<a href="https://www.energy.gov/eere/buildings/building-america-climate-specific-guidance">美国能源部 Building America 气候分区（energy.gov）</a>的县级数据直接定位（配合<a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">人口普查局 ZCTA 邮编对照（census.gov）</a>，覆盖 33,784 个邮编），冬夏设计温度为按 IECC 分区的政策近似值（口径参考 <a href="https://basc.pnnl.gov/">PNNL Building America Solution Center</a>，站点级精确值在暖通复核清单内）。地图选州只作为未填邮编时的区域级备选。这是相对竞品的一个实质差异：两家头部竞品的五区地图均为手绘营销图，且互相并不一致；我们的分区可溯源到政府县级数据。</p>
+<p><b>五区模型与官方地图不是同一层级。</b>页面上的 Region #1–#5 是面向快速选型的负荷修正分组：炎热潮湿、炎热干燥、混合、海洋性、寒冷。它将 Building America/IECC 的县级类型合并为五个便于使用的计算区域，因此不是 IECC 1–8、A/B/C 官方县级分区图。<a href="https://minisplitsforless.com/pages/hvac-load-calculator">MiniSplitsForLess</a> 与 <a href="https://www.pioneerminisplit.com/pages/hvac-calculator">Pioneer</a> 也采用相似的五区快速估算流程；这说明五区交互是同行常见做法，但不能据此把五色地图称为官方 DOE/IECC 地图。</p>
+<p><b>页面地图与 ZIP 数据的精度也不同。</b>当前地图把整州统一着色，只作为未填 ZIP 时的区域级备选，所以加州、得州等跨多个气候区的州会与官方县级边界不同。当前视觉稿仅包含 18 个演示 ZIP 的精确记录和三位前缀兜底；正式版计划使用 33,784 个 ZIP 的完整对应结果（以 896 个三位前缀主值加 2,808 个例外压缩保存）。该对应关系来自<a href="https://www.energy.gov/cmei/buildings/building-america-climate-specific-guidance">美国能源部 Building America</a>县级气候资料与<a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">人口普查局 ZCTA</a>县域对照。冬夏设计温度仍是 DELLA 按 IECC 区号制定的政策近似值，并非 ASHRAE 站点设计温度，也不用于法规、报建或 Manual J。</p>
 
 <h3>4. 围护修正（乘法）</h3>
 <p>保温、门窗气密、窗量三项分别加减，合成 0.8–1.35 的倍数：</p>
@@ -95,8 +97,8 @@ a { color: #286ED7; }
 <p><b>当前决策：</b>维持 20 BTU/sq.ft. 基准。若暖通复核结论为贴近竞品口径，仅需调整配置文件中 base_btu_per_sqft 或气候乘数一处即可全局生效，无需改动代码。</p>
 
 <h2>五、预判追问</h2>
-<h3>买来主要为了取暖，为什么按"冷负荷"定尺寸？</h3>
-<p>行业惯例即按冷负荷选型：制冷对尺寸更敏感（过大导致短循环和除湿失效，而制热由变频自动调节输出，超配惩罚小）。取暖需求的差异体现在<b>系列选择</b>而非吨位：选了"主取暖"并填入寒冷地区邮编时，推荐会限定在低温工况达标的冷气候系列（−13°F / −22°F 级别），并采用冬季设计温度校验。</p>
+<h3>买来主要为了取暖，为什么结果仍按"冷负荷"定尺寸？</h3>
+<p>当前视觉稿的容量推荐按估算冷负荷计算；选择"主取暖"不会改变容量，也不会自动筛选产品系列。寒冷地区还需核对具体型号的低温运行范围和低温制热能力。若 mini split 将作为主要热源，应在购买前让 DELLA 支持或持证暖通人员确认型号，并为极端低温准备备用热源。</p>
 <h3>C2 用例 12,600 BTU/h 推荐 18,000，容量比 1.43 超出 1.25 上限，是不是 bug？</h3>
 <p>不是，这是<b>目录空档</b>的既定处理策略。DELLA 单机档位在 12,000 与 18,000 之间无产品（13K/14K/15K 市场上也极少见），当载荷落入 12,001–13,599 区间时只有两个选择：向下选 12,000（容量不足，最热天压不住）或向上选 18,000（超配但变频可调节）。引擎选择向上，因为"不足"是硬失败、"超配"是软代价。24,001–27,999 区间同理。该空档在产品数据集覆盖报告中有记录，属目录结构问题而非算法问题。</p>
 <h3>档位为什么是 9/12/18/24/36K 这几个？</h3>
@@ -104,10 +106,10 @@ a { color: #286ED7; }
 <h3>页面上的数字可信吗？</h3>
 <table>
 <tr><th>数据</th><th>来源</th></tr>
-<tr><td>评论（4.9 分 / 1,702 条 / 19 条展示）</td><td>店铺已装 Loox 应用的真实数据，姓名/星级/日期/照片均未加工；星级只显示数据中存在的，日期不虚构</td></tr>
+<tr><td>评论（4.9 分 / 1,702 条 / 16 条展示）</td><td>店铺已装 Loox 应用的真实数据，姓名/星级/日期/照片均未加工；星级只显示数据中存在的，日期不虚构</td></tr>
 <tr><td>Top Sales 价格与评分</td><td>店铺前台实时抓取（含真实 variant id，可实际加购）</td></tr>
 <tr><td>产品档位与库存</td><td>产品数据集 559 个在售单品（2026-07 storefront 审计）</td></tr>
-<tr><td>气候分区与设计温度</td><td>DOE/PNNL 县级数据 + Census ZCTA 对照（前文已附链接）</td></tr>
+<tr><td>气候分区与设计温度</td><td>五区地图为州级简化示意；正式 ZIP 对应源自 DOE/PNNL 县级数据 + Census ZCTA；设计温度为 DELLA 政策近似值</td></tr>
 </table>
 
 <h2 style="page-break-before:always">六、验收测试用例（截图对照表）</h2>
