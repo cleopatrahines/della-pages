@@ -1,0 +1,211 @@
+{
+  "checks": [
+    {
+      "name": "1440 no horizontal overflow",
+      "pass": true,
+      "detail": "1440/1440"
+    },
+    {
+      "name": "1280 no horizontal overflow",
+      "pass": true,
+      "detail": "1280/1280"
+    },
+    {
+      "name": "1024 no horizontal overflow",
+      "pass": true,
+      "detail": "1024/1024"
+    },
+    {
+      "name": "768 no horizontal overflow",
+      "pass": true,
+      "detail": "768/768"
+    },
+    {
+      "name": "430 no horizontal overflow",
+      "pass": true,
+      "detail": "430/430"
+    },
+    {
+      "name": "390 no horizontal overflow",
+      "pass": true,
+      "detail": "390/390"
+    },
+    {
+      "name": "360 no horizontal overflow",
+      "pass": true,
+      "detail": "360/360"
+    },
+    {
+      "name": "one H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "eight products",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "six visible FAQs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "FAQ schema six entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "neutral by default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no duplicate tabs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no target blank",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "three direct ATC buttons",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "five choose options links",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "central panel activates",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "central URL preserves params",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "central final CTA updates",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "supplement preselects",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "preselection does not auto-scroll",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "preview ATC does not transact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no-JS panels remain visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "viewports": {
+    "360": {
+      "bodyWidth": 360,
+      "viewportWidth": 360,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "390": {
+      "bodyWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "430": {
+      "bodyWidth": 430,
+      "viewportWidth": 430,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "768": {
+      "bodyWidth": 768,
+      "viewportWidth": 768,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "1024": {
+      "bodyWidth": 1024,
+      "viewportWidth": 1024,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "1280": {
+      "bodyWidth": 1280,
+      "viewportWidth": 1280,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    },
+    "1440": {
+      "bodyWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6
+    }
+  },
+  "consoleErrors": []
+}

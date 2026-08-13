@@ -1,0 +1,363 @@
+{
+  "checks": [
+    {
+      "name": "1440 no horizontal overflow",
+      "pass": true,
+      "detail": "1440/1440"
+    },
+    {
+      "name": "1440 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1280 no horizontal overflow",
+      "pass": true,
+      "detail": "1280/1280"
+    },
+    {
+      "name": "1280 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 no horizontal overflow",
+      "pass": true,
+      "detail": "1024/1024"
+    },
+    {
+      "name": "1024 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "768 no horizontal overflow",
+      "pass": true,
+      "detail": "768/768"
+    },
+    {
+      "name": "768 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "430 no horizontal overflow",
+      "pass": true,
+      "detail": "430/430"
+    },
+    {
+      "name": "430 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "390 no horizontal overflow",
+      "pass": true,
+      "detail": "390/390"
+    },
+    {
+      "name": "390 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "360 no horizontal overflow",
+      "pass": true,
+      "detail": "360/360"
+    },
+    {
+      "name": "360 images loaded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "one H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "eight products",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "six visible FAQs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "FAQ schema six entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "neutral by default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "three direct ATC buttons",
+      "pass": true,
+      "detail": "atc=3"
+    },
+    {
+      "name": "five choose options links",
+      "pass": true,
+      "detail": "co=5"
+    },
+    {
+      "name": "ductless preselects",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "preselection does not auto-scroll",
+      "pass": true,
+      "detail": "scrollY=0"
+    },
+    {
+      "name": "ductless final CTA updates",
+      "pass": true,
+      "detail": "Ready to Build Your Ductless Setup?"
+    },
+    {
+      "name": "central preselects",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "central final CTA updates",
+      "pass": true,
+      "detail": "Ready to Explore Central Air?"
+    },
+    {
+      "name": "supplement preselects",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "supplement final CTA updates",
+      "pass": true,
+      "detail": "Ready to Target the Problem Area?"
+    },
+    {
+      "name": "invalid path stays neutral",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "gateway click activates central",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "central URL preserves params",
+      "pass": true,
+      "detail": "file:///C:/Users/18041/Desktop/della-pages/Ductless%20Mini%20Split%20vs%20Central%20Air/ductless-mini-split-vs-central-air.html?utm_source=ads&fbclid=xyz&path=central"
+    },
+    {
+      "name": "gateway click scrolls to shop",
+      "pass": true,
+      "detail": "scrollY=1253"
+    },
+    {
+      "name": "change project control appears",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "path switch central->ductless",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "change project resets to neutral",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "change project removes path param keeps others",
+      "pass": true,
+      "detail": "file:///C:/Users/18041/Desktop/della-pages/Ductless%20Mini%20Split%20vs%20Central%20Air/ductless-mini-split-vs-central-air.html?utm_source=ads&fbclid=xyz"
+    },
+    {
+      "name": "change project restores default CTA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "change project moves focus to gateway",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "FAQ expands",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "preview ATC does not transact",
+      "pass": true,
+      "detail": "Preview only — live cart actions are enabled on the DELLA storefront."
+    },
+    {
+      "name": "keyboard Enter activates path",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "gateway button focusable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced motion respected",
+      "pass": true,
+      "detail": "scrollY=1253 (jumped instantly, no smooth anim)"
+    },
+    {
+      "name": "no-JS panels remain visible",
+      "pass": true,
+      "detail": "{\"ductless\":true,\"central\":true,\"supplement\":true,\"faqAnswerExpandable\":true}"
+    },
+    {
+      "name": "ductless 390 no overflow",
+      "pass": true,
+      "detail": "390/390"
+    },
+    {
+      "name": "central 390 no overflow",
+      "pass": true,
+      "detail": "390/390"
+    },
+    {
+      "name": "central 768 no overflow",
+      "pass": true,
+      "detail": "768/768"
+    },
+    {
+      "name": "supplement 430 no overflow",
+      "pass": true,
+      "detail": "430/430"
+    },
+    {
+      "name": "no console errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no failed local assets",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "viewports": {
+    "360": {
+      "bodyWidth": 360,
+      "viewportWidth": 360,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "390": {
+      "bodyWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "430": {
+      "bodyWidth": 430,
+      "viewportWidth": 430,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "768": {
+      "bodyWidth": 768,
+      "viewportWidth": 768,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "1024": {
+      "bodyWidth": 1024,
+      "viewportWidth": 1024,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "1280": {
+      "bodyWidth": 1280,
+      "viewportWidth": 1280,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    },
+    "1440": {
+      "bodyWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "panelCount": 3,
+      "activePanels": 0,
+      "neutralActive": true,
+      "tabs": 0,
+      "faqCount": 6,
+      "productCount": 8,
+      "schemaCount": 6,
+      "naturalImagesBroken": [],
+      "atc": 3,
+      "chooseOptions": 5
+    }
+  },
+  "consoleErrors": [],
+  "failedAssets": []
+}
