@@ -322,6 +322,11 @@ Do not use: holiday/coupon content, countdowns, sale red, glassmorphism, purple 
 
 ## 12. Resolved decisions
 
+- **Owner override 2026-08-13 (supersedes the V1 Add To Cart rules in §5 and below):** the three single-variant Vario products no longer use `Add To Cart`. Their primary action is `View Product` opening the PDP in a **new tab** (`target="_blank" rel="noopener"`), and the duplicate secondary `View Product` link is removed on those cards. Static-preview cart code and the variant-ID hydration logic were removed with it. The five `Choose Options` cards (Serena 12K + four Central systems) are unchanged and remain same-tab. Reason: in the static/GitHub preview ATC could never transact and felt broken; the owner prefers a clean PDP route for V1.
+- **Owner override 2026-08-13 (follow-up):** the Serena 12K card's `Choose Options` + secondary link was also replaced by the same new-tab `View Product` primary action so all four Ductless cards are uniform. Only the four Central cards retain `Choose Options` + `View System`.
+- **Owner override 2026-08-13 (final):** the four Central cards' `Choose Options` + `View System` were also replaced by the same new-tab `View Product` primary action. All eight product cards are now uniform: price → navy `View Product` (new tab). The `View Product`/`View System` asymmetry and all cart/variant rules in §5 are fully superseded for V1.
+- **Owner override 2026-08-13 (visual):** button system and product-card styling follow the Ceiling Cassette vs Wall Mount reference page (navy primary with invert hover, gray-border outline with blue-light hover, square-corner product cards with hover zoom); section H2s and their subheadings are left-aligned rather than centered; the final CTA's installer action is a quiet text link instead of a third identical button.
+
 - Page classifier: Comparison guide.
 - Primary decision: identify whether the project is Replace, Add, or Supplement, then route to the appropriate starting path.
 - Primary routing: two main collections plus eight owner-approved PDPs.

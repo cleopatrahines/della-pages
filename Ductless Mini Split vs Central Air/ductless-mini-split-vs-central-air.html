@@ -33,31 +33,28 @@
     .dsc-section{padding:76px 0}
     .dsc-section--compact{padding:58px 0}
     .dsc-heading{margin:0;font:500 clamp(30px,3vw,40px)/1.12 Spectral,Georgia,serif;color:var(--navy)}
-    .dsc-heading--center{text-align:center}
-    .dsc-subheading{max-width:720px;margin:12px auto 0;color:var(--muted);text-align:center}
-    .dsc-btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:1px solid transparent;border-radius:4px;text-decoration:none;font-weight:600;line-height:1.25;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s}
+    .dsc-heading--center{text-align:left}
+    .dsc-subheading{margin:12px 0 0;color:var(--muted)}
+    .dsc-btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:1px solid transparent;border-radius:4px;text-decoration:none;font-size:15px;font-weight:600;line-height:1.25;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s}
     .dsc-btn:hover{transform:translateY(-1px)}
-    .dsc-btn--primary{background:var(--blue);color:var(--white)}
-    .dsc-btn--primary:hover{background:var(--blue-hover)}
-    .dsc-btn--navy{background:var(--navy);color:var(--white)}
-    .dsc-btn--outline{background:var(--white);border-color:var(--blue);color:var(--navy)}
-    .dsc-btn--outline:hover{background:var(--blue-light)}
-    .dsc-btn:focus-visible,.dsc-path:focus-visible,.dsc-change:focus-visible,.dsc-detail:focus-visible,.dsc-faq summary:focus-visible{outline:3px solid #89a9f2;outline-offset:3px}
+    .della-system-compare .dsc-btn--primary,.della-system-compare .dsc-btn--navy{background:var(--navy);border-color:var(--navy);color:var(--white)}
+    .della-system-compare .dsc-btn--primary:hover,.della-system-compare .dsc-btn--navy:hover{background:var(--white);color:var(--navy);border-color:var(--navy)}
+    .della-system-compare .dsc-btn--outline{background:var(--white);border-color:var(--gray-200);color:var(--navy)}
+    .della-system-compare .dsc-btn--outline:hover{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
+    .dsc-btn:focus-visible,.dsc-path:focus-visible,.dsc-change:focus-visible,.dsc-final__install:focus-visible,.dsc-faq summary:focus-visible{outline:3px solid #89a9f2;outline-offset:3px}
     .dsc-btn[disabled]{background:var(--gray-200);border-color:var(--gray-200);color:#67718a;cursor:not-allowed;transform:none}
 
     .dsc-hero{overflow:hidden;background:linear-gradient(105deg,#f9fbff 0%,#f3f8ff 53%,#edf6ff 100%);border-bottom:1px solid #edf1f7}
     .dsc-hero__inner{min-height:508px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(480px,1.08fr);align-items:center;gap:40px}
     .dsc-hero__copy{position:relative;z-index:2;padding:70px 0}
-    .dsc-hero h1{max-width:560px;margin:0;font:500 clamp(45px,4.6vw,56px)/1.02 Spectral,Georgia,serif;color:var(--navy);letter-spacing:-.02em}
+    .dsc-hero h1{max-width:560px;margin:0;font:500 clamp(45px,4.6vw,56px)/1.08 Spectral,Georgia,serif;color:var(--navy)}
     .dsc-hero__lead{max-width:575px;margin:24px 0 0;font-size:17px;color:#25345f}
     .dsc-hero__lead+.dsc-hero__lead{margin-top:14px}
     .dsc-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .dsc-hero__visual{position:relative;height:430px;align-self:end}
-    .dsc-hero__visual:before{content:"";position:absolute;inset:21% 0 0 8%;background:radial-gradient(ellipse at center,rgba(88,132,231,.18),transparent 67%)}
-    .dsc-hero__mini{position:absolute;z-index:2;width:52%;left:0;bottom:22px;filter:drop-shadow(0 18px 18px rgba(14,25,83,.11))}
-    .dsc-hero__central{position:absolute;width:54%;right:-2%;bottom:5px;filter:drop-shadow(0 19px 18px rgba(14,25,83,.12))}
-    .dsc-hero__label{position:absolute;z-index:3;padding:6px 10px;border:1px solid rgba(88,132,231,.3);background:rgba(255,255,255,.9);color:var(--navy);font-size:11px;font-weight:600;text-transform:uppercase}
-    .dsc-hero__label--ductless{left:5%;top:55px}.dsc-hero__label--central{right:2%;top:27px}
+    .dsc-hero__visual{position:relative;height:470px;align-self:end}
+    .dsc-hero__visual:before{content:"";position:absolute;inset:25% 0 0 10%;background:radial-gradient(ellipse at center,rgba(88,132,231,.14),transparent 67%)}
+    .dsc-hero__mini{position:absolute;z-index:2;width:50%;left:1%;bottom:10px;filter:drop-shadow(0 18px 18px rgba(14,25,83,.11))}
+    .dsc-hero__central{position:absolute;width:50%;right:1%;bottom:10px;filter:drop-shadow(0 19px 18px rgba(14,25,83,.12))}
 
     .dsc-gateway{background:var(--white)}
     .dsc-path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
@@ -70,8 +67,9 @@
     .dsc-path__title{max-width:280px;margin:8px 0 0;font:500 22px/1.18 Spectral,Georgia,serif;color:var(--navy)}
     .dsc-path__condition{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
     .dsc-path__result{margin:14px 0 0;font-size:13px;font-weight:600;color:var(--navy)}
-    .dsc-path__action{width:100%;min-height:46px;margin-top:auto;padding:11px 12px;border:1px solid var(--blue);border-radius:4px;background:var(--white);color:var(--navy);font-weight:600}
-    .dsc-path[aria-pressed="true"] .dsc-path__action{background:var(--blue);color:var(--white)}
+    .dsc-path__action{width:100%;min-height:46px;margin-top:auto;padding:11px 12px;border:1px solid var(--gray-200);border-radius:4px;background:var(--white);color:var(--navy);font-weight:600}
+    .dsc-path:hover .dsc-path__action{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+    .dsc-path[aria-pressed="true"] .dsc-path__action{background:var(--navy);border-color:var(--navy);color:var(--white)}
     .dsc-unsure{margin:25px 0 0;text-align:center;color:var(--muted);font-size:14px}
     .dsc-unsure a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
 
@@ -88,30 +86,32 @@
     .dsc-panel{margin-top:6px}
     .js .dsc-panel{display:none}
     .js .dsc-panel.is-active{display:block;animation:dsc-fade .25s ease both}
+    .js .dsc-panel>.dsc-heading--center,.js .dsc-panel>.dsc-subheading{display:none}
     @keyframes dsc-fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
     .dsc-panel + .dsc-panel{margin-top:64px}
     .js .dsc-panel + .dsc-panel{margin-top:6px}
     .dsc-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-    .dsc-product{display:flex;min-width:0;flex-direction:column;padding:17px;border:1px solid var(--gray-200);border-radius:6px;background:var(--white);box-shadow:0 5px 16px rgba(14,25,83,.035)}
-    .dsc-product__role{min-height:21px;color:var(--blue);font-size:11px;font-weight:600;text-transform:uppercase}
-    .dsc-product__capacity{margin:0;color:var(--navy);font:700 29px/1 Spectral,Georgia,serif}
-    .dsc-product__reference{min-height:38px;margin:7px 0 0;color:var(--muted);font-size:12px}
-    .dsc-product__media{display:grid;height:220px;place-items:center;margin:12px -3px 13px;overflow:hidden;background:#fff}
-    .dsc-product__media img{width:100%;height:100%;object-fit:contain}
-    .dsc-product__title{min-height:91px;margin:0;font:500 17px/1.34 Spectral,Georgia,serif;color:var(--navy)}
-    .dsc-specs{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
-    .dsc-specs span{padding:5px 7px;border:1px solid var(--gray-200);border-radius:3px;background:var(--gray-50);color:#334163;font-size:10px;font-weight:600;line-height:1.2}
-    .dsc-product__coverage{min-height:26px;margin:13px 0 0;color:var(--muted);font-size:12px}
-    .dsc-product__price{margin:auto 0 13px;padding-top:14px;font:700 25px/1.1 Spectral,Georgia,serif;color:var(--navy)}
+    .dsc-product{--card-inset:18px;display:flex;min-width:0;flex-direction:column;border:1px solid #e6eaf2;background:var(--white);transition:border-color .18s ease,box-shadow .18s ease}
+    .dsc-product:hover{border-color:var(--blue);box-shadow:0 8px 20px rgba(14,25,83,.08)}
+    .dsc-product__role{margin:16px var(--card-inset) 0;color:var(--blue);font-size:11px;font-weight:600;text-transform:uppercase}
+    .dsc-product__capacity{margin:16px var(--card-inset) 0;color:var(--navy);font:700 29px/1 Spectral,Georgia,serif}
+    .dsc-product__reference{margin:7px var(--card-inset) 0;color:var(--muted);font-size:12px}
+    .dsc-product__media{display:grid;place-items:center;aspect-ratio:1/.92;margin:12px 0 0;overflow:hidden;padding:28px 20px 12px;background:var(--white)}
+    .dsc-product__media img{width:100%;max-height:196px;object-fit:contain;transition:transform .3s ease}
+    .dsc-product:hover .dsc-product__media img{transform:scale(1.04)}
+    .dsc-product__title{margin:14px var(--card-inset) 0;font:400 15px/1.35 Spectral,Georgia,serif;color:var(--navy)}
+    .dsc-specs{display:flex;flex-wrap:wrap;gap:7px;margin:12px var(--card-inset) 10px}
+    .dsc-specs span{padding:6px 7px;border:1px solid var(--gray-200);background:var(--gray-50);color:var(--muted);font-size:12px;line-height:1;white-space:nowrap}
+    .dsc-product__coverage{margin:2px var(--card-inset) 0;color:var(--muted);font-size:12px}
+    .dsc-product__price{margin:auto var(--card-inset) 14px;padding-top:14px;font:700 20px/1.15 Spectral,Georgia,serif;color:var(--navy)}
     .dsc-product__price small{font:400 12px/1.3 Poppins,Arial,sans-serif;color:var(--muted)}
-    .dsc-product .dsc-btn{width:100%;padding-inline:12px}
-    .dsc-detail{align-self:center;margin-top:11px;color:var(--navy);font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
-    .dsc-shop__footer{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:27px}
+    .dsc-product .dsc-btn{width:auto;min-height:46px;margin:0 var(--card-inset) 18px;padding-inline:12px;border-radius:0;background:var(--navy);border-color:var(--navy);color:var(--white)}
+    .dsc-product .dsc-btn:hover{background:var(--white);color:var(--navy);border-color:var(--navy)}
+        .dsc-shop__footer{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:27px}
     .dsc-note{max-width:900px;margin:19px auto 0;color:var(--muted);font-size:12px;text-align:center}
-    .dsc-cart-status{min-height:24px;margin:12px 0 0;color:var(--muted);font-size:12px;text-align:center}
 
     .dsc-supplement{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);align-items:center;gap:48px;padding:34px;border:1px solid #dce4f3;border-radius:6px;background:var(--white)}
-    .dsc-supplement__visual{position:relative;min-height:300px;display:grid;place-items:center;background:var(--blue-surface)}
+    .dsc-supplement__visual{position:relative;min-height:300px;display:grid;place-items:center;border-radius:4px;background:var(--blue-surface)}
     .dsc-supplement__visual:before{content:"PROBLEM AREA";position:absolute;top:20px;left:20px;color:var(--blue);font-size:11px;font-weight:600}
     .dsc-supplement__visual img{width:82%;max-height:270px;object-fit:contain}
     .dsc-supplement h3{margin:0;font:500 34px/1.12 Spectral,Georgia,serif;color:var(--navy)}
@@ -123,8 +123,9 @@
     .dsc-table{width:100%;border-collapse:collapse;table-layout:fixed}
     .dsc-table th,.dsc-table td{padding:17px 19px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);text-align:left;vertical-align:top}
     .dsc-table th:last-child,.dsc-table td:last-child{border-right:0}.dsc-table tr:last-child td{border-bottom:0}
-    .dsc-table thead th{background:#e9f4ff;color:var(--navy);font-weight:600;text-align:center}
+    .dsc-table thead th{background:#e9f4ff;color:var(--navy);font-weight:600;text-align:center;vertical-align:middle}
     .dsc-table thead img{display:block;height:52px;width:auto;max-width:80%;object-fit:contain;margin:8px auto 0}
+    .dsc-table thead img.dsc-thumb--wide{height:34px}
     .dsc-table thead th:first-child{width:24%;text-align:left}
     .dsc-table tbody td{color:#34415f;font-size:14px}
     .dsc-table tbody td:first-child{color:var(--navy);font-weight:600}
@@ -149,19 +150,20 @@
     .dsc-final__box{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:36px;padding:34px 40px;border:1px solid #c7eaf7;border-radius:6px;background:var(--trust-bg)}
     .dsc-final h2{margin:0;font:500 34px/1.15 Spectral,Georgia,serif;color:var(--navy)}
     .dsc-final p{max-width:650px;margin:9px 0 0;color:var(--muted)}
-    .dsc-final__actions{display:grid;gap:9px;min-width:260px}
+    .dsc-final__actions{display:grid;gap:9px;min-width:260px;justify-items:center}
+    .dsc-final__actions .dsc-btn{width:100%}
+    .dsc-final__install{color:var(--navy);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
     @media(max-width:1024px){
       .dsc-container{width:min(100% - 44px,1200px)}
       .dsc-hero__inner{grid-template-columns:1fr 1fr;gap:20px}.dsc-hero__visual{height:390px}
       .dsc-hero__actions{gap:10px}.dsc-hero__actions .dsc-btn{padding-inline:14px}
       .dsc-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-      .dsc-product__title{min-height:67px}
       .dsc-install{grid-template-columns:1fr}.dsc-install__actions{justify-content:flex-start}
     }
     @media(max-width:820px){
       .dsc-section{padding:60px 0}.dsc-section--compact{padding:50px 0}
-      .dsc-hero__inner{min-height:0;grid-template-columns:1fr}.dsc-hero__copy{padding:58px 0 10px}.dsc-hero__visual{width:min(650px,100%);height:360px;margin:auto}
+      .dsc-hero__inner{min-height:0;grid-template-columns:1fr}.dsc-hero__copy{padding:58px 0 10px}.dsc-hero__visual{width:min(650px,100%);height:385px;margin:auto}
       .dsc-path-grid{grid-template-columns:1fr}.dsc-path{min-height:0;align-items:flex-start;text-align:left;padding:24px}.dsc-path__icon{width:48px;height:48px}.dsc-path__title{max-width:none}.dsc-path__action{margin-top:22px}
       .dsc-supplement{grid-template-columns:1fr}.dsc-supplement__visual{min-height:250px}
       .dsc-table-wrap{border:0;overflow:visible}.dsc-table,.dsc-table tbody,.dsc-table tr,.dsc-table td{display:block}.dsc-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.dsc-table tbody{display:grid;gap:12px}.dsc-table tr{border:1px solid var(--gray-200);border-radius:6px;overflow:hidden;background:var(--white)}.dsc-table td{border:0!important;padding:12px 16px}.dsc-table td:first-child{background:#e9f4ff;font-size:15px}.dsc-table td:not(:first-child):before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--blue);font-size:10px;font-weight:600;text-transform:uppercase}
@@ -169,14 +171,14 @@
     }
     @media(max-width:560px){
       .dsc-container{width:calc(100% - 32px)}
-      .dsc-hero h1{font-size:40px}.dsc-hero__lead{font-size:15px}.dsc-hero__actions{display:grid}.dsc-hero__visual{height:295px}.dsc-hero__label{display:none}.dsc-hero__mini{width:57%;left:-3%;bottom:17px}.dsc-hero__central{width:58%;right:-5%}
+      .dsc-hero h1{font-size:40px}.dsc-hero__lead{font-size:15px}.dsc-hero__actions{display:grid}.dsc-hero__visual{height:315px}.dsc-hero__mini{width:50%;left:0;bottom:8px}.dsc-hero__central{width:50%;right:0;bottom:8px}
       .dsc-shop__top{align-items:flex-start}.dsc-change{font-size:13px}
-      .dsc-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.dsc-product{padding:12px}.dsc-product__media{height:155px}.dsc-product__title{min-height:110px;font-size:14px}.dsc-product__price{font-size:21px}.dsc-specs span{font-size:9px}.dsc-product .dsc-btn{min-height:44px;font-size:12px;padding:9px 6px}.dsc-product__coverage{min-height:42px;font-size:10px}.dsc-product__capacity{font-size:25px}.dsc-product__reference{font-size:10px}
+      .dsc-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.dsc-product{--card-inset:12px}.dsc-product__media{aspect-ratio:auto;height:170px;margin-top:8px;padding:16px 10px 8px}.dsc-product__media img{max-height:150px}.dsc-product__title{font-size:13px;line-height:1.28}.dsc-product__price{font-size:17px}.dsc-specs{gap:4px;margin-block:8px}.dsc-specs span{padding:5px 6px;font-size:11px}.dsc-product .dsc-btn{min-height:44px;font-size:13px;padding:9px 8px}.dsc-product__coverage{font-size:10px}.dsc-product__capacity{font-size:25px}.dsc-product__reference{font-size:10px}
       .dsc-neutral{padding:38px 22px}.dsc-neutral h3{font-size:25px}
       .dsc-supplement{padding:20px;gap:26px}.dsc-supplement h3{font-size:29px}.dsc-supplement__actions,.dsc-install__actions{display:grid}.dsc-supplement__actions .dsc-btn,.dsc-install__actions .dsc-btn{width:100%}
       .dsc-install{padding:22px 18px}.dsc-final__box{padding:28px 22px}.dsc-final h2{font-size:29px}
     }
-    @media(max-width:379px){.dsc-products{grid-template-columns:1fr}.dsc-product__media{height:235px}.dsc-product__title{min-height:0;font-size:17px}.dsc-product__coverage{min-height:0}.dsc-product{padding:16px}}
+    @media(max-width:379px){.dsc-products{grid-template-columns:1fr}.dsc-product__media{height:auto;aspect-ratio:1/.92}.dsc-product__title{font-size:15px}}
     @media(prefers-reduced-motion:reduce){.della-system-compare *{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -195,10 +197,8 @@
         </div>
       </div>
       <div class="dsc-hero__visual" aria-hidden="true">
-        <span class="dsc-hero__label dsc-hero__label--ductless">Ductless</span>
-        <span class="dsc-hero__label dsc-hero__label--central">Ducted Central</span>
-        <img class="dsc-hero__mini" src="assets/products/serena-12k.jpg" alt="" width="1800" height="1800" fetchpriority="high">
-        <img class="dsc-hero__central" src="assets/products/central-34k.jpg" alt="" width="2000" height="2000" fetchpriority="high">
+        <img class="dsc-hero__mini" src="assets/products/hero-mini-split.webp" alt="" width="1254" height="1254" fetchpriority="high">
+        <img class="dsc-hero__central" src="assets/products/hero-central.webp" alt="" width="1254" height="1254" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -233,7 +233,7 @@
           <span class="dsc-path__action">Explore This Path</span>
         </button>
       </div>
-      <p class="dsc-unsure">Not sure which project fits? <a href="https://dellahome.com/pages/hvac-product-finder" data-analytics-event="della_final_cta_click" data-destination="product-finder">Find My System →</a></p>
+      <p class="dsc-unsure">Not sure which project fits? <a href="https://dellahome.com/pages/hvac-product-finder" data-analytics-event="della_final_cta_click" data-destination="product-finder">Find My System</a></p>
     </div>
   </section>
 
@@ -251,57 +251,56 @@
         <div><div class="dsc-neutral__icon" aria-hidden="true">?</div><h3>Choose a Project Above to See Your Starting Options</h3><p>We’ll show the product path that matches the project you are planning—without declaring a universal winner.</p></div>
       </div>
 
-      <div class="dsc-panel" id="panel-ductless" data-panel="ductless" aria-labelledby="ductless-panel-title">
+      <div class="dsc-panel" id="panel-ductless" data-panel="ductless" aria-labelledby="shop-title">
         <h3 class="dsc-heading dsc-heading--center" id="ductless-panel-title">Wall-Mounted Mini Split Starting Options</h3>
         <p class="dsc-subheading">Start with the number and size of spaces you want to condition. Final sizing still depends on the room load and installation plan.</p>
         <div class="dsc-products" style="margin-top:31px">
           <article class="dsc-product" data-product-handle="serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft">
-            <div class="dsc-product__role">1 Room</div><div class="dsc-product__media"><img src="assets/products/serena-12k.jpg" alt="DELLA Serena 12K mini split" width="1800" height="1800" loading="lazy"></div>
+            <div class="dsc-product__role">1 Room</div><div class="dsc-product__media"><img src="assets/products/cut-serena-12k.webp" alt="DELLA Serena 12K mini split" width="1581" height="1507" loading="lazy"></div>
             <h4 class="dsc-product__title">DELLA Serena Series 12000 BTU 22 SEER2 Mini-Split Heat Pump AC</h4><div class="dsc-specs"><span>12K BTU</span><span>22 SEER2</span><span>Single Zone</span></div><p class="dsc-product__coverage">Up to 550 Sq.Ft.*</p>
-            <p class="dsc-product__price" data-price>From $779.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft" data-product-action>Choose Options</a><a class="dsc-detail" href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft" data-analytics-event="della_product_click">View Product</a>
+            <p class="dsc-product__price" data-price>From $779.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a>
           </article>
           <article class="dsc-product" data-product-handle="vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft">
-            <div class="dsc-product__role">1 Larger Space</div><div class="dsc-product__media"><img src="assets/products/vario-18k.jpg" alt="DELLA Vario 18K mini split" width="2000" height="2000" loading="lazy"></div>
+            <div class="dsc-product__role">1 Larger Space</div><div class="dsc-product__media"><img src="assets/products/cut-vario-18k.webp" alt="DELLA Vario 18K mini split" width="1731" height="1727" loading="lazy"></div>
             <h4 class="dsc-product__title">DELLA Vario Series 18000 BTU 21 SEER2 Mini Split Heat Pump AC</h4><div class="dsc-specs"><span>18K BTU</span><span>21 SEER2</span><span>Single Zone</span></div><p class="dsc-product__coverage">Up to 1,000 Sq.Ft.*</p>
-            <p class="dsc-product__price" data-price>$1,049.96</p><button class="dsc-btn dsc-btn--primary" type="button" data-product-action data-variant-id="50314713563424">Add To Cart</button><a class="dsc-detail" href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" data-analytics-event="della_product_click">View Product</a>
+            <p class="dsc-product__price" data-price>$1,049.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a>
           </article>
           <article class="dsc-product" data-product-handle="vario-series-28000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft">
-            <div class="dsc-product__role">2 Rooms / Dual Zone</div><div class="dsc-product__media"><img src="assets/products/vario-dual-28k.jpg" alt="DELLA Vario dual zone mini split" width="2000" height="2000" loading="lazy"></div>
+            <div class="dsc-product__role">2 Rooms / Dual Zone</div><div class="dsc-product__media"><img src="assets/products/cut-vario-dual-28k.webp" alt="DELLA Vario dual zone mini split" width="1707" height="1751" loading="lazy"></div>
             <h4 class="dsc-product__title">DELLA Vario Series 28000 BTU Dual Zone Mini Split AC</h4><div class="dsc-specs"><span>28K System</span><span>12K + 12K</span><span>20 SEER2</span></div><p class="dsc-product__coverage">Up to 1,100 Sq.Ft.*</p>
-            <p class="dsc-product__price" data-price>$2,259.96</p><button class="dsc-btn dsc-btn--primary" type="button" data-product-action data-variant-id="50576038822176">Add To Cart</button><a class="dsc-detail" href="https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft" data-analytics-event="della_product_click">View Product</a>
+            <p class="dsc-product__price" data-price>$2,259.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a>
           </article>
           <article class="dsc-product" data-product-handle="vario-series-35000-btu-quad-zone-mini-split-ac-9k-9k-9k-12k-up-to-1750-sq-ft">
-            <div class="dsc-product__role">4 Rooms / Quad Zone</div><div class="dsc-product__media"><img src="assets/products/vario-quad-35k.jpg" alt="DELLA Vario quad zone mini split" width="2000" height="2000" loading="lazy"></div>
+            <div class="dsc-product__role">4 Rooms / Quad Zone</div><div class="dsc-product__media"><img src="assets/products/cut-vario-quad-35k.webp" alt="DELLA Vario quad zone mini split" width="1695" height="1809" loading="lazy"></div>
             <h4 class="dsc-product__title">DELLA Vario Series 35000 BTU Quad Zone Mini Split AC</h4><div class="dsc-specs"><span>35K System</span><span>9K + 9K + 9K + 12K</span><span>19 SEER2</span></div><p class="dsc-product__coverage">Up to 1,750 Sq.Ft.*</p>
-            <p class="dsc-product__price" data-price>$3,349.96</p><button class="dsc-btn dsc-btn--primary" type="button" data-product-action data-variant-id="50576034693408">Add To Cart</button><a class="dsc-detail" href="https://dellahome.com/products/vario-series-35000-btu-quad-zone-mini-split-ac-9k-9k-9k-12k-up-to-1750-sq-ft" data-analytics-event="della_product_click">View Product</a>
+            <p class="dsc-product__price" data-price>$3,349.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/vario-series-35000-btu-quad-zone-mini-split-ac-9k-9k-9k-12k-up-to-1750-sq-ft" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a>
           </article>
         </div>
         <p class="dsc-note">*Coverage figures are shopping references, not a final sizing recommendation. Confirm room load, electrical requirements, placement, and installation before purchase.</p>
         <div class="dsc-shop__footer"><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/collections/wall-mounted-mini-split" data-analytics-event="della_collection_click">Shop All Wall-Mounted Mini Splits</a></div>
       </div>
 
-      <div class="dsc-panel" id="panel-central" data-panel="central" aria-labelledby="central-panel-title">
+      <div class="dsc-panel" id="panel-central" data-panel="central" aria-labelledby="shop-title">
         <h3 class="dsc-heading dsc-heading--center" id="central-panel-title">Central Air Capacity Starting Points</h3><p class="dsc-subheading">Compare capacity tiers, then confirm the final system configuration from the home’s load, duct condition, electrical requirements, and installation plan.</p>
         <div class="dsc-products" style="margin-top:31px">
-          <article class="dsc-product" data-product-handle="della-24-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">24K BTU</h4><p class="dsc-product__reference">18 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/central-24k.jpg" alt="DELLA 24K central air system" width="2000" height="2000" loading="lazy"></div><h4 class="dsc-product__title">DELLA 24,000 BTU 18 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $3,499.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-24-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" data-product-action>Choose Options</a><a class="dsc-detail" href="https://dellahome.com/products/della-24-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" data-analytics-event="della_product_click">View System</a></article>
-          <article class="dsc-product" data-product-handle="della-34-000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">34K BTU</h4><p class="dsc-product__reference">19 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/central-34k.jpg" alt="DELLA 34K central air system" width="2000" height="2000" loading="lazy"></div><h4 class="dsc-product__title">DELLA 34,000 BTU 19 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $3,799.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-34-000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler" data-product-action>Choose Options</a><a class="dsc-detail" href="https://dellahome.com/products/della-34-000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler" data-analytics-event="della_product_click">View System</a></article>
-          <article class="dsc-product" data-product-handle="della-47-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">47K BTU</h4><p class="dsc-product__reference">18 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/central-47k.jpg" alt="DELLA 47K central air system" width="2000" height="2000" loading="lazy"></div><h4 class="dsc-product__title">DELLA 47,000 BTU 18 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $4,299.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-47-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" data-product-action>Choose Options</a><a class="dsc-detail" href="https://dellahome.com/products/della-47-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" data-analytics-event="della_product_click">View System</a></article>
-          <article class="dsc-product" data-product-handle="della-53-000-btu-17-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">53K BTU</h4><p class="dsc-product__reference">17 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/central-53k.jpg" alt="DELLA 53K central air system" width="2000" height="2000" loading="lazy"></div><h4 class="dsc-product__title">DELLA 53,000 BTU 17 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $4,599.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-53-000-btu-17-seer2-ducted-central-air-conditioner-with-air-handler" data-product-action>Choose Options</a><a class="dsc-detail" href="https://dellahome.com/products/della-53-000-btu-17-seer2-ducted-central-air-conditioner-with-air-handler" data-analytics-event="della_product_click">View System</a></article>
+          <article class="dsc-product" data-product-handle="della-24-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">24K BTU</h4><p class="dsc-product__reference">18 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/cut-central-24k.webp" alt="DELLA 24K central air system" width="1809" height="1557" loading="lazy"></div><h4 class="dsc-product__title">DELLA 24,000 BTU 18 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $3,499.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-24-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a></article>
+          <article class="dsc-product" data-product-handle="della-34-000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">34K BTU</h4><p class="dsc-product__reference">19 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/cut-central-34k.webp" alt="DELLA 34K central air system" width="1809" height="1557" loading="lazy"></div><h4 class="dsc-product__title">DELLA 34,000 BTU 19 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $3,799.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-34-000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a></article>
+          <article class="dsc-product" data-product-handle="della-47-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">47K BTU</h4><p class="dsc-product__reference">18 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/cut-central-47k.webp" alt="DELLA 47K central air system" width="1809" height="1557" loading="lazy"></div><h4 class="dsc-product__title">DELLA 47,000 BTU 18 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $4,299.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-47-000-btu-18-seer2-ducted-central-air-conditioner-with-air-handler" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a></article>
+          <article class="dsc-product" data-product-handle="della-53-000-btu-17-seer2-ducted-central-air-conditioner-with-air-handler"><h4 class="dsc-product__capacity">53K BTU</h4><p class="dsc-product__reference">17 SEER2 · Professional sizing required</p><div class="dsc-product__media"><img src="assets/products/cut-central-53k.webp" alt="DELLA 53K central air system" width="1805" height="1557" loading="lazy"></div><h4 class="dsc-product__title">DELLA 53,000 BTU 17 SEER2 Ducted Central Air Conditioner with Air Handler</h4><p class="dsc-product__price" data-price>From $4,599.96</p><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/products/della-53-000-btu-17-seer2-ducted-central-air-conditioner-with-air-handler" target="_blank" rel="noopener" data-product-action data-analytics-event="della_product_click">View Product</a></article>
         </div>
         <p class="dsc-note">DELLA product specifications are shopping reference points. Final HVAC sizing and configuration should be confirmed from the home’s heating and cooling load, duct condition, electrical requirements, and installation conditions.</p>
         <div class="dsc-shop__footer"><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/collections/central-air-conditioner" data-analytics-event="della_collection_click">Shop All Central Air</a><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div>
       </div>
 
-      <div class="dsc-panel" id="panel-supplement" data-panel="supplement" aria-labelledby="supplement-panel-title">
-        <div class="dsc-supplement"><div class="dsc-supplement__visual"><img src="assets/products/serena-12k.jpg" alt="DELLA wall-mounted mini split" width="1800" height="1800" loading="lazy"></div><div><h3 id="supplement-panel-title">Keep the Main System. Target the Problem Area.</h3><p>If the existing central system is still appropriate for most of the home, a separate wall-mounted mini split may be worth considering for a garage, addition, converted space, or persistent hot or cold room.</p><p>A supplemental mini split operates as a separate ductless system. Confirm sizing, placement, electrical requirements, and installation before purchase.</p><div class="dsc-supplement__actions"><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/collections/wall-mounted-mini-split" data-analytics-event="della_collection_click">Shop Wall-Mounted Mini Splits</a><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div></div>
+      <div class="dsc-panel" id="panel-supplement" data-panel="supplement" aria-labelledby="shop-title">
+        <div class="dsc-supplement"><div class="dsc-supplement__visual"><img src="assets/products/cut-serena-12k.webp" alt="DELLA wall-mounted mini split" width="1581" height="1507" loading="lazy"></div><div><h3 id="supplement-panel-title">Keep the Main System. Target the Problem Area.</h3><p>If the existing central system is still appropriate for most of the home, a separate wall-mounted mini split may be worth considering for a garage, addition, converted space, or persistent hot or cold room.</p><p>A supplemental mini split operates as a separate ductless system. Confirm sizing, placement, electrical requirements, and installation before purchase.</p><div class="dsc-supplement__actions"><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/collections/wall-mounted-mini-split" data-analytics-event="della_collection_click">Shop Wall-Mounted Mini Splits</a><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div></div>
       </div>
-      <p class="dsc-cart-status" role="status" aria-live="polite"></p>
     </div>
   </section>
 
   <section class="dsc-verify dsc-section" id="compare-systems" aria-labelledby="compare-title">
     <div class="dsc-container"><h2 class="dsc-heading dsc-heading--center" id="compare-title">Mini Split vs Central Air: What Actually Changes?</h2><p class="dsc-subheading">Both paths can provide home comfort. The main differences are how air is distributed, how rooms are controlled, and what the installation requires.</p>
-      <div class="dsc-table-wrap"><table class="dsc-table"><thead><tr><th>Compare</th><th>Wall-Mounted Mini Split<img src="assets/products/serena-12k.jpg" alt="" width="1800" height="1800" loading="lazy"></th><th>Central Air<img src="assets/products/central-34k.jpg" alt="" width="2000" height="2000" loading="lazy"></th></tr></thead><tbody>
+      <div class="dsc-table-wrap"><table class="dsc-table"><thead><tr><th>Compare</th><th>Wall-Mounted Mini Split<img class="dsc-thumb--wide" src="assets/products/thumb-ductless.webp" alt="" width="696" height="240" loading="lazy"></th><th>Central Air<img src="assets/products/thumb-central.webp" alt="" width="264" height="240" loading="lazy"></th></tr></thead><tbody>
         <tr><td>Distribution</td><td data-label="Wall-Mounted Mini Split">Indoor units serve individual rooms or zones.</td><td data-label="Central Air">An air handler distributes air through ducts and registers.</td></tr>
         <tr><td>Whole-Home Ductwork</td><td data-label="Wall-Mounted Mini Split">Not required.</td><td data-label="Central Air">Core part of the distribution system.</td></tr>
         <tr><td>Room Control</td><td data-label="Wall-Mounted Mini Split">Strong room-by-room or zone flexibility.</td><td data-label="Central Air">Primarily centralized whole-home distribution.</td></tr>
@@ -318,7 +317,7 @@
     <div><details><summary>Does central air require ductwork?</summary><div class="dsc-faq__answer"><p>Central air distributes conditioned air through ducts and room registers. If the home does not have usable ductwork, adding or replacing the duct system becomes part of the project.</p></div></details><details><summary>Is a mini split always more efficient than central air?</summary><div class="dsc-faq__answer"><p>Not necessarily. Actual energy use depends on equipment efficiency, system sizing, duct condition, zoning, climate, installation quality, and how the home is used.</p></div></details><details><summary>How should I size a mini split or central air system?</summary><div class="dsc-faq__answer"><p>Manufacturer coverage ranges are useful shopping references, but final sizing should account for the heating and cooling load, insulation, windows, ceiling height, climate, duct conditions, and installation requirements.</p></div></details></div>
   </div></div></section>
 
-  <section class="dsc-final" aria-labelledby="final-title"><div class="dsc-container"><div class="dsc-final__box"><div><h2 id="final-title">Still Deciding?</h2><p id="final-copy">Use the DELLA Product Finder or connect with a partner HVAC installer before choosing the final system.</p></div><div class="dsc-final__actions"><a class="dsc-btn dsc-btn--primary" id="final-primary" href="https://dellahome.com/pages/hvac-product-finder" data-analytics-event="della_final_cta_click">Find My System</a><a class="dsc-btn dsc-btn--outline" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div></div></section>
+  <section class="dsc-final" aria-labelledby="final-title"><div class="dsc-container"><div class="dsc-final__box"><div><h2 id="final-title">Still Deciding?</h2><p id="final-copy">Use the DELLA Product Finder or connect with a partner HVAC installer before choosing the final system.</p></div><div class="dsc-final__actions"><a class="dsc-btn dsc-btn--primary" id="final-primary" href="https://dellahome.com/pages/hvac-product-finder" data-analytics-event="della_final_cta_click">Find My System</a><a class="dsc-final__install" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div></div></section>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the main difference between a ductless mini split and central air?","acceptedAnswer":{"@type":"Answer","text":"A wall-mounted ductless mini split delivers heating and cooling directly through indoor units in individual rooms or zones. Central air uses an air handler and duct system to distribute conditioned air throughout the home."}},{"@type":"Question","name":"Can a ductless mini split heat and cool an entire house?","acceptedAnswer":{"@type":"Answer","text":"It can be used for multi-room and whole-home ductless projects when the number of zones, equipment capacity, room loads, and installation plan are properly matched. Home layout and professional sizing still matter."}},{"@type":"Question","name":"Can I add a mini split if I already have central air?","acceptedAnswer":{"@type":"Answer","text":"Yes. A separate mini split can be considered for a garage, addition, converted space, or problem room while the existing central system continues serving the rest of the home."}},{"@type":"Question","name":"Does central air require ductwork?","acceptedAnswer":{"@type":"Answer","text":"Central air distributes conditioned air through ducts and room registers. If the home does not have usable ductwork, adding or replacing the duct system becomes part of the project."}},{"@type":"Question","name":"Is a mini split always more efficient than central air?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Actual energy use depends on equipment efficiency, system sizing, duct condition, zoning, climate, installation quality, and how the home is used."}},{"@type":"Question","name":"How should I size a mini split or central air system?","acceptedAnswer":{"@type":"Answer","text":"Manufacturer coverage ranges are useful shopping references, but final sizing should account for the heating and cooling load, insulation, windows, ceiling height, climate, duct conditions, and installation requirements."}}]}</script>
   <script>
   (()=>{
@@ -328,7 +327,7 @@
     const neutral=root.querySelector('#panel-neutral'),change=root.querySelector('.dsc-change'),shop=root.querySelector('#shop-path');
     const shopTitle=root.querySelector('#shop-title'),shopDescription=root.querySelector('#shop-description');
     const finalTitle=root.querySelector('#final-title'),finalCopy=root.querySelector('#final-copy'),finalPrimary=root.querySelector('#final-primary');
-    const status=root.querySelector('.dsc-cart-status');let activePath=null;
+    let activePath=null;
     const content={
       ductless:{shop:'Build Your Wall-Mounted Mini Split Setup',desc:'Start with the number and size of spaces you want to condition.',final:'Ready to Build Your Ductless Setup?',copy:'Explore DELLA wall-mounted mini splits or confirm your installation plan with a partner HVAC professional.',label:'Shop Wall-Mounted Mini Splits',href:'https://dellahome.com/collections/wall-mounted-mini-split'},
       central:{shop:'Explore Central Air Starting Points',desc:'Compare capacity tiers, then confirm configuration and final sizing.',final:'Ready to Explore Central Air?',copy:'Review DELLA central air systems, then confirm sizing, duct condition, and installation requirements.',label:'Shop Central Air',href:'https://dellahome.com/collections/central-air-conditioner'},
@@ -349,8 +348,7 @@
     root.querySelectorAll('[data-analytics-event]').forEach(el=>el.addEventListener('click',()=>emit(el.dataset.analyticsEvent,{path:activePath||'neutral',destination:el.href||el.dataset.destination||'',source_section:el.closest('section')?.id||el.closest('section')?.className||''})));
     const money=cents=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(cents/100);
     const liveHost=/(^|\.)dellahome\.com$/i.test(location.hostname);
-async function hydrate(){if(!liveHost)return;await Promise.all([...root.querySelectorAll('[data-product-handle]')].map(async card=>{try{const p=await fetch(`${window.Shopify?.routes?.root||'/'}products/${card.dataset.productHandle}.js`,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()});const price=card.querySelector('[data-price]'),action=card.querySelector('[data-product-action]'),available=p.variants.filter(v=>v.available);price.textContent=p.price_min!==p.price_max?`From ${money(p.price_min)}`:money(p.price_min);if(action.tagName==='BUTTON'||action.hasAttribute('data-variant-id')){if(p.variants.length===1&&available.length===1){action.dataset.variantId=String(available[0].id);action.textContent='Add To Cart';action.disabled=false}else{const link=document.createElement('a');link.className=action.className;link.href=`https://dellahome.com/products/${p.handle}`;link.dataset.productAction='';link.textContent=available.length?'Choose Options':'Sold Out';if(!available.length){link.setAttribute('aria-disabled','true');link.addEventListener('click',e=>e.preventDefault())}action.replaceWith(link)}}}catch(e){console.warn('Product hydration failed',card.dataset.productHandle,e)}}))}
-    root.addEventListener('click',async e=>{const action=e.target.closest('button[data-variant-id]');if(!action)return;const card=action.closest('[data-product-handle]');if(!liveHost){status.textContent='Preview only — live cart actions are enabled on the DELLA storefront.';return}const old=action.textContent;action.disabled=true;action.textContent='Adding…';status.textContent='';try{const route=window.Shopify?.routes?.root||'/';const response=await fetch(`${route}cart/add.js`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:[{id:Number(action.dataset.variantId),quantity:1}]})});if(!response.ok){const data=await response.json().catch(()=>({}));throw Error(data.description||'Unable to add this product.')}emit('della_add_to_cart',{path:activePath||'neutral',product_handle:card.dataset.productHandle,variant_id:action.dataset.variantId,source_section:'conditional_shopping'});location.assign(`${route}cart`)}catch(err){action.disabled=false;action.textContent=old;status.textContent=err.message||'Unable to add this product. Please try again.'}});
+    async function hydrate(){if(!liveHost)return;await Promise.all([...root.querySelectorAll('[data-product-handle]')].map(async card=>{try{const p=await fetch(`${window.Shopify?.routes?.root||'/'}products/${card.dataset.productHandle}.js`,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()});const price=card.querySelector('[data-price]');price.textContent=p.price_min!==p.price_max?`From ${money(p.price_min)}`:money(p.price_min)}catch(e){console.warn('Product hydration failed',card.dataset.productHandle,e)}}))}
     const initial=new URL(location.href).searchParams.get('path');setPath(valid.has(initial)?initial:null,{url:false});hydrate();
   })();
   </script>

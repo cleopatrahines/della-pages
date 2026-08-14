@@ -28,9 +28,10 @@ Approved design: `Design.png`
 
 ## Product runtime state captured 2026-08-13
 
-- Direct ATC: Vario 18K, Vario 28K Dual, Vario 35K Quad.
-- Choose Options: Serena 12K and all four Central systems.
+- ~~Direct ATC: Vario 18K, Vario 28K Dual, Vario 35K Quad~~ — superseded by owner decision 2026-08-13: these three cards now use `View Product` (PDP, new tab); no cart code in the page.
+- ~~Choose Options: Serena 12K and all four Central systems~~ — superseded 2026-08-13: **all eight product cards now use a uniform navy `View Product` button opening the PDP in a new tab**; no secondary links, no Choose Options, no cart runtime.
 - Central fitting-area figures omitted because a consistent official field could not be verified.
+- Production hydration now updates prices only (Ajax Product API on dellahome.com); there is no variant/ATC runtime anymore.
 
 ## Runtime behavior
 

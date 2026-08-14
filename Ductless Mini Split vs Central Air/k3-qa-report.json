@@ -96,14 +96,29 @@
       "detail": ""
     },
     {
-      "name": "three direct ATC buttons",
+      "name": "no dead ATC buttons (owner: ATC removed)",
       "pass": true,
-      "detail": "atc=3"
+      "detail": "atc=0"
     },
     {
-      "name": "five choose options links",
+      "name": "no Choose Options left (all cards uniform)",
       "pass": true,
-      "detail": "co=5"
+      "detail": "co=0"
+    },
+    {
+      "name": "eight primary PDP actions",
+      "pass": true,
+      "detail": "pa=8"
+    },
+    {
+      "name": "all eight View Product actions open new tab with noopener",
+      "pass": true,
+      "detail": "n=8"
+    },
+    {
+      "name": "no raw arrow glyphs in links",
+      "pass": true,
+      "detail": "n=0"
     },
     {
       "name": "ductless preselects",
@@ -158,7 +173,7 @@
     {
       "name": "gateway click scrolls to shop",
       "pass": true,
-      "detail": "scrollY=1253"
+      "detail": "scrollY=1234"
     },
     {
       "name": "change project control appears",
@@ -196,9 +211,14 @@
       "detail": ""
     },
     {
-      "name": "preview ATC does not transact",
+      "name": "primary actions are anchors, no cart dead code",
       "pass": true,
-      "detail": "Preview only — live cart actions are enabled on the DELLA storefront."
+      "detail": ""
+    },
+    {
+      "name": "panel-level duplicate headings hidden with JS",
+      "pass": true,
+      "detail": "none,none"
     },
     {
       "name": "keyboard Enter activates path",
@@ -213,12 +233,12 @@
     {
       "name": "reduced motion respected",
       "pass": true,
-      "detail": "scrollY=1253 (jumped instantly, no smooth anim)"
+      "detail": "scrollY=1234 (jumped instantly, no smooth anim)"
     },
     {
       "name": "no-JS panels remain visible",
       "pass": true,
-      "detail": "{\"ductless\":true,\"central\":true,\"supplement\":true,\"faqAnswerExpandable\":true}"
+      "detail": "{\"ductless\":true,\"central\":true,\"supplement\":true}"
     },
     {
       "name": "ductless 390 no overflow",
@@ -259,13 +279,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "390": {
       "bodyWidth": 390,
@@ -274,13 +296,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "430": {
       "bodyWidth": 430,
@@ -289,13 +313,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "768": {
       "bodyWidth": 768,
@@ -304,13 +330,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "1024": {
       "bodyWidth": 1024,
@@ -319,13 +347,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "1280": {
       "bodyWidth": 1280,
@@ -334,13 +364,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     },
     "1440": {
       "bodyWidth": 1440,
@@ -349,13 +381,15 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "tabs": 0,
       "faqCount": 6,
       "productCount": 8,
       "schemaCount": 6,
       "naturalImagesBroken": [],
-      "atc": 3,
-      "chooseOptions": 5
+      "atc": 0,
+      "chooseOptions": 0,
+      "primaryActions": 8,
+      "newTabViewProduct": 8,
+      "arrowGlyphs": 0
     }
   },
   "consoleErrors": [],

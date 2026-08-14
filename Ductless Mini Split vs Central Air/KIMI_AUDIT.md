@@ -24,6 +24,16 @@ Browser QA across 7 viewports × neutral/ductless/central/supplement/no-JS state
 **Overall conclusion after revision: page passes audit and now matches the approved mockup composition on all verified dimensions. 50/50 QA checks pass.**
 
 > Revision note: the first audit pass under-weighted visual fidelity to `Design.png` and only fixed the H1. After owner feedback, a second pixel-level comparison pass identified and fixed items 2–5 above.
+>
+> Round-3 polish (owner feedback "人味不足"): the remaining quality gap was traced to beige `#eeede8` backgrounds baked into the DELLA CDN packshots plus two design-system violations (negative H1 letter-spacing; button weight 600 vs spec 700). Fixed with container-matched warm gradients (`#fdfcf9→#eeede8`) on all image areas, a unified hero stage panel, compliant H1 tracking and 700-weight buttons, natural product-card flow (dead whitespace removed), and larger hero equipment. See `KIMI_CHANGELOG.md` items 6–10. QA re-run: 50/50 pass.
+>
+> Round-4 (owner re-confirmed the mockup's floating-equipment look): executed 方案 B — locally generated transparent WebP cutouts (`cut-*.webp`) from the 8 supplied packshots (originals untouched, provenance recorded in `sources.md`), switched all 12 image references, and reverted round-3 container camouflage. The hero and product imagery now float on the page background exactly like `Design.png`. QA re-run: 50/50 pass.
+>
+> Round-5 (owner hero review): generated `cut-serena-hero.webp` (indoor + outdoor unit only; line-set coil, phone, and remote erased), removed the DUCTLESS/DUCTED CENTRAL label chips, and resized/repositioned hero equipment so the ductless system no longer occludes the central system. QA re-run: 50/50 pass.
+>
+> Round-6 (owner shopping-area review): removed duplicate JS/static panel headings (JS-active only; no-JS fallback keeps headings), added media-box padding so trimmed cutouts no longer read as cropped, and — per explicit owner instruction, overriding PRD §5 — replaced the 3 dead-end `Add To Cart` buttons with new-tab `View Product` PDP anchors, removed the duplicate secondary links, and deleted the cart dead code. PRD/HANDOFF updated. QA re-run: 53/53 pass.
+>
+> Round-7 (owner iterative review): integrated owner-supplied hero banners (equal-height 50/50 composition); adopted the Ceiling Cassette reference page's product-card and button systems; fixed a P0 invisible-primary-button-text bug (anchor `color:inherit` specificity); unified all 8 product cards to new-tab navy `View Product`; demoted the final-CTA installer to a text link; built purpose-made comparison-header thumbnails (`thumb-ductless.webp`, `thumb-central.webp`); vertically centered the "Compare" header cell; left-aligned all H2s/subheadings. All overrides recorded in PRD §12. QA re-run: 53/53 pass.
 
 ---
 
@@ -127,3 +137,20 @@ No high-severity defects found in this round's scope.
 - States: neutral, `?path=ductless`, `?path=central`, `?path=supplement`, invalid `?path=`, gateway click switching, Change Project reset, FAQ toggle, keyboard Enter activation, focus states, reduced motion, no-JS, preview ATC guard.
 - Console errors: none. Failed local assets: none.
 - Screenshots reviewed against `Design.png` for brand consistency, hero hierarchy, gateway clarity, card efficiency, mobile rhythm, CTA/path consistency, and price/action prominence.
+
+## Appendix — avoid-ai-design skill audit (2026-08-13, detect mode)
+
+Audited against `avoid-ai-design/references/ai-tells-catalog.md`, code + rendered screenshots (1440/390px). Context profile: `marketing-page` inside the DELLA design system (hard constraint outranks skill taste).
+
+**P0: none.** No Inter/system-font default (Spectral+Poppins pairing, brand-mandated), no indigo/purple gradient (hero is a tonal pale-blue brand gradient), no gradient headline text, no centered pill-badge hero template (left copy + right equipment), no decorative three-icon feature row (the Gateway trio is an interactive `aria-pressed` selector, PRD-locked), no untouched framework defaults (no framework).
+
+**P1 candidates:**
+- CP3 arrow glyphs stapled to links: gateway "Find My System →" and final-CTA "Find Partner HVAC Installer →" carry raw `→`. Code-certain. Judgment call: the gateway instance comes from the approved `Design.png`; the final-CTA instance was added in round 7 for the demoted link. Recommend dropping both glyphs or accepting as mockup-approved. Not changed in detect mode.
+- L2-adjacent: three same-size icon-topped Gateway cards visually resemble the clichéd feature-card row, but they are functional path selectors with distinct decision content and selected states — flagged as not-a-tell in context; structure is PRD-locked.
+- K4-adjacent: selected Gateway card uses an inset blue top rule (`box-shadow:inset 0 3px 0`) — a border-accent stripe, but it encodes selected state rather than decoration. Left as-is.
+
+**P2 notes:** sparse uppercase micro-labels (room counts, BEFORE YOU BUY) are content-meaningful, not reflexive eyebrows; uniform 1200px container is DELLA-design-system-mandated; section rhythm (76/58px, alternating white/gray-50/pale-blue surfaces) verified on render as non-flat.
+
+**Render-verified passes:** committed palette (dominant navy + blue accent, ~60/30/10), real product imagery throughout (owner packshots/cutouts — no stock, no placeholders, no 3D blobs), complete hover/focus-visible/disabled states, single functional panel-switch fade (no scroll-reveal soup), custom line SVG icons (no Lucide/emoji).
+
+**Verdict:** clean audit. No P0, one optional P1 (arrow glyphs, mockup-sourced). The page reads as a mature DELLA ecommerce landing page, not an AI template.

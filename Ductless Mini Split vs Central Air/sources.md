@@ -37,6 +37,8 @@ Product data was read from the official Shopify product `.js` endpoints. Static 
 
 The supplied image mapping is preserved. Central 24K, 34K, and 47K intentionally share the same image and are differentiated with prominent capacity labels.
 
+Derived display assets (2026-08-13): `assets/products/cut-*.webp` are transparent-background cutouts generated locally from the supplied JPGs above (region-growing background removal, originals untouched). They exist only to reproduce the approved `Design.png` floating-equipment composition; the supplied CDN URLs remain the identity source of truth.
+
 ## Central fitting-area status
 
 No consistent official fitting-area wording was exposed in the live product JSON descriptions or readable PDP text during the 2026-08-13 implementation snapshot. Specific area figures are therefore omitted in V1. The cards use capacity/SEER2 plus a professional sizing statement. Add exact fitting-area wording only after DELLA supplies or exposes an authoritative value.
