@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Split Sizing Calculator: Find the Right BTU | DELLA</title>
+<meta name="description" content="Use DELLA’s mini split BTU calculator to estimate the right system size for your room based on climate, square footage, ceiling height, insulation, and sun exposure.">
+<!-- MOCKUP: Google Fonts for review only; production uses the PageFly-hosted Spectral + Inter 18pt woff2. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1952; --navy-deep:#0E1953; --blue:#5D8DEB; --blue-strong:#286ED7; --blue-link:#286ED7;
+  --line:#E3E3E3; --muted:#4D5757; --body:#0E1952;
+  --m-hh:#E4574D; --m-hd:#F08A4B; --m-mx:#F4C542; --m-mr:#3F9C60; --m-cd:#2F55B8;
+  --serif:'Spectral',Georgia,serif; --sans:'Inter',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:16px;line-height:1.5;color:var(--body);background:#fff}
+.container{max-width:1440px;margin:0 auto;padding:0 36px}
+.container-narrow{max-width:1220px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:#0E1952;line-height:1.4;letter-spacing:-1.3px}
+a{color:var(--blue-link)}
+.sec{padding:60px 0}
+.sec-head{text-align:center;margin-bottom:32px}
+.sec-head h2{font-size:clamp(24px,3vw,35px)}
+.note-line{font-size:13.5px;color:var(--muted);text-align:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 32px;border-radius:8px;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:-.2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s}
+.pill-navy{background:#0E1952;color:#fff}
+.pill-navy:hover{background:#25367D}
+.pill:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+/* H1 */
+.page-head{padding:46px 0 6px;text-align:center}
+.page-head h1{font-size:clamp(28px,3.4vw,40px)}
+.page-head .note-line{margin-top:10px;font-size:14.5px}
+
+/* calculator — MSFL grammar: no cards, fields straight on the page */
+.calc-zone{padding:30px 0 8px}
+.calc-grid{display:grid;grid-template-columns:53% 43.5%;justify-content:space-between;align-items:start}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13.5px;font-weight:500;color:#333}
+input[type=text],input[type=number],select{height:48px;border:1px solid #CFCFCF;border-radius:5px;padding:0 13px;font-family:var(--sans);font-size:15px;line-height:1.4;color:var(--body);background:#fff;width:100%}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%230E1952' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;padding:10px 40px 10px 13px;text-overflow:ellipsis}
+input:hover,select:hover{border-color:#8A8A8A}
+.climate-chip{display:none;margin-top:12px;font-size:13px;color:var(--muted)}
+.climate-chip b{color:var(--navy);font-weight:600}
+.field-error{font-size:12.5px;color:#B3402E;display:none}
+.calc-disc{font-size:12px;color:#8A8A8A;margin-top:22px;line-height:1.6}
+
+/* right column: map + legend + compact result */
+.climate-map-svg svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:10px;justify-content:center}
+.lg{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#333;border:none;background:none;cursor:pointer;padding:3px 2px;font-family:var(--sans)}
+.lg i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.lg.active{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.map-note{margin-top:5px;text-align:center;font-size:11.5px;line-height:1.45;color:#6B7280}
+.result-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 28px;margin-top:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.r-cap{font-size:15px;color:#333}
+.r-big{font-family:var(--serif);font-size:44px;font-weight:500;color:var(--navy);line-height:1.25;letter-spacing:-1px;margin:6px 0}
+.r-load{font-size:15px;color:#333;line-height:1.6}
+.r-load b{color:var(--blue-strong);font-weight:600}
+.r-why-btn{background:none;border:none;font-family:var(--sans);font-size:12.5px;color:var(--blue-link);text-decoration:underline;cursor:pointer;padding:0}
+.r-why{display:none;text-align:left;margin:8px auto 0;max-width:340px;font-size:12.5px;color:var(--muted);list-style:none}
+.r-why li{margin:3px 0 3px 16px}
+.r-warn{font-size:12.5px;color:#8A5B00;margin-top:8px}
+.result-card .pill{margin-top:18px;min-width:330px}
+.r-alt{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* top sellers — Galaxy “Championship Level Cooling” card grammar */
+.carousel-wrap{position:relative}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 90px)/4);gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.carousel::-webkit-scrollbar{display:none}
+.prod-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left}
+.prod-img{display:block;aspect-ratio:1/1}
+.prod-img img{width:100%;height:100%;object-fit:contain}
+.prod-title{font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.5;color:#0E1952;text-transform:capitalize;margin-top:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:81px}
+.prod-title a{color:#0E1952;text-decoration:none}
+.prod-title a:hover{text-decoration:underline}
+.loox-row{display:flex;align-items:center;gap:2px;margin-top:6px;min-height:18px}
+.loox-row svg{width:15px;height:15px;fill:#0B133D}
+.loox-count{color:#4D5757;font-size:14px;margin-left:4px}
+.prod-price{font-family:var(--serif);font-weight:700;font-size:18px;color:#0E1952;margin-top:8px}
+.prod-price s{font-family:var(--sans);font-weight:400;font-size:13.5px;color:var(--muted);margin-left:8px}
+.atc-form{margin-top:auto;padding-top:12px}
+.atc-btn{width:100%;padding:10px 20px;border-radius:50px;background:#0E1952;color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:17px;line-height:1.5;text-transform:capitalize;transition:background .15s}
+.atc-btn:hover{background:#25367D}
+.car-btn{position:absolute;top:34%;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,29,70,.14);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);z-index:3}
+.car-prev{left:-14px}.car-next{right:-14px}
+.car-btn:hover{border-color:var(--blue-strong)}
+
+/* what-size editorial */
+.article{font-size:15.5px;line-height:1.75;color:#333}
+.article p{margin-bottom:16px}
+.article b{color:var(--navy);font-weight:600}
+.article a{font-weight:500}
+.article h3{font-size:24px;letter-spacing:-.8px;margin:30px 0 12px}
+.read-more-body{display:none}
+.read-toggle{background:none;border:none;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--blue-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+
+/* faq — single column */
+.faq-list{display:flex;flex-direction:column;gap:12px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:8px;padding:0 22px}
+details.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-size:16px;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:center;letter-spacing:-.2px}
+details.faq summary svg{flex:none;width:14px;height:14px;fill:var(--navy)}
+details.faq .pfa-minus{display:none}
+details.faq[open] .pfa-minus{display:block}
+details.faq[open] .pfa-plus{display:none}
+details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1.65}
+
+/* customer reviews — Loox store widget clone (values lifted from dellahome our-reviews widget) */
+.gr-sec{font-family:'Poppins',sans-serif;color:#000}
+.gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.gr-brand b{font-size:16px;color:#000;font-weight:700}
+.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#000;margin-top:4px}
+.gr-score .num{font-weight:600;font-size:16px}
+.gr-stars{color:#0B133D;letter-spacing:2px;font-size:16px}
+.gr-count{font-size:13.5px;color:#73777B;margin-top:3px}
+.gr-write{border:1px solid #E8E8E8;background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:#0B133D;text-decoration:none;font-weight:500}
+.gr-write:hover{border-color:#0B133D}
+.gr-wrap{position:relative}
+.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px)/4);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.gr-track::-webkit-scrollbar{display:none}
+.gr-card{scroll-snap-align:start;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:10px;display:flex;flex-direction:column}
+.gr-photo{border-radius:7px 7px 0 0;height:200px;background:#F0F1F1;overflow:hidden;margin:-10px -10px 10px}
+.gr-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.gr-name{font-weight:700;font-size:16px;color:#000;display:flex;align-items:center}
+.gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:400;line-height:18px;color:#0B133D;white-space:nowrap}
+.gr-verified svg{width:14px;height:14px;margin-left:8px;flex:none}
+.gr-date{color:#73777B;font-size:11px;padding:5px 0 0}
+.gr-starline{padding-top:10px}
+.gr-star5{color:#0B133D;font-size:14px;letter-spacing:2px}
+.gr-text{font-size:14px;line-height:19px;color:#000;margin-top:8px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
+.gr-more{font-size:12px;color:#73777B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:'Poppins',sans-serif;text-align:left;padding:6px 0 0;margin-bottom:12px}
+.gr-prod{font-size:12.5px;color:#282828;padding-top:10px;border-top:1px solid #e2e2e2;margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-prod a{color:#282828;text-decoration:none}
+.gr-prod a:hover{text-decoration:underline}
+.gr-text{margin-bottom:10px}
+
+/* premium services — light rounded cards, round icon badges (per approved screenshot) */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.svc-item{background:#EFF3FE;border-radius:14px;padding:30px 26px 28px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.svc-icon{width:58px;height:58px;border-radius:50%;background:#6E8BE5;display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex:none}
+.svc-icon img{width:50px;height:50px;display:block}
+.svc-item h3{font-size:21px;line-height:1.4;color:#3D62D2;letter-spacing:-.4px;margin-bottom:8px;text-transform:capitalize}
+.svc-item p{font-size:15px;line-height:1.55;color:#3A3A3A}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@media (max-width:960px){
+  .calc-grid{grid-template-columns:1fr;gap:28px}
+  .carousel,.gr-track{scroll-snap-type:x proximity}
+  .carousel{grid-auto-columns:calc((100% - 20px)/2);gap:20px}
+  .gr-track{grid-auto-columns:calc((100% - 24px)/2)}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .sec{padding:44px 0}
+  .container{padding:0 16px}
+}
+@media (max-width:560px){
+  .field-grid{grid-template-columns:1fr}
+  input[type=text],input[type=number],select{font-size:16px;height:48px}
+  .carousel{grid-auto-columns:calc((100% - 16px)/2);gap:16px}
+  .prod-title{font-size:16px;min-height:72px}
+  .atc-btn{font-size:15px}
+  .gr-track{grid-auto-columns:92%}
+  .svc-grid{grid-template-columns:1fr}
+  .car-btn{display:none}
+  .result-card{padding:22px 16px}
+  .result-card .pill{min-width:0;width:100%}
+  .r-big{font-size:38px}
+  .lg{padding:6px 5px}
+  .container-narrow{padding:0 16px}
+  .article h3{font-size:21px}
+  details.faq{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+
+<!-- 1 · H1 -->
+<header class="page-head">
+  <div class="container">
+    <h1>Mini Split Sizing Calculator</h1>
+    <p class="note-line">* Please enter the data for each individual room separately to ensure accurate BTU calculation.</p>
+  </div>
+</header>
+
+<!-- 2 · calculator: fields on the page (MSFL), map + compact result right -->
+<section class="calc-zone" id="calculator">
+  <div class="container">
+    <div class="calc-grid">
+
+      <form id="calcForm" autocomplete="off" onsubmit="return false">
+        <div class="field-grid">
+          <div class="field">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 40202" aria-describedby="zipErr" onblur="resolveZip()" oninput="if(this.value.length===5)resolveZip()">
+            <span class="field-error" id="zipErr">Enter a valid 5-digit ZIP Code.</span>
+          </div>
+          <div class="field">
+            <label for="intent">Will this be your primary heat?</label>
+            <select id="intent">
+              <option value="cooling">No, mainly cooling</option>
+              <option value="primary">Yes, primary heating and cooling</option>
+              <option value="supplemental">Supplemental heating only</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sqft">Space (sq. ft.)</label>
+            <input type="number" id="sqft" min="20" max="4000" value="400" aria-describedby="sqftErr">
+            <span class="field-error" id="sqftErr">Enter the room area in square feet (20 or more).</span>
+          </div>
+          <div class="field">
+            <label for="ceiling">Ceiling height</label>
+            <select id="ceiling">
+              <option value="8" selected>8 ft (standard)</option>
+              <option value="7">7 ft</option>
+              <option value="9">9 ft</option>
+              <option value="10">10 ft</option>
+              <option value="11">11 ft</option>
+              <option value="12">12 ft</option>
+              <option value="13">Over 12 ft (use the average)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="insulation">Insulation grade</label>
+            <select id="insulation">
+              <option value="excellent">Excellent (new build)</option>
+              <option value="good">Good</option>
+              <option value="standard" selected>Standard</option>
+              <option value="poor">Poor (older home)</option>
+              <option value="very_poor">Very poor / uninsulated</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sun">Sun exposure</label>
+            <select id="sun">
+              <option value="shaded">Heavily shaded</option>
+              <option value="average" selected>Average</option>
+              <option value="high_western">Strong / western exposure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="glazing">Amount of windows</label>
+            <select id="glazing">
+              <option value="low">Few</option>
+              <option value="average" selected>Average</option>
+              <option value="high">Many</option>
+              <option value="glass_heavy">Glass-heavy / floor-to-ceiling</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="airtightness">Windows &amp; doors air tightness</label>
+            <select id="airtightness">
+              <option value="very_tight">Very tight (new windows)</option>
+              <option value="average" selected>Average</option>
+              <option value="drafty">Drafty</option>
+              <option value="very_drafty">Very drafty (visible gaps)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="occupants">How many occupants?</label>
+            <select id="occupants">
+              <option value="2" selected>2 or less</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="kitchenSel">Is there a kitchen?</label>
+            <select id="kitchenSel">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="watts">Extra device heat wattage (W)</label>
+            <input type="number" id="watts" min="0" max="15000" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="sunroomSel">Is this a glass sunroom?</label>
+            <select id="sunroomSel"><option value="no" selected>No</option><option value="yes">Yes</option></select>
+          </div>
+        </div>
+        <div class="climate-chip" id="climateChip" aria-live="polite"></div>
+        <p class="calc-disc">* The suggested BTU values are provided as a general sizing guide only. Specific conditions and unique variables in real-world installations may significantly influence the result. For precise load calculations, we recommend consulting a licensed HVAC professional. This tool does not replace a Manual J calculation.</p>
+      </form>
+
+      <div>
+        <div class="climate-map-svg" aria-label="Simplified five-region United States sizing map. Click your state">__US_MAP_SVG__</div>
+        <div class="legend" role="group" aria-label="Climate regions">
+          <button class="lg" data-region="hot_humid" onclick="regionPick('hot_humid')"><i style="background:var(--m-hh)"></i>Region #1</button>
+          <button class="lg" data-region="hot_dry" onclick="regionPick('hot_dry')"><i style="background:var(--m-hd)"></i>Region #2</button>
+          <button class="lg" data-region="mixed" onclick="regionPick('mixed')"><i style="background:var(--m-mx)"></i>Region #3</button>
+          <button class="lg" data-region="marine" onclick="regionPick('marine')"><i style="background:var(--m-mr)"></i>Region #4</button>
+          <button class="lg" data-region="cold" onclick="regionPick('cold')"><i style="background:var(--m-cd)"></i>Region #5</button>
+        </div>
+        <p class="map-note">Simplified 5-region sizing view. Enter your ZIP Code for a more precise climate estimate.</p>
+
+        <div class="result-card" id="resultCard" aria-live="polite" aria-label="Sizing result">
+          <div id="resultBody">
+            <div class="r-cap">Recommended Equipment Capacity</div>
+            <div class="r-big">—</div>
+            <div class="r-load">Calculated Cooling Load: <b>—</b></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3 · Top Sales — Galaxy Championship card grammar -->
+<section class="sec" id="top-sellers">
+  <div class="container">
+    <div class="sec-head"><h2>Top Sales</h2></div>
+    <div class="carousel-wrap">
+      <button class="car-btn car-prev" aria-label="Previous products" onclick="slide('bsCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
+      <div class="carousel" id="bsCar" aria-label="Best sellers"></div>
+      <button class="car-btn car-next" aria-label="Next products" onclick="slide('bsCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · What size editorial (narrow, read more) -->
+<section class="sec" id="what-size" style="padding-top:24px">
+  <div class="container-narrow">
+    <div class="sec-head"><h2>Mini Split BTU Calculator: What Size Mini Split Do I Need?</h2></div>
+    <div class="article">
+      <p>For most single rooms, the answer lands between <b>9,000 and 24,000 BTU</b>. A quick rule of thumb is about 20 BTU per square foot: a 400 sq. ft. bedroom starts around 9,000 BTU, a 500 sq. ft. office around 12,000, and an open living area near 1,000 sq. ft. around 18,000. But square footage is only the starting point. Climate region, ceiling height, insulation, sun exposure, and how many people use the room each move the answer, and together they can shift it a full size up or down. The calculator above starts from your square footage, then adjusts the HVAC load for the conditions of your actual room.</p>
+      <div class="read-more-body" id="readMoreBody">
+        <h3>What the coverage label leaves out</h3>
+        <p>A unit marked “up to 550 sq. ft.” assumes a typical room with 8-foot ceilings and decent insulation. The same 550 sq. ft. with a vaulted ceiling and strong afternoon sun can genuinely need the next size up, while a shaded, well-insulated room stays comfortable with less. When your calculated load and a product label disagree, trust the load.</p>
+        <h3>Why a bigger mini split is not safer</h3>
+        <p>Both sizing mistakes cost you. An undersized unit runs flat out through the hottest afternoons and never quite catches up. An oversized one cools the air so fast that it shuts off before pulling moisture out, leaves the room cold but clammy, then restarts a few minutes later. Installers call this short cycling; it wears the compressor and wastes electricity. Inverter technology softens the swings, but it cannot rescue a badly oversized system. Stay within about 15% of your calculated load.</p>
+        <h3>Sizing a mini split for more than one room</h3>
+        <p>Size each room on its own. A wall unit cannot cool through closed doors or around corners, so adding your rooms into one total and buying a single bigger unit does not work. Each room that needs its own comfort gets its own indoor head, and a <a href="https://dellahome.com/collections/mini-split-multi-zone">multi-zone system</a> runs up to six of them from one outdoor unit. Run the calculator once per room and match the combination to a pre-configured bundle.</p>
+        <h3>When to double-check before you order</h3>
+        <p>Sunrooms and glass-heavy spaces gain far more solar heat than a normal room, and vaulted ceilings add air volume the eye underestimates. If a mini split will be your primary heat in a cold-winter state, the outdoor temperature rating matters as much as BTU. Use the calculator as a cooling-load starting point, then confirm the selected model’s low-temperature heating performance with our team or a local installer before ordering.</p>
+      </div>
+      <button class="read-toggle" id="readToggle" onclick="toggleRead()">Read more</button>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · Premium Della Services — Galaxy exact clone -->
+<section class="sec" id="services" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head"><h2>Premium Della Services</h2></div>
+    <div class="svc-grid">
+      <div class="svc-item"><div class="svc-icon"><img src="data:image/png;base64,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" alt="Free and fast shipping icon" width="50" height="50"></div><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="data:image/png;base64,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" alt="30-day money-back icon" width="50" height="50"></div><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="24/7 live support icon" width="50" height="50"></div><h3>24/7 Live Support</h3><p>Get instant answers to your questions anytime, day or night.</p></div>
+      <div class="svc-item"><div class="svc-icon"><img src="data:image/png;base64,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" alt="Lifetime warranty icon" width="50" height="50"></div><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · Google reviews -->
+<section class="sec gr-sec" id="reviews" style="padding-top:24px">
+  <div class="container">
+    <div class="gr-head">
+      <div class="gr-brand">
+        <b>dellahome.com</b>
+        <div class="gr-score"><span class="num">4.9</span><span class="gr-stars">★★★★★</span></div>
+        <div class="gr-count">1,702 reviews from verified DELLA buyers</div>
+      </div>
+      <a class="gr-write" href="https://dellahome.com/pages/our-reviews">See all reviews</a>
+    </div>
+    <div class="gr-wrap">
+      <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slideLoop('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
+      <div class="gr-track" id="grCar" aria-label="Customer reviews"></div>
+      <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slideLoop('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · FAQ — single column, narrow -->
+<section class="sec" id="faq" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head"><h2>Mini Split Sizing Calculator FAQs</h2></div>
+    <div class="faq-list">
+      <details class="faq"><summary>How accurate is this mini split calculator?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>It uses the same starting factors a professional would: room area, climate, ceiling height, insulation, sun, glass, and internal heat. And it shows a range instead of a single falsely precise number. It is not a Manual J calculation, the professional standard that models wall assemblies, window specs, and local design weather in detail. For choosing a single-room unit it is reliable. For whole-home projects or permit paperwork, hire a pro.</p></details>
+      <details class="faq"><summary>Should I get a 115V or 230V mini split?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>9K and 12K sizes come in both voltages; larger systems are 230V only. 115V runs on a standard household circuit, which is why bedrooms and DIY installs favor it. 230V needs a dedicated double-pole breaker, like a dryer or range. Check your panel before ordering, and confirm the exact voltage and breaker requirement on the product page, because it varies by model.</p></details>
+      <details class="faq"><summary>Can I install a mini split myself?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Many DELLA customers do. Mounting the indoor head, setting the outdoor unit, and routing the line set are manageable weekend work with basic tools, and DELLA offers a rental tool kit with the vacuum pump and gauges the refrigerant connection requires. The electrical hookup is where most DIYers bring in a licensed electrician. Installing it yourself does not void the warranty as long as you register your system and follow the manual.</p></details>
+      <details class="faq"><summary>Will a mini split heat in winter?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Yes. DELLA mini split heat pumps provide heating as well as cooling, but low-temperature performance varies by series. Some cold-climate models are rated to operate at −13°F or −22°F. The calculator uses your ZIP Code to estimate climate conditions and cooling load; it does not verify a specific model’s heating capacity. If the system will be your primary heat, confirm the product’s low-temperature heating performance and consider backup heat for extreme cold.</p></details>
+      <details class="faq"><summary>What size mini split for an open floor plan?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>If the space flows together through wide openings, measure it as one and enter the total square footage. If doors close between areas, or a corner blocks the airflow, treat each area as its own room; every room gets its own indoor unit, ideally on one multi-zone system. Past roughly 1,500 sq. ft., plan on two indoor units for even airflow no matter what the math says. Open stairways to another floor are the trickiest case. Size generously there and check with our support team before you order.</p></details>
+      <details class="faq"><summary>How much does a mini split cost to run?<svg class="pfa-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><svg class="pfa-minus" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></summary><p>Less than almost any other electric heating or cooling. Efficiency is measured in SEER2, and DELLA systems range from 17 to 25; a higher number means less electricity for the same comfort. Your actual bill depends on your climate, electric rate, and running hours, but a right-sized inverter unit costs far less to run than window units, portable ACs, or electric baseboard heat.</p></details>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ============ injected data (build-time) ============ */
+const CFG = __INJECT_CONFIG__;
+const CLIMATE = __INJECT_CLIMATE__;
+const BESTSELLERS = __INJECT_BESTSELLERS__;
+const STATE_CLIMATE = __INJECT_STATE_CLIMATE__;
+
+function track(ev, data){ (window.dataLayer = window.dataLayer||[]).push({event:ev, ...data}); }
+const REGION_NAMES = {hot_humid:'Region #1 (Red): Hot & Humid', hot_dry:'Region #2 (Orange): Warm', mixed:'Region #3 (Yellow): Mixed', marine:'Region #4 (Green): Cool', cold:'Region #5 (Blue): Cold'};
+const BIN_COLLECTIONS = {9000:'9000-btu-mini-split',12000:'12000-btu-mini-split',18000:'18000-btu-mini-split',24000:'24000-btu-mini-split',36000:'36000-btu-mini-split'};
+
+/* ============ climate ============ */
+let climate = null;
+function highlightLegend(type){
+  document.querySelectorAll('.lg').forEach(b=>b.classList.toggle('active', b.dataset.region===type));
+}
+function resolveZip(){
+  const el = document.getElementById('zip');
+  const err = document.getElementById('zipErr');
+  const chip = document.getElementById('climateChip');
+  const z = el.value.trim();
+  if(!/^\d{5}$/.test(z)){ err.style.display = z ? 'block':'none'; return; }
+  err.style.display='none';
+  const rec = CLIMATE.exact[z] || CLIMATE.prefix3[z.slice(0,3)];
+  if(!rec){ chip.innerHTML='We couldn’t find that ZIP. Pick your region on the map instead.'; chip.style.display='block'; return; }
+  const [code, tcode] = rec.split(':');
+  const zone = CLIMATE.zones[code];
+  climate = { type: CLIMATE.types[tcode], code, winter: zone.winter_design_temp_f, summer: zone.summer_design_temp_f, source:'zip' };
+  chip.innerHTML = `<b>${REGION_NAMES[climate.type]}</b> · winter design ${climate.winter}°F, summer design ${climate.summer}°F (ZIP ${z})`;
+  chip.style.display='block';
+  highlightLegend(climate.type);
+  track('zip_resolved',{climate:climate.type});
+  onCalculate();
+}
+function setRegion(type, silent){
+  climate = { type, code:null, winter:null, summer:null, source:'manual' };
+  const chip = document.getElementById('climateChip');
+  chip.innerHTML = `<b>${REGION_NAMES[type]}</b> selected. Enter your ZIP Code for a more precise climate estimate.`;
+  chip.style.display='block';
+  highlightLegend(type);
+  if(!silent) onCalculate();
+}
+function regionPick(type){ setRegion(type); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  const map=document.getElementById('usClimateMap');
+  if(!map) return;
+  map.addEventListener('click', e=>{
+    const el=e.target.closest('[class]');
+    if(!el || !el.classList) return;
+    for(const cls of el.classList){
+      if(STATE_CLIMATE[cls]){ setRegion(STATE_CLIMATE[cls]); return; }
+    }
+  });
+});
+
+/* ============ engine (della-sizing-engine-1.1.0, single-room path) ============ */
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const rd=v=>Math.round(v/CFG.display_policy.load_rounding_increment_btu)*CFG.display_policy.load_rounding_increment_btu;
+const rdReview=v=>Math.round(v/CFG.display_policy.review_load_rounding_increment_btu)*CFG.display_policy.review_load_rounding_increment_btu;
+
+function roomLoad(room, climateType){
+  const f=CFG.factors;
+  const base=Math.max(CFG.minimum_base_load_btu, room.sqft*CFG.base_btu_per_sqft);
+  const ceil=clamp(room.ceiling/f.ceiling.reference_height_ft, f.ceiling.minimum, f.ceiling.maximum);
+  const cf=f.climate[climateType];
+  const selectedGlazing=f.envelope.glazing_delta[room.glazing];
+  const glazing=room.sunroom?Math.max(selectedGlazing,f.special_space.sunroom_minimum_glazing_delta):selectedGlazing;
+  const env=clamp(1+f.envelope.insulation_delta[room.insulation]+f.envelope.airtightness_delta[room.airtightness]+glazing, f.envelope.minimum, f.envelope.maximum);
+  const sun=f.sun[room.sun];
+  const ig=f.internal_gains;
+  const people=Math.max(0,room.occupants-ig.included_occupants)*ig.extra_occupant_btu;
+  const kitchen=room.kitchen?ig.kitchen_btu:0;
+  const equip=room.watts? room.watts*ig.watts_to_btu*ig.usage_factor.continuous : 0;
+  const point=base*ceil*cf*env*sun+people+kitchen+equip;
+  const flags=[];
+  if(room.sunroom) flags.push('sunroom');
+  if(room.ceiling>CFG.complexity_rules.ceiling_review_above_ft) flags.push('ceiling over 12 ft');
+  if(room.sqft>CFG.complexity_rules.single_room_review_area_sqft) flags.push('large open space');
+  if(room.glazing==='glass_heavy') flags.push('glass-heavy room');
+  const conf = flags.length? 'low' : 'high';
+  const band = CFG.confidence_ranges[conf];
+  return {base, ceil, cf, env, sun, people, kitchen, equip, point, lower:point*(1-band), upper:point*(1+band), conf, flags};
+}
+function binLabel(q){
+  if(q>CFG.complexity_rules.single_zone_automatic_max_btu) return null;
+  if(q<CFG.complexity_rules.small_load_review_btu) return 'below';
+  for(const b of CFG.capacity_bins_btu) if(q<=b) return b;
+  return null;
+}
+function readRoomForm(){
+  const sqft=parseFloat(document.getElementById('sqft').value);
+  const sErr=document.getElementById('sqftErr');
+  if(!sqft || sqft<CFG.input_validation.minimum_area_sqft){ sErr.style.display='block'; return null; }
+  sErr.style.display='none';
+  return {
+    sqft, ceiling: parseFloat(document.getElementById('ceiling').value),
+    intent: document.getElementById('intent').value,
+    insulation: document.getElementById('insulation').value,
+    sun: document.getElementById('sun').value,
+    glazing: document.getElementById('glazing').value,
+    occupants: parseInt(document.getElementById('occupants').value,10),
+    airtightness: document.getElementById('airtightness').value,
+    watts: parseFloat(document.getElementById('watts').value)||0,
+    kitchen: document.getElementById('kitchenSel').value==='yes',
+    sunroom: document.getElementById('sunroomSel').value==='yes',
+  };
+}
+function whyList(res, room){
+  const items=[`Room size sets a base of ${fmt(res.base)} BTU/h`];
+  if(res.cf!==1) items.push(`Your climate region ${res.cf>1?'adds':'trims'} ${Math.abs(Math.round((res.cf-1)*100))}%`);
+  if(res.ceil!==1) items.push(`${room.ceiling} ft ceilings ${res.ceil>1?'add':'trim'} ${Math.abs(Math.round((res.ceil-1)*100))}%`);
+  if(res.env!==1) items.push(`Envelope (insulation, air, glass) ${res.env>1?'adds':'trims'} ${Math.abs(Math.round((res.env-1)*100))}%`);
+  if(res.sun!==1) items.push(`Sun exposure ${res.sun>1?'adds':'trims'} ${Math.abs(Math.round((res.sun-1)*100))}%`);
+  if(res.people) items.push(`Extra occupants add ${fmt(res.people)} BTU/h`);
+  if(res.kitchen) items.push(`Kitchen adds ${fmt(res.kitchen)} BTU/h`);
+  if(res.equip) items.push(`Equipment adds ${fmt(res.equip)} BTU/h`);
+  return items.map(i=>`<li>${i}</li>`).join('');
+}
+function toggleWhy(){
+  const w=document.getElementById('rWhy');
+  if(w) w.style.display = w.style.display==='block' ? 'none' : 'block';
+}
+function onCalculate(){
+  if(!climate) return;
+  const room=readRoomForm(); if(!room) return;
+  const res=roomLoad(room,climate.type);
+  const q=res.point, bin=binLabel(q);
+  const body=document.getElementById('resultBody');
+  const crosses = CFG.capacity_bins_btu.some(b=>res.lower<=b && b<res.upper);
+  let html='';
+  const requiresLargeRoomReview=room.sqft>CFG.complexity_rules.single_room_review_area_sqft;
+  if(requiresLargeRoomReview){
+    html=`<div class="r-cap">Sizing result</div>
+    <div class="r-big" style="font-size:22px;line-height:1.35;padding:6px 0">Professional review required</div>
+    <div class="r-load">Rough planning load: <b>approximately ${fmt(rdReview(q))} BTU/h</b></div>
+    <div class="r-warn"><b>Low confidence. Not an equipment-sizing recommendation.</b><br>This calculator supports individual rooms up to ${fmt(CFG.complexity_rules.single_room_review_area_sqft)} sq. ft. For larger or open-plan spaces, divide the area into separate zones or request a room-by-room Manual J calculation.</div>
+    <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this result?</button>
+    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>`;
+  } else if(bin===null){
+    const MULTI_CAPS=[38000,41000,42000,45000,48000,55000];
+    const cap=MULTI_CAPS.find(c=>c>=q);
+    if(cap){
+      html=`<div class="r-cap">Recommended Equipment Capacity</div>
+      <div class="r-big">${fmt(cap)} BTU</div>
+      <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
+      <ul class="r-why" id="rWhy"><li>Loads above 36,000 BTU/h are served by DELLA multi-zone systems</li>${whyList(res,room)}</ul>
+      <div class="r-alt">This size comes as a multi-zone system. Plan two or more indoor units for even airflow.</div>
+      <a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=${cap}+BTU" onclick="track('matching_product_clicked',{bin:cap})">Find Matching Products</a>`;
+    } else {
+      html=`<div class="r-cap">Recommended Equipment Capacity</div>
+      <div class="r-big" style="font-size:22px;line-height:1.35;padding:6px 0">Professional review recommended</div>
+      <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b></div>
+      <div class="r-warn">This load exceeds DELLA's largest single system (55,000 BTU). Plan multiple systems with our support team.</div>
+      <a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=multi+zone+mini+split" onclick="track('matching_product_clicked',{bin:'multi'})">Find Matching Products</a>`;
+    }
+  } else if(bin==='below'){
+    html=`<div class="r-cap">Recommended Equipment Capacity</div>
+    <div class="r-big">9,000 BTU</div>
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy"><li>Your load is under 9,000 BTU/h and 9K is DELLA’s smallest size</li>${whyList(res,room)}</ul>
+    <a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=9000+BTU+mini+split" onclick="track('matching_product_clicked',{bin:9000})">Find Matching Products</a>
+    <div class="r-alt">Cooling several rooms? <a href="https://dellahome.com/search?type=product&q=9K">See multi-zone systems with a 9K head</a></div>`;
+  } else {
+    html=`<div class="r-cap">Recommended Equipment Capacity</div>
+    <div class="r-big">${fmt(bin)} BTU</div>
+    <div class="r-load">Calculated Cooling Load: <b>${fmt(rd(q))} BTU/h</b> · <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this size?</button></div>
+    <ul class="r-why" id="rWhy"><li>Estimated range ${fmt(rd(res.lower))} to ${fmt(rd(res.upper))} BTU/h</li>${crosses?'<li>Close to a size boundary. Take the larger size with strong sun, weak insulation, or frequent guests.</li>':''}${whyList(res,room)}</ul>`;
+    if(res.flags.length) html+=`<div class="r-warn">Flagged for review: ${res.flags.join(', ')}. Confirm with DELLA support before purchase.</div>`;
+    const k=bin/1000;
+    html+=`<a class="pill pill-navy" href="https://dellahome.com/search?type=product&q=${bin}+BTU+mini+split" onclick="track('matching_product_clicked',{bin:${bin}})">Find Matching Products</a>
+    <div class="r-alt">Cooling several rooms? <a href="https://dellahome.com/search?type=product&q=${k}K">See multi-zone systems with a ${k}K head</a></div>`;
+  }
+  if(room.intent==='primary'){
+    html+=`<div class="r-warn">Sizing is based on estimated cooling load. Confirm the selected model’s low-temperature heating performance before using it as your primary heat source.</div>`;
+  }
+  body.innerHTML=html;
+  track('btu_calculator_completed',{type:'one'});
+}
+
+/* ============ carousels & toggles ============ */
+function slide(id,dir){
+  const el=document.getElementById(id);
+  el.scrollBy({left:dir*(el.clientWidth*0.8),behavior:'smooth'});
+}
+function slideLoop(id,dir){
+  const el=document.getElementById(id);
+  const max=el.scrollWidth-el.clientWidth;
+  if(dir>0 && el.scrollLeft>=max-20){ el.scrollTo({left:0,behavior:'smooth'}); return; }
+  if(dir<0 && el.scrollLeft<=20){ el.scrollTo({left:max,behavior:'smooth'}); return; }
+  el.scrollBy({left:dir*(el.clientWidth*0.8),behavior:'smooth'});
+}
+function toggleRead(){
+  const b=document.getElementById('readMoreBody'), t=document.getElementById('readToggle');
+  const open = b.style.display==='block';
+  b.style.display = open?'none':'block';
+  t.textContent = open?'Read more':'Read less';
+}
+const STAR='<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.2 5.8 20.9l1.6-7L2 9.2l7.1-.6L12 2z"/></svg>';
+function renderBestsellers(){
+  document.getElementById('bsCar').innerHTML = BESTSELLERS.map(p=>`
+    <div class="prod-card">
+      <a class="prod-img" href="https://dellahome.com/products/${p.h}"><img src="${p.img}" alt="${p.t}" loading="lazy"></a>
+      <h3 class="prod-title"><a href="https://dellahome.com/products/${p.h}" onclick="track('matching_product_clicked',{handle:'${p.h}',src:'top_sales'})">${p.t}</a></h3>
+      <div class="loox-row">${p.rating?STAR.repeat(5)+`<span class="loox-count">(${p.raters})</span>`:''}</div>
+      <div class="prod-price">$${p.price.toLocaleString('en-US',{minimumFractionDigits:2})}${p.cap&&p.cap>p.price?`<s>$${p.cap.toLocaleString('en-US',{minimumFractionDigits:2})}</s>`:''}</div>
+      <form class="atc-form" method="post" action="https://dellahome.com/cart/add" onsubmit="track('add_to_cart_after_calculator',{handle:'${p.h}'})">
+        <input type="hidden" name="id" value="${p.vid}">
+        <input type="hidden" name="quantity" value="1">
+        <button class="atc-btn" type="submit"${p.vid?'':' disabled'}>Add To Cart</button>
+      </form>
+    </div>`).join('');
+}
+const LOOX_REVIEWS=__INJECT_LOOX__;
+function fmtDate(t){const d=new Date(t);return (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();}
+function toggleReview(btn){
+  const card=btn.closest('.gr-card');
+  card.classList.toggle('expanded');
+  btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
+}
+function renderReviews(){
+  const VERIFIED='<span class="gr-verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B133D"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>';
+  document.getElementById('grCar').innerHTML = LOOX_REVIEWS.map(r=>`
+    <div class="gr-card">
+      ${r.img?`<div class="gr-photo"><img src="${r.img}" alt="Customer photo: ${r.p||'DELLA product'}" loading="lazy"></div>`:''}
+      <div class="gr-name">${r.n}${r.v?VERIFIED:''}</div>
+      <div class="gr-date">${fmtDate(r.t)}</div>
+      <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span></div>
+      <div class="gr-text">${r.x.replace(/\n/g,'<br>')}</div>
+      ${r.x.length>200?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
+      ${r.p?`<div class="gr-prod">${r.u?`<a href="${r.u}">${r.p}</a>`:r.p}</div>`:''}
+    </div>`).join('');
+}
+
+/* init: MSFL-style defaults, live recalc */
+renderBestsellers();
+renderReviews();
+setRegion('mixed', true);
+document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for a more precise climate estimate, or click your state for a regional fallback.';
+document.getElementById('climateChip').style.display='block';
+document.querySelectorAll('#calcForm input, #calcForm select').forEach(el=>{
+  if(el.id==='zip') return;
+  el.addEventListener('change', ()=>onCalculate());
+  if(el.type==='number') el.addEventListener('input', ()=>onCalculate());
+});
+onCalculate();
+</script>
+</body>
+</html>

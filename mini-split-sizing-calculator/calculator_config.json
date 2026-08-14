@@ -1,0 +1,142 @@
+{
+  "config_version": "1.2.0",
+  "engine_version": "della-sizing-engine-1.1.0",
+  "compatible_engine_versions": [
+    "della-sizing-engine-1.1.0"
+  ],
+  "compatible_product_dataset_versions": [
+    "1.2.0"
+  ],
+  "base_btu_per_sqft": 20,
+  "minimum_base_load_btu": 5000,
+  "factors": {
+    "ceiling": {
+      "mode": "average_height_divided_by_8",
+      "reference_height_ft": 8,
+      "minimum": 0.9,
+      "maximum": 1.5,
+      "complexity_flag_above_ft": 12
+    },
+    "climate": {
+      "cold": 0.9,
+      "marine": 0.95,
+      "mixed": 1.0,
+      "hot_dry": 1.05,
+      "hot_humid": 1.1
+    },
+    "envelope": {
+      "minimum": 0.8,
+      "maximum": 1.35,
+      "insulation_delta": {
+        "excellent": -0.1,
+        "good": -0.05,
+        "standard": 0.0,
+        "poor": 0.1,
+        "very_poor": 0.2
+      },
+      "airtightness_delta": {
+        "very_tight": -0.05,
+        "average": 0.0,
+        "drafty": 0.08,
+        "very_drafty": 0.15
+      },
+      "glazing_delta": {
+        "low": -0.03,
+        "average": 0.0,
+        "high": 0.07,
+        "glass_heavy": 0.15
+      }
+    },
+    "sun": {
+      "shaded": 0.9,
+      "average": 1.0,
+      "high_western": 1.1
+    },
+    "internal_gains": {
+      "included_occupants": 2,
+      "extra_occupant_btu": 600,
+      "kitchen_btu": 4000,
+      "watts_to_btu": 3.412,
+      "usage_factor": {
+        "continuous": 1.0,
+        "frequent": 0.75,
+        "intermittent": 0.5
+      }
+    },
+    "special_space": {
+      "sunroom_minimum_glazing_delta": 0.15
+    }
+  },
+  "confidence_ranges": {
+    "high": 0.1,
+    "medium": 0.15,
+    "low": 0.25
+  },
+  "capacity_bins_btu": [
+    9000,
+    12000,
+    18000,
+    24000,
+    36000
+  ],
+  "complexity_rules": {
+    "standard_max_rooms": 4,
+    "advanced_min_rooms": 5,
+    "absolute_max_rooms": 6,
+    "single_room_review_area_sqft": 1500,
+    "single_zone_automatic_max_btu": 36000,
+    "multi_room_review_total_btu": 55000,
+    "small_load_review_btu": 7000,
+    "ceiling_review_above_ft": 12
+  },
+  "fallback_thresholds": {
+    "preferred_min_capacity_ratio": 1.0,
+    "preferred_max_capacity_ratio": 1.15,
+    "conditional_max_capacity_ratio": 1.25
+  },
+  "climate_margins": {
+    "winter_safety_margin_f": 5,
+    "summer_safety_margin_f": 3
+  },
+  "ranking_weights": {
+    "capacity_fit": 40,
+    "zone_or_head_match": 25,
+    "climate_fit": 20,
+    "inventory": 10,
+    "efficiency": 5
+  },
+  "merchandising": {
+    "default_merchandising_priority": 50,
+    "allowed_roles": [
+      "best_match",
+      "higher_efficiency",
+      "value_choice",
+      "cold_climate_upgrade"
+    ]
+  },
+  "display_policy": {
+    "maximum_product_cards": 4,
+    "mobile_cards_per_row": 2,
+    "allow_dynamic_roles": true,
+    "load_rounding_increment_btu": 100,
+    "review_load_rounding_increment_btu": 5000
+  },
+  "input_validation": {
+    "minimum_area_sqft": 20,
+    "confirm_area_above_sqft": 1200,
+    "minimum_ceiling_ft": 6,
+    "maximum_ceiling_ft": 20,
+    "confirm_occupants_above": 8,
+    "maximum_occupants": 20,
+    "confirm_equipment_watts_above": 3000,
+    "maximum_equipment_watts": 15000,
+    "zip_code_pattern": "^[0-9]{5}$"
+  },
+  "notes": {
+    "calibration_status": "DELLA Engine V1 policy assumptions per PRD 9.4. Fixture-based calibration and HVAC/product review required before launch (PRD 28.2).",
+    "input_validation_status": "input_validation thresholds are proposed defaults added by this config. They are not sourced from PRD tables and require the same calibration approval.",
+    "single_source_rule": "This file is the only source of engine coefficients. The product dataset JSON v1.1.0 no longer carries a runtime_config block. Presentation JavaScript must not duplicate these values.",
+    "v1_1_0_change": "multi_room_review_total_btu raised 48000 -> 55000: the 2026-07-22 storefront re-audit confirmed live 55,000 BTU five- and six-zone systems (catalog_coverage_report.md section 5). Shipped together with product dataset 1.2.0, which adds those 121 systems.",
+    "v1_2_0_change": "Sunrooms now apply a minimum +15% glazing adjustment instead of multiplying the complete load, preventing duplicate solar-gain adjustments with glass-heavy rooms. Single rooms over 1,500 sq. ft. enter professional review before equipment matching; any planning load is rounded to 5,000 BTU/h and is not a sizing recommendation."
+  }
+}
