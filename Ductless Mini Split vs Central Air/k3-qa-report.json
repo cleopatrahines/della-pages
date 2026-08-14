@@ -81,12 +81,12 @@
       "detail": ""
     },
     {
-      "name": "six visible FAQs",
+      "name": "four visible FAQs (owner: trimmed duplicates)",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "FAQ schema six entries",
+      "name": "FAQ schema four entries",
       "pass": true,
       "detail": ""
     },
@@ -121,6 +121,16 @@
       "detail": "n=0"
     },
     {
+      "name": "eight comparison rows (incl. cost/efficiency)",
+      "pass": true,
+      "detail": "rows=8"
+    },
+    {
+      "name": "og:image present",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "ductless preselects",
       "pass": true,
       "detail": ""
@@ -134,6 +144,11 @@
       "name": "ductless final CTA updates",
       "pass": true,
       "detail": "Ready to Build Your Ductless Setup?"
+    },
+    {
+      "name": "hero CTA message-matches preselected path",
+      "pass": true,
+      "detail": "See Wall-Mounted Mini Splits"
     },
     {
       "name": "central preselects",
@@ -173,7 +188,7 @@
     {
       "name": "gateway click scrolls to shop",
       "pass": true,
-      "detail": "scrollY=1234"
+      "detail": "scrollY=1139"
     },
     {
       "name": "change project control appears",
@@ -218,7 +233,7 @@
     {
       "name": "panel-level duplicate headings hidden with JS",
       "pass": true,
-      "detail": "none,none"
+      "detail": "none"
     },
     {
       "name": "keyboard Enter activates path",
@@ -233,7 +248,7 @@
     {
       "name": "reduced motion respected",
       "pass": true,
-      "detail": "scrollY=1234 (jumped instantly, no smooth anim)"
+      "detail": "scrollY=1139 (jumped instantly, no smooth anim)"
     },
     {
       "name": "no-JS panels remain visible",
@@ -279,15 +294,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "390": {
       "bodyWidth": 390,
@@ -296,15 +313,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "430": {
       "bodyWidth": 430,
@@ -313,15 +332,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "768": {
       "bodyWidth": 768,
@@ -330,15 +351,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "1024": {
       "bodyWidth": 1024,
@@ -347,15 +370,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "1280": {
       "bodyWidth": 1280,
@@ -364,15 +389,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     },
     "1440": {
       "bodyWidth": 1440,
@@ -381,15 +408,17 @@
       "panelCount": 3,
       "activePanels": 0,
       "neutralActive": true,
-      "faqCount": 6,
+      "faqCount": 4,
       "productCount": 8,
-      "schemaCount": 6,
+      "schemaCount": 4,
       "naturalImagesBroken": [],
       "atc": 0,
       "chooseOptions": 0,
       "primaryActions": 8,
       "newTabViewProduct": 8,
-      "arrowGlyphs": 0
+      "arrowGlyphs": 0,
+      "compareRows": 8,
+      "ogImage": true
     }
   },
   "consoleErrors": [],

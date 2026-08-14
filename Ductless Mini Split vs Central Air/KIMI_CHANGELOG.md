@@ -179,10 +179,133 @@ Round 3's warm-panel blending (方案 A) removed the "sticker" edges but still c
 
 - `Find My System →` → `Find My System` (gateway escape hatch); `Find Partner HVAC Installer →` → `Find Partner HVAC Installer` (final CTA). Removes the only P1 flag from the avoid-ai-design catalog audit (CP3: arrow characters stapled to links).
 
-## Full verification (round 9)
+## Round 10 — FAQ audit/trim + Services trust section (owner decisions)
 
-QA environment rebuilt (temp dir had been cleaned; system Chrome channel, no browser download). Suite extended with a no-arrow-glyph check and re-run: **54/54 passed**, zero console errors, zero failed assets.
+### 30. FAQ content audited against page's first-principles value and trimmed
+
+- Audit: Q1 (main difference) duplicates the Hero direct answer + comparison-table Distribution row; Q4 (central air ductwork) duplicates the Whole-Home Ductwork table row and the Replace gateway condition. Q2/Q3/Q5/Q6 answer buying/sizing objections not covered elsewhere.
+- Owner-approved: removed Q1 and Q4; FAQPage JSON-LD reduced to the same 4 entries (verified byte-match by QA).
+
+### 31. FAQ restyled to the Ceiling Cassette vs Concealed Ducted reference
+
+- Two-column numbered grid → single-column list: hairline dividers, Spectral 20px/500 questions, chevron affordance (CSS border chevron, rotates on open), blue hover/open state, 15px/1.7 muted answers. Markup keeps native `details/summary`; the CSS counter numbering was removed with the old layout.
+
+### 32. Premium Della Services section added (owner override of PRD §11 non-goal)
+
+- Rationale (owner): the page doubles as an ad landing page; trust elements matter.
+- The mockup's `<section id="services">` was extracted byte-exact from the downloaded mockup (base64 icons verbatim) and adapted to the page namespace: `sec→dsc-services`, `container→dsc-container`, `svc-*→dsc-svc*`, H2 follows the page's left-aligned heading rule. Mockup colors kept (#EFF3FE cards, #6E8BE5 icon discs, #3D62D2 titles — all within the DELLA blue family).
+- Position: between the Verify installation bar and the FAQ, per owner instruction. Responsive: 4 → 2 (≤1024px) → 2 compact (≤560px) → 1 (≤379px via existing product breakpoint rules... verified 2-col compact at 390px).
+- Policy copy is owner-supplied from the approved mockup; recorded in PRD §12.
+
+## Round 11 — taste-skill-inspired polish + hero rethink (owner decisions)
+
+### 33. Services section brought onto brand tokens
+
+- Mockup colors mapped to page tokens: `#eff3fe → --blue-light`, `#6e8be5 → --blue`, `#3d62d2 → --navy`, `#3a3a3a → --muted`, radius 14px → 6px (page card radius).
+- The four 50px base64 PNG icons (~15KB) replaced with hand-drawn thin-line SVGs in the Gateway icon style (truck / return arrow / chat / shield, white stroke on the blue disc, `aria-hidden`). Fixed a regex mishap during replacement that ate the first card; all four cards verified present.
+
+### 34. Micro fixes from the audit
+
+- `.dsc-heading--center` naming debt removed (class deleted everywhere; the JS panel-heading-hide rule retargeted to `.js .dsc-panel>.dsc-heading`).
+- `section[id]{scroll-margin-top:24px}` — anchor jumps no longer paste section titles to the viewport edge.
+- FAQ answers now expand smoothly (grid-template-rows 0fr→1fr + padding transition; reduced-motion still kills it globally).
+
+### 35. Comparison table reflects the selected path
+
+- `setPath()` now sets `data-highlight` on `.dsc-table`: ductless/supplement → mini-split column, central → central column, neutral → none. Very subtle `#eef3fd` tint; it mirrors the visitor's own choice, so it does not violate the no-winner-badge rule.
+
+### 36. Hero: shorter copy, single CTA, VS composite (owner requests)
+
+- Lead: three paragraphs (~52 words) → one ~25-word paragraph keeping the SEO entities (wall-mounted ductless mini splits, room-by-room, whole-home ductwork, air handler, ducts).
+- Removed the `Compare the Tradeoffs` secondary CTA: it anchored visitors past the Project Gateway, conflicting with the page's first job. One CTA remains: `Find My Best Starting Point`.
+- `hero-vs.webp` (1157×503, 85KB) composited programmatically from the two owner-supplied transparent banner images — real product photos with correct DELLA logos, VS badge drawn in Spectral Bold navy. Recommended over AI regeneration precisely because image generators cannot reproduce the brand marks. The two separate hero images and their CSS were removed; the visual column now hosts one centered image at all breakpoints.
+- The requested GPT image-generation prompt (kept as a fallback option) is documented in the round-11 report reply and below:
+
+> "A wide e-commerce hero banner composition on a soft pale-blue studio gradient background (#F5F9FF fading into #EDF6FF): on the left, a white wall-mounted ductless mini split system — a sleek rectangular indoor unit mounted above a white outdoor condenser with a round black fan grille; on the right, a dark gray central HVAC system — a tall rectangular indoor air handler cabinet beside a dark gray outdoor condenser; floating between them at center, a small circular white badge with a thin navy border containing the text 'VS' in elegant navy serif type; both systems share one invisible floor line with soft realistic contact shadows, gentle studio lighting from the upper left, photorealistic product photography, clean minimal composition with generous negative space, no other text, no labels, no logos, no watermarks, wide 2.2:1 aspect ratio."
+
+## Round 12 — owner reversions and VS refinement
+
+### 37. Comparison-table column highlight reverted
+
+- Owner reviewed the selected-column tint and asked to revert. Removed the `data-highlight` CSS rules and the `setPath()` JS hook; the comparison table is back to a uniform neutral surface in all path states.
+
+### 38. Services icons restored to the original mockup assets
+
+- Owner preferred the original icons. The four hand-drawn line SVGs were replaced by the original base64 PNG icons extracted byte-exact from the downloaded sizing-calculator mockup (truck / return / chat / wrench). The token-based colors and Spectral/Poppins typography from round 11 stay, per owner instruction ("字体不用改回去了").
+
+### 39. VS mark simplified
+
+- Regenerated `hero-vs.webp` (1157×503): the white circle badge is gone; a lowercase "vs" sits at the vertical center of the gap between the two systems. Final sizing after owner feedback: Spectral Bold 64px, solid navy — clearly visible without touching either product group (the gap is ~100px wide; the word spans ~55px).
+
+## Round 13 — merged ChatGPT+Kimi review implementation (owner-approved scope)
+
+### 40. Ductless gateway card widened (whole-home no-duct blind spot)
+
+- Title: "Add Comfort Without Relying on Ductwork" → "Condition Your Home or Spaces Without Relying on Ductwork"; condition → "Condition one room, several rooms, or a whole home without a duct system." Eyebrow stays "Add"; no fourth card added. Fixes the real coverage gap for old-house/whole-home ductless projects.
+
+### 41. Comparison table: +2 number-free rows
+
+- "Primary Cost Drivers" and "Efficiency Depends On" — answers the cost/efficiency sub-intent structurally without unverified numbers or winner language.
+
+### 42. Neutral shopping state slimmed
+
+- The 260px dashed placeholder box ("Choose a Project Above…" + icon) replaced with one quiet line: "Choose a project above to see the DELLA starting options for that path." Products still appear on selection; no-JS fallback unchanged (all panels visible sequentially).
+
+### 43. Hero CTA message-matches the active path
+
+- When a path is active (URL preselect or click): hero CTA becomes "See Central Air Starting Points" / "See Wall-Mounted Mini Splits" → #shop-path. Neutral restores "Find My Best Starting Point" → #project-gateway.
+
+### 44. og:image added
+
+- Generated `assets/products/og-image.png` (1200×630): brand gradient, Spectral title, tagline, VS composition with real product photos. Meta tag ships with an integration comment to swap in the absolute Shopify CDN URL at launch.
+
+### 45. 24/7 Live Support linked
+
+- Services item title now links to the verified `https://dellahome.com/pages/contact` (fetched and confirmed live 2026-08-14).
+
+### 46. Documented integration-era rules in HANDOFF
+
+- Ad-ops message-match rule (`?path=` only for path-explicit ads), dual source of truth (Shopify facts vs page merchandising config), KPI framing (Qualified Action / Correction-as-success / Final Path × Source), decay triggers. Rejected items recorded in PRD §12: deleting Premium Della Services and restoring the 6-question FAQ (both are recent explicit owner decisions).
+
+## Full verification (round 13)
+
+QA extended (8 comparison rows, og:image presence, hero-CTA path matching) and re-run: **57/57 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Gateway/table/services/hero screenshot-verified at 1440px.
 
 ## Deliberately not changed
 
 No strategy, structure, product, price, path-logic, or copy changes were made. All edits are presentation fidelity fixes versus the approved `Design.png`/`DESIGN.md`. Reported-only items (P3-1 analytics event naming, P3-2 OG metadata, P3-3 production hydration availability gap) remain listed in `KIMI_AUDIT.md` for the Shopify integration round.
+
+## Round 14 — installer de-dup, copy pass (humanizer + stop-slop), spacing
+
+### 47. "Find Partner HVAC Installer" fully de-duplicated
+
+- Only the BEFORE YOU BUY bar keeps the installer button (it is bound to the confirm-installation copy). Central panel footer and Supplement panel installers demoted to quiet underline text links (`.dsc-panel-link`), matching the final-CTA treatment. Per path view: 1 button + text links max.
+
+### 48. Full copy pass with humanizer + stop-slop skills
+
+- Both skills read and applied to every visible string (extracted from the live DOM, no-JS render).
+- Changed:
+  - Verify subheading: "Both paths can provide home comfort. The main differences are…" → "Both systems heat and cool your home. The differences are in how air moves, how rooms are controlled, and what installation involves." (weak copula + hedge removed, active voice)
+  - Supplement panel: "…may be worth considering for a garage, addition, converted space, or persistent hot or cold room." → "…can cover a garage, addition, converted space, or a room that stays too hot or cold." (hedge stack removed, "can" retained per claims policy)
+  - FAQ Q2/Q3 answers: passive "It can be used / can be considered" → active "it can handle / can cover"; JSON-LD re-synced byte-exact (both replacements hit exactly 2 locations each).
+- Kept deliberately (documented): "Start with the project, not the equipment." (negative parallelism, but approved-mockup copy doing real corrective work); claims-policy hedges "primarily/usually/can/may" (PRD §8 outranks style rules); the three "Ready to…" final-CTA variants (intentional dynamic template); Services policy copy (owner-supplied verbatim).
+- Flagged, not changed (PRD-locked §6.4): comparison H2 "What Actually Changes?" — "actually" is a humanizer §7 watch word; heading is PRD-approved copy, so any change needs owner sign-off.
+- stop-slop score after pass: Directness 9, Rhythm 8, Trust 9, Authenticity 8, Density 9 = 43/50 (threshold 35).
+
+### 49. Section spacing tightened
+
+- Rhythm reduced for a 7-section page: `.dsc-section` 76→64px, `.dsc-section--compact`/`dsc-services` 58→48px, final CTA 56/72→48/56px; mobile (≤820px) 60/50→48/40px. Page height at 1440px: 3584px.
+
+## Full verification (round 14)
+
+QA re-run after each change set: **57/57 passed**, zero console errors, no overflow at any viewport. Full-page screenshot verified at 1440px.
+
+## Round 15 — heading tidy + owner-delegated decision
+
+### 50. Comparison H2: "What Actually Changes?" → "What Changes?"
+
+- Owner delegated the decision; removed the humanizer §7 watch word. PRD §12 records the override of §6.4.
+
+## Full verification (round 15)
+
+QA re-run: **57/57 passed**, zero console errors.

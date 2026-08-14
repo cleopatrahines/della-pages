@@ -154,3 +154,39 @@ Audited against `avoid-ai-design/references/ai-tells-catalog.md`, code + rendere
 **Render-verified passes:** committed palette (dominant navy + blue accent, ~60/30/10), real product imagery throughout (owner packshots/cutouts — no stock, no placeholders, no 3D blobs), complete hover/focus-visible/disabled states, single functional panel-switch fade (no scroll-reveal soup), custom line SVG icons (no Lucide/emoji).
 
 **Verdict:** clean audit. No P0, one optional P1 (arrow glyphs, mockup-sourced). The page reads as a mature DELLA ecommerce landing page, not an AI template.
+
+## Appendix 2 — Long-term multi-perspective first-principles review (2026-08-14)
+
+Page roles: (a) research-intent organic landing page, (b) Google/Meta ad landing page, (c) guided-shopping router. Long-term durability review per role.
+
+### SEO / organic research traffic
+First job: rank for the comparison cluster and satisfy research intent better than rivals.
+- Strengths: exact-match title/H1, fast single file, local fonts/WebP, clean entity coverage, 4-question FAQPage schema matching visible copy.
+- Gaps/risks: (1) No structural cost content — every SERP competitor covers "cost to install/run"; PRD forbids unverified numbers, but a number-free cost-structure explanation (equipment-only vs equipment+duct+labor, what drives cost) is possible and is the biggest topical gap. (2) FAQ trim traded some answer-engine/AI-Overview surface for focus — accepted trade-off, hero lead still carries the definitional answer. (3) No og:image — social/messenger shares render bare. (4) Price staleness: production hydration is required for prices to stay true; if the PageFly surface ends up unable to run the Ajax hydration, the page silently ships 2026-08-13 snapshot prices — a trust/compliance risk that needs an integration-time checkpoint.
+
+### Google Ads landing
+First job: message match + post-click conversion at acceptable CPC.
+- Strengths: ?path= preselection per ad group, fast load, no policy-risk claims, contextual final CTA.
+- Gaps: (1) Ads on cost/price queries have no matching content (same gap as SEO). (2) Analytics hooks exist but are unwired — no verified conversion or path-selection events reach GA4 yet.
+
+### Meta/Facebook
+First job: thumb-stopping clarity + trust for cold traffic.
+- Strengths: clean hero, real product imagery, services trust row.
+- Gap: missing og:image hurts share previews; cold high-ticket traffic often wants financing hints (deliberately omitted per PRD — revisit only with real financing data).
+
+### Conversion / CRO
+First job: route to the right PDP/collection with minimal leaks.
+- Strengths: single unambiguous hero CTA; uniform card CTAs; contextual final CTA.
+- Gaps/things-not-noticed: (1) Services items are inert — "24/7 Live Support" could link to the support/contact page; a trust row that answers "can I talk to a human?" converts fence-sitters. (2) All 8 cards exit to PDP in a new tab — correct for now, but there is no return hook; measure PDP bounce-back. (3) The 4th services icon is a wrench while its label says "Lifetime Warranty" — mismatched glyph inherited from the mockup; recommend a shield icon swap. (4) The biggest long-term asset this page can produce is demand data: which path (Replace/Add/Supplement) visitors actually choose. `della_path_selected` exists but is not wired — wire it before spending real ad budget, it tells you inventory/merchandising priorities.
+
+### Claims/compliance durability
+- Owner-supplied policy copy (shipping/30-day/lifetime compressor) is a snapshot — needs a review trigger if DELLA policy changes.
+- No winner claims, qualified language throughout — durable.
+
+### Deliberate non-actions (do not "fix")
+- No cost numbers, no calculator, no How-It-Works band, no stat strip (the last two are cataloged AI-slop patterns), no financing mention without a real source, no cassette/concealed expansion.
+
+### Suggested priority order
+P1: wire `della_path_selected` + CTA events to GA4 at Shopify integration; verify price hydration works on the chosen PageFly surface (fallback: dated snapshot + owner review cadence).
+P2: add og:image (reuse hero-vs composition); swap the warranty wrench icon for a shield; link 24/7 Live Support to the support page.
+P3: consider a number-free "what drives the cost difference" row/block only if organic rankings stall against cost-led competitors — requires PRD amendment first.

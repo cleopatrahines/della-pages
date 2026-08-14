@@ -19,12 +19,13 @@ Approved design: `Design.png`
 
 ## Latest approved strategy
 
-- Hero → Project Gateway → Conditional Shopping → Verify → FAQ → Contextual CTA.
+- Hero → Project Gateway → Conditional Shopping → Verify → **Premium Della Services (owner-added 2026-08-13)** → FAQ → Contextual CTA.
 - Gateway is the sole selector: Replace, Add, Supplement.
 - Organic state is neutral; `?path=` may preselect without auto-scroll.
-- No Benefit Strip, Quick Answer, duplicate tabs, Services, or extra editorial modules.
+- No Benefit Strip, Quick Answer, duplicate tabs, or extra editorial modules; Services module explicitly owner-approved.
 - Ductless is room/use-case-led; Central is capacity-led; Supplement has no product grid.
-- Prices are visible. Direct ATC is limited to one unambiguous available Variant.
+- All 8 product cards use uniform navy `View Product` (new tab); no cart code.
+- FAQ trimmed to 4 questions (owner-approved; JSON-LD matches) in single-column reference style.
 
 ## Product runtime state captured 2026-08-13
 
@@ -52,6 +53,13 @@ Passed local Chrome QA on 2026-08-13.
 - No page or console errors were found.
 
 Production Shopify QA is still required after PageFly/theme integration, especially live price hydration, Variant resolution, `/cart/add.js`, Cart redirect, analytics, and canonical output.
+
+## Integration-era rules (agreed 2026-08-14)
+
+- **Ad-ops message-match rule**: `?path=` is a message-match mechanism, not blanket paid personalization. Only attach it to ads whose creative explicitly promises one path (e.g. "Replace Your Ducted HVAC System" → `?path=central`). Generic comparison ads must land neutral.
+- **Dual source of truth**: Shopify (Liquid/Ajax) owns product facts — title, URL, image, price, availability, variants. The page owns merchandising config — role labels, path assignment, display priority, fallback products. Never parse product titles to infer zone/room roles.
+- **Measurement KPIs**: do not optimize path stability (a path change can be a successful correction). Track Qualified Action Rate (PDP/collection/installer/finder), Qualified Progression by final path, Correction Rate (diagnostic, not failure), and conversion by final path × traffic source.
+- **Decay triggers**: price-hydration failure alert at integration; annual review of owner-supplied policy copy (shipping / 30-day / lifetime compressor); periodic link validity spot-check; set og:image to the absolute Shopify CDN URL when the page goes live.
 
 ## Git status
 
