@@ -13,6 +13,13 @@ table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt;
 th, td { border: 1px solid #C9CFDD; padding: 6px 10px; text-align: left; }
 tr { break-inside: avoid; page-break-inside: avoid; }
 th { background: #EEF3FC; color: #0E1952; }
+.complex-cases { table-layout: fixed; font-size: 9.2pt; }
+.complex-cases th, .complex-cases td { padding: 6px 7px; overflow-wrap: anywhere; }
+.complex-cases th:nth-child(1), .complex-cases td:nth-child(1) { width: 5%; }
+.complex-cases th:nth-child(2), .complex-cases td:nth-child(2) { width: 12%; }
+.complex-cases th:nth-child(3), .complex-cases td:nth-child(3) { width: 30%; }
+.complex-cases th:nth-child(4), .complex-cases td:nth-child(4) { width: 25%; }
+.complex-cases th:nth-child(5), .complex-cases td:nth-child(5) { width: 28%; }
 .box { background: #F5F8FE; border: 1px solid #C9CFDD; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
 .formula { background: #0E1952; color: #fff; padding: 10px 16px; border-radius: 6px; font-size: 11pt; letter-spacing: .5px; }
 b { color: #0E1952; }
@@ -66,7 +73,7 @@ a { color: #286ED7; }
 </table>
 
 <h3>7. 特殊空间</h3>
-<p>玻璃阳光房整体 ×1.15，同时结果附加人工复核标记——玻璃房的太阳得热离散度过大，公式仅提供起点。</p>
+<p>阳光房不再把整段负荷额外乘以 1.15，而是把玻璃修正的最低值设为 +15%：<code>max(用户选择的玻璃修正, 0.15)</code>。因此普通窗户 + 阳光房仍增加 15%，Glass-heavy + 阳光房也只增加一次 15%，不会叠加成 32.25%。结果继续附加人工复核标记，因为玻璃房的太阳得热离散度较大，公式仅提供规划起点。</p>
 
 <div class="example"><b>基准示例：</b>500 sq.ft.、8 英尺层高、混合气候区、各项默认、2 人、无厨房无设备：500 × 20 = 10,000，各乘数均为 1 → <b>冷负荷 10,000 BTU/h</b>，推荐 12,000 BTU（容量比 1.2）。</div>
 
@@ -74,7 +81,7 @@ a { color: #286ED7; }
 <p>负荷是估计值，因此结果同时展示置信区间（±10% / ±15% / ±25%，取决于输入完整度），再按容量比规则在产品档位中选档：</p>
 <div class="box">
 <b>单机档位</b>（9,000 / 12,000 / 18,000 / 24,000 / 36,000 BTU）：容量 ÷ 负荷在 <b>1.0–1.15</b> 为优选，1.15–1.25 为备选；再大即过度配置——购置成本高、短循环损耗、除湿变差。<br><br>
-<b>多联档位</b>（38K / 41K / 42K / 45K / 48K / 55K，共 313 个在售系统）：负荷在 36,000–55,000 BTU/h 时直接推荐最小的足额多联档，并提示需要两台以上内机；超过 55,000（目录最大单系统）才转人工方案。头部竞品在大负荷下同样直接给出推荐容量，我们在对齐该体验的同时保证每个推荐值在目录中真实有货。
+<b>多联档位</b>（38K / 41K / 42K / 45K / 48K / 55K，共 313 个在售系统）：仅当单个空间不超过 1,500 sq.ft. 时，36,000–55,000 BTU/h 的负荷才进入多联档位路径。单个空间超过 1,500 sq.ft. 时，面积边界优先，直接显示 Professional review required，不显示推荐容量或产品按钮，并提示拆分分区或进行逐房间 Manual J 计算。
 </div>
 
 <h2>三、关键设计决策：为什么 Find Matching Products 跳站内搜索而非内嵌产品列表</h2>
@@ -84,7 +91,7 @@ a { color: #286ED7; }
 <p><b>4. 已被市场头名验证。</b>该关键词 Google 自然排名第一的 <a href="https://minisplitsforless.com/pages/hvac-load-calculator">minisplitsforless.com 计算器</a>使用同一"计算后跳搜索"模式。</p>
 
 <h2>四、能力边界</h2>
-<p>输入因素（面积、气候、层高、围护、日照、内部热源）与专业暖通初估口径一致，支撑单房间壁挂机选购决策足够可靠。它不是 <b>Manual J</b>（逐墙体、逐门窗建模的专业负荷标准）：整宅方案与需要报建文件的项目，页面明确引导咨询持证暖通专业人员。页面所有推荐值均展示为估算区间而非伪精确单值。</p>
+<p>输入因素（面积、气候、层高、围护、日照、内部热源）用于单房间购买前的粗略规划。它不是 <b>Manual J</b>（逐墙体、逐门窗建模的专业负荷标准）：整宅方案、超过 1,500 sq.ft. 的单个空间与需要报建文件的项目，页面明确引导咨询持证暖通专业人员。异常场景只展示按 5,000 BTU/h 取整的 rough planning load，并明确标注 Low confidence、不是设备选型建议。</p>
 
 <h3>与竞品的基准差异（待暖通复核决策）</h3>
 <p>同样输入 2000 sq.ft. 全默认：本计算器载荷 40,000 BTU/h（20 BTU/sq.ft.），<a href="https://minisplitsforless.com/pages/hvac-load-calculator">minisplitsforless</a> 与 <a href="https://www.pioneerminisplit.com/pages/hvac-calculator">pioneerminisplit</a> 的载荷完全相同，均为 52,000 BTU/h（等效 26 BTU/sq.ft.）——两家使用同一套第三方计算组件。三点事实供决策：</p>
@@ -123,19 +130,21 @@ a { color: #286ED7; }
 <tr><td>T3</td><td>明尼苏达小卧室</td><td>ZIP 55411；350 sq.ft.；主取暖选 Yes</td><td>Region #5 Cold（winter −10°F）；推荐 9,000 BTU，载荷 6,300 BTU/h</td></tr>
 <tr><td>T4</td><td>档位整千</td><td>900 sq.ft.</td><td>推荐 18,000 BTU，载荷 18,000 BTU/h</td></tr>
 <tr><td>T5</td><td>阳光房标记</td><td>Glass sunroom 选 Yes</td><td>推荐 12,000 BTU，载荷 9,200 BTU/h，黄字 Flagged for review: sunroom</td></tr>
-<tr><td>T6</td><td>大开间多联</td><td>2000 sq.ft.</td><td>推荐 41,000 BTU（多联），载荷 40,000 BTU/h，提示需两台以上内机</td></tr>
+<tr><td>T6</td><td>超大空间拦截</td><td>2000 sq.ft.</td><td>Professional review required；Rough planning load approximately 40,000 BTU/h；不显示推荐容量和 Find Matching Products</td></tr>
 <tr><td>T7</td><td>设备瓦数</td><td>瓦数填 2000</td><td>推荐 18,000 BTU，载荷 14,800 BTU/h</td></tr>
+<tr><td>T8</td><td>玻璃阳光房去重</td><td>400 sq.ft.；Windows 选 Glass-heavy；Glass sunroom 选 Yes；其余默认</td><td>载荷 9,200 BTU/h，只应用一次 +15% 玻璃修正，不得出现 10,600 BTU/h</td></tr>
+<tr><td>T9</td><td>4000 sq.ft. 异常场景</td><td>ZIP 85001；4000 sq.ft.；12 ft；Windows 选 Glass-heavy；Glass sunroom 选 Yes</td><td>Professional review required；Rough planning load approximately 145,000 BTU/h；Low confidence；无容量或产品推荐</td></tr>
 </table>
 
 <h3>复杂用例（多因素叠加与边界行为）</h3>
-<table>
+<table class="complex-cases">
 <tr><th>#</th><th>用例</th><th>操作（其余默认）</th><th>预期结果</th><th>验证点</th></tr>
 <tr><td>C1</td><td>休斯顿顶配</td><td>ZIP 77002；550 sq.ft.；层高 10 ft；保温 Poor；气密 Drafty；窗户 Many；日照 Strong/western；5 人；有厨房；瓦数 800</td><td>Region #1 Hot &amp; Humid；推荐 36,000 BTU，载荷 29,300 BTU/h</td><td>八项因素同时叠加；1.25 倍备选档规则生效（36,000÷29,300≈1.23）</td></tr>
 <tr><td>C2</td><td>西雅图优质房</td><td>ZIP 98101；750 sq.ft.；层高 9 ft；保温 Good；气密 Very tight；窗户 Few；日照 Shaded</td><td>Region #4 Cool；推荐 18,000 BTU，载荷 12,600 BTU/h</td><td>负修正叠加；载荷落在 12K 与 18K 之间的目录空档，引擎按向上取整给 18K</td></tr>
 <tr><td>C3</td><td>高挑大客厅</td><td>ZIP 90210；1200 sq.ft.；层高选 Over 12 ft；日照 Strong/western</td><td>Region #2 Warm；推荐 42,000 BTU（多联），载荷 41,600 BTU/h</td><td>层高 1.5 倍上限；跨入多联档位区间</td></tr>
-<tr><td>C4</td><td>丹佛阳光房</td><td>ZIP 80202；450 sq.ft.；Glass sunroom 选 Yes；瓦数 500</td><td>Region #5 Cold；推荐 12,000 BTU，载荷 11,300 BTU/h，黄字 sunroom 标记</td><td>寒冷区 0.9 折减与阳光房 1.15 加成同时生效</td></tr>
+<tr><td>C4</td><td>丹佛阳光房</td><td>ZIP 80202；450 sq.ft.；Glass sunroom 选 Yes；瓦数 500</td><td>Region #5 Cold；推荐 12,000 BTU，载荷 11,000 BTU/h，黄字 sunroom 标记</td><td>寒冷区 0.9 折减与最低 +15% 玻璃修正先作用于围护负荷，设备散热随后相加，不再把内部热源重复放大</td></tr>
 <tr><td>C5</td><td>法戈严寒主暖</td><td>ZIP 58102；800 sq.ft.；主取暖 Yes；保温 Poor；气密 Very drafty</td><td>Region #5 Cold（winter −18°F）；推荐 18,000 BTU，载荷 18,000 BTU/h</td><td>Zone 7 极寒邮编解析；主取暖意图下推荐仍成立</td></tr>
-<tr><td>C6</td><td>超目录极限</td><td>3000 sq.ft.</td><td>Professional review recommended，载荷 60,000 BTU/h，提示超过 DELLA 最大单系统 55,000 BTU</td><td>目录上限（55K）之外才转人工</td></tr>
+<tr><td>C6</td><td>超支持面积</td><td>3000 sq.ft.</td><td>Professional review required；Rough planning load approximately 60,000 BTU/h；不显示确定容量和产品按钮</td><td>1,500 sq.ft. 面积边界优先于 55K 目录边界</td></tr>
 </table>
 
 </body>

@@ -452,25 +452,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 
-/* ============ engine (della-sizing-engine-1.0.0, single-room path) ============ */
+/* ============ engine (della-sizing-engine-1.1.0, single-room path) ============ */
 const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
 const fmt=n=>Math.round(n).toLocaleString('en-US');
 const rd=v=>Math.round(v/CFG.display_policy.load_rounding_increment_btu)*CFG.display_policy.load_rounding_increment_btu;
+const rdReview=v=>Math.round(v/CFG.display_policy.review_load_rounding_increment_btu)*CFG.display_policy.review_load_rounding_increment_btu;
 
 function roomLoad(room, climateType){
   const f=CFG.factors;
   const base=Math.max(CFG.minimum_base_load_btu, room.sqft*CFG.base_btu_per_sqft);
   const ceil=clamp(room.ceiling/f.ceiling.reference_height_ft, f.ceiling.minimum, f.ceiling.maximum);
   const cf=f.climate[climateType];
-  const env=clamp(1+f.envelope.insulation_delta[room.insulation]+f.envelope.airtightness_delta[room.airtightness]+f.envelope.glazing_delta[room.glazing], f.envelope.minimum, f.envelope.maximum);
+  const selectedGlazing=f.envelope.glazing_delta[room.glazing];
+  const glazing=room.sunroom?Math.max(selectedGlazing,f.special_space.sunroom_minimum_glazing_delta):selectedGlazing;
+  const env=clamp(1+f.envelope.insulation_delta[room.insulation]+f.envelope.airtightness_delta[room.airtightness]+glazing, f.envelope.minimum, f.envelope.maximum);
   const sun=f.sun[room.sun];
   const ig=f.internal_gains;
   const people=Math.max(0,room.occupants-ig.included_occupants)*ig.extra_occupant_btu;
   const kitchen=room.kitchen?ig.kitchen_btu:0;
   const equip=room.watts? room.watts*ig.watts_to_btu*ig.usage_factor.continuous : 0;
-  let point=base*ceil*cf*env*sun+people+kitchen+equip;
+  const point=base*ceil*cf*env*sun+people+kitchen+equip;
   const flags=[];
-  if(room.sunroom){ point*=f.special_space.sunroom_provisional_multiplier; flags.push('sunroom'); }
+  if(room.sunroom) flags.push('sunroom');
   if(room.ceiling>CFG.complexity_rules.ceiling_review_above_ft) flags.push('ceiling over 12 ft');
   if(room.sqft>CFG.complexity_rules.single_room_review_area_sqft) flags.push('large open space');
   if(room.glazing==='glass_heavy') flags.push('glass-heavy room');
@@ -525,7 +528,15 @@ function onCalculate(){
   const body=document.getElementById('resultBody');
   const crosses = CFG.capacity_bins_btu.some(b=>res.lower<=b && b<res.upper);
   let html='';
-  if(bin===null){
+  const requiresLargeRoomReview=room.sqft>CFG.complexity_rules.single_room_review_area_sqft;
+  if(requiresLargeRoomReview){
+    html=`<div class="r-cap">Sizing result</div>
+    <div class="r-big" style="font-size:22px;line-height:1.35;padding:6px 0">Professional review required</div>
+    <div class="r-load">Rough planning load: <b>approximately ${fmt(rdReview(q))} BTU/h</b></div>
+    <div class="r-warn"><b>Low confidence. Not an equipment-sizing recommendation.</b><br>This calculator supports individual rooms up to ${fmt(CFG.complexity_rules.single_room_review_area_sqft)} sq. ft. For larger or open-plan spaces, divide the area into separate zones or request a room-by-room Manual J calculation.</div>
+    <button type="button" class="r-why-btn" onclick="toggleWhy()">Why this result?</button>
+    <ul class="r-why" id="rWhy">${whyList(res,room)}</ul>`;
+  } else if(bin===null){
     const MULTI_CAPS=[38000,41000,42000,45000,48000,55000];
     const cap=MULTI_CAPS.find(c=>c>=q);
     if(cap){

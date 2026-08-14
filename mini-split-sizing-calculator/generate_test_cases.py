@@ -2,7 +2,7 @@
 """Generate Calculator_Test_Cases.xlsx (PRD section 26).
 
 Expected values are computed by reference_engine.py against
-calculator_config.json 1.0.0 and the frozen dataset v1.1.0, never written
+calculator_config.json and the frozen product dataset, never written
 from intuition (PRD 26.3). Failure-mode cases carry behavioral expectations
 instead of computed loads.
 """
@@ -73,7 +73,7 @@ CASES = [
     # --- complex spaces ---
     dict(id="TC-CPX-13", cat="complex", fixture="WA-SEATTLE-98101", intent="cooling",
          rooms=[R(square_feet=400, ceiling_ft=8, glazing="glass_heavy", sunroom=True)],
-         purpose="Sunroom: provisional x1.15, Low confidence, +/-25%, review message (PRD 12)",
+         purpose="Glass-heavy + Sunroom regression: effective glazing delta remains +15% (single adjustment, no duplicate multiplier); Low confidence, +/-25%, review message (PRD 12)",
          required_copy="solar gain can be materially higher than in a standard room"),
     dict(id="TC-CPX-14", cat="complex", fixture="TX-ELPASO-79901", intent="cooling",
          rooms=[R(square_feet=500, ceiling_ft=9, insulation="poor", garage_frequent_door=True)],
@@ -83,9 +83,14 @@ CASES = [
          purpose="Ceiling over 12 ft: factor clamps at 1.50, provisional result, Low confidence, no unique confirmed product"),
     dict(id="TC-CPX-16", cat="complex", fixture="KY-LOUISVILLE-40202", intent="cooling",
          rooms=[R(square_feet=2000, ceiling_ft=8)],
-         purpose="PRD 26.2 required: 2,000 sq ft open room; above-36K/large-space review; no confirmed single-zone",
-         required_copy="exceeds the automatic single-zone sizing range",
-         prohibited_copy="any confirmed single-zone recommendation"),
+         purpose="PRD 26.2 required: 2,000 sq ft open room; area threshold takes priority over capacity matching",
+         required_copy="Professional review required; Low confidence; not an equipment-sizing recommendation; room-by-room Manual J calculation",
+         prohibited_copy="recommended equipment capacity; Find Matching Products; any confirmed capacity recommendation"),
+    dict(id="TC-CPX-35", cat="complex", fixture="AZ-PHOENIX-85001", intent="cooling",
+         rooms=[R(square_feet=4000, ceiling_ft=12, glazing="glass_heavy", sunroom=True)],
+         purpose="Large warm-climate sunroom regression: raw planning load 144,900 BTU/h because Glass-heavy and Sunroom apply one +15% glazing adjustment; area threshold forces review before equipment matching",
+         required_copy="Professional review required; Rough planning load: approximately 145,000 BTU/h; Low confidence; not an equipment-sizing recommendation",
+         prohibited_copy="166,600 BTU/h; recommended equipment capacity; Find Matching Products; specific DELLA equipment recommendation"),
     dict(id="TC-CPX-17", cat="complex", fixture="KY-LOUISVILLE-40202", intent="cooling",
          rooms=[R(square_feet=400, ceiling_ft=8, equipment_watts=5000, equipment_usage="continuous")],
          purpose="Extreme equipment wattage: exceeds confirm threshold (3,000W) so UI requires confirmation; load lands in the 24-28K catalog gap",
@@ -205,7 +210,8 @@ def main():
                 _, room, res = room_results[0]
                 sz = eng.single_zone_result(res["point_load"], res["lower_load"],
                                             res["upper_load"], fixture,
-                                            heating_intent=case["intent"])
+                                            heating_intent=case["intent"],
+                                            room_area_sqft=room["square_feet"])
                 expected_status = sz["bin"]
                 if sz["borderline"]:
                     expected_status += " (borderline)"
@@ -268,8 +274,8 @@ def main():
         })
 
     versions = pd.DataFrame([
-        {"key": "engine_version", "value": "della-sizing-engine-1.0.0"},
-        {"key": "config_version", "value": "1.1.0 (calculator_config.json)"},
+        {"key": "engine_version", "value": eng.CFG["engine_version"]},
+        {"key": "config_version", "value": eng.CFG["config_version"] + " (calculator_config.json)"},
         {"key": "product_dataset_version", "value": "1.2.0 (della_calculator_products_v1.2.0.json, frozen snapshot incl. inventory/prices; 121 products carry storefront-verified status)"},
         {"key": "climate_dataset_version", "value": eng.CLIMATE_FIXTURE_VERSION + " — fixtures are frozen records from climate_dataset_v1.0.0/della_zip_climate_v1.0.0.json"},
         {"key": "climate_mapping_version", "value": "1.0.0 (della_series_mapping_v1)"},

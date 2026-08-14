@@ -142,7 +142,7 @@ def main():
             if k not in ["continuous", "frequent", "intermittent"]:
                 err(f"usage_factor contains unknown enum value: {k}")
 
-        num(f["special_space"], "factors.special_space", "sunroom_provisional_multiplier", lo=1)
+        num(f["special_space"], "factors.special_space", "sunroom_minimum_glazing_delta", lo=0, hi=1)
 
     cr = cfg.get("confidence_ranges", {})
     for k in ["high", "medium", "low"]:
@@ -200,9 +200,10 @@ def main():
                 err(f"merchandising.allowed_roles contains unknown role: {role}")
 
     dp = cfg.get("display_policy", {})
-    require(dp, "display_policy", ["maximum_product_cards", "mobile_cards_per_row", "allow_dynamic_roles", "load_rounding_increment_btu"])
+    require(dp, "display_policy", ["maximum_product_cards", "mobile_cards_per_row", "allow_dynamic_roles", "load_rounding_increment_btu", "review_load_rounding_increment_btu"])
     num(dp, "display_policy", "maximum_product_cards", lo=1, hi=8)
     num(dp, "display_policy", "load_rounding_increment_btu", lo=1)
+    num(dp, "display_policy", "review_load_rounding_increment_btu", lo=1000)
     if "allow_dynamic_roles" in dp and not isinstance(dp["allow_dynamic_roles"], bool):
         err("display_policy.allow_dynamic_roles must be boolean")
 

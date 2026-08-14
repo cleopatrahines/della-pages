@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reference implementation of della-sizing-engine-1.0.0.
+"""Reference implementation of della-sizing-engine-1.1.0.
 
 Purpose: deterministic oracle for Calculator_Test_Cases.xlsx and, later, for
 verifying the production JavaScript engine. Implements PRD sections 9-17 on
@@ -51,6 +51,11 @@ def round_display(v):
     return int(round(v / inc) * inc)
 
 
+def round_review_display(v):
+    inc = CFG["display_policy"]["review_load_rounding_increment_btu"]
+    return int(round(v / inc) * inc)
+
+
 def room_load(room, climate_type):
     """PRD 9.4-9.9. Returns the full factor breakdown."""
     f = CFG["factors"]
@@ -66,6 +71,8 @@ def room_load(room, climate_type):
     ins = env["insulation_delta"][room.get("insulation", "standard")]
     air = env["airtightness_delta"][room.get("airtightness", "average")]
     glz = env["glazing_delta"][room.get("glazing", "average")]
+    if room.get("sunroom"):
+        glz = max(glz, f["special_space"]["sunroom_minimum_glazing_delta"])
     envelope_factor = clamp(1 + ins + air + glz, env["minimum"], env["maximum"])
 
     sun_factor = f["sun"][room.get("sun", "average")]
@@ -81,7 +88,6 @@ def room_load(room, climate_type):
 
     flags = []
     if room.get("sunroom"):
-        point *= f["special_space"]["sunroom_provisional_multiplier"]
         flags.append("sunroom")
     if room["ceiling_ft"] > CFG["complexity_rules"]["ceiling_review_above_ft"]:
         flags.append("ceiling_over_12ft")
@@ -222,11 +228,19 @@ def assign_roles(candidates):
     return roles
 
 
-def single_zone_result(point, lower, upper, fixture, heating_intent="cooling", unit_type="wall_mounted"):
+def single_zone_result(point, lower, upper, fixture, heating_intent="cooling",
+                       unit_type="wall_mounted", room_area_sqft=None):
     """Fallback Matrix application for a single room (PRD 17.4)."""
     bin_label = capacity_bin(point)
     out = {"bin": bin_label, "borderline": False, "fallback_level": None,
            "fallback_reason": "", "candidates": [], "rejected": []}
+    if (room_area_sqft is not None
+            and room_area_sqft > CFG["complexity_rules"]["single_room_review_area_sqft"]):
+        out["bin"] = "professional_review"
+        out["fallback_level"] = 5
+        out["fallback_reason"] = "single_room_area_exceeds_review_threshold"
+        out["rough_planning_load"] = round_review_display(point)
+        return out
     if bin_label == "above_automatic_range":
         out["fallback_level"] = 5
         out["fallback_reason"] = "point_load_above_single_zone_automatic_max"

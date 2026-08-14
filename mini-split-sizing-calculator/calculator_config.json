@@ -1,8 +1,8 @@
 {
-  "config_version": "1.1.0",
-  "engine_version": "della-sizing-engine-1.0.0",
+  "config_version": "1.2.0",
+  "engine_version": "della-sizing-engine-1.1.0",
   "compatible_engine_versions": [
-    "della-sizing-engine-1.0.0"
+    "della-sizing-engine-1.1.0"
   ],
   "compatible_product_dataset_versions": [
     "1.2.0"
@@ -64,7 +64,7 @@
       }
     },
     "special_space": {
-      "sunroom_provisional_multiplier": 1.15
+      "sunroom_minimum_glazing_delta": 0.15
     }
   },
   "confidence_ranges": {
@@ -118,7 +118,8 @@
     "maximum_product_cards": 4,
     "mobile_cards_per_row": 2,
     "allow_dynamic_roles": true,
-    "load_rounding_increment_btu": 100
+    "load_rounding_increment_btu": 100,
+    "review_load_rounding_increment_btu": 5000
   },
   "input_validation": {
     "minimum_area_sqft": 20,
@@ -135,6 +136,7 @@
     "calibration_status": "DELLA Engine V1 policy assumptions per PRD 9.4. Fixture-based calibration and HVAC/product review required before launch (PRD 28.2).",
     "input_validation_status": "input_validation thresholds are proposed defaults added by this config. They are not sourced from PRD tables and require the same calibration approval.",
     "single_source_rule": "This file is the only source of engine coefficients. The product dataset JSON v1.1.0 no longer carries a runtime_config block. Presentation JavaScript must not duplicate these values.",
-    "v1_1_0_change": "multi_room_review_total_btu raised 48000 -> 55000: the 2026-07-22 storefront re-audit confirmed live 55,000 BTU five- and six-zone systems (catalog_coverage_report.md section 5). Shipped together with product dataset 1.2.0, which adds those 121 systems."
+    "v1_1_0_change": "multi_room_review_total_btu raised 48000 -> 55000: the 2026-07-22 storefront re-audit confirmed live 55,000 BTU five- and six-zone systems (catalog_coverage_report.md section 5). Shipped together with product dataset 1.2.0, which adds those 121 systems.",
+    "v1_2_0_change": "Sunrooms now apply a minimum +15% glazing adjustment instead of multiplying the complete load, preventing duplicate solar-gain adjustments with glass-heavy rooms. Single rooms over 1,500 sq. ft. enter professional review before equipment matching; any planning load is rounded to 5,000 BTU/h and is not a sizing recommendation."
   }
 }
