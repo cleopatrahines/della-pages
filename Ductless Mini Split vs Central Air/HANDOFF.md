@@ -26,6 +26,7 @@ Approved design: `Design.png`
 - Ductless is room/use-case-led; Central is capacity-led; Supplement has no product grid.
 - All 8 product cards use uniform navy `View Product` (new tab); no cart code.
 - FAQ trimmed to 4 questions (owner-approved; JSON-LD matches) in single-column reference style.
+- Supplement panel (2026-08-17, final): no enclosing band, single heading — panel H2 is "You Know the Room." (description line empty/hidden for this path), one lead paragraph + 13px confirm fine print + CTAs left, chromeless floating cutout with warm ground shadow right, three problem spaces as unboxed hairline-divided columns across the full width. Compact category/installer route preserved.
 
 ## Product runtime state captured 2026-08-13
 
@@ -36,23 +37,20 @@ Approved design: `Design.png`
 
 ## Runtime behavior
 
-- Static/local/GitHub: dated price snapshot, no real cart transaction.
-- DELLA Shopify host: hydrate current product data; enable direct ATC only for one available Variant.
-- Successful ATC navigates to same-tab Cart.
+- Static/local/GitHub: dated price snapshot, no cart runtime (all cards route to PDP in a new tab).
+- DELLA Shopify host: `hydrate()` refreshes prices only, via the Ajax Product API (`/products/<handle>.js`); Liquid `all_products` rendering remains the preferred integration path where the surface evaluates Liquid.
 - Production canonical is not included in the standalone preview; use Liquid `canonical_url` after the Shopify Page handle exists.
 
 ## QA status
 
-Passed local Chrome QA on 2026-08-13.
+Latest run 2026-08-17 (round 16, `k3-qa-report-r16.json`): **63/63 passed**, zero console errors, zero failed assets.
 
-- Responsive layout checked at 1440, 1280, 1024, 768, 430, 390, and 360px with no horizontal overflow.
-- Desktop Ductless and mobile Central active states were visually reviewed against `Design.png` and `DESIGN.md`.
-- Neutral, Ductless, Central, and Supplement states passed.
-- `?path=` preselection, query-parameter preservation, contextual final CTA, static-preview cart protection, and no-JS fallback passed.
-- 8 product cards, 3 direct ATC actions, 5 Choose Options actions, 6 FAQs, and 6 FAQ schema entries passed.
-- No page or console errors were found.
+- Responsive layout checked at 1440, 1280, 1024, 768, 430, 390, and 360px with no horizontal overflow, including per-path spot checks.
+- Neutral, Ductless, Central, and Supplement states passed; `?path=` preselection, query-parameter preservation, contextual final CTA, no-JS fallback, keyboard, and reduced motion passed.
+- 8 product cards with uniform new-tab `View Product`, 4 FAQs with 4 matching schema entries, 8 comparison rows, og:image present.
+- Supplement panel redesign screenshot-verified at 1440px and 390px.
 
-Production Shopify QA is still required after PageFly/theme integration, especially live price hydration, Variant resolution, `/cart/add.js`, Cart redirect, analytics, and canonical output.
+Production Shopify QA is still required after PageFly/theme integration: live price hydration, canonical output, analytics wiring, and PageFly style-bleed checks.
 
 ## Integration-era rules (agreed 2026-08-14)
 
@@ -63,4 +61,4 @@ Production Shopify QA is still required after PageFly/theme integration, especia
 
 ## Git status
 
-Commit/push not approved and not performed.
+Page is live on GitHub Pages; local and `cleopatrahines/della-pages` master were last confirmed in sync at `ad24366`. The remote also receives commits from another machine (sizing-calculator project) — always fetch/merge before pushing. Round 16 changes (Supplement panel) are committed nowhere yet; commit/push requires explicit owner approval.

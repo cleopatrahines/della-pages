@@ -309,3 +309,92 @@ QA re-run after each change set: **57/57 passed**, zero console errors, no overf
 ## Full verification (round 15)
 
 QA re-run: **57/57 passed**, zero console errors.
+
+## Round 16 — Supplement panel redesign (owner-approved direction A)
+
+### 51. Supplement panel: boxed packshot replaced with recognition-row layout
+
+- Owner feedback: the image-left/text-right white card read as a generic AI feature block with no distinctive job, and its packshot answered "what does the product look like" before the visitor had recognized their situation. Direction A (situation-recognition row) was chosen from three proposed directions.
+- Left column: the `.dsc-supplement__visual` blue-box packshot is replaced by three stacked recognition cards under a "Common Problem Areas" label: "A garage or workshop" / "An addition or converted space" / "One room that runs hot or cold", each with one condition line. Cards are non-interactive on purpose: recognition is the panel's first job, and adding three more collection links would violate the one-canonical-CTA-per-destination rule.
+- Right column: in-card H3 deduplicated against the JS-driven panel heading ("Target the Problem Area" + desc): "Keep the Main System. Target the Problem Area." → "One Space. Its Own System." First paragraph tightened since the situation list now lives in the cards: "If the central system still serves most of the home well, a separate wall-mounted mini split can cover the space it misses without changing the rest of the house." Second paragraph (separate-system + confirm disclaimer) and both CTAs unchanged.
+- PRD compliance: no product grid in Supplement, compact category/installer route preserved, claims-policy qualifiers ("can", "often") retained. `cut-serena-12k.webp` remains in use on the Serena product card.
+
+## Full verification (round 16)
+
+QA extended (3 space cards, spaces label, old visual removed, panel-title dedup, on-disk asset existence, supplement 390px overflow) and re-run: **63/63 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r16.json` (earlier reports untouched). Supplement panel screenshot-verified at 1440px and 390px.
+
+## Round 17 — Supplement panel de-templated (owner feedback)
+
+### 52. Recognition cards replaced with an editorial hairline strip
+
+- Owner reviewed round 16 and ruled it still read as an AI template: uniform accent-bar cards are a component-library tell, and the white card containing smaller cards was the page's only box-in-a-box.
+- The panel is no longer a bordered white card at all. It is an editorial pale-blue band (`--blue-surface`, 6px radius, 40px padding) in the same surface family as the BEFORE YOU BUY bar and final CTA.
+- The three problem spaces are now unboxed text columns divided by hairlines (top hairline on the strip, vertical hairlines between columns), stacking to hairline-separated rows at ≤820px. The "Common Problem Areas" eyebrow label is removed; the strip is self-evident under the copy.
+- Copy hierarchy added: the separate-system/confirm disclaimer is demoted to 13px fine print; the concept paragraph keeps body size; H3 and CTAs unchanged from round 16.
+- Rule recorded in PRD §12 and DESIGN.md: no boxes within boxes, no accent-bar card lists, no eyebrow-plus-card-list formula on this page.
+
+## Full verification (round 17)
+
+QA updated (unboxed-space check, pale-band surface check, eyebrow/visual removal) and re-run: **64/64 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r17.json`. Panel and full shop-section screenshots verified at 1440px and 390px.
+
+## Round 18 — Supplement panel visual anchor restored (avoid-ai-design audit)
+
+### 53. Floating cutout + radial glow; hairline strip takes the band's full width
+
+- Owner: "the more it changes, the worse it looks." A formal avoid-ai-design audit (catalog + render) of round 17 found: P1 dead space (text capped at 660px left the right 40% of the band empty), P1 missing visual anchor (a text-only panel reads as a blog callout on an ecommerce page), P2 flat single-edge rhythm. Root cause: rounds 16-17 only rearranged text; removing the boxed image had also removed the product, when the page's own hero grammar (transparent cutout floating over a subtle blue radial glow, `.dsc-hero__visual:before`) was the correct chromeless-image pattern all along.
+- Left column: H3, concept copy, 13px confirm fine print, CTAs (max-width 620px). Right column: `cut-serena-12k.webp` floating chromeless over a radial glow (`rgba(88,132,231,.16)` ellipse, mirroring the hero). No tinted rectangle, no border, no card.
+- The hairline strip now spans the band's full width (`grid-column:1/-1`), absorbing the former dead zone; unboxed three-column treatment from round 17 unchanged. Mobile order: copy + CTAs, image, stacked hairline rows.
+- Rules added to PRD §12 / DESIGN.md: imagery floats chromeless in the hero's grammar, never in a tinted rectangle.
+
+## Full verification (round 18)
+
+QA updated (floating cutout present, chromeless check, strip full-width) and re-run: **66/66 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r18.json`. Shop-section and panel screenshots verified at 1440px and 390px.
+
+## Round 19 — Supplement panel human-warmth pass
+
+### 54. Warm stage surface, ground shadow, human-voiced copy
+
+- Owner: "人味儿还是不够." Key evidence: the owner used the same phrase (人味不足) in round 3, and the approved fix then was warmth — the `#eeede8` packshot-beige family. Rounds 16-18 fixed template structure but kept pushing colder (blue band, blue glow, taxonomy-label copy).
+- Surface: band background `--blue-surface` → `linear-gradient(180deg,#fdfcf9 0%,#eeede8 100%)`, the DELLA packshots' own beige. Hairlines `#dce4f3` → warm `#ddd5c4`. The blue radial glow under the equipment → a warm ground shadow (`rgba(30,25,15,.17)` ellipse) so the unit stands on the floor instead of floating in a void.
+- Copy rewritten from taxonomy labels to human voice. H3 "One Space. Its Own System." → "You Know the Room."; concept paragraph now opens "The one that never quite keeps up." and ends "leave the rest of the house alone."; strip items: "The garage or workshop / The addition or converted space / That one room" with conversational condition lines ("The rest of the house is fine. This one is not."). Claims-policy qualifiers kept ("can", "often"); no em dashes; second person throughout.
+- PRD §12 records the owner's definition for future pages: 人味儿 = warm `#eeede8`-family surfaces + concrete second-person copy, not colder layout mechanics.
+
+## Full verification (round 19)
+
+QA updated (warm gradient surface, human-voiced H3) and re-run: **66/66 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r19.json`. Shop-section and mobile screenshots verified at 1440px and 390px.
+
+## Round 20 — Supplement panel: enclosing band removed
+
+### 55. No container at all
+
+- Owner rejected the warm-gradient band ("不用再单独加个这个灰色背景吧"). Every enclosing container on this panel has now been owner-rejected in sequence: boxed packshot, accent-bar cards, pale-blue band, warm band. Final form: the content sits directly on the shop-section background, like the product grids do.
+- `.dsc-supplement` loses padding, radius, and background; it is now only the two-column grid (text | floating cutout) with the full-width hairline strip below. Hairlines reverted to cool `#dce4f3` (the warm `#ddd5c4` read as dirty on the cool gray-50 section background); the warm ground shadow under the equipment stays.
+- PRD §12 rule updated: "人味儿" comes from copy voice and grounded imagery, not from added containers.
+
+## Full verification (round 20)
+
+QA updated (no-band assertion: transparent background, no padding) and re-run: **66/66 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r20.json`. Shop-section and mobile screenshots verified at 1440px and 390px.
+
+## Round 21 — Supplement header slimmed
+
+### 56. One heading, one paragraph, one fine print
+
+- Owner: too many subheadings and too much copy. The header stack was panel H2 ("Target the Problem Area") + description line + in-panel H3 ("You Know the Room."), and the description line duplicated the concept paragraph.
+- The JS panel config now sets the supplement H2 to "You Know the Room." with an empty description; `setPath()` hides `#shop-description` when the text is empty (other paths and neutral unchanged). The in-panel H3 is removed; the panel keeps `aria-labelledby="shop-title"`.
+- Confirm fine print tightened: "A supplemental mini split operates as a separate ductless system." → "It runs as a separate ductless system."
+- Dead CSS removed (`.dsc-supplement h3` and its 560px override); the lead paragraph gets its own class and the darker `#34415f` body color for hierarchy now that no heading sits above it.
+
+## Full verification (round 21)
+
+QA updated (no in-panel H3, human-voiced panel heading, empty description hidden) and re-run: **68/68 passed**, zero console errors, zero failed assets, no overflow at any required viewport. Report written to `k3-qa-report-r21.json`. Shop-section and mobile screenshots verified at 1440px and 390px.
+
+## Round 22 — Supplement polish (owner-approved micro-fixes)
+
+### 57. Cutout depth and row rhythm
+
+- The white indoor unit's upper half blended into the near-white section background. Added `filter:drop-shadow(0 16px 24px rgba(14,25,83,.15))` to the supplement cutout (follows the alpha channel; not a container, so the no-box rule holds). The warm ground ellipse is softened to `rgba(30,25,15,.12)` so the two shadows do not compound.
+- Vertical rhythm tightened: `.dsc-supplement` grid gap `48px` → `12px 48px` (row/column), closing the dead band between the CTA row and the hairline strip on desktop; mobile (≤820px) keeps a 26px stack gap for breathing room.
+
+## Full verification (round 22)
+
+QA re-run: **68/68 passed**, zero console errors, no overflow at any required viewport. Report written to `k3-qa-report-r22.json`. Shop-section and mobile screenshots verified at 1440px and 390px.

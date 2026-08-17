@@ -109,13 +109,21 @@
         .dsc-shop__footer{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:27px}
     .dsc-note{max-width:900px;margin:19px auto 0;color:var(--muted);font-size:12px;text-align:center}
 
-    .dsc-supplement{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);align-items:center;gap:48px;padding:34px;border:1px solid #dce4f3;border-radius:6px;background:var(--white)}
-    .dsc-supplement__visual{position:relative;min-height:300px;display:grid;place-items:center;border-radius:4px;background:var(--blue-surface)}
-    .dsc-supplement__visual:before{content:"PROBLEM AREA";position:absolute;top:20px;left:20px;color:var(--blue);font-size:11px;font-weight:600}
-    .dsc-supplement__visual img{width:82%;max-height:270px;object-fit:contain}
-    .dsc-supplement h3{margin:0;font:500 34px/1.12 Spectral,Georgia,serif;color:var(--navy)}
+    .dsc-supplement{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:12px 48px}
+    .dsc-supplement__head{max-width:620px}
+    .dsc-supplement__lead{margin:0;color:#34415f}
     .dsc-supplement p{color:var(--muted)}
-    .dsc-supplement__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+    .dsc-supplement__confirm{margin-top:10px;font-size:13px}
+    .dsc-supplement__visual{position:relative;display:grid;place-items:center;min-height:280px}
+    .dsc-supplement__visual:before{content:"";position:absolute;left:12%;right:12%;bottom:9%;height:64px;background:radial-gradient(ellipse at center,rgba(30,25,15,.12),transparent 68%)}
+    .dsc-supplement__visual img{position:relative;z-index:2;width:88%;max-height:280px;object-fit:contain;filter:drop-shadow(0 16px 24px rgba(14,25,83,.15))}
+    .dsc-supplement__spaces{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:8px;padding-top:22px;border-top:1px solid #dce4f3}
+    .dsc-space{padding:0 28px}
+    .dsc-space:first-child{padding-left:0}
+    .dsc-space + .dsc-space{border-left:1px solid #dce4f3}
+    .dsc-space strong{display:block;color:var(--navy);font-size:15px;font-weight:600}
+    .dsc-space span{display:block;margin-top:4px;color:var(--muted);font-size:13px;line-height:1.5}
+    .dsc-supplement__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 
     .dsc-verify{background:var(--white)}
     .dsc-table-wrap{margin-top:34px;border:1px solid var(--gray-200);border-radius:6px;overflow:hidden}
@@ -179,7 +187,12 @@
       .dsc-section{padding:48px 0}.dsc-section--compact{padding:40px 0}
       .dsc-hero__inner{min-height:0;grid-template-columns:1fr}.dsc-hero__copy{padding:58px 0 10px}.dsc-hero__visual{width:min(650px,100%);margin:auto}
       .dsc-path-grid{grid-template-columns:1fr}.dsc-path{min-height:0;align-items:flex-start;text-align:left;padding:24px}.dsc-path__icon{width:48px;height:48px}.dsc-path__title{max-width:none}.dsc-path__action{margin-top:22px}
-      .dsc-supplement{grid-template-columns:1fr}.dsc-supplement__visual{min-height:250px}
+      .dsc-supplement{grid-template-columns:1fr;gap:26px}
+      .dsc-supplement__visual{min-height:0}
+      .dsc-supplement__visual img{max-height:230px}
+      .dsc-supplement__spaces{grid-template-columns:1fr}
+      .dsc-space{padding:13px 0}
+      .dsc-space + .dsc-space{border-left:0;border-top:1px solid #dce4f3}
       .dsc-table-wrap{border:0;overflow:visible}.dsc-table,.dsc-table tbody,.dsc-table tr,.dsc-table td{display:block}.dsc-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.dsc-table tbody{display:grid;gap:12px}.dsc-table tr{border:1px solid var(--gray-200);border-radius:6px;overflow:hidden;background:var(--white)}.dsc-table td{border:0!important;padding:12px 16px}.dsc-table td:first-child{background:#e9f4ff;font-size:15px}.dsc-table td:not(:first-child):before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--blue);font-size:10px;font-weight:600;text-transform:uppercase}
       .dsc-final__box{grid-template-columns:1fr}.dsc-final__actions{min-width:0}
     }
@@ -188,7 +201,7 @@
       .dsc-hero h1{font-size:40px}.dsc-hero__lead{font-size:15px}.dsc-hero__actions{display:grid}
       .dsc-shop__top{align-items:flex-start}.dsc-change{font-size:13px}
       .dsc-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.dsc-product{--card-inset:12px}.dsc-product__media{aspect-ratio:auto;height:170px;margin-top:8px;padding:16px 10px 8px}.dsc-product__media img{max-height:150px}.dsc-product__title{font-size:13px;line-height:1.28}.dsc-product__price{font-size:17px}.dsc-specs{gap:4px;margin-block:8px}.dsc-specs span{padding:5px 6px;font-size:11px}.dsc-product .dsc-btn{min-height:44px;font-size:13px;padding:9px 8px}.dsc-product__coverage{font-size:10px}.dsc-product__capacity{font-size:25px}.dsc-product__reference{font-size:10px}
-      .dsc-supplement{padding:20px;gap:26px}.dsc-supplement h3{font-size:29px}.dsc-supplement__actions,.dsc-install__actions{display:grid}.dsc-supplement__actions .dsc-btn,.dsc-install__actions .dsc-btn{width:100%}
+      .dsc-supplement__actions,.dsc-install__actions{display:grid}.dsc-supplement__actions .dsc-btn,.dsc-install__actions .dsc-btn{width:100%}
       .dsc-svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.dsc-svc{padding:22px 16px}.dsc-svc h3{font-size:17px}.dsc-svc p{font-size:13px}
       .dsc-faq summary{font-size:18px;min-height:56px;gap:14px}
       .dsc-install{padding:22px 18px}.dsc-final__box{padding:28px 22px}.dsc-final h2{font-size:29px}
@@ -302,7 +315,7 @@
       </div>
 
       <div class="dsc-panel" id="panel-supplement" data-panel="supplement" aria-labelledby="shop-title">
-        <div class="dsc-supplement"><div class="dsc-supplement__visual"><img src="assets/products/cut-serena-12k.webp" alt="DELLA wall-mounted mini split" width="1581" height="1507" loading="lazy"></div><div><h3 id="supplement-panel-title">Keep the Main System. Target the Problem Area.</h3><p>If your central system still serves most of the home well, a separate wall-mounted mini split can cover a garage, addition, converted space, or a room that stays too hot or cold.</p><p>A supplemental mini split operates as a separate ductless system. Confirm sizing, placement, electrical requirements, and installation before purchase.</p><div class="dsc-supplement__actions"><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/collections/wall-mounted-mini-split" data-analytics-event="della_collection_click">Shop Wall-Mounted Mini Splits</a><a class="dsc-panel-link" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div></div>
+        <div class="dsc-supplement"><div class="dsc-supplement__main"><div class="dsc-supplement__head"><p class="dsc-supplement__lead">The one that never quite keeps up. If the central system otherwise does its job, a separate wall-mounted mini split can cover just that space and leave the rest of the house alone.</p><p class="dsc-supplement__confirm">It runs as a separate ductless system. Confirm sizing, placement, electrical requirements, and installation before purchase.</p></div><div class="dsc-supplement__actions"><a class="dsc-btn dsc-btn--primary" href="https://dellahome.com/collections/wall-mounted-mini-split" data-analytics-event="della_collection_click">Shop Wall-Mounted Mini Splits</a><a class="dsc-panel-link" href="https://dellahome.com/pages/find-a-installer" data-analytics-event="della_installer_click">Find Partner HVAC Installer</a></div></div><div class="dsc-supplement__visual"><img src="assets/products/cut-serena-12k.webp" alt="DELLA wall-mounted mini split" width="1581" height="1507" loading="lazy"></div><div class="dsc-supplement__spaces"><div class="dsc-space"><strong>The garage or workshop</strong><span>It never got ducts, and extending them is often a project of its own.</span></div><div class="dsc-space"><strong>The addition or converted space</strong><span>New square footage the original system was not sized for.</span></div><div class="dsc-space"><strong>That one room</strong><span>The rest of the house is fine. This one is not.</span></div></div></div>
       </div>
     </div>
   </section>
@@ -352,7 +365,7 @@
     const content={
       ductless:{shop:'Build Your Wall-Mounted Mini Split Setup',desc:'Start with the number and size of spaces you want to condition.',final:'Ready to Build Your Ductless Setup?',copy:'Explore DELLA wall-mounted mini splits or confirm your installation plan with a partner HVAC professional.',label:'Shop Wall-Mounted Mini Splits',href:'https://dellahome.com/collections/wall-mounted-mini-split'},
       central:{shop:'Explore Central Air Starting Points',desc:'Compare capacity tiers, then confirm configuration and final sizing.',final:'Ready to Explore Central Air?',copy:'Review DELLA central air systems, then confirm sizing, duct condition, and installation requirements.',label:'Shop Central Air',href:'https://dellahome.com/collections/central-air-conditioner'},
-      supplement:{shop:'Target the Problem Area',desc:'Keep the main system and consider a separate ductless system for the isolated space.',final:'Ready to Target the Problem Area?',copy:'Explore wall-mounted mini splits or confirm the supplemental project with a partner HVAC installer.',label:'Shop Wall-Mounted Mini Splits',href:'https://dellahome.com/collections/wall-mounted-mini-split'}
+      supplement:{shop:'You Know the Room.',desc:'',final:'Ready to Target the Problem Area?',copy:'Explore wall-mounted mini splits or confirm the supplemental project with a partner HVAC installer.',label:'Shop Wall-Mounted Mini Splits',href:'https://dellahome.com/collections/wall-mounted-mini-split'}
     };
     const emit=(name,data={})=>{const detail={event:name,...data};root.dispatchEvent(new CustomEvent('della:analytics',{bubbles:true,detail}));if(typeof window.gtag==='function')window.gtag('event',name,data)};
     const updateUrl=path=>{const url=new URL(location.href);path?url.searchParams.set('path',path):url.searchParams.delete('path');history.replaceState({},'',url)};
@@ -362,6 +375,7 @@
       panels.forEach(p=>{const on=p.dataset.panel===activePath;p.classList.toggle('is-active',on);p.setAttribute('aria-hidden',String(!on));if('inert' in p)p.inert=!on});
       neutral.classList.toggle('is-active',!activePath);change.hidden=!activePath;
       if(activePath){heroCta.textContent=activePath==='central'?'See Central Air Starting Points':'See Wall-Mounted Mini Splits';heroCta.href='#shop-path';const c=content[activePath];shopTitle.textContent=c.shop;shopDescription.textContent=c.desc;finalTitle.textContent=c.final;finalCopy.textContent=c.copy;finalPrimary.textContent=c.label;finalPrimary.href=c.href}else{heroCta.textContent='Find My Best Starting Point';heroCta.href='#project-gateway';shopTitle.textContent='Shop the Right Path';shopDescription.textContent='Choose a project above to see the most useful DELLA starting options.';finalTitle.textContent='Still Deciding?';finalCopy.textContent='Use the DELLA Product Finder or connect with a partner HVAC installer before choosing the final system.';finalPrimary.textContent='Find My System';finalPrimary.href='https://dellahome.com/pages/hvac-product-finder'}
+      shopDescription.hidden=!shopDescription.textContent;
       if(url)updateUrl(activePath);if(scroll)shop.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
     }
     buttons.forEach(b=>b.addEventListener('click',()=>{setPath(b.dataset.path,{scroll:true});emit('della_path_selected',{path:b.dataset.path,source_section:'project_gateway'})}));

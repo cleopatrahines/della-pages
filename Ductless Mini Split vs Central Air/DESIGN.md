@@ -126,6 +126,7 @@ Order:
 #### Supplement panel
 
 - Use one compact visual/category panel, not a product grid.
+- 2026-08-17 (owner-approved, final): no enclosing band or card — the panel content sits directly on the shop-section background. Header is a single human-voiced panel H2 "You Know the Room." with no description line and no in-panel H3 (the heading+description+H3 triple was owner-rejected as too much). Body: one lead paragraph ("The one that never quite keeps up…") + 13px confirm fine print + CTAs. Right: the Serena transparent cutout floating chromeless over a warm ground shadow. The three problem spaces ("The garage or workshop" / "The addition or converted space" / "That one room") are unboxed text columns separated by `#dce4f3` hairlines across the full width, stacking to hairline rows on mobile. Owner-rejected along the way: the boxed packshot, an accent-bar card list, a pale-blue band, a warm-gradient band (any enclosing container), and heading stacks. Rules: no boxes within boxes, no accent-bar card lists, no band, one heading only; imagery floats chromeless with a ground shadow; warmth comes from copy voice, not added surfaces.
 - Explain that the supplemental mini split is a separate ductless system for a specific problem area.
 - Show `Shop Wall-Mounted Mini Splits` and `Find Partner HVAC Installer`.
 - Do not use integrated-hybrid-system language.
