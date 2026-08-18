@@ -398,3 +398,7 @@ QA updated (no in-panel H3, human-voiced panel heading, empty description hidden
 ## Full verification (round 22)
 
 QA re-run: **68/68 passed**, zero console errors, no overflow at any required viewport. Report written to `k3-qa-report-r22.json`. Shop-section and mobile screenshots verified at 1440px and 390px.
+
+### 51. Shop intro max-width removed
+
+- `.dsc-shop__intro` lost its 760px cap, so path headings like `Build Your Wall-Mounted Mini Split Setup` render on one line. QA 57/57.
