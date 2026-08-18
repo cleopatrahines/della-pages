@@ -44,14 +44,14 @@
     h1,h2,h3,p{margin-top:0}
     h1,h2,h3{font-family:"Spectral",Georgia,serif;color:var(--della-navy);font-weight:500;line-height:1.15;letter-spacing:0}
     h1{font-size:54px;margin-bottom:18px}
-    h2{max-width:none;margin:0 0 14px;font-size:32px;text-align:left}
+    h2{max-width:none;margin:0 0 14px;font-size:32px;text-align:center}
     h3{font-size:21px;line-height:1.25;margin-bottom:9px}
     p{color:var(--della-body)}
     .bedroom-page{overflow:hidden}
     .container{width:min(calc(100% - 64px),var(--container));margin-inline:auto}
     .section{padding:72px 0}
-    .section-heading{width:100%;max-width:none;margin-bottom:32px;text-align:left}
-    .section-heading p{width:100%;max-width:none;margin-bottom:0;font-size:15px;text-align:left}
+    .section-heading{width:100%;max-width:760px;margin:0 auto 32px;text-align:center}
+    .section-heading p{max-width:none;margin-bottom:0;font-size:15px;text-align:center}
     .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border:1px solid transparent;border-radius:4px;font-family:"Poppins",Arial,sans-serif;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
     .btn:hover{transform:translateY(-1px)}
     .btn-primary,.btn-white{background:var(--della-navy);border-color:var(--della-navy);color:var(--della-white)}
@@ -72,15 +72,20 @@
     .hero-actions .btn{width:100%}
 
     .fit-router{background:var(--della-white)}
-    .fit-router .section-heading{margin-inline:0;text-align:left}
+    .fit-router .section-heading{margin-inline:auto;text-align:center}
     .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;max-width:980px;margin-inline:auto}
-    .fit-card{display:flex;flex-direction:column;padding:34px 38px;background:var(--della-surface)}
+    .fit-card{position:relative;display:flex;align-items:center;flex-direction:column;padding:34px 38px;background:var(--della-surface)}
+    .fit-card-head{margin:0 0 2px;text-align:left}
+    .fit-card-head .fit-capacity{margin:0 0 2px;text-align:center}
+    .fit-card-head h3{margin:0}
+    .fit-icon{position:absolute;top:26px;left:26px;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--della-blue-light);color:var(--della-blue)}
+    .fit-icon svg{display:block;width:30px;height:30px}
     .fit-capacity{margin-bottom:2px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:31px;font-weight:500;line-height:1.2}
     .fit-card h3{font-family:"Poppins",Arial,sans-serif;font-size:15px;font-weight:500}
-    .fit-facts{list-style:none;padding:0;margin:17px 0 24px}
+    .fit-facts{list-style:none;padding:0;margin:17px 0 24px;text-align:left}
     .fit-facts li{display:flex;align-items:flex-start;gap:10px;padding:3px 0;color:var(--della-ink);font-size:14px}
     .fit-facts li::before{content:"";flex:0 0 4px;width:4px;height:4px;margin-top:9px;border-radius:50%;background:var(--della-navy)}
-    .fit-card-actions{display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:auto}
+    .fit-card-actions{display:flex;align-items:center;flex-direction:column;gap:12px;margin-top:auto}
     .fit-card-actions .btn{min-width:220px}
     .fit-card-actions .text-link{display:block;width:220px;text-align:center}
     .text-link{color:var(--della-navy);font-size:13px;font-weight:600;text-underline-offset:4px}
@@ -89,7 +94,7 @@
     .sizing-fallback p{margin:0;color:var(--della-body);font-size:13px}
 
     .product-section{padding:60px 0 64px;background:var(--della-white)}
-    .product-heading-row{display:flex;align-items:flex-start;flex-direction:column;gap:15px;margin-bottom:28px;text-align:left}
+    .product-heading-row{display:flex;align-items:center;flex-direction:column;gap:15px;margin-bottom:28px;text-align:center}
     .product-heading-row .section-heading{margin-bottom:0}
     .tabs{display:inline-flex;border-bottom:1px solid var(--della-line)}
     .tab{position:relative;min-width:150px;padding:10px 18px;background:transparent;color:#6b7287;font-size:13px;font-weight:600;cursor:pointer}
@@ -97,22 +102,21 @@
     .tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--della-blue)}
     .product-panel[hidden]{display:none}
     .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-    .product-card{position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid #e8ebf2;border-radius:4px;background:var(--della-white);box-shadow:0 2px 8px rgba(14,25,83,.025);transition:border-color .18s ease,box-shadow .18s ease}
-    .product-card:hover{border-color:#cfd6e5;box-shadow:0 6px 18px rgba(14,25,83,.055)}
-    .product-image-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:#fbfbfc}
-    .product-image{width:100%;height:100%;object-fit:contain;padding:13px}
-    .product-badge{position:absolute;left:12px;top:11px;z-index:1;padding:5px 8px;border-radius:3px;background:var(--della-blue-light);color:var(--della-navy);font-size:10px;font-weight:600;line-height:1.2}
-    .product-card-body{display:flex;flex:1;flex-direction:column;padding:15px 14px 14px;border-top:1px solid #f0f2f6}
-    .product-card h3{margin-bottom:10px;font-size:15px;line-height:1.35}
-    .product-meta{display:flex;flex-wrap:wrap;gap:3px 6px;margin-bottom:14px;color:var(--della-body)}
-    .product-meta span{padding:0;border:0;color:var(--della-body);font-size:10.5px;line-height:1.45}
-    .product-meta span:nth-child(2)::before{content:"|";margin-right:6px;color:#b4bbca}
-    .product-meta span:nth-child(3){flex-basis:100%}
-    .product-price{margin:auto 0 8px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:20px;font-weight:700}
-    .availability{display:flex;align-items:center;gap:6px;margin:0 0 11px;color:var(--della-success);font-size:10.5px}
+    .product-card{--card-inset:16px;display:flex;min-width:0;flex-direction:column;border:1px solid #e6eaf2;background:var(--della-white);transition:border-color .18s ease,box-shadow .18s ease}
+    .product-card:hover{border-color:var(--della-blue);box-shadow:0 8px 20px rgba(14,25,83,.08)}
+    .product-badge{margin:16px var(--card-inset) 0;color:var(--della-blue);font-size:11px;font-weight:600;line-height:1.2;letter-spacing:.03em;text-transform:uppercase}
+    .product-image-wrap{display:grid;place-items:center;aspect-ratio:1/.92;margin:12px 0 0;padding:26px 18px 12px;overflow:hidden;background:var(--della-white)}
+    .product-image{width:100%;max-height:196px;object-fit:contain;transition:transform .3s ease}
+    .product-card:hover .product-image{transform:scale(1.04)}
+    .product-card-body{display:flex;flex:1;flex-direction:column}
+    .product-card h3.product-title{margin:14px var(--card-inset) 0;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:15px;font-weight:400;line-height:1.35}
+    .product-meta{display:flex;flex-wrap:wrap;gap:7px;margin:12px var(--card-inset) 0}
+    .product-meta span{padding:6px 7px;border:1px solid var(--della-line);background:#f8f9fb;color:var(--della-body);font-size:12px;line-height:1;white-space:nowrap}
+    .product-price{margin:auto var(--card-inset) 0;padding-top:14px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:20px;font-weight:700;line-height:1.15}
+    .availability{display:flex;align-items:center;gap:6px;margin:6px var(--card-inset) 12px;color:var(--della-success);font-size:10.5px}
     .availability::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
     .availability.is-unavailable{color:#9b2d2d}
-    .product-card .btn{width:100%;min-height:43px;background:var(--della-navy)}
+    .product-card .btn{width:auto;min-height:46px;margin:0 var(--card-inset) 16px;padding-inline:12px;background:var(--della-navy)}
     .product-card .btn:hover{background:var(--della-white);border-color:var(--della-navy);color:var(--della-navy)}
 
     .dsc-services{
@@ -121,7 +125,7 @@
       background:var(--white);padding:48px 0
     }
     .dsc-container{width:min(1200px,calc(100% - 64px));margin-inline:auto}
-    .dsc-heading{max-width:none;margin:0 0 14px;font:500 32px/1.15 Spectral,Georgia,serif;color:var(--navy);text-align:left}
+    .dsc-heading{max-width:none;margin:0 0 14px;font:500 32px/1.15 Spectral,Georgia,serif;color:var(--navy);text-align:center}
     .dsc-svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;margin-top:32px}
     .dsc-svc{display:flex;flex-direction:column;align-items:center;padding:30px 26px 28px;border-radius:6px;background:var(--blue-light);text-align:center}
     .dsc-svc__icon{display:flex;width:58px;height:58px;flex:none;align-items:center;justify-content:center;margin-bottom:14px;border-radius:50%;background:var(--blue)}
@@ -144,7 +148,7 @@
     }
 
     .install-section{padding:68px 0;background:var(--della-white)}
-    .install-heading{margin:0 0 28px;text-align:left}
+    .install-heading{margin:0 auto 28px;text-align:center}
     .install-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:46px;background:var(--della-white)}
     .install-image{width:100%;aspect-ratio:4/3;object-fit:cover}
     .install-copy{padding:0}
@@ -152,12 +156,13 @@
     .install-list li{display:grid;grid-template-columns:48px 1fr;gap:17px;padding:22px 0;border-bottom:1px solid var(--della-line)}
     .install-list li:first-child{padding-top:0}
     .install-list li:last-child{border-bottom:0}
-    .install-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--della-blue);border-radius:50%;background:var(--della-blue-light);color:var(--della-navy);font-size:11px;font-weight:600}
+    .install-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--della-blue);border-radius:50%;background:var(--della-blue-light);color:var(--della-blue);font-size:11px;font-weight:600}
+    .install-number svg{display:block;width:22px;height:22px}
     .install-list h3{font-size:19px;margin:0 0 5px}
     .install-list p{margin:0;font-size:13px;line-height:1.55}
 
     .faq-section{padding:48px 0;background:#f8f9fb}
-    .faq-section .section-heading{max-width:none;margin:0;text-align:left}
+    .faq-section .section-heading{max-width:none;margin:0;text-align:center}
     .faq-list{display:block;max-width:none;margin:28px 0 0;border-top:1px solid var(--della-line)}
     .faq-column{display:contents}
     .faq-item{border:0;border-bottom:1px solid var(--della-line);border-radius:0;background:transparent}
@@ -171,11 +176,13 @@
     .faq-item[open] .faq-answer{grid-template-rows:1fr;padding-bottom:18px}
     .faq-answer p{min-height:0;margin:0;overflow:hidden;font-size:15px;line-height:1.7}
 
-    .final-cta{padding:36px 0 64px;background:var(--della-white);text-align:left}
+    .final-cta{padding:36px 0 64px;background:var(--della-white);text-align:center}
     .final-cta .container{padding:48px 28px;background:var(--della-surface);border-radius:4px}
-    .final-cta h2{width:100%;max-width:none;margin:0 0 14px;color:var(--della-navy);text-align:left}
-    .final-cta p{width:100%;max-width:none;margin:0 0 23px;color:var(--della-body);font-size:14px;text-align:left}
-    .final-actions{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:16px}
+    .final-cta-icon{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 16px;color:var(--della-navy)}
+    .final-cta-icon svg{display:block;width:100%;height:100%}
+    .final-cta h2{max-width:760px;margin:0 auto 14px;color:var(--della-navy);text-align:center}
+    .final-cta p{max-width:680px;margin:0 auto 23px;color:var(--della-body);font-size:14px;text-align:center}
+    .final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
     .final-actions .btn{min-width:235px}
 
     @media (max-width:1023px){
@@ -186,6 +193,9 @@
       .hero{min-height:440px}
       .hero .container{min-height:440px}
       .hero-copy{width:39%}
+      .fit-icon{top:20px;left:20px;width:46px;height:46px}
+      .fit-icon svg{width:25px;height:25px}
+      .fit-card-head{padding-top:34px}
       .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
       .install-layout{gap:32px}
     }
@@ -204,6 +214,7 @@
       .hero-actions{display:grid;width:100%;grid-template-columns:1fr}
       .fit-grid{grid-template-columns:1fr;gap:16px}
       .fit-card{padding:28px 24px}
+      .fit-card-head{padding-top:44px}
       .fit-card-actions{align-items:stretch}
       .fit-card-actions .btn{width:100%}
       .fit-card-actions .text-link{width:100%;text-align:center}
@@ -212,12 +223,13 @@
       .tabs{display:grid;width:100%;grid-template-columns:1fr 1fr}
       .tab{min-width:0;padding-inline:8px}
       .product-grid{gap:10px}
-      .product-card-body{padding:13px 11px 12px}
-      .product-card h3{font-size:14px}
-      .product-image{padding:8px}
-      .product-badge{left:7px;top:7px;max-width:calc(100% - 14px);font-size:8.5px}
-      .product-meta span{font-size:9.5px}
-      .product-card .btn{padding-inline:8px}
+      .product-card{--card-inset:12px}
+      .product-badge{margin-top:12px;font-size:9.5px}
+      .product-image-wrap{margin-top:8px;padding:16px 10px 8px}
+      .product-image{max-height:150px}
+      .product-card h3.product-title{font-size:13px}
+      .product-meta{gap:5px}
+      .product-meta span{font-size:10.5px}
       .install-section{padding:52px 0}
       .install-layout{grid-template-columns:1fr;gap:28px}
       .install-copy{padding:0 4px}
@@ -229,9 +241,9 @@
 
     @media (max-width:360px){
       .product-grid{grid-template-columns:1fr}
-      .product-card h3{font-size:15px}
-      .product-badge{font-size:9.5px}
-      .product-meta span{font-size:10.5px}
+      .product-card h3.product-title{font-size:15px}
+      .product-badge{font-size:10px}
+      .product-meta span{font-size:11px}
     }
 
     @media (max-width:560px){
@@ -271,28 +283,57 @@
         </div>
         <div class="fit-grid">
           <article class="fit-card">
-            <p class="fit-capacity">9,000 BTU</p>
-            <h3>Smaller / Lower-Load Bedrooms</h3>
-            <ul class="fit-facts">
-              <li>Up to 400 sq. ft.</li>
-              <li>Standard ceiling height</li>
-              <li>Moderate sun exposure</li>
-              <li>Better insulation</li>
-            </ul>
+            <span class="fit-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 21V10"/>
+                <path d="M4 17h24"/>
+                <path d="M4 21h24"/>
+                <path d="M28 21v-4"/>
+                <path d="M8.5 17v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9V17"/>
+                <path d="M6.5 21v2.5M25.5 21v2.5"/>
+              </svg>
+            </span>
+            <div class="fit-card-copy">
+              <div class="fit-card-head">
+                <p class="fit-capacity">9,000 BTU</p>
+                <h3>Smaller / Lower-Load Bedrooms</h3>
+              </div>
+              <ul class="fit-facts">
+                <li>Up to 400 sq. ft.</li>
+                <li>Standard ceiling height</li>
+                <li>Moderate sun exposure</li>
+                <li>Better insulation</li>
+              </ul>
+            </div>
             <div class="fit-card-actions">
               <button class="btn btn-primary" type="button" data-select-btu="9k">See 9K Bedroom Picks</button>
               <a class="text-link collection-link" data-btu="9k" data-source-module="fit_router" href="https://dellahome.com/collections/9000-btu-mini-split" target="_blank" rel="noopener">View All 9K Mini Splits</a>
             </div>
           </article>
           <article class="fit-card">
-            <p class="fit-capacity">12,000 BTU</p>
-            <h3>Larger / Higher-Load Bedrooms</h3>
-            <ul class="fit-facts">
-              <li>Up to 550 sq. ft.</li>
-              <li>Higher ceilings</li>
-              <li>Strong sun / top-floor exposure</li>
-              <li>Higher heating or cooling load</li>
-            </ul>
+            <span class="fit-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21V8.5"/>
+                <path d="M3 16.5h26"/>
+                <path d="M3 21h26"/>
+                <path d="M29 21v-4.5"/>
+                <path d="M6.5 16.5v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9v1.6"/>
+                <path d="M18 16.5v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9v1.6"/>
+                <path d="M5.5 21v2.5M26.5 21v2.5"/>
+              </svg>
+            </span>
+            <div class="fit-card-copy">
+              <div class="fit-card-head">
+                <p class="fit-capacity">12,000 BTU</p>
+                <h3>Larger / Higher-Load Bedrooms</h3>
+              </div>
+              <ul class="fit-facts">
+                <li>Up to 550 sq. ft.</li>
+                <li>Higher ceilings</li>
+                <li>Strong sun / top-floor exposure</li>
+                <li>Higher heating or cooling load</li>
+              </ul>
+            </div>
             <div class="fit-card-actions">
               <button class="btn btn-primary" type="button" data-select-btu="12k">See 12K Bedroom Picks</button>
               <a class="text-link collection-link" data-btu="12k" data-source-module="fit_router" href="https://dellahome.com/collections/12000-btu-mini-split" target="_blank" rel="noopener">View All 12K Mini Splits</a>
@@ -321,9 +362,9 @@
         <div class="product-panel" id="panel-9k" role="tabpanel" aria-labelledby="tab-9k" data-panel-btu="9k">
           <div class="product-grid">
             <article class="product-card" data-product-handle="della-serena-cloud-air-series-9000-btu-22-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" data-series="Serena CloudAir" data-btu="9k">
+              <span class="product-badge">Bedroom Comfort</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/serena-9k.jpg" alt="DELLA Serena CloudAir 9K mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Bedroom Comfort</span>
+                <img class="product-image" src="assets/products/serena-card.webp" alt="DELLA Serena CloudAir 9K mini split indoor and outdoor units" width="1581" height="1507" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Serena CloudAir Series 9000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
@@ -334,9 +375,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="della-motto-series-9100-btu-20-5-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" data-series="Motto" data-btu="9k">
+              <span class="product-badge">Quiet Value</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/motto-9k.jpg" alt="DELLA Motto 9K mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Quiet Value</span>
+                <img class="product-image" src="assets/products/motto-card.webp" alt="DELLA Motto 9K mini split indoor and outdoor units" width="1200" height="1181" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Motto Series 9100 BTU 20.5 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
@@ -347,9 +388,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="vario-series-9000-btu-seer2-20-mini-split-heat-pump-ac-up-to-400-sq-ft" data-series="Vario" data-btu="9k">
+              <span class="product-badge">Everyday Performance</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/vario-9k.jpg" alt="DELLA Vario 9K mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Everyday Performance</span>
+                <img class="product-image" src="assets/products/vario-card.webp" alt="DELLA Vario 9K mini split indoor and outdoor units" width="1731" height="1727" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Vario Series 9000 BTU 20 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
@@ -360,9 +401,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft" data-series="Optima" data-btu="9k">
+              <span class="product-badge">Cold-Climate Performance</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/optima-9k.jpg" alt="DELLA Optima 9K Ultra Heat mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Cold-Climate Performance</span>
+                <img class="product-image" src="assets/products/optima-card.webp" alt="DELLA Optima 9K Ultra Heat mini split indoor and outdoor units" width="1200" height="1162" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Optima Series 9000 BTU 23 SEER2 Ultra Heat Mini Split AC - Up to 400 Sq.Ft.</h3>
@@ -378,9 +419,9 @@
         <div class="product-panel" id="panel-12k" role="tabpanel" aria-labelledby="tab-12k" data-panel-btu="12k" hidden>
           <div class="product-grid">
             <article class="product-card" data-product-handle="della-serena-cloud-air-series-12000-btu-22-seer2-mini-split-heat-pump-ac-up-to-550-sq-ft" data-series="Serena CloudAir" data-btu="12k">
+              <span class="product-badge">Bedroom Comfort</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/serena-12k.jpg" alt="DELLA Serena CloudAir 12K mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Bedroom Comfort</span>
+                <img class="product-image" src="assets/products/serena-card.webp" alt="DELLA Serena CloudAir 12K mini split indoor and outdoor units" width="1581" height="1507" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Serena CloudAir Series 12000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</h3>
@@ -391,9 +432,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="della-motto-series-12000-btu-20-seer2-mini-split-heat-pump-ac-115v-up-to-550-sq-ft" data-series="Motto" data-btu="12k">
+              <span class="product-badge">Quiet Value</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/motto-12k.jpg" alt="DELLA Motto 12K mini split indoor and outdoor units" width="1800" height="1800" loading="lazy">
-                <span class="product-badge">Quiet Value</span>
+                <img class="product-image" src="assets/products/motto-card.webp" alt="DELLA Motto 12K mini split indoor and outdoor units" width="1200" height="1181" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Motto Series 12000 BTU 20 SEER2 Mini Split Heat Pump AC – 115V, Up to 550 Sq.Ft.</h3>
@@ -404,9 +445,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" data-series="Vario" data-btu="12k">
+              <span class="product-badge">Everyday Performance</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/vario-12k.jpg" alt="DELLA Vario 12K mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Everyday Performance</span>
+                <img class="product-image" src="assets/products/vario-card.webp" alt="DELLA Vario 12K mini split indoor and outdoor units" width="1731" height="1727" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</h3>
@@ -417,9 +458,9 @@
               </div>
             </article>
             <article class="product-card" data-product-handle="optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" data-series="Optima" data-btu="12k">
+              <span class="product-badge">Cold-Climate Performance</span>
               <div class="product-image-wrap">
-                <img class="product-image" src="assets/products/optima-12k.jpg" alt="DELLA Optima 12K Ultra Heat mini split indoor and outdoor units" width="1200" height="1200" loading="lazy">
-                <span class="product-badge">Cold-Climate Performance</span>
+                <img class="product-image" src="assets/products/optima-card.webp" alt="DELLA Optima 12K Ultra Heat mini split indoor and outdoor units" width="1200" height="1162" loading="lazy">
               </div>
               <div class="product-card-body">
                 <h3 class="product-title">DELLA Optima Series 12000 BTU 23 SEER2 Ultra Heat Mini Split AC (R-454B) - Up to 550 Sq.Ft.</h3>
@@ -456,15 +497,34 @@
           <div class="install-copy">
             <ol class="install-list">
               <li>
-                <span class="install-number">01</span>
+                <span class="install-number" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5.5" y="8" width="21" height="7.5" rx="2"/>
+                    <path d="M9 13h14"/>
+                    <path d="M11 19.5c-.6 1.2-.6 2.4 0 3.6"/>
+                    <path d="M16 19.5c-.6 1.2-.6 2.4 0 3.6"/>
+                    <path d="M21 19.5c-.6 1.2-.6 2.4 0 3.6"/>
+                  </svg>
+                </span>
                 <div><h3>Indoor Unit Placement</h3><p>Keep the wall clear and avoid sending airflow directly across the bed.</p></div>
               </li>
               <li>
-                <span class="install-number">02</span>
+                <span class="install-number" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+                  </svg>
+                </span>
                 <div><h3>Electrical Requirements</h3><p>Match the selected system’s 115V or 230V requirement to the planned circuit.</p></div>
               </li>
               <li>
-                <span class="install-number">03</span>
+                <span class="install-number" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="9" width="22" height="14" rx="2"/>
+                    <circle cx="16" cy="16" r="4.6"/>
+                    <path d="M16 16l3-3M16 16l3 3M16 16l-3 3M16 16l-3-3"/>
+                    <path d="M9 23v2.5M23 23v2.5"/>
+                  </svg>
+                </span>
                 <div><h3>Outdoor Unit &amp; Line Set</h3><p>Plan a serviceable outdoor location, drainage path, and practical wall-to-wall route.</p></div>
               </li>
             </ol>
@@ -486,11 +546,11 @@
             </details>
             <details class="faq-item">
               <summary>Is 9,000 BTU too large for a bedroom?</summary>
-              <div class="faq-answer"><p>It can be for a very small or low-load bedroom. Oversizing may shorten run times and reduce humidity control, so use 9K as a starting path—not an automatic answer—and confirm the room load when the fit is close.</p></div>
+              <div class="faq-answer"><p>It can be for a very small or low-load bedroom. Oversizing may shorten run times and reduce humidity control, so use 9K as a starting path, not an automatic answer, and confirm the room load when the fit is close.</p></div>
             </details>
             <details class="faq-item">
-              <summary>When should I consider a 12,000 BTU mini split?</summary>
-              <div class="faq-answer"><p>Consider 12K for a larger primary bedroom or a room with higher ceilings, strong afternoon sun, top-floor heat, weaker insulation, or a sitting area. Confirm the model’s capacity and electrical requirements before ordering.</p></div>
+              <summary>What’s the difference between 115V and 230V mini splits?</summary>
+              <div class="faq-answer"><p>Voltage does not change a model’s rated BTU output. On this page, Motto models use 115V and Vario models use 230V; a 115V unit runs on standard household voltage and is often simpler to wire, while a 230V unit typically requires a dedicated circuit. Choose the model that fits your room, then match the circuit to the model’s stated voltage.</p></div>
             </details>
           </div>
           <div class="faq-column">
@@ -499,8 +559,8 @@
               <div class="faq-answer"><p>Yes, the featured DELLA models are designed for quiet room comfort, but sound levels and low-fan behavior differ by series. Compare the exact product specifications and choose placement that does not direct airflow across the bed.</p></div>
             </details>
             <details class="faq-item">
-              <summary>Where should a mini split be installed in a bedroom?</summary>
-              <div class="faq-answer"><p>Place the indoor unit high on a clear wall with enough service clearance and avoid directing airflow across the bed. Also confirm a practical condensate drain and line-set route to the outdoor unit.</p></div>
+              <summary>Do I need a professional to install a bedroom mini split?</summary>
+              <div class="faq-answer"><p>Plan on it in most cases. A single-zone bedroom system pairs the indoor unit with one outdoor condenser through a refrigerant line set, and installation involves mounting both units, routing and vacuuming the line set, and wiring to a circuit that matches the model’s voltage. If you are considering DIY, review the exact model’s installation manual before ordering.</p></div>
             </details>
             <details class="faq-item">
               <summary>Can a mini split heat a bedroom in winter?</summary>
@@ -513,6 +573,15 @@
 
     <section class="final-cta" aria-labelledby="final-cta-title">
       <div class="container">
+        <span class="final-cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4.5" y="7" width="23" height="8.5" rx="2.2"/>
+            <path d="M8 12.5h16"/>
+            <path d="M10.5 20c-.7 1.3-.7 2.6 0 3.9"/>
+            <path d="M16 20c-.7 1.3-.7 2.6 0 3.9"/>
+            <path d="M21.5 20c-.7 1.3-.7 2.6 0 3.9"/>
+          </svg>
+        </span>
         <h2 id="final-cta-title">Find the Mini Split That Fits Your Bedroom</h2>
         <p>Choose the collection that matches your room, then compare the exact voltage and feature set before ordering.</p>
         <div class="final-actions">
@@ -529,10 +598,10 @@
     "@type":"FAQPage",
     "mainEntity":[
       {"@type":"Question","name":"What size mini split do I need for a bedroom?","acceptedAnswer":{"@type":"Answer","text":"Start with the room’s heating and cooling load, not square footage alone. DELLA’s 9K bedroom models are rated up to 400 sq. ft., while 12K models are rated up to 550 sq. ft.; ceiling height, insulation, sun exposure, climate, and window area can change the final size."}},
-      {"@type":"Question","name":"Is 9,000 BTU too large for a bedroom?","acceptedAnswer":{"@type":"Answer","text":"It can be for a very small or low-load bedroom. Oversizing may shorten run times and reduce humidity control, so use 9K as a starting path—not an automatic answer—and confirm the room load when the fit is close."}},
-      {"@type":"Question","name":"When should I consider a 12,000 BTU mini split?","acceptedAnswer":{"@type":"Answer","text":"Consider 12K for a larger primary bedroom or a room with higher ceilings, strong afternoon sun, top-floor heat, weaker insulation, or a sitting area. Confirm the model’s capacity and electrical requirements before ordering."}},
+      {"@type":"Question","name":"Is 9,000 BTU too large for a bedroom?","acceptedAnswer":{"@type":"Answer","text":"It can be for a very small or low-load bedroom. Oversizing may shorten run times and reduce humidity control, so use 9K as a starting path, not an automatic answer, and confirm the room load when the fit is close."}},
+      {"@type":"Question","name":"What’s the difference between 115V and 230V mini splits?","acceptedAnswer":{"@type":"Answer","text":"Voltage does not change a model’s rated BTU output. On this page, Motto models use 115V and Vario models use 230V; a 115V unit runs on standard household voltage and is often simpler to wire, while a 230V unit typically requires a dedicated circuit. Choose the model that fits your room, then match the circuit to the model’s stated voltage."}},
       {"@type":"Question","name":"Are mini splits quiet enough for sleeping?","acceptedAnswer":{"@type":"Answer","text":"Yes, the featured DELLA models are designed for quiet room comfort, but sound levels and low-fan behavior differ by series. Compare the exact product specifications and choose placement that does not direct airflow across the bed."}},
-      {"@type":"Question","name":"Where should a mini split be installed in a bedroom?","acceptedAnswer":{"@type":"Answer","text":"Place the indoor unit high on a clear wall with enough service clearance and avoid directing airflow across the bed. Also confirm a practical condensate drain and line-set route to the outdoor unit."}},
+      {"@type":"Question","name":"Do I need a professional to install a bedroom mini split?","acceptedAnswer":{"@type":"Answer","text":"Plan on it in most cases. A single-zone bedroom system pairs the indoor unit with one outdoor condenser through a refrigerant line set, and installation involves mounting both units, routing and vacuuming the line set, and wiring to a circuit that matches the model’s voltage. If you are considering DIY, review the exact model’s installation manual before ordering."}},
       {"@type":"Question","name":"Can a mini split heat a bedroom in winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, every featured system is a heat-pump mini split that can heat as well as cool. Cold-weather capability varies by series, so compare the model’s published operating range and choose Optima when lower-temperature heating performance is a priority."}}
     ]
   }
