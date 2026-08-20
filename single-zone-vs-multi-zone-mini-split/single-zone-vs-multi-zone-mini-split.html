@@ -89,11 +89,9 @@ td,
 .section-copy,
 .hero-text,
 .category-copy p,
-.sizing-next-copy p,
-.sizing-next-list li,
 .scene-body p,
 .support-copy p,
-.service-card p,
+.dsc-svc p,
 .faq-a p {
   font-family: var(--font-body);
 }
@@ -180,32 +178,6 @@ h3 {
 .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
 .btn-sm { min-height: 40px; padding: 9px 16px; font-size: 14px; }
 
-.announcement-strip {
-  background: var(--navy);
-  color: #fff;
-  font-size: 13px;
-  line-height: 1.2;
-}
-.announcement-strip .container {
-  min-height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 34px;
-}
-.announcement-strip span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-.announcement-strip i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  display: inline-block;
-}
 .hero {
   position: relative;
   min-height: clamp(500px, 35.7vw, 620px);
@@ -362,7 +334,6 @@ h3 {
   font-size: 16px;
   line-height: 1.65;
 }
-.quick-answer-relaxed__list,
 .split-bullet-list {
   list-style: none;
   display: grid;
@@ -370,7 +341,6 @@ h3 {
   margin: 24px 0 0;
   padding: 0;
 }
-.quick-answer-relaxed__list li,
 .split-bullet-list li {
   position: relative;
   padding-left: 20px;
@@ -378,7 +348,6 @@ h3 {
   font-size: 15px;
   line-height: 1.45;
 }
-.quick-answer-relaxed__list li::before,
 .split-bullet-list li::before {
   content: "";
   position: absolute;
@@ -388,14 +357,6 @@ h3 {
   height: 7px;
   border-radius: 50%;
   background: var(--blue);
-}
-.quick-answer-relaxed__actions,
-.split-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  margin-top: 26px;
 }
 .inline-arrow-link {
   display: inline-flex;
@@ -410,28 +371,6 @@ h3 {
 .inline-arrow-link:hover {
   gap: 10px;
   color: var(--blue);
-}
-.link-button-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  max-width: 100%;
-  padding: 12px 24px;
-  border: 1px solid var(--gray-200);
-  border-radius: 4px;
-  background: #fff;
-  color: var(--navy);
-  font: 600 15px/1.2 var(--font-button);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
-}
-.link-button-outline:hover {
-  background: var(--blue-light);
-  border-color: var(--blue);
-  color: var(--navy);
-  transform: translateY(-1px);
 }
 .quick-card {
   border: 1px solid var(--gray-200);
@@ -454,59 +393,35 @@ h3 {
   white-space: nowrap;
   border: 0;
 }
-.setup-summary-compact {
-  background: var(--blue-surface);
-}
-.setup-summary-compact__inner {
-  display: grid;
-  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
-  gap: 48px;
-  align-items: center;
-  padding: 30px 34px;
-  background: #fff;
-  box-shadow: 0 10px 26px rgba(14,25,83,.045);
-}
-.setup-summary-compact__copy h2 {
-  margin-top: 0;
-  max-width: 360px;
-  font-size: clamp(27px, 2.4vw, 34px);
-  line-height: 1.12;
-}
-.setup-summary-compact__copy p {
-  max-width: 430px;
-  margin-top: 12px;
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.65;
-}
-.setup-summary-compact__columns {
+.zone-compare {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 34px;
+  gap: 28px;
+  margin-top: 24px;
 }
-.setup-summary-compact__column h3 {
-  margin: 0 0 14px;
+.zone-compare__col h3 {
+  margin: 0 0 12px;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
 }
-.setup-summary-compact__column ul {
+.zone-compare__col ul {
   list-style: none;
   display: grid;
-  gap: 11px;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
-.setup-summary-compact__column li {
+.zone-compare__col li {
   position: relative;
   padding-left: 18px;
   color: var(--text-muted);
   font-size: 14.5px;
   line-height: 1.45;
 }
-.setup-summary-compact__column li::before {
+.zone-compare__col li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -665,48 +580,6 @@ h3 {
   transform: none;
 }
 
-.sizing-next {
-  margin-top: 0;
-  background: var(--trust-bg);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 28px;
-  align-items: center;
-  min-height: 132px;
-  padding: 28px 34px;
-  border-radius: 4px;
-}
-.btu-note-section {
-  padding-top: 24px;
-  padding-bottom: 56px;
-}
-.sizing-next-label {
-  display: inline-flex;
-  color: var(--blue);
-  font: 600 12px/1 var(--font-button);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.sizing-next h3 {
-  font-size: 28px;
-  line-height: 1.14;
-}
-.sizing-next-copy p {
-  margin-top: 12px;
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.62;
-  max-width: 760px;
-}
-.sizing-next-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 0;
-}
-
 .split-grid,
 .notes-grid,
 .scenario-grid,
@@ -813,25 +686,19 @@ h3 {
   font-size: 16px;
   line-height: 1;
 }
-.outdoor-decision-split,
-.installation-support-split {
+.outdoor-decision-split {
   width: min(1200px, calc(100% - 64px));
   margin: 0 auto;
   padding: 64px 0;
   color: var(--navy);
 }
-.outdoor-decision-split__inner,
-.installation-support-split__inner {
+.outdoor-decision-split__inner {
   display: grid;
   grid-template-columns: 1.04fr .96fr;
   gap: 48px;
   align-items: center;
 }
-.installation-support-split__inner {
-  grid-template-columns: .96fr 1.04fr;
-}
-.outdoor-decision-split__media,
-.installation-support-split__media {
+.outdoor-decision-split__media {
   display: block;
   margin: 0;
   aspect-ratio: 1.25;
@@ -840,8 +707,7 @@ h3 {
   background: var(--blue-surface);
   border-radius: 4px;
 }
-.outdoor-decision-split__media img,
-.installation-support-split__media img {
+.outdoor-decision-split__media img {
   display: block;
   width: 100%;
   height: 100%;
@@ -849,75 +715,80 @@ h3 {
   object-fit: cover;
   object-position: center center;
 }
-.outdoor-decision-split__copy,
-.installation-support-split__copy {
+.outdoor-decision-split__copy {
   max-width: 520px;
 }
-.outdoor-decision-split__copy h2,
-.installation-support-split__copy h2 {
+.outdoor-decision-split__copy h2 {
   max-width: 620px;
   margin: 0;
   color: var(--navy);
   font-size: clamp(32px, 3vw, 38px);
   line-height: 1.08;
 }
-.outdoor-decision-split__copy > p,
-.installation-support-split__copy > p {
+.outdoor-decision-split__copy > p {
   margin-top: 14px;
   color: var(--text-muted);
   font-size: 16px;
   line-height: 1.65;
 }
-.installation-support-split {
-  background: var(--blue-surface);
-  width: 100%;
-}
-.installation-support-split__inner {
-  width: min(1200px, calc(100% - 64px));
-  margin: 0 auto;
-}
-.installation-support-split .split-actions {
-  gap: 14px;
-}
 
-.services-section {
-  background: var(--white);
-  padding-top: 56px;
-  padding-bottom: 42px;
+.dsc-container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.dsc-heading {
+  margin: 0;
+  font-family: var(--font-heading-medium);
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1.12;
+  font-weight: 400;
+  color: var(--navy);
 }
-.services-section .section-head {
-  display: block;
-  margin-bottom: 28px;
-  text-align: left;
-}
-.services-grid {
+.dsc-services { background: var(--white); padding: 48px 0; }
+.dsc-svc-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px;
+  gap: 26px;
+  margin-top: 32px;
 }
-.service-card {
-  background: #fff;
-  border: 0;
-  padding: 10px 16px;
-  min-height: 142px;
-  text-align: center;
+.dsc-svc {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px 26px 28px;
+  border-radius: 6px;
+  background: var(--blue-light);
+  text-align: center;
+}
+.dsc-svc__icon {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  flex: none;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--blue);
 }
-.service-icon {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-  margin-bottom: 12px;
+.dsc-svc__icon img { display: block; width: 50px; height: 50px; }
+.dsc-svc h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .18s;
 }
-.service-card h3 {
+.dsc-svc h3 a:hover { border-bottom-color: currentColor; }
+.dsc-svc h3 {
+  margin: 0 0 8px;
   color: var(--navy);
-  font-family: var(--font-button);
-  font-size: 18px;
+  font-family: var(--font-heading-medium);
+  font-size: 21px;
+  line-height: 1.4;
   font-weight: 400;
-  line-height: 1.28;
+}
+.dsc-svc p {
+  margin: 0;
+  color: #53617f;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .faq-section {
@@ -1039,37 +910,26 @@ h3 {
   .product-grid,
   .scenario-grid,
   .notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dsc-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .scene-row { min-height: 320px; }
   .quick-answer-relaxed,
   .quick-grid,
   .split-grid,
-  .sizing-next,
-  .setup-summary-compact__inner,
-  .outdoor-decision-split__inner,
-  .installation-support-split__inner {
+  .outdoor-decision-split__inner {
     grid-template-columns: 1fr;
   }
   .quick-answer-relaxed,
-  .outdoor-decision-split__inner,
-  .installation-support-split__inner { gap: 28px; }
-  .sizing-next-actions { justify-content: flex-start; }
-  .installation-support-split__inner { width: min(100% - 40px, 920px); }
+  .outdoor-decision-split__inner { gap: 28px; }
 }
 @media (max-width: 680px) {
   body { font-size: 16px; }
   .container { width: min(100% - 32px, 1200px); }
   .section { padding: 52px 0; }
-  .announcement-strip .container {
-    min-height: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow: visible;
-    gap: 8px 18px;
-  }
-  .announcement-strip span { white-space: normal; }
+  .dsc-container { width: calc(100% - 32px); }
+  .dsc-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .dsc-svc { padding: 22px 16px; }
+  .dsc-svc h3 { font-size: 17px; }
+  .dsc-svc p { font-size: 13px; }
   h1 { font-size: clamp(32px, 9.6vw, 40px); }
   .hero {
     min-height: 560px;
@@ -1088,13 +948,10 @@ h3 {
   .hero-actions .btn { width: auto; min-width: 190px; min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .bottom-links { display: grid; grid-template-columns: 1fr; }
   .btn { width: 100%; }
-  .setup-summary-compact__columns,
+  .zone-compare,
   .scenario-grid,
   .notes-grid,
   .support-links { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; gap: 12px; }
-  .service-card { min-height: auto; padding: 14px 10px; }
-  .service-icon { width: 40px; height: 40px; margin-bottom: 10px; }
   .scene-rows { margin-top: 24px; }
   .scene-row { grid-template-columns: 1fr; min-height: auto; }
   .scene-row:nth-child(even) .scene-img,
@@ -1102,30 +959,19 @@ h3 {
   .scene-img { min-height: 250px; }
   .scene-body { padding: 24px; }
   .scene-body h3 { font-size: 24px; }
-  .outdoor-decision-split,
-  .installation-support-split {
+  .outdoor-decision-split {
     width: min(100% - 32px, 100%);
     padding: 52px 0;
   }
   .quick-answer-relaxed {
     gap: 24px;
   }
-  .installation-support-split {
-    width: 100%;
-  }
-  .installation-support-split__inner {
-    width: min(100% - 32px, 100%);
-  }
   .quick-answer-relaxed,
-  .outdoor-decision-split__inner,
-  .installation-support-split__inner { gap: 24px; }
+  .outdoor-decision-split__inner { gap: 24px; }
   .quick-answer-relaxed__media,
-  .outdoor-decision-split__media,
-  .installation-support-split__media { min-height: 260px; aspect-ratio: auto; }
+  .outdoor-decision-split__media { min-height: 260px; aspect-ratio: auto; }
   .quick-answer-relaxed__media img,
-  .outdoor-decision-split__media img,
-  .installation-support-split__media img { min-height: 260px; }
-  .setup-summary-compact__inner { padding: 26px 22px; gap: 24px; }
+  .outdoor-decision-split__media img { min-height: 260px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid rgba(226,230,238,.35); padding: 14px 16px; }
@@ -1156,19 +1002,6 @@ h3 {
     white-space: nowrap;
   }
   .collection-cta { width: 100%; }
-  .sizing-next { padding: 22px; margin-top: 0; gap: 18px; }
-  .sizing-next h3 { font-size: 24px; }
-  .sizing-next-actions { justify-content: flex-start; }
-  .sizing-next-actions .btn { width: 100%; }
-  .quick-answer-relaxed__actions .link-button-outline,
-  .sizing-next-actions .link-button-outline,
-  .outdoor-decision-split .link-button-outline,
-  .installation-support-split .link-button-outline {
-    width: 100%;
-    white-space: normal;
-    text-align: center;
-  }
-  .btu-note-section { padding-top: 18px; padding-bottom: 48px; }
   .category-feature { gap: 16px; margin-bottom: 18px; }
   .category-copy { padding: 0; }
   .category-copy h3 { font-size: 23px; }
@@ -1189,14 +1022,6 @@ h3 {
 </head>
 <body>
 <main class="page">
-  <div class="announcement-strip" aria-label="Della store benefits">
-    <div class="container">
-      <span><i></i> Free Shipping Sitewide</span>
-      <span><i></i> 0% APR Financing Available</span>
-      <span><i></i> 24/7 Live Chat Support</span>
-    </div>
-  </div>
-
   <section class="hero">
     <picture>
       <source media="(max-width: 767px)" srcset="banner mobile.webp">
@@ -1238,15 +1063,26 @@ h3 {
         <div class="quick-answer-relaxed__content">
           <span class="section-label">Quick answer</span>
           <h2>One room or multiple rooms?</h2>
-          <p>Choose single-zone for one dedicated room. Choose multi-zone when one outdoor unit needs to serve 2 to 5 rooms.</p>
-          <ul class="quick-answer-relaxed__list">
-            <li>1 room: Single-Zone</li>
-            <li>2 to 5 rooms: Multi-Zone</li>
-            <li>Still unsure: start with room count</li>
-          </ul>
-          <div class="quick-answer-relaxed__actions">
-            <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
-            <a class="link-button-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Compare Multi-Zone</a>
+          <p>Choose single-zone for one dedicated room. Choose multi-zone when one outdoor unit needs to serve 2 to 5 rooms. Use this quick check after counting your rooms.</p>
+          <div class="zone-compare" aria-label="Single-zone and multi-zone setup comparison">
+            <div class="zone-compare__col">
+              <h3>Single-Zone</h3>
+              <ul>
+                <li>One room</li>
+                <li>One outdoor unit per room</li>
+                <li>Simpler one-room route</li>
+                <li>Fully separate system</li>
+              </ul>
+            </div>
+            <div class="zone-compare__col">
+              <h3>Multi-Zone</h3>
+              <ul>
+                <li>2 to 5 rooms</li>
+                <li>Fewer outdoor units</li>
+                <li>More line-set planning</li>
+                <li>Separate temperatures, shared mode</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1653,54 +1489,6 @@ h3 {
     </div>
   </section>
 
-  <section class="section setup-summary-compact">
-    <div class="container">
-      <div class="setup-summary-compact__inner">
-        <div class="setup-summary-compact__copy">
-          <span class="section-label">Setup comparison</span>
-          <h2>Single-zone or multi-zone?</h2>
-          <p>Use this quick check after choosing your room count.</p>
-        </div>
-        <div class="setup-summary-compact__columns" aria-label="Single-zone and multi-zone setup comparison">
-          <article class="setup-summary-compact__column">
-            <h3>Single-Zone</h3>
-            <ul>
-              <li>One room</li>
-              <li>One outdoor unit per room</li>
-              <li>Simpler one-room route</li>
-              <li>Fully separate system</li>
-            </ul>
-          </article>
-          <article class="setup-summary-compact__column">
-            <h3>Multi-Zone</h3>
-            <ul>
-              <li>2 to 5 rooms</li>
-              <li>Fewer outdoor units</li>
-              <li>More line-set planning</li>
-              <li>Separate temperatures, shared mode</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section btu-note-section">
-    <div class="container">
-      <aside class="sizing-next" aria-labelledby="sizing-next-title">
-        <div class="sizing-next-copy">
-          <span class="sizing-next-label">BTU next step</span>
-          <h3 id="sizing-next-title">Not sure which BTU fits?</h3>
-          <p>Measure each room separately, then check insulation, sun exposure, ceiling height, and line-set route before choosing the final system.</p>
-        </div>
-        <div class="sizing-next-actions">
-          <a class="btn btn-primary btn-sm" href="#products">Review room tabs</a>
-          <a class="link-button-outline" href="https://dellahome.com/pages/find-a-della-partner-hvac-installer">Find Installer</a>
-        </div>
-      </aside>
-    </div>
-  </section>
-
   <section class="section section-alt">
     <div class="container">
       <span class="section-label">Home situations</span>
@@ -1769,63 +1557,21 @@ h3 {
           <li>More independence: choose multiple single-zone systems</li>
           <li>Different schedules: compare room layout first</li>
         </ul>
-        <div class="split-actions">
-          <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
-          <a class="link-button-outline" href="https://dellahome.com/collections/mini-split-single-zone">Compare Single-Zone</a>
-        </div>
       </div>
     </div>
   </section>
 
-  <section class="installation-support-split" aria-labelledby="installation-support-title">
-    <div class="installation-support-split__inner">
-      <div class="installation-support-split__copy">
-        <span class="section-label">Installation support</span>
-        <h2 id="installation-support-title">Plan installation before checkout</h2>
-        <p>Mini split decisions go beyond room count. Confirm the route, power, and installed quote before choosing the final setup.</p>
-        <ul class="split-bullet-list">
-          <li>Line-set route</li>
-          <li>Electrical requirements</li>
-          <li>Installed quote</li>
-        </ul>
-        <div class="split-actions">
-          <a class="link-button-outline" href="https://dellahome.com/pages/find-a-della-partner-hvac-installer">Find Partner HVAC Installer</a>
-          <a class="link-button-outline" href="https://dellahome.com/pages/us-rebate-center">Check Rebates</a>
-          <a class="link-button-outline" href="https://dellahome.com/pages/registration">Register Warranty</a>
-        </div>
-      </div>
-      <figure class="installation-support-split__media">
-        <img src="mini-split-installation-planning-scene.webp" alt="Della mini split installation planning with line set and accessories" width="3840" height="2880" loading="lazy" onerror="this.onerror=null;this.src='memorial-category.png';">
-      </figure>
+<section class="dsc-services" id="services" aria-labelledby="services-title">
+  <div class="dsc-container">
+    <h2 class="dsc-heading" id="services-title">Premium Della Services</h2>
+    <div class="dsc-svc-grid">
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="Free and fast shipping icon" width="50" height="50"></div><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="30-day money-back icon" width="50" height="50"></div><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="24/7 live support icon" width="50" height="50"></div><h3><a href="https://dellahome.com/pages/contact">24/7 Live Support</a></h3><p>Get instant answers to your questions anytime, day or night.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="Lifetime warranty icon" width="50" height="50"></div><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
     </div>
-  </section>
-
-  <section class="section services-section">
-    <div class="container">
-      <div class="section-head centered">
-        <span class="section-label">Service confidence</span>
-        <h2>Premium Della Services</h2>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-40_488310fc-d38a-4d43-bcc2-b1b5e44d2fa4.png?v=1764578865" alt="" loading="lazy" aria-hidden="true">
-          <h3>Free &amp; Fast Shipping</h3>
-        </article>
-        <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250609-092813.png?v=1749432513&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>Pay in 6 Months, 0% APR</h3>
-        </article>
-        <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250922-160254_998da76a-d533-49ca-a79b-0ce8b4a70261.png?v=1765275088&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>24×7 Live Chat Support</h3>
-        </article>
-        <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-45_b280ec24-a703-42bb-b37e-aa83a9a6c424.png?v=1765275087&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>Lifetime Coverage<br>(Mini Splits)</h3>
-        </article>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section class="section faq-section">
     <div class="container">
@@ -1846,11 +1592,7 @@ h3 {
         <p class="section-copy">Start with your room count, then review the collection that matches your setup.</p>
         <div class="bottom-links">
           <a class="btn btn-primary" href="https://dellahome.com/collections/mini-split-single-zone">Shop Single-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/2-zone-mini-split">Shop 2-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/3-zone-mini-split">Shop 3-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/4-zone-mini-split">Shop 4-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/5-zone-mini-split">Shop 5-Zone</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">All Multi-Zone</a>
+          <a class="btn btn-outline" href="https://dellahome.com/collections/mini-split-multi-zone">Shop Multi-Zone</a>
         </div>
       </div>
     </div>
