@@ -402,7 +402,8 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
   border-right: 1px solid var(--gray-200);
 }
-.benefit-item:last-child { border-right: none; }
+.benefit-item:nth-child(3n) { border-right: none; }
+.benefit-item:nth-child(n+4) { border-top: 1px solid var(--gray-200); }
 .benefit-icon {
   width: 56px;
   height: 56px;
@@ -1088,7 +1089,7 @@ a { text-decoration: none; color: inherit; }
   .zone-alt { flex-direction: column; align-items: flex-start; gap: 12px; }
 
   .benefits-grid { grid-template-columns: 1fr; }
-  .benefit-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .benefit-item { border-right: none; border-top: none; border-bottom: 1px solid var(--gray-200); }
   .benefit-item:last-child { border-bottom: none; }
 
   .scene-row { grid-template-columns: 1fr; min-height: auto; }
@@ -1237,7 +1238,7 @@ a { text-decoration: none; color: inherit; }
     <div class="section-header">
       <span class="section-label">Why Ductless</span>
       <h2 class="section-title">Built for Homes Without Ductwork</h2>
-      <p class="section-desc">Old houses weren't designed for forced air. Mini splits work around that.</p>
+      <p class="section-desc">Old houses weren't designed for forced air. Mini splits work around that — one system replaces both your window ACs and radiators, and does it better.</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-item">
@@ -1264,53 +1265,29 @@ a { text-decoration: none; color: inherit; }
         <div class="benefit-name">Heating Performance</div>
         <div class="benefit-desc">Ultra hyper heat models keep old houses warm even in extreme cold.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section class="section compare-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">The Switch</span>
-      <h2 class="section-title">Still Running Two Systems to Get Through the Year?</h2>
-      <p class="section-desc">Most old houses run window ACs in summer and radiators in winter. A mini split replaces both, and does it better.</p>
-    </div>
-    <div class="compare-grid">
-      <div class="compare-card">
-        <div class="compare-icon">
+      <div class="benefit-item">
+        <div class="benefit-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
-        <div class="compare-title">One System, Four Seasons</div>
-        <div class="compare-body">Heats and cools from the same unit year-round.</div>
+        <div class="benefit-stat">4 Seasons</div>
+        <div class="benefit-name">One System, Year-Round</div>
+        <div class="benefit-desc">Heats and cools from the same unit year-round. No more switching between window ACs and radiators.</div>
       </div>
-      <div class="compare-card">
-        <div class="compare-icon">
+      <div class="benefit-item">
+        <div class="benefit-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><path d="M7 8h-1m1 4h-1m1 4h-1m6-8h1m-1 4h1m-1 4h1"/></svg>
         </div>
-        <div class="compare-title">Room-by-Room Control</div>
-        <div class="compare-body">Set each zone to its own temperature independently.</div>
+        <div class="benefit-stat">Zone</div>
+        <div class="benefit-name">Room-by-Room Control</div>
+        <div class="benefit-desc">Set each zone to its own temperature independently. Heat only what you use — turn off empty rooms, stop wasting energy.</div>
       </div>
-      <div class="compare-card">
-        <div class="compare-icon">
-          <svg viewBox="0 0 24 24"><path d="M18.36 6.64a9 9 0 11-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
-        </div>
-        <div class="compare-title">Heat Only What You Use</div>
-        <div class="compare-body">Turn off empty rooms, stop wasting energy.</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 16s2-2 6-2 6 2 10 2 6-2 6-2"/><path d="M2 10s2-2 6-2 6 2 10 2 6-2 6-2"/><line x1="1" y1="20" x2="23" y2="20"/></svg>
-        </div>
-        <div class="compare-title">Whisper-Quiet 22 dB</div>
-        <div class="compare-body">Flush on the wall. No rattle, no blocked window.</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-icon">
+      <div class="benefit-item">
+        <div class="benefit-icon">
           <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <div class="compare-title">3× Heat per Dollar</div>
-        <div class="compare-body">Heat pump efficiency cuts costs from the first winter.</div>
+        <div class="benefit-stat">3×</div>
+        <div class="benefit-name">Heat per Dollar</div>
+        <div class="benefit-desc">Heat pump efficiency cuts costs from the first winter. Whisper-quiet 22 dB, flush on the wall — no rattle, no blocked window.</div>
       </div>
     </div>
   </div>
@@ -1367,6 +1344,53 @@ a { text-decoration: none; color: inherit; }
           <h3>"I Don't Want a Box on My Plaster Wall"</h3>
           <p>Built in 1920 and the trim is worth keeping. Concealed ducted hides the air handler inside a closet or ceiling cavity. Nothing visible on the wall, no aesthetic compromise.</p>
           <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="scene-cta">Explore Concealed Ducted</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE YOU BUY -->
+
+<section class="section byb-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Before You Buy</span>
+      <h2 class="section-title">What to Check in an Older Home</h2>
+      <p class="section-desc">Older homes have quirks. Confirm these four things before you order.</p>
+    </div>
+    <div class="byb-row">
+      <div class="byb-img">
+        <img src="mini-split-for-old-house-images/BYB.webp" alt="Mini split outdoor unit installed beside an older home" loading="lazy">
+      </div>
+      <div class="byb-list">
+        <div class="byb-item">
+          <span class="byb-num">1</span>
+          <div class="byb-text">
+            <h4>Electrical Panel</h4>
+            <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">2</span>
+          <div class="byb-text">
+            <h4>Insulation Quality</h4>
+            <p>Better insulation means a smaller, quieter system. Uninsulated walls push the BTU requirement up.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">3</span>
+          <div class="byb-text">
+            <h4>Line-Set Route</h4>
+            <p>Indoor and outdoor units connect through a 3" wall hole. Older walls and plaster may need a surface run.</p>
+          </div>
+        </div>
+        <div class="byb-item">
+          <span class="byb-num">4</span>
+          <div class="byb-text">
+            <h4>Condenser Placement</h4>
+            <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1454,53 +1478,6 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- BEFORE YOU BUY -->
-
-<section class="section byb-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Before You Buy</span>
-      <h2 class="section-title">What to Check in an Older Home</h2>
-      <p class="section-desc">Older homes have quirks. Confirm these four things before you order.</p>
-    </div>
-    <div class="byb-row">
-      <div class="byb-img">
-        <img src="mini-split-for-old-house-images/BYB.webp" alt="Mini split outdoor unit installed beside an older home" loading="lazy">
-      </div>
-      <div class="byb-list">
-        <div class="byb-item">
-          <span class="byb-num">1</span>
-          <div class="byb-text">
-            <h4>Electrical Panel</h4>
-            <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">2</span>
-          <div class="byb-text">
-            <h4>Insulation Quality</h4>
-            <p>Better insulation means a smaller, quieter system. Uninsulated walls push the BTU requirement up.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">3</span>
-          <div class="byb-text">
-            <h4>Line-Set Route</h4>
-            <p>Indoor and outdoor units connect through a 3" wall hole. Older walls and plaster may need a surface run.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">4</span>
-          <div class="byb-text">
-            <h4>Condenser Placement</h4>
-            <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICES (copied from Shed) -->
 <section class="section services-section">
   <div class="container">
@@ -1541,38 +1518,6 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- REASSURE -->
-<section class="section reassure-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Before You Ask</span>
-      <h2 class="section-title">4 Questions Every Old-House Buyer Asks</h2>
-    </div>
-    <div class="reassure-grid">
-      <div class="reassure-card">
-        <div class="reassure-num">01</div>
-        <div class="reassure-q">Does my old wiring support it?</div>
-        <div class="reassure-a">Most 100-amp panels handle a single-zone install. Panels under 100A may need an upgrade. Confirm with your electrician before ordering.</div>
-      </div>
-      <div class="reassure-card">
-        <div class="reassure-num">02</div>
-        <div class="reassure-q">What about plaster or brick walls?</div>
-        <div class="reassure-a">Only a 3-inch hole connects indoor and outdoor units. Plaster, brick, and stone walls all work. No large opening, no structural damage.</div>
-      </div>
-      <div class="reassure-card">
-        <div class="reassure-num">03</div>
-        <div class="reassure-q">Will it actually heat in winter?</div>
-        <div class="reassure-a">DELLA units operate down to −22°F outdoor temperature. No backup heater needed for most cold-climate regions in the continental US.</div>
-      </div>
-      <div class="reassure-card">
-        <div class="reassure-num">04</div>
-        <div class="reassure-q">How long does the install take?</div>
-        <div class="reassure-a">A typical single-zone job takes one day with two people. Each additional indoor unit adds half a day more. No major construction required.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="section faq-section">
   <div class="container">
@@ -1584,38 +1529,45 @@ a { text-decoration: none; color: inherit; }
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <h3>What mini split works best for an old house?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Start with room count. Most buyers begin with single-zone for one difficult room, then move to 2-zone or 3-zone if more rooms need help. Concealed ducted is the option when a cleaner look matters more.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <h3>Should I start with single-zone or go straight to 2-zone?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Start with single-zone if one room is clearly the main problem. Go straight to 2-zone when two rooms on the same floor both need regular heating and cooling with separate control.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <h3>When does 3-zone make sense?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">When three connected rooms need independent comfort and you want one outdoor unit instead of stacking multiple systems. Usually best for larger upstairs or whole-floor retrofits.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <h3>When should I choose concealed ducted?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">When you want less visible equipment and have a closet, attic, or ceiling cavity to hide the air handler. Wall-mounted is still the easier first option in most old houses.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <h3>Can I install without existing ductwork?</h3>
           <span class="faq-icon" aria-hidden="true"></span>
         </div>
         <div class="faq-a">Yes. Single-zone, 2-zone, and 3-zone systems don't need traditional ductwork. Concealed ducted setups use short hidden runs when the layout calls for them.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Does my old wiring support it?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </div>
+        <div class="faq-a">Most 100-amp panels handle a single-zone install. Panels under 100A may need an upgrade. Confirm with your electrician before ordering.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <h3>What about plaster or brick walls?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </div>
+        <div class="faq-a">Only a 3-inch hole connects indoor and outdoor units. Plaster, brick, and stone walls all work. No large opening, no structural damage.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Will it actually heat in winter?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </div>
+        <div class="faq-a">DELLA units operate down to −22°F outdoor temperature. No backup heater needed for most cold-climate regions in the continental US.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Can I keep my radiators or boiler as backup?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </div>
+        <div class="faq-a">Yes. Many old-house owners keep the existing system for the coldest nights while the mini split carries the daily load. With ultra hyper heat models rated to −22°F, most buyers retire the backup within the first winter.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <h3>How long does the install take?</h3>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </div>
+        <div class="faq-a">A typical single-zone job takes one day with two people. Each additional indoor unit adds half a day more. No major construction required.</div>
       </div>
     </div>
   </div>
@@ -1637,7 +1589,7 @@ a { text-decoration: none; color: inherit; }
 
 <!-- FAQ SCHEMA -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What mini split works best for an old house?","acceptedAnswer":{"@type":"Answer","text":"Start with room count. Most buyers begin with single-zone for one difficult room, then move to 2-zone or 3-zone if more rooms need help. Concealed ducted is the option when a cleaner look matters more."}},{"@type":"Question","name":"Should I start with single-zone or go straight to 2-zone?","acceptedAnswer":{"@type":"Answer","text":"Start with single-zone if one room is clearly the main problem. Go straight to 2-zone when two rooms on the same floor both need regular heating and cooling with separate control."}},{"@type":"Question","name":"When does 3-zone make sense?","acceptedAnswer":{"@type":"Answer","text":"When three connected rooms need independent comfort and you want one outdoor unit instead of stacking multiple systems. Usually best for larger upstairs or whole-floor retrofits."}},{"@type":"Question","name":"When should I choose concealed ducted?","acceptedAnswer":{"@type":"Answer","text":"When you want less visible equipment and have a closet, attic, or ceiling cavity to hide the air handler. Wall-mounted is still the easier first option in most old houses."}},{"@type":"Question","name":"Can I install without existing ductwork?","acceptedAnswer":{"@type":"Answer","text":"Yes. Single-zone, 2-zone, and 3-zone systems don't need traditional ductwork. Concealed ducted setups use short hidden runs when the layout calls for them."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I install without existing ductwork?","acceptedAnswer":{"@type":"Answer","text":"Yes. Single-zone, 2-zone, and 3-zone systems don't need traditional ductwork. Concealed ducted setups use short hidden runs when the layout calls for them."}},{"@type":"Question","name":"Does my old wiring support it?","acceptedAnswer":{"@type":"Answer","text":"Most 100-amp panels handle a single-zone install. Panels under 100A may need an upgrade. Confirm with your electrician before ordering."}},{"@type":"Question","name":"What about plaster or brick walls?","acceptedAnswer":{"@type":"Answer","text":"Only a 3-inch hole connects indoor and outdoor units. Plaster, brick, and stone walls all work. No large opening, no structural damage."}},{"@type":"Question","name":"Will it actually heat in winter?","acceptedAnswer":{"@type":"Answer","text":"DELLA units operate down to −22°F outdoor temperature. No backup heater needed for most cold-climate regions in the continental US."}},{"@type":"Question","name":"Can I keep my radiators or boiler as backup?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many old-house owners keep the existing system for the coldest nights while the mini split carries the daily load. With ultra hyper heat models rated to −22°F, most buyers retire the backup within the first winter."}},{"@type":"Question","name":"How long does the install take?","acceptedAnswer":{"@type":"Answer","text":"A typical single-zone job takes one day with two people. Each additional indoor unit adds half a day more. No major construction required."}}]}
 </script>
 
 </body>
