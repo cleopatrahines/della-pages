@@ -130,17 +130,6 @@ h3 {
 .btn-outline:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue); }
 .text-link { color: var(--blue); font-weight: 600; font-size: 14px; }
 
-.announcement-strip { background: var(--navy); color: #fff; font-size: 13px; }
-.announcement-strip .container {
-  min-height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 34px;
-}
-.announcement-strip span { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
-.announcement-strip i { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: inline-block; }
-
 .hero {
   position: relative;
   min-height: clamp(500px, 34vw, 590px);
@@ -221,30 +210,6 @@ h3 {
   font-size: 16px;
   line-height: 1.62;
   margin-bottom: 22px;
-}
-.quick-answer__actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-.quick-answer__actions .btn--soft {
-  min-height: 48px;
-  padding: 12px 26px;
-  border-radius: 4px;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-  color: var(--navy);
-  box-shadow: none;
-  font-size: 15px;
-  font-weight: 600;
-}
-.quick-answer__actions .btn--soft:hover {
-  transform: translateY(-1px);
-  border-color: var(--blue);
-  background: var(--blue-light);
-  color: var(--blue);
 }
 
 .airflow-grid {
@@ -627,68 +592,6 @@ h3 {
 .comparison-table tbody tr:hover th,
 .comparison-table tbody tr:hover td {
   background: rgba(248,250,255,.42);
-}
-.comparison-installer-note {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  max-width: 1160px;
-  margin-top: 14px;
-  padding: 14px 16px;
-  border: 1px solid rgba(14, 25, 83, 0.08);
-  border-radius: 12px;
-  background: #fff;
-}
-.comparison-installer-note__copy {
-  min-width: 0;
-}
-.comparison-installer-note__copy span {
-  display: inline-flex;
-  margin-bottom: 4px;
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.comparison-installer-note__copy p {
-  margin: 0;
-  color: rgba(11, 19, 61, 0.66);
-  font-size: 13.5px;
-  line-height: 1.45;
-}
-.comparison-installer-note__actions {
-  display: flex;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-  justify-content: flex-end;
-}
-.comparison-installer-note__actions .text-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 9px 14px;
-  border: 1px solid rgba(14, 25, 83, 0.14);
-  border-radius: 4px;
-  background: #fff;
-  color: var(--navy);
-  font-size: 13.5px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
-}
-.comparison-installer-note__actions .text-link:hover {
-  transform: translateY(-1px);
-  border-color: var(--blue);
-  background: var(--blue-light);
-  color: var(--blue);
-}
-.comparison-installer-note__actions .text-link::after {
-  content: none;
 }
 .comparison-toggle {
   display: none;
@@ -1173,31 +1076,53 @@ h3 {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px;
+  gap: 26px;
 }
 .service-card {
-  min-height: 142px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
+  padding: 30px 26px 28px;
+  border-radius: 6px;
+  background: var(--blue-light);
   text-align: center;
-  border: 0;
-  background: #fff;
 }
 .service-icon {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 12px;
-  object-fit: contain;
+  display: flex;
+  width: 58px;
+  height: 58px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.service-icon img {
+  display: block;
+  width: 50px;
+  height: 50px;
 }
 .service-card h3 {
+  margin: 0 0 8px;
   color: var(--navy);
-  font-family: var(--font-body);
-  font-size: 18px;
+  font-family: var(--font-heading);
+  font-size: 21px;
   font-weight: 400;
-  line-height: 1.28;
+  line-height: 1.4;
+}
+.service-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .18s;
+}
+.service-card h3 a:hover { border-bottom-color: currentColor; }
+.service-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .faq-section {
@@ -1328,7 +1253,7 @@ main.page .bottom-choice-cta h2 {
   .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .room-card,
   .room-card.is-large { grid-column: auto; }
-  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 }
 
 @media (max-width: 1020px) {
@@ -1462,27 +1387,6 @@ main.page .bottom-choice-cta h2 {
     padding: 9px 8px;
     font-size: 13px;
   }
-
-  .comparison-installer-note {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px;
-    margin-top: 12px;
-  }
-
-  .comparison-installer-note__actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    justify-content: stretch;
-  }
-
-  .comparison-installer-note__actions .text-link {
-    min-height: 40px;
-    justify-content: flex-start;
-    white-space: normal;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1502,14 +1406,6 @@ main.page .bottom-choice-cta h2 {
   h1 { max-width: 340px; font-size: clamp(31px, 8.2vw, 36px); }
   h2 { font-size: 29px; }
   .btn { width: 100%; min-height: 46px; }
-  .announcement-strip .container {
-    min-height: 34px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
   .hero {
     min-height: auto;
     align-items: flex-start;
@@ -1535,8 +1431,6 @@ main.page .bottom-choice-cta h2 {
   }
   .quick-answer__content h2 { font-size: clamp(26px, 7.2vw, 30px); }
   .quick-answer__lead { font-size: 15px; line-height: 1.58; }
-  .quick-answer__actions { gap: 10px; }
-  .quick-answer__actions .btn { width: 100%; justify-content: center; }
   .airflow-grid { grid-template-columns: 1fr; }
   .airflow-grid { gap: 20px; }
   .diagram { aspect-ratio: 16 / 8; }
@@ -1729,7 +1623,9 @@ main.page .bottom-choice-cta h2 {
   }
   .room-card:not(.is-large) .btn-primary { display: none; }
   .services-grid { grid-template-columns: 1fr; gap: 12px; }
-  .service-card { min-height: auto; padding: 14px 10px; }
+  .service-card { padding: 22px 16px; }
+  .service-card h3 { font-size: 17px; }
+  .service-card p { font-size: 13px; }
   #rooms,
   .project-products-section,
   .services-section,
@@ -1813,14 +1709,6 @@ main.page h2 {
 </head>
 <body>
 <main class="page">
-  <div class="announcement-strip" aria-label="Della store benefits">
-    <div class="container">
-      <span><i></i> Free Shipping Sitewide</span>
-      <span><i></i> Flexible Financing Available</span>
-      <span><i></i> 24/7 Live Chat Support</span>
-    </div>
-  </div>
-
   <section class="hero">
     <picture>
       <source media="(max-width: 767px)" srcset="assets/banner-mobile.webp">
@@ -1845,107 +1733,9 @@ main.page h2 {
           <img src="assets/scene-open-living.webp" alt="Ceiling cassette and wall mount mini split installation planning" loading="lazy">
         </div>
         <div class="quick-answer__content">
-          <span class="section-label">Quick answer</span>
           <h2>Start with ceiling access or wall placement.</h2>
           <p class="quick-answer__lead">Choose a ceiling cassette when the room can support a ceiling opening and you want a cleaner built-in look. Choose a wall mount when wall placement, access, and serviceability matter more.</p>
-          <div class="quick-answer__actions">
-            <a class="btn btn--secondary btn--soft" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Check Ceiling Fit</a>
-            <a class="btn btn--secondary btn--soft" href="https://dellahome.com/collections/wall-mounted-mini-split">Check Wall Fit</a>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="section-label">Airflow & visibility</span>
-          <h2>What changes after the indoor unit is installed?</h2>
-        </div>
-        <p class="section-copy airflow-copy">The indoor unit style affects where air starts, how visible the system feels, and how routine access works.</p>
-      </div>
-      <div class="airflow-grid">
-        <article class="airflow-card">
-          <div class="diagram diagram-ceiling" aria-hidden="true">
-            <svg viewBox="0 0 720 248" role="img" focusable="false">
-              <defs>
-                <linearGradient id="ceilingAirBg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ffffff"/>
-                  <stop offset="1" stop-color="#edf2ff"/>
-                </linearGradient>
-                <filter id="ceilingSoftShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0e1953" flood-opacity=".12"/>
-                </filter>
-                <marker id="ceilingArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M0 0 10 5 0 10Z" fill="#5884E7" opacity=".82"/>
-                </marker>
-              </defs>
-              <rect width="720" height="248" fill="url(#ceilingAirBg)"/>
-              <path d="M64 58h592" stroke="#cfd8ea" stroke-width="1.4"/>
-              <path d="M94 58v42h532V58" fill="#fff" opacity=".56" stroke="#d9e1ef" stroke-width="1"/>
-              <path d="M132 108h456" stroke="#e2e8f4" stroke-width="1"/>
-              <g filter="url(#ceilingSoftShadow)">
-                <rect x="304" y="54" width="112" height="68" rx="10" fill="#fff" stroke="#0E1953" stroke-width="3"/>
-                <rect x="320" y="70" width="80" height="36" rx="6" fill="#f7f9ff" stroke="#d9e1ef" stroke-width="1"/>
-                <circle cx="360" cy="88" r="8" fill="#edf2ff" stroke="#5884E7" stroke-width="1.5"/>
-              </g>
-              <g fill="none" stroke="#5884E7" stroke-width="3" stroke-linecap="round" opacity=".78" marker-end="url(#ceilingArrow)">
-                <path d="M360 130v54"/>
-                <path d="M290 126c-42 10-78 29-104 58"/>
-                <path d="M430 126c42 10 78 29 104 58"/>
-                <path d="M360 50V26"/>
-              </g>
-              <path d="M150 196c118 24 302 24 420 0" fill="none" stroke="#dbe4f3" stroke-width="1.2" opacity=".75"/>
-            </svg>
-          </div>
-          <h3>Ceiling Cassette</h3>
-          <ul>
-            <li>Ceiling-centered placement</li>
-            <li>Multi-direction airflow</li>
-            <li>Keeps more wall space open</li>
-          </ul>
-        </article>
-        <article class="airflow-card">
-          <div class="diagram diagram-wall" aria-hidden="true">
-            <svg viewBox="0 0 720 248" role="img" focusable="false">
-              <defs>
-                <linearGradient id="wallAirBg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ffffff"/>
-                  <stop offset="1" stop-color="#edf2ff"/>
-                </linearGradient>
-                <filter id="wallSoftShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0e1953" flood-opacity=".12"/>
-                </filter>
-                <marker id="wallArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                  <path d="M0 0 10 5 0 10Z" fill="#5884E7" opacity=".82"/>
-                </marker>
-              </defs>
-              <rect width="720" height="248" fill="url(#wallAirBg)"/>
-              <path d="M88 48v154h112V48" fill="#fff" opacity=".58" stroke="#d9e1ef" stroke-width="1.2"/>
-              <path d="M200 48h424v154" fill="none" stroke="#d9e1ef" stroke-width="1.2"/>
-              <path d="M104 202h500" stroke="#e2e8f4" stroke-width="1"/>
-              <g filter="url(#wallSoftShadow)">
-                <rect x="154" y="78" width="190" height="54" rx="11" fill="#fff" stroke="#0E1953" stroke-width="3"/>
-                <path d="M178 112h140" stroke="#d9e1ef" stroke-width="2" stroke-linecap="round"/>
-                <path d="M178 95h42" stroke="#edf2ff" stroke-width="5" stroke-linecap="round"/>
-              </g>
-              <g fill="none" stroke="#5884E7" stroke-width="3" stroke-linecap="round" opacity=".78" marker-end="url(#wallArrow)">
-                <path d="M368 96c52-20 102-30 150-30"/>
-                <path d="M370 105h170"/>
-                <path d="M368 118c52 20 102 31 150 31"/>
-              </g>
-              <path d="M390 178c66 14 140 13 204-3" fill="none" stroke="#dbe4f3" stroke-width="1.2" opacity=".75"/>
-            </svg>
-          </div>
-          <h3>Wall Mount</h3>
-          <ul>
-            <li>High-wall placement</li>
-            <li>Directional airflow across the room</li>
-            <li>Easier front-panel access</li>
-          </ul>
-        </article>
       </div>
     </div>
   </section>
@@ -1955,7 +1745,6 @@ main.page h2 {
       <div class="decision-checker checker-grid">
         <div class="checker-panel">
           <div class="checker-heading">
-            <span class="section-label">DECISION CHECKER</span>
             <h2>Find the better starting point for your room.</h2>
             <p class="section-copy">Answer a few install questions to compare ceiling cassette and wall mount paths before installer confirmation.</p>
             <span class="checker-count checker-progress" id="checker-count">0 of 5 answered</span>
@@ -2048,7 +1837,6 @@ main.page h2 {
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="section-label">Head-to-head comparison</span>
           <h2>What changes between ceiling cassette and wall mount?</h2>
         </div>
         <p class="section-copy section-lead">Both can heat and cool a room. The key differences are placement, airflow, access, and install complexity.</p>
@@ -2079,16 +1867,6 @@ main.page h2 {
         </table>
       </div>
       <button type="button" class="comparison-toggle" aria-expanded="false">View more differences</button>
-      <aside class="comparison-installer-note" id="installation">
-        <div class="comparison-installer-note__copy">
-          <span>Installer note</span>
-          <p>Before checkout, confirm sizing, drainage, line-set routing, electrical, and outdoor placement with your installer.</p>
-        </div>
-        <div class="comparison-installer-note__actions">
-          <a class="text-link" href="https://dellahome.com/pages/find-a-installer">Find Partner HVAC Installer</a>
-          <a class="text-link" href="#products">Review Products</a>
-        </div>
-      </aside>
     </div>
   </section>
 
@@ -2097,7 +1875,6 @@ main.page h2 {
       <div class="project-products-block">
         <div class="section-head project-products__head">
           <div>
-            <span class="section-label">Compare by project size</span>
             <h2>Choose by project type, then compare popular picks</h2>
           </div>
           <p class="section-copy">Use the project type as a starting point, then compare current Della models, ratings, pricing, and availability.</p>
@@ -2190,65 +1967,31 @@ main.page h2 {
     </div>
   </section>
 
-  <section class="section section-alt" id="rooms">
+  <section class="section services-section" id="services" aria-labelledby="services-title">
     <div class="container">
       <div class="section-head centered">
-        <span class="section-label">Choose by room</span>
-        <h2>Match the indoor unit to the space</h2>
-        <p class="section-copy">Use these common room types as starting points. Final fit still depends on ceiling access, wall placement, BTU sizing, and installer review.</p>
-      </div>
-      <div class="room-grid">
-        <article class="room-card is-large">
-          <span class="room-tag">Open living area / finished remodel</span>
-          <a class="room-card__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><img src="assets/scene-open-living.webp" alt="Open living area with large windows"></a>
-          <div class="room-card__body"><h3>Cleaner look, broader room feel</h3><p>Best when wall placement would interrupt the design.</p><div class="room-actions"><a class="btn btn-primary btn-small" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a><a class="text-link" href="#installation">Check install fit</a></div></div>
-        </article>
-        <article class="room-card is-large">
-          <span class="room-tag">Bedroom / office / rental</span>
-          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-office.webp" alt="Bedroom or office with wall-mounted mini split"></a>
-          <div class="room-card__body"><h3>Simple comfort for one room</h3><p>Best when the room has a clean high-wall location.</p><div class="room-actions"><a class="btn btn-primary btn-small" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a><a class="text-link" href="#products">Compare products</a></div></div>
-        </article>
-        <article class="room-card">
-          <span class="room-tag">Sunroom with glass walls</span>
-          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-sunroom.webp" alt="Sunroom with glass walls and Della mini split"></a>
-          <div class="room-card__body"><h3>Let wall space decide</h3><p>A clean wall location usually makes wall mount the simpler first check.</p><div class="room-actions"><a class="text-link" href="#decision-checker">Check fit</a></div></div>
-        </article>
-        <article class="room-card">
-          <span class="room-tag">Old house / basement / retrofit</span>
-          <a class="room-card__media" href="https://dellahome.com/collections/wall-mounted-mini-split"><img src="assets/scene-retrofit.webp" alt="Finished basement or retrofit room"></a>
-          <div class="room-card__body"><h3>Wall mount first</h3><p>Finished ceilings, plaster, or tight framing can make cassette planning harder.</p><div class="room-actions"><a class="text-link" href="https://dellahome.com/collections/wall-mounted-mini-split">View wall mounts</a></div></div>
-        </article>
-        <article class="room-card">
-          <span class="room-tag">New build / remodel</span>
-          <a class="room-card__media" href="https://dellahome.com/collections/ceiling-cassette-mini-split"><img src="assets/scene-remodel.webp" alt="Remodel space with ceiling cassette mini split"></a>
-          <div class="room-card__body"><h3>Plan cassette early</h3><p>Best when framing, drainage, electrical, and service access are planned before finish work.</p><div class="room-actions"><a class="text-link" href="https://dellahome.com/pages/find-a-installer">Find installer</a></div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section services-section">
-    <div class="container">
-      <div class="section-head centered">
-        <span class="section-label">Service confidence</span>
-        <h2>Premium Della Services</h2>
+        <h2 id="services-title">Premium Della Services</h2>
       </div>
       <div class="services-grid">
         <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-40_488310fc-d38a-4d43-bcc2-b1b5e44d2fa4.png?v=1764578865" alt="" loading="lazy" aria-hidden="true">
+          <div class="service-icon"><img src="data:image/png;base64,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" alt="" width="50" height="50" loading="lazy" aria-hidden="true"></div>
           <h3>Free &amp; Fast Shipping</h3>
+          <p>Get your Della products delivered quickly with free standard shipping.</p>
         </article>
         <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250609-092813.png?v=1749432513&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>Pay in 6 Months, 0% APR</h3>
+          <div class="service-icon"><img src="data:image/png;base64,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" alt="" width="50" height="50" loading="lazy" aria-hidden="true"></div>
+          <h3>30-Day Money-Back</h3>
+          <p>Not satisfied? Return within 30 days for a full refund.</p>
         </article>
         <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250922-160254_998da76a-d533-49ca-a79b-0ce8b4a70261.png?v=1765275088&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>24x7 Live Chat Support</h3>
+          <div class="service-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="" width="50" height="50" loading="lazy" aria-hidden="true"></div>
+          <h3><a href="https://dellahome.com/pages/contact">24/7 Live Support</a></h3>
+          <p>Get instant answers to your questions anytime, day or night.</p>
         </article>
         <article class="service-card">
-          <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-45_b280ec24-a703-42bb-b37e-aa83a9a6c424.png?v=1765275087&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-          <h3>Lifetime Coverage<br>(Mini Splits)</h3>
+          <div class="service-icon"><img src="data:image/png;base64,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" alt="" width="50" height="50" loading="lazy" aria-hidden="true"></div>
+          <h3>Lifetime Warranty</h3>
+          <p>Our Mini Split systems come with limited lifetime compressor protection.</p>
         </article>
       </div>
     </div>
@@ -2257,7 +2000,6 @@ main.page h2 {
   <section class="section faq-section">
     <div class="container">
       <div class="section-head">
-        <span class="section-label">FAQ</span>
         <h2>Ceiling cassette vs wall mount mini split questions</h2>
       </div>
       <div class="faq-list">
