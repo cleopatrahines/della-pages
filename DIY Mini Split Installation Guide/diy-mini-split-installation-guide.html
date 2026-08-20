@@ -94,21 +94,6 @@
       text-align: center;
     }
 
-    .diy-install-guide-page .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 28px;
-      margin-bottom: 12px;
-      padding: 5px 12px;
-      border-radius: 4px;
-      background: var(--blue-light);
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
     .diy-install-guide-page h1,
     .diy-install-guide-page h2,
     .diy-install-guide-page h3,
@@ -1055,6 +1040,95 @@
       object-position: center 42%;
     }
 
+    .diy-install-guide-page .stories-carousel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: var(--blue-surface);
+      box-shadow: 0 18px 54px rgba(14,25,83,.06);
+    }
+
+    .diy-install-guide-page .stories-track {
+      display: flex;
+      transition: transform .5s ease;
+    }
+
+    .diy-install-guide-page .story-slide {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      flex: 0 0 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .diy-install-guide-page .story-media {
+      overflow: hidden;
+    }
+
+    .diy-install-guide-page .story-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .diy-install-guide-page .story-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      padding: 44px 48px 96px;
+    }
+
+    .diy-install-guide-page .story-quote {
+      margin: 0;
+      color: var(--navy);
+      font-family: var(--font-heading);
+      font-size: clamp(19px, 1.75vw, 25px);
+      line-height: 1.38;
+    }
+
+    .diy-install-guide-page .story-author {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .diy-install-guide-page .stories-nav {
+      position: absolute;
+      right: 48px;
+      bottom: 38px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .diy-install-guide-page .stories-nav button {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--navy);
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .diy-install-guide-page .stories-nav button:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .diy-install-guide-page .stories-nav .svg-icon {
+      width: 16px;
+      height: 16px;
+    }
+
     @media (max-width: 1100px) {
       .diy-install-guide-page .hero .container {
         grid-template-columns: 1fr;
@@ -1091,6 +1165,15 @@
 
       .diy-install-guide-page .split-media img {
         height: 360px;
+      }
+
+      .diy-install-guide-page .story-slide {
+        grid-template-columns: 1fr;
+      }
+
+      .diy-install-guide-page .story-media img {
+        min-height: 0;
+        height: 320px;
       }
     }
 
@@ -1191,6 +1274,15 @@
 
       .diy-install-guide-page .split-panel {
         padding: 16px;
+      }
+
+      .diy-install-guide-page .story-content {
+        padding: 28px 22px 88px;
+      }
+
+      .diy-install-guide-page .stories-nav {
+        right: 22px;
+        bottom: 26px;
       }
 
       .diy-install-guide-page .bottom-actions .btn {
@@ -1452,7 +1544,6 @@
             <img src="Stock%20image/z4i-vLJQ.jpeg" alt="Della outdoor unit with line set cover">
           </div>
           <div>
-            <div class="section-label">Before checkout</div>
             <h2>Confirm these before you order</h2>
             <p class="section-copy">Use this list to avoid mismatched parts, surprise electrical work, or a line-set route that does not fit the space.</p>
             <div class="checkout-list" role="list">
@@ -1466,6 +1557,50 @@
               <div class="checkout-item" role="listitem"><strong>Airflow</strong><span>Confirm indoor and outdoor airflow is clear.</span><em>&gt;</em></div>
               <div class="checkout-item" role="listitem"><strong>Manual compatibility</strong><span>Review the manual for your exact model.</span><em>&gt;</em></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact soft-section" id="install-stories">
+      <div class="container">
+        <div class="section-head">
+          <h2>Real DIY install stories</h2>
+          <p class="section-copy">Hear from homeowners who planned the route, mounted the units, and finished the install themselves.</p>
+        </div>
+        <div class="stories-carousel">
+          <div class="stories-track">
+            <figure class="story-slide">
+              <div class="story-media">
+                <img src="https://dellahome.com/cdn/shop/files/1440x1440px-06_0304a292-ba87-4c9d-9ebd-a9885fc5d681.jpg?v=1779786648&amp;width=1000" alt="DELLA mini split outdoor unit installed beside a home" loading="lazy">
+              </div>
+              <figcaption class="story-content">
+                <blockquote class="story-quote">&ldquo;DIY install is simple and saves you a ton！I&rsquo;ve had it running for about a month now in both heat and cool modes. I mostly use the app&mdash;it gives me more control, like airflow settings. My power bill hasn&rsquo;t gone up, and it&rsquo;s keeping that room quite comfortable.&rdquo;</blockquote>
+                <cite class="story-author">&mdash; P. Strickler</cite>
+              </figcaption>
+            </figure>
+            <figure class="story-slide">
+              <div class="story-media">
+                <img src="https://dellahome.com/cdn/shop/files/1440x1440px-02.jpg?v=1777455537&amp;width=1000" alt="DELLA mini split installed in a bedroom" loading="lazy">
+              </div>
+              <figcaption class="story-content">
+                <blockquote class="story-quote">&ldquo;So far so good. First I installed the condenser unit on the wall, but the vibration caused a slight humming noise. Then I added a platform with vibration pads, and the noise went away completely. I currently have it set on a daily schedule, and it keeps my sunroom at 73 degrees even when it&rsquo;s 20 degrees outside.&rdquo;</blockquote>
+                <cite class="story-author">&mdash; Leantwon R.</cite>
+              </figcaption>
+            </figure>
+            <figure class="story-slide">
+              <div class="story-media">
+                <img src="https://dellahome.com/cdn/shop/files/1440x1440px-01_6a2b7531-d210-4971-b532-521b1c485904.jpg?v=1779786648&amp;width=1000" alt="DELLA mini split outdoor unit on a ground pad" loading="lazy">
+              </div>
+              <figcaption class="story-content">
+                <blockquote class="story-quote">&ldquo;We only use Della! We own an HVAC business and ONLY use Della equipment. Great quality and outstanding warranty.&rdquo;</blockquote>
+                <cite class="story-author">&mdash; Darrell D.</cite>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="stories-nav">
+            <button type="button" class="stories-prev" aria-label="Previous install story"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button type="button" class="stories-next" aria-label="Next install story"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
           </div>
         </div>
       </div>
@@ -1643,6 +1778,22 @@
         </div>
       </div>
     </section>
+
+    <script>
+      (function () {
+        var carousel = document.querySelector('.stories-carousel');
+        if (!carousel) return;
+        var track = carousel.querySelector('.stories-track');
+        var slides = track.children;
+        var index = 0;
+        function go(i) {
+          index = (i + slides.length) % slides.length;
+          track.style.transform = 'translateX(-' + index * 100 + '%)';
+        }
+        carousel.querySelector('.stories-prev').addEventListener('click', function () { go(index - 1); });
+        carousel.querySelector('.stories-next').addEventListener('click', function () { go(index + 1); });
+      })();
+    </script>
 
     <script type="application/ld+json">
     {
