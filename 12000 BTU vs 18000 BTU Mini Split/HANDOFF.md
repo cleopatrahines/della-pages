@@ -1,5 +1,15 @@
 # HANDOFF - 12000 BTU vs 18000 BTU Mini Split
 
+## Approved residence hero — 2026-09-11
+
+Owner-selected visual: `exec-0443fb86-1b15-45cd-b2ad-230727a43687.png`. The hero uses a contemporary residence with limestone, walnut, sculptural ivory seating and a wall-mounted mini split. White HTML heading and actions overlay the dark left side on desktop; mobile presents the right-hand room crop above a navy text/action area.
+
+H1 wording and both fragment destinations remain unchanged. Subtitle: “Find the right capacity for your room, before you shop.” The rest of the page retains its existing layout and markup.
+
+Asset: `assets/hero-luxury-residence.webp`, generated from the approved mockup as a text-free background (`exec-480abd41-3120-4181-9a47-b2c7874c07a0.png`) and converted to WebP. The room/device is illustrative; product specifications remain in the product cards.
+
+QA: 45 checks passed across 1440, 1280, 1024, 768, 430, 390 and 360px, including asset loading, overflow, both hero anchors and keyboard flow, five factor tabs, eight product URLs, expandable model names, FAQ and no-JavaScript behavior. Desktop/mobile screenshots reviewed. Evidence and backups: `C:\Users\18041\Documents\Playground\della-ui-review-20260911\luxury-hero`. This hero revision has not been committed or published.
+
 ## Commerce refinement — 2026-09-11
 
 - Hero retains its image, H1 wording and decision/shopping paths. Balanced heading wrapping, revised type size and image/text proportions keep the headline together.
