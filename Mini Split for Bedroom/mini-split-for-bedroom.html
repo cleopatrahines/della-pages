@@ -73,25 +73,32 @@
 
     .fit-router{background:var(--della-white)}
     .fit-router .section-heading{margin-inline:auto;text-align:center}
-    .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;max-width:980px;margin-inline:auto}
-    .fit-card{position:relative;display:flex;align-items:center;flex-direction:column;padding:34px 38px;background:var(--della-surface)}
-    .fit-card-head{margin:0 0 2px;text-align:left}
-    .fit-card-head .fit-capacity{margin:0 0 2px;text-align:center}
-    .fit-card-head h3{margin:0}
-    .fit-icon{position:absolute;top:26px;left:26px;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--della-blue-light);color:var(--della-blue)}
-    .fit-icon svg{display:block;width:30px;height:30px}
-    .fit-capacity{margin-bottom:2px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:31px;font-weight:500;line-height:1.2}
-    .fit-card h3{font-family:"Poppins",Arial,sans-serif;font-size:15px;font-weight:500}
-    .fit-facts{list-style:none;padding:0;margin:17px 0 24px;text-align:left}
-    .fit-facts li{display:flex;align-items:flex-start;gap:10px;padding:3px 0;color:var(--della-ink);font-size:14px}
-    .fit-facts li::before{content:"";flex:0 0 4px;width:4px;height:4px;margin-top:9px;border-radius:50%;background:var(--della-navy)}
-    .fit-card-actions{display:flex;align-items:center;flex-direction:column;gap:12px;margin-top:auto}
-    .fit-card-actions .btn{min-width:220px}
-    .fit-card-actions .text-link{display:block;width:220px;text-align:center}
+    .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:980px;margin-inline:auto}
+    .fit-card{position:relative;display:flex;flex-direction:column;padding:0;background:var(--della-white);border:1px solid var(--della-line);transition:border-color .2s ease,background .2s ease}
+    .fit-scene{display:block;width:100%;height:auto;aspect-ratio:10/7;object-fit:cover}
+    .fit-card-body{display:flex;flex:1;flex-direction:column;padding:28px 30px 26px;border-top:2px solid var(--della-navy)}
+    .fit-card.is-selected{border-color:var(--della-blue);background:var(--della-surface)}
+    .fit-card-head{margin:0;text-align:left}
+    .fit-card-head .fit-capacity{margin:0 0 10px;text-align:left}
+    .fit-capacity{color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:48px;font-weight:500;line-height:1.05}
+    .fit-capacity span{font-family:"Poppins",Arial,sans-serif;font-size:15px;font-weight:500}
+    .fit-card h3{margin:0;font-family:"Poppins",Arial,sans-serif;font-size:15px;font-weight:500;line-height:1.5}
+    .fit-example{margin:8px 0 0;color:var(--della-body);font-size:13px;line-height:1.6}
+    .fit-coverage{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:22px 0 0;padding:14px 0;border-top:1px solid var(--della-line);border-bottom:1px solid var(--della-line);font-size:13px;color:var(--della-body)}
+    .fit-coverage strong{font-weight:600;color:var(--della-navy);font-size:15px}
+    .fit-facts{list-style:none;padding:0;margin:18px 0 24px;text-align:left}
+    .fit-facts li{display:flex;align-items:flex-start;gap:10px;padding:4px 0;color:var(--della-ink);font-size:14px;line-height:1.6}
+    .fit-facts li::before{content:"";flex:0 0 4px;width:4px;height:4px;margin-top:9px;border-radius:50%;background:var(--della-blue)}
+    .fit-card-actions{display:flex;align-items:stretch;flex-direction:column;gap:6px;margin-top:auto}
+    .fit-card-actions .btn{width:100%;min-height:48px}
+    .fit-card-actions .text-link{display:flex;align-items:center;justify-content:center;min-height:44px;text-align:center}
+    .fit-card :is(button,a):focus-visible{outline:2px solid var(--della-blue);outline-offset:4px}
     .text-link{color:var(--della-navy);font-size:13px;font-weight:600;text-underline-offset:4px}
     .text-link:hover{color:var(--della-blue)}
-    .sizing-fallback{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:24px;text-align:center}
-    .sizing-fallback p{margin:0;color:var(--della-body);font-size:13px}
+    .sizing-fallback{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:980px;margin:20px auto 0;padding:18px 22px;background:var(--della-surface);text-align:left}
+    .sizing-fallback p{margin:0;color:var(--della-body);font-size:13px;line-height:1.6}
+    .sizing-fallback strong{display:block;color:var(--della-navy);font-size:15px;margin-bottom:3px}
+    .sizing-fallback .text-link{display:flex;align-items:center;min-height:44px;max-width:260px;flex-shrink:0}
 
     .product-section{padding:60px 0 64px;background:var(--della-white)}
     .product-heading-row{display:flex;align-items:center;flex-direction:column;gap:15px;margin-bottom:28px;text-align:center}
@@ -161,13 +168,13 @@
     .install-image{width:100%;aspect-ratio:4/3;object-fit:cover}
     .install-copy{padding:0}
     .install-list{list-style:none;padding:0;margin:0}
-    .install-list li{display:grid;grid-template-columns:48px 1fr;gap:17px;padding:22px 0;border-bottom:1px solid var(--della-line)}
+    .install-list li{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--della-line)}
     .install-list li:first-child{padding-top:0}
     .install-list li:last-child{border-bottom:0}
-    .install-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--della-blue);border-radius:50%;background:var(--della-blue-light);color:var(--della-blue);font-size:11px;font-weight:600}
-    .install-number svg{display:block;width:22px;height:22px}
+    .install-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:10px;background:var(--della-blue-light);color:var(--della-navy)}
+    .install-icon svg{display:block;width:40px;height:40px}
     .install-list h3{font-size:19px;margin:0 0 5px}
-    .install-list p{margin:0;font-size:13px;line-height:1.55}
+    .install-list p{margin:0;font-size:14px;line-height:1.65}
 
     .faq-section{padding:48px 0;background:#f8f9fb}
     .faq-section .section-heading{max-width:none;margin:0;text-align:center}
@@ -201,9 +208,7 @@
       .hero{min-height:440px}
       .hero .container{min-height:440px}
       .hero-copy{width:39%}
-      .fit-icon{top:20px;left:20px;width:46px;height:46px}
-      .fit-icon svg{width:25px;height:25px}
-      .fit-card-head{padding-top:34px}
+
       .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
       .install-layout{gap:32px}
     }
@@ -221,12 +226,19 @@
       .hero p{font-size:15px}
       .hero-actions{display:grid;width:100%;grid-template-columns:1fr}
       .fit-grid{grid-template-columns:1fr;gap:16px}
-      .fit-card{padding:28px 24px}
-      .fit-card-head{padding-top:44px}
+      .fit-card-body{padding:24px 22px}
+      .fit-scene{aspect-ratio:10/7}
+      .fit-capacity{font-size:42px}
+      .fit-grid{gap:18px}
+      .fit-example{margin:8px 0 0;color:var(--della-body);font-size:13px;line-height:1.6}
+    .fit-coverage{font-size:12px}
+      .fit-coverage strong{font-size:14px}
+
       .fit-card-actions{align-items:stretch}
       .fit-card-actions .btn{width:100%}
       .fit-card-actions .text-link{width:100%;text-align:center}
-      .sizing-fallback{align-items:center;flex-direction:column;gap:3px}
+      .sizing-fallback{align-items:flex-start;flex-direction:column;gap:6px;padding:18px 20px}
+      .sizing-fallback .text-link{max-width:none}
       .product-section{padding:52px 0 56px}
       .tabs{display:grid;width:100%;grid-template-columns:1fr 1fr}
       .tab{min-width:0;padding-inline:8px}
@@ -271,8 +283,8 @@
   <main class="bedroom-page">
     <section class="hero" aria-labelledby="bedroom-hero-title">
       <picture class="hero-media">
-        <source media="(max-width: 767px)" srcset="assets/bedroom-hero-mobile.webp">
-        <img src="assets/bedroom-hero-desktop.webp" alt="A quiet, comfortable bedroom with a wall-mounted DELLA mini split" width="2800" height="1000">
+        <source media="(max-width: 767px)" srcset="assets/bedroom-hero-luxe-mobile.png">
+        <img src="assets/bedroom-hero-luxe-desktop.png" alt="A quiet, comfortable bedroom with a wall-mounted DELLA mini split" width="2800" height="1000">
       </picture>
       <div class="container">
         <div class="hero-copy">
@@ -290,69 +302,56 @@
       <div class="container">
         <div class="section-heading">
           <h2 id="bedroom-fit-title">Find the Right Fit for Your Bedroom</h2>
-          <p>Capacity is a starting point. Ceiling height, insulation, sun exposure, climate, and room load can change the result.</p>
+          <p>Room size is only part of the picture. Sunlight, insulation, ceiling height and local climate also affect the size you need.</p>
         </div>
         <div class="fit-grid">
-          <article class="fit-card">
-            <span class="fit-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 21V10"/>
-                <path d="M4 17h24"/>
-                <path d="M4 21h24"/>
-                <path d="M28 21v-4"/>
-                <path d="M8.5 17v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9V17"/>
-                <path d="M6.5 21v2.5M25.5 21v2.5"/>
-              </svg>
-            </span>
+          <article class="fit-card" data-fit-btu="9k">
+            <img class="fit-scene" src="assets/bedroom-fit-guest.png" alt="Compact modern guest bedroom with blue-gray bedding, a writing desk and a wall-mounted mini split" width="1499" height="1049" loading="lazy">
+            <div class="fit-card-body">
             <div class="fit-card-copy">
               <div class="fit-card-head">
-                <p class="fit-capacity">9,000 BTU</p>
-                <h3>Smaller / Lower-Load Bedrooms</h3>
+                <p class="fit-capacity">9,000 <span>BTU</span></p>
+                <h3>For smaller bedrooms</h3>
+                <p class="fit-example">A guest room, kids’ room or smaller master bedroom.</p>
               </div>
+              <p class="fit-coverage"><span>Room size guide</span><strong>Up to 400 sq. ft.</strong></p>
               <ul class="fit-facts">
-                <li>Up to 400 sq. ft.</li>
-                <li>Standard ceiling height</li>
-                <li>Moderate sun exposure</li>
-                <li>Better insulation</li>
+                <li>Standard-height ceilings</li>
+                <li>Some shade during the day</li>
+                <li>Good insulation</li>
               </ul>
             </div>
             <div class="fit-card-actions">
               <button class="btn btn-primary" type="button" data-select-btu="9k">See 9K Bedroom Picks</button>
               <a class="text-link collection-link" data-btu="9k" data-source-module="fit_router" href="https://dellahome.com/collections/9000-btu-mini-split" target="_blank" rel="noopener">View All 9K Mini Splits</a>
             </div>
+                      </div>
           </article>
-          <article class="fit-card">
-            <span class="fit-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21V8.5"/>
-                <path d="M3 16.5h26"/>
-                <path d="M3 21h26"/>
-                <path d="M29 21v-4.5"/>
-                <path d="M6.5 16.5v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9v1.6"/>
-                <path d="M18 16.5v-1.6a1.9 1.9 0 0 1 1.9-1.9h3.7a1.9 1.9 0 0 1 1.9 1.9v1.6"/>
-                <path d="M5.5 21v2.5M26.5 21v2.5"/>
-              </svg>
-            </span>
+          <article class="fit-card" data-fit-btu="12k">
+            <img class="fit-scene" src="assets/bedroom-fit-penthouse.png" alt="Bright contemporary bedroom with stone finishes, large windows and a wall-mounted mini split" width="1499" height="1049" loading="lazy">
+            <div class="fit-card-body">
             <div class="fit-card-copy">
               <div class="fit-card-head">
-                <p class="fit-capacity">12,000 BTU</p>
-                <h3>Larger / Higher-Load Bedrooms</h3>
+                <p class="fit-capacity">12,000 <span>BTU</span></p>
+                <h3>For larger bedrooms</h3>
+                <p class="fit-example">A spacious master bedroom or a bedroom with a sitting area.</p>
               </div>
+              <p class="fit-coverage"><span>Room size guide</span><strong>Up to 550 sq. ft.</strong></p>
               <ul class="fit-facts">
-                <li>Up to 550 sq. ft.</li>
-                <li>Higher ceilings</li>
-                <li>Strong sun / top-floor exposure</li>
-                <li>Higher heating or cooling load</li>
+                <li>Tall or vaulted ceilings</li>
+                <li>Strong afternoon sun</li>
+                <li>A top-floor bedroom</li>
               </ul>
             </div>
             <div class="fit-card-actions">
               <button class="btn btn-primary" type="button" data-select-btu="12k">See 12K Bedroom Picks</button>
               <a class="text-link collection-link" data-btu="12k" data-source-module="fit_router" href="https://dellahome.com/collections/12000-btu-mini-split" target="_blank" rel="noopener">View All 12K Mini Splits</a>
             </div>
+                      </div>
           </article>
         </div>
         <div class="sizing-fallback">
-          <p><strong>Between sizes?</strong> Check the full room load before you choose.</p>
+          <p><strong>Not sure which size?</strong> Get an estimate for your room before you choose.</p>
           <a class="text-link" id="sizing-fallback-link" href="https://dellahome.com/pages/mini-split-sizing-calculator" target="_blank" rel="noopener">Use the mini split sizing calculator</a>
         </div>
       </div>
@@ -520,39 +519,20 @@
           <h2 id="install-title">Plan Your Bedroom Installation</h2>
         </div>
         <div class="install-layout">
-          <img class="install-image" src="assets/bedroom-install-planning.webp" alt="Bedroom mini split indoor unit placement" width="1600" height="1200" loading="lazy">
+          <img class="install-image" src="assets/bedroom-install-luxe.png" alt="White wall-mounted mini split in a contemporary bedroom with tailored upholstery and stone accents" width="1600" height="1200" loading="lazy">
           <div class="install-copy">
             <ol class="install-list">
               <li>
-                <span class="install-number" aria-hidden="true">
-                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="5.5" y="8" width="21" height="7.5" rx="2"/>
-                    <path d="M9 13h14"/>
-                    <path d="M11 19.5c-.6 1.2-.6 2.4 0 3.6"/>
-                    <path d="M16 19.5c-.6 1.2-.6 2.4 0 3.6"/>
-                    <path d="M21 19.5c-.6 1.2-.6 2.4 0 3.6"/>
-                  </svg>
-                </span>
-                <div><h3>Indoor Unit Placement</h3><p>Keep the wall clear and avoid sending airflow directly across the bed.</p></div>
+                <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="38" height="19" rx="4" fill="white"/><path d="M6 22h36M10 25h28"/><path d="M13 29v2m22-2v2"/><path d="M16 34c-3 3 3 4 0 7m8-7c-3 3 3 4 0 7m8-7c-3 3 3 4 0 7" stroke="#5884E7"/><path d="M33 16h4" stroke="#5884E7"/></svg></span>
+                <div><h3>Choose the right spot</h3><p>Choose a clear wall where air can circulate without blowing straight onto the bed. Have your installer check the required clearances.</p></div>
               </li>
               <li>
-                <span class="install-number" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
-                  </svg>
-                </span>
-                <div><h3>Electrical Requirements</h3><p>Match the selected system’s 115V or 230V requirement to the planned circuit.</p></div>
+                <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="5" width="28" height="38" rx="3" fill="white"/><path d="M10 13h28M17 9h14"/><rect x="16" y="18" width="7" height="7" rx="1"/><rect x="26" y="18" width="6" height="7" rx="1"/><rect x="16" y="29" width="7" height="7" rx="1"/><rect x="26" y="29" width="6" height="7" rx="1"/><path d="M18 21.5h3m7-0h2m-12 11h3m7 0h2" stroke="#5884E7"/></svg></span>
+                <div><h3>Check your electrical setup</h3><p>Check whether your model needs 115V or 230V. Have an electrician confirm that the circuit is right for the system.</p></div>
               </li>
               <li>
-                <span class="install-number" aria-hidden="true">
-                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="5" y="9" width="22" height="14" rx="2"/>
-                    <circle cx="16" cy="16" r="4.6"/>
-                    <path d="M16 16l3-3M16 16l3 3M16 16l-3 3M16 16l-3-3"/>
-                    <path d="M9 23v2.5M23 23v2.5"/>
-                  </svg>
-                </span>
-                <div><h3>Outdoor Unit &amp; Line Set</h3><p>Plan a serviceable outdoor location, drainage path, and practical wall-to-wall route.</p></div>
+                <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="40" height="28" rx="3" fill="white"/><circle cx="19" cy="24" r="10"/><circle cx="19" cy="24" r="2" fill="#5884E7"/><path d="M19 22c-6-7-9-1-5 1l3 1m4 0c9-2 5-8 2-5l-3 3m-1 4c-3 9 4 9 5 5l-3-5" stroke="#5884E7"/><path d="M34 17h5m-5 5h5m-5 5h5m-5 5h5M9 38v4h7v-4m16 0v4h7v-4"/></svg></span>
+                <div><h3>Plan the route outside</h3><p>Choose an outdoor spot with room for airflow and service. Your installer can plan where the refrigerant lines and drain will run.</p></div>
               </li>
             </ol>
           </div>
@@ -655,13 +635,19 @@
         panels.forEach((panel) => {
           panel.hidden = panel.dataset.panelBtu !== nextBtu;
         });
+        if (options.source || validBtu.has(new URL(window.location.href).searchParams.get("btu"))) {
+          document.querySelectorAll("[data-fit-btu]").forEach((card) => {
+            card.classList.toggle("is-selected", card.dataset.fitBtu === nextBtu);
+          });
+        }
         if (options.updateUrl) {
           const url = new URL(window.location.href);
           url.searchParams.set("btu", nextBtu);
           window.history.replaceState({}, "", url);
         }
         if (options.scroll) {
-          document.getElementById("bedroom-products").scrollIntoView({ behavior: "smooth", block: "start" });
+          tabs.find((tab) => tab.dataset.tabBtu === nextBtu).focus({ preventScroll: true });
+          document.getElementById("bedroom-products").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
         }
         if (options.track) {
           track("bedroom_fit_select", { btu: nextBtu, source_module: options.source || "capacity_tab" });
