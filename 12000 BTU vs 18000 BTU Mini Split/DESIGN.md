@@ -1,5 +1,33 @@
 # DESIGN.md - 12000 BTU vs 18000 BTU Mini Split
 
+## Commerce refinement — 2026-09-11
+
+- Hero retains its image, H1 wording and decision/shopping paths. Balanced heading wrapping, revised type size and image/text proportions keep the headline together.
+- Two independent product groups retain their original four product destinations each. Cards reuse the Bedroom hierarchy: short series title, actual capacity, aligned Efficiency/Coverage/Voltage rows, expandable full model name, price and View Product button. Mobile uses image/title above full-width specs and purchase controls.
+- Product titles, voltages and price ranges were checked against public Shopify product JSON. Optima's original URL redirects on the official site to Optima CloudAir; its displayed title/image follow that destination. Its base option excludes the line set, which is called out visibly. Serena CloudAir 12K shows both 115V and 230V; products with differing variant prices show From.
+- Service icons/text form a compact strip. Existing promises link to shipping, installments, contact and warranty pages; policy text remains as supplied.
+- FAQ keeps native disclosure behavior with generous click targets and revised spacing. The final collection area is one compact section with two equally weighted buttons.
+- Previously approved illustrated sections, airflow artwork, factor tabs, anchor destinations and the 1180px container alignment remain intact.
+- Visual reference review: Della coupon page and Bedroom card conventions are primary; Insta360, EcoFlow, Govee, Anker and Dreame supplied examples of product emphasis, compact service information and restrained detail presentation. Insta360 redirected to the China storefront; no regional product facts were copied.
+- QA: 45 checks passed at 1440, 1280, 1024, 768, 430, 390 and 360px. Includes overflow, five factor tabs and keyboard navigation, original eight product URLs, four products per group, visible voltage, full-name keyboard expansion, service/image loading, FAQ, two final buttons and no-JavaScript reading.
+- Evidence and pre-edit backups: `C:\Users\18041\Documents\Playground\della-ui-review-20260911\commerce-refinement`.
+- Product data is a timestamped snapshot. Shopify theme integration, screen-reader testing and conversion impact are not verified. No commit or publication is requested.
+
+## Resolved Decisions — 2026-09-11
+
+All three illustrated modules use the same container as the products: maximum 1180px, 20px desktop/tablet gutters and 14px mobile gutters. The room panorama, blue capacity band, factor layout and navy banner share identical outer edges. Verified at seven widths (360–1440px).
+
+Approved visual target: `C:\Users\18041\.codex\generated_images\01a08f7c-0b7f-7bc2-91fc-5cf47de38e45\exec-2910a291-f6e0-4c39-998d-abcb6ca89f09.png`.
+
+- The capacity section uses one architectural room panorama above a light-blue comparison band with equal 12K/18K actions, area references and conditional room guidance. Both actions jump to the corresponding product group.
+- The factors section places a room-detail photograph beside five tabs: Sun, Layout, Insulation, Ceiling and Heat load. Each tab changes its explanation and the matching spatial annotation. Room area is covered with connected layout. Sun is initially active.
+- Tabs expose tab/tablist/tabpanel semantics with arrow, Home and End navigation. Without JavaScript, all explanations are visible and inactive controls are hidden.
+- Right-sizing guidance uses a navy living-room background with the owner-requested blue airflow effect and a white button leading to products. On narrow mobile, the scene sits above the copy and button.
+- Scene images are generated illustrations, not evidence of installed capacity or model specifications. Original product cards and their data remain unchanged.
+- Current order: hero, capacity comparison, sizing factors, right-sizing banner, products, services, FAQ, bottom collections. Mobile product-stage shopping bar remains available.
+- Implementation follows the approved combined visual direction. Site publishing and shared-component rollout are not requested.
+
+
 Status: approved design direction for documentation
 Primary visual reference: `C:\Users\18041\Desktop\della-pages\12000 BTU vs 18000 BTU Mini Split\12k vs. 18k Design Drafts.png`
 Primary implementation reference: `C:\Users\18041\Desktop\della-pages\single-zone-vs-multi-zone-mini-split\single-zone-vs-multi-zone-mini-split.html`

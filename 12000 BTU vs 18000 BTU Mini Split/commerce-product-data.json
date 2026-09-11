@@ -1,0 +1,581 @@
+[
+  {
+    "url": "https://dellahome.com/products/optima-series-12000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-550-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.698Z",
+    "title": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft.",
+    "options": [
+      {
+        "name": "Line Set",
+        "position": 1,
+        "values": [
+          "None",
+          "10FT",
+          "16FT",
+          "25FT",
+          "33FT",
+          "50FT"
+        ]
+      },
+      {
+        "name": "Voltage",
+        "position": 2,
+        "values": [
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 89496,
+    "price_max": 113496,
+    "variants": [
+      {
+        "id": 51670381756704,
+        "title": "None / 230V",
+        "option1": "None",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O-X",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52404947616032,
+          "product_id": 10317994230048,
+          "position": 1,
+          "created_at": "2026-06-03T00:16:09-07:00",
+          "updated_at": "2026-06-03T00:16:11-07:00",
+          "alt": null,
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TP-9K1V-24S-01_73188811-246b-4da3-8025-4980a4af80f7.jpg?v=1780470971",
+          "variant_ids": [
+            51670381756704
+          ]
+        },
+        "available": true,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - None / 230V",
+        "public_title": "None / 230V",
+        "options": [
+          "None",
+          "230V"
+        ],
+        "price": 89496,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928120431",
+        "featured_media": {
+          "alt": null,
+          "id": 43080231092512,
+          "position": 1,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TP-9K1V-24S-01_73188811-246b-4da3-8025-4980a4af80f7.jpg?v=1780470971"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      },
+      {
+        "id": 51670381789472,
+        "title": "10FT / 230V",
+        "option1": "10FT",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O-10F",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52403308069152,
+          "product_id": 10317994230048,
+          "position": 11,
+          "created_at": "2026-06-02T20:53:49-07:00",
+          "updated_at": "2026-06-02T20:53:51-07:00",
+          "alt": "DELLA mini split air conditioner single zone",
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831",
+          "variant_ids": [
+            51670381789472,
+            51670381822240,
+            51670381855008,
+            51670381887776,
+            51670381920544
+          ]
+        },
+        "available": false,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - 10FT / 230V",
+        "public_title": "10FT / 230V",
+        "options": [
+          "10FT",
+          "230V"
+        ],
+        "price": 91996,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928120448",
+        "featured_media": {
+          "alt": "DELLA mini split air conditioner single zone",
+          "id": 43078603473184,
+          "position": 12,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      },
+      {
+        "id": 51670381822240,
+        "title": "16FT / 230V",
+        "option1": "16FT",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52403308069152,
+          "product_id": 10317994230048,
+          "position": 11,
+          "created_at": "2026-06-02T20:53:49-07:00",
+          "updated_at": "2026-06-02T20:53:51-07:00",
+          "alt": "DELLA mini split air conditioner single zone",
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831",
+          "variant_ids": [
+            51670381789472,
+            51670381822240,
+            51670381855008,
+            51670381887776,
+            51670381920544
+          ]
+        },
+        "available": true,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - 16FT / 230V",
+        "public_title": "16FT / 230V",
+        "options": [
+          "16FT",
+          "230V"
+        ],
+        "price": 94996,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928078824",
+        "featured_media": {
+          "alt": "DELLA mini split air conditioner single zone",
+          "id": 43078603473184,
+          "position": 12,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      },
+      {
+        "id": 51670381855008,
+        "title": "25FT / 230V",
+        "option1": "25FT",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O-25F",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52403308069152,
+          "product_id": 10317994230048,
+          "position": 11,
+          "created_at": "2026-06-02T20:53:49-07:00",
+          "updated_at": "2026-06-02T20:53:51-07:00",
+          "alt": "DELLA mini split air conditioner single zone",
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831",
+          "variant_ids": [
+            51670381789472,
+            51670381822240,
+            51670381855008,
+            51670381887776,
+            51670381920544
+          ]
+        },
+        "available": true,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - 25FT / 230V",
+        "public_title": "25FT / 230V",
+        "options": [
+          "25FT",
+          "230V"
+        ],
+        "price": 98496,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928120455",
+        "featured_media": {
+          "alt": "DELLA mini split air conditioner single zone",
+          "id": 43078603473184,
+          "position": 12,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      },
+      {
+        "id": 51670381887776,
+        "title": "33FT / 230V",
+        "option1": "33FT",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O-33F",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52403308069152,
+          "product_id": 10317994230048,
+          "position": 11,
+          "created_at": "2026-06-02T20:53:49-07:00",
+          "updated_at": "2026-06-02T20:53:51-07:00",
+          "alt": "DELLA mini split air conditioner single zone",
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831",
+          "variant_ids": [
+            51670381789472,
+            51670381822240,
+            51670381855008,
+            51670381887776,
+            51670381920544
+          ]
+        },
+        "available": false,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - 33FT / 230V",
+        "public_title": "33FT / 230V",
+        "options": [
+          "33FT",
+          "230V"
+        ],
+        "price": 103496,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928120462",
+        "featured_media": {
+          "alt": "DELLA mini split air conditioner single zone",
+          "id": 43078603473184,
+          "position": 12,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      },
+      {
+        "id": 51670381920544,
+        "title": "50FT / 230V",
+        "option1": "50FT",
+        "option2": "230V",
+        "option3": null,
+        "sku": "TPX-12K2V-24S-I+O-50F",
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 52403308069152,
+          "product_id": 10317994230048,
+          "position": 11,
+          "created_at": "2026-06-02T20:53:49-07:00",
+          "updated_at": "2026-06-02T20:53:51-07:00",
+          "alt": "DELLA mini split air conditioner single zone",
+          "width": 2000,
+          "height": 2000,
+          "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831",
+          "variant_ids": [
+            51670381789472,
+            51670381822240,
+            51670381855008,
+            51670381887776,
+            51670381920544
+          ]
+        },
+        "available": true,
+        "name": "DELLA Optima CloudAir Series 12000 BTU 24 SEER2 Ultra Heat Mini Split AC - Up to 550 Sq.Ft. - 50FT / 230V",
+        "public_title": "50FT / 230V",
+        "options": [
+          "50FT",
+          "230V"
+        ],
+        "price": 113496,
+        "weight": 0,
+        "compare_at_price": 0,
+        "inventory_management": "shopify",
+        "barcode": "192928120479",
+        "featured_media": {
+          "alt": "DELLA mini split air conditioner single zone",
+          "id": 43078603473184,
+          "position": 12,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 2000,
+            "width": 2000,
+            "src": "https://cdn.shopify.com/s/files/1/0785/7763/1520/files/048-TPH-9K1V-24S-01.jpg?v=1780458831"
+          }
+        },
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "quantity_price_breaks": [],
+        "requires_selling_plan": false,
+        "selling_plan_allocations": []
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.698Z",
+    "title": "DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 77996,
+    "price_max": 77996,
+    "variants": [
+      {
+        "title": "230V",
+        "price": 77996,
+        "available": true,
+        "options": [
+          "230V"
+        ],
+        "sku": "TL-12K2VB-23S-I+O"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/umbra-series-12000btu-seer2-17-mini-split-heat-pump-ac",
+    "verified_at": "2026-09-11T10:03:51.689Z",
+    "title": "DELLA Umbra Series 12000 BTU 17 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230 V"
+        ]
+      }
+    ],
+    "price_min": 79996,
+    "price_max": 79996,
+    "variants": [
+      {
+        "title": "230 V",
+        "price": 79996,
+        "available": true,
+        "options": [
+          "230 V"
+        ],
+        "sku": "12K2VR-17S-JPB-I+O_1"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/della-serena-cloud-air-series-12000-btu-22-seer2-mini-split-heat-pump-ac-up-to-550-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.665Z",
+    "title": "DELLA Serena CloudAir Series 12000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "115V",
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 77996,
+    "price_max": 79996,
+    "variants": [
+      {
+        "title": "115V",
+        "price": 79996,
+        "available": true,
+        "options": [
+          "115V"
+        ],
+        "sku": "12K1VR-22S-MX-I+O"
+      },
+      {
+        "title": "230V",
+        "price": 77996,
+        "available": true,
+        "options": [
+          "230V"
+        ],
+        "sku": "12K2VR-22S-MX-I+O"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.662Z",
+    "title": "DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 104996,
+    "price_max": 104996,
+    "variants": [
+      {
+        "title": "230V",
+        "price": 104996,
+        "available": true,
+        "options": [
+          "230V"
+        ],
+        "sku": "18K2VR-22S-M-I+O"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/vario-series-18000-btu-seer2-21-mini-split-heat-pump-ac-up-to-1000-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.664Z",
+    "title": "DELLA Vario Series 18000 BTU 21 SEER2 Mini Split Heat Pump AC - Up to 1000 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 104996,
+    "price_max": 104996,
+    "variants": [
+      {
+        "title": "230V",
+        "price": 104996,
+        "available": true,
+        "options": [
+          "230V"
+        ],
+        "sku": "TL-18K2VB-21S-I+O"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/umbra-series-18000btu-seer2-19-mini-split-heat-pump-ac",
+    "verified_at": "2026-09-11T10:03:51.688Z",
+    "title": "DELLA Umbra Series 18000 BTU 19 SEER2 Mini Split Heat Pump AC - Up to 1000 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230 V"
+        ]
+      }
+    ],
+    "price_min": 102996,
+    "price_max": 102996,
+    "variants": [
+      {
+        "title": "230 V",
+        "price": 102996,
+        "available": true,
+        "options": [
+          "230 V"
+        ],
+        "sku": "18K2VR-17S-JPB-I+O_1"
+      }
+    ]
+  },
+  {
+    "url": "https://dellahome.com/products/della-serena-cloud-air-series-18000-btu-22-seer2-mini-split-heat-pump-ac-up-to-1000-sq-ft",
+    "verified_at": "2026-09-11T10:03:51.680Z",
+    "title": "DELLA Serena CloudAir Series 18000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 1000 Sq.Ft.",
+    "options": [
+      {
+        "name": "Voltage",
+        "position": 1,
+        "values": [
+          "230V"
+        ]
+      }
+    ],
+    "price_min": 104996,
+    "price_max": 104996,
+    "variants": [
+      {
+        "title": "230V",
+        "price": 104996,
+        "available": true,
+        "options": [
+          "230V"
+        ],
+        "sku": "18K2VR-22S-MX-I+O"
+      }
+    ]
+  }
+]
