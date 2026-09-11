@@ -102,22 +102,30 @@
     .tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--della-blue)}
     .product-panel[hidden]{display:none}
     .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-    .product-card{--card-inset:16px;display:flex;min-width:0;flex-direction:column;border:1px solid #e6eaf2;background:var(--della-white);transition:border-color .18s ease,box-shadow .18s ease}
-    .product-card:hover{border-color:var(--della-blue);box-shadow:0 8px 20px rgba(14,25,83,.08)}
-    .product-badge{margin:16px var(--card-inset) 0;color:var(--della-blue);font-size:11px;font-weight:600;line-height:1.2;letter-spacing:.03em;text-transform:uppercase}
-    .product-image-wrap{display:grid;place-items:center;aspect-ratio:1/.92;margin:12px 0 0;padding:26px 18px 12px;overflow:hidden;background:var(--della-white)}
-    .product-image{width:100%;max-height:196px;object-fit:contain;transition:transform .3s ease}
-    .product-card:hover .product-image{transform:scale(1.04)}
-    .product-card-body{display:flex;flex:1;flex-direction:column}
-    .product-card h3.product-title{margin:14px var(--card-inset) 0;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:15px;font-weight:400;line-height:1.35}
-    .product-meta{display:flex;flex-wrap:wrap;gap:7px;margin:12px var(--card-inset) 0}
-    .product-meta span{padding:6px 7px;border:1px solid var(--della-line);background:#f8f9fb;color:var(--della-body);font-size:12px;line-height:1;white-space:nowrap}
-    .product-price{margin:auto var(--card-inset) 0;padding-top:14px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:20px;font-weight:700;line-height:1.15}
-    .availability{display:flex;align-items:center;gap:6px;margin:6px var(--card-inset) 12px;color:var(--della-success);font-size:10.5px}
+    .product-card{--card-inset:18px;display:flex;min-width:0;flex-direction:column;border:1px solid var(--della-line);background:var(--della-white);transition:border-color .18s ease,box-shadow .18s ease}
+    .product-card:hover{border-color:var(--della-blue);box-shadow:0 6px 18px rgba(14,25,83,.06)}
+    .product-badge{margin:18px var(--card-inset) 0;color:var(--della-navy);font-size:11px;font-weight:600;line-height:1.4}
+    .product-image-wrap{display:grid;place-items:center;height:210px;margin:8px 0 0;padding:20px 22px;overflow:hidden;background:var(--della-white)}
+    .product-image{width:100%;max-height:180px;object-fit:contain;transition:transform .3s ease}
+    .product-card:hover .product-image{transform:scale(1.025)}
+    .product-card-body{display:flex;flex:1;min-width:0;flex-direction:column}
+    .product-card h3.product-title{margin:10px var(--card-inset) 0;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:23px;font-weight:500;line-height:1.2}
+    .product-capacity{margin:5px var(--card-inset) 0;font-size:14px;font-weight:500;color:var(--della-navy)}
+    .product-meta{display:grid;gap:0;margin:18px var(--card-inset) 0;padding:0;border-top:1px solid var(--della-line)}
+    .product-meta div{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--della-line);font-size:12px;line-height:1.4}
+    .product-meta dt{color:var(--della-body);font-weight:400}
+    .product-meta dd{margin:0;color:var(--della-navy);font-weight:500;text-align:right}
+    .product-identity{margin:8px var(--card-inset) 0;color:var(--della-body);font-size:12px;line-height:1.5}
+    .product-identity summary{display:list-item;min-height:44px;padding:12px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+    .product-identity summary:hover{color:var(--della-blue)}
+    .product-full-name{margin:0 0 14px;overflow-wrap:anywhere}
+    .product-price{margin:auto var(--card-inset) 0;padding-top:14px;color:var(--della-navy);font-family:"Spectral",Georgia,serif;font-size:25px;font-weight:700;line-height:1.2}
+    .availability{display:flex;align-items:center;gap:6px;margin:6px var(--card-inset) 14px;color:var(--della-success);font-size:12px}
     .availability::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
     .availability.is-unavailable{color:#9b2d2d}
-    .product-card .btn{width:auto;min-height:46px;margin:0 var(--card-inset) 16px;padding-inline:12px;background:var(--della-navy)}
+    .product-card .btn{width:auto;min-height:46px;margin:0 var(--card-inset) 18px;padding-inline:12px;background:var(--della-navy)}
     .product-card .btn:hover{background:var(--della-white);border-color:var(--della-navy);color:var(--della-navy)}
+    .product-card :is(a,summary):focus-visible{outline:2px solid var(--della-blue);outline-offset:4px}
 
     .dsc-services{
       --navy:var(--della-navy);--blue:var(--della-blue);--blue-light:var(--della-blue-light);
@@ -222,14 +230,19 @@
       .product-section{padding:52px 0 56px}
       .tabs{display:grid;width:100%;grid-template-columns:1fr 1fr}
       .tab{min-width:0;padding-inline:8px}
-      .product-grid{gap:10px}
-      .product-card{--card-inset:12px}
-      .product-badge{margin-top:12px;font-size:9.5px}
-      .product-image-wrap{margin-top:8px;padding:16px 10px 8px}
+      .product-grid{grid-template-columns:1fr;gap:18px}
+      .product-card{--card-inset:0px;display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:16px;padding:18px 16px}
+      .product-badge{grid-column:1/-1;margin:0 0 16px;font-size:12px}
+      .product-image-wrap{grid-column:1;align-self:start;height:auto;aspect-ratio:1/1.1;margin:0;padding:10px 0}
       .product-image{max-height:150px}
-      .product-card h3.product-title{font-size:13px}
-      .product-meta{gap:5px}
-      .product-meta span{font-size:10.5px}
+      .product-card-body{grid-column:2}
+      .product-card h3.product-title{margin-top:0;font-size:22px}
+      .product-capacity{font-size:14px}
+      .product-meta{margin-top:14px}
+      .product-meta div{font-size:12px;padding:8px 0;gap:6px}
+      .product-meta dd{max-width:65%}
+      .product-price{font-size:24px;padding-top:8px}
+      .product-card .btn{margin-bottom:0}
       .install-section{padding:52px 0}
       .install-layout{grid-template-columns:1fr;gap:28px}
       .install-copy{padding:0 4px}
@@ -240,10 +253,8 @@
     }
 
     @media (max-width:360px){
-      .product-grid{grid-template-columns:1fr}
-      .product-card h3.product-title{font-size:15px}
-      .product-badge{font-size:10px}
-      .product-meta span{font-size:11px}
+      .product-card{grid-template-columns:84px minmax(0,1fr);column-gap:12px;padding:16px 12px}
+      .product-card h3.product-title{font-size:20px}
     }
 
     @media (max-width:560px){
@@ -367,11 +378,13 @@
                 <img class="product-image" src="assets/products/serena-card.webp" alt="DELLA Serena CloudAir 9K mini split indoor and outdoor units" width="1581" height="1507" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Serena CloudAir Series 9000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
-                <div class="product-meta"><span>22 SEER2</span><span>Up to 400 sq. ft.</span><span>Soft Airflow</span></div>
+                <h3 class="product-title">Serena CloudAir</h3>
+                <p class="product-capacity">9,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 400 sq. ft.</dd></div><div><dt>Airflow</dt><dd>Soft airflow</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Serena CloudAir Series 9000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</p></details>
                 <p class="product-price">$709.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-serena-cloud-air-series-9000-btu-22-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-serena-cloud-air-series-9000-btu-22-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener" aria-label="View Serena CloudAir 9,000 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="della-motto-series-9100-btu-20-5-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" data-series="Motto" data-btu="9k">
@@ -380,11 +393,13 @@
                 <img class="product-image" src="assets/products/motto-card.webp" alt="DELLA Motto 9K mini split indoor and outdoor units" width="1200" height="1181" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Motto Series 9100 BTU 20.5 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
-                <div class="product-meta"><span>20.5 SEER2</span><span>Up to 400 sq. ft.</span><span>115V</span></div>
+                <h3 class="product-title">Motto</h3>
+                <p class="product-capacity">9,100 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>20.5 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 400 sq. ft.</dd></div><div><dt>Voltage</dt><dd>115V</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Motto Series 9100 BTU 20.5 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</p></details>
                 <p class="product-price">$649.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-motto-series-9100-btu-20-5-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-motto-series-9100-btu-20-5-seer2-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener" aria-label="View Motto 9,100 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="vario-series-9000-btu-seer2-20-mini-split-heat-pump-ac-up-to-400-sq-ft" data-series="Vario" data-btu="9k">
@@ -393,11 +408,13 @@
                 <img class="product-image" src="assets/products/vario-card.webp" alt="DELLA Vario 9K mini split indoor and outdoor units" width="1731" height="1727" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Vario Series 9000 BTU 20 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</h3>
-                <div class="product-meta"><span>20 SEER2</span><span>Up to 400 sq. ft.</span><span>230V</span></div>
+                <h3 class="product-title">Vario</h3>
+                <p class="product-capacity">9,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>20 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 400 sq. ft.</dd></div><div><dt>Voltage</dt><dd>230V</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Vario Series 9000 BTU 20 SEER2 Mini Split Heat Pump AC - Up to 400 Sq.Ft.</p></details>
                 <p class="product-price">$729.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/vario-series-9000-btu-seer2-20-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/vario-series-9000-btu-seer2-20-mini-split-heat-pump-ac-up-to-400-sq-ft" target="_blank" rel="noopener" aria-label="View Vario 9,000 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft" data-series="Optima" data-btu="9k">
@@ -406,11 +423,13 @@
                 <img class="product-image" src="assets/products/optima-card.webp" alt="DELLA Optima 9K Ultra Heat mini split indoor and outdoor units" width="1200" height="1162" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Optima Series 9000 BTU 23 SEER2 Ultra Heat Mini Split AC - Up to 400 Sq.Ft.</h3>
-                <div class="product-meta"><span>23 SEER2</span><span>Up to 400 sq. ft.</span><span>Heats to -13°F</span></div>
+                <h3 class="product-title">Optima</h3>
+                <p class="product-capacity">9,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>23 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 400 sq. ft.</dd></div><div><dt>Heating</dt><dd>To -13°F</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Optima Series 9000 BTU 23 SEER2 Ultra Heat Mini Split AC - Up to 400 Sq.Ft.</p></details>
                 <p class="product-price">From $824.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft" target="_blank" rel="noopener" aria-label="View Optima 9,000 BTU product">View Product</a>
               </div>
             </article>
           </div>
@@ -424,11 +443,13 @@
                 <img class="product-image" src="assets/products/serena-card.webp" alt="DELLA Serena CloudAir 12K mini split indoor and outdoor units" width="1581" height="1507" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Serena CloudAir Series 12000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</h3>
-                <div class="product-meta"><span>22 SEER2</span><span>Up to 550 sq. ft.</span><span>Soft Airflow</span></div>
+                <h3 class="product-title">Serena CloudAir</h3>
+                <p class="product-capacity">12,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div><div><dt>Airflow</dt><dd>Soft airflow</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Serena CloudAir Series 12000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</p></details>
                 <p class="product-price">From $809.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-serena-cloud-air-series-12000-btu-22-seer2-mini-split-heat-pump-ac-up-to-550-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-serena-cloud-air-series-12000-btu-22-seer2-mini-split-heat-pump-ac-up-to-550-sq-ft" target="_blank" rel="noopener" aria-label="View Serena CloudAir 12,000 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="della-motto-series-12000-btu-20-seer2-mini-split-heat-pump-ac-115v-up-to-550-sq-ft" data-series="Motto" data-btu="12k">
@@ -437,11 +458,13 @@
                 <img class="product-image" src="assets/products/motto-card.webp" alt="DELLA Motto 12K mini split indoor and outdoor units" width="1200" height="1181" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Motto Series 12000 BTU 20 SEER2 Mini Split Heat Pump AC – 115V, Up to 550 Sq.Ft.</h3>
-                <div class="product-meta"><span>20 SEER2</span><span>Up to 550 sq. ft.</span><span>115V</span></div>
+                <h3 class="product-title">Motto</h3>
+                <p class="product-capacity">12,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>20 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div><div><dt>Voltage</dt><dd>115V</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Motto Series 12000 BTU 20 SEER2 Mini Split Heat Pump AC – 115V, Up to 550 Sq.Ft.</p></details>
                 <p class="product-price">$769.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-motto-series-12000-btu-20-seer2-mini-split-heat-pump-ac-115v-up-to-550-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/della-motto-series-12000-btu-20-seer2-mini-split-heat-pump-ac-115v-up-to-550-sq-ft" target="_blank" rel="noopener" aria-label="View Motto 12,000 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" data-series="Vario" data-btu="12k">
@@ -450,11 +473,13 @@
                 <img class="product-image" src="assets/products/vario-card.webp" alt="DELLA Vario 12K mini split indoor and outdoor units" width="1731" height="1727" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</h3>
-                <div class="product-meta"><span>23 SEER2</span><span>Up to 550 sq. ft.</span><span>230V</span></div>
+                <h3 class="product-title">Vario</h3>
+                <p class="product-capacity">12,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>23 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div><div><dt>Voltage</dt><dd>230V</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</p></details>
                 <p class="product-price">$779.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft" target="_blank" rel="noopener" aria-label="View Vario 12,000 BTU product">View Product</a>
               </div>
             </article>
             <article class="product-card" data-product-handle="optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" data-series="Optima" data-btu="12k">
@@ -463,11 +488,13 @@
                 <img class="product-image" src="assets/products/optima-card.webp" alt="DELLA Optima 12K Ultra Heat mini split indoor and outdoor units" width="1200" height="1162" loading="lazy">
               </div>
               <div class="product-card-body">
-                <h3 class="product-title">DELLA Optima Series 12000 BTU 23 SEER2 Ultra Heat Mini Split AC (R-454B) - Up to 550 Sq.Ft.</h3>
-                <div class="product-meta"><span>23 SEER2</span><span>Up to 550 sq. ft.</span><span>Heats to -13°F</span></div>
+                <h3 class="product-title">Optima</h3>
+                <p class="product-capacity">12,000 BTU</p>
+                <dl class="product-meta"><div><dt>Efficiency</dt><dd>23 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div><div><dt>Heating</dt><dd>To -13°F</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p class="product-full-name">DELLA Optima Series 12000 BTU 23 SEER2 Ultra Heat Mini Split AC (R-454B) - Up to 550 Sq.Ft.</p></details>
                 <p class="product-price">From $914.96</p>
                 <p class="availability">Available</p>
-                <a class="btn btn-primary product-link" href="https://dellahome.com/products/optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" target="_blank" rel="noopener">View Product</a>
+                <a class="btn btn-primary product-link" href="https://dellahome.com/products/optima-series-12000-btu-seer2-23-ultra-heat-mini-split-ac-up-to-550-sq-ft" target="_blank" rel="noopener" aria-label="View Optima 12,000 BTU product">View Product</a>
               </div>
             </article>
           </div>
@@ -707,7 +734,7 @@
             const prices = availableVariants.map((variant) => variant.price);
             const availability = card.querySelector(".availability");
             if (product.title) {
-              card.querySelector(".product-title").textContent = product.title;
+              card.querySelector(".product-full-name").textContent = product.title;
               card.querySelector(".product-image").alt = product.title;
             }
             if (!availableVariants.length) {
