@@ -291,3 +291,13 @@ This step only affects the four scenario lifestyle images. Product cards, produc
 The previous sharpness-only pass did not sufficiently improve perceived clarity because the mini split units were too small inside the full-room compositions. Four closer 7:5 crops were generated from the original user-provided scene images as `assets/scenario-focus-01.webp` through `assets/scenario-focus-04.webp`, then lightly sharpened. The scenario cards now point to these focus-crop images so the wall units occupy more card area.
 
 The original root-level scene images and earlier `scenario-sharp-*.webp` files are preserved. Product-card assets and layout remain unchanged.
+
+## Product-card pilot completed — 2026-09-14
+
+Owner authorized the single-page pilot. Eight existing products now show installation type, short series, indoor-unit combination, separately labeled outdoor-unit capacity, voltage, efficiency, coverage, full model disclosure and price/action. All eight current Shopify products have one available variant; original prices and PDP destinations remain, with product/variant evidence in commerce-product-data.json. Seven existing wall-mounted configurations and the ceiling-cassette configuration remain distinct.
+
+Layout: four columns from 1200px, two at 761–1199px, one at 760px and below. Mobile specifications, full model disclosure and purchase span the card width. Existing product imagery/media background, category visuals, hero double shopping CTA, scenarios and page order remain.
+
+Local Chrome QA: 33/33 checks across 1440/1280/1199/1150/1024/768/760/430/390/360px, both groups expanded, 200% product text at 390/1024px, keyboard tabs/disclosures, image loading, FAQ/schema parity and preserved sections/links. Screenshots inspected. Evidence: C:/Users/18041/Documents/Playground/della-ui-review-20260911/zone-pilot-20260914/试点验收.md.
+
+Static price snapshot captured 2026-09-14; shared hydration and Shopify-theme integration are separate work. No new commit/push authorized for this pilot. Next action: owner visual review, then decide publication or the next single page. Backup: evidence folder before.html.

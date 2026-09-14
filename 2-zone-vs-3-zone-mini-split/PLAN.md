@@ -313,3 +313,8 @@ Before coding, apply latest user corrections:
 ## Latest Room-Count Strip Removal
 
 The early room-count path strip has been removed after user review. QA should confirm `.path-strip` is absent while the bottom collection CTA remains present.
+
+
+## Product-card pilot — 2026-09-14
+
+Owner approved the single-page pilot: verify all eight existing product configurations and variant prices, apply the validated product-card hierarchy with full-width mobile specifications/disclosure/purchase, and use two columns on medium screens. Preserve current hero shopping actions, category visuals, scenario images, page order and product destinations. Cards show installation type, series, indoor-unit BTU mix, outdoor-unit BTU capacity, voltage, efficiency, coverage and full-name disclosure. Current Shopify product/variant and system-spec evidence is recorded in commerce-product-data.json. This is a verified static snapshot; shared product-data hydration is a separate scope. Local implementation and verification are authorized; a new commit/push needs explicit instruction.

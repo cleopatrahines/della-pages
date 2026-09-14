@@ -447,85 +447,39 @@
       text-underline-offset: 4px;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .product-card {
-      display: flex;
-      min-width: 0;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border-gray);
-      border-radius: 6px;
-      background: var(--white);
-      box-shadow: 0 8px 20px rgba(14, 25, 83, 0.05);
-    }
-
-    .product-media {
-      display: flex;
-      height: 262px;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: var(--product-card-surface);
-    }
-
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      mix-blend-mode: normal;
-    }
-
-    .product-body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 18px;
-    }
-
-    .product-card h3 {
-      margin: 0;
-      color: var(--navy);
-      font-family: var(--heading);
-      font-size: 19px;
-      font-weight: 400;
-      line-height: 1.18;
-    }
-
-    .price {
-      margin: 12px 0 0;
-      color: var(--navy);
-      font-family: var(--heading);
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin: 15px 0 18px;
-    }
-
-    .chip {
-      border-radius: 4px;
-      padding: 6px 8px;
-      background: var(--light-blue);
-      color: var(--navy);
-      font-size: 11px;
-      line-height: 1;
-    }
-
-    .product-body .btn {
-      width: 100%;
-      margin-top: auto;
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+    .product-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid var(--border-gray); border-radius: 6px; background: var(--white); }
+    .product-media { display: flex; height: 262px; align-items: center; justify-content: center; padding: 18px; border-radius: 5px 5px 0 0; background: var(--product-card-surface); }
+    .product-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .product-body { display: flex; flex: 1; min-width: 0; flex-direction: column; padding: 18px; }
+    .product-card .product-eyebrow { margin-bottom: 8px; color: var(--navy); font-size: 12px; font-weight: 500; line-height: 1.5; text-transform: none; }
+    .product-card h3 { margin: 0; color: var(--navy); font-family: var(--heading); font-size: 23px; font-weight: 500; line-height: 1.2; }
+    .product-configuration { margin: 10px 0 0; color: var(--navy); line-height: 1.5; }
+    .product-configuration span { display: block; color: var(--muted); font-size: 12px; }
+    .product-configuration strong { font-size: 15px; font-weight: 500; }
+    .product-meta { display: grid; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--border-gray); }
+    .product-meta div { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border-gray); font-size: 12px; line-height: 1.5; }
+    .product-meta dt { color: var(--muted); }
+    .product-meta dd { margin: 0; color: var(--navy); text-align: right; }
+    .product-identity { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .product-identity summary { min-height: 44px; padding: 12px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .product-identity p { margin: 0 0 12px; overflow-wrap: anywhere; }
+    .product-purchase { display: flex; flex-direction: column; gap: 16px; margin-top: auto; padding-top: 14px; }
+    .product-purchase .price { margin: 0; color: var(--navy); font-family: var(--heading); font-size: 25px; font-weight: 700; line-height: 1.2; }
+    .product-purchase .btn { width: 100%; }
+    .product-card :is(a,summary):focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    @media (max-width: 1199px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      .product-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 16px; padding: 16px; }
+      .product-media { grid-column: 1; grid-row: 1 / 4; align-self: center; height: auto; aspect-ratio: 1; padding: 8px; border-radius: 4px; }
+      .product-body { display: contents; }
+      .product-body > * { grid-column: 1 / -1; min-width: 0; }
+      .product-card .product-eyebrow { grid-column: 2; grid-row: 1; margin: 0 0 5px; font-size: 11px; }
+      .product-card h3 { grid-column: 2; grid-row: 2; font-size: 22px; }
+      .product-configuration { grid-column: 2; grid-row: 3; margin-top: 6px; }
+      .product-configuration strong { font-size: 14px; }
+      .product-meta { margin-top: 16px; }
+      .product-purchase { gap: 14px; }
     }
 
     .scenario-section {
@@ -940,7 +894,6 @@
       }
 
 
-      .product-grid,
       .scenario-grid,
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1118,44 +1071,48 @@
             </div>
           </div>
           <div class="product-grid">
-            <article class="product-card">
+            <article class="product-card" data-product-id="10021947343136" data-variant-id="50576039477536">
               <div class="product-media"><img src="./assets/product-blended-01.webp" width="1200" height="1200" alt="DELLA Vario Series 20000 BTU Dual Zone Mini Split AC 9K plus 9K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Common two rooms</span>
-                <h3>DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 9K)</h3>
-                <p class="price">$1,829.96</p>
-                <div class="chips"><span class="chip">2 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">20000 BTU</span><span class="chip">Up to 800 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft">View Product</a>
+                <span class="product-eyebrow">2-zone · Wall-mounted</span>
+                <h3>Vario</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>9K + 9K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>20,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>20 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 800 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 9K) - Up to 800 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$1,829.96</p><a class="btn btn-navy" href="https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft" aria-label="View Vario 9K + 9K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10025471541536" data-variant-id="50589452206368">
               <div class="product-media"><img src="./assets/product-blended-02.webp" width="1800" height="1800" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 9K plus 12K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Bedroom + office</span>
-                <h3>DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K + 12K)</h3>
-                <p class="price">$2,039.96</p>
-                <div class="chips"><span class="chip">2 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">18000 BTU</span><span class="chip">Up to 950 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft">View Product</a>
+                <span class="product-eyebrow">2-zone · Wall-mounted</span>
+                <h3>Optima</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>9K + 12K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>24 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 950 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+12K) - Up to 950 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$2,039.96</p><a class="btn btn-navy" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft" aria-label="View Optima 9K + 12K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10025471508768" data-variant-id="50589452173600">
               <div class="product-media"><img src="./assets/product-blended-03.webp" width="1200" height="1200" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 12K plus 12K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Balanced two rooms</span>
-                <h3>DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (12K + 12K)</h3>
-                <p class="price">$2,089.96</p>
-                <div class="chips"><span class="chip">2 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">18000 BTU</span><span class="chip">Up to 1100 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft">View Product</a>
+                <span class="product-eyebrow">2-zone · Wall-mounted</span>
+                <h3>Optima</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>12K + 12K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>24 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,100 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (12K+12K) - Up to 1100 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$2,089.96</p><a class="btn btn-navy" href="https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft" aria-label="View Optima 12K + 12K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10021947015456" data-variant-id="50576038691104">
               <div class="product-media"><img src="./assets/product-blended-04.webp" width="1200" height="1200" alt="DELLA Vario Series 28000 BTU Dual Zone Mini Split AC 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Mixed load</span>
-                <h3>DELLA Vario Series 28000 BTU Dual Zone Mini Split AC (12K + 18K)</h3>
-                <p class="price">$2,339.96</p>
-                <div class="chips"><span class="chip">2 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">28000 BTU</span><span class="chip">Up to 1550 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-18k-up-to-1550-sq-ft">View Product</a>
+                <span class="product-eyebrow">2-zone · Wall-mounted</span>
+                <h3>Vario</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>12K + 18K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>28,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>20 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,550 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Vario Series 28000 BTU Dual Zone Mini Split AC (12k+18k) - Up to 1550 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$2,339.96</p><a class="btn btn-navy" href="https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-18k-up-to-1550-sq-ft" aria-label="View Vario 12K + 18K BTU product">View Product</a></div>
               </div>
             </article>
           </div>
@@ -1173,44 +1130,48 @@
             </div>
           </div>
           <div class="product-grid">
-            <article class="product-card">
+            <article class="product-card" data-product-id="10021946491168" data-variant-id="50576037576992">
               <div class="product-media"><img src="./assets/product-blended-05.webp" width="1200" height="1200" alt="DELLA Vario Series 28000 BTU Tri Zone Mini Split AC 9K plus 9K plus 12K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Balanced three rooms</span>
-                <h3>DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K + 9K + 12K)</h3>
-                <p class="price">$2,484.96</p>
-                <div class="chips"><span class="chip">3 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">28000 BTU</span><span class="chip">Up to 1350 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft">View Product</a>
+                <span class="product-eyebrow">3-zone · Wall-mounted</span>
+                <h3>Vario</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>9K + 9K + 12K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>28,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>20 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,350 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12k) - Up to 1350 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$2,484.96</p><a class="btn btn-navy" href="https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft" aria-label="View Vario 9K + 9K + 12K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10025470918944" data-variant-id="50589451387168">
               <div class="product-media"><img src="./assets/product-blended-06.webp" width="1200" height="1200" alt="DELLA Optima Series 27000 BTU Tri Zone Mini Split AC 9K plus 12K plus 12K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Two small + one medium</span>
-                <h3>DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K + 12K + 12K)</h3>
-                <p class="price">$2,784.96</p>
-                <div class="chips"><span class="chip">3 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">27000 BTU</span><span class="chip">Up to 1500 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft">View Product</a>
+                <span class="product-eyebrow">3-zone · Wall-mounted</span>
+                <h3>Optima</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>9K + 12K + 12K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>27,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>24 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,500 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K+12K+12k) - Up to 1500 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$2,784.96</p><a class="btn btn-navy" href="https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft" aria-label="View Optima 9K + 12K + 12K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10021946032416" data-variant-id="50576036561184">
               <div class="product-media"><img src="./assets/product-blended-07.webp" width="1800" height="1800" alt="DELLA Vario Series 35000 BTU Tri Zone Mini Split AC 9K plus 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Mixed load</span>
-                <h3>DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (9K + 12K + 18K)</h3>
-                <p class="price">$3,204.96</p>
-                <div class="chips"><span class="chip">3 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">35000 BTU</span><span class="chip">Up to 1950 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-9k-12k-18k-up-to-1950-sq-ft">View Product</a>
+                <span class="product-eyebrow">3-zone · Wall-mounted</span>
+                <h3>Vario</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>9K + 12K + 18K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>35,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>19 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,950 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (9K+12K+18K) - Up to 1950 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$3,204.96</p><a class="btn btn-navy" href="https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-9k-12k-18k-up-to-1950-sq-ft" aria-label="View Vario 9K + 12K + 18K BTU product">View Product</a></div>
               </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-id="10027756683552" data-variant-id="50602500751648">
               <div class="product-media"><img src="./assets/product-blended-08.webp" width="1200" height="1200" alt="DELLA 35000 BTU Tri Zone Ceiling Cassette Mini Split AC 12K plus 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
-                <span class="product-eyebrow">Ceiling cassette option</span>
-                <h3>DELLA 35000 BTU Tri-Zone Ceiling Cassette Mini Split AC (12K + 12K + 18K)</h3>
-                <p class="price">$4,564.96</p>
-                <div class="chips"><span class="chip">3 Indoor Units</span><span class="chip">1 Outdoor Unit</span><span class="chip">35000 BTU</span><span class="chip">Up to 2100 Sq.Ft.</span></div>
-                <a class="btn btn-navy" href="https://dellahome.com/products/35000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft">View Product</a>
+                <span class="product-eyebrow">3-zone · Ceiling-recessed</span>
+                <h3>Ceiling Cassette</h3>
+                <p class="product-configuration"><span>Indoor units</span><strong>12K + 12K + 18K BTU</strong></p>
+                <dl class="product-meta"><div><dt>Outdoor unit</dt><dd>35,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>22.5 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 2,100 sq. ft.</dd></div></dl>
+                <details class="product-identity"><summary>Full model name</summary><p>DELLA 35000 BTU Tri-Zone Ceiling Cassette Mini Split AC (12K+12K+18K) - Up to 2100 Sq.Ft.</p></details>
+                <div class="product-purchase"><p class="price">$4,564.96</p><a class="btn btn-navy" href="https://dellahome.com/products/35000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft" aria-label="View Ceiling Cassette 12K + 12K + 18K BTU product">View Product</a></div>
               </div>
             </article>
           </div>

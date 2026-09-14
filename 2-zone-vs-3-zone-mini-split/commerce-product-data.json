@@ -1,0 +1,270 @@
+[
+  {
+    "index": 1,
+    "series": "Vario",
+    "outdoorBtu": 20000,
+    "indoorK": [
+      9,
+      9
+    ],
+    "coverage": 800,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 20,
+    "fullName": "DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 9K) - Up to 800 Sq.Ft.",
+    "productId": 10021947343136,
+    "variant": {
+      "id": 50576039477536,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D2-TL-D99",
+      "price": 182996,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft.js",
+      "productPage": "https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft",
+      "capturedAt": "2026-09-14T07:08:54.879Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 20",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 2,
+    "series": "Optima",
+    "outdoorBtu": 18000,
+    "indoorK": [
+      9,
+      12
+    ],
+    "coverage": 950,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 24,
+    "fullName": "DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+12K) - Up to 950 Sq.Ft.",
+    "productId": 10025471541536,
+    "variant": {
+      "id": 50589452206368,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D2-TP-D912",
+      "price": 203996,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft.js",
+      "productPage": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft",
+      "capturedAt": "2026-09-14T07:08:55.204Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 3,
+    "series": "Optima",
+    "outdoorBtu": 18000,
+    "indoorK": [
+      12,
+      12
+    ],
+    "coverage": 1100,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 24,
+    "fullName": "DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (12K+12K) - Up to 1100 Sq.Ft.",
+    "productId": 10025471508768,
+    "variant": {
+      "id": 50589452173600,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D2-TP-D1212",
+      "price": 208996,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft.js",
+      "productPage": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft",
+      "capturedAt": "2026-09-14T07:08:55.496Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 4,
+    "series": "Vario",
+    "outdoorBtu": 28000,
+    "indoorK": [
+      12,
+      18
+    ],
+    "coverage": 1550,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 20,
+    "fullName": "DELLA Vario Series 28000 BTU Dual Zone Mini Split AC (12k+18k) - Up to 1550 Sq.Ft.",
+    "productId": 10021947015456,
+    "variant": {
+      "id": 50576038691104,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D3-TL-D1218",
+      "price": 233996,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-18k-up-to-1550-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-18k-up-to-1550-sq-ft.js",
+      "productPage": "https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-18k-up-to-1550-sq-ft",
+      "capturedAt": "2026-09-14T07:08:55.796Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 20",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 5,
+    "series": "Vario",
+    "outdoorBtu": 28000,
+    "indoorK": [
+      9,
+      9,
+      12
+    ],
+    "coverage": 1350,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 20,
+    "fullName": "DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12k) - Up to 1350 Sq.Ft.",
+    "productId": 10021946491168,
+    "variant": {
+      "id": 50576037576992,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D3-TL-T9912",
+      "price": 248496,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft.js",
+      "productPage": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft",
+      "capturedAt": "2026-09-14T07:08:56.109Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 20",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 6,
+    "series": "Optima",
+    "outdoorBtu": 27000,
+    "indoorK": [
+      9,
+      12,
+      12
+    ],
+    "coverage": 1500,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 24,
+    "fullName": "DELLA Optima Series 27000 BTU Tri-Zone Mini Split AC (9K+12K+12k) - Up to 1500 Sq.Ft.",
+    "productId": 10025470918944,
+    "variant": {
+      "id": 50589451387168,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D3-TP-T91212",
+      "price": 278496,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft.js",
+      "productPage": "https://dellahome.com/products/optima-series-27000-btu-tri-zone-mini-split-ac-9k-12k-12k-up-to-1500-sq-ft",
+      "capturedAt": "2026-09-14T07:08:56.542Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 7,
+    "series": "Vario",
+    "outdoorBtu": 35000,
+    "indoorK": [
+      9,
+      12,
+      18
+    ],
+    "coverage": 1950,
+    "installation": "Wall-mounted",
+    "voltage": 230,
+    "seer2": 19,
+    "fullName": "DELLA Vario Series 35000 BTU Tri-Zone Mini Split AC (9K+12K+18K) - Up to 1950 Sq.Ft.",
+    "productId": 10021946032416,
+    "variant": {
+      "id": 50576036561184,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D4-TL-T91218",
+      "price": 320496,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-9k-12k-18k-up-to-1950-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-9k-12k-18k-up-to-1950-sq-ft.js",
+      "productPage": "https://dellahome.com/products/vario-series-35000-btu-tri-zone-mini-split-ac-9k-12k-18k-up-to-1950-sq-ft",
+      "capturedAt": "2026-09-14T07:08:56.843Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 19",
+      "installationEvidence": "Approved local product image shows wall-mounted indoor heads; official product title identifies the matching system."
+    }
+  },
+  {
+    "index": 8,
+    "series": "Ceiling Cassette",
+    "outdoorBtu": 35000,
+    "indoorK": [
+      12,
+      12,
+      18
+    ],
+    "coverage": 2100,
+    "installation": "Ceiling-recessed",
+    "voltage": 230,
+    "seer2": 22.5,
+    "fullName": "DELLA 35000 BTU Tri-Zone Ceiling Cassette Mini Split AC (12K+12K+18K) - Up to 2100 Sq.Ft.",
+    "productId": 10027756683552,
+    "variant": {
+      "id": 50602500751648,
+      "title": "Default Title",
+      "options": [
+        "Default Title"
+      ],
+      "sku": "048-TLP-MODU-1D4-CC-T121218",
+      "price": 456496,
+      "available": true
+    },
+    "url": "https://dellahome.com/products/35000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft",
+    "source": {
+      "productJson": "https://dellahome.com/products/35000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft.js",
+      "productPage": "https://dellahome.com/products/35000-btu-tri-zone-ceiling-cassette-mini-split-ac-12k-12k-18k-up-to-2100-sq-ft",
+      "capturedAt": "2026-09-14T07:08:57.163Z",
+      "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 22.5",
+      "installationEvidence": "Official title and description identify ceiling cassette / recessed ceiling design."
+    }
+  }
+]
