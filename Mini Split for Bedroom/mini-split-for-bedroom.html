@@ -200,6 +200,10 @@
     .final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
     .final-actions .btn{min-width:235px}
 
+    @media (max-width:1199px){
+      .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    }
+
     @media (max-width:1023px){
       .container{width:min(calc(100% - 40px),var(--container))}
       .section{padding:64px 0}
@@ -209,7 +213,7 @@
       .hero .container{min-height:440px}
       .hero-copy{width:39%}
 
-      .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+
       .install-layout{gap:32px}
     }
 
@@ -245,11 +249,12 @@
       .product-grid{grid-template-columns:1fr;gap:18px}
       .product-card{--card-inset:0px;display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:16px;padding:18px 16px}
       .product-badge{grid-column:1/-1;margin:0 0 16px;font-size:12px}
-      .product-image-wrap{grid-column:1;align-self:start;height:auto;aspect-ratio:1/1.1;margin:0;padding:10px 0}
+      .product-image-wrap{grid-column:1;grid-row:2 / 4;align-self:start;height:auto;aspect-ratio:1/1.1;margin:0;padding:10px 0}
       .product-image{max-height:150px}
-      .product-card-body{grid-column:2}
-      .product-card h3.product-title{margin-top:0;font-size:22px}
-      .product-capacity{font-size:14px}
+      .product-card-body{display:contents}
+      .product-card-body > *{grid-column:1 / -1;min-width:0}
+      .product-card h3.product-title{grid-column:2;grid-row:2;align-self:end;margin-top:0;font-size:22px}
+      .product-capacity{grid-column:2;grid-row:3;font-size:14px}
       .product-meta{margin-top:14px}
       .product-meta div{font-size:12px;padding:8px 0;gap:6px}
       .product-meta dd{max-width:65%}

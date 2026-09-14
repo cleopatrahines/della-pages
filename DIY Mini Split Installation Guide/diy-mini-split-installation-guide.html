@@ -390,7 +390,11 @@ html{scroll-behavior:smooth}body{margin:0;background:#fff}
  };
  page.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', e => {
   if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-  focusTarget(link.hash);
+  // Let native navigation finish before focusing the destination heading.
+  const hash = link.hash;
+  setTimeout(() => {
+   if (!e.defaultPrevented && location.hash === hash) focusTarget(hash);
+  }, 0);
   // Native anchors preserve query strings and create normal Back/Forward history.
  }));
  window.addEventListener('hashchange', () => {focusTarget(location.hash);requestAnimationFrame(update);});
