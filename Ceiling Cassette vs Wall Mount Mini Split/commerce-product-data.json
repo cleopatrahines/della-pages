@@ -1,0 +1,176 @@
+[
+  {
+    "key": "cc12",
+    "productId": 9990872727840,
+    "url": "https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft",
+    "sourceJson": "https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:44.122Z",
+    "fullName": "DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.",
+    "variantId": 50962261868832,
+    "sku": "CC-12K2V-22S-I+O-X",
+    "variantTitle": "None",
+    "priceCents": 139496,
+    "available": true,
+    "specExcerpt": "System Specs Cooling Capacity: 12000 Heating Capacity: 12500 SEER2: 22 Fitting Area: 550 Voltage: 208-230 Refrigerant Type: R454B Maximum Fuse Size: 15A Copper Line Length: None / 10ft / 16ft / 25ft / 33ft / 50ft Climate Range: -13°F - 131°F ",
+    "installationEvidence": "Official title identifies ceiling cassette.",
+    "indoorK": [
+      12
+    ],
+    "outdoorBtu": 12000,
+    "voltage": "208-230",
+    "seer2": "22"
+  },
+  {
+    "key": "cc18",
+    "productId": 9991810384160,
+    "url": "https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft",
+    "sourceJson": "https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:45.400Z",
+    "fullName": "DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 1000 Sq.Ft.",
+    "variantId": 50962170511648,
+    "sku": "CC-18K2V-20S-I+O-X",
+    "variantTitle": "None",
+    "priceCents": 178496,
+    "available": true,
+    "specExcerpt": "System Specs Cooling Capacity: 18000 Heating Capacity: 18000 SEER2: 20.5 Fitting Area: 1000 Voltage: 208-230 Refrigerant Type: R454B Maximum Fuse Size: 20A Copper Line Length: None / 10ft / 16ft / 25ft / 33ft / 50ft Climate Range: -13°F - 131",
+    "installationEvidence": "Official title identifies ceiling cassette.",
+    "indoorK": [
+      18
+    ],
+    "outdoorBtu": 18000,
+    "voltage": "208-230",
+    "seer2": "20.5"
+  },
+  {
+    "key": "ccDual",
+    "productId": 10027755733280,
+    "url": "https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft",
+    "sourceJson": "https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:46.657Z",
+    "fullName": "DELLA 18000 BTU Dual Zone Ceiling Cassette Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.",
+    "variantId": 50602499801376,
+    "sku": "048-TLP-MODU-1D2-CC-D912",
+    "variantTitle": "Default Title",
+    "priceCents": 276996,
+    "available": true,
+    "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24 Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Ceiling Cassette: 360° Comfort, Zero Dead Zones. Elevate your business environment with the Ceiling Cassette ser",
+    "installationEvidence": "Official title identifies ceiling cassette.",
+    "indoorK": [
+      9,
+      12
+    ],
+    "outdoorBtu": 18000,
+    "voltage": "230",
+    "seer2": "24"
+  },
+  {
+    "key": "ccTri",
+    "productId": 10027756224800,
+    "url": "https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft",
+    "sourceJson": "https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:47.831Z",
+    "fullName": "DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+9K+9K) - Up to 1200 Sq.Ft.",
+    "variantId": 50602500292896,
+    "sku": "048-TLP-MODU-1D3-CC-T999",
+    "variantTitle": "Default Title",
+    "priceCents": 377996,
+    "available": true,
+    "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24 Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Ceiling Cassette: 360° Comfort, Zero Dead Zones. Elevate your business environment with the Ceiling Cassette ser",
+    "installationEvidence": "Official title identifies ceiling cassette.",
+    "indoorK": [
+      9,
+      9,
+      9
+    ],
+    "outdoorBtu": 27000,
+    "voltage": "230",
+    "seer2": "24"
+  },
+  {
+    "key": "wm12",
+    "productId": 9978028261664,
+    "url": "https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft",
+    "sourceJson": "https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:48.833Z",
+    "fullName": "DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.",
+    "variantId": 50314672013600,
+    "sku": "TL-12K2VB-23S-I+O",
+    "variantTitle": "230V",
+    "priceCents": 77996,
+    "available": true,
+    "specExcerpt": "System Specs Cooling Capacity: 12000 Heating Capacity: 12000 SEER2: 23 Fitting Area: 550 Voltage: 208-230V Refrigerant Type: R454B Maximum Fuse Size: 15A Copper Line Length: 16.4ft Copper Line Size: 3/8 inch and 1/4 inch Climate Range: -4°F -",
+    "installationEvidence": "Approved product image shows wall-mounted indoor heads.",
+    "indoorK": [
+      12
+    ],
+    "outdoorBtu": 12000,
+    "voltage": "208-230",
+    "seer2": "23"
+  },
+  {
+    "key": "wm18",
+    "productId": 9984038568224,
+    "url": "https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft",
+    "sourceJson": "https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:49.940Z",
+    "fullName": "DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.",
+    "variantId": 50340329029920,
+    "sku": "18K2VR-22S-M-I+O",
+    "variantTitle": "230V",
+    "priceCents": 104996,
+    "available": true,
+    "specExcerpt": "System Specs Cooling Capacity: 18000 Heating Capacity: 18000 SEER2: 22 Fitting Area: 1000 Voltage: 208-230V Refrigerant Type: R32 Maximum Fuse Size: 20A Copper Line Length: 16ft Copper Line Size: 1/2 inch and 1/4 inch Climate Range: 5°F - 125",
+    "installationEvidence": "Approved product image shows wall-mounted indoor heads.",
+    "indoorK": [
+      18
+    ],
+    "outdoorBtu": 18000,
+    "voltage": "208-230",
+    "seer2": "22"
+  },
+  {
+    "key": "wmDual",
+    "productId": 10025471541536,
+    "url": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft",
+    "sourceJson": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:51.111Z",
+    "fullName": "DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+12K) - Up to 950 Sq.Ft.",
+    "variantId": 50589452206368,
+    "sku": "048-TLP-MODU-1D2-TP-D912",
+    "variantTitle": "Default Title",
+    "priceCents": 203996,
+    "available": true,
+    "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 24 Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Optima: Cold Weather’s Greatest Rival. Efficiency’s New Standard. Engineered with cutting-edge Hyper Heat techno",
+    "installationEvidence": "Approved product image shows wall-mounted indoor heads.",
+    "indoorK": [
+      9,
+      12
+    ],
+    "outdoorBtu": 18000,
+    "voltage": "230",
+    "seer2": "24"
+  },
+  {
+    "key": "wmTri",
+    "productId": 10021946491168,
+    "url": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft",
+    "sourceJson": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft.js",
+    "capturedAt": "2026-09-14T07:47:52.168Z",
+    "fullName": "DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12k) - Up to 1350 Sq.Ft.",
+    "variantId": 50576037576992,
+    "sku": "048-TLP-MODU-1D3-TL-T9912",
+    "variantTitle": "Default Title",
+    "priceCents": 248496,
+    "available": true,
+    "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 20 Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Vario Series: High Efficiency. Higher Value. The Vario Series is the ultimate all-rounder for the modern homeown",
+    "installationEvidence": "Approved product image shows wall-mounted indoor heads.",
+    "indoorK": [
+      9,
+      9,
+      12
+    ],
+    "outdoorBtu": 28000,
+    "voltage": "230",
+    "seer2": "20"
+  }
+]

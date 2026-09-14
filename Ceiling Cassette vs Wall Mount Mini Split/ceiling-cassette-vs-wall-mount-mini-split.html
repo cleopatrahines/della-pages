@@ -988,8 +988,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 236px;
-  aspect-ratio: 1 / .92;
+  height: 236px;
+  min-height: 0;
+  aspect-ratio: auto;
   padding: 28px 20px 12px;
   overflow: hidden;
   background: #fff;
@@ -1004,65 +1005,28 @@ h3 {
 .project-product-card:hover .project-product-card__image img {
   transform: scale(1.04);
 }
-.project-product-card__body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-  padding: 16px 18px 18px;
-  text-align: left;
-  align-items: stretch;
-}
-.project-product-card__title {
-  min-height: 64px;
-  margin: 0;
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 15px;
-  line-height: 1.35;
-  font-weight: 400;
-}
-.project-product-card__title a {
-  color: inherit;
-}
-.project-product-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  align-items: center;
-  margin: 12px 0 10px;
-}
-.project-product-card__meta span {
-  padding: 6px 7px;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-  color: var(--text-muted);
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
-}
-.project-product-card__price {
-  margin-top: auto;
-  margin-bottom: 14px;
-  color: var(--navy);
-  font-family: var(--font-heading-bold);
-  font-size: 20px;
-  font-weight: 400;
-}
-.project-product-card__cart {
-  width: 100%;
-  min-height: 46px;
-  margin-top: auto;
-  border-color: var(--navy);
-  border-radius: 0;
-  background: var(--navy);
-  color: #fff;
-}
-.project-product-card__cart:hover {
-  background: #fff;
-  color: var(--navy);
-  border-color: var(--navy);
-}
+.project-product-card__body { display:flex;flex:1;min-width:0;flex-direction:column;padding:16px 18px 18px; }
+.project-product-card__type { margin:0 0 7px;color:var(--navy);font-size:12px;line-height:1.5; }
+.project-product-card__title { margin:0;color:var(--navy);font-family:var(--font-heading);font-size:23px;line-height:1.2;font-weight:500; }
+.project-product-card__title a { color:inherit; }
+.project-product-card__capacity { margin:10px 0 0;line-height:1.5; }
+.project-product-card__capacity span { display:block;color:var(--text-muted);font-size:12px; }
+.project-product-card__capacity strong { color:var(--navy);font-size:15px;font-weight:500; }
+.project-product-card__specs { margin:18px 0 0;border-top:1px solid var(--gray-200); }
+.project-product-card__specs div { display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--gray-200);font-size:12px;line-height:1.5; }
+.project-product-card__specs dt { color:var(--text-muted); }
+.project-product-card__specs dd { margin:0;text-align:right;color:var(--navy); }
+.project-product-card__identity { margin:8px 0 0;color:var(--text-muted);font-size:12px;line-height:1.5; }
+.project-product-card__identity summary { min-height:44px;padding:12px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px; }
+.project-product-card__identity p { margin:0 0 12px;overflow-wrap:anywhere; }
+.project-product-card__purchase { display:flex;flex-direction:column;gap:14px;margin-top:auto;padding-top:14px; }
+.project-product-card__configuration { margin:0;color:var(--text-muted);font-size:12px;line-height:1.5; }
+.project-product-card__configuration a { text-decoration:underline;text-underline-offset:3px; }
+.project-product-card__price { margin:0;color:var(--navy);font-family:var(--font-heading-bold);font-size:25px;line-height:1.2;font-weight:400; }
+.project-product-card__cart { width:100%;min-height:46px;border-color:var(--navy);border-radius:0;background:var(--navy);color:#fff; }
+.project-product-card__cart:hover { background:#fff;color:var(--navy);border-color:var(--navy); }
+.project-product-card :is(a,summary):focus-visible { outline:2px solid var(--blue);outline-offset:3px; }
+@media (max-width:1199px) { .project-product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 .services-section {
   background: var(--white);
   padding-top: 29px;
@@ -1256,11 +1220,7 @@ main.page .bottom-choice-cta h2 {
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 }
 
-@media (max-width: 1020px) {
-  .project-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+
 
 @media (max-width: 989px) {
   .decision-checker { grid-template-columns: 1fr; }
@@ -1346,47 +1306,15 @@ main.page .bottom-choice-cta h2 {
     gap: 18px;
   }
 
-  .project-product-card__image {
-    min-height: 0;
-    height: 180px;
-    aspect-ratio: auto;
-    padding: 16px 10px 8px;
-  }
-
-  .project-product-card__image img {
-    max-height: 150px;
-  }
-
-  .project-product-card__body {
-    padding: 12px;
-  }
-
-  .project-product-card__title {
-    min-height: 74px;
-    font-size: 13px;
-    line-height: 1.28;
-  }
-
-  .project-product-card__meta {
-    gap: 4px;
-    margin: 8px 0;
-  }
-
-  .project-product-card__meta span {
-    padding: 5px 6px;
-    font-size: 11px;
-  }
-
-  .project-product-card__price {
-    margin-bottom: 10px;
-    font-size: 17px;
-  }
-
-  .project-product-card__cart {
-    min-height: 40px;
-    padding: 9px 8px;
-    font-size: 13px;
-  }
+  .project-product-card { display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:16px;padding:16px; }
+  .project-product-card__image { grid-column:1;grid-row:1 / 4;align-self:center;min-height:0;height:auto;aspect-ratio:1;padding:8px; }
+  .project-product-card__image img { max-height:none; }
+  .project-product-card__body { display:contents; }
+  .project-product-card__body > * { grid-column:1 / -1;min-width:0; }
+  .project-product-card__type { grid-column:2;grid-row:1;font-size:11px;margin:0 0 5px; }
+  .project-product-card__title { grid-column:2;grid-row:2;font-size:22px; }
+  .project-product-card__capacity { grid-column:2;grid-row:3;margin-top:6px; }
+  .project-product-card__capacity strong { font-size:14px; }
 }
 
 @media (max-width: 640px) {
@@ -1877,7 +1805,7 @@ main.page h2 {
           <div>
             <h2>Choose by project type, then compare popular picks</h2>
           </div>
-          <p class="section-copy">Use the project type as a starting point, then compare current Della models, ratings, pricing, and availability.</p>
+          <p class="section-copy">Use the project type as a starting point, then compare capacity, indoor-unit style, and configuration.</p>
         </div>
 
         <div class="project-product-tabs" role="tablist" aria-label="Project type selector">
@@ -1899,69 +1827,50 @@ main.page h2 {
         </div>
 
         <div class="project-product-grid" data-project-products="living">
-          <article class="project-product-card">
-            <a class="project-product-card__image" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">
-              <img src="https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&amp;height=1200&amp;v=1764061000&amp;width=1200" alt="DELLA 12K ceiling cassette mini split" loading="lazy">
-            </a>
-            <div class="project-product-card__body">
-              <h3 class="project-product-card__title"><a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">DELLA 12K 22 SEER2 Ceiling Cassette</a></h3>
-              <div class="project-product-card__meta">
-                <span>12K BTU</span>
-                <span>22 SEER2</span>
-                <span>Up to 550 Sq.Ft.</span>
-              </div>
-              <div class="project-product-card__price">$1,394.96</div>
-              <a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962261868832&quantity=1">Add to Cart</a>
-            </div>
-          </article>
-
-          <article class="project-product-card">
-            <a class="project-product-card__image" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">
-              <img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?crop=center&amp;height=1200&amp;v=1753232832&amp;width=1200" alt="DELLA Vario 12K wall mount mini split" loading="lazy">
-            </a>
-            <div class="project-product-card__body">
-              <h3 class="project-product-card__title"><a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">DELLA Vario 12K 23 SEER2 Wall Mount</a></h3>
-              <div class="project-product-card__meta">
-                <span>12K BTU</span>
-                <span>23 SEER2</span>
-                <span>Up to 550 Sq.Ft.</span>
-              </div>
-              <div class="project-product-card__price">$799.96</div>
-              <a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50314672013600&quantity=1">Add to Cart</a>
-            </div>
-          </article>
-
-          <article class="project-product-card">
-            <a class="project-product-card__image" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">
-              <img src="https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&amp;height=1200&amp;v=1764061000&amp;width=1200" alt="DELLA 18K ceiling cassette mini split" loading="lazy">
-            </a>
-            <div class="project-product-card__body">
-              <h3 class="project-product-card__title"><a href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">DELLA 18K 20.5 SEER2 Ceiling Cassette</a></h3>
-              <div class="project-product-card__meta">
-                <span>18K BTU</span>
-                <span>20.5 SEER2</span>
-                <span>Up to 1,000 Sq.Ft.</span>
-              </div>
-              <div class="project-product-card__price">$1,784.96</div>
-              <a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962170511648&quantity=1">Add to Cart</a>
-            </div>
-          </article>
-
-          <article class="project-product-card">
-            <a class="project-product-card__image" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">
-              <img src="https://dellahome.com/cdn/shop/files/M.jpg?crop=center&amp;height=1200&amp;v=1750938870&amp;width=1200" alt="DELLA Serena 18K wall mount mini split" loading="lazy">
-            </a>
-            <div class="project-product-card__body">
-              <h3 class="project-product-card__title"><a href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">DELLA Serena 18K 22 SEER2 Wall Mount</a></h3>
-              <div class="project-product-card__meta">
-                <span>18K BTU</span>
-                <span>22 SEER2</span>
-                <span>Up to 1,000 Sq.Ft.</span>
-              </div>
-              <div class="project-product-card__price">$1,049.96</div>
-              <a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50340329029920&quantity=1">Add to Cart</a>
-            </div>
-          </article>
+<article class="project-product-card" data-product-key="cc12">
+          <a class="project-product-card__image" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft"><img src="https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200" alt="DELLA 12K ceiling cassette mini split" loading="lazy"></a>
+          <div class="project-product-card__body">
+            <p class="project-product-card__type">1-zone · Ceiling-recessed</p>
+            <h3 class="project-product-card__title"><a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Ceiling Cassette</a></h3>
+            <p class="project-product-card__capacity"><span>Capacity</span><strong>12K BTU</strong></p>
+            <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>12,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div></dl>
+            <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.</p></details>
+            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,394.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962261868832&quantity=1">Add to Cart</a></div>
+          </div>
+        </article>
+<article class="project-product-card" data-product-key="wm12">
+          <a class="project-product-card__image" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft"><img src="https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?crop=center&height=1200&v=1753232832&width=1200" alt="DELLA Vario 12K wall mount mini split" loading="lazy"></a>
+          <div class="project-product-card__body">
+            <p class="project-product-card__type">1-zone · Wall-mounted</p>
+            <h3 class="project-product-card__title"><a href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">Vario</a></h3>
+            <p class="project-product-card__capacity"><span>Capacity</span><strong>12K BTU</strong></p>
+            <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>12,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>23 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div></dl>
+            <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</p></details>
+            <div class="project-product-card__purchase"><div class="project-product-card__price">$779.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50314672013600&quantity=1">Add to Cart</a></div>
+          </div>
+        </article>
+<article class="project-product-card" data-product-key="cc18">
+          <a class="project-product-card__image" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft"><img src="https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200" alt="DELLA 18K ceiling cassette mini split" loading="lazy"></a>
+          <div class="project-product-card__body">
+            <p class="project-product-card__type">1-zone · Ceiling-recessed</p>
+            <h3 class="project-product-card__title"><a href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">Ceiling Cassette</a></h3>
+            <p class="project-product-card__capacity"><span>Capacity</span><strong>18K BTU</strong></p>
+            <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>20.5 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,000 sq. ft.</dd></div></dl>
+            <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 1000 Sq.Ft.</p></details>
+            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,784.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962170511648&quantity=1">Add to Cart</a></div>
+          </div>
+        </article>
+<article class="project-product-card" data-product-key="wm18">
+          <a class="project-product-card__image" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft"><img src="https://dellahome.com/cdn/shop/files/M.jpg?crop=center&height=1200&v=1750938870&width=1200" alt="DELLA Serena 18K wall mount mini split" loading="lazy"></a>
+          <div class="project-product-card__body">
+            <p class="project-product-card__type">1-zone · Wall-mounted</p>
+            <h3 class="project-product-card__title"><a href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">Serena</a></h3>
+            <p class="project-product-card__capacity"><span>Capacity</span><strong>18K BTU</strong></p>
+            <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,000 sq. ft.</dd></div></dl>
+            <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.</p></details>
+            <div class="project-product-card__purchase"><div class="project-product-card__price">$1,049.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50340329029920&quantity=1">Add to Cart</a></div>
+          </div>
+        </article>
         </div>
       </div>
     </div>
@@ -2130,79 +2039,255 @@ main.page h2 {
   const projectProductCopy = document.getElementById('project-product-copy');
   const projectProductGrid = document.querySelector('.project-product-grid');
   const projectProductItems = {
-    cc12: {
-      title: 'DELLA 12K 22 SEER2 Ceiling Cassette',
-      url: 'https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200',
-      alt: 'DELLA 12K ceiling cassette mini split',
-      meta: ['12K BTU', '22 SEER2', 'Up to 550 Sq.Ft.'],
-      price: '$1,394.96',
-      variantId: '50962261868832'
+    "cc12": {
+        "title": "Ceiling Cassette",
+        "url": "https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200",
+        "alt": "DELLA 12K ceiling cassette mini split",
+        "price": "$1,394.96",
+        "variantId": "50962261868832",
+        "fullName": "DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.",
+        "type": "1-zone · Ceiling-recessed",
+        "capacity": "12K BTU",
+        "capacityLabel": "Capacity",
+        "specs": [
+            [
+                "Outdoor unit",
+                "12,000 BTU"
+            ],
+            [
+                "Voltage",
+                "208-230V"
+            ],
+            [
+                "Efficiency",
+                "22 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 550 sq. ft."
+            ]
+        ],
+        "configuration": "No line set included."
     },
-    cc18: {
-      title: 'DELLA 18K 20.5 SEER2 Ceiling Cassette',
-      url: 'https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200',
-      alt: 'DELLA 18K ceiling cassette mini split',
-      meta: ['18K BTU', '20.5 SEER2', 'Up to 1,000 Sq.Ft.'],
-      price: '$1,784.96',
-      variantId: '50962170511648'
+    "cc18": {
+        "title": "Ceiling Cassette",
+        "url": "https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/pp.jpg?crop=center&height=1200&v=1764061000&width=1200",
+        "alt": "DELLA 18K ceiling cassette mini split",
+        "price": "$1,784.96",
+        "variantId": "50962170511648",
+        "fullName": "DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 1000 Sq.Ft.",
+        "type": "1-zone · Ceiling-recessed",
+        "capacity": "18K BTU",
+        "capacityLabel": "Capacity",
+        "specs": [
+            [
+                "Outdoor unit",
+                "18,000 BTU"
+            ],
+            [
+                "Voltage",
+                "208-230V"
+            ],
+            [
+                "Efficiency",
+                "20.5 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 1,000 sq. ft."
+            ]
+        ],
+        "configuration": "No line set included."
     },
-    ccDual: {
-      title: 'DELLA 18K Dual-Zone Ceiling Cassette',
-      url: 'https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/1D2-CC_D_056eb49d-31a3-4402-920e-17cd4d4fbf38.jpg?crop=center&height=1200&v=1755745005&width=1200',
-      alt: 'DELLA dual-zone ceiling cassette mini split',
-      meta: ['18K BTU', '9K + 12K', 'Up to 950 Sq.Ft.'],
-      price: '$2,769.96',
-      variantId: '50602499801376'
+    "ccDual": {
+        "title": "Ceiling Cassette",
+        "url": "https://dellahome.com/products/18000-btu-dual-zone-ceiling-cassette-mini-split-ac-9k-12k-up-to-950-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/1D2-CC_D_056eb49d-31a3-4402-920e-17cd4d4fbf38.jpg?crop=center&height=1200&v=1755745005&width=1200",
+        "alt": "DELLA dual-zone ceiling cassette mini split",
+        "price": "$2,769.96",
+        "variantId": "50602499801376",
+        "fullName": "DELLA 18000 BTU Dual Zone Ceiling Cassette Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.",
+        "type": "2-zone · Ceiling-recessed",
+        "capacity": "9K + 12K BTU",
+        "capacityLabel": "Indoor units",
+        "specs": [
+            [
+                "Outdoor unit",
+                "18,000 BTU"
+            ],
+            [
+                "Voltage",
+                "230V"
+            ],
+            [
+                "Efficiency",
+                "24 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 950 sq. ft."
+            ]
+        ],
+        "configuration": ""
     },
-    ccTri: {
-      title: 'DELLA 27K Tri-Zone Ceiling Cassette',
-      url: 'https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/1D3-CC_T_f526eac1-e9b1-4414-8faf-6ef413852a10.jpg?crop=center&height=1200&v=1755745027&width=1200',
-      alt: 'DELLA tri-zone ceiling cassette mini split',
-      meta: ['27K BTU', '9K + 9K + 9K', 'Up to 1,200 Sq.Ft.'],
-      price: '$3,779.96',
-      variantId: '50602500292896'
+    "ccTri": {
+        "title": "Ceiling Cassette",
+        "url": "https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-9k-up-to-1200-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/1D3-CC_T_f526eac1-e9b1-4414-8faf-6ef413852a10.jpg?crop=center&height=1200&v=1755745027&width=1200",
+        "alt": "DELLA tri-zone ceiling cassette mini split",
+        "price": "$3,779.96",
+        "variantId": "50602500292896",
+        "fullName": "DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+9K+9K) - Up to 1200 Sq.Ft.",
+        "type": "3-zone · Ceiling-recessed",
+        "capacity": "9K + 9K + 9K BTU",
+        "capacityLabel": "Indoor units",
+        "specs": [
+            [
+                "Outdoor unit",
+                "27,000 BTU"
+            ],
+            [
+                "Voltage",
+                "230V"
+            ],
+            [
+                "Efficiency",
+                "24 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 1,200 sq. ft."
+            ]
+        ],
+        "configuration": ""
     },
-    wm12: {
-      title: 'DELLA Vario 12K 23 SEER2 Wall Mount',
-      url: 'https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?crop=center&height=1200&v=1753232832&width=1200',
-      alt: 'DELLA Vario 12K wall mount mini split',
-      meta: ['12K BTU', '23 SEER2', 'Up to 550 Sq.Ft.'],
-      price: '$799.96',
-      variantId: '50314672013600'
+    "wm12": {
+        "title": "Vario",
+        "url": "https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/TL-NEW_8819b5ba-1b5a-4398-af5a-01c9a82d095e.jpg?crop=center&height=1200&v=1753232832&width=1200",
+        "alt": "DELLA Vario 12K wall mount mini split",
+        "price": "$779.96",
+        "variantId": "50314672013600",
+        "fullName": "DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.",
+        "type": "1-zone · Wall-mounted",
+        "capacity": "12K BTU",
+        "capacityLabel": "Capacity",
+        "specs": [
+            [
+                "Outdoor unit",
+                "12,000 BTU"
+            ],
+            [
+                "Voltage",
+                "208-230V"
+            ],
+            [
+                "Efficiency",
+                "23 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 550 sq. ft."
+            ]
+        ],
+        "configuration": ""
     },
-    wm18: {
-      title: 'DELLA Serena 18K 22 SEER2 Wall Mount',
-      url: 'https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/M.jpg?crop=center&height=1200&v=1750938870&width=1200',
-      alt: 'DELLA Serena 18K wall mount mini split',
-      meta: ['18K BTU', '22 SEER2', 'Up to 1,000 Sq.Ft.'],
-      price: '$1,049.96',
-      variantId: '50340329029920'
+    "wm18": {
+        "title": "Serena",
+        "url": "https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/M.jpg?crop=center&height=1200&v=1750938870&width=1200",
+        "alt": "DELLA Serena 18K wall mount mini split",
+        "price": "$1,049.96",
+        "variantId": "50340329029920",
+        "fullName": "DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.",
+        "type": "1-zone · Wall-mounted",
+        "capacity": "18K BTU",
+        "capacityLabel": "Capacity",
+        "specs": [
+            [
+                "Outdoor unit",
+                "18,000 BTU"
+            ],
+            [
+                "Voltage",
+                "208-230V"
+            ],
+            [
+                "Efficiency",
+                "22 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 1,000 sq. ft."
+            ]
+        ],
+        "configuration": ""
     },
-    wmDual: {
-      title: 'DELLA Optima 18K Dual-Zone Wall Mount',
-      url: 'https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/1D2-TP_D912_190d6355-b12a-4b9a-b7d5-4194e79b7ce9.jpg?crop=center&height=1200&v=1755843982&width=1200',
-      alt: 'DELLA Optima dual-zone wall mount mini split',
-      meta: ['18K BTU', '9K + 12K', 'Up to 950 Sq.Ft.'],
-      price: '$2,039.96',
-      variantId: '50589452206368'
+    "wmDual": {
+        "title": "Optima",
+        "url": "https://dellahome.com/products/optima-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/1D2-TP_D912_190d6355-b12a-4b9a-b7d5-4194e79b7ce9.jpg?crop=center&height=1200&v=1755843982&width=1200",
+        "alt": "DELLA Optima dual-zone wall mount mini split",
+        "price": "$2,039.96",
+        "variantId": "50589452206368",
+        "fullName": "DELLA Optima Series 18000 BTU Dual Zone Mini Split AC (9K+12K) - Up to 950 Sq.Ft.",
+        "type": "2-zone · Wall-mounted",
+        "capacity": "9K + 12K BTU",
+        "capacityLabel": "Indoor units",
+        "specs": [
+            [
+                "Outdoor unit",
+                "18,000 BTU"
+            ],
+            [
+                "Voltage",
+                "230V"
+            ],
+            [
+                "Efficiency",
+                "24 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 950 sq. ft."
+            ]
+        ],
+        "configuration": ""
     },
-    wmTri: {
-      title: 'DELLA Vario 28K Tri-Zone Wall Mount',
-      url: 'https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft',
-      image: 'https://dellahome.com/cdn/shop/files/1D3-TL_T9912_446cf294-beb5-4875-a441-a2080050a4bb.jpg?crop=center&height=1200&v=1767063190&width=1200',
-      alt: 'DELLA Vario tri-zone wall mount mini split',
-      meta: ['28K BTU', '9K + 9K + 12K', 'Up to 1,350 Sq.Ft.'],
-      price: '$2,484.96',
-      variantId: '50576037576992'
+    "wmTri": {
+        "title": "Vario",
+        "url": "https://dellahome.com/products/vario-series-28000-btu-tri-zone-mini-split-ac-9k-9k-12k-up-to-1350-sq-ft",
+        "image": "https://dellahome.com/cdn/shop/files/1D3-TL_T9912_446cf294-beb5-4875-a441-a2080050a4bb.jpg?crop=center&height=1200&v=1767063190&width=1200",
+        "alt": "DELLA Vario tri-zone wall mount mini split",
+        "price": "$2,484.96",
+        "variantId": "50576037576992",
+        "fullName": "DELLA Vario Series 28000 BTU Tri-Zone Mini Split AC (9K+9K+12k) - Up to 1350 Sq.Ft.",
+        "type": "3-zone · Wall-mounted",
+        "capacity": "9K + 9K + 12K BTU",
+        "capacityLabel": "Indoor units",
+        "specs": [
+            [
+                "Outdoor unit",
+                "28,000 BTU"
+            ],
+            [
+                "Voltage",
+                "230V"
+            ],
+            [
+                "Efficiency",
+                "20 SEER2"
+            ],
+            [
+                "Coverage",
+                "Up to 1,350 sq. ft."
+            ]
+        ],
+        "configuration": ""
     }
-  };
+};
   const projectProductSets = {
     living: ['cc12', 'wm12', 'cc18', 'wm18'],
     bedroom: ['wm12', 'wm18', 'cc12', 'cc18'],
@@ -2217,21 +2302,17 @@ main.page h2 {
     projectProductGrid.dataset.projectProducts = projectKey;
     projectProductGrid.innerHTML = productKeys.map((key) => {
       const product = projectProductItems[key];
-      return `
-        <article class="project-product-card">
-          <a class="project-product-card__image" href="${product.url}">
-            <img src="${product.image}" alt="${product.alt}" loading="lazy">
-          </a>
+      return `<article class="project-product-card" data-product-key="${key}">
+          <a class="project-product-card__image" href="${product.url}"><img src="${product.image}" alt="${product.alt}" loading="lazy"></a>
           <div class="project-product-card__body">
+            <p class="project-product-card__type">${product.type}</p>
             <h3 class="project-product-card__title"><a href="${product.url}">${product.title}</a></h3>
-            <div class="project-product-card__meta">
-              ${product.meta.map((item) => `<span>${item}</span>`).join('')}
-            </div>
-            <div class="project-product-card__price">${product.price}</div>
-            <a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=${product.variantId}&quantity=1">Add to Cart</a>
+            <p class="project-product-card__capacity"><span>${product.capacityLabel}</span><strong>${product.capacity}</strong></p>
+            <dl class="project-product-card__specs">${product.specs.map(([label,value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl>
+            <details class="project-product-card__identity"><summary>Full model name</summary><p>${product.fullName}</p></details>
+            <div class="project-product-card__purchase">${product.configuration ? `<p class="project-product-card__configuration">${product.configuration} <a href="${product.url}">Choose a line set</a></p>` : ''}<div class="project-product-card__price">${product.price}</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=${product.variantId}&quantity=1">Add to Cart</a></div>
           </div>
-        </article>
-      `;
+        </article>`;
     }).join('');
   }
 
@@ -2245,12 +2326,25 @@ main.page h2 {
         const isActive = item === tab;
         item.classList.toggle('is-active', isActive);
         item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        item.tabIndex = isActive ? 0 : -1;
       });
 
       projectProductLabel.textContent = tabData.label;
       projectProductTitle.textContent = tabData.title;
       projectProductCopy.textContent = tabData.copy;
       renderProjectProducts(projectKey);
+    });
+  });
+
+  projectProductTabs.forEach((tab,index) => {
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+    tab.addEventListener('keydown', event => {
+      const destinations = {ArrowRight:(index+1)%projectProductTabs.length,ArrowLeft:(index-1+projectProductTabs.length)%projectProductTabs.length,Home:0,End:projectProductTabs.length-1};
+      if (!(event.key in destinations)) return;
+      event.preventDefault();
+      const next = projectProductTabs[destinations[event.key]];
+      next.click();next.focus();
+      next.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});
     });
   });
 

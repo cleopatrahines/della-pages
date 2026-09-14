@@ -50,3 +50,11 @@ Recommended events:
 - Confirm no static price copy or demo pricing note remains.
 - Confirm images have meaningful alt text.
 - Confirm page title and meta description are set in Shopify.
+
+## Product-card reuse — 2026-09-14
+
+Owner authorized continuing the single-page rollout. Current implementation preserves eight products, their original PDP and Add to Cart variant IDs, the four project sets, checker logic, hero, comparison, room scenes, services and FAQ. Cards display installation style, short series/title, capacity or indoor combination, separate outdoor capacity, voltage, efficiency, coverage, full-name disclosure and the selected variant price. Two single-zone cassette cart variants have no line set; cards label that configuration and link to the original PDP for line-set selection. Vario 12K price is updated to the verified $779.96. Source evidence: commerce-product-data.json.
+
+Desktop uses four columns from 1200px, medium screens two, and mobile through 780px one card with full-width specifications, disclosure and purchase. Static default cards and dynamic project renders match. Arrow keys/Home/End operate the project tabs. Local Chrome verification: 56/56 checks across four groups at 1440/1280/1199/1024/800/780/430/390/360px, product text at 200% on 390/1024px, model disclosure, original checker, comparison toggle, no-JS initial cards, images, metadata/schema preservation and script errors. Cart destinations were inspected without adding items.
+
+Evidence and backup: C:/Users/18041/Documents/Playground/della-ui-review-20260911/cassette-wall-pilot-20260914/. Prices are dated snapshots; shared hydration and Shopify-theme integration remain separate. Local review is ready; this revision has not been committed or pushed. Next action: visual review and explicit publication instruction, then the next single page.
