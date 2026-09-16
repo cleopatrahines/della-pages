@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 <title>Mini Split for Attic | Concealed Ducted, Ceiling Cassette & Wall-Mounted Options | DELLA</title>
 <meta name="description" content="Shop the best mini split for attic bedrooms, lofts, and finished attic rooms. Compare concealed ducted, ceiling cassette, wall-mounted, and multi-zone systems from DELLA.">
 <link rel="canonical" href="https://dellahome.com/pages/mini-split-for-attic">
@@ -15,11 +16,35 @@
 <meta name="twitter:title" content="Mini Split for Attic | DELLA">
 <meta name="twitter:description" content="Compare concealed ducted, ceiling cassette, wall-mounted, and multi-zone attic mini split options from DELLA.">
 <meta name="twitter:image" content="https://dellahome.com/cdn/shop/files/DC-9K2V-20S-I_O-PP-1_24703191-651e-4e5c-98b6-d34be59616e2.jpg?v=1770953786&width=800">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
+@font-face {
+  font-family: "Spectral";
+  src: url("Mini%20Split%20for%20Bedroom/assets/Spectral-PageFly-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("Mini%20Split%20for%20Bedroom/assets/Spectral-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Mini%20Split%20for%20Bedroom/assets/Poppins-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Mini%20Split%20for%20Bedroom/assets/Poppins-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 :root {
   --navy: #0E1953;
   --blue: #5884E7;
@@ -33,7 +58,9 @@
   --text-body: #1A2550;
   --text-muted: #5C6A8A;
   --white: #fff;
-  --font: 'Roboto', sans-serif;
+  --font-display: "Spectral", Georgia, serif;
+  --font-body: "Poppins", Arial, sans-serif;
+  --font: var(--font-body);
   --radius: 12px;
   --radius-lg: 16px;
   --shadow-sm: 0 1px 2px rgba(14,25,83,.04), 0 1px 1px rgba(14,25,83,.03);
@@ -41,275 +68,316 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
   color: var(--text-body);
   background: var(--white);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.58;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.section { padding: 56px 0; }
+.section { padding: 68px 0; }
 
-.section-label {
-  font-family: var(--font); font-size: 12px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--blue);
-  margin-bottom: 12px; display: inline-flex; align-items: center;
-  padding: 8px 16px; border-radius: 999px; background: var(--blue-light); white-space: nowrap;
-}
+.section-header { margin-bottom: 34px; }
+
 .section-title {
-  font-family: var(--font); font-size: clamp(23px, 3vw, 33px); font-weight: 600;
-  line-height: 1.2; letter-spacing: -.01em; color: var(--navy);
+  font-family: var(--font-display); font-size: clamp(32px, 3.25vw, 42px); font-weight: 500;
+  line-height: 1.14; letter-spacing: 0; color: var(--navy);
 }
-.section-desc { font-size: 18px; color: var(--text-muted); line-height: 1.65; margin-top: 10px; }
+.section-desc { font-family: var(--font-body); font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  font-family: var(--font); font-size: 15px; font-weight: 600;
-  padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;
-  transition: all .2s ease; white-space: nowrap;
+  font-family: var(--font-body); font-size: 14px; font-weight: 600;
+  min-height: 46px; padding: 12px 20px; border-radius: 4px; border: none; cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+  text-align: center; overflow-wrap: anywhere;
 }
 .btn-navy { background: var(--blue); color: #fff; border: 1px solid var(--blue); }
 .btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-200); }
 .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
-.btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.3); }
-.btn-outline-white:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
-.btn-lg { padding: 16px 32px; font-size: 17px; }
+.btn-collection { background: var(--white); color: var(--navy); border: 1.5px solid var(--navy); }
+.btn-collection:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.btn-lg { min-height: 48px; padding: 13px 24px; font-size: 14px; }
 
 /* ── HERO ── */
-.hero { position: relative; min-height: 620px; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
-.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.hero { position: relative; min-height: 520px; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
+.hero-media { position: absolute; inset: 0; display: block; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(14,25,83,.78) 0%, rgba(14,25,83,.48) 38%, rgba(14,25,83,.18) 66%, rgba(14,25,83,.04) 100%); }
 .hero-content { position: relative; z-index: 2; width: 100%; }
-.hero-inner { padding: 72px 0; max-width: 780px; }
-.hero h1 { font-family: var(--font); font-size: clamp(33px, 5vw, 53px); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; color: #fff; margin-bottom: 16px; }
+.hero-inner { padding: 64px 0; max-width: 680px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(42px, 5vw, 60px); font-weight: 500; line-height: 1.06; letter-spacing: 0; color: #fff; margin-bottom: 18px; }
 .hero h1 em { font-style: normal; color: #7BA4FF; }
-.hero-text { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.78); margin-bottom: 24px; max-width: 700px; }
-.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.hero-actions .btn-lg { min-height: 50px; padding: 14px 26px; font-size: 16px; }
-.hero-actions .btn-navy { border: 1px solid var(--blue); }
-.hero-actions .btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); transform: none; }
-.hero-actions .btn-outline-white { color: rgba(255,255,255,.92); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); }
-.hero-actions .btn-outline-white:hover { color: var(--blue); border-color: var(--blue); background: var(--blue-light); }
+.hero-text { font-family: var(--font-body); font-size: 17px; line-height: 1.68; color: rgba(255,255,255,.82); margin-bottom: 0; max-width: 620px; }
 
-/* ── DECISION BAR ── */
-.decision-section { padding: 56px 0; }
-.decision-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 8px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); margin-top: 32px; }
-.decision-card { display: flex; flex-direction: column; align-items: flex-start; padding: 16px 16px 14px; border-radius: var(--radius); text-align: left; transition: all .18s; }
-.decision-card:hover { background: var(--blue-light); transform: translateY(-1px); }
-.decision-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
-.decision-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.8; }
-.decision-label { font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.decision-hint { font-size: 13px; color: var(--text-muted); line-height: 1.45; margin-bottom: 10px; }
-.decision-cta { font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--blue); display: inline-flex; align-items: center; margin-top: auto; transition: color .15s; }
-.decision-card:hover .decision-cta { color: var(--navy); }
+/* ── ANCHOR NAV ── */
+.anchor-nav { background: var(--gray-50); }
+.anchor-nav ul { list-style: none; display: flex; justify-content: center; gap: 10px; overflow-x: auto; padding: 14px 0; -webkit-overflow-scrolling: touch; }
+.anchor-nav a { display: inline-flex; align-items: center; white-space: nowrap; min-height: 40px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--gray-200); background: var(--white); font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--navy); transition: border-color .2s, color .2s, background .2s; }
+.anchor-nav a:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.anchor-nav a:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
-/* ── SYSTEM COMPARE ── */
-.capacity-section { background: var(--gray-50); padding-bottom: 56px; }
-.capacity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
-.capacity-card { background: var(--white); padding: 40px 32px 36px; display: flex; flex-direction: column; transition: all .2s; position: relative; }
-.capacity-card:hover { background: var(--gray-50); box-shadow: var(--shadow-sm); }
-.capacity-card.is-featured { background: #162663; color: #fff; z-index: 2; box-shadow: 0 4px 14px rgba(14,25,83,.06); border: 2px solid var(--blue); padding-top: 52px; }
-.capacity-badge { position: absolute; top: 16px; right: 16px; background: #5884E7; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
-.capacity-kicker { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
-.capacity-card.is-featured .capacity-kicker { color: var(--blue-mid); }
-.capacity-type { font-family: var(--font); font-size: clamp(28px, 3vw, 38px); font-weight: 700; line-height: 1.1; color: var(--navy); margin-bottom: 8px; }
-.capacity-card.is-featured .capacity-type { color: #fff; white-space: nowrap; }
-.capacity-desc { font-size: 15px; color: var(--text-muted); line-height: 1.55; margin-bottom: 24px; }
-.capacity-card.is-featured .capacity-desc { color: rgba(255,255,255,.7); }
-.capacity-points { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; padding: 0; }
-.capacity-points li { font-size: 14px; font-weight: 600; color: var(--navy); padding-left: 22px; position: relative; line-height: 1.4; }
-.capacity-points li::before { content: '\2713'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
-.capacity-card.is-featured .capacity-points li { color: #fff; }
-.capacity-card.is-featured .capacity-points li::before { color: #B7C8FF; }
-.capacity-cta { margin-top: auto; font-size: 14px; font-weight: 700; color: var(--navy); letter-spacing: .02em; display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 46px; padding: 12px 16px; border: 1px solid var(--gray-200); border-radius: 4px; background: #fff; transition: all .2s; }
-.capacity-card:hover .capacity-cta { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
-.capacity-card.is-featured .capacity-cta { background: #5884E7; color: #fff; padding: 14px 24px; width: 100%; font-size: 15px; border: 1px solid #5884E7; }
-.capacity-card.is-featured .capacity-cta:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
+/* ── SYSTEM COMPARE (tabs) ── */
+.compare-section { background: var(--gray-50); }
+.anchor-alias { display: block; position: relative; top: -16px; height: 0; visibility: hidden; }
+.cmp-shell { max-width: 1080px; margin: 0 auto; }
+.cmp { min-width: 0; }
+.cmp-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.cmp-tab {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--navy);
+  background: var(--white); border: 1.5px solid var(--gray-200); border-radius: 999px;
+  min-height: 46px; padding: 11px 20px;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.cmp-tab:hover { border-color: var(--blue); color: var(--blue); }
+.cmp-tab[aria-selected="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.cmp-tab:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
+.cmp-panel { display: grid; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden; }
+.cmp-panel[hidden] { display: none; }
+html.no-js .cmp-panel[hidden] { display: grid; }
+.cmp-media { position: relative; background: var(--gray-100); border-bottom: 1px solid var(--gray-200); }
+.cmp-media img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%; display: block; }
+.cmp-media.is-loading::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0) 32%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 68%) 0 0 / 220% 100% no-repeat; animation: cmpShimmer 1.1s linear infinite; }
+@keyframes cmpShimmer { from { background-position: 130% 0; } to { background-position: -130% 0; } }
+@media (prefers-reduced-motion: reduce) { .cmp-media.is-loading::after { animation: none; } }
+.cmp-body { padding: 24px 32px 26px; min-width: 0; }
+.cmp-title { font-family: var(--font-display); font-size: 25px; font-weight: 500; line-height: 1.16; color: var(--navy); margin: 0 0 8px; overflow-wrap: anywhere; }
+.cmp-text { font-family: var(--font-body); font-size: 15px; line-height: 1.62; color: var(--text-muted); margin: 0 0 16px; max-width: 860px; }
+.cmp-conditions { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 28px; }
+.cmp-conditions li { position: relative; padding: 0 0 0 20px; font-family: var(--font-body); font-size: 13.5px; line-height: 1.55; color: var(--text-body); }
+.cmp-conditions li::before { content: ''; position: absolute; left: 2px; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+.cmp-more { margin-top: 12px; }
+.cmp-more summary { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; color: var(--navy); font-family: var(--font-body); font-size: 13.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cmp-more summary:hover { color: var(--blue); }
+.cmp-more summary:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.cmp-more ul { list-style: none; margin: 2px 0 0; padding: 0 0 4px; display: grid; gap: 7px; }
+.cmp-more li { position: relative; padding: 0 0 0 20px; font-family: var(--font-body); font-size: 13.5px; line-height: 1.55; color: var(--text-muted); }
+.cmp-more li::before { content: ''; position: absolute; left: 2px; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--blue-mid); }
+.cmp-actions { display: flex; justify-content: flex-end; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--gray-200); }
+.cmp-actions .btn { width: auto; background: var(--navy); color: #fff; border: 1px solid var(--navy); }
+.cmp-actions .btn:hover { background: #fff; color: var(--navy); border-color: var(--navy); }
+.cmp-actions .btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
-/* ── USE CASE BENTO ── */
-.use-section { background: var(--white); }
-.use-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 420px 340px; gap: 12px; margin-top: 40px; }
-.use-card { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--navy); cursor: pointer; }
-.use-card.wide { grid-column: span 12; }
-.use-card.narrow { grid-column: span 6; }
-.use-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
-.use-card:hover img { transform: scale(1.05); }
-.use-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,25,83,.76) 0%, rgba(14,25,83,.32) 32%, rgba(14,25,83,.06) 60%, transparent 100%); }
-.use-card-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 24px; }
-.use-card h3 { font-family: var(--font); font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.use-card.wide h3 { font-size: 20px; }
-.use-card p { font-size: 15px; color: rgba(255,255,255,.88); line-height: 1.45; margin: 0; }
-.use-card-rec { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 5px 12px; border-radius: 4px; margin-bottom: 10px; }
-.use-card-rec svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+/* ── CUTAWAY ── */
+.cut-section { background: var(--white); }
+.cut-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.cut-figure { margin: 0; min-width: 0; }
+.cut-media { position: relative; aspect-ratio: 3 / 2; background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden; }
+.cut-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.cut-marker {
+  position: absolute; width: 32px; height: 32px; margin: 0; padding: 0;
+  transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 3px solid #fff; background: var(--blue); color: #fff;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600; line-height: 1; cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(14,25,83,.28), 0 4px 10px rgba(14,25,83,.28);
+  transition: background .2s, box-shadow .2s, transform .15s;
+}
+.cut-marker::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; }
+.cut-marker:hover { transform: translate(-50%, -50%) scale(1.08); }
+.cut-marker[aria-pressed="true"] { background: var(--navy); box-shadow: 0 0 0 4px rgba(88,132,231,.5), 0 4px 12px rgba(14,25,83,.36); }
+.cut-marker:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.cut-caption { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-family: var(--font-body); font-size: 12.5px; line-height: 1.55; color: var(--text-muted); }
+.cut-caption span { flex: 1 1 auto; min-width: 0; max-width: 620px; }
+.cut-zoom { appearance: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: 40px; padding: 8px 16px; border-radius: 4px; border: 1.5px solid var(--gray-200); background: transparent; color: var(--navy); font-family: var(--font-body); font-size: 13px; font-weight: 600; white-space: nowrap; transition: border-color .2s, color .2s, background .2s; }
+.cut-zoom:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.cut-zoom:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.cut-original { display: none; }
+.cut-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.cut-item { min-width: 0; }
+.cut-item-btn { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 14px; width: 100%; text-align: left; cursor: pointer; background: var(--white); border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px 18px; font-family: var(--font-body); transition: border-color .2s, background .2s, box-shadow .2s; }
+.cut-item-btn:hover { border-color: var(--blue); }
+.cut-item.is-active .cut-item-btn { border-color: var(--blue); background: var(--blue-light); box-shadow: var(--shadow-sm); }
+.cut-item-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.cut-item-num { grid-row: 1 / span 2; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); color: var(--navy); font-size: 13px; font-weight: 600; }
+.cut-item.is-active .cut-item-num { background: var(--blue); color: #fff; }
+.cut-item-title { display: block; font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.2; color: var(--navy); }
+.cut-item-text { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.55; color: var(--text-muted); }
 
-/* ── PRODUCTS (old-house layout) ── */
-.products-section { background: var(--gray-50); padding-top: 56px; }
-.products-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 38px; }
-.product-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; display: flex; align-items: center; gap: 28px; padding: 26px 28px 24px; transition: all .25s; }
-.product-feature:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
-.product-img-wrap { position: relative; background: transparent; padding: 0; overflow: visible; display: flex; align-items: center; justify-content: center; }
-.product-feature .product-img-wrap { flex: 0 0 48%; max-width: 480px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.product-img-wrap img { width: auto; max-width: 100%; height: auto; display: block; transition: transform .3s; }
-.product-feature .product-img-wrap img { max-height: 340px; }
-.product-feature .product-badge { position: static; align-self: flex-start; }
-.product-feature:hover .product-img-wrap img, .product-card:hover .product-img-wrap img { transform: scale(1.04); }
-.product-badge { position: absolute; top: 0; left: 0; z-index: 2; background: var(--blue); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
-.product-body { padding: 0; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
-.product-copy, .product-action { display: flex; flex-direction: column; min-width: 0; }
-.product-copy { gap: 8px; }
-.product-action { gap: 12px; align-items: flex-start; }
-.product-name { font-family: var(--font); font-size: 16px; font-weight: 600; color: var(--navy); line-height: 1.35; }
-.product-feature .product-body { flex: 1; max-width: 420px; gap: 12px; align-self: center; justify-content: flex-start; padding-top: 12px; }
-.product-feature .product-name { font-size: 21px; }
-.product-feature .product-price { font-size: 22px; }
-.product-feature .product-copy { gap: 6px; }
-.product-feature .product-action { gap: 12px; }
-.product-rating { font-size: 14px; color: var(--text-muted); line-height: 1.35; }
-.product-rating strong { color: var(--navy); font-weight: 700; }
-.product-card .product-rating { font-size: 12px; }
-.product-card .product-rating strong { font-weight: 600; }
-.product-spec { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
-.product-lead { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
-.product-price { font-family: var(--font); font-size: 20px; font-weight: 700; color: var(--navy); }
-.product-cta { display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; padding: 12px 22px; border-radius: 4px; background: var(--blue); color: #fff; border: 1px solid var(--blue); transition: all .2s; align-self: flex-start; white-space: nowrap; }
-.product-feature .product-cta, .product-card .product-cta { min-width: 198px; min-height: 48px; }
-.product-feature .product-cta:hover, .product-card .product-cta:hover { background: #fff; color: var(--blue); border-color: var(--blue); }
-.product-bottom-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.product-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: all .25s; }
-.product-card:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
-.product-card .product-img-wrap { padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 200px; }
-.product-card .product-img-wrap img { max-height: 180px; width: auto; }
-.product-card .product-body { flex: 1; padding: 0 24px 24px; gap: 14px; justify-content: space-between; }
-.product-card .product-copy { gap: 6px; }
-.product-card .product-action { gap: 10px; }
-.product-card .product-name { font-size: 15px; line-height: 1.3; }
-.product-card .product-price { font-size: 18px; }
-.product-card .product-cta { min-width: 0; width: 100%; justify-content: center; font-size: 14px; min-height: 44px; }
+.cut-dialog { margin: auto; border: none; border-radius: 14px; padding: 0; width: min(1200px, 94vw); max-width: calc(100vw - 32px); max-height: calc(100vh - 32px); background: var(--white); box-shadow: 0 24px 60px rgba(14,25,83,.35); overflow: hidden; }
+.cut-dialog[open] { display: flex; flex-direction: column; }
+.cut-dialog::backdrop { background: rgba(14,25,83,.72); }
+.cut-dialog-media { position: relative; flex: 1 1 auto; min-height: 0; overflow: auto; padding: 14px; background: var(--gray-100); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+.cut-dialog-media img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); margin: 0; }
+.cut-dialog-media.is-loading::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0) 32%, rgba(255,255,255,.6) 50%, rgba(255,255,255,0) 68%) 0 0 / 220% 100% no-repeat; animation: cmpShimmer 1.1s linear infinite; }
+.cut-dialog-bar { flex: none; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--gray-200); background: var(--white); }
+.cut-dialog-bar p { margin: 0; font-family: var(--font-body); font-size: 12.5px; line-height: 1.5; color: var(--text-muted); max-width: 640px; }
+.cut-dialog-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cut-dialog-actions a { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
 
-/* ── BEFORE YOU BUY — shed checklist ── */
-.byb-section { background: var(--gray-50); padding-top: 56px; padding-bottom: 56px; }
-.byb-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--gray-200); }
-.byb-card { padding: 40px 36px; border-bottom: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); position: relative; transition: background .25s ease; }
-.byb-card:nth-child(2n) { border-right: none; }
-.byb-card:nth-last-child(-n+2) { border-bottom: none; }
-.byb-card:first-child { border-left: none; }
-.byb-card:hover { background: #FCFDFF; }
-.byb-card-num { font-family: var(--font); font-size: 64px; font-weight: 700; color: rgba(88,132,231,.10); line-height: 1; position: absolute; top: 20px; right: 24px; }
-.byb-card h4 { font-family: var(--font); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-.byb-card p { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin: 0; }
-.byb-card .byb-start { font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-light); padding: 3px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; letter-spacing: .04em; }
+/* Product merchandising */
+.products-section { background:var(--gray-50); padding-top:64px; padding-bottom:72px; }
+.products-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; margin-top:0; align-items:stretch; }
+.product-card { min-width:0; display:flex; flex-direction:column; background:var(--white); border:1px solid var(--gray-200); border-radius:14px; transition:border-color .2s, box-shadow .2s; }
+.product-card:hover { border-color:var(--blue); box-shadow:var(--shadow-sm); }
+.product-badge { align-self:flex-start; max-width:100%; background:var(--blue); color:#fff; font-family:var(--font-body); font-size:11px; font-weight:600; line-height:1.5; padding:5px 11px; border-radius:4px; overflow-wrap:anywhere; }
+.product-img-wrap { display:flex; align-items:center; justify-content:center; min-width:0; padding:20px 22px; }
+.product-img-wrap img { display:block;width:100%;height:100%;object-fit:contain; }
+.product-body { display:flex;flex-direction:column;flex:1;min-width:0;padding:0 22px 24px; }
+.product-type { margin:0 0 8px;color:var(--text-muted);font-family:var(--font-body);font-size:12px;line-height:1.5; }
+.product-name { margin:0;color:var(--navy);font-family:var(--font-display);font-size:24px;font-weight:500;line-height:1.16;overflow-wrap:break-word;word-break:normal; }
+.product-name a { color:inherit; }
+.product-capacity { margin:11px 0 0;color:var(--navy);font-family:var(--font-body);line-height:1.5; }
+.product-capacity span { display:block;color:var(--text-muted);font-size:12px; }
+.product-capacity strong { font-size:15px;font-weight:600; }
+.product-specs { margin:20px 0 0;border-top:1px solid var(--gray-200); }
+.product-specs div { display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--gray-200);font-family:var(--font-body);font-size:13px;line-height:1.5; }
+.product-specs dt { color:var(--text-muted);min-width:0;overflow-wrap:anywhere; }
+.product-specs dd { margin:0;text-align:right;color:var(--navy);font-weight:600;min-width:0;overflow-wrap:anywhere; }
+.product-identity { margin:8px 0 0;color:var(--text-muted);font-family:var(--font-body);font-size:13px;line-height:1.5; }
+.product-identity summary { min-height:44px;padding:12px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px; }
+.product-identity p { margin:0 0 12px;overflow-wrap:anywhere;word-break:normal; }
+.product-action { display:flex;flex-direction:column;gap:12px;margin-top:auto;padding-top:16px;min-width:0; }
+.product-price-note { margin:0;color:var(--text-muted);font-family:var(--font-body);font-size:12px;line-height:1.5; }
+.product-price { margin:0;color:var(--navy);font-family:var(--font-display);font-size:28px;font-weight:700;line-height:1.2; }
+.product-cta { display:flex;justify-content:center;align-items:center;min-height:48px;width:100%;padding:12px 16px;border-radius:4px;background:var(--navy);color:#fff;border:1px solid var(--navy);font-family:var(--font-body);font-size:13px;font-weight:600;line-height:1.4;text-align:center;overflow-wrap:anywhere; }
+.product-cta:hover { background:#fff;color:var(--navy);border-color:var(--navy); }
+.product-card .product-badge { margin:20px 22px 0; }
+.product-card .product-img-wrap { height:230px; }
+.products-grid :is(a,summary):focus-visible { outline:2px solid var(--navy);outline-offset:3px; }
 
-/* ── SERVICES (exact copy from shed) ── */
-.services-section { background: var(--white); padding-top: 56px; padding-bottom: 56px; }
-.services-heading { text-align: left; margin-bottom: 18px; }
-.services-heading h2 { margin: 0; font-family: var(--font); font-size: clamp(23px, 3vw, 33px); font-weight: 600; line-height: 1.2; letter-spacing: -.01em; color: var(--navy); }
-.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.service-card { background: var(--blue-surface); border: 1px solid var(--gray-200); border-radius: 22px; padding: 28px 24px 24px; text-align: center; min-height: 100%; }
-.service-icon-wrap { width: 58px; height: 58px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
-.service-icon-wrap img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
-.service-title { margin: 0 0 10px; font-size: 17px; font-weight: 700; line-height: 1.25; color: var(--blue); }
-.service-desc { margin: 0; font-size: 16px; line-height: 1.5; color: var(--text-body); }
-
-/* ── FAQ (shed style) ── */
-.faq-section { background: var(--white); padding-top: 56px; padding-bottom: 56px; }
+/* ── BEDROOM SERVICE MODULE ── */
+.dsc-services {
+  --navy: #0e1953;
+  --blue: #5884e7;
+  --blue-light: #edf2ff;
+  --muted: #53617f;
+  --white: #fff;
+  background: var(--white);
+  padding: 48px 0;
+  color: var(--navy);
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+}
+.dsc-container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.dsc-heading { max-width: none; margin: 0 0 14px; color: var(--navy); font: 500 32px/1.15 Spectral, Georgia, serif; text-align: center; }
+.dsc-svc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 32px; }
+.dsc-svc { display: flex; flex-direction: column; align-items: center; padding: 30px 26px 28px; border-radius: 6px; background: var(--blue-light); text-align: center; }
+.dsc-svc__icon { display: flex; width: 58px; height: 58px; flex: none; align-items: center; justify-content: center; margin-bottom: 14px; border-radius: 50%; background: var(--blue); }
+.dsc-svc__icon img { display: block; width: 50px; height: 50px; }
+.dsc-svc h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+.dsc-svc h3 a:hover { border-bottom-color: currentColor; }
+.dsc-svc h3 { margin: 0 0 8px; color: var(--navy); font: 500 21px/1.4 Spectral, Georgia, serif; }
+.dsc-svc p { margin: 0; color: var(--muted); font-family: Poppins, Arial, sans-serif; font-size: 15px; line-height: 1.55; }
+.dsc-svc a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 1024px) {
+  .dsc-container { width: min(calc(100% - 44px), 1200px); }
+  .dsc-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+}
+@media (max-width: 560px) {
+  .dsc-container { width: calc(100% - 32px); }
+  .dsc-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .dsc-svc { padding: 22px 16px; }
+  .dsc-svc h3 { font-size: 17px; }
+  .dsc-svc p { font-size: 13px; }
+}
+.btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: 2px; }
+/* ── FAQ ── */
+.faq-section { background: var(--white); padding-top: 68px; padding-bottom: 52px; }
 .faq-list { margin-top: 28px; background: transparent; border: none; border-radius: 0; overflow: visible; }
 .faq-item { border-bottom: 1px solid var(--gray-200); transition: border-color .2s ease; }
 .faq-item:first-child { border-top: 1px solid var(--gray-200); }
-.faq-item.open { background: transparent; }
 .faq-item:last-child { border-bottom: none; }
-.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; cursor: pointer; gap: 16px; transition: color .2s ease; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; min-height: 58px; padding: 17px 0; cursor: pointer; gap: 16px; list-style: none; transition: color .2s ease; }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::marker { content: ''; }
 .faq-q:hover { background: transparent; }
-.faq-q h3 { font-family: var(--font); font-size: 16px; font-weight: 700; line-height: 1.3; color: #282828; flex: 1; margin: 0; transition: color .2s ease; }
-.faq-q:hover h3, .faq-item.open .faq-q h3 { color: var(--blue); }
+.faq-q:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; border-radius: 2px; }
+.faq-question { font-family: var(--font-body); font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--navy); flex: 1; margin: 0; overflow-wrap: anywhere; transition: color .2s ease; }
+.faq-q:hover .faq-question, .faq-item[open] .faq-question { color: var(--blue); }
 .faq-icon { width: 18px; height: 18px; flex-shrink: 0; position: relative; }
 .faq-icon::before { content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; border-right: 2px solid #282828; border-bottom: 2px solid #282828; transform: translate(-50%, -62%) rotate(45deg); transform-origin: center; transition: transform .25s ease, border-color .2s ease; }
-.faq-q:hover .faq-icon::before, .faq-item.open .faq-icon::before { border-color: var(--blue); }
-.faq-item.open .faq-icon::before { transform: translate(-50%, -38%) rotate(-135deg); }
-.faq-a { padding: 0 0 18px; font-size: 15px; line-height: 1.7; color: var(--text-muted); display: none; }
+.faq-q:hover .faq-icon::before, .faq-item[open] .faq-icon::before { border-color: var(--blue); }
+.faq-item[open] .faq-icon::before { border-color: var(--blue); transform: translate(-50%, -38%) rotate(-135deg); }
+.faq-a { padding: 0 0 19px; font-family: var(--font-body); font-size: 15px; line-height: 1.72; color: var(--text-muted); overflow-wrap: anywhere; }
 .faq-a a { color: var(--blue); text-decoration: none; }
-.faq-item.open .faq-a { display: block; }
 
-/* ── BOTTOM CTA (shed style) ── */
-.bottom-cta { background: transparent; padding: 0 0 28px; }
-.bottom-cta-card { background: var(--blue-surface); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 32px; text-align: center; }
-.bottom-cta h2 { font-family: var(--font); font-size: clamp(21px, 2.6vw, 29px); font-weight: 500; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
-.bottom-cta p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+/* ── BOTTOM CTA ── */
+.bottom-cta { background: transparent; padding: 0 0 40px; }
+.bottom-cta-card { background: var(--blue-surface); border: 1px solid var(--gray-200); border-radius: 14px; padding: 42px 32px; text-align: center; }
+.bottom-cta h2 { font-family: var(--font-display); font-size: clamp(28px, 2.8vw, 36px); font-weight: 500; color: var(--navy); margin-bottom: 10px; line-height: 1.15; }
+.bottom-cta p { font-family: var(--font-body); font-size: 15px; color: var(--text-muted); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.65; }
 .bottom-cta-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-.bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
-.bottom-cta .btn-navy:hover { background: #fff; color: var(--blue); border-color: var(--blue); box-shadow: none; }
+.bottom-cta .btn-lg { padding: 13px 20px; font-size: 14px; }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .cut-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
 @media (max-width: 768px) {
-  .section { padding: 48px 0; }
+  .section { padding: 52px 0; }
   .container { padding: 0 20px; }
-  .hero { min-height: 500px; }
-  .hero-inner { padding: 42px 0; max-width: 340px; }
-  .hero h1 { font-size: 26px; margin-bottom: 14px; }
-  .hero-text { font-size: 16px; line-height: 1.6; margin-bottom: 20px; max-width: none; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .hero-actions .btn-lg { min-width: 170px; min-height: 44px; padding: 10px 16px; font-size: 14px; justify-content: center; }
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .decision-section { padding: 36px 0; }
-  .decision-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .capacity-grid { grid-template-columns: 1fr; gap: 12px; }
-  .capacity-card.is-featured { transform: none; }
-  .use-grid { grid-template-columns: 1fr; grid-auto-rows: 280px; }
-  .use-card.wide, .use-card.narrow { grid-column: span 1; }
-  .products-grid { gap: 14px; margin-top: 28px; }
-  .product-bottom-row { grid-template-columns: 1fr; gap: 14px; }
-  .product-feature, .product-card { display: flex; flex-direction: column; align-items: stretch; gap: 14px; padding: 18px 18px 20px; min-height: auto; height: auto; }
-  .product-feature .product-img-wrap, .product-card .product-img-wrap { flex: none; width: 100%; min-width: 0; max-width: none; min-height: auto; align-self: stretch; }
-  .product-feature .product-img-wrap img, .product-card .product-img-wrap img { width: 100%; max-width: 100%; height: auto; max-height: none; }
-  .product-feature .product-badge, .product-card .product-badge { left: 0; }
-  .product-feature .product-body, .product-card .product-body { max-width: none; width: 100%; gap: 10px; align-items: center; text-align: center; }
-  .product-feature .product-copy, .product-card .product-copy { gap: 5px; width: 100%; align-items: center; text-align: center; }
-  .product-feature .product-action, .product-card .product-action { gap: 8px; align-items: center; width: 100%; }
-  .product-feature .product-name, .product-card .product-name { font-size: 16px; line-height: 1.3; }
-  .product-feature .product-rating, .product-card .product-rating { font-size: 12px; }
-  .product-feature .product-spec, .product-card .product-spec { font-size: 12px; line-height: 1.4; }
-  .product-feature .product-price, .product-card .product-price { font-size: 17px; }
-  .product-feature .product-cta, .product-card .product-cta { min-width: 148px; width: auto; padding: 8px 14px; font-size: 12px; align-self: center; }
-  .byb-section { padding: 40px 0; }
-  .byb-grid { grid-template-columns: 1fr; margin-top: 28px; }
-  .byb-card { padding: 28px 24px; border-right: none; }
-  .byb-card:first-child { border-left: none; }
-  .byb-card:nth-child(2n) { border-right: none; }
-  .byb-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
-  .byb-card:last-child { border-bottom: none; }
-  .byb-card-num { display: none; }
-  .services-section { padding-top: 36px; padding-bottom: 26px; }
-  .services-heading { margin-bottom: 18px; }
-  .services-heading h2 { font-size: 23px; }
-  .services-grid { grid-template-columns: 1fr; gap: 12px; }
-  .service-card { padding: 22px 18px 18px; border-radius: 18px; }
-  .service-icon-wrap { width: 52px; height: 52px; margin-bottom: 14px; }
-  .service-title { font-size: 16px; }
-  .service-desc { font-size: 15px; }
-  .faq-section { padding-top: 30px; padding-bottom: 24px; }
-  .bottom-cta { padding: 0 0 24px; }
-  .bottom-cta-card { padding: 20px 16px; }
-  .bottom-cta h2 { font-size: 24px; line-height: 1.2; margin-bottom: 8px; max-width: 280px; margin-left: auto; margin-right: auto; }
-  .bottom-cta p { font-size: 14px; line-height: 1.55; margin-bottom: 18px; max-width: 280px; }
+  .hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; }
+  .hero-media { position: relative; inset: auto; width: 100%; height: auto; order: 0; background: var(--navy); }
+  .hero-bg { position: relative; inset: auto; width: 100%; height: auto; object-fit: contain; object-position: top center; }
+  .hero-overlay { display: none; }
+  .hero-content { order: 1; background: var(--navy); }
+  .hero-inner { padding: 34px 0 40px; max-width: none; }
+  .hero h1 { max-width: 340px; font-size: 39px; line-height: 1.04; margin-bottom: 16px; }
+  .hero-text { font-size: 16px; line-height: 1.65; margin-bottom: 0; max-width: none; }
+  .section-header { margin-bottom: 28px; }
+  .section-title { font-size: clamp(29px, 8.5vw, 36px); }
+  .section-desc { font-size: 15px; line-height: 1.65; }
+  .anchor-nav ul { padding: 12px 0; justify-content: flex-start; }
+  .cmp-tabs { gap: 6px; margin-bottom: 16px; }
+  .cmp-tab { min-height: 44px; padding: 10px 15px; font-size: 13px; }
+  .cmp-body { padding: 22px 20px 24px; }
+  .cmp-title { font-size: 23px; }
+  .cmp-text { margin-bottom: 14px; }
+  .cmp-conditions { grid-template-columns: 1fr; gap: 7px; }
+  .cmp-actions .btn { width: 100%; }
+  .cmp-media img { object-position: 50% 40%; }
+  .cut-caption { flex-direction: column; align-items: flex-start; }
+  .cut-original { display: inline-flex; width: 100%; }
+  .cut-dialog-trigger { display: none; }
+  .faq-section { padding-top: 48px; padding-bottom: 34px; }
+  .bottom-cta { padding: 0 0 28px; }
+  .bottom-cta-card { padding: 30px 18px; }
+  .bottom-cta h2 { font-size: 29px; line-height: 1.14; margin-bottom: 9px; max-width: 300px; margin-left: auto; margin-right: auto; }
+  .bottom-cta p { font-size: 14px; line-height: 1.6; margin-bottom: 20px; max-width: 300px; }
   .bottom-cta-buttons { flex-direction: column; align-items: center; gap: 8px; }
-  .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
+  .bottom-cta .btn-lg { width: 100%; max-width: 230px; padding: 11px 16px; font-size: 14px; }
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-  .product-bottom-row { grid-template-columns: repeat(2, 1fr); }
-  .product-feature { flex-direction: column; align-items: stretch; gap: 18px; }
-  .product-feature .product-img-wrap { flex: none; width: 100%; max-width: 360px; min-height: auto; align-self: center; }
+
+@media (max-width: 767px) {
+  .products-section { padding-top:52px; padding-bottom:56px; }
+  .products-grid { grid-template-columns:1fr; gap:16px; margin-top:0; }
+  .product-card { display:grid;grid-template-columns:minmax(0,104px) minmax(0,1fr);column-gap:14px;row-gap:0;padding:18px;align-items:start; }
+  .product-card .product-badge { margin:0 0 15px;grid-column:1 / -1;justify-self:start; }
+  .product-card .product-img-wrap { grid-column:1;grid-row:2 / 5;align-self:center;min-height:126px;height:auto;aspect-ratio:1 / 1.08;padding:4px; }
+  .product-card .product-body { display:contents; }
+  .product-body > * { grid-column:1 / -1;min-width:0; }
+  .product-type { grid-column:2;grid-row:2;font-size:11.5px;margin-bottom:6px; }
+  .product-card .product-name { grid-column:2;grid-row:3;font-size:22px;line-height:1.12; }
+  .product-capacity { grid-column:2;grid-row:4;margin-top:7px; }
+  .product-capacity strong { font-size:14px; }
+  .product-specs { grid-column:1 / -1;grid-row:5;margin-top:16px; }
+  .product-specs div { align-items:flex-start;gap:8px; }
+  .product-identity { grid-column:1 / -1;grid-row:6;margin-top:7px; }
+  .product-action { grid-column:1 / -1;grid-row:7;margin-top:0;padding-top:13px; }
+  .product-price { font-size:27px; }
+  .product-cta { min-height:48px; font-size:13px; }
 }
+
+@media (max-width: 360px) {
+  .product-card { grid-template-columns:minmax(0,92px) minmax(0,1fr); column-gap:12px; padding:16px; }
+  .product-card .product-name { font-size:21px; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
   .hero-inner > * { animation: fadeUp .6s ease both; }
   .hero h1 { animation-delay: .08s; }
   .hero-text { animation-delay: .16s; }
-  .hero-actions { animation-delay: .24s; }
-  .hero-stats { animation-delay: .32s; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 }
 </style>
@@ -318,234 +386,291 @@ a { text-decoration: none; color: inherit; }
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="Mini%20Split%20for%20Attic/Mini%20Split%20for%20Attic%20banner.webp" alt="Finished attic room with daylight and sloped ceiling" width="2800" height="1200" loading="eager">
+  <picture class="hero-media">
+    <source media="(max-width: 768px)" srcset="Mini%20Split%20for%20Attic/One%20Finished%20Bedroom.webp">
+    <img class="hero-bg" src="Mini%20Split%20for%20Attic/Mini%20Split%20for%20Attic%20banner.webp" alt="Finished attic room with a DELLA wall-mounted indoor unit, sloped ceiling and daylight" width="2800" height="1200" loading="eager">
+  </picture>
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
       <h1>Mini Split for <em>Attic</em></h1>
-      <p class="hero-text">Attics run hotter in summer and colder in winter than any other room. A mini split fixes that without touching your existing ductwork.</p>
-      <div class="hero-actions">
-        <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="btn btn-navy btn-lg">Shop Concealed Ducted</a>
-        <a href="#compare" class="btn btn-outline-white btn-lg">Compare Attic Setups</a>
+      <p class="hero-text">Heat and cool a finished attic bedroom or loft with a mini split matched to the room and the space available for installation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANCHOR NAV -->
+<nav class="anchor-nav" aria-label="On this page">
+  <div class="container">
+    <ul>
+      <li><a href="#compare">Installation types</a></li>
+      <li><a href="#cutaway">Attic layout</a></li>
+      <li><a href="#shop-attic">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- COMPARE ATTIC SETUPS -->
+<section class="section compare-section" id="compare">
+  <div class="container">
+    <span id="find-setup" class="anchor-alias" aria-hidden="true"></span>
+    <div class="cmp-shell">
+    <div class="section-header">
+      <h2 class="section-title">Compare Attic Mini Split Types</h2>
+      <p class="section-desc">Compare how each installation type fits your attic.</p>
+    </div>
+
+    <div class="cmp" data-compare>
+      <div class="cmp-tabs" role="tablist" aria-label="Installation type">
+        <button class="cmp-tab" id="tab-wall" role="tab" aria-selected="true" aria-controls="panel-wall" tabindex="0">Wall-Mounted</button>
+        <button class="cmp-tab" id="tab-cassette" role="tab" aria-selected="false" aria-controls="panel-cassette" tabindex="-1">Ceiling Cassette</button>
+        <button class="cmp-tab" id="tab-ducted" role="tab" aria-selected="false" aria-controls="panel-ducted" tabindex="-1">Concealed Ducted</button>
+      </div>
+
+      <div class="cmp-panel" id="panel-wall" role="tabpanel" aria-labelledby="tab-wall" tabindex="0">
+        <div class="cmp-media">
+          <img src="Mini%20Split%20for%20Attic/room-wall-luxury-1080.webp" srcset="Mini%20Split%20for%20Attic/room-wall-luxury-600.webp 600w, Mini%20Split%20for%20Attic/room-wall-luxury-1080.webp 1080w, Mini%20Split%20for%20Attic/room-wall-luxury-1536.webp 1536w" sizes="(max-width: 767px) calc(100vw - 40px), 1080px" alt="Cream and champagne attic bedroom with a white wall-mounted mini split indoor unit mounted high on the wall above the bed" width="1536" height="1024" loading="eager" decoding="async">
+        </div>
+        <div class="cmp-body">
+          <h3 class="cmp-title">A visible indoor unit for one finished room</h3>
+          <p class="cmp-text">The indoor unit mounts on an available full-height wall and blows air directly into the room.</p>
+          <ul class="cmp-conditions">
+            <li>A full-height finished wall for the indoor unit</li>
+            <li>Clearance and unobstructed airflow</li>
+            <li>A route for the line set, drain and power</li>
+          </ul>
+          <details class="cmp-more">
+            <summary>More installation conditions</summary>
+            <ul>
+              <li>A confirmed outdoor location with the required clearances.</li>
+              <li>Wall construction that can support the mounting bracket.</li>
+            </ul>
+          </details>
+          <div class="cmp-actions">
+            <a class="btn btn-navy btn-lg" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall-Mounted Mini Splits</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-panel" id="panel-cassette" role="tabpanel" aria-labelledby="tab-cassette" tabindex="0" hidden>
+        <div class="cmp-media">
+          <img src="Mini%20Split%20for%20Attic/room-cassette-luxury-1080.webp" srcset="Mini%20Split%20for%20Attic/room-cassette-luxury-600.webp 600w, Mini%20Split%20for%20Attic/room-cassette-luxury-1080.webp 1080w, Mini%20Split%20for%20Attic/room-cassette-luxury-1536.webp 1536w" sizes="(max-width: 767px) calc(100vw - 40px), 1080px" alt="Walnut and wine-red living room with a white ceiling cassette mini split recessed in the flat ceiling" width="1536" height="1024" loading="lazy" decoding="async">
+        </div>
+        <div class="cmp-body">
+          <h3 class="cmp-title">Recessed in a flat ceiling section</h3>
+          <p class="cmp-text">The indoor unit sits in a flat ceiling section and distributes air from a recessed panel.</p>
+          <ul class="cmp-conditions">
+            <li>A flat ceiling section that fits the panel</li>
+            <li>Support and space above the ceiling</li>
+            <li>Filter and service access</li>
+          </ul>
+          <details class="cmp-more">
+            <summary>More installation conditions</summary>
+            <ul>
+              <li>Condensate drainage and a line-set route.</li>
+              <li>Structural support for the ceiling panel.</li>
+            </ul>
+          </details>
+          <div class="cmp-actions">
+            <a class="btn btn-navy btn-lg" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette Mini Splits</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-panel" id="panel-ducted" role="tabpanel" aria-labelledby="tab-ducted" tabindex="0" hidden>
+        <div class="cmp-media">
+          <img src="Mini%20Split%20for%20Attic/room-ducted-luxury-1080.webp" srcset="Mini%20Split%20for%20Attic/room-ducted-luxury-600.webp 600w, Mini%20Split%20for%20Attic/room-ducted-luxury-1080.webp 1080w, Mini%20Split%20for%20Attic/room-ducted-luxury-1536.webp 1536w" sizes="(max-width: 767px) calc(100vw - 40px), 1080px" alt="Graphite and light stone attic study with concealed ducted supply and return grilles set into the ceiling" width="1536" height="1024" loading="lazy" decoding="async">
+        </div>
+        <div class="cmp-body">
+          <h3 class="cmp-title">Hidden equipment with ceiling air outlets</h3>
+          <p class="cmp-text">The air handler is hidden in the roof space and serves the room through ceiling air outlets.</p>
+          <ul class="cmp-conditions">
+            <li>Space for a concealed air handler</li>
+            <li>Room for supply and return ducts</li>
+            <li>A service access point and drainage</li>
+          </ul>
+          <details class="cmp-more">
+            <summary>More installation conditions</summary>
+            <ul>
+              <li>Condensate drainage and a line-set route.</li>
+              <li>Filter access for routine maintenance.</li>
+            </ul>
+          </details>
+          <div class="cmp-actions">
+            <a class="btn btn-navy btn-lg" href="https://dellahome.com/collections/concealed-ducted-mini-split">Shop Concealed Ducted Mini Splits</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- QUICK DECISION BAR -->
-<section class="decision-section" id="find-setup">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">What's Your Setup?</span>
-      <h2 class="section-title">Find the Right Mini Split Setup for Your Attic</h2>
-    </div>
-    <div class="decision-grid">
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V10l7-6 7 6v10"/><path d="M5 10l7 4 7-4" stroke-dasharray="2 2"/></svg></div>
-        <div class="decision-label">Sloped Ceiling or Knee Wall</div>
-        <div class="decision-hint">Unit hides inside the structure.</div>
-        <div class="decision-cta">See Concealed Ducted</div>
-      </a>
-      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18v14H3z"/><path d="M3 6h18"/><circle cx="12" cy="13" r="3"/><path d="M12 10v-1m0 8v1m-4-4H7m10 0h-1"/></svg></div>
-        <div class="decision-label">Open Loft or Flat Ceiling</div>
-        <div class="decision-hint">Mounts flush into the ceiling.</div>
-        <div class="decision-cta">See Ceiling Cassette</div>
-      </a>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20V8h16v12"/><rect x="7" y="10" width="10" height="4" rx="1"/><path d="M10 14v2m4-2v2"/></svg></div>
-        <div class="decision-label">One Finished Bedroom</div>
-        <div class="decision-hint">Mounts high on the wall.</div>
-        <div class="decision-cta">Shop Wall-Mounted</div>
-      </a>
-      <a href="https://dellahome.com/collections/mini-split-multi-zone" class="decision-card">
-        <div class="decision-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v3.5a1 1 0 01-1 1H14"/><circle cx="17.5" cy="17.5" r=".5" fill="currentColor"/></svg></div>
-        <div class="decision-label">Attic Plus More Rooms</div>
-        <div class="decision-hint">One outdoor unit, multiple rooms.</div>
-        <div class="decision-cta">See Multi-Zone</div>
-      </a>
     </div>
   </div>
 </section>
 
-<!-- SYSTEM TYPE COMPARE -->
-<section class="section capacity-section" id="compare">
+<!-- ATTIC LAYOUT CUTAWAY -->
+<section class="section cut-section" id="cutaway">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Compare System Types</span>
-      <h2 class="section-title">Choose by Your Attic Layout</h2>
-      <p class="section-desc">Your ceiling shape picks the system type.</p>
+      <h2 class="section-title">Plan a Concealed Attic Installation</h2>
+      <p class="section-desc">Check equipment space, service access, airflow and the outdoor route.</p>
     </div>
-    <div class="capacity-grid">
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="capacity-card">
-        <span class="capacity-kicker">Simplest Install</span>
-        <div class="capacity-type">Wall-Mounted</div>
-        <p class="capacity-desc">One finished room with enough wall height for a high-wall unit.</p>
-        <ul class="capacity-points"><li>Easiest install path</li><li>Most affordable option</li><li>9K–18K BTU range</li></ul>
-        <span class="capacity-cta">Shop Wall-Mounted</span>
-      </a>
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="capacity-card is-featured">
-        <span class="capacity-badge">Best for Most Attics</span>
-        <span class="capacity-kicker">Sloped Ceilings &amp; Knee Walls</span>
-        <div class="capacity-type">Concealed Ducted</div>
-        <p class="capacity-desc">Air handler hides inside the knee wall or ceiling cavity. Only small grilles show.</p>
-        <ul class="capacity-points"><li>Slopes, knee walls, dormers</li><li>Completely hidden install</li><li>9.5K–18K BTU range</li></ul>
-        <span class="capacity-cta">Shop Concealed Ducted</span>
-      </a>
-      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="capacity-card">
-        <span class="capacity-kicker">Open Layouts</span>
-        <div class="capacity-type">Ceiling Cassette</div>
-        <p class="capacity-desc">Mounts flush into a flat ceiling section for wider air spread.</p>
-        <ul class="capacity-points"><li>Open lofts &amp; bonus rooms</li><li>Wide air distribution</li><li>12K–24K BTU range</li></ul>
-        <span class="capacity-cta">Shop Ceiling Cassette</span>
-      </a>
+
+    <div class="cut-grid">
+      <figure class="cut-figure">
+        <div class="cut-media">
+          <img class="cut-image" src="Mini%20Split%20for%20Attic/attic-cutaway-della-luxury-1080.webp" srcset="Mini%20Split%20for%20Attic/attic-cutaway-della-luxury-600.webp 600w, Mini%20Split%20for%20Attic/attic-cutaway-della-luxury-1080.webp 1080w, Mini%20Split%20for%20Attic/attic-cutaway-della-luxury-1536.webp 1536w" sizes="(max-width: 1024px) calc(100vw - 40px), 680px" alt="Conceptual cutaway of a sage green attic leisure room showing a concealed ducted air handler in the roof space, a ceiling service access panel, supply and return air grilles, and refrigerant lines running to a DELLA outdoor unit on the right exterior wall" width="1536" height="1024" loading="lazy" decoding="async">
+          <button class="cut-marker" type="button" data-point="indoor" aria-pressed="true" aria-label="Indoor unit" style="left:43%;top:19%"><span>1</span></button>
+          <button class="cut-marker" type="button" data-point="access" aria-pressed="false" aria-label="Service access" style="left:38%;top:33%"><span>2</span></button>
+          <button class="cut-marker" type="button" data-point="airflow" aria-pressed="false" aria-label="Supply and return airflow" style="left:58%;top:32%"><span>3</span></button>
+          <button class="cut-marker" type="button" data-point="outdoor" aria-pressed="false" aria-label="Outdoor route" style="left:79%;top:44%"><span>4</span></button>
+        </div>
+        <figcaption class="cut-caption">
+          <span>Conceptual layout. Confirm model-specific clearances and installation requirements.</span>
+          <a class="cut-zoom cut-original" href="Mini%20Split%20for%20Attic/attic-cutaway-della-luxury.png" target="_blank" rel="noopener">Open full-size image</a>
+          <button class="cut-zoom cut-dialog-trigger" type="button" data-zoom>View larger</button>
+        </figcaption>
+      </figure>
+
+      <ul class="cut-list">
+        <li class="cut-item is-active" data-point="indoor">
+          <button class="cut-item-btn" type="button" data-point="indoor" aria-pressed="true">
+            <span class="cut-item-num" aria-hidden="true">1</span>
+            <span class="cut-item-title">Indoor unit</span>
+            <span class="cut-item-text">The concealed ducted air handler sits in the roof space, above the room it serves.</span>
+          </button>
+        </li>
+        <li class="cut-item" data-point="access">
+          <button class="cut-item-btn" type="button" data-point="access" aria-pressed="false">
+            <span class="cut-item-num" aria-hidden="true">2</span>
+            <span class="cut-item-title">Service access</span>
+            <span class="cut-item-text">Plan an access point for filter cleaning, diagnostics and future servicing.</span>
+          </button>
+        </li>
+        <li class="cut-item" data-point="airflow">
+          <button class="cut-item-btn" type="button" data-point="airflow" aria-pressed="false">
+            <span class="cut-item-num" aria-hidden="true">3</span>
+            <span class="cut-item-title">Supply &amp; return airflow</span>
+            <span class="cut-item-text">Supply and return air outlets connect the hidden unit to the room without blocking airflow.</span>
+          </button>
+        </li>
+        <li class="cut-item" data-point="outdoor">
+          <button class="cut-item-btn" type="button" data-point="outdoor" aria-pressed="false">
+            <span class="cut-item-num" aria-hidden="true">4</span>
+            <span class="cut-item-title">Outdoor route</span>
+            <span class="cut-item-text">The line set and drain leave the attic and run to the DELLA outdoor unit, kept outside with clearances around it.</span>
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- MATCH BY ROOM — bento -->
-<section class="section use-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Match by Room</span>
-      <h2 class="section-title">Best Mini Split Setups for Common Attic Scenarios</h2>
-      <p class="section-desc">Find the setup that fits how your attic is actually being used.</p>
-    </div>
-    <div class="use-grid">
-      <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="use-card wide">
-        <img src="Mini%20Split%20for%20Attic/Sloped%20Ceiling.webp" alt="Attic with sloped ceiling and knee wall" loading="lazy">
-        <div class="use-card-body">
-          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Concealed Ducted</span>
-          <h3>Sloped ceiling or knee wall</h3>
-          <p>Low clearance rules out a wall unit. Concealed ducted hides the air handler inside the structure and uses small grilles instead.</p>
-        </div>
-      </a>
-      <a href="https://dellahome.com/collections/ceiling-cassette-mini-split" class="use-card narrow">
-        <img src="Mini%20Split%20for%20Attic/Open%20Loft%20%20Flat%20Ceiling.webp" alt="Open attic loft with flat ceiling" loading="lazy">
-        <div class="use-card-body">
-          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Ceiling Cassette</span>
-          <h3>Open loft with flat ceiling</h3>
-          <p>Wide air spread and a cleaner look for open layouts.</p>
-        </div>
-      </a>
-      <a href="https://dellahome.com/collections/wall-mounted-mini-split" class="use-card narrow">
-        <img src="Mini%20Split%20for%20Attic/One%20Finished%20Bedroom.webp" alt="Finished attic bedroom" loading="lazy" style="object-position:30% 25%">
-        <div class="use-card-body">
-          <span class="use-card-rec"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg> Wall-Mounted</span>
-          <h3>One finished bedroom</h3>
-          <p>Simplest and most affordable when wall height allows.</p>
-        </div>
-      </a>
+<dialog class="cut-dialog" id="cutDialog" aria-label="Enlarged attic installation diagram">
+  <div class="cut-dialog-media">
+    <img data-full="Mini%20Split%20for%20Attic/attic-cutaway-della-luxury.png" alt="Conceptual cutaway of a sage green attic leisure room showing a concealed ducted air handler, ceiling service access, supply and return grilles, and lines to a DELLA outdoor unit" width="1536" height="1024">
+  </div>
+  <div class="cut-dialog-bar">
+    <p>Conceptual layout. Confirm model-specific clearances and installation requirements.</p>
+    <div class="cut-dialog-actions">
+      <a href="Mini%20Split%20for%20Attic/attic-cutaway-della-luxury.png" target="_blank" rel="noopener">Open full-size image</a>
+      <button class="cut-zoom" type="button" data-zoom-close>Close</button>
     </div>
   </div>
-</section>
+</dialog>
 
 <!-- RECOMMENDED PRODUCTS -->
-<section class="section products-section">
+<section class="section products-section" id="shop-attic">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Top Picks for Attics</span>
-      <h2 class="section-title">Best Mini Split Types for Attic Projects</h2>
-      <p class="section-desc">Compare concealed ducted, ceiling cassette, wall-mounted, and multi-zone attic options based on your layout, ceiling shape, and installation path.</p>
+      <h2 class="section-title">Mini Splits for Finished Attics</h2>
+      <p class="section-desc">Explore individual models after confirming your installation type and capacity.</p>
     </div>
     <div class="products-grid">
-      <a href="https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner" class="product-feature">
-        <div class="product-img-wrap">
-          <span class="product-badge">Best for Sloped Attics</span>
-          <img src="https://dellahome.com/cdn/shop/files/DC-9K2V-20S-I_O-PP-1_24703191-651e-4e5c-98b6-d34be59616e2.jpg?v=1770953786&width=800" alt="DELLA 9500 BTU concealed ducted mini split for attic" loading="lazy">
-        </div>
+      <article class="product-card" data-product-id="9983274156320" data-price-variant="50334417060128">
+        <span class="product-badge">For a Full-Height Wall</span>
+        <a class="product-img-wrap" href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft" aria-label="View DELLA Serena Series 12000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 550 Sq.Ft."><img src="https://dellahome.com/cdn/shop/files/M.jpg?v=1750938870&width=800" alt="DELLA Serena Series 12000 BTU wall-mounted" loading="lazy"></a>
         <div class="product-body">
-          <div class="product-copy">
-            <div class="product-name">Concealed Ducted 9.5K BTU 19.6 SEER2</div>
-            <div class="product-spec">Hidden Install | Up to 450 Sq.Ft. | Slopes, knee walls, ceiling cavities</div>
-          </div>
-          <div class="product-action">
-            <div class="product-price">$1,074.96</div>
-            <span class="product-cta">Shop Concealed Ducted 9.5K</span>
-          </div>
+          <p class="product-type">1-zone · Wall-mounted</p><h3 class="product-name"><a href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft">Serena</a></h3>
+          <p class="product-capacity"><span>Capacity</span><strong>12,000 BTU</strong></p>
+          <dl class="product-specs"><div><dt>Voltage</dt><dd>115 / 208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div></dl>
+          <details class="product-identity"><summary>Full model name</summary><p>DELLA Serena Series 12000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 550 Sq.Ft.</p></details>
+          <div class="product-action"><p class="product-price-note">Starting price is for 230V.</p><p class="product-price">From $779.96</p><a class="product-cta" href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft">Shop Serena 12K</a></div>
         </div>
-      </a>
-      <div class="product-bottom-row">
-        <a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft" class="product-card">
-          <div class="product-img-wrap"><span class="product-badge">Open Loft</span><img src="https://dellahome.com/cdn/shop/files/pp.jpg?v=1764061000&width=800" alt="DELLA 12K BTU ceiling cassette mini split" loading="lazy"></div>
-          <div class="product-body"><div class="product-copy"><div class="product-name">Ceiling Cassette 12K BTU 22 SEER2</div><div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> <span>(5 reviews)</span></div><div class="product-spec">Ceiling Cassette | Up to 550 Sq.Ft.</div></div><div class="product-action"><div class="product-price">$1,394.96</div><span class="product-cta">Shop Ceiling Cassette</span></div></div>
-        </a>
-        <a href="https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft" class="product-card">
-          <div class="product-img-wrap"><span class="product-badge">Simple Bedroom</span><img src="https://dellahome.com/cdn/shop/files/M.jpg?v=1750938870&width=800" alt="DELLA Serena Series 12000 BTU wall-mounted" loading="lazy"></div>
-          <div class="product-body"><div class="product-copy"><div class="product-name">Serena Series 12K BTU 22 SEER2</div><div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> <span>(3 reviews)</span></div><div class="product-spec">Wall-Mounted | Up to 550 Sq.Ft.</div></div><div class="product-action"><div class="product-price">$849.96</div><span class="product-cta">Shop Serena 12K</span></div></div>
-        </a>
-        <a href="https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k" class="product-card">
-          <div class="product-img-wrap"><span class="product-badge">Multi-Room</span><img src="https://dellahome.com/cdn/shop/files/1D2-DC_D99_9e301d20-0c08-47a3-9f1b-8bacff339501.jpg?v=1770019385&width=800" alt="DELLA dual-zone concealed ducted mini split" loading="lazy"></div>
-          <div class="product-body"><div class="product-copy"><div class="product-name">Dual-Zone Concealed Ducted 17K BTU (9.5K + 9.5K)</div><div class="product-spec">Two hidden units | 17K total BTU</div></div><div class="product-action"><div class="product-price">$2,479.96</div><span class="product-cta">Shop Dual-Zone Ducted</span></div></div>
-        </a>
-      </div>
+      </article>
+      <article class="product-card" data-product-id="9990872727840" data-price-variant="50962261868832">
+        <span class="product-badge">For a Flat Ceiling</span>
+        <a class="product-img-wrap" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft" aria-label="View DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft."><img src="https://dellahome.com/cdn/shop/files/pp.jpg?v=1764061000&width=800" alt="DELLA 12K BTU ceiling cassette mini split" loading="lazy"></a>
+        <div class="product-body">
+          <p class="product-type">1-zone · Ceiling-recessed</p><h3 class="product-name"><a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Ceiling Cassette</a></h3>
+          <p class="product-capacity"><span>Capacity</span><strong>12,000 BTU</strong></p>
+          <dl class="product-specs"><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div></dl>
+          <details class="product-identity"><summary>Full model name</summary><p>DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.</p></details>
+          <div class="product-action"><p class="product-price-note">Starting price excludes line set.</p><p class="product-price">From $1,394.96</p><a class="product-cta" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Shop Ceiling Cassette</a></div>
+        </div>
+      </article>
+      <article class="product-card" data-product-id="10168645878048" data-price-variant="51143165346080">
+        <span class="product-badge">For Concealed Installation</span>
+        <a class="product-img-wrap" href="https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner" aria-label="View DELLA 9500 BTU 19.6 SEER2 Concealed Ducted Mini Split Air Conditioner"><img src="https://dellahome.com/cdn/shop/files/DC-9K2V-20S-I_O-PP-1_24703191-651e-4e5c-98b6-d34be59616e2.jpg?v=1770953786&width=800" alt="DELLA 9500 BTU concealed ducted mini split for attic" loading="lazy"></a>
+        <div class="product-body">
+          <p class="product-type">1-zone · Hidden indoor unit</p><h3 class="product-name"><a href="https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner">Concealed Ducted</a></h3>
+          <p class="product-capacity"><span>Capacity</span><strong>9,500 BTU</strong></p>
+          <dl class="product-specs"><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>19.6 SEER2</dd></div></dl>
+          <details class="product-identity"><summary>Full model name</summary><p>DELLA 9500 BTU 19.6 SEER2 Concealed Ducted Mini Split Air Conditioner</p></details>
+          <div class="product-action"><p class="product-price-note">Starting price excludes line set.</p><p class="product-price">From $1,074.96</p><a class="product-cta" href="https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner">Shop Concealed Ducted 9.5K</a></div>
+        </div>
+      </article>
+      <article class="product-card" data-product-id="10179783655712" data-price-variant="51175428849952">
+        <span class="product-badge">For More Than One Room</span>
+        <a class="product-img-wrap" href="https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k" aria-label="View DELLA 17000 BTU Dual Zone Concealed Ducted Mini Split Heat Pump AC (9.5K + 9.5K)"><img src="https://dellahome.com/cdn/shop/files/1D2-DC_D99_9e301d20-0c08-47a3-9f1b-8bacff339501.jpg?v=1770019385&width=800" alt="DELLA dual-zone concealed ducted mini split" loading="lazy"></a>
+        <div class="product-body">
+          <p class="product-type">2-zone · Hidden indoor units</p><h3 class="product-name"><a href="https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k">Concealed Ducted</a></h3>
+          <p class="product-capacity"><span>Indoor units</span><strong>9.5K + 9.5K BTU</strong></p>
+          <dl class="product-specs"><div><dt>Outdoor unit</dt><dd>17,000 BTU</dd></div><div><dt>Voltage</dt><dd>230V</dd></div><div><dt>Efficiency</dt><dd>21 SEER2</dd></div></dl>
+          <details class="product-identity"><summary>Full model name</summary><p>DELLA 17000 BTU Dual Zone Concealed Ducted Mini Split Heat Pump AC (9.5K + 9.5K)</p></details>
+          <div class="product-action"><p class="product-price">$2,479.96</p><a class="product-cta" href="https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k">Shop Dual-Zone Ducted</a></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- BEFORE YOU BUY -->
-<section class="byb-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Before You Buy</span>
-      <h2 class="section-title">What to Know Before Choosing a Mini Split for an Attic</h2>
-    </div>
-    <div class="byb-grid">
-      <div class="byb-card">
-        <span class="byb-card-num">01</span>
-        <h4>Insulation &amp; Air Sealing</h4>
-        <p>Attic insulation changes comfort, runtime, and BTU sizing faster than almost any other condition. Poor sealing or thin insulation can push the right system up an entire size tier.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-card-num">02</span>
-        <h4>Ceiling &amp; Wall Layout</h4>
-        <p>Check wall height, slopes, knee walls, and dormers before assuming a standard high-wall unit will fit cleanly.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-card-num">03</span>
-        <h4>Line-Set &amp; Drainage Route</h4>
-        <p>Plan the wall penetration, line-set path, and condensate drainage early. Finished attic walls are harder to work around later.</p>
-      </div>
-      <div class="byb-card">
-        <span class="byb-card-num">04</span>
-        <h4>Electrical Access</h4>
-        <p>Attic circuits may need to be added or upgraded depending on system voltage and amperage. Confirm panel capacity first.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PREMIUM DELLA SERVICES -->
-<section class="section services-section">
-  <div class="container">
-    <div class="services-heading">
-      <span class="section-label">Service Confidence</span>
-      <h2>Premium Della Services</h2>
-    </div>
-    <div class="services-grid">
-      <article class="service-card"><div class="service-icon-wrap"><img src="https://dellahome.com/cdn/shop/files/80x80px-40.png?v=1746071491&width=64" alt="" width="28" height="28" aria-hidden="true"></div><h3 class="service-title">Free &amp; Fast Shipping</h3><p class="service-desc">Get your Della products delivered quickly with free standard shipping.</p></article>
-      <article class="service-card"><div class="service-icon-wrap"><img src="https://dellahome.com/cdn/shop/files/20250424-114745.png?v=1745466491&width=64" alt="" width="28" height="28" aria-hidden="true"></div><h3 class="service-title">30-Day Money-Back</h3><p class="service-desc">Not satisfied? Return within 30 days for a full refund.</p></article>
-      <article class="service-card"><div class="service-icon-wrap"><img src="https://dellahome.com/cdn/shop/files/20250911-174827-1.png?v=1757584142&width=64" alt="" width="28" height="28" aria-hidden="true"></div><h3 class="service-title">24/7 Live Support</h3><p class="service-desc">Get instant answers to your questions anytime, day or night.</p></article>
-      <article class="service-card"><div class="service-icon-wrap"><img src="https://dellahome.com/cdn/shop/files/20250424-114735.png?v=1745466499&width=64" alt="" width="28" height="28" aria-hidden="true"></div><h3 class="service-title">Lifetime Warranty</h3><p class="service-desc">Our Mini Split systems come with limited lifetime compressor protection.</p></article>
+<section class="dsc-services" id="services" aria-labelledby="services-title">
+  <div class="dsc-container">
+    <h2 class="dsc-heading" id="services-title">Premium Della Services</h2>
+    <div class="dsc-svc-grid">
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="Free and fast shipping icon" width="50" height="50"></div><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="30-day money-back icon" width="50" height="50"></div><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="24/7 live support icon" width="50" height="50"></div><h3><a href="https://dellahome.com/pages/contact">24/7 Live Support</a></h3><p>Get instant answers to your questions anytime, day or night.</p></div>
+      <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="Lifetime warranty icon" width="50" height="50"></div><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section faq-section">
+<section class="section faq-section" id="faq">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Quick Answers</span>
-      <h2 class="section-title">Mini Split FAQ for Attic Buyers</h2>
-      <p class="section-desc">Quick answers to the attic layout, sizing, and install questions that slow buyers down.</p>
+      <h2 class="section-title">Attic Mini Split FAQs</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>What mini split system works best for an attic?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">The best mini split type for an attic depends on the layout. Sloped attics and knee-wall layouts often fit concealed ducted best, open lofts can be a strong fit for ceiling cassette, and single finished attic bedrooms may still work well with wall-mounted systems.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>Can you put a mini split condenser in the attic?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">No. The condenser, or outdoor unit, should stay outside. What can go in the attic is an indoor unit or a concealed ducted air handler, depending on the setup.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>Can a mini split air handler go in the attic?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">Yes. A concealed ducted mini split air handler can work well in an attic when you have space in a knee wall, ceiling area, or attic cavity and want a cleaner look.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>How much does a mini split for an attic cost?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">$850 to $2,500 depending on system type, BTU, and zone count. Wall-mounted single-zone starts lower, while concealed ducted and multi-zone systems cost more.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>How is a mini split installed in an attic?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">A wall-mounted unit mounts on an interior wall with a line set routed to an outdoor condenser. A concealed ducted unit installs inside a knee wall or ceiling cavity with short duct runs to supply grilles. Both need a dedicated electrical circuit and condensate drainage.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>Is square footage enough to size an attic mini split?</h3><span class="faq-icon" aria-hidden="true"></span></div><div class="faq-a">No. Square footage is only a starting point. Insulation quality, sun exposure, ceiling height, and room use can all push an attic room into a different size range. Poorly insulated attics may need one BTU tier higher than expected.</div></div>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-question">What size mini split does my attic need?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Size the system from a room-specific heating and cooling load calculation, not floor area alone. Attic insulation, air leakage, windows, sun exposure and ceiling height affect the load. Ask your installer to confirm capacity before choosing a model; the products shown here are examples, not a sizing recommendation.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-question">Can the indoor and outdoor units both go in the attic?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">The outdoor condenser belongs outdoors. A concealed ducted indoor unit may be installed in suitable attic roof space when its model-specific clearance, structural support, ductwork, drainage and service-access requirements can be met. Wall-mounted and ceiling-cassette units serve the finished room from their respective mounting positions.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-question">Do I need single-zone or multi-zone for my attic?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">A single-zone system may suit one open finished attic area. Separate rooms or different temperature needs may call for multiple zones. A ducted system can also serve multiple rooms when the duct layout is designed for them. Have your installer assess each room&rsquo;s load, airflow and control needs before selecting a configuration.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-question">What affects the total cost of an attic mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">The displayed product prices cover equipment, not the complete installed project. Labor, electrical work, line sets, condensate drainage, any ductwork and access or finish repairs can add to the cost. Check what the selected product includes and request an itemized installation quote for your attic.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -554,18 +679,167 @@ a { text-decoration: none; color: inherit; }
 <section class="bottom-cta">
   <div class="container">
     <div class="bottom-cta-card">
-      <h2>Still the hottest room in the house?</h2>
-      <p>Most attic projects start with concealed ducted. It hides inside the structure and works with any ceiling shape.</p>
+      <h2>Shop by Installation Type</h2>
+      <p>Explore available models and capacities.</p>
       <div class="bottom-cta-buttons">
-        <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="btn btn-navy btn-lg">Shop Concealed Ducted</a>
-        <a href="#compare" class="btn btn-outline btn-lg">Compare All Types</a>
+        <a class="btn btn-collection btn-lg" href="https://dellahome.com/collections/wall-mounted-mini-split" aria-label="Shop Wall-Mounted Mini Splits">Wall-Mounted</a>
+        <a class="btn btn-collection btn-lg" href="https://dellahome.com/collections/ceiling-cassette-mini-split" aria-label="Shop Ceiling Cassette Mini Splits">Ceiling Cassette</a>
+        <a class="btn btn-collection btn-lg" href="https://dellahome.com/collections/concealed-ducted-mini-split" aria-label="Shop Concealed Ducted Mini Splits">Concealed Ducted</a>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+(function () {
+  /* ── Stable loading feedback for compare scenes ── */
+  function markMediaLoading(panel) {
+    var media = panel && panel.querySelector('.cmp-media');
+    var img = media && media.querySelector('img');
+    if (!media || !img) { return; }
+    if (img.complete && img.naturalWidth > 0) { media.classList.remove('is-loading'); return; }
+    media.classList.add('is-loading');
+    if (img.getAttribute('data-load-bound') !== '1') {
+      img.setAttribute('data-load-bound', '1');
+      img.addEventListener('load', function () { media.classList.remove('is-loading'); });
+      img.addEventListener('error', function () { media.classList.remove('is-loading'); });
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.cmp-panel'), markMediaLoading);
+
+  /* ── Installation-type tabs ── */
+  var tablist = document.querySelector('.cmp-tabs');
+  if (tablist) {
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (tab) { return document.getElementById(tab.getAttribute('aria-controls')); });
+
+    function selectTab(index, focus) {
+      tabs.forEach(function (tab, i) {
+        var selected = i === index;
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        tab.tabIndex = selected ? 0 : -1;
+        if (panels[i]) {
+          panels[i].hidden = !selected;
+          if (selected) { markMediaLoading(panels[i]); }
+        }
+      });
+      if (focus) { tabs[index].focus(); }
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { selectTab(i, false); });
+      tab.addEventListener('keydown', function (event) {
+        var next = null;
+        if (event.key === 'ArrowRight') { next = (i + 1) % tabs.length; }
+        else if (event.key === 'ArrowLeft') { next = (i - 1 + tabs.length) % tabs.length; }
+        else if (event.key === 'Home') { next = 0; }
+        else if (event.key === 'End') { next = tabs.length - 1; }
+        if (next !== null) { event.preventDefault(); selectTab(next, true); }
+      });
+    });
+  }
+
+  /* ── Cutaway highlight markers ── */
+  var cutFigure = document.querySelector('.cut-grid');
+  if (cutFigure) {
+    var triggers = Array.prototype.slice.call(cutFigure.querySelectorAll('[data-point]'));
+    var markers = Array.prototype.slice.call(document.querySelectorAll('.cut-marker'));
+    var items = Array.prototype.slice.call(document.querySelectorAll('.cut-item'));
+
+    function activate(point) {
+      markers.forEach(function (marker) {
+        marker.setAttribute('aria-pressed', marker.getAttribute('data-point') === point ? 'true' : 'false');
+      });
+      items.forEach(function (item) {
+        var on = item.getAttribute('data-point') === point;
+        item.classList.toggle('is-active', on);
+        var btn = item.querySelector('.cut-item-btn');
+        if (btn) { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+      });
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () { activate(trigger.getAttribute('data-point')); });
+    });
+  }
+
+  /* ── Cutaway lightbox (desktop) ── */
+  var dialog = document.getElementById('cutDialog');
+  var lastTrigger = null;
+  if (dialog && typeof dialog.showModal === 'function') {
+    var fullImg = dialog.querySelector('img[data-full]');
+    var fullMedia = dialog.querySelector('.cut-dialog-media');
+    function loadFullImage() {
+      if (!fullImg || fullImg.getAttribute('data-loaded') === '1' || fullImg.getAttribute('data-loading') === '1') { return; }
+      fullImg.setAttribute('data-loading', '1');
+      if (fullMedia) { fullMedia.classList.add('is-loading'); fullMedia.setAttribute('aria-busy', 'true'); }
+      function settle() {
+        fullImg.removeAttribute('data-loading');
+        if (fullMedia) { fullMedia.classList.remove('is-loading'); fullMedia.removeAttribute('aria-busy'); }
+      }
+      fullImg.addEventListener('load', function () { fullImg.setAttribute('data-loaded', '1'); settle(); });
+      fullImg.addEventListener('error', function () { fullImg.setAttribute('data-error', '1'); settle(); });
+      fullImg.src = fullImg.getAttribute('data-full');
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-zoom]'), function (btn) {
+      btn.addEventListener('click', function () { lastTrigger = btn; dialog.showModal(); loadFullImage(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-zoom-close]'), function (btn) {
+      btn.addEventListener('click', function () { dialog.close(); });
+    });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) { dialog.close(); }
+    });
+    dialog.addEventListener('close', function () {
+      if (lastTrigger) { lastTrigger.focus(); }
+    });
+  } else if (dialog) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-zoom]'), function (btn) {
+      btn.addEventListener('click', function () { window.open(dialog.querySelector('img').getAttribute('data-full'), '_blank'); });
+    });
+  }
+})();
+</script>
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What mini split system works best for an attic?","acceptedAnswer":{"@type":"Answer","text":"The best mini split type for an attic depends on the layout. Sloped attics and knee-wall layouts often fit concealed ducted best, open lofts can be a strong fit for ceiling cassette, and single finished attic bedrooms may still work well with wall-mounted systems."}},{"@type":"Question","name":"Can you put a mini split condenser in the attic?","acceptedAnswer":{"@type":"Answer","text":"No. The condenser, or outdoor unit, should stay outside. What can go in the attic is an indoor unit or a concealed ducted air handler, depending on the setup."}},{"@type":"Question","name":"Can a mini split air handler go in the attic?","acceptedAnswer":{"@type":"Answer","text":"Yes. A concealed ducted mini split air handler can work well in an attic when you have space in a knee wall, ceiling area, or attic cavity and want a cleaner look."}},{"@type":"Question","name":"How much does a mini split for an attic cost?","acceptedAnswer":{"@type":"Answer","text":"$850 to $2,500 depending on system type, BTU, and zone count. Wall-mounted single-zone starts lower, while concealed ducted and multi-zone systems cost more."}},{"@type":"Question","name":"How is a mini split installed in an attic?","acceptedAnswer":{"@type":"Answer","text":"A wall-mounted unit mounts on an interior wall with a line set routed to an outdoor condenser. A concealed ducted unit installs inside a knee wall or ceiling cavity with short duct runs to supply grilles. Both need a dedicated electrical circuit and condensate drainage."}},{"@type":"Question","name":"Is square footage enough to size an attic mini split?","acceptedAnswer":{"@type":"Answer","text":"No. Square footage is only a starting point. Insulation quality, sun exposure, ceiling height, and room use can all push an attic room into a different size range. Poorly insulated attics may need one BTU tier higher than expected."}}]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size mini split does my attic need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Size the system from a room-specific heating and cooling load calculation, not floor area alone. Attic insulation, air leakage, windows, sun exposure and ceiling height affect the load. Ask your installer to confirm capacity before choosing a model; the products shown here are examples, not a sizing recommendation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the indoor and outdoor units both go in the attic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The outdoor condenser belongs outdoors. A concealed ducted indoor unit may be installed in suitable attic roof space when its model-specific clearance, structural support, ductwork, drainage and service-access requirements can be met. Wall-mounted and ceiling-cassette units serve the finished room from their respective mounting positions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need single-zone or multi-zone for my attic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A single-zone system may suit one open finished attic area. Separate rooms or different temperature needs may call for multiple zones. A ducted system can also serve multiple rooms when the duct layout is designed for them. Have your installer assess each room’s load, airflow and control needs before selecting a configuration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What affects the total cost of an attic mini split?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The displayed product prices cover equipment, not the complete installed project. Labor, electrical work, line sets, condensate drainage, any ductwork and access or finish repairs can add to the cost. Check what the selected product includes and request an itemized installation quote for your attic."
+      }
+    }
+  ]
+}
 </script>
 
 </body>

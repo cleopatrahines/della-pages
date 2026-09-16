@@ -1,0 +1,191 @@
+[
+  {
+    "index": 1,
+    "url": "https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner",
+    "productId": 10168645878048,
+    "fullName": "DELLA 9500 BTU 19.6 SEER2 Concealed Ducted Mini Split Air Conditioner",
+    "title": "Concealed Ducted",
+    "type": "1-zone · Hidden indoor unit",
+    "capacity": "9,500 BTU",
+    "outdoorBtu": 9500,
+    "voltage": "208-230V",
+    "seer2": "19.6",
+    "price": "From $1,074.96",
+    "priceVariantId": 51143165346080,
+    "priceVariantTitle": "None",
+    "priceNote": "Starting price excludes line set.",
+    "capturedAt": "2026-09-14T07:59:21.663Z",
+    "variants": [
+      {
+        "id": 51143165346080,
+        "title": "None",
+        "price": 107496,
+        "available": true,
+        "sku": "DC-9K2V-20S-I+O-X"
+      },
+      {
+        "id": 51143165411616,
+        "title": "10FT",
+        "price": 109996,
+        "available": false,
+        "sku": "DC-9K2V-20S-I+O-10F"
+      },
+      {
+        "id": 51143165477152,
+        "title": "16FT",
+        "price": 112996,
+        "available": true,
+        "sku": "DC-9K2V-20S-I+O"
+      },
+      {
+        "id": 51143165542688,
+        "title": "25FT",
+        "price": 116496,
+        "available": true,
+        "sku": "DC-9K2V-20S-I+O-25F"
+      },
+      {
+        "id": 51143165608224,
+        "title": "33FT",
+        "price": 121496,
+        "available": false,
+        "sku": "DC-9K2V-20S-I+O-33F"
+      },
+      {
+        "id": 51143165673760,
+        "title": "50FT",
+        "price": 131496,
+        "available": true,
+        "sku": "DC-9K2V-20S-I+O-50F"
+      }
+    ],
+    "sourceJson": "https://dellahome.com/products/della-9500-btu-19-6-seer2-concealed-ducted-mini-split-air-conditioner.js",
+    "specExcerpt": "System Specs Cooling Capacity: 9500 Heating Capacity: 9500 SEER2: 19.6 Voltage: 208-230V Refrigerant Type: R454B Maximum Fuse Size: 15A Copper Line Length: None / 10ft / 16ft / 25ft / 33ft / 50ft Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Concealed Ducted: The Invisible Powerhouse Experience the elite performance of our Optima series in a sleek, hidden form factor"
+  },
+  {
+    "index": 2,
+    "url": "https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft",
+    "productId": 9990872727840,
+    "fullName": "DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.",
+    "title": "Ceiling Cassette",
+    "type": "1-zone · Ceiling-recessed",
+    "capacity": "12,000 BTU",
+    "outdoorBtu": 12000,
+    "voltage": "208-230V",
+    "seer2": "22",
+    "price": "From $1,394.96",
+    "priceVariantId": 50962261868832,
+    "priceVariantTitle": "None",
+    "priceNote": "Starting price excludes line set.",
+    "capturedAt": "2026-09-14T07:59:22.895Z",
+    "variants": [
+      {
+        "id": 50962261868832,
+        "title": "None",
+        "price": 139496,
+        "available": true,
+        "sku": "CC-12K2V-22S-I+O-X"
+      },
+      {
+        "id": 50962261901600,
+        "title": "10FT",
+        "price": 141996,
+        "available": false,
+        "sku": "CC-12K2V-22S-I+O-10F"
+      },
+      {
+        "id": 50962261934368,
+        "title": "16FT",
+        "price": 144996,
+        "available": true,
+        "sku": "CC-12K2V-22S-I+O"
+      },
+      {
+        "id": 50962261967136,
+        "title": "25FT",
+        "price": 148496,
+        "available": true,
+        "sku": "CC-12K2V-22S-I+O-25F"
+      },
+      {
+        "id": 50962261999904,
+        "title": "33FT",
+        "price": 153496,
+        "available": false,
+        "sku": "CC-12K2V-22S-I+O-33F"
+      },
+      {
+        "id": 50962262032672,
+        "title": "50FT",
+        "price": 163496,
+        "available": true,
+        "sku": "CC-12K2V-22S-I+O-50F"
+      }
+    ],
+    "sourceJson": "https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft.js",
+    "specExcerpt": "System Specs Cooling Capacity: 12000 Heating Capacity: 12500 SEER2: 22 Fitting Area: 550 Voltage: 208-230 Refrigerant Type: R454B Maximum Fuse Size: 15A Copper Line Length: None / 10ft / 16ft / 25ft / 33ft / 50ft Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Ceiling Cassette: 360° Comfort, Zero Dead Zones. Elevate your business environment with the Ceiling Cassette s"
+  },
+  {
+    "index": 3,
+    "url": "https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft",
+    "productId": 9983274156320,
+    "fullName": "DELLA Serena Series 12000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 550 Sq.Ft.",
+    "title": "Serena",
+    "type": "1-zone · Wall-mounted",
+    "capacity": "12,000 BTU",
+    "outdoorBtu": 12000,
+    "voltage": "115 / 208-230V",
+    "seer2": "22",
+    "price": "From $779.96",
+    "priceVariantId": 50334417060128,
+    "priceVariantTitle": "230V",
+    "priceNote": "Starting price is for 230V.",
+    "capturedAt": "2026-09-14T07:59:24.072Z",
+    "variants": [
+      {
+        "id": 50334430429472,
+        "title": "115V",
+        "price": 79996,
+        "available": true,
+        "sku": "12K1VR-22S-M-I+O"
+      },
+      {
+        "id": 50334417060128,
+        "title": "230V",
+        "price": 77996,
+        "available": true,
+        "sku": "12K2VR-22S-M-I+O"
+      }
+    ],
+    "sourceJson": "https://dellahome.com/products/serena-series-12000-btu-seer2-22-mini-split-heat-pump-ac-up-to-550-sq-ft.js",
+    "specExcerpt": "System Specs Cooling Capacity: 12000 Heating Capacity: 12300 SEER2: 22 Fitting Area: 550 Voltage: 115V / 208-230V Refrigerant Type: R32 Maximum Fuse Size: 25A / 15A Copper Line Length: 16ft Copper Line Size: 3/8 inch and 1/4 inch Climate Range: 5°F - 125°F No.1 Selling Mini Split Brand on Amazon Serena Series: Peak Efficiency. Pure Serenity. Why choose between performance and savings when "
+  },
+  {
+    "index": 4,
+    "url": "https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k",
+    "productId": 10179783655712,
+    "fullName": "DELLA 17000 BTU Dual Zone Concealed Ducted Mini Split Heat Pump AC (9.5K + 9.5K)",
+    "title": "Concealed Ducted",
+    "type": "2-zone · Hidden indoor units",
+    "capacity": "9.5K + 9.5K BTU",
+    "outdoorBtu": 17000,
+    "voltage": "230V",
+    "seer2": "21",
+    "price": "$2,479.96",
+    "priceVariantId": 51175428849952,
+    "priceVariantTitle": "Default Title",
+    "priceNote": "",
+    "capturedAt": "2026-09-14T07:59:25.493Z",
+    "variants": [
+      {
+        "id": 51175428849952,
+        "title": "Default Title",
+        "price": 247996,
+        "available": true,
+        "sku": "048-TLP-MODU-1D2-DC-D99"
+      }
+    ],
+    "sourceJson": "https://dellahome.com/products/della-17000-btu-dual-zone-concealed-ducted-mini-split-heat-pump-ac-9-5k-9-5k.js",
+    "specExcerpt": "System Specs Voltage: 230 Volts Refrigerant: R454B SEER2: 21 Climate Range: -13°F - 131°F No.1 Selling Mini Split Brand on Amazon Concealed Ducted: The Invisible Powerhouse Experience the elite performance of our Optima series in a sleek, hidden form factor. Designed to be tucked away seamlessly inside the ceiling, our Concealed Ducted system provides high-performance climate control witho"
+  }
+]
