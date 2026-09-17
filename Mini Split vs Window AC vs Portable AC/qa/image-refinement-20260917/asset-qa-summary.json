@@ -1,0 +1,12 @@
+{
+  "products": 11,
+  "uniqueSources": 8,
+  "allDerivativesRGBA": true,
+  "allCroppedRGBPreserved": true,
+  "originalsUnchanged": true,
+  "commercialFactsUnchanged": true,
+  "productionHTMLUnchanged": true,
+  "htmlSHA256": "C4401808EE9BF0B84C2C57C248EA08F8BB7E77787AF29BD6B51A5E9EF6F6E5BC",
+  "visualChecks": "White and dark composites reviewed; retained original shadows and enclosed pipe areas.",
+  "pageImplementation": "Pending DeepSeek"
+}

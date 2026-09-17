@@ -1,0 +1,393 @@
+[
+  {
+    "id": "p01",
+    "original": "assets/products/p01.jpg",
+    "output": "assets/products-cutout/p01.png",
+    "sourceSHA256": "05962fc52535588f6f2393f3583218842c869a5a2ca35dc9147ca24cbe3bf768",
+    "outputSHA256": "1370a819de83fbde83dd693b83289a69b44a3f00b217fc232c160f21eb9a0eea",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1793,
+      1791
+    ],
+    "sourceCropBox": [
+      189,
+      191,
+      1896,
+      1896
+    ],
+    "padding": 43,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.39537,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 0
+  },
+  {
+    "id": "p02",
+    "original": "assets/products/p02.jpg",
+    "output": "assets/products-cutout/p02.png",
+    "sourceSHA256": "b54afe1dbb4bb54caf240562a7ef5d1e4a640ef73bbbdecbb77baa4ab32ee09c",
+    "outputSHA256": "379b663114ce2a79d473720ce334ddfbc6e4ab5e769a07cca8812c5f43ece861",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1808,
+      1728
+    ],
+    "sourceCropBox": [
+      175,
+      255,
+      1897,
+      1897
+    ],
+    "padding": 43,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.43067,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [
+      [
+        183,
+        400,
+        1894,
+        645
+      ]
+    ],
+    "bottomExportBorderRowsRemoved": 0
+  },
+  {
+    "id": "p03",
+    "original": "assets/products/p03.jpg",
+    "output": "assets/products-cutout/p03.png",
+    "sourceSHA256": "b54afe1dbb4bb54caf240562a7ef5d1e4a640ef73bbbdecbb77baa4ab32ee09c",
+    "outputSHA256": "379b663114ce2a79d473720ce334ddfbc6e4ab5e769a07cca8812c5f43ece861",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1808,
+      1728
+    ],
+    "sourceCropBox": [
+      175,
+      255,
+      1897,
+      1897
+    ],
+    "padding": 43,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.43067,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [
+      [
+        183,
+        400,
+        1894,
+        645
+      ]
+    ],
+    "bottomExportBorderRowsRemoved": 0,
+    "reusedFrom": "p02.png"
+  },
+  {
+    "id": "p04",
+    "original": "assets/products/p04.jpg",
+    "output": "assets/products-cutout/p04.png",
+    "sourceSHA256": "49d5687b5d14e66b3cf3e640b4fe9958c2091a5d1436ab5c0335887ebdf255b5",
+    "outputSHA256": "22f0db166c2c29296af9b2ab46d1e2fe1350784161d5fd655048a35922875a73",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1758,
+      1702
+    ],
+    "sourceCropBox": [
+      191,
+      271,
+      1865,
+      1889
+    ],
+    "padding": 42,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.4489,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 0
+  },
+  {
+    "id": "p05",
+    "original": "assets/products/p05.jpg",
+    "output": "assets/products-cutout/p05.png",
+    "sourceSHA256": "7a0b849fb86e29e7553dcf1cc61ea75eebf874625e0bb39f313ce7a8faf98446",
+    "outputSHA256": "21b85973247a909ecbdc4477385b01ef66c9c52f67ef22d28ea9e7cae81264f4",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1672,
+      1295
+    ],
+    "sourceCropBox": [
+      223,
+      479,
+      1815,
+      1694
+    ],
+    "padding": 40,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.52823,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 8
+  },
+  {
+    "id": "p06",
+    "original": "assets/products/p06.jpg",
+    "output": "assets/products-cutout/p06.png",
+    "sourceSHA256": "90384ee64d1748778170b5b39d5fb420214c45325259020dcb1c4825d047fe7f",
+    "outputSHA256": "c7cfa2680b8fb0b9da1d00e065c1aa615aee670f0b32751b2c1389847293538e",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1717,
+      1356
+    ],
+    "sourceCropBox": [
+      232,
+      487,
+      1867,
+      1761
+    ],
+    "padding": 41,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.53447,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 8
+  },
+  {
+    "id": "p07",
+    "original": "assets/products/p07.jpg",
+    "output": "assets/products-cutout/p07.png",
+    "sourceSHA256": "bb0f7cb54961c102a2a48cd7b0d4c5719e0aba0a841500e64866306a4720f6e7",
+    "outputSHA256": "9c46f3be9b640ad75eba609653d1b80e7aa8a5e6f23aeffba2fb7349ebd56831",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1796,
+      1283
+    ],
+    "sourceCropBox": [
+      173,
+      551,
+      1883,
+      1748
+    ],
+    "padding": 43,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.57008,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 8
+  },
+  {
+    "id": "p08",
+    "original": "assets/products/p08.jpg",
+    "output": "assets/products-cutout/p08.png",
+    "sourceSHA256": "90384ee64d1748778170b5b39d5fb420214c45325259020dcb1c4825d047fe7f",
+    "outputSHA256": "c7cfa2680b8fb0b9da1d00e065c1aa615aee670f0b32751b2c1389847293538e",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1717,
+      1356
+    ],
+    "sourceCropBox": [
+      232,
+      487,
+      1867,
+      1761
+    ],
+    "padding": 41,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.53447,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 8,
+    "reusedFrom": "p06.png"
+  },
+  {
+    "id": "p09",
+    "original": "assets/products/p09.jpg",
+    "output": "assets/products-cutout/p09.png",
+    "sourceSHA256": "78dfe955a1ce735da6f91d17e42bea3b214d5ae6dd9f2018784afe8a0d9e42b4",
+    "outputSHA256": "e49e6a572ab82aa92803c7fcd48933b75178dfbc96cc2935bd6ac8c29495ffae",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1729,
+      1684
+    ],
+    "sourceCropBox": [
+      218,
+      255,
+      1865,
+      1857
+    ],
+    "padding": 41,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.5271,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 0
+  },
+  {
+    "id": "p10",
+    "original": "assets/products/p10.jpg",
+    "output": "assets/products-cutout/p10.png",
+    "sourceSHA256": "78dfe955a1ce735da6f91d17e42bea3b214d5ae6dd9f2018784afe8a0d9e42b4",
+    "outputSHA256": "e49e6a572ab82aa92803c7fcd48933b75178dfbc96cc2935bd6ac8c29495ffae",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1729,
+      1684
+    ],
+    "sourceCropBox": [
+      218,
+      255,
+      1865,
+      1857
+    ],
+    "padding": 41,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.5271,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 0,
+    "reusedFrom": "p09.png"
+  },
+  {
+    "id": "p11",
+    "original": "assets/products/p11.jpg",
+    "output": "assets/products-cutout/p11.png",
+    "sourceSHA256": "1228dd25edbb94304e3627d869072e635704ee34686c9e0b9cced53bdecdea82",
+    "outputSHA256": "88466baaef18ab8f5414a5ed4e3df6f325812cd25eb01801cbc248ce8c814624",
+    "sourceSize": [
+      2000,
+      2000
+    ],
+    "outputSize": [
+      1755,
+      1686
+    ],
+    "sourceCropBox": [
+      218,
+      271,
+      1889,
+      1873
+    ],
+    "padding": 42,
+    "backgroundRGB": [
+      238.0,
+      237.0,
+      232.0
+    ],
+    "removedFraction": 0.52089,
+    "tolerance": 4,
+    "alphaFeatherPx": 0.35,
+    "sourceRGBPreserved": true,
+    "trueAlpha": true,
+    "protectedInteriorBoxes": [],
+    "bottomExportBorderRowsRemoved": 0
+  }
+]

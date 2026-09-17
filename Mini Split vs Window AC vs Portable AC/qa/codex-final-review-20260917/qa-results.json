@@ -1,0 +1,2124 @@
+{
+  "page": "http://127.0.0.1:58313/mini-split-vs-window-ac-vs-portable-ac.html",
+  "checks": [
+    {
+      "name": "h2-style-1440",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-1440",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-1280",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-1280",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-1024",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-1024",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-768",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-768",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-430",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-430",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-390",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-390",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-360",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-360",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "h2-style-1920",
+      "pass": true,
+      "detail": {
+        "h2": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "h2-font-loaded-1920",
+      "pass": true,
+      "detail": {
+        "list": [
+          {
+            "t": "Compare the three option",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Explore DELLA cooling op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "See how each option fits",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Premium Della Services",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Mini Split, Window & Por",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          },
+          {
+            "t": "Ready to explore your op",
+            "family": "\"Della AC Spectral\", Georgia, \"Times New Roman\", serif",
+            "size": "32px",
+            "weight": "500",
+            "lh": "36.8px",
+            "color": "rgb(14, 25, 83)"
+          }
+        ],
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "cutout-image-count",
+      "pass": true,
+      "detail": {
+        "actual": 14,
+        "expected": 14
+      }
+    },
+    {
+      "name": "old-jpg-refs",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "cutout-dimensions",
+      "pass": true,
+      "detail": [
+        {
+          "src": "assets/products-cutout/p01.png",
+          "w": "1793",
+          "h": "1791"
+        },
+        {
+          "src": "assets/products-cutout/p07.png",
+          "w": "1796",
+          "h": "1283"
+        },
+        {
+          "src": "assets/products-cutout/p11.png",
+          "w": "1755",
+          "h": "1686"
+        },
+        {
+          "src": "assets/products-cutout/p01.png",
+          "w": "1793",
+          "h": "1791"
+        },
+        {
+          "src": "assets/products-cutout/p02.png",
+          "w": "1808",
+          "h": "1728"
+        },
+        {
+          "src": "assets/products-cutout/p03.png",
+          "w": "1808",
+          "h": "1728"
+        },
+        {
+          "src": "assets/products-cutout/p04.png",
+          "w": "1758",
+          "h": "1702"
+        },
+        {
+          "src": "assets/products-cutout/p05.png",
+          "w": "1672",
+          "h": "1295"
+        },
+        {
+          "src": "assets/products-cutout/p06.png",
+          "w": "1717",
+          "h": "1356"
+        },
+        {
+          "src": "assets/products-cutout/p07.png",
+          "w": "1796",
+          "h": "1283"
+        },
+        {
+          "src": "assets/products-cutout/p08.png",
+          "w": "1717",
+          "h": "1356"
+        },
+        {
+          "src": "assets/products-cutout/p09.png",
+          "w": "1729",
+          "h": "1684"
+        },
+        {
+          "src": "assets/products-cutout/p10.png",
+          "w": "1729",
+          "h": "1684"
+        },
+        {
+          "src": "assets/products-cutout/p11.png",
+          "w": "1755",
+          "h": "1686"
+        }
+      ]
+    },
+    {
+      "name": "compare-images",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "assets/products-cutout/p01.png",
+          "assets/products-cutout/p07.png",
+          "assets/products-cutout/p11.png"
+        ],
+        "expected": [
+          "assets/products-cutout/p01.png",
+          "assets/products-cutout/p07.png",
+          "assets/products-cutout/p11.png"
+        ]
+      }
+    },
+    {
+      "name": "card-count",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "card-data-and-image-mapping",
+      "pass": true,
+      "detail": {
+        "mism": []
+      }
+    },
+    {
+      "name": "composite-identity-unique",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "compare-media-height-1440",
+      "pass": true,
+      "detail": {
+        "media": [
+          280,
+          280,
+          280
+        ],
+        "imgs": [
+          {
+            "w": 280,
+            "h": 280,
+            "complete": true,
+            "nat": 1793
+          },
+          {
+            "w": 330,
+            "h": 236,
+            "complete": true,
+            "nat": 1796
+          },
+          {
+            "w": 291,
+            "h": 280,
+            "complete": true,
+            "nat": 1755
+          }
+        ]
+      }
+    },
+    {
+      "name": "compare-images-enlarged",
+      "pass": true,
+      "detail": [
+        {
+          "w": 280,
+          "h": 280,
+          "complete": true,
+          "nat": 1793
+        },
+        {
+          "w": 330,
+          "h": 236,
+          "complete": true,
+          "nat": 1796
+        },
+        {
+          "w": 291,
+          "h": 280,
+          "complete": true,
+          "nat": 1755
+        }
+      ]
+    },
+    {
+      "name": "compare-media-painted-pixels",
+      "pass": true,
+      "detail": {
+        "width": 417,
+        "height": 280,
+        "distinct": 262,
+        "nonUniform": 0.5024751627269612
+      }
+    },
+    {
+      "name": "compare-media-height-1024",
+      "pass": true,
+      "detail": {
+        "hh": 235,
+        "expectH": 235
+      }
+    },
+    {
+      "name": "compare-media-height-768",
+      "pass": true,
+      "detail": {
+        "hh": 235,
+        "expectH": 235
+      }
+    },
+    {
+      "name": "compare-media-height-430",
+      "pass": true,
+      "detail": {
+        "hh": 220,
+        "expectH": 220
+      }
+    },
+    {
+      "name": "compare-media-height-390",
+      "pass": true,
+      "detail": {
+        "hh": 220,
+        "expectH": 220
+      }
+    },
+    {
+      "name": "compare-media-height-360",
+      "pass": true,
+      "detail": {
+        "hh": 220,
+        "expectH": 220
+      }
+    },
+    {
+      "name": "evidence-h2-gap-1440",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2598.4296875,
+        "listCenter": 2598.421875,
+        "imgH": 442,
+        "listH": 251
+      }
+    },
+    {
+      "name": "evidence-centered-1440",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2598.4296875,
+        "listCenter": 2598.421875,
+        "imgH": 442,
+        "listH": 251
+      }
+    },
+    {
+      "name": "evidence-h2-gap-1280",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2507.4375,
+        "listCenter": 2507.4375,
+        "imgH": 414,
+        "listH": 251
+      }
+    },
+    {
+      "name": "evidence-centered-1280",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2507.4375,
+        "listCenter": 2507.4375,
+        "imgH": 414,
+        "listH": 251
+      }
+    },
+    {
+      "name": "evidence-h2-gap-768",
+      "pass": true,
+      "detail": {
+        "h2Gap": 24,
+        "imgCenter": 3667.859375,
+        "listCenter": 4061.546875,
+        "imgH": 480,
+        "listH": 251
+      }
+    },
+    {
+      "name": "evidence-h2-gap-390",
+      "pass": true,
+      "detail": {
+        "h2Gap": 24,
+        "imgCenter": 4671.390625,
+        "listCenter": 4970,
+        "imgH": 239,
+        "listH": 303
+      }
+    },
+    {
+      "name": "evidence-centered-expanded-1440",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2850.2890625,
+        "listCenter": 2850.296875,
+        "imgH": 442,
+        "listH": 945
+      }
+    },
+    {
+      "name": "evidence-expanded-natural",
+      "pass": true,
+      "detail": {
+        "h2Gap": 32,
+        "imgCenter": 2850.2890625,
+        "listCenter": 2850.296875,
+        "imgH": 442,
+        "listH": 945
+      }
+    },
+    {
+      "name": "details-total",
+      "pass": true,
+      "detail": {
+        "actual": 19,
+        "expected": 19
+      }
+    },
+    {
+      "name": "details-open-initial",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "faq-count",
+      "pass": true,
+      "detail": {
+        "actual": 4,
+        "expected": 4
+      }
+    },
+    {
+      "name": "evidence-count",
+      "pass": true,
+      "detail": {
+        "actual": 4,
+        "expected": 4
+      }
+    },
+    {
+      "name": "identity-count",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "faq-questions",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "Which options can work in a rental?",
+          "What if a window AC doesn't fit my window?",
+          "Can one unit cool two rooms with the doors closed?",
+          "Can a mini split handle my winter heating?"
+        ],
+        "expected": [
+          "Which options can work in a rental?",
+          "What if a window AC doesn't fit my window?",
+          "Can one unit cool two rooms with the doors closed?",
+          "Can a mini split handle my winter heating?"
+        ]
+      }
+    },
+    {
+      "name": "removed-nodes",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "fitcheck": 0,
+          "coverage": 0,
+          "multiroom": 0,
+          "intro": 0,
+          "evLabel": 0,
+          "heroCats": 0,
+          "oldTable": 0,
+          "oldNote": 0,
+          "caption": 0
+        },
+        "expected": {
+          "fitcheck": 0,
+          "coverage": 0,
+          "multiroom": 0,
+          "intro": 0,
+          "evLabel": 0,
+          "heroCats": 0,
+          "oldTable": 0,
+          "oldNote": 0,
+          "caption": 0
+        }
+      }
+    },
+    {
+      "name": "comparison-cols",
+      "pass": true,
+      "detail": {
+        "actual": 3,
+        "expected": 3
+      }
+    },
+    {
+      "name": "comparison-rows",
+      "pass": true,
+      "detail": {
+        "actual": [
+          2,
+          2,
+          2
+        ],
+        "expected": [
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "name": "rail-start-360",
+      "pass": true,
+      "detail": {
+        "scrollLeft": 0,
+        "firstLeft": 16,
+        "pad": 16,
+        "hidden": false,
+        "prev": true,
+        "next": false,
+        "snap": "x mandatory",
+        "scrollPad": "16px"
+      }
+    },
+    {
+      "name": "rail-mid-360",
+      "pass": true,
+      "detail": {
+        "left": 285,
+        "prev": false
+      }
+    },
+    {
+      "name": "rail-end-360",
+      "pass": true,
+      "detail": {
+        "left": 511,
+        "max": 511,
+        "next": true
+      }
+    },
+    {
+      "name": "rail-back-360",
+      "pass": true,
+      "detail": {
+        "left": 0,
+        "prev": true
+      }
+    },
+    {
+      "name": "rail-start-390",
+      "pass": true,
+      "detail": {
+        "scrollLeft": 0,
+        "firstLeft": 16,
+        "pad": 16,
+        "hidden": false,
+        "prev": true,
+        "next": false,
+        "snap": "x mandatory",
+        "scrollPad": "16px"
+      }
+    },
+    {
+      "name": "rail-mid-390",
+      "pass": true,
+      "detail": {
+        "left": 310,
+        "prev": false
+      }
+    },
+    {
+      "name": "rail-end-390",
+      "pass": true,
+      "detail": {
+        "left": 555,
+        "max": 555,
+        "next": true
+      }
+    },
+    {
+      "name": "rail-back-390",
+      "pass": true,
+      "detail": {
+        "left": 0,
+        "prev": true
+      }
+    },
+    {
+      "name": "rail-start-430",
+      "pass": true,
+      "detail": {
+        "scrollLeft": 0,
+        "firstLeft": 16,
+        "pad": 16,
+        "hidden": false,
+        "prev": true,
+        "next": false,
+        "snap": "x mandatory",
+        "scrollPad": "16px"
+      }
+    },
+    {
+      "name": "rail-mid-430",
+      "pass": true,
+      "detail": {
+        "left": 342,
+        "prev": false
+      }
+    },
+    {
+      "name": "rail-end-430",
+      "pass": true,
+      "detail": {
+        "left": 613,
+        "max": 613,
+        "next": true
+      }
+    },
+    {
+      "name": "rail-back-430",
+      "pass": true,
+      "detail": {
+        "left": 0,
+        "prev": true
+      }
+    },
+    {
+      "name": "contrast-faq-open-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(248, 249, 251)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-faq-open",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(248, 249, 251)",
+        "ratio": 4.53
+      }
+    },
+    {
+      "name": "contrast-ev-open-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-ev-open",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "ratio": 4.78
+      }
+    },
+    {
+      "name": "contrast-identity-hover-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-identity-hover",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "ratio": 4.78
+      }
+    },
+    {
+      "name": "contrast-fitlink-hover-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-fitlink-hover",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(255, 255, 255)",
+        "ratio": 4.78
+      }
+    },
+    {
+      "name": "contrast-answer-link-hover-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(248, 249, 251)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-answer-link-hover",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(70, 111, 203)",
+        "bg": "rgb(248, 249, 251)",
+        "ratio": 4.53
+      }
+    },
+    {
+      "name": "contrast-default-collection-link-exists",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(14, 25, 83)",
+        "bg": "rgb(255, 255, 255)",
+        "rendered": true
+      }
+    },
+    {
+      "name": "contrast-default-collection-link",
+      "pass": true,
+      "detail": {
+        "fg": "rgb(14, 25, 83)",
+        "bg": "rgb(255, 255, 255)",
+        "ratio": 16.37
+      }
+    },
+    {
+      "name": "hero-image-loaded",
+      "pass": true,
+      "detail": {
+        "src": "hero-desktop.png",
+        "complete": true,
+        "nat": 2098,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 514
+        }
+      }
+    },
+    {
+      "name": "hero-painted-pixels",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 514,
+        "distinct": 862,
+        "nonUniform": 0.7982922611327281
+      }
+    },
+    {
+      "name": "r3-reserved-before-load",
+      "pass": true,
+      "detail": {
+        "complete": false,
+        "heroH": 293,
+        "cmpTop": 518
+      }
+    },
+    {
+      "name": "r3-hero-height-stable",
+      "pass": true,
+      "detail": {
+        "before": {
+          "complete": false,
+          "heroH": 293,
+          "cmpTop": 518
+        },
+        "after": {
+          "heroH": 293,
+          "cmpTop": 518
+        }
+      }
+    },
+    {
+      "name": "r3-comparison-not-pushed",
+      "pass": true,
+      "detail": {
+        "before": {
+          "complete": false,
+          "heroH": 293,
+          "cmpTop": 518
+        },
+        "after": {
+          "heroH": 293,
+          "cmpTop": 518
+        }
+      }
+    },
+    {
+      "name": "url-window-link",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "hash": "#window-ac-products",
+          "tab": "Window AC"
+        },
+        "expected": {
+          "hash": "#window-ac-products",
+          "tab": "Window AC"
+        },
+        "hash": "#window-ac-products",
+        "tab": "Window AC"
+      }
+    },
+    {
+      "name": "url-portable-tab",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "hash": "#portable-ac-products",
+          "tab": "Portable AC"
+        },
+        "expected": {
+          "hash": "#portable-ac-products",
+          "tab": "Portable AC"
+        },
+        "hash": "#portable-ac-products",
+        "tab": "Portable AC"
+      }
+    },
+    {
+      "name": "url-reload-retains",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "hash": "#portable-ac-products",
+          "tab": "Portable AC"
+        },
+        "expected": {
+          "hash": "#portable-ac-products",
+          "tab": "Portable AC"
+        },
+        "hash": "#portable-ac-products",
+        "tab": "Portable AC"
+      }
+    },
+    {
+      "name": "history-back-tab",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "hash": "#window-ac-products",
+          "tab": "Window AC"
+        },
+        "expected": {
+          "hash": "#window-ac-products",
+          "tab": "Window AC"
+        },
+        "hash": "#window-ac-products",
+        "tab": "Window AC",
+        "dl": [
+          {
+            "event": "cooling_type_view",
+            "cooling_type": "window-ac",
+            "selection": "history"
+          }
+        ]
+      }
+    },
+    {
+      "name": "history-single-event",
+      "pass": true,
+      "detail": [
+        {
+          "event": "cooling_type_view",
+          "cooling_type": "window-ac",
+          "selection": "history"
+        }
+      ]
+    },
+    {
+      "name": "tab-click-no-scroll",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0,
+        "scrollAfter": 0
+      }
+    },
+    {
+      "name": "nojs-tabs-hidden",
+      "pass": true,
+      "detail": {
+        "tabsVisible": false,
+        "panels": [
+          false,
+          false,
+          false
+        ],
+        "cards": 11,
+        "purchase": 11,
+        "collections": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "nojs-panels",
+      "pass": true,
+      "detail": {
+        "actual": [
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "nojs-cards",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "nojs-purchase",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "nojs-collections",
+      "pass": true,
+      "detail": {
+        "actual": 3,
+        "expected": 3
+      }
+    },
+    {
+      "name": "nojs-no-overflow",
+      "pass": true,
+      "detail": {
+        "tabsVisible": false,
+        "panels": [
+          false,
+          false,
+          false
+        ],
+        "cards": 11,
+        "purchase": 11,
+        "collections": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "overflow-1920",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 1312
+      }
+    },
+    {
+      "name": "container-max-1920",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "overflow-1440",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 1312
+      }
+    },
+    {
+      "name": "container-max-1440",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "container-1440-content-1312",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 1312
+      }
+    },
+    {
+      "name": "overflow-1280",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 1232
+      }
+    },
+    {
+      "name": "container-max-1280",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "overflow-1024",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 976
+      }
+    },
+    {
+      "name": "container-max-1024",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "overflow-768",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "24px",
+        "contentW": 720
+      }
+    },
+    {
+      "name": "container-max-768",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "overflow-430",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "16px",
+        "contentW": 398
+      }
+    },
+    {
+      "name": "container-max-430",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "container-430-pad",
+      "pass": true,
+      "detail": {
+        "actual": "16px",
+        "expected": "16px"
+      }
+    },
+    {
+      "name": "overflow-390",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "16px",
+        "contentW": 358
+      }
+    },
+    {
+      "name": "container-max-390",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "overflow-360",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "bodyOverflow": false,
+        "maxWidth": "1360px",
+        "padL": "16px",
+        "contentW": 328
+      }
+    },
+    {
+      "name": "container-max-360",
+      "pass": true,
+      "detail": {
+        "actual": "1360px",
+        "expected": "1360px"
+      }
+    },
+    {
+      "name": "portable-tracks-1920",
+      "pass": true,
+      "detail": {
+        "actual": 3,
+        "expected": 3,
+        "tracks": 3,
+        "widths": [
+          423,
+          423,
+          423
+        ]
+      }
+    },
+    {
+      "name": "portable-equal-1920",
+      "pass": true,
+      "detail": [
+        423,
+        423,
+        423
+      ]
+    },
+    {
+      "name": "portable-tracks-1440",
+      "pass": true,
+      "detail": {
+        "actual": 3,
+        "expected": 3,
+        "tracks": 3,
+        "widths": [
+          423,
+          423,
+          423
+        ]
+      }
+    },
+    {
+      "name": "portable-equal-1440",
+      "pass": true,
+      "detail": [
+        423,
+        423,
+        423
+      ]
+    },
+    {
+      "name": "portable-tracks-1280",
+      "pass": true,
+      "detail": {
+        "actual": 3,
+        "expected": 3,
+        "tracks": 3,
+        "widths": [
+          396,
+          396,
+          396
+        ]
+      }
+    },
+    {
+      "name": "portable-equal-1280",
+      "pass": true,
+      "detail": [
+        396,
+        396,
+        396
+      ]
+    },
+    {
+      "name": "reduced-motion-no-overflow",
+      "pass": true
+    },
+    {
+      "name": "file-cards",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "file-cutouts",
+      "pass": true,
+      "detail": {
+        "actual": 14,
+        "expected": 14
+      }
+    },
+    {
+      "name": "file-fonts",
+      "pass": true,
+      "detail": {
+        "cards": 11,
+        "cutouts": 14,
+        "fonts": true,
+        "tab": "Mini Split"
+      }
+    },
+    {
+      "name": "file-default-tab",
+      "pass": true,
+      "detail": {
+        "actual": "Mini Split",
+        "expected": "Mini Split"
+      }
+    },
+    {
+      "name": "no-failed-images",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": [],
+        "failed": [],
+        "total": 20
+      }
+    },
+    {
+      "name": "console-errors",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": []
+      }
+    },
+    {
+      "name": "failed-requests",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": []
+      }
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    "desktop-1440-mini-split.png",
+    "tablet-768-full.png",
+    "mobile-360-full.png",
+    "desktop-1920-full.png",
+    "compare-media-painted-1440.png",
+    "evidence-closed-1440.png",
+    "evidence-expanded-1440.png",
+    "hero-painted-1440.png",
+    "nojs-1280-full.png",
+    "desktop-1440-window-ac.png",
+    "desktop-1440-portable-ac.png",
+    "mobile-390-mini-split.png",
+    "mobile-390-window-ac.png",
+    "mobile-390-portable-ac.png"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "summary": {
+    "checks": 121,
+    "passed": 121,
+    "failed": 0,
+    "screenshots": 14
+  }
+}
