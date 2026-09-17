@@ -1,0 +1,33 @@
+ok   hero-lead
+ok   installation-question
+ok   installation-answer
+ok   noise-question
+ok   noise-answer
+ok   ratings-question
+ok   ratings-answer
+ok   cost-question
+ok   cost-answer
+ok   rental-answer
+ok   window-answer
+ok   winter-answer
+ALL 12 OK: true
+{
+ "details": 19,
+ "open": 0,
+ "faq": 4,
+ "ev": 4,
+ "cards": 11,
+ "h2": 6,
+ "energyLink": true,
+ "energyStarLink": true,
+ "multiZoneLink": true,
+ "tabOneRowCss": true,
+ "priceGapCss": true,
+ "oldHeroLead": false,
+ "faqQuestions": [
+  "Which options can work in a rental?",
+  "What if a window AC doesn't fit my window?",
+  "Can one unit cool two rooms with the doors closed?",
+  "Can a mini split handle my winter heating?"
+ ]
+}

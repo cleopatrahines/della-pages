@@ -1,5 +1,5 @@
 {
-  "page": "http://127.0.0.1:55347/mini-split-vs-window-ac-vs-portable-ac.html",
+  "page": "http://127.0.0.1:54737/mini-split-vs-window-ac-vs-portable-ac.html",
   "checks": [
     {
       "name": "h2-style-1440",
@@ -1201,8 +1201,8 @@
       "pass": true,
       "detail": {
         "h2Gap": 24,
-        "imgCenter": 4671.390625,
-        "listCenter": 4970,
+        "imgCenter": 4615.390625,
+        "listCenter": 4914,
         "imgH": 239,
         "listH": 303
       }
@@ -1212,10 +1212,10 @@
       "pass": true,
       "detail": {
         "h2Gap": 32,
-        "imgCenter": 2850.2890625,
-        "listCenter": 2850.296875,
+        "imgCenter": 2837.5390625,
+        "listCenter": 2837.546875,
         "imgH": 442,
-        "listH": 945
+        "listH": 920
       }
     },
     {
@@ -1223,10 +1223,10 @@
       "pass": true,
       "detail": {
         "h2Gap": 32,
-        "imgCenter": 2850.2890625,
-        "listCenter": 2850.296875,
+        "imgCenter": 2837.5390625,
+        "listCenter": 2837.546875,
         "imgH": 442,
-        "listH": 945
+        "listH": 920
       }
     },
     {
@@ -1585,8 +1585,8 @@
       "detail": {
         "width": 1440,
         "height": 514,
-        "distinct": 862,
-        "nonUniform": 0.7982922611327281
+        "distinct": 864,
+        "nonUniform": 0.7983084738434933
       }
     },
     {
@@ -1925,6 +1925,44 @@
       }
     },
     {
+      "name": "tabs-one-row-430",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1282,
+          1282,
+          1282
+        ],
+        "widths": [
+          127,
+          127,
+          127
+        ],
+        "barW": 398,
+        "sumW": 382
+      }
+    },
+    {
+      "name": "tabs-fit-430",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1282,
+          1282,
+          1282
+        ],
+        "widths": [
+          127,
+          127,
+          127
+        ],
+        "barW": 398,
+        "sumW": 382
+      }
+    },
+    {
       "name": "overflow-390",
       "pass": true,
       "detail": {
@@ -1944,6 +1982,44 @@
       }
     },
     {
+      "name": "tabs-one-row-390",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1324,
+          1324,
+          1324
+        ],
+        "widths": [
+          114,
+          114,
+          114
+        ],
+        "barW": 358,
+        "sumW": 342
+      }
+    },
+    {
+      "name": "tabs-fit-390",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1324,
+          1324,
+          1324
+        ],
+        "widths": [
+          114,
+          114,
+          114
+        ],
+        "barW": 358,
+        "sumW": 342
+      }
+    },
+    {
       "name": "overflow-360",
       "pass": true,
       "detail": {
@@ -1960,6 +2036,44 @@
       "detail": {
         "actual": "1360px",
         "expected": "1360px"
+      }
+    },
+    {
+      "name": "tabs-one-row-360",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1302,
+          1302,
+          1302
+        ],
+        "widths": [
+          104,
+          104,
+          104
+        ],
+        "barW": 328,
+        "sumW": 312
+      }
+    },
+    {
+      "name": "tabs-fit-360",
+      "pass": true,
+      "detail": {
+        "count": 3,
+        "tops": [
+          1302,
+          1302,
+          1302
+        ],
+        "widths": [
+          104,
+          104,
+          104
+        ],
+        "barW": 328,
+        "sumW": 312
       }
     },
     {
@@ -2116,8 +2230,8 @@
   "consoleErrors": [],
   "failedRequests": [],
   "summary": {
-    "checks": 121,
-    "passed": 121,
+    "checks": 127,
+    "passed": 127,
     "failed": 0,
     "screenshots": 14
   }

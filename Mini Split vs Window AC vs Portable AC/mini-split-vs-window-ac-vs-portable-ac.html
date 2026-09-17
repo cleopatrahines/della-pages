@@ -250,6 +250,8 @@ body{background:#fff;}
   .della-ac-compare .product-grid--4,.della-ac-compare .product-grid--3{grid-template-columns:1fr;}
   .della-ac-compare .product-meta div{flex-wrap:nowrap;}
   .della-ac-compare .product-meta dd{max-width:70%;text-align:right;}
+  .della-ac-compare .tabs{flex-wrap:nowrap;gap:8px;}
+  .della-ac-compare .tab{flex:1 1 0;min-width:0;padding:0 8px;font-size:14px;white-space:nowrap;overflow:hidden;}
 }
 @media (max-width:560px){
   .della-ac-compare .dsc-svc-grid{grid-template-columns:1fr;gap:14px;}
@@ -270,7 +272,7 @@ body{background:#fff;}
     <div class="hero-inner">
       <div class="hero-copy">
         <h1 id="hero-title">Mini Split vs <span style="white-space:nowrap">Window AC</span> vs <span style="white-space:nowrap">Portable AC</span></h1>
-        <p class="hero-lead">Compare the setup, everyday comfort, and upfront cost for your room.</p>
+        <p class="hero-lead">Compare installation, noise, and upfront cost to choose an AC for your room.</p>
       </div>
       <picture class="hero-media">
         <source media="(max-width:1100px)" srcset="assets/hero-mobile.png">
@@ -549,23 +551,23 @@ body{background:#fff;}
         </figure>
         <div class="ev-list">
           <details class="ev-item">
-            <summary>What needs to fit?</summary>
-            <div class="ev-answer"><p>A mini split needs an outdoor location, a connection through the wall, drainage, and suitable electrical service. A window AC needs a compatible opening and secure support. A portable AC needs floor space and a sealed exhaust route outdoors. Check permission and the model's instructions before buying. For a portable AC, also check drainage requirements for the operating mode and humidity conditions in the model's manual.</p></div>
+            <summary>What does installation involve?</summary>
+            <div class="ev-answer"><p>A mini split needs an outdoor location, a connection through the wall, drainage, and suitable electrical service. A window AC needs an opening that fits the unit and secure support. A portable AC needs floor space and a sealed exhaust route outdoors. Check installation permission and the model's instructions, including portable AC drainage requirements for the operating mode and humidity.</p></div>
           </details>
           <details class="ev-item">
-            <summary>Where will you hear the equipment?</summary>
-            <div class="ev-answer"><p>A mini split places its compressor outside, while its indoor fan still makes sound. Window AC noise depends on the design, operating speed, and mounting. A portable AC keeps the compressor in the room. Compare published noise figures only when the operating mode and measurement conditions are comparable.</p></div>
+            <summary>What affects noise in the room?</summary>
+            <div class="ev-answer"><p>A mini split places its compressor outside, while its indoor fan still makes sound. Window AC noise depends on the design, operating speed, and mounting. A portable AC keeps the compressor in the room. Compare noise ratings measured in the same operating mode and under comparable test conditions.</p></div>
           </details>
           <details class="ev-item">
-            <summary>How should you compare ratings?</summary>
+            <summary>How do BTU and efficiency ratings differ?</summary>
             <div class="ev-answer">
-              <p>BTU ratings describe cooling capacity. Portable units may list ASHRAE and SACC values for the same model; use SACC when comparing portable units. SEER2 and CEER use different efficiency tests. Neither a larger BTU label nor a higher number on a different efficiency scale proves that a unit is the better fit.</p>
+              <p>BTU ratings describe cooling capacity. A larger BTU number does not by itself make an AC a better fit for your room. Portable units may list both ASHRAE and SACC ratings; use SACC to compare portable models. SEER2 and CEER use different efficiency tests, so their numbers are not directly comparable.</p>
               <p>Rating background &rarr; <a href="https://www.energy.gov/cmei/buildings/portable-air-conditioners" target="_blank" rel="noopener noreferrer">energy.gov</a>. Room AC buying guidance &rarr; <a href="https://www.energystar.gov/products/room_air_conditioners" target="_blank" rel="noopener noreferrer">energystar.gov</a>.</p>
             </div>
           </details>
           <details class="ev-item">
-            <summary>When is a permanent system worth considering?</summary>
-            <div class="ev-answer"><p>A mini split may be worth considering when you use the space often, want heating as well as cooling, and can arrange a fixed installation. For occasional cooling, a compatible window or portable unit may meet the need with less initial commitment. Compare equipment, installation, electrical work, and expected use. Energy savings alone do not guarantee a payback period.</p></div>
+            <summary>When is a mini split worth the installation cost?</summary>
+            <div class="ev-answer"><p>Consider a mini split if you use the room often, want heating and cooling, and can arrange a fixed installation. For occasional cooling, a compatible window or portable AC may cost less upfront. Include equipment, installation and electrical work in your budget. Energy savings may not cover the extra upfront cost.</p></div>
           </details>
         </div>
       </div>
@@ -608,11 +610,11 @@ body{background:#fff;}
       <div class="faq-list">
         <details class="faq-item">
           <summary>Which options can work in a rental?</summary>
-          <div class="faq-answer"><p>Check your lease and building rules first. Window and portable units still need permitted, compatible window or venting arrangements. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.</p></div>
+          <div class="faq-answer"><p>Check your lease and building rules first. Window and portable units need a window or venting setup that fits the model and is allowed by your building. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.</p></div>
         </details>
         <details class="faq-item">
           <summary>What if a window AC doesn't fit my window?</summary>
-          <div class="faq-answer"><p>A portable AC may be an option if its vent kit fits the opening and can exhaust outdoors. Sliding and casement windows need model-specific checks. Without a suitable outdoor exhaust route, a portable AC is not a workaround; check whether a fixed mini-split installation is feasible.</p></div>
+          <div class="faq-answer"><p>A portable AC may work if its vent kit fits your window and can exhaust outdoors. Check the model's window requirements, especially for sliding or casement windows. A portable AC still needs an outdoor exhaust route. If you don't have one, check whether you can install a mini split.</p></div>
         </details>
         <details class="faq-item">
           <summary>Can one unit cool two rooms with the doors closed?</summary>
@@ -620,7 +622,7 @@ body{background:#fff;}
         </details>
         <details class="faq-item">
           <summary>Can a mini split handle my winter heating?</summary>
-          <div class="faq-answer"><p>Compare the model's heating capacity at your local winter temperature with the room's heat load. A low operating-temperature claim alone does not show how much heat the unit delivers. An installer can confirm whether backup heat is needed.</p></div>
+          <div class="faq-answer"><p>Compare the model's heating output at winter temperatures where you live with the heat your room needs. Its minimum operating temperature does not tell you how much heat it delivers. Ask an installer whether the system can meet that demand or needs backup heat.</p></div>
         </details>
       </div>
     </div>

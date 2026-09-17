@@ -1,0 +1,531 @@
+{
+  "checks": [
+    {
+      "name": "copy-hero-lead",
+      "pass": true,
+      "detail": {
+        "selector": ".hero-lead"
+      }
+    },
+    {
+      "name": "copy-installation-question",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(1) > summary"
+      }
+    },
+    {
+      "name": "copy-installation-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(1) .ev-answer > p"
+      }
+    },
+    {
+      "name": "copy-noise-question",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(2) > summary"
+      }
+    },
+    {
+      "name": "copy-noise-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(2) .ev-answer > p"
+      }
+    },
+    {
+      "name": "copy-ratings-question",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(3) > summary"
+      }
+    },
+    {
+      "name": "copy-ratings-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(3) .ev-answer > p:first-child"
+      }
+    },
+    {
+      "name": "copy-cost-question",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(4) > summary"
+      }
+    },
+    {
+      "name": "copy-cost-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".ev-item:nth-of-type(4) .ev-answer > p"
+      }
+    },
+    {
+      "name": "copy-rental-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".faq-item:nth-of-type(1) .faq-answer > p"
+      }
+    },
+    {
+      "name": "copy-window-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".faq-item:nth-of-type(2) .faq-answer > p"
+      }
+    },
+    {
+      "name": "copy-winter-answer",
+      "pass": true,
+      "detail": {
+        "selector": ".faq-item:nth-of-type(4) .faq-answer > p"
+      }
+    },
+    {
+      "name": "copy-mapping-all-12",
+      "pass": true,
+      "detail": {
+        "mapped": 12
+      }
+    },
+    {
+      "name": "inv-details",
+      "pass": true,
+      "detail": {
+        "actual": 19,
+        "expected": 19
+      }
+    },
+    {
+      "name": "inv-open",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "inv-faq",
+      "pass": true,
+      "detail": {
+        "actual": 4,
+        "expected": 4
+      }
+    },
+    {
+      "name": "inv-evidence",
+      "pass": true,
+      "detail": {
+        "actual": 4,
+        "expected": 4
+      }
+    },
+    {
+      "name": "inv-cards",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "inv-h2",
+      "pass": true,
+      "detail": {
+        "actual": 6,
+        "expected": 6
+      }
+    },
+    {
+      "name": "inv-source-links",
+      "pass": true,
+      "detail": {
+        "details": 19,
+        "open": 0,
+        "faq": 4,
+        "ev": 4,
+        "cards": 11,
+        "h2": 6,
+        "energy": true,
+        "energyStar": true,
+        "multiZone": true,
+        "prices": [
+          "$729.96",
+          "$799.96",
+          "$1,049.96",
+          "$1,249.96",
+          "$169.96",
+          "$269.96",
+          "$379.96",
+          "$359.96",
+          "$309.96",
+          "$379.96",
+          "$599.96"
+        ],
+        "ctas": [
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product"
+        ],
+        "variantLinks": 11,
+        "tabOneRowCss": false
+      }
+    },
+    {
+      "name": "inv-multizone-link",
+      "pass": true,
+      "detail": {
+        "details": 19,
+        "open": 0,
+        "faq": 4,
+        "ev": 4,
+        "cards": 11,
+        "h2": 6,
+        "energy": true,
+        "energyStar": true,
+        "multiZone": true,
+        "prices": [
+          "$729.96",
+          "$799.96",
+          "$1,049.96",
+          "$1,249.96",
+          "$169.96",
+          "$269.96",
+          "$379.96",
+          "$359.96",
+          "$309.96",
+          "$379.96",
+          "$599.96"
+        ],
+        "ctas": [
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product",
+          "View Product"
+        ],
+        "variantLinks": 11,
+        "tabOneRowCss": false
+      }
+    },
+    {
+      "name": "inv-prices",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "$729.96",
+          "$799.96",
+          "$1,049.96",
+          "$1,249.96",
+          "$169.96",
+          "$269.96",
+          "$379.96",
+          "$359.96",
+          "$309.96",
+          "$379.96",
+          "$599.96"
+        ],
+        "expected": [
+          "$729.96",
+          "$799.96",
+          "$1,049.96",
+          "$1,249.96",
+          "$169.96",
+          "$269.96",
+          "$379.96",
+          "$359.96",
+          "$309.96",
+          "$379.96",
+          "$599.96"
+        ]
+      }
+    },
+    {
+      "name": "inv-cta-11",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "inv-variant-links",
+      "pass": true,
+      "detail": {
+        "actual": 11,
+        "expected": 11
+      }
+    },
+    {
+      "name": "hero-lead-not-covered-1440",
+      "pass": true,
+      "detail": {
+        "lines": 2,
+        "leadRight": 351,
+        "copyRight": 389,
+        "imgLeft": 0,
+        "onTop": true,
+        "leadH": 45,
+        "imgW": 1440,
+        "imgH": 514
+      }
+    },
+    {
+      "name": "hero-lead-within-copy-1440",
+      "pass": true,
+      "detail": {
+        "lines": 2,
+        "leadRight": 351,
+        "copyRight": 389,
+        "imgLeft": 0,
+        "onTop": true,
+        "leadH": 45,
+        "imgW": 1440,
+        "imgH": 514
+      }
+    },
+    {
+      "name": "hero-lead-wraps-1440",
+      "pass": true,
+      "detail": {
+        "lines": 2,
+        "leadRight": 351,
+        "copyRight": 389,
+        "imgLeft": 0,
+        "onTop": true,
+        "leadH": 45,
+        "imgW": 1440,
+        "imgH": 514
+      }
+    },
+    {
+      "name": "hero-image-loaded-1440",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "nat": 2098,
+        "src": "hero-desktop.png"
+      }
+    },
+    {
+      "name": "hero-scene-painted-1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 514,
+        "distinct": 864,
+        "nonUniform": 0.7983084738434933
+      }
+    },
+    {
+      "name": "hero-lead-not-covered-390",
+      "pass": true,
+      "detail": {
+        "lines": 2,
+        "leadRight": 374,
+        "copyRight": 390,
+        "imgLeft": 0,
+        "onTop": true,
+        "leadH": 48,
+        "imgW": 390,
+        "imgH": 293
+      }
+    },
+    {
+      "name": "hero-lead-within-copy-390",
+      "pass": true,
+      "detail": {
+        "lines": 2,
+        "leadRight": 374,
+        "copyRight": 390,
+        "imgLeft": 0,
+        "onTop": true,
+        "leadH": 48,
+        "imgW": 390,
+        "imgH": 293
+      }
+    },
+    {
+      "name": "evidence-questions",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "What does installation involve?",
+          "What affects noise in the room?",
+          "How do BTU and efficiency ratings differ?",
+          "When is a mini split worth the installation cost?"
+        ],
+        "expected": [
+          "What does installation involve?",
+          "What affects noise in the room?",
+          "How do BTU and efficiency ratings differ?",
+          "When is a mini split worth the installation cost?"
+        ]
+      }
+    },
+    {
+      "name": "evidence-closed",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "evidence-h2-gap-1440",
+      "pass": true,
+      "detail": {
+        "actual": 32,
+        "expected": 32
+      }
+    },
+    {
+      "name": "evidence-all-open",
+      "pass": true,
+      "detail": {
+        "allOpen": true,
+        "clipped": [],
+        "imgCenter": 2837.5390625,
+        "listCenter": 2837.546875
+      }
+    },
+    {
+      "name": "evidence-answers-not-clipped",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": []
+      }
+    },
+    {
+      "name": "evidence-centered-expanded-1440",
+      "pass": true,
+      "detail": {
+        "allOpen": true,
+        "clipped": [],
+        "imgCenter": 2837.5390625,
+        "listCenter": 2837.546875
+      }
+    },
+    {
+      "name": "narrow-360-no-overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "leadLines": 2,
+        "tabTops": [
+          1302,
+          1302,
+          1302
+        ]
+      }
+    },
+    {
+      "name": "narrow-360-lead-wraps",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "leadLines": 2,
+        "tabTops": [
+          1302,
+          1302,
+          1302
+        ]
+      }
+    },
+    {
+      "name": "narrow-360-tabs-one-row",
+      "pass": true,
+      "detail": {
+        "actual": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "comparison-entry-activates",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "tab": "Window AC",
+          "hash": "#window-ac-products",
+          "hidden": false
+        },
+        "expected": {
+          "tab": "Window AC",
+          "hash": "#window-ac-products",
+          "hidden": false
+        },
+        "tab": "Window AC",
+        "hash": "#window-ac-products",
+        "hidden": false
+      }
+    },
+    {
+      "name": "tab-switch-works",
+      "pass": true,
+      "detail": {
+        "actual": {
+          "tab": "Portable AC",
+          "hash": "#portable-ac-products"
+        },
+        "expected": {
+          "tab": "Portable AC",
+          "hash": "#portable-ac-products"
+        },
+        "tab": "Portable AC",
+        "hash": "#portable-ac-products"
+      }
+    },
+    {
+      "name": "console-errors",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": []
+      }
+    },
+    {
+      "name": "failed-requests",
+      "pass": true,
+      "detail": {
+        "actual": [],
+        "expected": []
+      }
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    "copy-1440-hero-clip.png",
+    "copy-1440-hero-full.png",
+    "copy-390-hero-full.png",
+    "copy-1440-evidence-closed.png",
+    "copy-1440-evidence-expanded.png",
+    "copy-360-full.png",
+    "copy-1440-full.png"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "summary": {
+    "checks": 44,
+    "passed": 44,
+    "failed": 0,
+    "screenshots": 7
+  }
+}

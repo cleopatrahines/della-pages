@@ -430,6 +430,11 @@ async function main() {
       assertEq(`container-max-${w}`, m.maxWidth, '1360px');
       if (w === 1440) { assertTrue('container-1440-content-1312', Math.abs(m.contentW - 1312) <= 1, m); }
       if (w === 430) { assertEq('container-430-pad', m.padL, '16px'); }
+      if (w <= 600) {
+        const tabs = await evaluate(`(() => { const t = Array.from(document.querySelectorAll('.tab')); const bar = document.querySelector('.tabs'); return { count: t.length, tops: t.map((x) => Math.round(x.getBoundingClientRect().top)), widths: t.map((x) => Math.round(x.getBoundingClientRect().width)), barW: Math.round(bar.getBoundingClientRect().width), sumW: t.reduce((a, x) => a + x.getBoundingClientRect().width, 0) }; })()`);
+        assertTrue(`tabs-one-row-${w}`, tabs.count === 3 && new Set(tabs.tops).size === 1, tabs);
+        assertTrue(`tabs-fit-${w}`, tabs.sumW <= tabs.barW + 1, tabs);
+      }
     }
     for (const w of [1920, 1440, 1280]) {
       await setViewport(w, 1000);

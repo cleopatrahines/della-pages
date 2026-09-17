@@ -19,11 +19,11 @@
 
 ### Which options can work in a rental?
 
-Check your lease and building rules first. Window and portable units still need permitted, compatible window or venting arrangements. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.
+Check your lease and building rules first. Window and portable units need a window or venting setup that fits the model and is allowed by your building. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.
 
 ### What if a window AC doesn't fit my window?
 
-A portable AC may be an option if its vent kit fits the opening and can exhaust outdoors. Sliding and casement windows need model-specific checks. Without a suitable outdoor exhaust route, a portable AC is not a workaround; check whether a fixed mini-split installation is feasible.
+A portable AC may work if its vent kit fits your window and can exhaust outdoors. Check the model's window requirements, especially for sliding or casement windows. A portable AC still needs an outdoor exhaust route. If you don't have one, check whether you can install a mini split.
 
 ### Can one unit cool two rooms with the doors closed?
 
@@ -33,13 +33,11 @@ Related link in this expanded answer: Compare single-zone and multi-zone → htt
 
 ### Can a mini split handle my winter heating?
 
-Compare the model's heating capacity at your local winter temperature with the room's heat load. A low operating-temperature claim alone does not show how much heat the unit delivers. An installer can confirm whether backup heat is needed.
+Compare the model's heating output at winter temperatures where you live with the heat your room needs. Its minimum operating temperature does not tell you how much heat it delivers. Ask an installer whether the system can meet that demand or needs backup heat.
 
 ## 放回合适位置的信息
 
-Evidence 的 What needs to fit? 展开答案加入：
-
-For a portable AC, also check drainage requirements for the operating mode and humidity conditions in the model's manual.
+排水的运行模式、湿度条件和机型说明书要求保留在 Evidence 的 What does installation involve? 展开答案。完整当前文案以 LOCKED-COPY.md 为准。
 
 比较表的成本、日常噪音、能效/BTU 测试口径已有各自解释，不再在 FAQ 重复。商品面积保留 Up to；覆盖不是负荷计算，相关提醒可保留在安装/选型展开正文中，不恢复模块外脚注。
 

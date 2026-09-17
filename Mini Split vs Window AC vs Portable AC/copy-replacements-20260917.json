@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-17",
+  "sourceHTMLSHA256": "682ba16593b961a9e8ae243b016986f715c17b9af03e18481dc8426c1e4cb89c",
+  "status": "editorial-final; implementation-pending",
+  "changes": [
+    {
+      "id": "hero-lead",
+      "selector": ".hero-lead",
+      "old": "Compare the setup, everyday comfort, and upfront cost for your room.",
+      "new": "Compare installation, noise, and upfront cost to choose an AC for your room.",
+      "reason": "把抽象的 everyday comfort 换成用户能比较的噪音，说明比较后的用途。"
+    },
+    {
+      "id": "installation-question",
+      "selector": ".ev-item:nth-of-type(1) > summary",
+      "old": "What needs to fit?",
+      "new": "What does installation involve?",
+      "reason": "fit 没有明确指向。题目直接说明安装要求，关闭态也能判断是否需要展开。"
+    },
+    {
+      "id": "installation-answer",
+      "selector": ".ev-item:nth-of-type(1) .ev-answer > p",
+      "old": "A mini split needs an outdoor location, a connection through the wall, drainage, and suitable electrical service. A window AC needs a compatible opening and secure support. A portable AC needs floor space and a sealed exhaust route outdoors. Check permission and the model's instructions before buying. For a portable AC, also check drainage requirements for the operating mode and humidity conditions in the model's manual.",
+      "new": "A mini split needs an outdoor location, a connection through the wall, drainage, and suitable electrical service. A window AC needs an opening that fits the unit and secure support. A portable AC needs floor space and a sealed exhaust route outdoors. Check installation permission and the model's instructions, including portable AC drainage requirements for the operating mode and humidity.",
+      "reason": "保留三种安装条件；合并重复的 check/manual 提醒，不删除排水或许可限制。"
+    },
+    {
+      "id": "noise-question",
+      "selector": ".ev-item:nth-of-type(2) > summary",
+      "old": "Where will you hear the equipment?",
+      "new": "What affects noise in the room?",
+      "reason": "用户关心房间里的噪音，原问法过于绕弯；新题不承诺某一类绝对安静。"
+    },
+    {
+      "id": "noise-answer",
+      "selector": ".ev-item:nth-of-type(2) .ev-answer > p",
+      "old": "A mini split places its compressor outside, while its indoor fan still makes sound. Window AC noise depends on the design, operating speed, and mounting. A portable AC keeps the compressor in the room. Compare published noise figures only when the operating mode and measurement conditions are comparable.",
+      "new": "A mini split places its compressor outside, while its indoor fan still makes sound. Window AC noise depends on the design, operating speed, and mounting. A portable AC keeps the compressor in the room. Compare noise ratings measured in the same operating mode and under comparable test conditions.",
+      "reason": "仅改末句，保留测试条件限制，去掉 compare/comparable 的绕口表达。"
+    },
+    {
+      "id": "ratings-question",
+      "selector": ".ev-item:nth-of-type(3) > summary",
+      "old": "How should you compare ratings?",
+      "new": "How do BTU and efficiency ratings differ?",
+      "reason": "明确比较的是容量与能效，用户不用展开后才知道 ratings 指什么。"
+    },
+    {
+      "id": "ratings-answer",
+      "selector": ".ev-item:nth-of-type(3) .ev-answer > p:first-child",
+      "old": "BTU ratings describe cooling capacity. Portable units may list ASHRAE and SACC values for the same model; use SACC when comparing portable units. SEER2 and CEER use different efficiency tests. Neither a larger BTU label nor a higher number on a different efficiency scale proves that a unit is the better fit.",
+      "new": "BTU ratings describe cooling capacity. A larger BTU number does not by itself make an AC a better fit for your room. Portable units may list both ASHRAE and SACC ratings; use SACC to compare portable models. SEER2 and CEER use different efficiency tests, so their numbers are not directly comparable.",
+      "reason": "将长的 neither/nor 结论拆回两项具体判断；保留 BTU 不等于适配、SACC 比较及不同效率口径。"
+    },
+    {
+      "id": "cost-question",
+      "selector": ".ev-item:nth-of-type(4) > summary",
+      "old": "When is a permanent system worth considering?",
+      "new": "When is a mini split worth the installation cost?",
+      "reason": "用产品类别和真实投入替代 permanent system / worth considering 的抽象概念。"
+    },
+    {
+      "id": "cost-answer",
+      "selector": ".ev-item:nth-of-type(4) .ev-answer > p",
+      "old": "A mini split may be worth considering when you use the space often, want heating as well as cooling, and can arrange a fixed installation. For occasional cooling, a compatible window or portable unit may meet the need with less initial commitment. Compare equipment, installation, electrical work, and expected use. Energy savings alone do not guarantee a payback period.",
+      "new": "Consider a mini split if you use the room often, want heating and cooling, and can arrange a fixed installation. For occasional cooling, a compatible window or portable AC may cost less upfront. Include equipment, installation and electrical work in your budget. Energy savings may not cover the extra upfront cost.",
+      "reason": "明确前期费用、安装与使用频率；保留条件判断和无法保证回本的边界。"
+    },
+    {
+      "id": "rental-answer",
+      "selector": ".faq-item:nth-of-type(1) .faq-answer > p",
+      "old": "Check your lease and building rules first. Window and portable units still need permitted, compatible window or venting arrangements. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.",
+      "new": "Check your lease and building rules first. Window and portable units need a window or venting setup that fits the model and is allowed by your building. A mini split needs approval for a fixed installation, including the outdoor unit and any changes to the building.",
+      "reason": "把 permitted, compatible ... arrangements 改成可直接理解的“能装且被允许”，不暗示租客无需许可。"
+    },
+    {
+      "id": "window-answer",
+      "selector": ".faq-item:nth-of-type(2) .faq-answer > p",
+      "old": "A portable AC may be an option if its vent kit fits the opening and can exhaust outdoors. Sliding and casement windows need model-specific checks. Without a suitable outdoor exhaust route, a portable AC is not a workaround; check whether a fixed mini-split installation is feasible.",
+      "new": "A portable AC may work if its vent kit fits your window and can exhaust outdoors. Check the model's window requirements, especially for sliding or casement windows. A portable AC still needs an outdoor exhaust route. If you don't have one, check whether you can install a mini split.",
+      "reason": "保留真实的替代选择和排风前提，用具体动作替代 model-specific checks / not a workaround / feasible。"
+    },
+    {
+      "id": "winter-answer",
+      "selector": ".faq-item:nth-of-type(4) .faq-answer > p",
+      "old": "Compare the model's heating capacity at your local winter temperature with the room's heat load. A low operating-temperature claim alone does not show how much heat the unit delivers. An installer can confirm whether backup heat is needed.",
+      "new": "Compare the model's heating output at winter temperatures where you live with the heat your room needs. Its minimum operating temperature does not tell you how much heat it delivers. Ask an installer whether the system can meet that demand or needs backup heat.",
+      "reason": "解释 heat load，用机型数据而非 claim 的审稿口吻谈低温制热；保留备用热源判断。"
+    }
+  ]
+}

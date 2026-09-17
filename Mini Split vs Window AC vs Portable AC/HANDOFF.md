@@ -3,6 +3,18 @@
 Project: `C:\Users\18041\Desktop\della-pages\Mini Split vs Window AC vs Portable AC`
 Date: 2026-09-17.
 
+## Current release — 2026-09-17
+
+Owner authorized final review, Git commit, push and GitHub Pages publication. Codex accepted the implemented copy refinement. Current HTML: 66,193 bytes; SHA256 11DF4D0CDF4191ACA2E378F49ACB59E4406A034F7A38A50171C87715AC8B6CC8.
+
+All 12 replacements match the finalized copy. Reversing those 12 strings exactly reconstructs the recorded pre-copy SHA256 682BA16593B961A9E8AE243B016986F715C17B9AF03E18481DC8426C1E4CB89C, proving no other source changes from that baseline. The one-row mobile Tab styling and 16px price/button gap remain.
+
+Codex reran the targeted Chrome browser suite: 44/44 passed, exit 0; inspected the actual-painted desktop Hero and mobile/evidence captures. DeepSeek's full regression result is 127/127. See RELEASE-QA.md and qa/codex-publish-review-20260917/qa-results.json.
+
+Deployment target: origin https://github.com/cleopatrahines/della-pages.git, master branch, GitHub Pages source master / (legacy build). Public page path: /della-pages/Mini%20Split%20vs%20Window%20AC%20vs%20Portable%20AC/mini-split-vs-window-ac-vs-portable-ac.html. Commit/push scope is this project only; the earlier 1baf1c3 asset/page commit is also pending on the remote. Shopify publishing and unrelated working changes remain outside this release.
+
+Historical review entries below describe earlier states. Current copy, layout and product facts are implemented; deployment completion is verified through the GitHub build status and the public page after push.
+
 ## Final review and commit authorization — 2026-09-17
 
 Owner accepted the final page and authorized a local Git commit. Codex reviewed the final HTML SHA256 594E411912104FED9E8FF5F5AD76DF23210784A81D08DDFC2FC9DC2401F17151, inspected desktop/mobile and separately painted Hero captures, and reran the existing Chrome QA suite: 121/121 passed. Comparison scale/proportions are accepted. Hero contains H1 and lead; price-to-button spacing is 16px across product cards. Core docs now reflect those final owner instructions.
@@ -17,7 +29,7 @@ Active assignment was **DEEPSEEK_IMAGE_REFINEMENT_TASK.md**. Applied changes: tr
 
 Carry-forward finishing checks (now fixed and verified): mobile comparison first/last logical boundary, interactive small-text contrast, and desktop Hero screenshot painting.
 
-Previous HTML baseline: SHA256 C4401808…; current: SHA256 594E4119… (66,058 bytes, after the owner-directed hero button removal and card price/button spacing change). Core docs and the previous manifest are archived under qa/image-refinement-20260917/before. Historical notes below record earlier states and do not override the current status.
+Previous HTML baseline: SHA256 C4401808…; current: SHA256 11DF4D0C… (66,193 bytes, after the owner-directed hero button removal, card price/button spacing, one-row mobile tabs, and the 12 editorial copy changes). Core docs and the previous manifest are archived under qa/image-refinement-20260917/before. Historical notes below record earlier states and do not override the current status.
 
 ## Owner's current instruction
 
@@ -77,12 +89,25 @@ Delivered, not committed or published. Earlier evidence folders were preserved.
 - V6-1 fixed: rail start keeps 16px padding, `scroll-padding-inline` matches, previous disabled at the logical start, next disabled at the end, round-trip verified at 360/390/430.
 - V6-2 fixed: small-text hover/open now navy or `#466FCB`; measured 4.53–16.37:1. Brand blue kept for icons/borders/arrows.
 - V6-3 verified: `hero-painted-1440.png` clip has distinct 862 / nonUniform 0.80 — the desktop Hero picture is really drawn in the capture, not just a sized box.
-- Owner-directed follow-ups: the hero `Compare the options` button was removed (with its unused CSS rule) so the hero shows only H1 + lead, vertically centred; and the product-card price now has 16px of breathing space before the `View Product` button. Re-ran the suite after each change: 121/121 still pass.
+- Owner-directed follow-ups: the hero `Compare the options` button was removed (with its unused CSS rule) so the hero shows only H1 + lead, vertically centred; the product-card price now has 16px of breathing space before the `View Product` button; and at ≤600px the three product tabs stay on one equal-width row. Re-ran the suite after each change; final result 127/127 pass.
 - Regression kept green: 1360px container (1312 at 1440), no page overflow, Portable three equal tracks, Tab/URL/history one-event recovery, no-JS shows all 11 products, reduced motion, `file://`.
 
 Runner: `qa/image-refinement-implementation-20260917/capture.mjs` (exits non-zero on failure). Result: **121 assertions, 121 passed, 0 failed**, 14 screenshots. Report: `QA-REPORT-IMAGE-REFINEMENT.md`. Full data: `qa-results.json`.
 
-### Remaining review notes (image-refinement round)
+### Implementation status — copy refinement 2026-09-17 (OpenCode / DeepSeek)
+
+Delivered, not committed or published (recorded separately from the previous commit). All earlier evidence preserved.
+
+- Applied the 12 editorial-final copy changes from `copy-replacements-20260917.json` / `LOCKED-COPY.md`: hero lead, the four Evidence questions and answers, and FAQ answers 1/2/4. Only body text changed — no node, class, id, data attribute, link, default state, layout or marketing change. H1/H2, metadata, comparison fields, product facts, full model names, services copy, CTAs and image alt were untouched.
+- Verified: static mapping (`verify-copy.mjs`, exit 0) and a selector-based live-DOM mapping of all 12 elements; the full image-refinement suite re-run **127/127**; a focused copy runner **44/44** (exit 0).
+- Targeted checks: hero lead wraps cleanly at 1440/390/360 and the hero scene is really painted (pixel check); all four Evidence answers expand without clipping and stay vertically centred; FAQ 4 / Evidence 4 / 11 cards / 19 closed; comparison entry and tab switching work; no overflow; 0 console errors.
+- Kept the existing mobile one-row tab layout and the 16px price/button gap.
+
+Evidence: `qa/copy-refinement-implementation-20260917/` (`verify-copy.mjs`, `copy-mapping.txt`, `capture.mjs`, `qa-results.json`, 7 screenshots). Report: `QA-REPORT-COPY-REFINEMENT.md`. Current HTML SHA256 `11DF4D0C…` (66,193 bytes).
+
+Note: a full-page capture could return a blank hero unless the runner disables renderer backgrounding and awaits image `decode()` plus a paint frame. This was a capture-timing issue; the page CSS was already correct and unchanged by that fix.
+
+## Remaining review notes (image-refinement round)
 
 1. Confirm the comparison column images read as clearly larger and that the per-shape ratio (window AC wider/shorter) is acceptable versus a forced equal size.
 2. Confirm the 280/235/220px media heights and the 330px max image width match intent at 1920 (image widths remain capped at 330 by design).
@@ -116,7 +141,7 @@ Open items for Codex to review or decide:
 
 This is a local review build. Final Shopify URL and the production product-data integration are not provided. Omit a fabricated canonical. Static preview prices must be replaced by live Shopify-owned facts or an approved refresh process for long-term deployment.
 
-Local commit authorized by the owner on 2026-09-17 after final review. Remote push, publishing, sibling-page edits and live Shopify changes remain outside scope.
+Git commit, push and GitHub Pages publication authorized by the owner on 2026-09-17. Sibling-page edits and live Shopify changes remain outside scope.
 
 ## QA completed by Codex before coding
 

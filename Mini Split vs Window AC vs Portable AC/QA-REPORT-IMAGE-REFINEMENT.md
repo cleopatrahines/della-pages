@@ -1,6 +1,6 @@
 # QA report — image, typography and evidence refinement (2026-09-17)
 
-Build: `mini-split-vs-window-ac-vs-portable-ac.html` — 66,058 bytes, SHA256 `594E411912104FED9E8FF5F5AD76DF23210784A81D08DDFC2FC9DC2401F17151`.
+Build: `mini-split-vs-window-ac-vs-portable-ac.html` — 66,225 bytes, SHA256 `682BA16593B961A9E8AE243B016986F715C17B9AF03E18481DC8426C1E4CB89C`.
 Round: transparent product images, comparison scale, unified H2, Evidence alignment, four-question FAQ, plus the carried-forward V6-1/V6-2/V6-3/V6-4 items.
 Status: implemented and locally browser-tested; returned to Codex for review. Local review build only — not committed, pushed or published.
 
@@ -15,6 +15,7 @@ Earlier evidence preserved: `qa/` (first pass), `qa/codex-review-20260917/`, `qa
 - FAQ: reduced to the four current questions; portable drainage moved into the Evidence "What needs to fit?" answer. 19 disclosures total, all closed initially.
 - Owner-directed follow-up: removed the hero `Compare the options` button and its now-unused `.hero-copy .btn` rule. The hero keeps H1 + lead only, vertically centred; machines remain fully visible. The `#comparison` section id is kept and the nav code is unchanged.
 - Owner-directed follow-up: added breathing space inside the product card purchase area — the price now has a 16px bottom margin (and 16px top padding) so it no longer sits flush against the `View Product` button. Applies to all three tabs.
+- Owner-directed follow-up: at ≤600px the three product tabs stay on one row (equal-width `flex:1 1 0`, 14px, 8px gap, no wrap). Verified at 430/390/360: all three share one baseline, equal widths, total width under the tab bar, no page overflow.
 
 ## 2. How it was tested
 
@@ -75,6 +76,6 @@ The Shopify integration list previously said to remove the inline `.js` bootstra
 
 ## 7. Files
 
-- `mini-split-vs-window-ac-vs-portable-ac.html` (66,058 bytes; SHA256 `594E4119…`)
+- `mini-split-vs-window-ac-vs-portable-ac.html` (66,225 bytes; SHA256 `682BA165…`)
 - `qa/image-refinement-implementation-20260917/`: `capture.mjs`, `qa-results.json`, 14 screenshots (1440 three tabs full page, 390 three tabs full page, 360/768/1920, Evidence closed/expanded, painted clips, no-JS)
 - `QA-REPORT-IMAGE-REFINEMENT.md` (this file), updated `HANDOFF.md`
