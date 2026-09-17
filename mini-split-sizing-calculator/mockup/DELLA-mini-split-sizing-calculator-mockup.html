@@ -111,35 +111,28 @@ details.faq[open] .pfa-minus{display:block}
 details.faq[open] .pfa-plus{display:none}
 details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
-/* customer reviews — Loox store widget clone (values lifted from dellahome our-reviews widget) */
-.gr-sec{font-family:'Poppins',sans-serif;color:#000}
-.gr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.gr-brand b{font-size:16px;color:#000;font-weight:700}
-.gr-score{display:flex;align-items:center;gap:8px;font-size:15px;color:#000;margin-top:4px}
-.gr-score .num{font-weight:600;font-size:16px}
-.gr-stars{color:#0B133D;letter-spacing:2px;font-size:16px}
-.gr-count{font-size:13.5px;color:#73777B;margin-top:3px}
-.gr-write{border:1px solid #E8E8E8;background:#fff;border-radius:8px;padding:10px 22px;font-size:14px;color:#0B133D;text-decoration:none;font-weight:500}
-.gr-write:hover{border-color:#0B133D}
-.gr-wrap{position:relative}
-.gr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px)/4);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-.gr-track::-webkit-scrollbar{display:none}
-.gr-card{scroll-snap-align:start;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:10px;display:flex;flex-direction:column}
-.gr-photo{border-radius:7px 7px 0 0;height:200px;background:#F0F1F1;overflow:hidden;margin:-10px -10px 10px}
-.gr-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.gr-name{font-weight:700;font-size:16px;color:#000;display:flex;align-items:center}
-.gr-verified{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:400;line-height:18px;color:#0B133D;white-space:nowrap}
-.gr-verified svg{width:14px;height:14px;margin-left:8px;flex:none}
-.gr-date{color:#73777B;font-size:11px;padding:5px 0 0}
-.gr-starline{padding-top:10px}
-.gr-star5{color:#0B133D;font-size:14px;letter-spacing:2px}
-.gr-text{font-size:14px;line-height:19px;color:#000;margin-top:8px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
-.gr-card.expanded .gr-text{display:block;-webkit-line-clamp:unset}
-.gr-more{font-size:12px;color:#73777B;cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:none;font-family:'Poppins',sans-serif;text-align:left;padding:6px 0 0;margin-bottom:12px}
-.gr-prod{font-size:12.5px;color:#282828;padding-top:10px;border-top:1px solid #e2e2e2;margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gr-prod a{color:#282828;text-decoration:none}
-.gr-prod a:hover{text-decoration:underline}
-.gr-text{margin-bottom:10px}
+/* Hear From Our User — clone of the dellahome.com/pages/della-holiday-giveaway section */
+.hfu-sec{padding-top:24px;padding-bottom:30px}
+.hfu-flex{width:100%;display:flex;flex-flow:column;justify-content:center;align-items:center}
+.hfu-top{align-self:stretch;position:relative;display:flex;flex-flow:row;justify-content:center;align-items:center;margin-bottom:20px}
+.hfu-title{width:100%;display:flex;flex-flow:column;justify-content:center;align-items:center;margin-bottom:0}
+.hfu-title h2{font-family:var(--serif);font-weight:400;color:#0E1952;font-size:clamp(24px,3vw,35px);line-height:1.4;letter-spacing:-1.3px;text-align:center;width:100%;margin-top:0;margin-bottom:0}
+.hfu-actions{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;flex-flow:row;justify-content:flex-end;align-items:center;margin-bottom:0}
+.hfu-more{font-family:var(--sans);font-weight:500;font-size:16px;letter-spacing:-1px;color:#0e1952;text-decoration:underline;text-underline-offset:3px;padding:18px 0}
+.hfu-more:hover{color:#0e1952}
+.hfu-arrow{width:20px;height:auto;display:block}
+.hfu-wrap{position:relative;align-self:stretch}
+.hfu-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px;margin:-2px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.hfu-track::-webkit-scrollbar{display:none}
+.hfu-card{scroll-snap-align:start;align-self:stretch;display:flex;flex-flow:column;justify-content:flex-start;align-items:center;gap:8px;border:1px solid #d8eff8;text-align:center;padding:0}
+.hfu-cardhead{align-self:stretch;display:flex;flex-flow:row;justify-content:flex-start;align-items:flex-start;padding:20px 10px 0}
+.hfu-namewrap{flex-grow:1;flex-basis:0;display:flex;flex-flow:column;justify-content:center;align-items:flex-start}
+.hfu-name{font-family:var(--serif);font-weight:400;font-size:16px;line-height:1.5;color:#0e1952;display:flex;align-items:center;margin:0}
+.hfu-name svg{width:14px;height:14px;fill:#0e1952;margin-left:2px;flex:none}
+.hfu-stars{flex-grow:1;flex-basis:0;display:flex;flex-flow:row;justify-content:flex-end;align-items:center;padding-top:8px}
+.hfu-stars svg{width:14px;height:14px;fill:#0e1952;margin-right:2px}
+.hfu-text{width:100%;font-size:15px;line-height:1.5;color:#0e1952;text-align:left;padding:10px;margin:0 0 24px;font-family:var(--sans);font-weight:400}
+.hfu-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;display:block;margin-top:auto}
 
 /* premium services — light rounded cards, round icon badges (per approved screenshot) */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
@@ -152,9 +145,12 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 @media (max-width:960px){
   .calc-grid{grid-template-columns:1fr;gap:28px}
-  .carousel,.gr-track{scroll-snap-type:x proximity}
+  .carousel,.hfu-track{scroll-snap-type:x proximity}
   .carousel{grid-auto-columns:calc((100% - 20px)/2);gap:20px}
-  .gr-track{grid-auto-columns:calc((100% - 24px)/2)}
+  .hfu-track{grid-auto-columns:calc((100% - 20px)/2);gap:20px}
+  .hfu-top{flex-flow:column}
+  .hfu-title{margin-bottom:10px}
+  .hfu-actions{position:static;transform:none;justify-content:flex-start;margin-bottom:15px;order:2}
   .svc-grid{grid-template-columns:1fr 1fr;gap:16px}
   .sec{padding:44px 0}
   .container{padding:0 16px}
@@ -165,7 +161,7 @@ details.faq p{padding:0 0 18px;font-size:14.5px;color:var(--muted);line-height:1
   .carousel{grid-auto-columns:calc((100% - 16px)/2);gap:16px}
   .prod-title{font-size:16px;min-height:72px}
   .atc-btn{font-size:15px}
-  .gr-track{grid-auto-columns:92%}
+  .hfu-track{grid-auto-columns:100%;gap:16px}
   .svc-grid{grid-template-columns:1fr}
   .car-btn{display:none}
   .result-card{padding:22px 16px}
@@ -663,21 +659,22 @@ Place this code in the empty space below. */
   </div>
 </section>
 
-<!-- 6 · Google reviews -->
-<section class="sec gr-sec" id="reviews" style="padding-top:24px">
+<!-- 6 · Hear From Our User — clone of della-holiday-giveaway -->
+<section class="sec hfu-sec" id="reviews">
   <div class="container">
-    <div class="gr-head">
-      <div class="gr-brand">
-        <b>dellahome.com</b>
-        <div class="gr-score"><span class="num">4.9</span><span class="gr-stars">★★★★★</span></div>
-        <div class="gr-count">1,702 reviews from verified DELLA buyers</div>
+    <div class="hfu-flex">
+      <div class="hfu-top">
+        <div class="hfu-title"><h2>Hear From Our User</h2></div>
+        <div class="hfu-actions">
+          <a class="hfu-more" href="https://dellahome.com/pages/our-reviews" target="_blank" rel="noopener">Read More Reviews</a>
+          <a href="https://dellahome.com/pages/our-reviews" target="_blank" rel="noopener" aria-label="Read more reviews"><img class="hfu-arrow" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/02_1004ec0d-1bed-40bc-9e0f-8563bdad983f.png?v=1779182720&width=550" alt="" width="20" height="16" loading="lazy"></a>
+        </div>
       </div>
-      <a class="gr-write" href="https://dellahome.com/pages/our-reviews">See all reviews</a>
-    </div>
-    <div class="gr-wrap">
-      <button class="car-btn car-prev" style="top:32%" aria-label="Previous reviews" onclick="slideLoop('grCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
-      <div class="gr-track" id="grCar" aria-label="Customer reviews"></div>
-      <button class="car-btn car-next" style="top:32%" aria-label="Next reviews" onclick="slideLoop('grCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
+      <div class="hfu-wrap">
+        <button class="car-btn car-prev" style="top:35%" aria-label="Previous reviews" onclick="slideLoop('hfuCar',-1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M11.36 2.36a.94.94 0 00-.05-1.23.95.95 0 00-1.22-.05L0 10.5l10.09 9.41a.95.95 0 001.22-.04.94.94 0 00.05-1.23L2.55 10.5l8.81-8.14z" fill="currentColor"/></svg></button>
+        <div class="hfu-track" id="hfuCar" aria-label="Customer reviews"></div>
+        <button class="car-btn car-next" style="top:35%" aria-label="Next reviews" onclick="slideLoop('hfuCar',1)"><svg width="11" height="18" viewBox="0 0 12 21" fill="none"><path d="M.64 2.36A.94.94 0 01.69 1.13.95.95 0 011.91 1.08L12 10.5l-10.09 9.41a.95.95 0 01-1.22-.04.94.94 0 01-.05-1.23l8.81-8.14L.64 2.36z" fill="currentColor"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
@@ -910,30 +907,30 @@ function renderBestsellers(){
       </form>
     </div>`).join('');
 }
-const LOOX_REVIEWS=[{"n":"Troy J.","s":5,"t":1784755930696,"img":"https://images.loox.io/uploads/2026/7/22/Sad5t35IL_orig.jpg","p":"DELLA Motto Series 18000 BTU 19 SEER2 Mini Split Heat Pump AC – Up to 1000 Sq.Ft.","v":true,"x":"Easy installation\nAll necessary components and product was included.\nWarranty was easy to set up.\nWill be buying again","u":"https://dellahome.com/products/della-motto-series-18000-btu-19-seer2-mini-split-heat-pump-ac-up-to-1000-sq-ft"},{"n":"Thomas M.","s":5,"t":1784579625220,"img":"https://images.loox.io/uploads/2026/7/20/tEiYLnYn0_orig.jpg","p":"DELLA Econo Series 23000 BTU 17 SEER2 Mini Split Heat Pump AC - Up to 1500 Sq.Ft.","v":true,"x":"This is my second Della unit.first one is 4 years old and no problems.expect the same from this one","u":"https://dellahome.com/products/econo-series-23000-btu-seer2-17-mini-split-heat-pump-ac-up-to-1500-sq-ft"},{"n":"Dustin C.","s":5,"t":1783472687973,"img":"https://images.loox.io/uploads/2026/7/8/ksp09jh3q_orig.jpg","p":"DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.","v":true,"x":"These were easy to install and cool very well. The best part is because you stay under 50’ of coolant lines you don’t have to higher a HVAC company to charge the lines. That’s it plug and play anyone with DIY skills can do it.","u":"https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft"},{"n":"Dustin C.","s":5,"t":1783471745229,"img":"https://images.loox.io/uploads/2026/7/8/BWdvWqYn7_orig.jpg","p":"DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.","v":true,"x":"These were easy to install and cool our house way better than the old swamp cooler running 24/7. Me and my wife installed 3 condensers and 5 head units in one day and that included running all the electrical to the locations.   I still need to cover the lines, those get done next weekend! 😎🥶.","u":"https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft"},{"n":"Samuel H.","s":5,"t":1782958397748,"img":"https://images.loox.io/uploads/2026/7/2/ME2KncHIq_orig.jpg","p":"DELLA Optima Series 9000 BTU 23 SEER2 Ultra Heat Mini Split AC - Up to 400 Sq.Ft.","v":true,"x":"Thai review comes while I'm currently in a heatwave with a heat index of around 110 degrees.\n\nThis unit is incredible. Ice cold air, even when it's brutally hot and humid. The up-down/left-right louvers are great.\n\nIndoor unit is attractive. Honestly I feel like my 9k Della has more cooling power than my 12k Mr.cool.\n\nInstalled it myself. Everything went well","u":"https://dellahome.com/products/optima-series-9000-btu-seer2-24-ultra-heat-mini-split-ac-up-to-400-sq-ft"},{"n":"Nicholas J G.","s":5,"t":1781768850485,"img":"https://images.loox.io/uploads/2026/6/18/hKkJTcHYh_orig.jpg","p":"DELLA Motto Series 18000 BTU 19 SEER2 Mini Split Heat Pump AC – Up to 1000 Sq.Ft.","v":true,"x":"REVIEW OF:\nDELLA Motto Series 18000 BTU 19 SEER2 Mini Split Heat Pump AC – Up to 1000 Sq.Ft.\n\nUnit works like a dream. The whole area where it was installed is now 100% comfortable. Installed in 2 days time, due to just taking my time, just to make sure everything was done properly. Was a pretty straight forward process, but that was due to me being an ex-hva/c tech and ex-electrician. So, that being said, if your not comfortable with tackling this type of installation, definitely hire an a/c co...","u":"https://dellahome.com/products/della-motto-series-18000-btu-19-seer2-mini-split-heat-pump-ac-up-to-1000-sq-ft"},{"n":"Anthony T.","s":5,"t":1781555193183,"img":"https://images.loox.io/uploads/2026/6/15/4BPDbD-Wh_orig.jpg","p":"DELLA Vario Series 36000 BTU 19 SEER2 Mini Split Heat Pump AC (R-454B) - Up to 2500 Sq.Ft.","v":true,"x":"The 36,000 BTU unit was easy to install and works great at cooling a large space approximately 1800 sqft.","u":"https://dellahome.com/products/tl-series-36000-btu-seer2-19-mini-split-heat-pump-ac-up-to-2500-sq-ft"},{"n":"Mike M.","s":5,"t":1781517454384,"img":"https://images.loox.io/uploads/2026/6/15/LDbrYxlLG_orig.jpg","p":"DELLA Vario Series 28000 BTU Dual Zone Mini Split AC (12k+12k) - Up to 1100 Sq.Ft.","v":true,"x":"Was good and easy to install  getting my second order never happened and no call back","u":"https://dellahome.com/products/vario-series-28000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft"},{"n":"Mark D.","s":5,"t":1781292596888,"img":"https://images.loox.io/uploads/2026/6/12/BxgyIuwEs_orig.jpg","p":"DELLA Serena CloudAir Series 18000 BTU 22 SEER2 Mini Split Heat Pump AC - Up to 1000 Sq.Ft.","v":true,"x":"We love it\n\nI stalled in our garage and it really throws out cold air.\n\nInstall was straightforward with the easy to to follow instructions.","u":"https://dellahome.com/products/della-serena-cloud-air-series-18000-btu-22-seer2-mini-split-heat-pump-ac-up-to-1000-sq-ft"},{"n":"Woo L.","s":4,"t":1780061563345,"img":"https://images.loox.io/uploads/2026/5/29/bt-_29AK-_orig.jpg","p":"DELLA 18000 BTU 20.5 SEER2 Floor Mounted Mini Split AC - Up to 1000 Sq. Ft.","v":true,"x":"The product works very well as described,\nThe floor unit is designed to be a bit difficult to install.","u":"https://dellahome.com/products/della-18000-btu-20-5-seer2-floor-ceiling-mini-split-ac-up-to-1000-sq-ft"},{"n":"Brian M.","s":5,"t":1779831016555,"img":"https://images.loox.io/uploads/2026/5/26/8n-elJzqY_orig.jpg","p":"DELLA Vario Series 9000 BTU 19 SEER2 Mini Split Heat Pump AC (R-454B) - Up to 400 Sq.Ft.","v":true,"x":"As a DIY project it was simple and straight forward. I have never installed a mini split before but after this DIY project I am confident I can do many more.","u":"https://dellahome.com/products/della-vario-series-9000-btu-19-seer2-mini-split-heat-pump-ac-r-454b-up-to-400-sq-ft"},{"n":"Amy E.","s":5,"t":1779496665945,"img":"https://images.loox.io/uploads/2026/5/23/4EhLXAqM9_orig.jpg","p":"DELLA Motto Series Mini Split AC R32 Refrigerant","v":true,"x":"I bought a Della for a rental house I own and it worked so well that when our home mini split quit after only two years I went to the Della website. My husband installed it 8 hours ago and our house (in Oklahoma) is already very cold!\nI am so grateful for a reliable brand!"},{"n":"Justin H.","s":5,"t":1779413939645,"img":"https://images.loox.io/uploads/2026/5/22/RNOJxfAlb_orig.jpg","p":"DELLA 27000 BTU Tri-Zone Ceiling Cassette Mini Split AC (9K+9K+18K) - Up to 1800 Sq.Ft.","v":true,"x":"Install for this unit does require a bit of professional help, but it seems to be really well made and is working great so far.","u":"https://dellahome.com/products/27000-btu-tri-zone-ceiling-cassette-mini-split-ac-9k-9k-18k-up-to-1800-sq-ft"},{"n":"Kenneth R.","s":5,"t":1779363909431,"img":"https://images.loox.io/uploads/2026/5/21/lASonvuoBy_orig.jpg","p":"DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (12K + 12K) - Up to 1100 Sq.Ft.","v":true,"x":"Installed just in time for the hot weather. Actually, used the heat mode first. Great value and product. Excellent customer service.","u":"https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-12k-12k-up-to-1100-sq-ft"},{"n":"Donald W.","s":5,"t":1778843669274,"img":"https://images.loox.io/uploads/2026/5/25/biz--gj-6_orig.jpg","p":"DELLA Vario Series 45000 BTU Tri-Zone Mini Split AC (12K+24K+24k) - Up to 3550 Sq.Ft.","v":true,"x":"Very good system. Della has made it very easy to install this multi-mini split.  I called customer support with a couple of questions and my calls were immediately answered by a customer service rep. (No wait, no menu, a human answered the call. That was unexpected) Each time the rep was very well informed and directed me to the information I needed.","u":"https://dellahome.com/products/vario-series-45000-btu-tri-zone-mini-split-ac-12k-24k-24k-up-to-3550-sq-ft"},{"n":"Shawn","s":5,"t":1778371200000,"img":"https://images.loox.io/uploads/2026/5/26/pApUE95g1H_orig.jpg","p":"DELLA 9,500 BTU 23 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 400 Sq.Ft.","v":true,"x":"Got an AC tech to install, so no comments on the installation. However, the use of the app is good. Cooling is fast and efficient. See the photos.","u":"https://dellahome.com/products/della-9-500-btu-seer2-23-ceiling-cassette-ductless-mini-split-ac-up-to-400-sq-ft"}];
-function fmtDate(t){const d=new Date(t);return (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();}
-function toggleReview(btn){
-  const card=btn.closest('.gr-card');
-  card.classList.toggle('expanded');
-  btn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
-}
-function renderReviews(){
-  const VERIFIED='<span class="gr-verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B133D"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>';
-  document.getElementById('grCar').innerHTML = LOOX_REVIEWS.map(r=>`
-    <div class="gr-card">
-      ${r.img?`<div class="gr-photo"><img src="${r.img}" alt="Customer photo: ${r.p||'DELLA product'}" loading="lazy"></div>`:''}
-      <div class="gr-name">${r.n}${r.v?VERIFIED:''}</div>
-      <div class="gr-date">${fmtDate(r.t)}</div>
-      <div class="gr-starline"><span class="gr-star5">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span></div>
-      <div class="gr-text">${r.x.replace(/\n/g,'<br>')}</div>
-      ${r.x.length>200?'<button class="gr-more" type="button" onclick="toggleReview(this)">Show more</button>':''}
-      ${r.p?`<div class="gr-prod">${r.u?`<a href="${r.u}">${r.p}</a>`:r.p}</div>`:''}
+const HFU_REVIEWS=[
+ {n:"George P.",x:"I researched online and chose the Della Serena series 24000btu. The price, warranty, and reviews appealed to me. Shipping was faster than expected. The unit arrived at 8 am and I finished the install in 10 hours.  Everything went smoothly, and the unit is very quiet running. I'm just using the remote to control it.",img:"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/HqbKX68sX_mid.jpg?v=1787885743&width=1024"},
+ {n:"Jeff W.",x:"I am truly impressed with these Della split units. This was the perfect choice for the space being used. I ordered everything needed to make for a great installation. Wall bracket, line sets, line set covers. The inside units are nice-looking units, and their sizing is common to all others out there.",img:"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/Optima_Series_9000_BTU_23_SEER2_Ultra_Heat_Mini_Split_AC.jpg?v=1787885783&width=1024"},
+ {n:"Dustin C.",x:"These were easy to install and cool very well. The best part is that because you stay under 50’ of coolant lines, you don’t have to higher a HVAC company to charge the lines. That’s it: plug and play; anyone with DIY skills can do it.",img:"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/Vario_Series_9000_BTU_SEER2_20_Mini_Split_AC_2.jpg?v=1787885782&width=1024"},
+ {n:"Jonathan W.",x:"Because of Montana, I needed the heater option. Most systems offered heat down to 5°, but I need heat for winter too, so the ultra hyper heat system works to -22° and should cover most of the winter. The install was easy, with all parts needed included. I was impressed.",img:"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/optima_Pro_CloudAir_Series_18000_BTU_23.5_SEER2_Ultra_Hyper_Heat_Mini_Split_AC_b4f92e8a-1de0-4654-b975-b53a4ae1d55a.jpg?v=1787887839&width=1024"},
+ {n:"Jerry L.",x:"This is our second Della. This one was installed in our home. It was an easy process from start to finish. I worked with Brenda during the ordering. She was very patient and understood what I wanted.  I took my time with everything. As far as the installation, the YouTube videos made it pretty easy.",img:"https://cdn.shopify.com/s/files/1/0785/7763/1520/files/WNvX3pU8C_mid.jpg?v=1787887870&width=1024"}
+];
+const HFU_STAR='<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.2 5.8 20.9l1.6-7L2 9.2l7.1-.6L12 2z"/></svg>';
+const HFU_CHECK='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0e1952"/><path d="m7.8 12.4 2.7 2.7 5.7-5.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function renderHFU(){
+  document.getElementById('hfuCar').innerHTML = HFU_REVIEWS.map(r=>`
+    <div class="hfu-card">
+      <div class="hfu-cardhead">
+        <div class="hfu-namewrap"><h3 class="hfu-name">${r.n}${HFU_CHECK}</h3></div>
+        <div class="hfu-stars">${HFU_STAR.repeat(5)}</div>
+      </div>
+      <p class="hfu-text">${r.x}</p>
+      <img class="hfu-img" src="${r.img}" alt="Customer photo from ${r.n}" loading="lazy">
     </div>`).join('');
 }
 
 /* init: MSFL-style defaults, live recalc */
 renderBestsellers();
-renderReviews();
+renderHFU();
 setRegion('mixed', true);
 document.getElementById('climateChip').innerHTML = '<b>Region #3 (Yellow): Mixed</b> set as the default. Enter your ZIP for a more precise climate estimate, or click your state for a regional fallback.';
 document.getElementById('climateChip').style.display='block';
