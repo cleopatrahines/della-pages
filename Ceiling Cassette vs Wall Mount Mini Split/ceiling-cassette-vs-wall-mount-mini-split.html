@@ -58,7 +58,7 @@ button:focus-visible {
 }
 .page { overflow: hidden; background: var(--white); }
 .container { width: min(1200px, calc(100% - 64px)); margin: 0 auto; }
-.section { padding: 29px 0; }
+.section { padding: clamp(48px, 6vw, 72px) 0; }
 .section-alt { background: #F7F8FB; }
 .section-head {
   display: block;
@@ -89,7 +89,7 @@ h2 {
   margin-bottom: 10px;
   font-family: var(--font-heading);
   color: var(--navy);
-  font-size: clamp(28px, 3vw, 38px);
+  font-size: clamp(27px, 2.6vw, 34px);
   line-height: 1.16;
   font-weight: 400;
   letter-spacing: 0;
@@ -108,7 +108,6 @@ h3 {
   font-size: 16px;
   line-height: 1.65;
 }
-.airflow-copy { max-width: 1040px; }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -132,724 +131,357 @@ h3 {
 
 .hero {
   position: relative;
-  min-height: clamp(500px, 34vw, 590px);
-  display: flex;
-  align-items: center;
+  background: #f3efe8;
   overflow: hidden;
-  background: #F7F8FB;
 }
-.hero picture, .hero-bg {
+.hero-media { display: block; }
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-overlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.58) 32%, rgba(255,255,255,0) 60%);
 }
-.hero-bg { object-fit: cover; object-position: 58% center; }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: min(760px, 62%);
-  background: linear-gradient(90deg, rgba(255,255,255,.86) 0%, rgba(255,255,255,.64) 48%, rgba(255,255,255,0) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 2; }
-.hero-inner { max-width: 660px; padding: 64px 0; }
+.hero-copy { max-width: 460px; }
 .hero h1 {
-  max-width: 660px;
-  margin-bottom: 18px;
-  font-size: clamp(42px, 4vw, 58px);
-  line-height: 1.05;
-}
-.hero-text {
-  max-width: 560px;
-  margin-bottom: 24px;
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.55;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-actions .btn {
-  min-height: 48px;
-  padding: 12px 26px;
-}
-
-.quick-answer {
-  padding: 29px 0;
-  background: #F8F9FB;
-}
-.quick-answer__inner {
-  display: grid;
-  grid-template-columns: .88fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  align-items: center;
-}
-.quick-answer__media {
-  aspect-ratio: 16 / 11;
-  max-height: 430px;
-  overflow: hidden;
-  background: var(--gray-50);
-  border-radius: 24px;
-}
-.quick-answer__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.quick-answer__content {
-  max-width: 560px;
-}
-.quick-answer__content h2 {
-  max-width: 560px;
-  margin-bottom: 14px;
-}
-.quick-answer__lead {
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.62;
-  margin-bottom: 22px;
-}
-
-.airflow-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-.airflow-card {
-  padding: clamp(22px, 3vw, 32px);
-  border: 1px solid rgba(12,34,80,.08);
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 18px 45px rgba(12,34,80,.06);
-}
-.airflow-card h3 {
-  margin-bottom: 14px;
-  font-size: clamp(24px, 2vw, 30px);
-}
-.airflow-card ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.55;
-}
-.airflow-card li {
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
-}
-.airflow-card li + li { margin-top: 8px; }
-.airflow-card li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  margin-top: 8px;
-  border-radius: 50%;
-  background: rgba(88,132,231,.9);
-  flex: 0 0 auto;
-}
-.diagram {
-  position: relative;
-  aspect-ratio: 16 / 5.5;
-  margin-bottom: 22px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #f7f9ff 0%, #eef3fb 100%);
-  overflow: hidden;
-}
-.diagram svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-#decision-checker {
-  padding: 29px 0;
-  background: linear-gradient(180deg, #f7f9fd 0%, #fff 100%);
-}
-.decision-checker {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(360px, .6fr);
-  gap: clamp(34px, 5vw, 72px);
-  align-items: start;
-}
-.checker-panel {
-  width: 100%;
-  min-width: 0;
-}
-.checker-heading {
-  width: 100%;
-  max-width: none;
-  margin-bottom: 0;
-}
-.checker-panel h2 {
-  max-width: 100%;
-  margin-bottom: 18px;
-  font-size: clamp(42px, 4vw, 56px);
-  line-height: 1.03;
-  letter-spacing: 0;
-  text-wrap: normal;
-}
-.checker-panel .section-copy {
-  max-width: 720px;
-  margin-bottom: 0;
-  font-size: 16px;
-  line-height: 1.55;
-}
-.checker-count {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  margin-top: 22px;
-  margin-bottom: 18px;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: rgba(84,125,255,.10);
-  color: #101a64;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-.checker-progress {
-  margin-top: 24px;
-  margin-bottom: 18px;
-  max-width: 100%;
-}
-.checker-list {
-  display: grid;
-  width: 100%;
-  gap: 10px;
-}
-.checker-question {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 18px;
-  min-height: auto;
-  padding: 15px 17px;
-  border: 1px solid rgba(12,34,80,.075);
-  border-radius: 17px;
-  background: rgba(255,255,255,.78);
-  box-shadow: 0 10px 24px rgba(12,34,80,.035);
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background .2s ease;
-}
-.checker-question.is-answered {
-  border-color: rgba(12,34,80,.08);
-  background: rgba(255,255,255,.86);
-  box-shadow: 0 10px 26px rgba(12,34,80,.04);
-}
-.checker-question:hover,
-.checker-question:focus-within {
-  transform: translateY(-1px);
-  border-color: rgba(84,125,255,.24);
-  box-shadow: 0 14px 34px rgba(12,34,80,.06);
-}
-.checker-question__copy {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  min-width: 0;
-}
-.checker-question__number {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  background: rgba(84,125,255,.08);
-  color: #527cff;
-  font-size: 11px;
-  font-weight: 800;
-}
-.checker-question h3 {
-  margin: 0 0 4px;
-  color: var(--navy);
-  font-size: 16.5px;
-  line-height: 1.2;
-}
-.checker-question p {
-  margin: 0;
-  color: rgba(5,22,70,.76);
-  font-size: 14px;
-  line-height: 1.42;
-}
-.checker-question__options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.checker-option {
-  min-height: 42px;
-  padding: 9px 15px;
-  border: 1px solid rgba(12,34,80,.14);
-  border-radius: 999px;
-  background: #fff;
-  color: #071b5f;
-  cursor: pointer;
-  font-weight: 800;
-  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-}
-.checker-option:hover {
-  transform: translateY(-1px);
-  border-color: rgba(84,125,255,.45);
-}
-.checker-option.is-selected {
-  background: #101a64;
-  border-color: #101a64;
-  color: #fff;
-}
-.checker-result {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-self: start;
-  max-width: 380px;
-  padding: clamp(26px, 3vw, 34px);
-  border: 1px solid rgba(12,34,80,.10);
-  border-radius: 26px;
-  background:
-    radial-gradient(circle at 85% 12%, rgba(118,155,255,.18), transparent 34%),
-    linear-gradient(145deg, #f5fbff 0%, #eef8ff 58%, #f8fcff 100%);
-  box-shadow: 0 22px 54px rgba(12,34,80,.075);
-}
-.checker-result .section-label,
-.result-eyebrow {
-  margin-bottom: 18px;
-  font-size: 11px;
-  letter-spacing: .08em;
-}
-.checker-result strong {
-  display: block;
-  max-width: 9.5em;
-  margin-top: 0;
+  max-width: 460px;
   margin-bottom: 16px;
   color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: 0;
+  font-size: clamp(40px, 3.6vw, 54px);
+  line-height: 1.04;
+  text-wrap: balance;
 }
-.checker-result p {
-  max-width: 380px;
-  margin: 0 0 18px;
-  color: rgba(5,22,70,.72);
-  font-size: 15px;
+.hero-copy p {
+  max-width: 430px;
+  margin: 0;
+  color: #2b3358;
+  font-size: 16px;
   line-height: 1.55;
 }
-.checker-footnote {
-  display: block;
-  color: rgba(5,22,70,.58);
-  font-size: 12.5px;
-  line-height: 1.45;
-  opacity: .66;
+#decision-checker {
+  padding: clamp(48px, 6vw, 72px) 0;
+  background: #fff;
 }
-.checker-actions {
+.checker-head {
+  max-width: 660px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.checker-head h2 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.12;
+}
+.checker-head .section-copy {
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.checker-grid {
   display: grid;
-  gap: 10px;
+  grid-template-columns: minmax(0, 54fr) minmax(0, 46fr);
+  gap: clamp(24px, 3vw, 34px);
+  align-items: start;
 }
-.checker-actions[hidden] {
-  display: none;
+.checker-scene {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray-50);
 }
-.checker-actions .btn {
+.checker-scene__media { position: relative; }
+.checker-scene__media img {
+  display: block;
   width: 100%;
-  min-height: 46px;
-  border-radius: 7px;
-  box-shadow: none;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
-.checker-result .btn-primary {
-  box-shadow: none;
-}
-.checker-secondary {
+.checker-scene__marker {
+  position: absolute;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  border: 1px solid rgba(12,34,80,.12);
-  border-radius: 7px;
-  background: rgba(255,255,255,.62);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(14,25,83,.25);
+}
+.checker-scene__marker--1 { top: 12%; left: 30%; }
+.checker-scene__marker--2 { top: 31%; left: 84%; }
+.checker-scene__info {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checker-scene__info::before {
+  content: "i";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(14,25,83,.85);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1;
+}
+.checker-scene__info:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
+.checker-scene__note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 52px 10px 14px;
+  background: rgba(14,25,83,.9);
+  color: #fff;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.checker-scene__note[hidden] { display: none; }
+.checker-form { min-width: 0; }
+.checker-question {
+  margin: 0;
+  padding: 0 0 18px;
+  border: 0;
+}
+.checker-question + .checker-question {
+  padding-top: 18px;
+  border-top: 1px solid var(--gray-200);
+}
+.checker-question__legend {
+  padding: 0;
+  margin-bottom: 8px;
   color: var(--navy);
-  box-shadow: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
 }
-.checker-secondary:hover {
-  transform: translateY(-1px);
-  border-color: rgba(84,125,255,.45);
+.checker-question__hint {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.checker-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.checker-option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  background: #fff;
   color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, color .15s ease;
 }
-
-@media (min-width: 990px) {
-  .checker-result {
-    position: sticky;
-    top: 112px;
-    margin-top: clamp(150px, 12vw, 210px);
-  }
+.checker-option input {
+  width: 16px;
+  height: 16px;
+  margin: 0 9px 0 0;
+  flex: 0 0 auto;
+  accent-color: var(--navy);
 }
-
-.comparison-section h2 {
-  max-width: 1120px;
-  margin-bottom: 14px;
-  font-size: clamp(32px, 3vw, 44px);
-  line-height: 1.08;
-  letter-spacing: 0;
-  text-wrap: balance;
+.checker-option:hover { border-color: var(--blue); }
+.checker-option:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+.checker-option.is-selected { border-color: var(--navy); background: var(--blue-light); color: var(--navy); }
+.checker-option.is-selected input { accent-color: var(--navy); }
+.checker-result {
+  margin-top: 18px;
+  padding: 18px 18px 20px;
+  border-radius: 8px;
+  background: var(--blue-light);
 }
-.comparison-section .section-lead {
-  max-width: 860px;
-  font-size: 15.5px;
-  line-height: 1.55;
-  text-wrap: balance;
+.checker-result__title {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
 }
-.comparison-panel {
-  max-width: 1160px;
-  margin-top: 26px;
-  border-radius: 24px;
+.checker-result.is-empty .checker-result__title {
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.checker-result.is-empty .checker-result__copy { margin-bottom: 0; }
+.checker-result__copy {
+  margin: 0 0 10px;
+  color: var(--text-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.checker-result__verify {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.checker-result__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.checker-result__actions .btn { min-height: 44px; padding: 10px 20px; font-size: 14px; }
+.checker-result__actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+.checker-result [hidden] { display: none; }
+.checker-reset {
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.checker-reset:hover { color: var(--navy); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(12,34,80,.075);
-  box-shadow: 0 18px 46px rgba(12,34,80,.045);
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.comparison-section h2 {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.12;
+  text-align: center;
+  text-wrap: balance;
 }
 .comparison-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.comparison-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.comparison-table th,
+.comparison-table td {
+  text-align: left;
+  vertical-align: top;
 }
 .comparison-table thead th {
-  padding: 12px 20px 10px;
-  border-bottom: 1px solid rgba(12,34,80,.04);
-  background: #fff;
-  color: #071b5f;
-  font-weight: 700;
-  text-align: left;
-  vertical-align: middle;
+  padding: 0 24px 16px;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: center;
 }
-.comparison-table thead th:first-child {
-  width: 18%;
-  padding: 12px 18px;
-  background: rgba(248,250,255,.28);
-  color: rgba(82,124,255,.82);
-  font-family: var(--font-body);
-  font-size: 11px;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  vertical-align: middle;
+.comparison-table thead th:first-child { text-align: left; }
+.comparison-col--label { width: 22%; }
+.comparison-col--type { width: 39%; }
+.comparison-type__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  margin-bottom: 12px;
 }
-.comparison-table thead th:nth-child(3),
-.comparison-table tbody td:nth-of-type(2) {
-  background: rgba(248,250,255,.38);
+.comparison-type__media img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
-.comparison-table thead th:nth-child(3),
-.comparison-table tbody td:nth-of-type(2) {
-  border-left: 1px solid rgba(12,34,80,.035);
-}
-.comparison-table__label {
+.comparison-type__media--cassette img { max-width: 205px; }
+.comparison-type__media--wall img { max-width: 255px; }
+.comparison-type__name {
   display: block;
-  color: #071b5f;
+  color: var(--navy);
   font-family: var(--font-heading);
-  margin-bottom: 3px;
   font-size: clamp(20px, 1.7vw, 24px);
   font-weight: 400;
-  line-height: 1.02;
-}
-.comparison-table__sub {
-  display: block;
-  color: rgba(5,22,70,.56);
-  font-family: var(--font-body);
-  font-size: 11.8px;
-  font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.1;
 }
 .comparison-table tbody th,
 .comparison-table tbody td {
-  padding: 14px 20px;
-  vertical-align: top;
-  border-bottom: 1px solid rgba(12,34,80,.04);
-  text-align: left;
-}
-.comparison-table tbody tr:last-child th,
-.comparison-table tbody tr:last-child td {
-  border-bottom: 0;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: middle;
 }
 .comparison-table tbody th {
-  width: 18%;
-  padding: 14px 18px;
-  background: rgba(248,250,255,.24);
-  color: #071b5f;
+  color: var(--navy);
   font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 800;
-  line-height: 1.35;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 .comparison-table tbody td {
-  color: rgba(5,22,70,.84);
-  font-size: 14.5px;
-  line-height: 1.48;
-}
-.comparison-table tbody tr:hover th,
-.comparison-table tbody tr:hover td {
-  background: rgba(248,250,255,.42);
-}
-.comparison-toggle {
-  display: none;
-}
-
-#rooms {
-  padding-top: 29px;
-  background:
-    radial-gradient(circle at 8% 14%, rgba(84,125,255,.075), transparent 30%),
-    radial-gradient(circle at 92% 18%, rgba(221,247,255,.46), transparent 28%),
-    linear-gradient(180deg, #f7f8fb 0%, #f5f7fb 56%, #fff 100%);
-}
-#rooms .section-head {
-  max-width: 1200px;
-  margin-bottom: 34px;
-}
-#rooms h2 {
-  max-width: 860px;
-  font-size: 32px;
-  line-height: 1.04;
-  margin-bottom: 12px;
-  text-wrap: balance;
-}
-#rooms .section-copy {
-  max-width: none;
-  font-size: 15.5px;
-  line-height: 1.55;
-  color: rgba(5,22,70,.66);
-}
-.room-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 22px;
-  align-items: stretch;
-}
-.room-card {
-  position: relative;
-  grid-column: span 2;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid rgba(12,34,80,.065);
-  border-radius: 26px;
-  background: rgba(255,255,255,.86);
-  box-shadow: 0 14px 38px rgba(12,34,80,.04);
-  transition: box-shadow .28s ease;
-}
-.room-card.is-large {
-  grid-column: span 3;
-  display: flex;
-  flex-direction: column;
-  min-height: auto;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(12,34,80,.06);
-  border-radius: 30px;
-  background: rgba(255,255,255,.94);
-  box-shadow: 0 16px 42px rgba(12,34,80,.045);
-}
-.room-card__media {
-  display: block;
-  position: relative;
-  height: auto;
-  min-height: 225px;
-  aspect-ratio: 16 / 10;
-  background: #f4f7ff;
-  overflow: hidden;
-}
-.room-card.is-large .room-card__media {
-  position: relative;
-  inset: auto;
-  width: 100%;
-  height: auto;
-  min-height: 350px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-.room-card.is-large:nth-child(1) .room-card__media img,
-.room-card.is-large:nth-child(2) .room-card__media img {
-  object-position: center center;
-}
-.room-card__media::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 34%;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.72) 100%);
-  pointer-events: none;
-  opacity: .72;
-}
-.room-card.is-large .room-card__media::after {
-  inset: auto 0 0;
-  height: 18%;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.38) 100%);
-  opacity: .45;
-}
-.room-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  transition: transform .45s ease;
-}
-.room-card:hover {
-  box-shadow: 0 22px 56px rgba(12,34,80,.07);
-}
-.room-card:hover .room-card__media img { transform: scale(1.035); }
-.room-card__body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 18px 22px 22px;
-}
-.room-card.is-large .room-card__body {
-  position: relative;
-  left: auto;
-  right: auto;
-  bottom: auto;
-  z-index: 1;
-  padding: 20px 24px 22px;
-  border: 0;
-  border-radius: 0;
-  background: rgba(255,255,255,.96);
-  box-shadow: none;
-  backdrop-filter: none;
-}
-.room-tag {
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  z-index: 2;
-  margin: 0;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.68);
-  background: rgba(255,255,255,.72);
-  backdrop-filter: blur(14px);
-  color: rgba(5,22,70,.74);
-  font-size: 10.5px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(12,34,80,.08);
-}
-.room-card h3 {
-  margin-bottom: 7px;
-  font-size: 20px;
-  line-height: 1.16;
-}
-.room-card.is-large h3 {
-  max-width: none;
-  font-size: clamp(27px, 2.2vw, 34px);
-  line-height: 1.06;
-  margin-bottom: 7px;
-}
-.room-card p {
-  margin-bottom: 16px;
-  color: rgba(5,22,70,.66);
-  font-size: 13.5px;
+  color: var(--text-body);
+  font-size: 15px;
   line-height: 1.5;
+  text-align: center;
 }
-.room-card.is-large p {
-  width: 100%;
-  max-width: none;
-  margin-bottom: 14px;
-  font-size: 14.5px;
-  line-height: 1.44;
-  color: rgba(5,22,70,.68);
+.comparison-group th {
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
-.room-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  margin-top: auto;
-}
-.room-card.is-large .room-actions {
-  gap: 12px;
-  margin-top: 2px;
-  align-items: center;
-}
-.btn-small {
-  min-height: 38px;
-  padding: 8px 14px;
-  font-size: 13px;
-}
-.room-card.is-large .btn-small {
-  min-height: 44px;
-  padding: 11px 18px;
-  border-radius: 8px;
-  font-size: 13.5px;
-  box-shadow: none;
-}
-.room-card.is-large .text-link {
-  font-size: 13px;
-  font-weight: 700;
-  color: #527cff;
-}
-.room-card.is-large .text-link::after,
-.room-card:not(.is-large) .text-link::after {
-  content: " \2192";
-}
-.room-card:not(.is-large) .btn-primary {
-  display: none;
-}
-.room-card:not(.is-large) {
-  border: 1px solid rgba(12,34,80,.055);
-  border-radius: 24px;
-  background: rgba(255,255,255,.72);
-  box-shadow: 0 10px 28px rgba(12,34,80,.035);
-}
-.room-card:not(.is-large) .room-card__media {
-  min-height: 220px;
-  aspect-ratio: 16 / 10;
-}
-.room-card:not(.is-large) .room-card__body {
-  padding: 17px 18px 19px;
-}
-.room-card:not(.is-large) h3 {
-  margin-bottom: 7px;
-  font-size: 20px;
-  line-height: 1.16;
-}
-.room-card:not(.is-large) p {
-  margin-bottom: 12px;
-  color: rgba(5,22,70,.64);
-  font-size: 13.2px;
-  line-height: 1.45;
-}
-.room-card:not(.is-large) .room-actions {
-  margin-top: auto;
-}
-.room-card:not(.is-large) .text-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  color: #527cff;
-  font-size: 12.8px;
-  font-weight: 700;
-}
-
-@media (min-width: 1101px) {
-  .room-card:nth-child(3) {
-    margin-top: 6px;
-  }
-  .room-card:nth-child(4) {
-    margin-top: 20px;
-  }
-  .room-card:nth-child(5) {
-    margin-top: 6px;
-  }
-}
-
-.section-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
 .project-products-section {
   padding: 29px 0;
   background: #f8f9fb;
@@ -931,20 +563,25 @@ h3 {
   height: 100%;
   min-height: 300px;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
+  transition: opacity .18s ease;
+}
+.project-product-feature__media img.is-fading { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .project-product-feature__media img { transition: none; }
 }
 .project-product-feature__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: clamp(28px, 4vw, 46px);
-  background: var(--navy);
-  color: #fff;
+  background: #fff;
+  color: var(--navy);
 }
 .project-product-feature__label {
   display: inline-flex;
   margin-bottom: 12px;
-  color: #9db8ff;
+  color: var(--navy);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -953,7 +590,7 @@ h3 {
 .project-product-feature h3 {
   max-width: 540px;
   margin: 0 0 14px;
-  color: #fff;
+  color: var(--navy);
   font-family: var(--font-heading);
   font-size: clamp(26px, 2.5vw, 34px);
   line-height: 1.1;
@@ -962,7 +599,7 @@ h3 {
 .project-product-feature p {
   max-width: 560px;
   margin: 0;
-  color: rgba(255,255,255,.84);
+  color: var(--text-muted);
   font-size: 15px;
   line-height: 1.55;
 }
@@ -1096,7 +733,6 @@ h3 {
 }
 .faq-section .section-head {
   display: block;
-  max-width: 760px;
   margin-bottom: 28px;
   text-align: left;
 }
@@ -1168,108 +804,78 @@ h3 {
 .faq-a p { margin-bottom: 0; }
 
 .bottom-cta-section {
-  padding: 21px 0 27px;
+  padding: clamp(24px, 3vw, 44px) 0;
   background: #fff;
 }
-.bottom-choice-cta {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+.closing-band {
+  padding: 30px 40px;
+  border-radius: 6px;
+  background: var(--blue-light);
+}
+.closing-inner {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 28px;
-  padding: clamp(28px, 4vw, 42px);
-  border-radius: 16px;
-  background: #ddf7ff;
+  gap: 32px;
+  flex-wrap: wrap;
 }
-.bottom-choice-cta__copy {
-  max-width: 760px;
-}
-main.page .bottom-choice-cta h2 {
-  margin: 0 0 10px;
+.closing-inner h2 {
+  margin: 0;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.1;
-  font-weight: 400;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 500;
+  line-height: 1.15;
 }
-.bottom-choice-cta p {
-  max-width: 680px;
-  margin: 0;
-  color: rgba(11, 19, 61, 0.72);
-  font-size: 16px;
-  line-height: 1.5;
-}
-.bottom-choice-cta__actions {
+.closing-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 10px;
 }
-.bottom-choice-cta__actions .btn {
+.closing-actions .btn {
   min-height: 46px;
-  border-radius: 6px;
-  padding: 11px 24px;
+  padding: 11px 22px;
   font-size: 14px;
 }
-
+.closing-actions .btn-outline {
+  color: var(--navy);
+  background: #fff;
+  border-color: var(--blue);
+}
+.closing-actions .btn-outline:hover {
+  background: var(--blue-light);
+  border-color: var(--blue);
+  color: var(--navy);
+}
 @media (max-width: 1100px) {
   .container { width: min(100% - 40px, 1200px); }
-  .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .room-card,
-  .room-card.is-large { grid-column: auto; }
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-}
-
-
-
-@media (max-width: 989px) {
-  .decision-checker { grid-template-columns: 1fr; }
-  .checker-result {
-    position: static;
-    max-width: none;
-    margin-top: 24px;
-  }
-}
-
-@media (max-width: 900px) {
-  .quick-answer__inner {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
 }
 
 @media (max-width: 780px) {
   .bottom-cta-section {
-    padding: 18px 0 23px;
+    padding: 28px 0;
   }
 
-  .bottom-choice-cta {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 24px 18px;
-    border-radius: 14px;
-    text-align: left;
+  .closing-band {
+    padding: 24px;
   }
 
-  main.page .bottom-choice-cta h2 {
-    font-size: clamp(28px, 7.4vw, 34px);
+  .closing-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
   }
 
-  .bottom-choice-cta p {
-    font-size: 14.5px;
-    line-height: 1.5;
-  }
-
-  .bottom-choice-cta__actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: stretch;
-    gap: 10px;
-  }
-
-  .bottom-choice-cta__actions .btn {
+  .closing-actions {
     width: 100%;
-    min-height: 46px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .closing-actions .btn {
+    width: 100%;
   }
 
   .project-products-block {
@@ -1329,87 +935,53 @@ main.page .bottom-choice-cta h2 {
 
 @media (max-width: 767px) {
   .container { width: calc(100% - 32px); max-width: 100%; }
-  .section { padding: 20px 0; }
+  .section { padding: 40px 0; }
   .section-head { display: block; }
   h1 { max-width: 340px; font-size: clamp(31px, 8.2vw, 36px); }
   h2 { font-size: 29px; }
   .btn { width: 100%; min-height: 46px; }
-  .hero {
-    min-height: auto;
+  .hero { display: flex; flex-direction: column; background: #fff; }
+  .hero-overlay {
+    position: static;
+    order: -1;
+    padding: 28px 0 18px;
+    background: #fff;
+  }
+  .hero-overlay .container { width: calc(100% - 32px); }
+  .hero-media { order: 1; }
+  .hero-media img {
+    max-height: none;
+    height: 240px;
+    object-fit: cover;
+    object-position: 58% top;
+  }
+  .hero-copy { max-width: 100%; }
+  .hero h1 { max-width: 100%; font-size: clamp(32px, 8.4vw, 36px); }
+  .hero-copy p { max-width: 100%; font-size: 15px; }
+  #decision-checker { padding: 40px 0; }
+  .checker-head { margin-bottom: 24px; }
+  .checker-grid { grid-template-columns: 1fr; gap: 22px; }
+  .checker-scene__marker { width: 26px; height: 26px; font-size: 12px; }
+  .checker-question { padding-bottom: 14px; }
+  .checker-question + .checker-question { padding-top: 14px; }
+  .checker-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .checker-option {
+    width: auto;
+    min-height: 46px;
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: left;
     align-items: flex-start;
   }
-  .hero-bg { object-position: 58% center; }
-  .hero::before {
-    width: min(100%, 92vw);
-    background: linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.74) 68%, rgba(255,255,255,0) 100%);
-  }
-  .hero-inner { max-width: 350px; padding: 48px 0 44px; }
-  .hero h1 {
-    max-width: 350px;
-    font-size: clamp(32px, 8.1vw, 36px);
-    line-height: 1.05;
-  }
-  .hero-text { max-width: 100%; font-size: 15px; line-height: 1.5; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
-  .hero-actions .btn { width: 100%; }
-  .quick-answer { padding: 20px 0; }
-  .quick-answer__media {
-    aspect-ratio: 16 / 10;
-    border-radius: 24px;
-  }
-  .quick-answer__content h2 { font-size: clamp(26px, 7.2vw, 30px); }
-  .quick-answer__lead { font-size: 15px; line-height: 1.58; }
-  .airflow-grid { grid-template-columns: 1fr; }
-  .airflow-grid { gap: 20px; }
-  .diagram { aspect-ratio: 16 / 8; }
-  .airflow-card ul { font-size: 15px; }
-  #decision-checker { padding: 20px 0; }
-  .decision-checker { grid-template-columns: 1fr; }
-  .checker-result,
-  .airflow-card { padding: 20px; }
-  .checker-heading { margin-bottom: 18px; }
-  .checker-panel h2 {
-    font-size: clamp(32px, 8.2vw, 36px);
-    margin-bottom: 12px;
-  }
-  .checker-panel .section-copy { margin-bottom: 0; }
-  .checker-count {
-    margin-top: 18px;
-    margin-bottom: 14px;
-  }
-  .checker-result {
-    position: static;
-    margin-top: 24px;
-    gap: 14px;
-    border-radius: 24px;
-  }
-  .checker-result strong {
-    max-width: 10em;
-    font-size: 27px;
-  }
-  .checker-question {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 16px;
-  }
-  .checker-question__copy { gap: 12px; }
-  .checker-question__options {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-  }
-  .checker-option {
-    min-width: 0;
-    min-height: 44px;
-    padding: 10px 12px;
-  }
-  .comparison-panel {
-    margin-top: 24px;
-    border: 0;
-    border-radius: 0;
-    overflow: visible;
-    background: transparent;
-    box-shadow: none;
+  .checker-option input { margin-top: 2px; }
+  .checker-result { margin-top: 16px; padding: 18px; }
+  .checker-result__actions { gap: 12px; }
+  .checker-result__actions .btn { width: 100%; }
+  .comparison-section h2 {
+    text-align: left;
+    margin-bottom: 20px;
   }
   .comparison-table,
   .comparison-table thead,
@@ -1419,142 +991,51 @@ main.page .bottom-choice-cta h2 {
   .comparison-table td {
     display: block;
     width: 100%;
-    min-width: 0;
   }
-  .comparison-table thead { display: none; }
-  .comparison-table tbody tr {
-    margin-bottom: 12px;
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid rgba(12,34,80,.075);
-    box-shadow: 0 10px 24px rgba(12,34,80,.035);
-    overflow: hidden;
+  .comparison-table thead tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
-  .comparison-table tbody tr.is-collapsed-mobile { display: none; }
-  .comparison-table tbody tr:last-child { margin-bottom: 0; }
-  .comparison-table tbody th {
-    width: 100%;
-    padding: 13px 16px 9px;
-    border-bottom: 1px solid rgba(12,34,80,.055);
-    background: rgba(248,250,255,.78);
-    color: #071b5f;
-    font-size: 14px;
+  .comparison-table thead th:first-child { display: none; }
+  .comparison-table thead th {
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--gray-200);
   }
-  .comparison-table tbody td {
-    padding: 11px 16px;
-    border-bottom: 1px solid rgba(12,34,80,.045);
-    background: #fff;
-    font-size: 14px;
-    line-height: 1.46;
+  .comparison-type__media { height: 130px; }
+  .comparison-type__name { font-size: 20px; }
+  .comparison-table tbody tr:not(.comparison-group) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-200);
   }
-  .comparison-table tbody td:last-child { border-bottom: 0; }
-  .comparison-table thead th:nth-child(3),
-  .comparison-table tbody td:nth-of-type(2) {
-    border-left: 0;
-    background: #fff;
-  }
-  .comparison-table tbody td::before {
-    display: block;
-    margin-bottom: 4px;
-    color: #527cff;
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 0;
-    text-transform: uppercase;
-  }
-  .comparison-table tbody td:nth-of-type(1)::before { content: "Ceiling Cassette"; }
-  .comparison-table tbody td:nth-of-type(2)::before { content: "Wall Mount"; }
-  .comparison-toggle {
-    display: inline-flex;
-    width: 100%;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6px;
-    border-radius: 999px;
-    border: 1px solid rgba(12,34,80,.12);
-    background: rgba(255,255,255,.72);
-    color: #071b5f;
-    font-weight: 800;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  #rooms .section-head {
-    max-width: 100%;
-    margin-bottom: 24px;
-  }
-  #rooms h2 {
-    font-size: 32px;
-    line-height: 1.08;
-  }
-  .room-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .room-card,
-  .room-card.is-large {
-    grid-column: auto;
-    min-height: auto;
-    border-radius: 24px;
-  }
-  .room-card__media,
-  .room-card.is-large .room-card__media {
-    position: relative;
-    inset: auto;
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 16 / 10;
-  }
-  .room-card.is-large .room-card__media::after {
-    inset: auto 0 0;
-    height: 34%;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.72) 100%);
-    opacity: .72;
-  }
-  .room-card.is-large .room-card__media {
-    max-height: none;
-  }
-  .room-card:not(.is-large) .room-card__media {
-    height: 195px;
-    min-height: 0;
-    aspect-ratio: auto;
-  }
-  .room-card__body {
-    padding: 18px;
-  }
-  .room-card.is-large .room-card__body {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
+  .comparison-table tbody tr:not(.comparison-group) > th {
+    grid-column: 1 / -1;
+    padding: 0 0 8px;
     border: 0;
-    border-radius: 0;
-    background: rgba(255,255,255,.92);
-    box-shadow: none;
-    backdrop-filter: none;
-    padding: 18px;
-  }
-  .room-card.is-large h3 { font-size: 24px; }
-  .room-card.is-large p {
     font-size: 13.5px;
+    text-align: left;
+  }
+  .comparison-table tbody tr:not(.comparison-group) > td {
+    padding: 0;
+    border: 0;
+    font-size: 14px;
     line-height: 1.45;
+    text-align: left;
   }
-  .room-card h3 { font-size: 20px; }
-  .room-card p {
-    font-size: 13.5px;
-    line-height: 1.5;
+  .comparison-table tbody tr.comparison-group th {
+    width: 100%;
+    padding: 16px 0 8px;
+    border: 0;
+    background: transparent;
   }
-  .room-card:not(.is-large) {
-    margin-top: 0;
-  }
-  .room-card:not(.is-large) .btn-primary { display: none; }
+  .comparison-table tbody tr:not(.comparison-group) > th { width: 100%; }
   .services-grid { grid-template-columns: 1fr; gap: 12px; }
   .service-card { padding: 22px 16px; }
   .service-card h3 { font-size: 17px; }
   .service-card p { font-size: 13px; }
-  #rooms,
   .project-products-section,
   .services-section,
   .faq-section {
@@ -1569,14 +1050,6 @@ main.page .bottom-choice-cta h2 {
   }
 }
 
-main.page h2 {
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-size: 32px;
-  line-height: 1.16;
-  font-weight: 400;
-  letter-spacing: 0;
-}
 </style>
 <script type="application/ld+json">
 {
@@ -1585,50 +1058,42 @@ main.page h2 {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the main difference between a ceiling cassette and a wall mount mini split?",
+      "name": "Can a ceiling cassette be installed in a finished ceiling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A ceiling cassette installs in or near the ceiling for a lower-profile look and can distribute air from a more central position. A wall mount installs high on a wall and is usually easier to access for routine cleaning and service."
+        "text": "It may be possible. Before ordering, ask an installer to check the space above the ceiling, framing, drainage and service access. The quote should also account for opening and repairing the finished ceiling."
       }
     },
     {
       "@type": "Question",
-      "name": "Is a ceiling cassette mini split usually more expensive than a wall mount?",
+      "name": "Is the listed product price the full installed cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A ceiling cassette often has a higher installation path because ceiling access, opening work, drainage, and service clearance need to be planned. A wall mount is often simpler when a clear high-wall location and line-set route are available. Final cost still depends on the room and installer review."
+        "text": "Check the product listing for what is included. Ask for an itemized installation quote covering labor, electrical work, refrigerant piping, drainage and any ceiling or wall repairs. Confirm whether the selected configuration includes a line set."
       }
     },
     {
       "@type": "Question",
-      "name": "Which type should I check first for a large open room?",
+      "name": "Can ceiling cassette and wall-mounted units share one outdoor unit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For a large open living room or design-focused space, a ceiling cassette is worth checking first if ceiling access, drainage, and service access are realistic. A wall mount can still be a good fit when the airflow direction and high-wall placement make sense."
+        "text": "Only if the specific indoor and outdoor models are approved to work together. Ask DELLA or your installer to confirm the combination and capacity limits before buying. Matching the brand or adding up BTU ratings is not enough to establish compatibility."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I install a ceiling cassette mini split myself?",
+      "name": "Is one style always quieter or more efficient?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A ceiling cassette should be planned with a qualified HVAC installer because it can involve ceiling work, drainage, wiring, refrigerant lines, and service access. Confirm local requirements and installer approval before purchase."
+        "text": "No. Compare the ratings for the complete matched system and the indoor noise specifications for the operating mode you will use. Placement, room acoustics and installation also affect what you hear."
       }
     },
     {
       "@type": "Question",
-      "name": "Which mini split type is easier to clean and maintain?",
+      "name": "Can I install either system myself?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wall-mounted mini splits are usually easier to reach for routine filter cleaning and front-panel access. Ceiling cassette maintenance depends on ceiling height, panel location, and whether service access was planned during installation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can one home use both ceiling cassette and wall-mounted units?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Some home plans may use a ceiling cassette in an open living area and wall-mounted units in bedrooms, offices, garages, or rental rooms. Compatibility, total capacity, line-set routing, controls, drainage, electrical, and installer confirmation should be reviewed before purchase."
+        "text": "Check the installation requirements for the exact model before buying. Installation includes electrical connections, refrigerant piping, drainage and mounting. Arrange qualified help for work you are not equipped or permitted to perform, and review the model's installation and warranty requirements."
       }
     }
   ]
@@ -1638,31 +1103,14 @@ main.page h2 {
 <body>
 <main class="page">
   <section class="hero">
-    <picture>
-      <source media="(max-width: 767px)" srcset="assets/banner-mobile.webp">
-      <img class="hero-bg" src="assets/banner-desktop.webp" alt="Modern home interior for comparing ceiling cassette and wall mount mini split placement" width="2800" height="1000" loading="eager">
-    </picture>
-    <div class="container hero-content">
-      <div class="hero-inner">
-        <h1>Ceiling Cassette vs Wall Mount Mini Split</h1>
-        <p class="hero-text">Compare the cleaner ceiling look with the simpler wall placement before you choose your mini split.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
-        </div>
-      </div>
+    <div class="hero-media">
+      <img src="assets/hero-luxury.png" srcset="assets/hero-luxury-1600.webp 1600w, assets/hero-luxury-1100.webp 1100w" sizes="100vw" width="2098" height="750" alt="Modern living room with a ceiling cassette installed above the seating area" loading="eager" fetchpriority="high">
     </div>
-  </section>
-
-  <section class="quick-answer section">
-    <div class="container">
-      <div class="quick-answer__inner">
-        <div class="quick-answer__media">
-          <img src="assets/scene-open-living.webp" alt="Ceiling cassette and wall mount mini split installation planning" loading="lazy">
-        </div>
-        <div class="quick-answer__content">
-          <h2>Start with ceiling access or wall placement.</h2>
-          <p class="quick-answer__lead">Choose a ceiling cassette when the room can support a ceiling opening and you want a cleaner built-in look. Choose a wall mount when wall placement, access, and serviceability matter more.</p>
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="hero-copy">
+          <h1>Ceiling Cassette vs Wall Mount Mini Split</h1>
+          <p>Compare placement, installation and everyday access.</p>
         </div>
       </div>
     </div>
@@ -1670,131 +1118,96 @@ main.page h2 {
 
   <section class="section" id="decision-checker">
     <div class="container">
-      <div class="decision-checker checker-grid">
-        <div class="checker-panel">
-          <div class="checker-heading">
-            <h2>Find the better starting point for your room.</h2>
-            <p class="section-copy">Answer a few install questions to compare ceiling cassette and wall mount paths before installer confirmation.</p>
-            <span class="checker-count checker-progress" id="checker-count">0 of 5 answered</span>
+      <div class="checker-head">
+        <h2>Which style fits your room?</h2>
+        <p class="section-copy">Check the space before choosing the indoor unit.</p>
+      </div>
+      <div class="checker-grid">
+        <figure class="checker-scene">
+          <div class="checker-scene__media">
+            <img src="assets/selector-alternatives.png" alt="Living and dining room showing alternative ceiling and high-wall indoor unit locations" width="1448" height="1086" loading="lazy">
+            <span class="checker-scene__marker checker-scene__marker--1" aria-hidden="true">1</span>
+            <span class="checker-scene__marker checker-scene__marker--2" aria-hidden="true">2</span>
+            <button type="button" class="checker-scene__info" id="checker-scene-info" aria-expanded="false" aria-controls="checker-scene-note" aria-label="About this illustration"></button>
+            <p class="checker-scene__note" id="checker-scene-note" hidden>Two alternative locations are shown for comparison. This is not an installation drawing.</p>
           </div>
-          <div class="checker-list" aria-label="Mini split indoor unit decision checker">
-            <div class="checker-question" data-question="ceiling-access">
-              <div class="checker-question__copy">
-                <span class="checker-question__number">01</span>
-                <div>
-                  <h3>Ceiling access</h3>
-                  <p>Usable ceiling cavity, attic, or plenum space?</p>
-                </div>
-              </div>
-              <div class="checker-question__options" role="group" aria-label="Ceiling access">
-                <button type="button" class="checker-option" data-value="cassette" aria-pressed="false">Yes</button>
-                <button type="button" class="checker-option" data-value="wall" aria-pressed="false">No</button>
-              </div>
+        </figure>
+        <div class="checker-form">
+          <fieldset class="checker-question" data-question="priority">
+            <legend class="checker-question__legend">What matters most to you?</legend>
+            <div class="checker-options">
+              <label class="checker-option"><input type="radio" name="priority" value="look"><span>Keep walls clear</span></label>
+              <label class="checker-option"><input type="radio" name="priority" value="work"><span>Limit ceiling work</span></label>
+              <label class="checker-option"><input type="radio" name="priority" value="neutral"><span>No preference</span></label>
             </div>
-            <div class="checker-question" data-question="wall-space">
-              <div class="checker-question__copy">
-                <span class="checker-question__number">02</span>
-                <div>
-                  <h3>Wall space</h3>
-                  <p>Clean high-wall location for the indoor unit?</p>
-                </div>
-              </div>
-              <div class="checker-question__options" role="group" aria-label="Wall space">
-                <button type="button" class="checker-option" data-value="wall" aria-pressed="false">Yes</button>
-                <button type="button" class="checker-option" data-value="cassette" aria-pressed="false">No</button>
-              </div>
+          </fieldset>
+          <fieldset class="checker-question" data-question="wall">
+            <legend class="checker-question__legend">Is there an open area high on a wall?</legend>
+            <p class="checker-question__hint">An installer still needs to check clearances and the pipe route.</p>
+            <div class="checker-options">
+              <label class="checker-option"><input type="radio" name="wall" value="yes"><span>Looks possible</span></label>
+              <label class="checker-option"><input type="radio" name="wall" value="no"><span>No clear spot</span></label>
+              <label class="checker-option"><input type="radio" name="wall" value="unknown"><span>Not sure</span></label>
             </div>
-            <div class="checker-question" data-question="layout">
-              <div class="checker-question__copy">
-                <span class="checker-question__number">03</span>
-                <div>
-                  <h3>Room layout</h3>
-                  <p>Open room where a cleaner ceiling look matters?</p>
-                </div>
-              </div>
-              <div class="checker-question__options" role="group" aria-label="Room layout">
-                <button type="button" class="checker-option" data-value="cassette" aria-pressed="false">Yes</button>
-                <button type="button" class="checker-option" data-value="wall" aria-pressed="false">Not priority</button>
-              </div>
+          </fieldset>
+          <fieldset class="checker-question" data-question="ceiling">
+            <legend class="checker-question__legend">What did an installer say about a ceiling cassette?</legend>
+            <div class="checker-options">
+              <label class="checker-option"><input type="radio" name="ceiling" value="yes"><span>Can install</span></label>
+              <label class="checker-option"><input type="radio" name="ceiling" value="no"><span>Cannot install</span></label>
+              <label class="checker-option"><input type="radio" name="ceiling" value="unknown"><span>Not checked</span></label>
             </div>
-            <div class="checker-question" data-question="retrofit">
-              <div class="checker-question__copy">
-                <span class="checker-question__number">04</span>
-                <div>
-                  <h3>Retrofit complexity</h3>
-                  <p>Finished ceiling that may be harder to modify?</p>
-                </div>
-              </div>
-              <div class="checker-question__options" role="group" aria-label="Retrofit complexity">
-                <button type="button" class="checker-option" data-value="wall" aria-pressed="false">Yes</button>
-                <button type="button" class="checker-option" data-value="cassette" aria-pressed="false">No</button>
-              </div>
+          </fieldset>
+          <div class="checker-result" aria-label="Starting point result">
+            <h3 class="checker-result__title" id="checker-title">Answer all three questions to see a starting point.</h3>
+            <p class="checker-result__copy" id="checker-copy">You can still compare both styles any time.</p>
+            <p class="checker-result__verify" id="checker-verify" hidden></p>
+            <div class="checker-result__actions">
+              <a class="btn btn-primary" id="checker-primary" href="https://dellahome.com/pages/find-a-installer" hidden>Find an installer</a>
+              <a class="text-link" id="checker-secondary" href="#comparison">Compare both styles</a>
             </div>
-            <div class="checker-question" data-question="maintenance">
-              <div class="checker-question__copy">
-                <span class="checker-question__number">05</span>
-                <div>
-                  <h3>Maintenance access</h3>
-                  <p>Want the simplest front-panel filter access?</p>
-                </div>
-              </div>
-              <div class="checker-question__options" role="group" aria-label="Maintenance access">
-                <button type="button" class="checker-option" data-value="wall" aria-pressed="false">Yes</button>
-                <button type="button" class="checker-option" data-value="cassette" aria-pressed="false">Flexible</button>
-              </div>
-            </div>
+            <button type="button" class="checker-reset" id="checker-reset">Reset answers</button>
+            <p class="sr-only" id="checker-live" aria-live="polite"></p>
           </div>
         </div>
-        <aside class="checker-result" aria-live="polite">
-          <div>
-            <span class="section-label result-eyebrow" id="checker-kicker">RECOMMENDED START</span>
-            <strong class="result-title" id="checker-title">Answer a few questions to see a starting point.</strong>
-            <p class="result-body" id="checker-copy">Your result will update as you select options.</p>
-          </div>
-          <span class="checker-footnote result-note">Installer confirmation is still required before purchase.</span>
-          <div class="checker-actions" id="checker-actions" hidden>
-            <a id="checker-primary" class="btn btn-primary result-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-            <a id="checker-secondary" class="btn checker-secondary result-secondary" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
 
   <section class="section comparison-section" id="comparison">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>What changes between ceiling cassette and wall mount?</h2>
-        </div>
-        <p class="section-copy section-lead">Both can heat and cool a room. The key differences are placement, airflow, access, and install complexity.</p>
-      </div>
-      <div class="comparison-panel">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Compare</th>
-              <th>
-                <span class="comparison-table__label">Ceiling Cassette</span>
-                <span class="comparison-table__sub">Cleaner ceiling-integrated look</span>
-              </th>
-              <th>
-                <span class="comparison-table__label">Wall Mount</span>
-                <span class="comparison-table__sub">Simpler high-wall placement</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Installation location</th><td>Ceiling or drop-ceiling area.</td><td>High on a wall.</td></tr>
-            <tr><th scope="row">Airflow</th><td>Multi-direction airflow from above.</td><td>Directional airflow across the room.</td></tr>
-            <tr><th scope="row">Room fit</th><td>Open living rooms, remodels, design-led spaces.</td><td>Bedrooms, offices, rentals, garages, retrofits.</td></tr>
-            <tr><th scope="row">Install path</th><td>Needs ceiling opening, drainage, and access planning.</td><td>Simpler when wall placement and line routing are clear.</td></tr>
-            <tr><th scope="row">Maintenance access</th><td>Depends on ceiling height and panel location.</td><td>Usually easier from the front panel.</td></tr>
-            <tr><th scope="row">Visual &amp; cost path</th><td>More integrated look, often a higher install path.</td><td>More visible unit, often simpler for standard rooms.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <button type="button" class="comparison-toggle" aria-expanded="false">View more differences</button>
+      <h2>Ceiling cassette or wall mount?</h2>
+      <table class="comparison-table">
+        <caption>Comparison of ceiling cassette and wall mount mini split indoor units</caption>
+        <colgroup>
+          <col class="comparison-col--label">
+          <col class="comparison-col--type">
+          <col class="comparison-col--type">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">
+              <span class="comparison-type__media comparison-type__media--cassette"><img src="assets/comparison-indoor-cassette.png" alt="Ceiling cassette indoor unit" width="834" height="596" loading="lazy"></span>
+              <span class="comparison-type__name">Ceiling Cassette</span>
+            </th>
+            <th scope="col">
+              <span class="comparison-type__media comparison-type__media--wall"><img src="assets/comparison-indoor-wall.png" alt="Wall mount indoor unit" width="1174" height="430" loading="lazy"></span>
+              <span class="comparison-type__name">Wall Mount</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="comparison-group"><th colspan="3" scope="colgroup">Placement &amp; appearance</th></tr>
+          <tr><th scope="row">Indoor position</th><td>Recessed into the ceiling</td><td>Mounted high on the wall</td></tr>
+          <tr><th scope="row">Visible indoors</th><td>Ceiling panel</td><td>Wall-mounted unit</td></tr>
+          <tr><th scope="row">Airflow</th><td>From above</td><td>Across the room</td></tr>
+          <tr class="comparison-group"><th colspan="3" scope="colgroup">Installation &amp; access</th></tr>
+          <tr><th scope="row">Space to plan</th><td>Ceiling cavity and drain route</td><td>Wall clearances and line route</td></tr>
+          <tr><th scope="row">Filter access</th><td>From below the ceiling panel</td><td>From the front panel</td></tr>
+          <tr><th scope="row">Installation work</th><td>Ceiling opening and finish work</td><td>Wall mounting and line routing</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -1811,18 +1224,18 @@ main.page h2 {
         <div class="project-product-tabs" role="tablist" aria-label="Project type selector">
           <button class="project-product-tab is-active" type="button" role="tab" aria-selected="true" data-project-tab="living">Open living room</button>
           <button class="project-product-tab" type="button" role="tab" aria-selected="false" data-project-tab="bedroom">Bedroom or office</button>
-          <button class="project-product-tab" type="button" role="tab" aria-selected="false" data-project-tab="garage">Garage or rental</button>
-          <button class="project-product-tab" type="button" role="tab" aria-selected="false" data-project-tab="remodel">Remodel or finished ceiling</button>
+          <button class="project-product-tab" type="button" role="tab" aria-selected="false" data-project-tab="garage">Garage or retrofit</button>
+          <button class="project-product-tab" type="button" role="tab" aria-selected="false" data-project-tab="remodel">Remodel planning</button>
         </div>
 
         <div class="project-product-feature">
           <div class="project-product-feature__media">
-            <img src="assets/scene-open-living.webp" alt="Open living room mini split project planning" loading="lazy">
+            <img id="project-product-image" src="assets/Ceiling cassette in modern living room.png" alt="Ceiling cassette installed in a modern living room" loading="lazy">
           </div>
           <div class="project-product-feature__content">
             <span class="project-product-feature__label" id="project-product-label">Start with ceiling cassette</span>
             <h3 id="project-product-title">Open living room or design-led space</h3>
-            <p id="project-product-copy">Start with ceiling cassette if ceiling access is realistic and you want a cleaner built-in look. Compare wall mount if a high-wall location gives clear airflow.</p>
+            <p id="project-product-copy">Confirm ceiling access, drainage, and service access before comparing ceiling cassettes. A wall mount stays in the comparison whenever a high-wall location works.</p>
           </div>
         </div>
 
@@ -1835,7 +1248,7 @@ main.page h2 {
             <p class="project-product-card__capacity"><span>Capacity</span><strong>12K BTU</strong></p>
             <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>12,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div></dl>
             <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA 12,000 BTU 22 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 550 Sq.Ft.</p></details>
-            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,394.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962261868832&quantity=1">Add to Cart</a></div>
+            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,394.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/products/della-12-000-btu-seer2-22-ceiling-cassette-ductless-mini-split-ac-up-to-550-sq-ft">View Product</a></div>
           </div>
         </article>
 <article class="project-product-card" data-product-key="wm12">
@@ -1846,7 +1259,7 @@ main.page h2 {
             <p class="project-product-card__capacity"><span>Capacity</span><strong>12K BTU</strong></p>
             <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>12,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>23 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div></dl>
             <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA Vario Series 12000 BTU 23 SEER2 Mini Split Heat Pump AC - Up to 550 Sq.Ft.</p></details>
-            <div class="project-product-card__purchase"><div class="project-product-card__price">$779.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50314672013600&quantity=1">Add to Cart</a></div>
+            <div class="project-product-card__purchase"><div class="project-product-card__price">$779.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/products/vario-series-12000-btu-seer2-23-mini-split-heat-pump-ac-up-to-550-sq-ft">View Product</a></div>
           </div>
         </article>
 <article class="project-product-card" data-product-key="cc18">
@@ -1857,7 +1270,7 @@ main.page h2 {
             <p class="project-product-card__capacity"><span>Capacity</span><strong>18K BTU</strong></p>
             <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>20.5 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,000 sq. ft.</dd></div></dl>
             <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA 18,000 BTU 20.5 SEER2 Ceiling Cassette Ductless Mini Split AC - Up to 1000 Sq.Ft.</p></details>
-            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,784.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50962170511648&quantity=1">Add to Cart</a></div>
+            <div class="project-product-card__purchase"><p class="project-product-card__configuration">No line set included. <a href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">Choose a line set</a></p><div class="project-product-card__price">$1,784.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/products/della-18-000-btu-seer2-20-5-ceiling-cassette-ductless-mini-split-ac-up-to-1000-sq-ft">View Product</a></div>
           </div>
         </article>
 <article class="project-product-card" data-product-key="wm18">
@@ -1868,7 +1281,7 @@ main.page h2 {
             <p class="project-product-card__capacity"><span>Capacity</span><strong>18K BTU</strong></p>
             <dl class="project-product-card__specs"><div><dt>Outdoor unit</dt><dd>18,000 BTU</dd></div><div><dt>Voltage</dt><dd>208-230V</dd></div><div><dt>Efficiency</dt><dd>22 SEER2</dd></div><div><dt>Coverage</dt><dd>Up to 1,000 sq. ft.</dd></div></dl>
             <details class="project-product-card__identity"><summary>Full model name</summary><p>DELLA Serena Series 18000 BTU 22 SEER2 Mini-Split Heat Pump AC - Up to 1000 Sq.Ft.</p></details>
-            <div class="project-product-card__purchase"><div class="project-product-card__price">$1,049.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=50340329029920&quantity=1">Add to Cart</a></div>
+            <div class="project-product-card__purchase"><div class="project-product-card__price">$1,049.96</div><a class="btn project-product-card__cart" href="https://dellahome.com/products/serena-series-18000-btu-seer2-22-mini-split-heat-pump-ac-up-to-1000-sq-ft">View Product</a></div>
           </div>
         </article>
         </div>
@@ -1912,26 +1325,24 @@ main.page h2 {
         <h2>Ceiling cassette vs wall mount mini split questions</h2>
       </div>
       <div class="faq-list">
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">What is the main difference between a ceiling cassette and a wall mount mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A ceiling cassette installs in or near the ceiling for a lower-profile look and can distribute air from a more central position. A wall mount installs high on a wall and is usually easier to access for routine cleaning and service.</p></div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is a ceiling cassette mini split usually more expensive than a wall mount?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A ceiling cassette often has a higher installation path because ceiling access, opening work, drainage, and service clearance need to be planned. A wall mount is often simpler when a clear high-wall location and line-set route are available. Final cost still depends on the room and installer review.</p></div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Which type should I check first for a large open room?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>For a large open living room or design-focused space, a ceiling cassette is worth checking first if ceiling access, drainage, and service access are realistic. A wall mount can still be a good fit when the airflow direction and high-wall placement make sense.</p></div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can I install a ceiling cassette mini split myself?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A ceiling cassette should be planned with a qualified HVAC installer because it can involve ceiling work, drainage, wiring, refrigerant lines, and service access. Confirm local requirements and installer approval before purchase.</p></div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Which mini split type is easier to clean and maintain?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Wall-mounted mini splits are usually easier to reach for routine filter cleaning and front-panel access. Ceiling cassette maintenance depends on ceiling height, panel location, and whether service access was planned during installation.</p></div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can one home use both ceiling cassette and wall-mounted units?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Some home plans may use a ceiling cassette in an open living area and wall-mounted units in bedrooms, offices, garages, or rental rooms. Compatibility, total capacity, line-set routing, controls, drainage, electrical, and installer confirmation should be reviewed before purchase.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can a ceiling cassette be installed in a finished ceiling?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>It may be possible. Before ordering, ask an installer to check the space above the ceiling, framing, drainage and service access. The quote should also account for opening and repairing the finished ceiling.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is the listed product price the full installed cost?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Check the product listing for what is included. Ask for an itemized installation quote covering labor, electrical work, refrigerant piping, drainage and any ceiling or wall repairs. Confirm whether the selected configuration includes a line set.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can ceiling cassette and wall-mounted units share one outdoor unit?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Only if the specific indoor and outdoor models are approved to work together. Ask DELLA or your installer to confirm the combination and capacity limits before buying. Matching the brand or adding up BTU ratings is not enough to establish compatibility.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is one style always quieter or more efficient?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>No. Compare the ratings for the complete matched system and the indoor noise specifications for the operating mode you will use. Placement, room acoustics and installation also affect what you hear.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Can I install either system myself?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Check the installation requirements for the exact model before buying. Installation includes electrical connections, refrigerant piping, drainage and mounting. Arrange qualified help for work you are not equipped or permitted to perform, and review the model's installation and warranty requirements.</p></div></details>
       </div>
     </div>
   </section>
 
   <section class="bottom-cta-section">
     <div class="container">
-      <div class="bottom-choice-cta">
-        <div class="bottom-choice-cta__copy">
-          <h2>Start with the install path that fits your room.</h2>
-          <p>Use ceiling access, wall space, and installer review to choose your next Della collection.</p>
-        </div>
-        <div class="bottom-choice-cta__actions">
-          <a class="btn btn-primary" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
-          <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
+      <div class="closing-band" role="region" aria-labelledby="closing-title">
+        <div class="closing-inner">
+          <h2 id="closing-title">Explore both indoor-unit styles</h2>
+          <div class="closing-actions">
+            <a class="btn btn-outline" href="https://dellahome.com/collections/ceiling-cassette-mini-split">Shop Ceiling Cassette</a>
+            <a class="btn btn-outline" href="https://dellahome.com/collections/wall-mounted-mini-split">Shop Wall Mount</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1939,98 +1350,198 @@ main.page h2 {
 </main>
 
 <script>
-  const checkerState = {};
-  const cassetteUrl = 'https://dellahome.com/collections/ceiling-cassette-mini-split';
-  const wallUrl = 'https://dellahome.com/collections/wall-mounted-mini-split';
-  const checkerQuestions = document.querySelectorAll('.checker-question');
-  const checkerCount = document.getElementById('checker-count');
-  const resultKicker = document.getElementById('checker-kicker');
-  const resultTitle = document.getElementById('checker-title');
-  const resultCopy = document.getElementById('checker-copy');
-  const resultActions = document.getElementById('checker-actions');
-  const resultPrimary = document.getElementById('checker-primary');
-  const resultSecondary = document.getElementById('checker-secondary');
+(function () {
+  var cassetteUrl = 'https://dellahome.com/collections/ceiling-cassette-mini-split';
+  var wallUrl = 'https://dellahome.com/collections/wall-mounted-mini-split';
+  var installerUrl = 'https://dellahome.com/pages/find-a-installer';
+  var compareUrl = '#comparison';
 
-  function setCheckerLinks(primaryLabel, primaryHref, secondaryLabel, secondaryHref) {
-    resultPrimary.textContent = primaryLabel;
-    resultPrimary.href = primaryHref;
-    resultSecondary.textContent = secondaryLabel;
-    resultSecondary.href = secondaryHref;
-    resultActions.hidden = false;
+  var state = { ceiling: null, wall: null, priority: null };
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.checker-question'));
+  var titleEl = document.getElementById('checker-title');
+  var copyEl = document.getElementById('checker-copy');
+  var verifyEl = document.getElementById('checker-verify');
+  var primaryEl = document.getElementById('checker-primary');
+  var secondaryEl = document.getElementById('checker-secondary');
+  var liveEl = document.getElementById('checker-live');
+  var resetEl = document.getElementById('checker-reset');
+  var resultEl = document.querySelector('.checker-result');
+
+  if (!titleEl || !groups.length) return;
+
+  function setResult(title, reason, verify, cta) {
+    if (resultEl) resultEl.classList.remove('is-empty');
+    if (resetEl) resetEl.hidden = false;
+    titleEl.textContent = title;
+    copyEl.textContent = reason;
+    if (verify) {
+      verifyEl.textContent = verify;
+      verifyEl.hidden = false;
+    } else {
+      verifyEl.textContent = '';
+      verifyEl.hidden = true;
+    }
+    if (cta) {
+      primaryEl.textContent = cta.label;
+      primaryEl.href = cta.href;
+      primaryEl.hidden = false;
+    } else {
+      primaryEl.hidden = true;
+    }
+    if (secondaryEl) {
+      secondaryEl.hidden = !!(cta && cta.href === compareUrl);
+    }
+    liveEl.textContent = title + '. ' + reason;
   }
 
-  function updateCheckerResult() {
-    const values = Object.values(checkerState);
-    const answered = values.length;
-    const cassetteScore = values.filter((value) => value === 'cassette').length;
-    const wallScore = values.filter((value) => value === 'wall').length;
+  function render() {
+    var c = state.ceiling;
+    var w = state.wall;
+    var p = state.priority;
+    var answered = [c, w, p].filter(Boolean).length;
 
-    checkerCount.textContent = `${answered} of ${checkerQuestions.length} answered`;
-
-    if (answered === 0) {
-      resultKicker.textContent = 'RECOMMENDED START';
-      resultTitle.textContent = 'Answer a few questions to see a starting point.';
-      resultCopy.textContent = 'Your result will update as you select options.';
-      resultActions.hidden = true;
+    if (answered < 3) {
+      if (resultEl) resultEl.classList.add('is-empty');
+      if (resetEl) resetEl.hidden = answered === 0;
+      titleEl.textContent = 'Answer all three questions to see a starting point.';
+      copyEl.textContent = 'You can still compare both styles any time.';
+      verifyEl.textContent = '';
+      verifyEl.hidden = true;
+      primaryEl.hidden = true;
+      if (secondaryEl) secondaryEl.hidden = false;
+      liveEl.textContent = 'Not enough answers yet.';
       return;
     }
 
-    resultKicker.textContent = answered < 3 ? 'CURRENT STARTING POINT' : 'RECOMMENDED START';
-
-    if (cassetteScore > wallScore) {
-      resultTitle.textContent = 'Ceiling cassette may fit this room better.';
-      resultCopy.textContent = 'Best when the room has ceiling access, a practical drain route, and you want a cleaner built-in look.';
-      setCheckerLinks('Shop Ceiling Cassette', cassetteUrl, 'Compare with Wall Mount', wallUrl);
+    if (c === 'no' && w === 'no') {
+      setResult('Review installation options first', 'No ceiling cassette option was approved, and no clear wall spot was found.', 'Ask an installer to review the room before comparing models.', { label: 'Find an installer', href: installerUrl });
       return;
     }
-
-    if (wallScore > cassetteScore) {
-      resultTitle.textContent = 'Wall mount may fit this room better.';
-      resultCopy.textContent = 'Best when the project needs simpler wall placement, easier front-panel access, and a practical line-set route.';
-      setCheckerLinks('Shop Wall Mount', wallUrl, 'Compare with Ceiling Cassette', cassetteUrl);
+    if (c === 'no' && w === 'unknown') {
+      setResult('Check a wall location first', 'A ceiling cassette was not approved, and a wall location has not been checked.', 'Ask an installer to check clearances and the pipe route for a wall unit.', { label: 'Find an installer', href: installerUrl });
       return;
     }
-
-    resultTitle.textContent = 'Compare both install paths.';
-    resultCopy.textContent = 'Your room may depend on ceiling access, wall placement, and installer feasibility.';
-    setCheckerLinks('Shop Ceiling Cassette', cassetteUrl, 'Shop Wall Mount', wallUrl);
+    if (c === 'unknown' && w === 'no') {
+      setResult('Check ceiling feasibility first', 'No clear wall spot was found, and a ceiling cassette has not been assessed.', 'Ask an installer to assess ceiling space and drainage.', { label: 'Find an installer', href: installerUrl });
+      return;
+    }
+    if (c === 'unknown' && w === 'unknown') {
+      setResult('Review both installation options', 'The installation locations still need checking.', '', { label: 'Find an installer', href: installerUrl });
+      return;
+    }
+    if (c === 'no' && w === 'yes') {
+      setResult('Compare wall mounts first', 'A ceiling cassette was not approved, but a possible wall location was identified.', 'Have the installer confirm clearances and the pipe route.', { label: 'View wall mount options \u2192', href: wallUrl });
+      return;
+    }
+    if (c === 'yes' && w === 'no') {
+      setResult('Compare ceiling cassettes first', 'An installer has identified a ceiling option, and no clear wall spot was found.', 'Confirm the drain route and service access before ordering.', { label: 'View cassette options \u2192', href: cassetteUrl });
+      return;
+    }
+    if (c === 'unknown' && w === 'yes') {
+      setResult('Compare wall mounts first', 'You have identified a possible wall location; the ceiling has not been assessed.', 'Have the installer confirm the location and pipe route.', { label: 'View wall mount options \u2192', href: wallUrl });
+      return;
+    }
+    if (c === 'yes' && w === 'unknown') {
+      setResult('Compare ceiling cassettes first', 'An installer has identified a ceiling option; a wall location has not been checked.', 'Confirm the drain route and service access before ordering.', { label: 'View cassette options \u2192', href: cassetteUrl });
+      return;
+    }
+    if (p === 'look') {
+      setResult('Compare ceiling cassettes first', 'Your installer has identified a ceiling option, and you prefer to keep the walls clear.', 'Confirm the drain route and service access before ordering.', { label: 'View cassette options \u2192', href: cassetteUrl });
+      return;
+    }
+    if (p === 'work') {
+      setResult('Compare wall mounts first', 'Both locations may be possible, and you prefer to limit ceiling work.', 'Have the installer confirm the wall location and pipe route.', { label: 'View wall mount options \u2192', href: wallUrl });
+      return;
+    }
+    setResult('Both styles are worth comparing', 'Both locations may be possible and you have no stated preference.', 'Confirm clearances, drainage and finish work before ordering.', { label: 'Compare both styles', href: compareUrl });
   }
 
-  checkerQuestions.forEach((question) => {
-    question.querySelectorAll('.checker-option').forEach((button) => {
-      button.addEventListener('click', () => {
-        checkerState[question.dataset.question] = button.dataset.value;
-        question.classList.add('is-answered');
-        question.querySelectorAll('.checker-option').forEach((item) => {
-          const isSelected = item === button;
-          item.classList.toggle('is-selected', isSelected);
-          item.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
-        });
-        updateCheckerResult();
-      });
+  function readState() {
+    ['ceiling', 'wall', 'priority'].forEach(function (name) {
+      var checked = document.querySelector('input[name="' + name + '"]:checked');
+      state[name] = checked ? checked.value : null;
+    });
+  }
+
+  function syncStyles() {
+    Array.prototype.forEach.call(groups, function (group) {
+      group.classList.toggle('is-answered', !!group.querySelector('input[type="radio"]:checked'));
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.checker-option'), function (label) {
+      var field = label.querySelector('input');
+      label.classList.toggle('is-selected', !!(field && field.checked));
+    });
+  }
+
+  function refresh() {
+    readState();
+    syncStyles();
+    render();
+  }
+
+  groups.forEach(function (group) {
+    Array.prototype.forEach.call(group.querySelectorAll('input[type="radio"]'), function (input) {
+      input.addEventListener('change', refresh);
     });
   });
+
+  if (resetEl) {
+    resetEl.addEventListener('click', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.checker-question input[type="radio"]'), function (input) {
+        input.checked = false;
+      });
+      refresh();
+    });
+  }
+
+  var infoBtn = document.getElementById('checker-scene-info');
+  var infoNote = document.getElementById('checker-scene-note');
+  if (infoBtn && infoNote) {
+    infoBtn.addEventListener('click', function () {
+      var opening = infoNote.hidden;
+      infoNote.hidden = !opening;
+      infoBtn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && infoNote && !infoNote.hidden) {
+      infoNote.hidden = true;
+      if (infoBtn) infoBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  window.addEventListener('pageshow', refresh);
+  refresh();
+})();
 
   const projectProductData = {
     living: {
       label: 'Start with ceiling cassette',
       title: 'Open living room or design-led space',
-      copy: 'Start with ceiling cassette if ceiling access is realistic and you want a cleaner built-in look. Compare wall mount if a high-wall location gives clear airflow.'
+      copy: 'Confirm ceiling access, drainage, and service access before comparing ceiling cassettes. A wall mount stays in the comparison whenever a high-wall location works.',
+      image: 'assets/Ceiling cassette in modern living room.png',
+      alt: 'Ceiling cassette installed in a modern living room'
     },
     bedroom: {
       label: 'Start with wall mount',
       title: 'Bedroom, office, or everyday room',
-      copy: 'Start with wall mount when you have a simple high-wall location and want easier front-panel access.'
+      copy: 'Start with wall mount when a clear high-wall location gives airflow that works with the bed or desk, plus easier routine access.',
+      image: 'assets/Wall mounted mini split in bedroom.png',
+      alt: 'Wall-mounted mini split installed in a bedroom'
     },
     garage: {
       label: 'Start with wall mount',
-      title: 'Garage, rental, or retrofit project',
-      copy: 'Start with wall mount when the goal is straightforward placement, easier access, and a practical line-set route.'
+      title: 'Garage or retrofit project',
+      copy: 'Start with wall mount when the goal is a retrofit with practical wall clearance, a workable line route, and easier access.',
+      image: 'assets/Wall mounted mini split in garage.png',
+      alt: 'Wall-mounted mini split installed in a finished garage'
     },
     remodel: {
       label: 'Installer review first',
-      title: 'Remodel or finished ceiling plan',
-      copy: 'Check ceiling cassette when ceiling access, drainage, and service clearance can be planned before installation.'
+      title: 'Remodel planning',
+      copy: 'A remodel can make either style easier. Have an installer confirm the ceiling opening, wall location, drainage, and service access before you decide.',
+      image: 'assets/Room prepared for mini split planning.png',
+      alt: 'Room prepared for mini split installation planning'
     }
   };
   const projectProductTabs = document.querySelectorAll('.project-product-tab');
@@ -2292,11 +1803,43 @@ main.page h2 {
     living: ['cc12', 'wm12', 'cc18', 'wm18'],
     bedroom: ['wm12', 'wm18', 'cc12', 'cc18'],
     garage: ['wm12', 'wm18', 'wmDual', 'wmTri'],
-    remodel: ['cc12', 'cc18', 'ccDual', 'ccTri']
+    remodel: ['cc12', 'wm12', 'cc18', 'wm18']
   };
+
+  const projectProductImage = document.getElementById('project-product-image');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let projectMediaSwapId = 0;
+
+  function syncFeatureImage(projectKey) {
+    if (!projectProductImage) return;
+    const tabData = projectProductData[projectKey];
+    if (!tabData || !tabData.image) return;
+    const swapId = ++projectMediaSwapId;
+
+    const apply = () => {
+      if (swapId !== projectMediaSwapId) return;
+      projectProductImage.src = tabData.image;
+      projectProductImage.alt = tabData.alt;
+      projectProductImage.classList.remove('is-fading');
+    };
+
+    if (reduceMotion.matches) {
+      apply();
+      return;
+    }
+    projectProductImage.classList.add('is-fading');
+    window.setTimeout(apply, 170);
+  }
 
   function renderProjectProducts(projectKey) {
     const productKeys = projectProductSets[projectKey] || projectProductSets.living;
+    const tabData = projectProductData[projectKey] || projectProductData.living;
+
+    if (projectProductLabel) projectProductLabel.textContent = tabData.label;
+    if (projectProductTitle) projectProductTitle.textContent = tabData.title;
+    if (projectProductCopy) projectProductCopy.textContent = tabData.copy;
+    syncFeatureImage(projectKey);
+
     if (!projectProductGrid) return;
 
     projectProductGrid.dataset.projectProducts = projectKey;
@@ -2310,11 +1853,19 @@ main.page h2 {
             <p class="project-product-card__capacity"><span>${product.capacityLabel}</span><strong>${product.capacity}</strong></p>
             <dl class="project-product-card__specs">${product.specs.map(([label,value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl>
             <details class="project-product-card__identity"><summary>Full model name</summary><p>${product.fullName}</p></details>
-            <div class="project-product-card__purchase">${product.configuration ? `<p class="project-product-card__configuration">${product.configuration} <a href="${product.url}">Choose a line set</a></p>` : ''}<div class="project-product-card__price">${product.price}</div><a class="btn project-product-card__cart" href="https://dellahome.com/cart/add?id=${product.variantId}&quantity=1">Add to Cart</a></div>
+            <div class="project-product-card__purchase">${product.configuration ? `<p class="project-product-card__configuration">${product.configuration} <a href="${product.url}">Choose a line set</a></p>` : ''}<div class="project-product-card__price">${product.price}</div><a class="btn project-product-card__cart" href="${product.url}">View Product</a></div>
           </div>
         </article>`;
     }).join('');
   }
+
+  Object.keys(projectProductData).forEach((key) => {
+    const data = projectProductData[key];
+    if (data && data.image) {
+      const preload = new Image();
+      preload.src = data.image;
+    }
+  });
 
   projectProductTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -2329,9 +1880,6 @@ main.page h2 {
         item.tabIndex = isActive ? 0 : -1;
       });
 
-      projectProductLabel.textContent = tabData.label;
-      projectProductTitle.textContent = tabData.title;
-      projectProductCopy.textContent = tabData.copy;
       renderProjectProducts(projectKey);
     });
   });
@@ -2348,22 +1896,6 @@ main.page h2 {
     });
   });
 
-  const comparisonRows = Array.from(document.querySelectorAll('#comparison .comparison-table tbody tr'));
-  const comparisonToggle = document.querySelector('#comparison .comparison-toggle');
-  const comparisonExtraRows = comparisonRows.slice(4);
-
-  if (comparisonToggle && comparisonExtraRows.length) {
-    comparisonExtraRows.forEach((row) => row.classList.add('is-collapsed-mobile'));
-
-    comparisonToggle.addEventListener('click', () => {
-      const isExpanded = comparisonToggle.getAttribute('aria-expanded') === 'true';
-      comparisonToggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-      comparisonToggle.textContent = isExpanded ? 'View more differences' : 'Show fewer differences';
-      comparisonExtraRows.forEach((row) => {
-        row.classList.toggle('is-collapsed-mobile', isExpanded);
-      });
-    });
-  }
 </script>
 </body>
 </html>
