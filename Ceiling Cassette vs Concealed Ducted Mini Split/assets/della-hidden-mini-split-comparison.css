@@ -45,6 +45,7 @@
   --dc-blue-hover: #2e5aba;
   --dc-blue-light: #edf2ff;
   --dc-blue-surface: #f4f7ff;
+  --dc-service-bg: #f3f7fc;
   --dc-trust-bg: #ddf7ff;
   --dc-gray-50: #f8f9fb;
   --dc-gray-100: #f0f2f6;
@@ -121,8 +122,8 @@
 
 .della-compare__button:hover { background: var(--dc-blue-hover); }
 .della-compare__button--navy { background: var(--dc-navy); }
-.della-compare__button--outline { border-color: var(--dc-gray-300); background: var(--dc-white); color: var(--dc-navy); }
-.della-compare__button--outline:hover { border-color: var(--dc-blue-aa); background: var(--dc-blue-light); color: var(--dc-navy); }
+.della-compare__button--outline { border-color: var(--dc-blue); background: var(--dc-white); color: var(--dc-navy); }
+.della-compare__button--outline:hover { border-color: var(--dc-blue); background: var(--dc-blue-light); color: var(--dc-navy); }
 .della-compare__button--full { width: 100%; }
 
 .della-compare :where(a, button, summary, [tabindex]):focus-visible {
@@ -136,17 +137,13 @@
 .della-compare__hero-picture img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .della-compare__hero-layout { position: relative; z-index: 2; display: flex; min-height: 100%; align-items: center; }
 .della-compare__hero-copy { width: min(54%, 650px); padding: 58px 0; }
-.della-compare__hero h1 { max-width: 680px; margin-bottom: 18px; font-size: clamp(42px, 3.6vw, 52px); line-height: 1.08; }
-.della-compare__hero-copy p { max-width: 610px; color: var(--dc-muted); font-size: 17px; }
-.della-compare__hero-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; margin-top: 28px; }
-.della-compare__hero-actions .della-compare__button { width: auto; min-height: 48px; padding: 12px 16px; font-size: 14px; font-weight: 700; white-space: nowrap; }
+.della-compare__hero h1 { max-width: 680px; margin-bottom: 16px; font-size: clamp(30px, 2.95vw, 42px); font-weight: 400; line-height: 1.1; }
+.della-compare__hero-copy p { max-width: 520px; color: var(--dc-muted); font-size: 15px; line-height: 1.5; }
 
 .della-compare__quick-grid,
-.della-compare__install-grid,
-.della-compare__closing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.della-compare__install-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .della-compare__decision-card,
-.della-compare__install-card,
-.della-compare__closing-card { min-width: 0; border: 1px solid var(--dc-gray-200); background: var(--dc-white); }
+.della-compare__install-card { min-width: 0; border: 1px solid var(--dc-gray-200); background: var(--dc-white); }
 .della-compare__decision-card { display: grid; min-height: 250px; grid-template-columns: 42% 1fr; align-items: stretch; padding: 20px 28px 20px 0; }
 .della-compare__decision-media { position: relative; overflow: hidden; background: var(--dc-gray-50); }
 .della-compare__decision-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
@@ -230,33 +227,36 @@
 .della-compare__price { margin-top: auto; margin-bottom: 14px; color: var(--dc-navy); font-family: var(--dc-heading); font-size: 21px; font-weight: 700; line-height: 1.25; }
 .della-compare__price-prefix { margin-right: 4px; font-family: var(--dc-body); font-size: 12px; font-weight: 600; text-transform: uppercase; }
 
-.della-compare__services { padding: 56px 0 0; background: var(--dc-white); }
-.della-compare__services .della-compare__section-head { margin-bottom: 28px; }
-.della-compare__service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
-.della-compare__service-card { display: flex; min-width: 0; min-height: 142px; flex-direction: column; align-items: center; justify-content: center; padding: 10px 16px; background: var(--dc-white); text-align: center; }
-.della-compare__service-icon { width: 44px; height: 44px; margin: 0 auto 16px; object-fit: contain; }
-.della-compare__service-card svg { color: var(--dc-navy); }
-.della-compare__service-card h3 { margin: 0; font-family: var(--dc-body); font-size: 18px; font-weight: 400; line-height: 1.28; }
+.della-compare__services { padding: 56px 0; background: var(--dc-white); }
+.della-compare__services .della-compare__section-head { margin-bottom: 0; }
+.della-compare__service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 32px; }
+.della-compare__service-card { display: flex; min-width: 0; flex-direction: column; align-items: center; padding: 30px 26px 28px; border-radius: 6px; background: var(--dc-service-bg); text-align: center; }
+.della-compare__service-icon-wrap { display: flex; width: 58px; height: 58px; flex: none; align-items: center; justify-content: center; margin-bottom: 14px; border-radius: 50%; background: var(--dc-blue); }
+.della-compare__service-icon { width: 50px; height: 50px; margin: 0; object-fit: contain; }
+.della-compare__service-card svg { color: #fff; }
+.della-compare__service-card h3 { margin: 0 0 8px; font-family: var(--dc-heading); font-size: 22px; font-weight: 500; line-height: 1.35; }
+.della-compare__service-card h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+.della-compare__service-card h3 a:hover { border-bottom-color: currentColor; }
+.della-compare__service-card p { margin: 0; color: var(--dc-muted); font-size: 15px; line-height: 1.55; }
 
-.della-compare__faq { padding: 48px 0 32px; }
-.della-compare__faq .della-compare__section-head { margin-bottom: 28px; }
-.della-compare__faq-list { border-top: 1px solid var(--dc-gray-200); }
+.della-compare__faq { padding: 48px 0; background: var(--dc-gray-50); }
+.della-compare__faq .della-compare__section-head { margin-bottom: 14px; text-align: left; }
+.della-compare__faq-list { margin-top: 28px; border-top: 1px solid var(--dc-gray-200); }
 .della-compare__faq-item { border-bottom: 1px solid var(--dc-gray-200); }
-.della-compare__faq-item:last-child { border-bottom: 0; }
 .della-compare__faq-summary { display: grid; min-height: 60px; grid-template-columns: minmax(0, 1fr) 18px; align-items: center; gap: 24px; padding: 18px 0; color: var(--dc-navy); cursor: pointer; font-family: var(--dc-heading); font-size: 20px; font-weight: 500; line-height: 1.28; list-style: none; transition: color 180ms ease; }
 .della-compare__faq-summary::-webkit-details-marker { display: none; }
-.della-compare__faq-icon { width: 10px; height: 10px; margin-right: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform 160ms ease; }
+.della-compare__faq-icon { width: 9px; height: 9px; margin-right: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform 160ms ease; }
 .della-compare__faq-summary:hover,
-.della-compare__faq-item[open] .della-compare__faq-summary { color: var(--dc-blue-aa); }
+.della-compare__faq-item[open] .della-compare__faq-summary { color: var(--dc-blue-hover); }
 .della-compare__faq-item[open] .della-compare__faq-icon { transform: translateY(3px) rotate(225deg); }
-.della-compare__faq-answer { max-width: none; margin: 0; padding: 0 40px 18px 0; color: var(--dc-muted); font-size: 15px; line-height: 1.7; }
+.della-compare__faq-answer { display: grid; grid-template-rows: 0fr; max-width: none; margin: 0; padding: 0 40px 0 0; color: var(--dc-muted); font-size: 15px; line-height: 1.7; overflow: hidden; transition: grid-template-rows 250ms ease, padding-bottom 250ms ease; }
+.della-compare__faq-item[open] .della-compare__faq-answer { grid-template-rows: 1fr; padding-bottom: 18px; }
 
-.della-compare__closing { padding: 32px 0 72px; background: var(--dc-blue-surface); }
-.della-compare__closing > .della-compare__container > .della-compare__title { margin-bottom: 28px; }
-.della-compare__closing-card { display: flex; min-height: 230px; flex-direction: column; align-items: flex-start; padding: 28px; border-color: rgba(88, 132, 231, .24); border-radius: 8px; box-shadow: 0 8px 24px rgba(14, 25, 83, .06); }
-.della-compare__closing-card h3 { margin-bottom: 16px; font-size: 24px; line-height: 1.22; }
-.della-compare__closing-card p { margin-bottom: 20px; color: var(--dc-muted); font-size: 15px; }
-.della-compare__closing-card .della-compare__button { margin-top: auto; }
+.della-compare__closing { padding: 48px 0 72px; background: var(--dc-white); }
+.della-compare__closing-band { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 30px 40px; border-radius: 6px; background: var(--dc-blue-light); }
+.della-compare__closing-copy { min-width: 0; }
+.della-compare__closing-band .della-compare__title { margin: 0; font-size: 32px; white-space: normal; }
+.della-compare__closing-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; flex: none; }
 
 @media (max-width: 1279px) {
   .della-compare { --dc-container: 1120px; --dc-gutter: 28px; --dc-section: 68px; }
@@ -301,10 +301,8 @@
   .della-compare__hero-copy p { font-size: 16px; }
   .della-compare__product-card .della-compare__button { min-height: 44px; padding: 10px 12px; font-size: 14px; }
   .della-compare__product-toolbar .della-compare__collection-cta { min-height: 44px; padding: 10px 14px; font-size: 14px; }
-  .della-compare__hero-actions { flex-wrap: wrap; }
   .della-compare__quick-grid,
   .della-compare__install-grid,
-  .della-compare__closing-grid,
   .della-compare__comparison-visuals { grid-template-columns: 1fr; }
   .della-compare__project-grid { grid-template-columns: 1fr; }
   .della-compare__decision-card { min-height: 0; grid-template-columns: 1fr; padding: 18px; }
@@ -315,16 +313,17 @@
   .della-compare__comparison-table-wrap { display: none; }
   .della-compare__comparison-cards { display: grid; gap: 12px; }
   .della-compare__install-card { --dc-install-pad: 18px; --dc-install-bleed: -18px; padding: var(--dc-install-pad); }
-  .della-compare__service-grid { grid-template-columns: 1fr; gap: 12px; }
-  .della-compare__service-card { min-height: auto; padding: 14px 10px; }
-  .della-compare__service-icon { width: 40px; height: 40px; margin-bottom: 10px; }
-  .della-compare__closing-card { align-items: flex-start; flex-direction: column; }
+  .della-compare__service-grid { grid-template-columns: 1fr; gap: 14px; }
+  .della-compare__service-card { padding: 24px 20px; }
+  .della-compare__service-icon-wrap { width: 52px; height: 52px; }
+  .della-compare__service-icon { width: 44px; height: 44px; }
+  .della-compare__service-card h3 { font-size: 20px; }
+  .della-compare__closing-band { flex-direction: column; align-items: flex-start; gap: 18px; padding: 24px; }
+  .della-compare__closing-actions { width: 100%; }
 }
 
 @media (max-width: 430px) {
   .della-compare__hero-copy { padding-block: 33px; }
-  .della-compare__hero-actions { display: grid; grid-template-columns: 1fr; }
-  .della-compare__hero-actions .della-compare__button { width: 100%; }
   .della-compare__button { width: 100%; min-height: 46px; padding-inline: 16px; }
   .della-compare__decision-copy h3 { font-size: 21px; }
   .della-compare__project-copy { padding: 16px; }
