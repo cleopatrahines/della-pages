@@ -185,45 +185,33 @@ h3 {
   font-size: 16px;
   line-height: 1.55;
 }
-.checker-grid {
+.checker-studio {
   display: grid;
-  grid-template-columns: minmax(0, 54fr) minmax(0, 46fr);
-  gap: clamp(24px, 3vw, 34px);
+  grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+  gap: clamp(24px, 3.2vw, 44px);
   align-items: start;
 }
-.checker-scene {
+.checker-media { margin: 0; min-width: 0; }
+.checker-media__frame {
   position: relative;
-  margin: 0;
   border: 1px solid var(--gray-200);
   border-radius: 12px;
   overflow: hidden;
   background: var(--gray-50);
+  aspect-ratio: 16 / 9;
 }
-.checker-scene__media { position: relative; }
-.checker-scene__media img {
+.checker-media__frame img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
-.checker-scene__marker {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(14,25,83,.25);
+@media (min-width: 768px) {
+  .checker-media__frame { aspect-ratio: 1 / 1; }
+  .checker-media__frame img { object-position: right center; }
 }
-.checker-scene__marker--1 { top: 12%; left: 30%; }
-.checker-scene__marker--2 { top: 31%; left: 84%; }
-.checker-scene__info {
+.checker-media__info {
   position: absolute;
   right: 8px;
   bottom: 8px;
@@ -239,7 +227,7 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.checker-scene__info::before {
+.checker-media__info::before {
   content: "i";
   display: flex;
   align-items: center;
@@ -254,8 +242,8 @@ h3 {
   font-style: italic;
   line-height: 1;
 }
-.checker-scene__info:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
-.checker-scene__note {
+.checker-media__info:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
+.checker-media__note {
   position: absolute;
   left: 0;
   right: 0;
@@ -267,53 +255,70 @@ h3 {
   font-size: 12.5px;
   line-height: 1.45;
 }
-.checker-scene__note[hidden] { display: none; }
-.checker-form { min-width: 0; }
+.checker-media__note[hidden] { display: none; }
+.checker-decision { min-width: 0; }
+.checker-steps { display: grid; gap: 14px; }
 .checker-question {
   margin: 0;
-  padding: 0 0 18px;
-  border: 0;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color .2s ease, background .2s ease;
 }
-.checker-question + .checker-question {
-  padding-top: 18px;
-  border-top: 1px solid var(--gray-200);
+.checker-question.is-answered {
+  border-color: #C7D6FF;
+  background: #FBFCFE;
 }
 .checker-question__legend {
+  float: left;
+  width: 100%;
+  display: block;
   padding: 0;
-  margin-bottom: 8px;
+  margin: 0 0 12px;
   color: var(--navy);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
+}
+.checker-question__num {
+  display: inline-block;
+  min-width: 20px;
+  margin-right: 4px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
 }
 .checker-question__hint {
+  clear: both;
   margin: 0 0 12px;
   color: var(--text-muted);
   font-size: 13px;
   line-height: 1.45;
 }
-.checker-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.checker-options { clear: both; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .checker-option {
   position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 9px 16px;
+  padding: 9px 12px;
   border: 1px solid var(--gray-300);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
   color: var(--navy);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
   cursor: pointer;
   transition: border-color .15s ease, background .15s ease, color .15s ease;
 }
 .checker-option input {
-  width: 16px;
-  height: 16px;
-  margin: 0 9px 0 0;
+  width: 15px;
+  height: 15px;
+  margin: 0 7px 0 0;
   flex: 0 0 auto;
   accent-color: var(--navy);
 }
@@ -322,18 +327,27 @@ h3 {
 .checker-option.is-selected { border-color: var(--navy); background: var(--blue-light); color: var(--navy); }
 .checker-option.is-selected input { accent-color: var(--navy); }
 .checker-result {
-  margin-top: 18px;
-  padding: 18px 18px 20px;
-  border-radius: 8px;
+  margin-top: 16px;
+  padding: 22px 22px 20px;
+  border: 1px solid #D5E1FF;
+  border-radius: 12px;
   background: var(--blue-light);
+}
+.checker-result__eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .checker-result__title {
   margin: 0 0 8px;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.18;
 }
 .checker-result.is-empty .checker-result__title {
   margin-bottom: 6px;
@@ -350,7 +364,9 @@ h3 {
   line-height: 1.5;
 }
 .checker-result__verify {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
+  padding-top: 12px;
+  border-top: 1px solid #D5E1FF;
   color: var(--text-muted);
   font-size: 13px;
   line-height: 1.5;
@@ -361,7 +377,7 @@ h3 {
   align-items: center;
   gap: 16px;
 }
-.checker-result__actions .btn { min-height: 44px; padding: 10px 20px; font-size: 14px; }
+.checker-result__actions .btn { min-height: 46px; padding: 11px 22px; font-size: 14px; }
 .checker-result__actions .text-link {
   display: inline-flex;
   align-items: center;
@@ -370,7 +386,7 @@ h3 {
 }
 .checker-result [hidden] { display: none; }
 .checker-reset {
-  margin-top: 12px;
+  margin-top: 14px;
   padding: 0;
   border: 0;
   background: none;
@@ -422,7 +438,7 @@ h3 {
   vertical-align: top;
 }
 .comparison-table thead th {
-  padding: 0 24px 16px;
+  padding: 0 24px 12px;
   border-bottom: 1px solid var(--gray-200);
   text-align: center;
 }
@@ -433,8 +449,8 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 160px;
-  margin-bottom: 12px;
+  height: 84px;
+  margin-bottom: 8px;
 }
 .comparison-type__media img {
   width: auto;
@@ -443,13 +459,13 @@ h3 {
   max-height: 100%;
   object-fit: contain;
 }
-.comparison-type__media--cassette img { max-width: 205px; }
-.comparison-type__media--wall img { max-width: 255px; }
+.comparison-type__media--cassette img { max-width: 115px; }
+.comparison-type__media--wall img { max-width: 155px; }
 .comparison-type__name {
   display: block;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: clamp(20px, 1.7vw, 24px);
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.1;
 }
@@ -912,15 +928,39 @@ h3 {
     gap: 18px;
   }
 
-  .project-product-card { display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:16px;padding:16px; }
-  .project-product-card__image { grid-column:1;grid-row:1 / 4;align-self:center;min-height:0;height:auto;aspect-ratio:1;padding:8px; }
-  .project-product-card__image img { max-height:none; }
-  .project-product-card__body { display:contents; }
-  .project-product-card__body > * { grid-column:1 / -1;min-width:0; }
-  .project-product-card__type { grid-column:2;grid-row:1;font-size:11px;margin:0 0 5px; }
-  .project-product-card__title { grid-column:2;grid-row:2;font-size:22px; }
-  .project-product-card__capacity { grid-column:2;grid-row:3;margin-top:6px; }
-  .project-product-card__capacity strong { font-size:14px; }
+  .project-product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .project-product-card__image {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: stretch;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    padding: 16px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .project-product-card__image img {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .project-product-card__body {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 18px;
+  }
+
+  .project-product-card__type { font-size: 12px; margin: 0 0 6px; }
+  .project-product-card__title { font-size: 22px; }
+  .project-product-card__capacity { margin-top: 8px; }
+  .project-product-card__capacity strong { font-size: 15px; }
 }
 
 @media (max-width: 640px) {
@@ -959,12 +999,11 @@ h3 {
   .hero h1 { max-width: 100%; font-size: clamp(32px, 8.4vw, 36px); }
   .hero-copy p { max-width: 100%; font-size: 15px; }
   #decision-checker { padding: 40px 0; }
-  .checker-head { margin-bottom: 24px; }
-  .checker-grid { grid-template-columns: 1fr; gap: 22px; }
-  .checker-scene__marker { width: 26px; height: 26px; font-size: 12px; }
-  .checker-question { padding-bottom: 14px; }
-  .checker-question + .checker-question { padding-top: 14px; }
-  .checker-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .checker-head { margin-bottom: 22px; }
+  .checker-studio { grid-template-columns: 1fr; gap: 20px; }
+  .checker-steps { gap: 12px; }
+  .checker-question { padding: 14px 14px 16px; }
+  .checker-question__legend { font-size: 15px; }
   .checker-option {
     width: auto;
     min-height: 46px;
@@ -976,7 +1015,8 @@ h3 {
     align-items: flex-start;
   }
   .checker-option input { margin-top: 2px; }
-  .checker-result { margin-top: 16px; padding: 18px; }
+  .checker-result { margin-top: 14px; padding: 18px; }
+  .checker-result__title { font-size: 21px; }
   .checker-result__actions { gap: 12px; }
   .checker-result__actions .btn { width: 100%; }
   .comparison-section h2 {
@@ -1002,8 +1042,10 @@ h3 {
     padding: 0 0 14px;
     border-bottom: 1px solid var(--gray-200);
   }
-  .comparison-type__media { height: 130px; }
-  .comparison-type__name { font-size: 20px; }
+  .comparison-type__media { height: 64px; }
+  .comparison-type__media--cassette img { max-width: 80px; }
+  .comparison-type__media--wall img { max-width: 108px; }
+  .comparison-type__name { font-size: 17px; }
   .comparison-table tbody tr:not(.comparison-group) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1122,43 +1164,44 @@ h3 {
         <h2>Which style fits your room?</h2>
         <p class="section-copy">Check the space before choosing the indoor unit.</p>
       </div>
-      <div class="checker-grid">
-        <figure class="checker-scene">
-          <div class="checker-scene__media">
-            <img src="assets/selector-alternatives.png" alt="Living and dining room showing alternative ceiling and high-wall indoor unit locations" width="1448" height="1086" loading="lazy">
-            <span class="checker-scene__marker checker-scene__marker--1" aria-hidden="true">1</span>
-            <span class="checker-scene__marker checker-scene__marker--2" aria-hidden="true">2</span>
-            <button type="button" class="checker-scene__info" id="checker-scene-info" aria-expanded="false" aria-controls="checker-scene-note" aria-label="About this illustration"></button>
-            <p class="checker-scene__note" id="checker-scene-note" hidden>Two alternative locations are shown for comparison. This is not an installation drawing.</p>
+      <div class="checker-studio">
+        <aside class="checker-media">
+          <div class="checker-media__frame">
+            <img src="assets/selector-editorial-room.png" alt="Living room showing alternative ceiling and high-wall indoor unit locations" width="1672" height="941" loading="lazy">
+            <button type="button" class="checker-media__info" id="checker-scene-info" aria-expanded="false" aria-controls="checker-scene-note" aria-label="About this illustration"></button>
+            <p class="checker-media__note" id="checker-scene-note" hidden>The illustration shows a ceiling cassette and a wall-mounted unit in the same room. It is not an installation drawing.</p>
           </div>
-        </figure>
-        <div class="checker-form">
-          <fieldset class="checker-question" data-question="priority">
-            <legend class="checker-question__legend">What matters most to you?</legend>
-            <div class="checker-options">
-              <label class="checker-option"><input type="radio" name="priority" value="look"><span>Keep walls clear</span></label>
-              <label class="checker-option"><input type="radio" name="priority" value="work"><span>Limit ceiling work</span></label>
-              <label class="checker-option"><input type="radio" name="priority" value="neutral"><span>No preference</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="checker-question" data-question="wall">
-            <legend class="checker-question__legend">Is there an open area high on a wall?</legend>
-            <p class="checker-question__hint">An installer still needs to check clearances and the pipe route.</p>
-            <div class="checker-options">
-              <label class="checker-option"><input type="radio" name="wall" value="yes"><span>Looks possible</span></label>
-              <label class="checker-option"><input type="radio" name="wall" value="no"><span>No clear spot</span></label>
-              <label class="checker-option"><input type="radio" name="wall" value="unknown"><span>Not sure</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="checker-question" data-question="ceiling">
-            <legend class="checker-question__legend">What did an installer say about a ceiling cassette?</legend>
-            <div class="checker-options">
-              <label class="checker-option"><input type="radio" name="ceiling" value="yes"><span>Can install</span></label>
-              <label class="checker-option"><input type="radio" name="ceiling" value="no"><span>Cannot install</span></label>
-              <label class="checker-option"><input type="radio" name="ceiling" value="unknown"><span>Not checked</span></label>
-            </div>
-          </fieldset>
+        </aside>
+        <div class="checker-decision">
+          <div class="checker-steps">
+            <fieldset class="checker-question" data-question="priority">
+              <legend class="checker-question__legend"><span class="checker-question__num">01</span>What matters most to you?</legend>
+              <div class="checker-options">
+                <label class="checker-option"><input type="radio" name="priority" value="look"><span>Keep walls clear</span></label>
+                <label class="checker-option"><input type="radio" name="priority" value="work"><span>Limit ceiling work</span></label>
+                <label class="checker-option"><input type="radio" name="priority" value="neutral"><span>No preference</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="checker-question" data-question="wall">
+              <legend class="checker-question__legend"><span class="checker-question__num">02</span>Is there an open area high on a wall?</legend>
+              <p class="checker-question__hint">An installer still needs to check clearances and the pipe route.</p>
+              <div class="checker-options">
+                <label class="checker-option"><input type="radio" name="wall" value="yes"><span>Looks possible</span></label>
+                <label class="checker-option"><input type="radio" name="wall" value="no"><span>No clear spot</span></label>
+                <label class="checker-option"><input type="radio" name="wall" value="unknown"><span>Not sure</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="checker-question" data-question="ceiling">
+              <legend class="checker-question__legend"><span class="checker-question__num">03</span>What did an installer say about a ceiling cassette?</legend>
+              <div class="checker-options">
+                <label class="checker-option"><input type="radio" name="ceiling" value="yes"><span>Can install</span></label>
+                <label class="checker-option"><input type="radio" name="ceiling" value="no"><span>Cannot install</span></label>
+                <label class="checker-option"><input type="radio" name="ceiling" value="unknown"><span>Not checked</span></label>
+              </div>
+            </fieldset>
+          </div>
           <div class="checker-result" aria-label="Starting point result">
+            <p class="checker-result__eyebrow">Your starting point</p>
             <h3 class="checker-result__title" id="checker-title">Answer all three questions to see a starting point.</h3>
             <p class="checker-result__copy" id="checker-copy">You can still compare both styles any time.</p>
             <p class="checker-result__verify" id="checker-verify" hidden></p>
