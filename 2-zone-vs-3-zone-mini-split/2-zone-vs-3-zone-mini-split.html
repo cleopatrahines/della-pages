@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -44,7 +44,7 @@
       --blue-hover: #6B95EF;
       --light-blue: #EDF2FF;
       --product-surface: #F4F7FF;
-      --product-card-surface: #EEECE8;
+      --product-card-surface: #FFFFFF;
       --trust-cyan: #DDF7FF;
       --border-gray: #E2E6EE;
       --text: #0E1952;
@@ -106,6 +106,9 @@
     }
 
     .section-head h2,
+    .room-choice h2,
+    .scene-explorer h2,
+    .connection-planning h2,
     .split-copy h2,
     .bottom-cta h2 {
       margin: 0;
@@ -121,6 +124,9 @@
     }
 
     .section-head p,
+    .room-choice__intro,
+    .scene-explorer__intro,
+    .connection-planning__intro,
     .split-copy p,
     .bottom-cta p {
       margin: 12px 0 0;
@@ -180,10 +186,10 @@
     .hero {
       position: relative;
       display: flex;
-      min-height: 520px;
+      aspect-ratio: 2.8;
       align-items: center;
-      padding: 88px 0 104px;
-      background: url("./banner.webp") center right / cover no-repeat;
+      padding: 48px 0;
+      background: #F2F5FB url("./assets/hero-three-room.png") center right / cover no-repeat;
     }
 
     .hero-grid {
@@ -191,14 +197,14 @@
     }
 
     .hero-copy {
-      max-width: 610px;
+      max-width: 46%;
     }
 
     .hero-copy h1 {
       margin: 0;
       color: var(--navy);
       font-family: var(--heading);
-      font-size: clamp(40px, 5vw, 62px);
+      font-size: clamp(40px, 4vw, 62px);
       font-weight: 400;
       line-height: 1.05;
     }
@@ -210,124 +216,32 @@
       font-size: 17px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
+    .room-choice { padding: 56px 0 48px; background: #F4F7FF; }
+    .room-choice__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 18px; }
+    .room-choice__option { display: flex; flex-direction: column; min-width: 0; }
+    .room-choice__media { width: 100%; aspect-ratio: 3 / 2; margin: 0; }
+    .room-choice__media img { width: 100%; height: 100%; object-fit: contain; }
+    .room-choice__copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding-top: 12px; }
+    .room-choice__copy h3 { margin: 0 0 10px; color: var(--navy); font: 400 32px/1.12 var(--heading); }
+    .room-choice__promise { margin: 0; font-size: 16px; line-height: 1.58; font-weight: 600; }
+    .room-choice__example { margin: 6px 0 20px; color: var(--muted); font-size: 16px; line-height: 1.58; }
+    .room-choice .room-choice__link { align-self: flex-start; max-width: 100%; margin-top: auto; }
+    .room-choice .room-choice__link:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+    @media (max-width: 700px) {
+      .room-choice { padding: 40px 0; }
+      .room-choice__grid { grid-template-columns: 1fr; gap: 36px; margin-top: 16px; }
+      .room-choice__copy { padding-top: 8px; }
+      .room-choice__copy h3 { font-size: 24px; }
     }
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 1fr;
-      gap: 24px;
-    }
-
-    .quick-card {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      align-items: start;
-      gap: 22px;
-      min-height: 322px;
-      border: 1px solid var(--border-gray);
-      border-radius: 6px;
-      padding: 32px 30px 30px;
-      background: var(--white);
-      box-shadow: 0 10px 26px rgba(14, 25, 83, 0.05);
-    }
-
-    .quick-zone-badge {
-      display: grid;
-      width: 66px;
-      height: 66px;
-      place-items: center;
-      align-content: center;
-      border: 1px solid #D4DFFF;
-      border-radius: 50%;
-      background: rgba(237, 242, 255, 0.28);
-      color: #6B90EA;
-      flex-shrink: 0;
-    }
-
-    .quick-zone-badge strong {
-      display: block;
-      margin-top: 2px;
-      color: #6B90EA;
-      font-family: var(--heading);
-      font-size: 31px;
-      font-weight: 400;
-      line-height: 0.95;
-    }
-
-    .quick-zone-badge span {
-      display: block;
-      margin-top: 3px;
-      color: #6E7890;
-      font-family: var(--body);
-      font-size: 9px;
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .decision-icon svg,
-    .service-icon svg {
-      width: 42px;
-      height: 42px;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+    @media (prefers-reduced-motion: reduce) { .room-choice .room-choice__link { transition: none; } }
 
 
-    .quick-body {
-      display: flex;
-      min-width: 0;
-      height: 100%;
-      flex-direction: column;
-    }
 
-    .quick-card .label,
-    .scenario-chip,
     .product-eyebrow {
       color: var(--blue);
       font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-    }
-
-    .quick-card h3 {
-      margin: 4px 0 12px;
-      color: var(--navy);
-      font-family: var(--heading);
-      font-size: 30px;
-      font-weight: 400;
-      line-height: 1.12;
-    }
-
-    .quick-card ul {
-      margin: 0 0 28px;
-      padding-left: 18px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .quick-card li + li {
-      margin-top: 10px;
-    }
-
-    .quick-card .btn {
-      width: auto;
-      min-width: 260px;
-      align-self: flex-start;
-      margin-top: auto;
-      padding-left: 24px;
-      padding-right: 24px;
     }
 
     .products {
@@ -449,7 +363,7 @@
 
     .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
     .product-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid var(--border-gray); border-radius: 6px; background: var(--white); }
-    .product-media { display: flex; height: 262px; align-items: center; justify-content: center; padding: 18px; border-radius: 5px 5px 0 0; background: var(--product-card-surface); }
+    .product-media { display: flex; aspect-ratio: 1; align-items: center; justify-content: center; margin: 10px 14px 0; padding: 0; background: var(--product-card-surface); }
     .product-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .product-body { display: flex; flex: 1; min-width: 0; flex-direction: column; padding: 18px; }
     .product-card .product-eyebrow { margin-bottom: 8px; color: var(--navy); font-size: 12px; font-weight: 500; line-height: 1.5; text-transform: none; }
@@ -471,7 +385,7 @@
     @media (max-width: 1199px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 760px) {
       .product-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 16px; padding: 16px; }
-      .product-media { grid-column: 1; grid-row: 1 / 4; align-self: center; height: auto; aspect-ratio: 1; padding: 8px; border-radius: 4px; }
+      .product-media { grid-column: 1; grid-row: 1 / 4; align-self: center; height: auto; aspect-ratio: 1; margin: 0; padding: 0; }
       .product-body { display: contents; }
       .product-body > * { grid-column: 1 / -1; min-width: 0; }
       .product-card .product-eyebrow { grid-column: 2; grid-row: 1; margin: 0 0 5px; font-size: 11px; }
@@ -482,245 +396,136 @@
       .product-purchase { gap: 14px; }
     }
 
-    .scenario-section {
-      background: #F7FAFF;
+    .scene-explorer { padding: 56px 0; background: #F4F7FF; }
+    .scene-explorer__intro { margin-bottom: 28px; }
+    .scene-explorer__layout { display: block; }
+    .scene-explorer.is-enhanced .scene-explorer__layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+    .scene-explorer__stage, .scene-explorer__sidebar { min-width: 0; }
+    .scene-explorer__stage { grid-column: 1; grid-row: 1; }
+    .scene-explorer__sidebar { grid-column: 2; grid-row: 1; }
+    .scene-explorer__panel[hidden], .scene-explorer__choices[hidden] { display: none; }
+    .scene-explorer:not(.is-enhanced) .scene-explorer__panel + .scene-explorer__panel { margin-top: 32px; }
+    .scene-explorer__image { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+    .scene-explorer__caption { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 18px; align-items: center; padding: 18px 20px 20px; background: #fff; }
+    .scene-explorer__caption h3 { display: inline; margin: 0 12px 0 0; font: 400 23px/1.2 var(--heading); }
+    .scene-explorer__zone { display: inline-block; color: #315BAC; font-size: 12px; line-height: 1.5; }
+    .scene-explorer__description { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.58; }
+    .scene-explorer .scene-explorer__link { grid-column: 2; grid-row: 1; color: #315BAC; font-size: 13px; line-height: 1.5; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+    .scene-explorer .scene-explorer__link:hover { color: var(--navy); text-decoration-thickness: 2px; }
+    .scene-explorer__sidebar { display: flex; flex-direction: column; }
+    .scene-explorer__choices { display: grid; flex: 1; grid-template-rows: repeat(4, 1fr); }
+    .scene-explorer__choice { display: grid; grid-template-columns: minmax(96px, .85fr) minmax(0, 1fr); gap: 16px; align-items: center; width: 100%; margin: 0; padding: 12px 8px 12px 12px; border: 0; border-left: 3px solid transparent; border-bottom: 1px solid #D8E2F3; background: transparent; color: var(--navy); font: inherit; text-align: left; cursor: pointer; transition: background-color 140ms ease, border-color 140ms ease; }
+    .scene-explorer__choice:first-child { padding-top: 0; }
+    .scene-explorer__choice:hover { background: #EDF2FC; }
+    .scene-explorer__choice[aria-selected="true"] { border-left-color: #4169CF; background: #E9EFFC; }
+    .scene-explorer__choice[aria-selected="true"] .scene-explorer__name { color: #315BAC; }
+    .scene-explorer__thumb { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+    .scene-explorer__name { display: block; font: 400 21px/1.23 var(--heading); }
+    .scene-explorer__count { display: block; margin-top: 6px; font-size: 13px; line-height: 1.5; }
+    .scene-explorer :is(a, button, [role="tabpanel"]):focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+    @media (max-width: 1100px) {
+      .scene-explorer__caption { grid-template-columns: 1fr; }
+      .scene-explorer .scene-explorer__link { grid-column: 1; grid-row: 3; justify-self: start; padding: 8px 0; }
+      .scene-explorer__choice { gap: 12px; }
+      .scene-explorer__name { font-size: 19px; }
+    }
+    @media (max-width: 900px) {
+      .scene-explorer { padding: 40px 0; }
+      .scene-explorer__intro { margin-bottom: 22px; }
+      .scene-explorer.is-enhanced .scene-explorer__layout { grid-template-columns: 1fr; gap: 24px; }
+      .scene-explorer__sidebar { grid-column: 1; grid-row: 1; }
+      .scene-explorer__stage { grid-column: 1; grid-row: 2; }
+      .scene-explorer__choices { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: 10px; }
+      .scene-explorer__choice, .scene-explorer__choice:first-child { grid-template-columns: minmax(72px, .8fr) minmax(0, 1fr); padding: 10px; gap: 12px; }
+      .scene-explorer__name { font-size: 18px; }
+    }
+    @media (max-width: 560px) {
+      .scene-explorer__choice, .scene-explorer__choice:first-child { grid-template-columns: 1fr; align-content: start; gap: 8px; padding: 9px; }
+      .scene-explorer__name { font-size: 17px; }
+      .scene-explorer__count { margin-top: 4px; font-size: 12px; }
+      .scene-explorer__caption { padding: 16px; }
+      .scene-explorer .scene-explorer__link { padding: 12px 0; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .scene-explorer__choice { transition: none; } }
+
+    .connection-planning { padding-top: 56px; background: #fff; color: var(--navy); }
+    .connection-planning__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 36px; }
+    .connection-plan { position: relative; min-width: 0; margin: 0; }
+    .connection-plan h3 { position: absolute; top: 0; left: 0; margin: 0; font: 400 32px/1.12 var(--heading); }
+    .plan-diagram { display: block; width: 100%; height: auto; }
+    .plan-furniture { fill: none; stroke: #B9C1C9; stroke-width: 1; }
+    .plan-door, .plan-window { fill: none; stroke: #9EAAB8; stroke-width: 1; }
+    .plan-label { fill: #0E1953; font: 400 19px Poppins, Arial, sans-serif; }
+    .connection-plan figcaption { margin: 10px 0 0; color: var(--muted); font: 400 16px/1.58 var(--body); text-align: center; }
+    .connection-planning__fit { margin-top: 28px; padding: 32px 0 36px; background: #EDF2FF; }
+    .connection-planning__fit h3 { margin: 0; font: 400 32px/1.14 var(--heading); text-align: center; }
+    .connection-planning__checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 24px 0 0; }
+    .connection-planning__checks > div { padding: 0 28px; text-align: center; }
+    .connection-planning__checks > div + div { border-left: 1px solid #9AAED4; }
+    .connection-planning__checks h4 { margin: 0 0 8px; font: 400 21px/1.35 var(--heading); }
+    .connection-planning__checks p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.58; }
+    @media (max-width: 1060px) {
+      .connection-planning__grid { gap: 30px; }
+      .plan-label { font-size: 23px; }
+      .connection-planning__checks > div { padding: 0 16px; }
+    }
+    @media (max-width: 760px) {
+      .connection-planning { padding-top: 40px; }
+      .connection-planning__grid { grid-template-columns: 1fr; gap: 30px; margin-top: 28px; }
+      .connection-plan h3 { font-size: 24px; }
+      .plan-label { font-size: 25px; }
+      .connection-plan figcaption { margin-top: 4px; }
+      .connection-planning__fit { padding: 28px 0; margin-top: 24px; }
+      .connection-planning__fit h3 { font-size: 24px; }
+      .connection-planning__checks { grid-template-columns: 1fr; margin-top: 20px; }
+      .connection-planning__checks > div { padding: 18px 4px; }
+      .connection-planning__checks > div:first-child { padding-top: 0; }
+      .connection-planning__checks > div:last-child { padding-bottom: 0; }
+      .connection-planning__checks > div + div { border-left: 0; border-top: 1px solid #B8C8E4; }
     }
 
-    .scenario-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
+    @font-face {
+      font-family: "DellaServicesSpectral";
+      src: url("./assets/Spectral-PageFly-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
     }
 
-    .scenario-card {
-      overflow: hidden;
-      border: 1px solid var(--border-gray);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: 0 10px 26px rgba(14, 25, 83, 0.05);
-    }
-
-    .scenario-media {
-      aspect-ratio: 7 / 5;
-      overflow: hidden;
-    }
-
-    .scenario-card img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .scenario-body {
-      padding: 12px 12px 14px;
-      text-align: center;
-    }
-
-    .scenario-body h3 {
-      margin: 0;
+    .della-zone-page .dsc-services {
+      --light: #F3F7FC;
+      padding: 56px 0;
       color: var(--navy);
-      font-family: var(--body);
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .scenario-card .scenario-chip {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 13px;
-      line-height: 1.25;
-    }
-
-    .section.decision-section {
-      padding: 20px 0;
-      background: #F7FAFF;
-    }
-
-    .decision-center {
-      display: grid;
-      grid-template-columns: 0.36fr 0.64fr;
-      gap: 36px;
-      align-items: center;
-      padding: 24px 30px;
-      border: 1px solid #E2E6EE;
-      border-radius: 6px;
-      background: linear-gradient(90deg, #F4F8FF 0%, #FFFFFF 100%);
-      box-shadow: none;
-    }
-
-    .della-zone-page .decision-copy h2 {
-      max-width: 440px;
-      margin: 0 0 20px;
-      color: var(--navy);
-      font-family: var(--heading);
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 1.16;
-      letter-spacing: 0;
-    }
-
-    .decision-card {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      border-top: 1px solid #D8E2F3;
-      padding: 13px 0;
-    }
-
-    .decision-card:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .decision-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #C9D8FF;
-      border-radius: 50%;
-      background: rgba(237, 242, 255, 0.25);
-      color: #5884E7;
-      flex-shrink: 0;
-    }
-
-
-    .decision-section .decision-icon {
-      width: 44px;
-      height: 44px;
-    }
-
-    .decision-section .decision-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-    .decision-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: currentColor;
-      stroke-width: 1.5;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .decision-card h3 {
-      margin: 0;
-      color: var(--navy);
-      font-family: var(--body);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    .decision-card p {
-      margin: 5px 0 0;
-      color: #53617F;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .comparison-card {
-      overflow-x: auto;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-    }
-
-    .della-zone-page .comparison-card h2 {
-      margin: 0 0 10px;
-      padding: 0;
-      color: var(--navy);
-      font-family: var(--heading);
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.2;
-      text-align: center;
-    }
-
-    .comparison-card table {
-      width: 100%;
-      min-width: 0;
-      border-collapse: collapse;
-      font-size: 13px;
-      line-height: 1.42;
-      background: #FFFFFF;
-      border: 1px solid #DDE5F2;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .comparison-card th,
-    .comparison-card td {
-      padding: 8px 12px;
-      border-top: 1px solid #DDE5F2;
-      border-left: 1px solid #DDE5F2;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .comparison-card th:first-child,
-    .comparison-card td:first-child {
-      border-left: 0;
-    }
-
-    .comparison-card th {
-      background: #EDF2FF;
-      color: #0E1953;
-      font-weight: 600;
-    }
-
-    .comparison-card td:first-child {
-      color: #0E1953;
-      font-weight: 600;
-    }
-.services-section {
-      background: var(--white);
-      padding-top: 56px;
-      padding-bottom: 42px;
-    }
-
-    .services-section .section-head {
-      display: block;
-      margin-bottom: 28px;
-      text-align: left;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      min-height: 142px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      padding: 10px 16px;
       background: #fff;
-      text-align: center;
+      font: 400 16px/1.65 Poppins, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      margin-bottom: 16px;
+    .dsc-services .dsc-container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    .della-zone-page .dsc-services #services-title { margin: 0; font: 500 32px/1.18 "DellaServicesSpectral", Georgia, serif; text-wrap: balance; text-align: left; }
+    .dsc-services .dsc-svc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 32px; }
+    .dsc-services .dsc-svc { display: flex; flex-direction: column; align-items: center; padding: 30px 26px 28px; border-radius: 6px; background: var(--light); text-align: center; }
+    .dsc-services .dsc-svc__icon { display: flex; width: 58px; height: 58px; flex: none; align-items: center; justify-content: center; margin-bottom: 14px; border-radius: 50%; background: var(--blue); }
+    .dsc-services .dsc-svc__icon img { display: block; width: 50px; height: 50px; }
+    .dsc-services .dsc-svc h3 { margin: 0 0 8px; font: 500 22px/1.35 "DellaServicesSpectral", Georgia, serif; }
+    .dsc-services .dsc-svc h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+    .dsc-services .dsc-svc h3 a:hover { border-bottom-color: currentColor; }
+    .dsc-services a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .dsc-services .dsc-svc p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    @media (max-width: 1199px) { .dsc-services .dsc-svc-grid { gap: 18px; } }
+    @media (max-width: 820px) {
+      .dsc-services .dsc-container { width: calc(100% - 40px); }
+      .dsc-services .dsc-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .dsc-services .dsc-svc { padding: 26px 20px; }
     }
-
-    .service-card h3 {
-      margin: 0;
-      color: var(--navy);
-      font-family: var(--body);
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 1.28;
+    @media (max-width: 560px) {
+      .della-zone-page .dsc-services { padding: 40px 0; }
+      .dsc-services .dsc-container { width: calc(100% - 32px); }
+      .dsc-services .dsc-svc-grid { grid-template-columns: 1fr; gap: 14px; }
+      .dsc-services .dsc-svc { padding: 24px 20px; }
+      .dsc-services .dsc-svc h3 { font-size: 20px; }
+      .dsc-services .dsc-svc p { font-size: 14px; }
     }
+    @media (prefers-reduced-motion: reduce) { .dsc-services * { transition: none !important; } }
 
     .faq-section {
       background: var(--white);
@@ -888,16 +693,43 @@
     }
 
     @media (max-width: 1060px) {
-      .category-feature,
-      .decision-center {
+      .feature-media,
+      .feature-media img {
+        min-height: 0;
+      }
+
+      .feature-media img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .hero {
+        display: block;
+        aspect-ratio: auto;
+        min-height: 0;
+        padding: 40px 0 0;
+        background: #F2F5FB;
+      }
+
+      .hero-copy {
+        max-width: 610px;
+      }
+
+      .hero::after {
+        content: "";
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.6;
+        max-height: 480px;
+        margin-top: 24px;
+        background: url("./assets/hero-three-room.png") right center / auto 100% no-repeat;
+      }
+
+      .category-feature {
         grid-template-columns: 1fr;
       }
 
 
-      .scenario-grid,
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 760px) {
@@ -909,54 +741,21 @@
         padding: 56px 0;
       }
 
-      .della-zone-page h2:not(#decision-title) {
+      .della-zone-page h2 {
         font-size: 29px;
-      }
-
-      .hero {
-        min-height: 500px;
-        padding: 54px 0 76px;
-        background: url("./banner.webp") center right / cover no-repeat;
       }
 
       .hero-copy h1 {
         font-size: clamp(36px, 11vw, 46px);
       }
 
-      .hero-actions,
-      .hero-actions .btn {
-        width: 100%;
-      }
 
-
-      .quick-grid,
-      .quick-card,
       .bottom-grid {
         grid-template-columns: 1fr;
       }
 
-      .quick-zone-badge {
-        width: 66px;
-        height: 66px;
-      }
 
-      .quick-card .btn {
-        width: 100%;
-        min-width: 0;
-        align-self: stretch;
-      }
-
-      .quick-card h3 {
-        font-size: 24px;
-      }
-
-      .della-zone-page .comparison-card h2:not(#decision-title) {
-        font-size: 20px;
-      }
-
-      .product-grid,
-      .scenario-grid,
-      .services-grid {
+      .product-grid {
         grid-template-columns: 1fr;
       }
 
@@ -973,17 +772,8 @@
         padding: 28px;
       }
 
-      .section.decision-section {
-        padding: 32px 0;
-      }
 
-      .decision-center {
-        padding: 22px;
-      }
 
-      .comparison-card table {
-        min-width: 620px;
-      }
 
     }
   </style>
@@ -993,54 +783,33 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title">2-Zone vs 3-Zone Mini Split</h1>
+          <h1 id="hero-title">2-Zone vs 3-Zone<br>Mini Split</h1>
           <p>Two bedrooms, bedroom + office, upstairs rooms, or an addition? Match the right zone count to each space.</p>
-          <div class="hero-actions">
-            <a class="btn btn-navy" href="https://dellahome.com/collections/2-zone-mini-split">Shop 2-Zone Mini Splits</a>
-            <a class="btn btn-navy" href="https://dellahome.com/collections/3-zone-mini-split">Shop 3-Zone Mini Splits</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="quick-title">
+    <section class="room-choice" aria-labelledby="quick-title">
       <div class="container">
-        <div class="section-head">
-          <h2 id="quick-title">Choose 2-Zone or 3-Zone by Room Count</h2>
-        </div>
-        <div class="quick-grid">
-          <article class="quick-card">
-            <div class="quick-zone-badge" aria-hidden="true">
-              <strong>2</strong>
-              <span>Zones</span>
-            </div>
-            <div class="quick-body">
-              <span class="label">2 Rooms</span>
-              <h3>Start With 2-Zone</h3>
-              <ul>
-                <li>Two enclosed rooms need separate comfort.</li>
-                <li>Bedroom plus home office is the main use case.</li>
-                <li>Two rooms run on different schedules.</li>
-                <li>Fewer indoor units and line-set routes.</li>
-              </ul>
-              <a class="btn btn-navy" href="https://dellahome.com/collections/2-zone-mini-split">Shop 2-Zone Systems</a>
+        <h2 id="quick-title">Two rooms or three?</h2>
+        <p class="room-choice__intro">Start with the rooms that need their own indoor unit.</p>
+        <div class="room-choice__grid">
+          <article class="room-choice__option" aria-labelledby="two-room-choice-title">
+            <figure class="room-choice__media"><img src="./assets/room-choice-two.png" width="1536" height="1024" alt="Office and bedroom cutaway with one wall-mounted indoor unit in each room" loading="lazy" decoding="async"></figure>
+            <div class="room-choice__copy">
+              <h3 id="two-room-choice-title">2-Zone</h3>
+              <p class="room-choice__promise">Two rooms. Separate comfort.</p>
+              <p class="room-choice__example">Two bedrooms, or a bedroom + office.</p>
+              <a class="btn btn-navy room-choice__link" href="https://dellahome.com/collections/2-zone-mini-split" target="_blank" rel="noopener">Explore 2-Zone Systems</a>
             </div>
           </article>
-          <article class="quick-card">
-            <div class="quick-zone-badge" aria-hidden="true">
-              <strong>3</strong>
-              <span>Zones</span>
-            </div>
-            <div class="quick-body">
-              <span class="label">3 Rooms</span>
-              <h3>Start With 3-Zone</h3>
-              <ul>
-                <li>Three enclosed rooms need dedicated indoor units.</li>
-                <li>Three upstairs rooms need separate control.</li>
-                <li>Bedroom, nursery, and office need independent settings.</li>
-                <li>One outdoor unit is preferred over multiple condensers.</li>
-              </ul>
-              <a class="btn btn-navy" href="https://dellahome.com/collections/3-zone-mini-split">Shop 3-Zone Systems</a>
+          <article class="room-choice__option" aria-labelledby="three-room-choice-title">
+            <figure class="room-choice__media"><img src="./assets/room-choice-three.png" width="1536" height="1024" alt="Office, bedroom and nursery cutaway with one wall-mounted indoor unit in each room" loading="lazy" decoding="async"></figure>
+            <div class="room-choice__copy">
+              <h3 id="three-room-choice-title">3-Zone</h3>
+              <p class="room-choice__promise">Three rooms. Individual control.</p>
+              <p class="room-choice__example">Three bedrooms, or a bedroom + office + nursery.</p>
+              <a class="btn btn-navy room-choice__link" href="https://dellahome.com/collections/3-zone-mini-split" target="_blank" rel="noopener">Explore 3-Zone Systems</a>
             </div>
           </article>
         </div>
@@ -1062,7 +831,7 @@
         <div class="product-panel" id="panel-two-zone" role="tabpanel" aria-labelledby="tab-two-zone">
           <div class="category-feature">
             <div class="feature-media">
-              <img src="./2-Zone.webp" width="1200" height="800" alt="Della 2-zone mini split product group" loading="lazy">
+              <img src="./assets/category-2-zone-studio.png" width="1672" height="941" alt="Della 2-zone mini split product group" loading="lazy">
             </div>
             <div class="feature-copy">
               <h3>2-Zone Mini Splits</h3>
@@ -1072,7 +841,7 @@
           </div>
           <div class="product-grid">
             <article class="product-card" data-product-id="10021947343136" data-variant-id="50576039477536">
-              <div class="product-media"><img src="./assets/product-blended-01.webp" width="1200" height="1200" alt="DELLA Vario Series 20000 BTU Dual Zone Mini Split AC 9K plus 9K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-01.png" width="1060" height="1089" alt="DELLA Vario Series 20000 BTU Dual Zone Mini Split AC 9K plus 9K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">2-zone · Wall-mounted</span>
                 <h3>Vario</h3>
@@ -1083,7 +852,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10025471541536" data-variant-id="50589452206368">
-              <div class="product-media"><img src="./assets/product-blended-02.webp" width="1800" height="1800" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 9K plus 12K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-02.png" width="1616" height="1637" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 9K plus 12K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">2-zone · Wall-mounted</span>
                 <h3>Optima</h3>
@@ -1094,7 +863,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10025471508768" data-variant-id="50589452173600">
-              <div class="product-media"><img src="./assets/product-blended-03.webp" width="1200" height="1200" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 12K plus 12K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-03.png" width="1078" height="1090" alt="DELLA Optima Series 18000 BTU Dual Zone Mini Split AC 12K plus 12K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">2-zone · Wall-mounted</span>
                 <h3>Optima</h3>
@@ -1105,7 +874,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10021947015456" data-variant-id="50576038691104">
-              <div class="product-media"><img src="./assets/product-blended-04.webp" width="1200" height="1200" alt="DELLA Vario Series 28000 BTU Dual Zone Mini Split AC 12K plus 18K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-04.png" width="1063" height="1074" alt="DELLA Vario Series 28000 BTU Dual Zone Mini Split AC 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">2-zone · Wall-mounted</span>
                 <h3>Vario</h3>
@@ -1121,7 +890,7 @@
         <div class="product-panel" id="panel-three-zone" role="tabpanel" aria-labelledby="tab-three-zone" hidden>
           <div class="category-feature">
             <div class="feature-media">
-              <img src="./3-Zone.webp" width="1200" height="800" alt="Della 3-zone mini split product group" loading="lazy">
+              <img src="./assets/category-3-zone-studio.png" width="1672" height="941" alt="Della 3-zone mini split product group" loading="lazy">
             </div>
             <div class="feature-copy">
               <h3>3-Zone Mini Splits</h3>
@@ -1131,7 +900,7 @@
           </div>
           <div class="product-grid">
             <article class="product-card" data-product-id="10021946491168" data-variant-id="50576037576992">
-              <div class="product-media"><img src="./assets/product-blended-05.webp" width="1200" height="1200" alt="DELLA Vario Series 28000 BTU Tri Zone Mini Split AC 9K plus 9K plus 12K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-05.png" width="1056" height="1131" alt="DELLA Vario Series 28000 BTU Tri Zone Mini Split AC 9K plus 9K plus 12K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">3-zone · Wall-mounted</span>
                 <h3>Vario</h3>
@@ -1142,7 +911,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10025470918944" data-variant-id="50589451387168">
-              <div class="product-media"><img src="./assets/product-blended-06.webp" width="1200" height="1200" alt="DELLA Optima Series 27000 BTU Tri Zone Mini Split AC 9K plus 12K plus 12K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-06.png" width="1068" height="1125" alt="DELLA Optima Series 27000 BTU Tri Zone Mini Split AC 9K plus 12K plus 12K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">3-zone · Wall-mounted</span>
                 <h3>Optima</h3>
@@ -1153,7 +922,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10021946032416" data-variant-id="50576036561184">
-              <div class="product-media"><img src="./assets/product-blended-07.webp" width="1800" height="1800" alt="DELLA Vario Series 35000 BTU Tri Zone Mini Split AC 9K plus 12K plus 18K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-07.png" width="1583" height="1681" alt="DELLA Vario Series 35000 BTU Tri Zone Mini Split AC 9K plus 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">3-zone · Wall-mounted</span>
                 <h3>Vario</h3>
@@ -1164,7 +933,7 @@
               </div>
             </article>
             <article class="product-card" data-product-id="10027756683552" data-variant-id="50602500751648">
-              <div class="product-media"><img src="./assets/product-blended-08.webp" width="1200" height="1200" alt="DELLA 35000 BTU Tri Zone Ceiling Cassette Mini Split AC 12K plus 12K plus 18K" loading="lazy"></div>
+              <div class="product-media"><img src="./assets/products-cutout/product-08.png" width="1193" height="1212" alt="DELLA 35000 BTU Tri Zone Ceiling Cassette Mini Split AC 12K plus 12K plus 18K" loading="lazy"></div>
               <div class="product-body">
                 <span class="product-eyebrow">3-zone · Ceiling-recessed</span>
                 <h3>Ceiling Cassette</h3>
@@ -1179,140 +948,170 @@
       </div>
     </section>
 
-    <section class="section compact scenario-section" aria-labelledby="scenario-title">
+    <section class="scene-explorer" aria-labelledby="scenario-title">
       <div class="container">
-        <div class="section-head">
-          <h2 id="scenario-title">Which Home Setup Sounds Closest to Yours?</h2>
-        </div>
-        <div class="scenario-grid">
-          <article class="scenario-card">
-            <div class="scenario-media"><img src="./assets/scenario-focus-01.webp" width="1200" height="800" alt="Two bedrooms for a Della 2-zone mini split" loading="lazy"></div>
-            <div class="scenario-body">
-              <span class="scenario-chip">2-Zone</span>
-              <h3>Two Bedrooms</h3>
+        <h2 id="scenario-title">Which setup matches your home?</h2>
+        <p class="scene-explorer__intro">Choose a familiar layout to see a starting point.</p>
+        <div class="scene-explorer__layout">
+          <div class="scene-explorer__sidebar">
+            <div class="scene-explorer__choices" role="tablist" aria-label="Home setups" aria-orientation="vertical" hidden>
+              <button class="scene-explorer__choice" id="setup-tab-bedrooms" type="button" role="tab" aria-selected="false" aria-controls="setup-panel-bedrooms" tabindex="-1">
+                <img class="scene-explorer__thumb" src="./assets/setup-bedrooms.png" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+                <span><span class="scene-explorer__name">Two bedrooms</span><span class="scene-explorer__count">2 Zones</span></span>
+              </button>
+              <button class="scene-explorer__choice" id="setup-tab-office" type="button" role="tab" aria-selected="true" aria-controls="setup-panel-office" tabindex="0">
+                <img class="scene-explorer__thumb" src="./assets/setup-office.png" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+                <span><span class="scene-explorer__name">Bedroom + home office</span><span class="scene-explorer__count">2 Zones</span></span>
+              </button>
+              <button class="scene-explorer__choice" id="setup-tab-upstairs" type="button" role="tab" aria-selected="false" aria-controls="setup-panel-upstairs" tabindex="-1">
+                <img class="scene-explorer__thumb" src="./assets/setup-upstairs.png" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+                <span><span class="scene-explorer__name">Three upstairs rooms</span><span class="scene-explorer__count">3 Zones</span></span>
+              </button>
+              <button class="scene-explorer__choice" id="setup-tab-family" type="button" role="tab" aria-selected="false" aria-controls="setup-panel-family" tabindex="-1">
+                <img class="scene-explorer__thumb" src="./assets/setup-family.png" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+                <span><span class="scene-explorer__name">Bedroom, nursery + office</span><span class="scene-explorer__count">3 Zones</span></span>
+              </button>
             </div>
-          </article>
-          <article class="scenario-card">
-            <div class="scenario-media"><img src="./assets/scenario-focus-02.webp" width="1200" height="800" alt="Bedroom and home office mini split setup" loading="lazy"></div>
-            <div class="scenario-body">
-              <span class="scenario-chip">2-Zone</span>
-              <h3>Bedroom and Home Office</h3>
-            </div>
-          </article>
-          <article class="scenario-card">
-            <div class="scenario-media"><img src="./assets/scenario-focus-03.webp" width="1200" height="800" alt="Three upstairs rooms for a Della 3-zone mini split" loading="lazy"></div>
-            <div class="scenario-body">
-              <span class="scenario-chip">3-Zone</span>
-              <h3>Three Upstairs Rooms</h3>
-            </div>
-          </article>
-          <article class="scenario-card">
-            <div class="scenario-media"><img src="./assets/scenario-focus-04.webp" width="1200" height="800" alt="Bedroom nursery and office with separate comfort settings" loading="lazy"></div>
-            <div class="scenario-body">
-              <span class="scenario-chip">3-Zone</span>
-              <h3>Bedroom, Nursery, and Office</h3>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section decision-section" aria-labelledby="decision-title">
-      <div class="container">
-        <div class="decision-center">
-          <div class="decision-copy">
-            <h2 id="decision-title">More Zones Do Not Automatically Mean Better Comfort</h2>
-            <article class="decision-card">
-              <div class="decision-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V20h13V9.5"></path><path d="M9 20v-6h6v6"></path><path d="M9 11.5h2"></path><path d="M13 11.5h2"></path></svg></div>
-              <div><h3>Count the Rooms</h3><p>Each room needing dedicated control usually needs its own indoor unit.</p></div>
-            </article>
-            <article class="decision-card">
-              <div class="decision-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17.5 17.5 4 20 6.5 6.5 20H4z"></path><path d="M13.5 6.5 17.5 10.5"></path><path d="M10.5 9.5 12 11"></path><path d="M8 12 9.5 13.5"></path><path d="M5.5 14.5 7 16"></path></svg></div>
-              <div><h3>Size Each Room</h3><p>The indoor-unit BTU combination still needs to match each space.</p></div>
-            </article>
-            <article class="decision-card">
-              <div class="decision-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h5a4 4 0 0 1 0 8H8"></path><path d="M8 14h8a3 3 0 0 1 0 6h-3"></path><path d="M5 4v4"></path><path d="M13 18v4"></path><path d="M16 17l2 3-2 3"></path></svg></div>
-              <div><h3>Plan the Routes</h3><p>Confirm line sets, drainage, power, and outdoor placement before purchasing.</p></div>
-            </article>
           </div>
-          <div class="comparison-card">
-            <h2>2-Zone vs 3-Zone Mini Split Comparison</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Compare</th>
-                  <th>2-Zone</th>
-                  <th>3-Zone</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Best starting point</td>
-                  <td>Great for two rooms</td>
-                  <td>Great for three rooms</td>
-                </tr>
-                <tr>
-                  <td>Number of indoor units</td>
-                  <td>2 indoor units</td>
-                  <td>3 indoor units</td>
-                </tr>
-                <tr>
-                  <td>Common room layouts</td>
-                  <td>2 bedrooms or bedroom + office</td>
-                  <td>3 bedrooms or mixed spaces</td>
-                </tr>
-                <tr>
-                  <td>Independent room control</td>
-                  <td>Yes, two zones</td>
-                  <td>Yes, three zones</td>
-                </tr>
-                <tr>
-                  <td>BTU combination planning</td>
-                  <td>Match total BTU to two rooms</td>
-                  <td>Match total BTU to three rooms</td>
-                </tr>
-                <tr>
-                  <td>Line-set and drainage routes</td>
-                  <td>Fewer routes</td>
-                  <td>More routes to plan</td>
-                </tr>
-                <tr>
-                  <td>Installation complexity</td>
-                  <td>Typically simpler</td>
-                  <td>Typically more involved</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="scene-explorer__stage">
+          <article class="scene-explorer__panel" id="setup-panel-bedrooms" aria-labelledby="setup-title-bedrooms">
+            <img class="scene-explorer__image" src="./assets/setup-bedrooms.png" width="1536" height="1024" alt="Coastal-style bedrooms with an indoor mini split in each room" loading="lazy" decoding="async">
+            <div class="scene-explorer__caption">
+              <div><h3 id="setup-title-bedrooms">Two bedrooms</h3><span class="scene-explorer__zone">2-Zone starting point</span></div>
+              <p class="scene-explorer__description">Separate spaces for separate sleep schedules.</p>
+              <a class="scene-explorer__link" href="https://dellahome.com/collections/2-zone-mini-split" target="_blank" rel="noopener">Explore 2-Zone Systems</a>
+            </div>
+          </article>
+          <article class="scene-explorer__panel" id="setup-panel-office" aria-labelledby="setup-title-office">
+            <img class="scene-explorer__image" src="./assets/setup-office.png" width="1536" height="1024" alt="Brick and walnut home office beside a separate green bedroom, with two indoor mini splits" loading="lazy" decoding="async">
+            <div class="scene-explorer__caption">
+              <div><h3 id="setup-title-office">Bedroom + home office</h3><span class="scene-explorer__zone">2-Zone starting point</span></div>
+              <p class="scene-explorer__description">Give work and rest their own room settings.</p>
+              <a class="scene-explorer__link" href="https://dellahome.com/collections/2-zone-mini-split" target="_blank" rel="noopener">Explore 2-Zone Systems</a>
+            </div>
+          </article>
+          <article class="scene-explorer__panel" id="setup-panel-upstairs" aria-labelledby="setup-title-upstairs">
+            <img class="scene-explorer__image" src="./assets/setup-upstairs.png" width="1536" height="1024" alt="Traditional upstairs landing connecting three bedrooms with individual indoor mini splits" loading="lazy" decoding="async">
+            <div class="scene-explorer__caption">
+              <div><h3 id="setup-title-upstairs">Three upstairs rooms</h3><span class="scene-explorer__zone">3-Zone starting point</span></div>
+              <p class="scene-explorer__description">Three rooms sharing one upstairs level.</p>
+              <a class="scene-explorer__link" href="https://dellahome.com/collections/3-zone-mini-split" target="_blank" rel="noopener">Explore 3-Zone Systems</a>
+            </div>
+          </article>
+          <article class="scene-explorer__panel" id="setup-panel-family" aria-labelledby="setup-title-family">
+            <img class="scene-explorer__image" src="./assets/setup-family.png" width="1536" height="1024" alt="Contemporary bedroom, nursery and home office with one indoor mini split per room" loading="lazy" decoding="async">
+            <div class="scene-explorer__caption">
+              <div><h3 id="setup-title-family">Bedroom, nursery + office</h3><span class="scene-explorer__zone">3-Zone starting point</span></div>
+              <p class="scene-explorer__description">Three different routines in three separate rooms.</p>
+              <a class="scene-explorer__link" href="https://dellahome.com/collections/3-zone-mini-split" target="_blank" rel="noopener">Explore 3-Zone Systems</a>
+            </div>
+          </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section services-section" aria-labelledby="services-title">
+    <section class="connection-planning" aria-labelledby="decision-title">
       <div class="container">
-        <div class="section-head centered">
-          <h2 id="services-title">Premium Della Services</h2>
+        <h2 id="decision-title">Count the rooms. Plan the connections.</h2>
+        <p class="connection-planning__intro">A third zone adds an indoor location to plan.</p>
+        <div class="connection-planning__grid">
+          <figure class="connection-plan">
+            <h3>2-Zone</h3>
+            <svg class="plan-diagram" viewBox="0 0 600 390" width="600" height="390" role="img" aria-labelledby="plan-2-title plan-2-desc">
+          <title id="plan-2-title">2-zone room and connection diagram</title>
+          <desc id="plan-2-desc">Bedroom, Office with one indoor unit in each room and 2 schematic connection paths to one outdoor unit. This is an illustrative layout, not an installation drawing.</desc>
+          <defs>
+            <g id="plan-2-indoor"><rect x="0" y="0" width="66" height="30" rx="3" fill="#FAFCFE" stroke="#8392A5" stroke-width="1.2"/><path d="M5 19 H61 M5 23 H61 M5 27 H61" fill="none" stroke="#A1AFBF" stroke-width="1"/><path d="M4 5 H62" stroke="#D8DFE7"/></g>
+            <g id="plan-2-outdoor"><rect x="0" y="0" width="94" height="60" rx="3" fill="#FAFBFB" stroke="#8C98A4" stroke-width="1.2"/><circle cx="33" cy="29" r="24" fill="#CFD5D8" stroke="#8C969E"/>
+              <g fill="#929DA3"><path transform="rotate(0 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(90 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(180 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(270 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/></g>
+              <g stroke="#F8FAFC" stroke-width="1.1"><path d="M9 12 H57"/><path d="M9 16 H57"/><path d="M9 20 H57"/><path d="M9 24 H57"/><path d="M9 28 H57"/><path d="M9 32 H57"/><path d="M9 36 H57"/><path d="M9 40 H57"/><path d="M9 44 H57"/><path d="M9 48 H57"/></g><circle cx="33" cy="29" r="4" fill="#87929A"/>
+              <path d="M65 8 H86 V52 H65 Z M68 39 H83 M68 43 H83" fill="none" stroke="#CFD6DD"/><rect x="9" y="60" width="14" height="5" fill="#AAB3BD"/><rect x="70" y="60" width="14" height="5" fill="#AAB3BD"/>
+            </g>
+          </defs>
+          <g fill="none" stroke="#4169CF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 5"><path class="plan-route" d="M289.0 64 V82 H156.0 V125"/><path class="plan-route" d="M311.0 64 V82 H444.0 V125"/></g>
+          <use class="plan-outdoor-unit" href="#plan-2-outdoor" x="253" y="0"/>
+          <rect x="12" y="116" width="576" height="251" fill="#F8F9F7"/>
+          <g class="plan-walls" fill="none" stroke="#0E1953" stroke-width="8"><path d="M12 116 H588 V367 H12 Z"/><path d="M300.0 116 V367"/></g>
+          <g class="plan-furniture">
+              <rect x="90.0" y="150" width="132" height="144" fill="#F2F2F0" stroke="#D9DDE1"/>
+              <rect x="103.0" y="155" width="106" height="119" rx="2" fill="#FAFBFC"/>
+              <rect x="109.0" y="161" width="43" height="22" rx="3"/><rect x="160.0" y="161" width="43" height="22" rx="3"/>
+              <path d="M103.0 190 H209.0 M103.0 253 H209.0"/>
+              <rect x="72.0" y="157" width="25" height="28" fill="#FCFCFC"/><circle cx="84.5" cy="171" r="7"/>
+            </g><g class="plan-door"><path d="M241.0 367 H288.0" stroke="#fff" stroke-width="10"/><path d="M241.0 367 V320 M241.0 320 A47 47 0 0 1 288.0 367"/></g><g class="plan-window"><path d="M69.6 116 H107.6" stroke="#fff" stroke-width="9"/><path d="M69.6 112 H107.6 V120 H69.6 Z M88.6 112 V120 M69.6 116 H107.6"/></g><text class="plan-label" x="156.0" y="311" text-anchor="middle">Bedroom</text><g class="plan-furniture">
+              <rect x="378.0" y="163" width="132" height="128" fill="#F2F2F0" stroke="#D9DDE1"/>
+              <rect x="397.0" y="177" width="94" height="70" fill="#FAFBFC"/>
+              <rect x="431.0" y="186" width="26" height="20" rx="1"/><path d="M428.0 211 H460.0 M431.0 216 H457.0"/>
+              <rect x="427.0" y="253" width="34" height="24" rx="10"/><path d="M423.0 252 V267 Q444.0 285 465.0 267 V252"/>
+            </g><g class="plan-door"><path d="M529.0 367 H576.0" stroke="#fff" stroke-width="10"/><path d="M529.0 367 V320 M529.0 320 A47 47 0 0 1 576.0 367"/></g><g class="plan-window"><path d="M357.6 116 H395.6" stroke="#fff" stroke-width="9"/><path d="M357.6 112 H395.6 V120 H357.6 Z M376.6 112 V120 M357.6 116 H395.6"/></g><text class="plan-label" x="444.0" y="311" text-anchor="middle">Office</text>
+          <use class="plan-indoor-unit" href="#plan-2-indoor" x="123.0" y="114"/><use class="plan-indoor-unit" href="#plan-2-indoor" x="411.0" y="114"/>
+        </svg>
+            <figcaption>Two indoor locations. Two rooms to size.</figcaption>
+          </figure>
+          <figure class="connection-plan">
+            <h3>3-Zone</h3>
+            <svg class="plan-diagram" viewBox="0 0 600 390" width="600" height="390" role="img" aria-labelledby="plan-3-title plan-3-desc">
+          <title id="plan-3-title">3-zone room and connection diagram</title>
+          <desc id="plan-3-desc">Bedroom, Office, Nursery with one indoor unit in each room and 3 schematic connection paths to one outdoor unit. This is an illustrative layout, not an installation drawing.</desc>
+          <defs>
+            <g id="plan-3-indoor"><rect x="0" y="0" width="66" height="30" rx="3" fill="#FAFCFE" stroke="#8392A5" stroke-width="1.2"/><path d="M5 19 H61 M5 23 H61 M5 27 H61" fill="none" stroke="#A1AFBF" stroke-width="1"/><path d="M4 5 H62" stroke="#D8DFE7"/></g>
+            <g id="plan-3-outdoor"><rect x="0" y="0" width="94" height="60" rx="3" fill="#FAFBFB" stroke="#8C98A4" stroke-width="1.2"/><circle cx="33" cy="29" r="24" fill="#CFD5D8" stroke="#8C969E"/>
+              <g fill="#929DA3"><path transform="rotate(0 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(90 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(180 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/><path transform="rotate(270 33 29)" d="M33 27 Q8 8 18 13 Q38 4 35 27 Z"/></g>
+              <g stroke="#F8FAFC" stroke-width="1.1"><path d="M9 12 H57"/><path d="M9 16 H57"/><path d="M9 20 H57"/><path d="M9 24 H57"/><path d="M9 28 H57"/><path d="M9 32 H57"/><path d="M9 36 H57"/><path d="M9 40 H57"/><path d="M9 44 H57"/><path d="M9 48 H57"/></g><circle cx="33" cy="29" r="4" fill="#87929A"/>
+              <path d="M65 8 H86 V52 H65 Z M68 39 H83 M68 43 H83" fill="none" stroke="#CFD6DD"/><rect x="9" y="60" width="14" height="5" fill="#AAB3BD"/><rect x="70" y="60" width="14" height="5" fill="#AAB3BD"/>
+            </g>
+          </defs>
+          <g fill="none" stroke="#4169CF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 5"><path class="plan-route" d="M278.0 64 V82 H108.0 V125"/><path class="plan-route" d="M300.0 64 V82 H300.0 V125"/><path class="plan-route" d="M322.0 64 V82 H492.0 V125"/></g>
+          <use class="plan-outdoor-unit" href="#plan-3-outdoor" x="253" y="0"/>
+          <rect x="12" y="116" width="576" height="251" fill="#F8F9F7"/>
+          <g class="plan-walls" fill="none" stroke="#0E1953" stroke-width="8"><path d="M12 116 H588 V367 H12 Z"/><path d="M204.0 116 V367"/><path d="M396.0 116 V367"/></g>
+          <g class="plan-furniture">
+              <rect x="42.0" y="150" width="132" height="144" fill="#F2F2F0" stroke="#D9DDE1"/>
+              <rect x="55.0" y="155" width="106" height="119" rx="2" fill="#FAFBFC"/>
+              <rect x="61.0" y="161" width="43" height="22" rx="3"/><rect x="112.0" y="161" width="43" height="22" rx="3"/>
+              <path d="M55.0 190 H161.0 M55.0 253 H161.0"/>
+              <rect x="24.0" y="157" width="25" height="28" fill="#FCFCFC"/><circle cx="36.5" cy="171" r="7"/>
+            </g><g class="plan-door"><path d="M145.0 367 H192.0" stroke="#fff" stroke-width="10"/><path d="M145.0 367 V320 M145.0 320 A47 47 0 0 1 192.0 367"/></g><g class="plan-window"><path d="M50.400000000000006 116 H88.4" stroke="#fff" stroke-width="9"/><path d="M50.400000000000006 112 H88.4 V120 H50.400000000000006 Z M69.4 112 V120 M50.400000000000006 116 H88.4"/></g><text class="plan-label" x="108.0" y="311" text-anchor="middle">Bedroom</text><g class="plan-furniture">
+              <rect x="234.0" y="163" width="132" height="128" fill="#F2F2F0" stroke="#D9DDE1"/>
+              <rect x="253.0" y="177" width="94" height="70" fill="#FAFBFC"/>
+              <rect x="287.0" y="186" width="26" height="20" rx="1"/><path d="M284.0 211 H316.0 M287.0 216 H313.0"/>
+              <rect x="283.0" y="253" width="34" height="24" rx="10"/><path d="M279.0 252 V267 Q300.0 285 321.0 267 V252"/>
+            </g><g class="plan-door"><path d="M337.0 367 H384.0" stroke="#fff" stroke-width="10"/><path d="M337.0 367 V320 M337.0 320 A47 47 0 0 1 384.0 367"/></g><g class="plan-window"><path d="M242.4 116 H280.4" stroke="#fff" stroke-width="9"/><path d="M242.4 112 H280.4 V120 H242.4 Z M261.4 112 V120 M242.4 116 H280.4"/></g><text class="plan-label" x="300.0" y="311" text-anchor="middle">Office</text><g class="plan-furniture">
+              <ellipse cx="492.0" cy="238" rx="68" ry="83" fill="#F6F6F3" stroke="#E0E2E3"/>
+              <rect x="442.0" y="168" width="100" height="63" rx="2" fill="#FAFBFC"/>
+              <rect x="450.0" y="174" width="84" height="52" rx="1"/><path d="M450.0 174 V226"/><path d="M460.0 174 V226"/><path d="M470.0 174 V226"/><path d="M480.0 174 V226"/><path d="M490.0 174 V226"/><path d="M500.0 174 V226"/><path d="M510.0 174 V226"/><path d="M520.0 174 V226"/><path d="M530.0 174 V226"/>
+              <g transform="rotate(-22 454.0 269)"><rect x="436.0" y="251" width="36" height="37" rx="9"/><path d="M432.0 255 V287 M475.0 255 V287"/></g>
+            </g><g class="plan-door"><path d="M529.0 367 H576.0" stroke="#fff" stroke-width="10"/><path d="M529.0 367 V320 M529.0 320 A47 47 0 0 1 576.0 367"/></g><g class="plan-window"><path d="M434.4 116 H472.4" stroke="#fff" stroke-width="9"/><path d="M434.4 112 H472.4 V120 H434.4 Z M453.4 112 V120 M434.4 116 H472.4"/></g><text class="plan-label" x="492.0" y="311" text-anchor="middle">Nursery</text>
+          <use class="plan-indoor-unit" href="#plan-3-indoor" x="75.0" y="114"/><use class="plan-indoor-unit" href="#plan-3-indoor" x="267.0" y="114"/><use class="plan-indoor-unit" href="#plan-3-indoor" x="459.0" y="114"/>
+        </svg>
+            <figcaption>Three indoor locations. Three rooms to size.</figcaption>
+          </figure>
         </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-40_488310fc-d38a-4d43-bcc2-b1b5e44d2fa4.png?v=1764578865" alt="" loading="lazy" aria-hidden="true">
-            <h3>Free &amp; Fast Shipping</h3>
-          </article>
-          <article class="service-card">
-            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250609-092813.png?v=1749432513&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-            <h3>Pay in 6 Months, 0% APR</h3>
-          </article>
-          <article class="service-card">
-            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/20250922-160254_998da76a-d533-49ca-a79b-0ce8b4a70261.png?v=1765275088&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-            <h3>24×7 Live Chat Support</h3>
-          </article>
-          <article class="service-card">
-            <img class="service-icon" src="https://cdn.shopify.com/s/files/1/0785/7763/1520/files/80x80px-45_b280ec24-a703-42bb-b37e-aa83a9a6c424.png?v=1765275087&amp;width=2048" alt="" loading="lazy" aria-hidden="true">
-            <h3>Lifetime Coverage<br>(Mini Splits)</h3>
-          </article>
+      </div>
+      <div class="connection-planning__fit">
+        <div class="container">
+          <h3>Comfort depends on the fit.</h3>
+          <div class="connection-planning__checks">
+            <div><h4>Room-by-room capacity</h4><p>Match each room’s needs to the right equipment.</p></div>
+            <div><h4>Compatible equipment</h4><p>Ensure the indoor and outdoor combination is a good fit.</p></div>
+            <div><h4>Line sets, drainage and power</h4><p>Plan the routing and utility requirements for your home.</p></div>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="dsc-services" id="services" aria-labelledby="services-title">
+    <div class="dsc-container">
+      <h2 class="dsc-heading" id="services-title">Premium Della Services</h2>
+      <div class="dsc-svc-grid">
+        <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="Free and fast shipping icon" width="50" height="50"></div><h3>Free &amp; Fast Shipping</h3><p>Get your Della products delivered quickly with free standard shipping.</p></div>
+        <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,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" alt="30-day money-back icon" width="50" height="50"></div><h3>30-Day Money-Back</h3><p>Not satisfied? Return within 30 days for a full refund.</p></div>
+        <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="24/7 live support icon" width="50" height="50"></div><h3><a href="https://dellahome.com/pages/contact">24/7 Live Support</a></h3><p>Get instant answers to your questions anytime, day or night.</p></div>
+        <div class="dsc-svc"><div class="dsc-svc__icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAGL0lEQVR4AeybP4gdRRzHX+wCghBLsZFoZRAFEWy0SZfGKiIIARUiFgEb8U8XY0gjahObVAExlU2KwBUhhQERFLnOoCASsDqwMeX5+bzsHu/evZvd9y5vZnbf75jfzr6dPzv7/ezs/GZ277FJ/FWlQACpCsdkEkACSGUKVNac6CEBpDIFKmtO9JAAUpkClTUnekgAqUyBypqznh5S2UUOqTkBpDJaASSAVKZAZc2JHhJAKlOgsuZEDwkglSlQWXOihwSQyhSorDlD6iGVSbee5gSQ9ei6cq0BZGXp1lMwgKxH15VrDSArS7eeggFkPbquXGsAWVm69RQMIOvRdeVaNw7I7u7ueexr7DZ2Ezu7snprKDhqIIqNXcJuYNvYDhp+gb2NPYe9iF3l+GniKsKogCDsKcy7/yfi+yh8FXsfU/D/iLewK9jZY8eOPUV8ccKG8DpWRRgNEACcQtHvMO/+J4l/xa5jnyD+CewVTBBXiLea/B+QbvjeTQ02GiCI+S7mXX8XwU9iZ7AL2Lcc3xcaGMIz/1XybO/LUPDHmIA83uj4cRMvjBbA+HRhxkIHxwRkKmHqbu8DgzxnsWuY4860zpyb0QHpEO8b0tvH1IGeAYSbpOsIvEGsZ5YdyqYBQefJA3rRYTBeJcNdrJ2bvMl+1rBpQP5E3eP0BD0ydh8GftszpjCApTOge/wwMfN2TEB+VzvEPW98iP3cHL9sPsx5yz4YpnO8rWNap8dy2ZiA/NtDtB/J42zd3uCM/Q6/3ddVPsN+G15udn5p4mzRmIB0isbjaBs7ScbXMGfsPpq2ODYLg6TJM2x2OG46u0uHlQtsFJBWJYQWjDN2Z+7tAN4mGz/N5m8se9hIICmVGT90dU+QRweAKG8YE5AnHpF0LzX1tA5A8zNPNAog3NWXkOsj7AH2B3aU4LL8hMfagTWwo1Tat+zggQDjGhfrErvL7ecQ8qgD8fPUZ11E+cOggQDDOYTLHPeQ7q2jwqA+J4zPUtdfWJEwSCAKh7lk3s4hfNfh75VFpD5huCRvHb+5KWGDA4JwuqkK5yLhdXrF/BxiT0fynsZ8ezhvOxzfZxRykmid96nzwFoX6VnCoIAgojC+RBndUl8sXWB/YSCvd7x5fQTN53Gc+YGD8+bcxHIklQmDAYLAelIujavUh6m7mLyK2vYiwflImzUnhO9Qx7w5e7f+YpYEUqxVcydG4HlP6sZclr2f5J2HUezxs9eoJXaqB4LAy3pSyZdQS2hTJGu1QADh0rieU29PijLCewElXb0dVM+gzdNQJRCEdfBux4CkJzW9CjaUEUYL71DPi6xVh+qAIKww9I46PalWWco4pgwehtdTFRCE7e1J2XitKeMK7T28psH2DK9FqwYIwvb2pGy4RhkBtutYfijn4UFbFUAQ1uf/UmtSlJmF4TqWDsCgYdj4okAQdWlPykZTznHmHPuuyo4GBtczKQakEXUpT8oGN+Uc9P35OePGKHqGF6MVADKZzIja25OysTPl/Onyid6V+6OxIkBQ7zPMoKi9JnDAcEmk7RmWGx0MBckOBGH9CM1l7ls8bnqJShlh+Hg7TqMv9i1H3sGF7EBQqP0I7Sv2O8MMDCG6clvkXXdnQx9RhhJApk3nLu8cjBfA6PV4m55goJtiQHrqdZl89gzXs0YPg2st4vb+44m5+/1sx92FRrqTxXZ96tA3gwsLD/hgiR7iP1j6/dR7iO5gfUA+js/CGPz61IELTBzIDqQZO3yJ5BzkFuL772NTMOz7UcJt2tv2jI2CwXUXeWT5VaDvrn0/rhvrGtYdYDjI6wb7gmnRF+m2d/SWvYe0itJTHKRdk/LLDz908x/73fcDBI+3WXvFY8lUDIgCAsWe4Jcf7Rch7vuJjskbaUWBbKTiHRcdQDoEyp0cQHIr3nG+ANIhUO7kAJJb8Y7zBZAOgXInB5DcinecL4B0CJQ7OYAkFc+fGEDya548YwBJypM/MYDk1zx5xgCSlCd/YgDJr3nyjAEkKU/+xACSX/PkGQNIUp78iQEkv+bJMwaQpDzrSUzVGkBS6hRICyAFRE+dMoCk1CmQFkAKiJ46ZQBJqVMgLYAUED11ygCSUqdAWgApIHrqlP8DAAD//x2JFQwAAAAGSURBVAMAKejn2FWeNQ8AAAAASUVORK5CYII=" alt="Lifetime warranty icon" width="50" height="50"></div><h3>Lifetime Warranty</h3><p>Our Mini Split systems come with limited lifetime compressor protection.</p></div>
+      </div>
+    </div>
+  </section>
     <section class="section faq-section" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-head">
@@ -1364,8 +1163,8 @@
   </main>
 
   <script>
-    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+    const tabs = Array.from(document.querySelectorAll('.products [role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('.products [role="tabpanel"]'));
 
     function selectTab(tab) {
       tabs.forEach((item) => {
@@ -1397,6 +1196,52 @@
         }
       });
     });
+  </script>
+  <script>
+    (() => {
+      const root = document.querySelector('.scene-explorer');
+      const list = root.querySelector('.scene-explorer__choices');
+      const choices = Array.from(list.querySelectorAll('[role="tab"]'));
+      const scenes = Array.from(root.querySelectorAll('.scene-explorer__panel'));
+      const mobileLayout = window.matchMedia('(max-width: 900px)');
+      function selectScene(index) {
+        choices.forEach((choice, i) => {
+          choice.setAttribute('aria-selected', String(i === index));
+          choice.tabIndex = i === index ? 0 : -1;
+          scenes[i].hidden = i !== index;
+        });
+      }
+      scenes.forEach((scene, i) => {
+        scene.setAttribute('role', 'tabpanel');
+        scene.setAttribute('aria-labelledby', choices[i].id);
+        scene.tabIndex = 0;
+      });
+      choices.forEach((choice, index) => {
+        choice.addEventListener('click', () => selectScene(index));
+        choice.addEventListener('keydown', (event) => {
+          let next = index;
+          const rowStep = mobileLayout.matches ? 2 : 1;
+          if (event.key === 'ArrowRight') next = (index + 1) % choices.length;
+          else if (event.key === 'ArrowLeft') next = (index - 1 + choices.length) % choices.length;
+          else if (event.key === 'ArrowDown') next = (index + rowStep) % choices.length;
+          else if (event.key === 'ArrowUp') next = (index - rowStep + choices.length) % choices.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = choices.length - 1;
+          else return;
+          event.preventDefault();
+          selectScene(next);
+          choices[next].focus();
+        });
+      });
+      function updateOrientation() {
+        list.setAttribute('aria-orientation', mobileLayout.matches ? 'horizontal' : 'vertical');
+      }
+      mobileLayout.addEventListener('change', updateOrientation);
+      updateOrientation();
+      selectScene(1);
+      root.classList.add('is-enhanced');
+      list.hidden = false;
+    })();
   </script>
   <script type="application/ld+json">
     {

@@ -1,5 +1,86 @@
 # HANDOFF: 2-Zone vs 3-Zone Mini Split
 
+## Release — 2026-09-24
+
+The owner approved Git commit and push of the reviewed 2-zone/3-zone page. Target repository: `cleopatrahines/della-pages`, branch `master`; GitHub Pages publishes the repository root from that branch.
+
+Scope: final HTML, referenced runtime assets, three selected mockups, and this page's implementation/QA documents. Other page changes and unselected concept/temporary outputs remain local. Read `QA-RELEASE-20260924.md` for the final validation and known static-data limitation.
+
+Public page: https://cleopatrahines.github.io/della-pages/2-zone-vs-3-zone-mini-split/2-zone-vs-3-zone-mini-split.html
+
+
+## Planning Copy and Spacing — 2026-09-24
+
+The two standalone lines surrounding the “Comfort depends on the fit.” band have been removed. The diagram-to-band gap is 28px desktop / 24px mobile; the three planning checks end with balanced section padding. Diagram captions, check descriptions and all other content remain unchanged. Evidence: `C:/Users/18041/Documents/Playground/della-planning-spacing-20260924/`.
+
+## Planning Typography — 2026-09-24
+
+“Count the rooms. Plan the connections.” now shares the page’s standard Spectral 400 section-title and Poppins 16px introductory-copy rules. Its plan captions and planning explanations use the body font; remaining subheadings use regular Spectral. The unused custom heading-font alias and mobile title exception were removed. Wording, SVG diagrams and interactions remain unchanged. Evidence: `C:/Users/18041/Documents/Playground/della-planning-type-20260924/`.
+
+## Scene Explorer Alignment — 2026-09-24
+
+The left scene/caption and right thumbnail list align on their vertical centers. The sidebar contains the four choices; the standalone small sizing note was removed at the owner's request. Existing scene switching and mobile stacking remain in place. Evidence: `C:/Users/18041/Documents/Playground/della-scene-centering-20260924/`.
+
+## Room-Count Buttons — 2026-09-24
+
+The two Explore actions in “Two rooms or three?” now reuse the bottom CTA’s shared `btn btn-navy` classes. Normal/hover color, typography, padding, radius and height follow the same rules; content-width sizing applies on desktop and mobile. Their existing labels, destinations and keyboard focus outline remain intact. Evidence: `C:/Users/18041/Documents/Playground/della-cta-alignment-20260924/`.
+
+## Typography Alignment — 2026-09-24
+
+“Two rooms or three?” and “Which setup matches your home?” now share the page’s standard Spectral 400 H2 and Poppins 16px introduction styles with the merchandising section. Their custom heading-font overrides were removed; component titles and main body copy follow the same family/weight hierarchy. Both section layouts, images, wording, links and interactions remain unchanged. Evidence: `C:/Users/18041/Documents/Playground/della-type-alignment-20260924/`.
+
+## Current Connection Planning — Approved B, 2026-09-24
+
+Owner selected `design/comparison-planning-concepts-20260923/B-connection-plans.png`. The combined reminder/table section now uses two inline SVG architectural plans and the shared sizing/compatibility/installation band. Diagrams show exactly two/three indoor symbols and symbolic connection paths, with one outdoor symbol each. All headings, captions and notes are semantic HTML; SVGs have accessible titles/descriptions. The diagrams are illustrative, with no installation dimensions or performance claims.
+
+Two plans display side by side on desktop and stack below 760px. Three planning checks switch from columns to stacked rows. Other approved sections and scripts remain unchanged. All requested design selections are implemented locally; no commit or publication is approved.
+
+Backup and QA evidence: `C:/Users/18041/Documents/Playground/della-connection-plans-20260924/`.
+
+## Current Home Setup Scene Explorer — Approved B, 2026-09-24
+
+The owner selected `design/home-setup-concepts-20260923/B-scene-explorer.png`. The scene explorer uses the four approved scene photographs as independent `assets/setup-*.png` files. Bedroom + home office is initially active. Selecting an option reveals its image, caption, zone starting point and collection link together.
+
+Desktop uses a large left image and four right thumbnail choices. At 900px and below the choices appear in a two-column grid above the selected image. Tabs support arrows/Home/End, visible focus, correct selection state and independent behavior from product tabs. With JavaScript disabled, all four scene articles and collection links remain available. No autoplay or hover-only controls.
+
+Backup and verification evidence: `C:/Users/18041/Documents/Playground/della-scene-explorer-20260924/`. The connection-planning module follows approved B. Commit and push for this page are approved on 2026-09-24.
+
+## Current Room-Count Section — Approved A, 2026-09-23
+
+Owner selected `design/room-count-concepts-20260923/A-scene-comparison.png`. The quick-answer section now uses two open scene columns, the approved “Two rooms or three?” copy, and blue Explore collection actions. `assets/room-choice-two.png` and `assets/room-choice-three.png` are 1536×1024 RGBA illustrations based on the selected mockup. They depict two and three indoor heads respectively. All text and links are semantic HTML.
+
+The room-count section ends with its two collection actions. Desktop shows two equal columns; 700px and below stacks complete choices. The source HTML backup and QA evidence are in `C:/Users/18041/Documents/Playground/della-room-choice-20260923/`. Other page sections retain their current markup. The connection-planning module follows approved B. Commit and push for this page are approved on 2026-09-24.
+
+## Current Premium Della Services — 2026-09-23
+
+The page uses the complete services section requested from `https://cleopatrahines.github.io/della-pages/Ductless%20Mini%20Split%20vs%20Central%20Air/ductless-mini-split-vs-central-air.html`: Free & Fast Shipping, 30-Day Money-Back, 24/7 Live Support, Lifetime Warranty. Live section markup, four embedded PNG icons, descriptions and contact link were preserved. Component CSS follows the source's spacing, typography, pale-blue cards and 4/2/1 responsive columns. A section-local font alias loads the same Spectral medium file without changing other sections' typography.
+
+Reference capture, original HTML backup and QA evidence: `C:/Users/18041/Documents/Playground/della-services-20260923/`. The connection-planning module follows approved B. Commit and push for this page are approved on 2026-09-24.
+
+## Current Product Card Imagery — 2026-09-23
+
+All eight product cards use the transparent PNG files in `assets/products-cutout/`. Each file was processed from its corresponding `product-original-XX.webp` with the owner-approved programmatic alpha-only method. Product RGB pixels are unchanged, and original files are preserved. See `PRODUCT-IMAGE-PROCESSING.md` for provenance and verification.
+
+The media area follows the supplied DELLA comparison reference: pure white, a square frame, full product containment, and compact desktop insets. Mobile retains its existing thumbnail/card structure on a white surface. The current hero and two blue-podium category images remain in place.
+
+The approved A room-count layout is implemented; The connection-planning module follows approved B. Commit and push for this page are approved on 2026-09-24.
+
+## Current Category Images — 2026-09-23
+
+The 2-zone and 3-zone merchandising feature panels use `assets/category-2-zone-studio.png` and `assets/category-3-zone-studio.png` (1672 × 941 each). Both are regenerated studio illustrations based on the original blue-podium compositions, with local product originals used as equipment references. Counts remain two indoor units plus one outdoor unit, and three indoor units plus one outdoor unit, respectively. These category illustrations do not replace the eight product-card source photographs.
+
+The original `2-Zone.webp` and `3-Zone.webp` remain preserved. Image width/height attributes match the new files. At 1060px and below, the feature images use natural height so equipment remains fully visible. Desktop panel layout, product data, links, hero and unselected decision-section concepts remain as currently approved.
+
+Review evidence and the original HTML backup: `C:/Users/18041/Documents/Playground/della-shop-images-20260923/`. Commit and push for this page are approved on 2026-09-24.
+## Current Hero — 2026-09-23
+
+The hero contains a two-line Spectral title and the existing Poppins supporting copy. Collection actions are available below the hero. The background is `assets/hero-three-room.png`, a regenerated 2098 × 750 PNG (1.55 MB) preserving the original three-room composition with more resolved details. The original `banner.webp` remains available as source artwork.
+
+Desktop uses a 2.8:1 banner proportion and a constrained copy column. At 1060 CSS pixels and below, copy sits above a right-aligned crop of the room artwork. This keeps the room image separate from the text.
+
+Banner-focused Chrome QA covered desktop, tablet, and mobile widths from 360 to 1920px: zero hero buttons or links, no page horizontal overflow, local image loaded, and eight existing product cards preserved. Review evidence and the original HTML backup are in `C:/Users/18041/Documents/Playground/della-banner-20260923/`.
+
+Next action: visual review of the local banner. Commit and push for this page are approved on 2026-09-24.
 ## Project Path
 
 `C:\Users\18041\Desktop\della-pages\2-zone-vs-3-zone-mini-split`
@@ -89,7 +170,7 @@ If the demo direction is approved, prepare final Shopify-ready version:
 
 ## Commit/Push Status
 
-No commit or push has been approved.
+Commit and push for this page are approved on 2026-09-24.
 
 ## Post-QA Service Block Change
 
@@ -300,4 +381,4 @@ Layout: four columns from 1200px, two at 761–1199px, one at 760px and below. M
 
 Local Chrome QA: 33/33 checks across 1440/1280/1199/1150/1024/768/760/430/390/360px, both groups expanded, 200% product text at 390/1024px, keyboard tabs/disclosures, image loading, FAQ/schema parity and preserved sections/links. Screenshots inspected. Evidence: C:/Users/18041/Documents/Playground/della-ui-review-20260911/zone-pilot-20260914/试点验收.md.
 
-Static price snapshot captured 2026-09-14; shared hydration and Shopify-theme integration are separate work. No new commit/push authorized for this pilot. Next action: owner visual review, then decide publication or the next single page. Backup: evidence folder before.html.
+Static price snapshot captured 2026-09-14; shared hydration and Shopify-theme integration are separate work. Commit and push for this page are approved on 2026-09-24. Next action: owner visual review, then decide publication or the next single page. Backup: evidence folder before.html.

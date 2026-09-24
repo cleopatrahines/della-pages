@@ -1,5 +1,32 @@
 # PLAN: 2-Zone vs 3-Zone Mini Split
 
+## Release — 2026-09-24
+
+The owner approved Git commit and push of the reviewed 2-zone/3-zone page. Target repository: `cleopatrahines/della-pages`, branch `master`; GitHub Pages publishes the repository root from that branch.
+
+Scope: final HTML, referenced runtime assets, three selected mockups, and this page's implementation/QA documents. Other page changes and unselected concept/temporary outputs remain local. Read `QA-RELEASE-20260924.md` for the final validation and known static-data limitation.
+
+Public page: https://cleopatrahines.github.io/della-pages/2-zone-vs-3-zone-mini-split/2-zone-vs-3-zone-mini-split.html
+
+
+## Current Scoped Implementation — Room-Count A
+
+Implement the approved A scene comparison in the existing quick-answer position. Localize `assets/room-choice-two.png` and `assets/room-choice-three.png`, replace the section markup and its dedicated styles, and retain the original collection URLs. Preserve all other section markup and existing product/FAQ behavior.
+
+Verify desktop and mobile composition, image loading, exact two/three room grouping, no overflow, button contrast and keyboard focus, and unchanged surrounding content. Backup and QA evidence: `C:/Users/18041/Documents/Playground/della-room-choice-20260923/`. Commit and push for this page are approved on 2026-09-24.
+
+## Current Scoped Implementation — Scene Explorer B
+
+Localize the four approved scene PNGs as `assets/setup-bedrooms.png`, `setup-office.png`, `setup-upstairs.png`, and `setup-family.png`. Replace only the scenario markup and its dedicated styles, remove superseded scenario-card rules, and add a scoped accessible tab controller. Scope the existing merchandising tab queries to `.products` so the two controls operate independently.
+
+Verify all four scene states, image/caption/destination parity, desktop/mobile layout, keyboard navigation, reduced motion, no-JavaScript fallback and merchandising-tab independence. Backup and evidence: `C:/Users/18041/Documents/Playground/della-scene-explorer-20260924/`. Other approved sections are preserved; publication remains pending.
+
+## Current Scoped Implementation — Connection Planning B
+
+Replace the combined planning reminder/table section with inline SVG diagrams and the selected shared planning band. Remove its superseded table/icon-list CSS, retain `decision-title`, and preserve all other markup, scripts, products and links. Diagrams have exactly two/three indoor symbols and connections, one outdoor symbol each, and accessible descriptions.
+
+Check desktop, tablet and mobile layout; vector counts and labels; no overflow; unchanged content outside this section. Backup and evidence: `C:/Users/18041/Documents/Playground/della-connection-plans-20260924/`. Commit and push for this page are approved on 2026-09-24.
+
 ## Goal
 
 Build a standalone Della landing-page HTML demo for the `2-Zone vs 3-Zone Mini Split` page after PRD and design alignment.

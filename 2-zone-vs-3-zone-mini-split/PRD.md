@@ -120,24 +120,18 @@ Installation concerns may be mentioned briefly inside the comparison table or FA
 
 ### 1. Hero Wide Ecommerce Banner
 
-H1:
+H1: `2-Zone vs 3-Zone Mini Split`
 
-`2-Zone vs 3-Zone Mini Split`
+Hero copy: `Two bedrooms, bedroom + office, upstairs rooms, or an addition? Match the right zone count to each space.`
 
-Hero copy:
-
-`Choose a 2-zone mini split when two rooms need separate comfort from one outdoor unit. Choose a 3-zone mini split when three rooms or areas need their own indoor units, schedules, and temperature control.`
-
-Primary CTAs:
-
-- `Shop 2-Zone Mini Splits` -> https://dellahome.com/collections/2-zone-mini-split
-- `Shop 3-Zone Mini Splits` -> https://dellahome.com/collections/3-zone-mini-split
+The hero contains the title, supporting copy, and a three-room cutaway image. Collection shopping actions are provided in the decision and merchandising sections below.
 
 Visual direction:
 
-- Wide banner with left copy space and right product/room visual.
-- Preferred visual concept: one outdoor unit to two indoor heads vs one outdoor unit to three indoor heads.
-- No fake discount badge, countdown, coupon code, or sale styling.
+- Wide banner with left copy space and the same right-side three-room apartment composition.
+- Image: `assets/hero-three-room.png`, with resolved equipment, flooring, and furniture details.
+- Spectral heading, Poppins supporting copy, and Della navy typography.
+- At widths of 1060px and below, copy sits above the room image for readability.
 
 ### 2. Room-Count Path Strip
 
@@ -149,35 +143,17 @@ Use compact routing cards or strip items:
 
 The strip should narrow the choice instead of showing equal 1-5 zone paths.
 
-### 3. Quick Answer Two Decision Cards
+### 3. Room-Count Scene Comparison — Approved A
 
-H2:
+Owner selected `design/room-count-concepts-20260923/A-scene-comparison.png` on 2026-09-23. The section presents two open image-led columns on a pale blue surface.
 
-`Choose 2-Zone or 3-Zone by the rooms that need their own indoor unit`
+- H2: `Two rooms or three?`
+- Introduction: `Start with the rooms that need their own indoor unit.`
+- 2-Zone: `Two rooms. Separate comfort.` / `Two bedrooms, or a bedroom + office.`
+- 3-Zone: `Three rooms. Individual control.` / `Three bedrooms, or a bedroom + office + nursery.`
+- Actions: `Explore 2-Zone Systems` and `Explore 3-Zone Systems`, linking to the existing corresponding Della collections.
 
-2-zone card heading:
-
-`Start with 2-Zone if...`
-
-2-zone cues:
-
-- Two enclosed rooms need separate comfort.
-- Common for two bedrooms, a bedroom plus office, or an addition plus nearby room.
-- The third area is a hallway, open pass-through, or rarely used room.
-- You want fewer indoor units, fewer line-set routes, and a simpler starting point.
-- One room may need a larger indoor unit, so compare BTU mix before choosing.
-
-3-zone card heading:
-
-`Start with 3-Zone if...`
-
-3-zone cues:
-
-- Three rooms need their own indoor units.
-- Common for a whole upstairs, three bedrooms, or bedroom plus office plus living area.
-- Rooms are used on different schedules.
-- One outdoor unit is preferred over multiple outdoor condensers.
-- The installer can route lines, drains, and power cleanly to all three indoor units.
+Use separate transparent room illustrations: office + bedroom with two visible indoor heads, and office + bedroom + nursery with three. Text and actions are semantic HTML. Desktop shows both choices together; at 700px and below each complete choice stacks vertically. Retain the `quick-title` anchor.
 
 ### 4. Product Merchandising Tabs
 
@@ -200,79 +176,44 @@ Rules:
 - Rating is optional. If used, capture from live Shopify or omit.
 - Include concise spec chips: zone count, BTU/head mix, coverage, series or installation type.
 
-### 5. Scenario Cards
+### 5. Home Setup Scene Explorer — Approved B
 
-H2:
+Owner selected `design/home-setup-concepts-20260923/B-scene-explorer.png` on 2026-09-24.
 
-`Which home setup sounds closest to yours?`
+- Heading: `Which setup matches your home?`
+- Introduction: `Choose a familiar layout to see a starting point.`
+- Four options: Two bedrooms (2 zones); Bedroom + home office (2 zones); Three upstairs rooms (3 zones); Bedroom, nursery + office (3 zones).
+- Default: Bedroom + home office, as shown in the approved mockup.
+- Selection updates the large scene image, scene title, short explanation, zone starting point and the corresponding existing collection link.
+- Reuse the four approved scene files in `assets/setup-*.png`; preserve their distinct coastal, urban, traditional upstairs and contemporary family interiors.
 
-Cards:
+Desktop vertically centers the large scene and caption against the four-choice thumbnail list. At 900px and below the choices form a two-column grid above the selected scene. Provide accessible tabs, keyboard navigation, visible focus and no autoplay. Without JavaScript, expose all four complete scenes and their collection links. Scope scene controls separately from the merchandising tabs.
 
-- `Two bedrooms on the same floor` -> Start with 2-Zone
-- `Bedroom + home office` -> Start with 2-Zone
-- `Addition + nearby room` -> Start with 2-Zone
-- `Three upstairs bedrooms` -> Start with 3-Zone
-- `Primary bedroom + nursery + office` -> Start with 3-Zone
-- `Open living area + two rooms` -> Check 3-Zone and BTU mix
+### 6–7. Connection Planning — Approved B
 
-Use realistic room combinations, not abstract HVAC concepts.
+Owner selected `design/comparison-planning-concepts-20260923/B-connection-plans.png` on 2026-09-24. Present the combined comparison/planning section as two room-and-connection diagrams followed by a shared planning band.
 
-### 6. More Zones Is Not Always Better
+- Heading: `Count the rooms. Plan the connections.`
+- Introduction: `A third zone adds an indoor location to plan.`
+- 2-Zone diagram: Bedroom + Office, two indoor units and one outdoor unit; caption `Two indoor locations. Two rooms to size.`
+- 3-Zone diagram: Bedroom + Office + Nursery, three indoor units and one outdoor unit; caption `Three indoor locations. Three rooms to size.`
+- Planning-band heading: `Comfort depends on the fit.`
+- `Room-by-room capacity`: `Match each room’s needs to the right equipment.`
+- `Compatible equipment`: `Ensure the indoor and outdoor combination is a good fit.`
+- `Line sets, drainage and power`: `Plan the routing and utility requirements for your home.`
 
-H2:
-
-`More zones do not automatically mean better comfort`
-
-Core copy:
-
-`A 3-zone mini split gives you one more indoor unit, but the right choice still depends on the BTU mix, room load, and install route. A stronger 2-zone setup may fit two rooms better than a smaller 3-zone setup spread across rooms that do not need separate control.`
-
-Subpoints:
-
-- `Count rooms first`: Each room that needs its own temperature usually needs its own indoor unit.
-- `Then check BTU mix`: A 9K + 9K system and a 12K + 18K system solve different problems.
-- `Do not buy a third head just in case`: Adding a zone later depends on whether the outdoor unit supports more heads, has enough capacity, and has available connection ports.
-
-### 7. Comparison Table
-
-H2:
-
-`2-Zone vs 3-Zone Mini Split Comparison`
-
-Columns:
-
-- Compare
-- 2-Zone Mini Split
-- 3-Zone Mini Split
-
-Rows:
-
-- Best starting point
-- Indoor units
-- Common home patterns
-- BTU planning
-- Install complexity
-- When not to choose
-- Next step
-
-Use short table cells. Do not include winner badges.
+Use inline scalable SVG plans with accessible descriptions. They show the number of rooms and symbolic connections, not actual dimensions, thermal coverage or installation instructions. Headings, captions and planning copy are HTML. Desktop shows two plans side by side and three planning checks in a row; mobile stacks them. Retain `decision-title` as the heading anchor. No shopping action or interactive controls are required in this explanatory section.
 
 ### 8. Premium Della Services
 
-Keep a compact four-card Della service confidence block near the bottom.
+Use the complete `Premium Della Services` section from the live Ductless Mini Split vs Central Air reference page, as explicitly requested on 2026-09-23.
 
-Approved service-card direction:
+- Free & Fast Shipping: Get your Della products delivered quickly with free standard shipping.
+- 30-Day Money-Back: Not satisfied? Return within 30 days for a full refund.
+- 24/7 Live Support: Get instant answers to your questions anytime, day or night. Title links to `https://dellahome.com/pages/contact`.
+- Lifetime Warranty: Our Mini Split systems come with limited lifetime compressor protection.
 
-- `Free & Fast Shipping`
-- `24x7 Live Chat Support`
-- `Lifetime Coverage (Mini Splits)`
-- `Warranty Registration`
-
-Do not make this a top-page benefit strip.
-
-Do not include `Find Partner HVAC Installer` in Premium Della Services.
-
-Avoid unverified financing claims unless approved later.
+Preserve the source's four embedded icons, blue 58px icon circles, pale #F3F7FC card backgrounds, Spectral medium titles, Poppins body copy, spacing and 4/2/1-column breakpoints. The user-approved reference text controls this reuse; this task does not independently audit the underlying service policies.
 
 ### 9. FAQ
 
