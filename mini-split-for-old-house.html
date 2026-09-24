@@ -15,10 +15,13 @@
 <meta name="twitter:title" content="Mini Split for Old House | DELLA">
 <meta name="twitter:description" content="Single-zone, 2-zone, 3-zone, and concealed ducted options for old house retrofits from DELLA.">
 <meta name="twitter:image" content="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face { font-family: 'Della Spectral'; src: url('mini-split-for-old-house-images/fonts/Spectral-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Della Spectral'; src: url('mini-split-for-old-house-images/fonts/Spectral-PageFly-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Della Spectral'; src: url('mini-split-for-old-house-images/fonts/Spectral-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Della Poppins'; src: url('mini-split-for-old-house-images/fonts/Poppins-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Della Poppins'; src: url('mini-split-for-old-house-images/fonts/Poppins-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+
 :root {
   --navy: #0E1953;
   --blue: #5884E7;
@@ -29,10 +32,11 @@
   --gray-50: #F8F9FB;
   --gray-100: #F0F2F6;
   --gray-200: #DEE4EF;
-  --text-body: #1A2550;
-  --text-muted: #5C6A8A;
+  --text-body: #0E1953;
+  --text-muted: #53617F;
   --white: #fff;
-  --font: 'Roboto', sans-serif;
+  --font: 'Della Poppins', Arial, Helvetica, sans-serif;
+  --font-heading: 'Della Spectral', Georgia, 'Times New Roman', serif;
   --radius: 12px;
   --radius-lg: 16px;
   --shadow-sm: 0 1px 2px rgba(14,25,83,.04), 0 1px 1px rgba(14,25,83,.03);
@@ -41,11 +45,13 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
   font-family: var(--font);
   color: var(--text-body);
   background: var(--white);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; display: block; }
@@ -54,42 +60,28 @@ a { text-decoration: none; color: inherit; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 .section { padding: 80px 0; }
 
-.section-label {
-  font-family: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 12px;
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--blue-light);
-  white-space: nowrap;
-}
 .section-title {
-  font-family: var(--font);
-  font-size: clamp(23px, 3vw, 33px);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -.01em;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0;
   color: var(--navy);
 }
 .section-desc {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.55;
   margin-top: 10px;
 }
 
 .btn {
+  line-height: 1.2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 4px;
@@ -118,16 +110,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--blue);
   background: var(--blue-light);
 }
-.btn-outline-white {
-  background: transparent;
-  color: #fff;
-  border: 2px solid rgba(255,255,255,.3);
-}
-.btn-outline-white:hover {
-  border-color: var(--blue);
-  color: var(--blue);
-  background: var(--blue-light);
-}
+
 .btn-lg { padding: 16px 32px; font-size: 17px; }
 
 /* ============================================
@@ -154,10 +137,10 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: linear-gradient(
     95deg,
-    rgba(14,25,83,.72) 0%,
-    rgba(14,25,83,.38) 30%,
-    rgba(14,25,83,.10) 50%,
-    rgba(14,25,83,.02) 100%
+    rgba(244,248,253,.94) 0%,
+    rgba(244,248,253,.84) 30%,
+    rgba(244,248,253,.68) 50%,
+    rgba(244,248,253,0) 78%
   );
 }
 .hero-content {
@@ -170,54 +153,22 @@ a { text-decoration: none; color: inherit; }
   max-width: 780px;
 }
 .hero h1 {
-  font-family: var(--font);
-  font-size: clamp(33px, 5vw, 53px);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 2.95vw, 42px);
+  font-weight: 400;
   line-height: 1.1;
-  letter-spacing: -.02em;
-  color: #fff;
+  letter-spacing: 0;
+  color: var(--navy);
   margin-bottom: 16px;
 }
-.hero h1 em {
-  font-style: normal;
-  color: #7BA4FF;
-}
 .hero-text {
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255,255,255,.78);
-  margin-bottom: 24px;
-  max-width: 700px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--navy);
+  margin-bottom: 0;
+  max-width: 540px;
 }
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.hero-actions .btn-lg {
-  min-height: 50px;
-  padding: 14px 26px;
-  font-size: 16px;
-}
-.hero-actions .btn-navy {
-  border: 1px solid var(--blue);
-}
-.hero-actions .btn-navy:hover {
-  background: #fff;
-  color: var(--blue);
-  border-color: var(--blue);
-}
-.hero-actions .btn-outline-white {
-  color: rgba(255,255,255,.92);
-  border-color: rgba(255,255,255,.22);
-  background: rgba(255,255,255,.04);
-}
-.hero-actions .btn-outline-white:hover {
-  color: var(--blue);
-  border-color: var(--blue);
-  background: var(--blue-light);
-}
+
 .hero-stats {
   display: flex;
   gap: 40px;
@@ -239,205 +190,117 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   ZONE CARDS — Della-style rounded cards
+   ROOM SELECTOR
 ============================================ */
-.zone-section {
-  background: var(--white);
-  padding-top: 60px;
-  padding-bottom: 56px;
+.section.zone-section { padding: 56px 0; background: #fff; }
+.zone-section .container { max-width: 1360px; padding-inline: 24px; }
+.room-tabs { display: flex; border-bottom: 1px solid #d8e2f3; margin: 24px 0 28px; }
+.room-tabs[hidden] { display: none; }
+.room-tab { position: relative; flex: 0 1 160px; min-width: 0; min-height: 54px; padding: 14px 20px; border: 0; background: transparent; font: 400 16px/1.5 var(--font); color: var(--text-muted); cursor: pointer; }
+.room-tab::after { position: absolute; content: ''; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; transition: background .18s ease; }
+.room-tab:hover { color: var(--navy); background: #f8faff; }
+.room-tab[aria-selected="true"] { color: var(--navy); font-weight: 600; }
+.room-tab[aria-selected="true"]::after { background: var(--blue); }
+.room-panel { display: grid; grid-template-columns: minmax(0, 1.78fr) minmax(330px, 1fr); border-radius: 4px; overflow: hidden; background: var(--blue-surface); }
+.room-panel[hidden] { display: none; }
+.room-panel + .room-panel { margin-top: 24px; }
+.zone-section:not([data-enhanced]) .room-panel { margin-top: 28px; }
+.zone-section[data-enhanced] .room-panel { margin-top: 0; }
+.room-media { min-width: 0; margin: 0; background: #eef1f4; }
+.room-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 7 / 5; }
+.room-copy { display: flex; flex-direction: column; justify-content: center; padding: 36px; min-width: 0; }
+.room-type { margin-bottom: 18px; font: 600 14px/1.5 var(--font); color: var(--text-muted); }
+.room-heading { margin: 0; font: 500 clamp(28px, 2.65vw, 38px)/1.15 var(--font-heading); color: var(--navy); letter-spacing: 0; }
+.room-desc { margin-top: 18px; font-size: 16px; line-height: 1.6; color: var(--text-muted); }
+.room-specs { margin: 28px 0; }
+.room-specs div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid #d3def0; font-size: 15px; line-height: 1.45; color: var(--text-muted); }
+.room-specs dd { margin: 0; }
+.zone-section .room-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border: 1px solid var(--navy); border-radius: 4px; background: var(--navy); color: #fff; font: 600 15px/1.4 var(--font); text-align: center; transition: background .18s ease, color .18s ease, border-color .18s ease; }
+.zone-section .room-cta:hover { background: #fff; color: var(--navy); }
+.room-note { margin-top: 20px; font-size: 12px; line-height: 1.6; color: var(--text-muted); }
+.room-alternative { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 32px; padding-top: 20px; border-top: 1px solid #dfe5ee; font-size: 15px; }
+.room-alternative a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--blue); font-weight: 600; }
+.room-alternative a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.room-alternative svg { width: 18px; height: 18px; flex: none; }
+.zone-section :is(button, a):focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.room-panel:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 1100px) {
+  .room-copy { padding: 28px; }
+  .room-desc { font-size: 15px; }
 }
-.zone-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 40px;
+@media (max-width: 900px) {
+  .room-panel { grid-template-columns: minmax(0, 1fr); }
+  .room-media img { height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+  .room-copy { padding: 32px; }
+  .room-heading { font-size: 32px; }
 }
-.zone-card {
-  background: var(--white);
-  border: 1.5px solid var(--gray-200);
-  border-radius: 18px;
-  padding: 32px 28px 28px;
-  display: flex;
-  flex-direction: column;
-  transition: all .25s;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
-.zone-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-.zone-card.is-primary {
-  border-color: var(--blue);
-  background: var(--blue-surface);
-}
-.zone-badge {
-  position: absolute;
-  top: 16px; right: 16px;
-  background: var(--blue);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-.zone-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.zone-icon svg {
-  width: 24px; height: 24px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.8;
-}
-.zone-name {
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-.zone-desc {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 24px;
-}
-.zone-cta {
-  margin-top: auto;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--blue);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap .2s;
-}
-.zone-card:hover .zone-cta { gap: 10px; }
-.zone-cta::after { content: '\2192'; font-size: 15px; }
-.zone-alt {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--gray-50);
-  border: 1.5px solid var(--gray-200);
-  border-radius: 14px;
-  padding: 20px 28px;
-  transition: all .25s;
-  text-decoration: none;
-  color: inherit;
-}
-.zone-alt:hover {
-  border-color: var(--blue);
-  background: var(--blue-light);
-}
-.zone-alt-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.zone-alt-icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.zone-alt-icon svg {
-  width: 20px; height: 20px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.8;
-}
-.zone-alt-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--navy);
-}
-.zone-alt-hint {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-.zone-alt-cta {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--blue);
-  white-space: nowrap;
+@media (max-width: 560px) {
+  .section.zone-section { padding: 40px 0; }
+  .zone-section .container { padding-inline: 16px; }
+  .room-tabs { margin: 22px 0 22px; }
+  .room-tab { flex: 1; padding: 12px 8px; font-size: 15px; }
+  .room-copy { padding: 26px 22px; }
+  .room-heading { font-size: 30px; }
+  .room-type { margin-bottom: 14px; }
+  .room-specs { margin: 24px 0; }
+  .room-alternative { flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 24px; }
+  .room-alternative a { font-size: 14px; }
 }
 
 /* ============================================
-   WHY DUCTLESS — Icon + Quantified Benefits
+   DUCTLESS BENEFITS — SAME-ROOM COMPARISON
 ============================================ */
-.benefits-section {
-  background: var(--gray-50);
-  padding-top: 60px;
-  padding-bottom: 56px;
-}
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-top: 40px;
-  border: 1px solid var(--gray-200);
-  border-radius: 18px;
-  overflow: hidden;
-  background: var(--white);
-}
-.benefit-item {
-  padding: 40px 32px;
-  text-align: center;
-  border-right: 1px solid var(--gray-200);
-}
-.benefit-item:nth-child(3n) { border-right: none; }
-.benefit-item:nth-child(n+4) { border-top: 1px solid var(--gray-200); }
-.benefit-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-.benefit-icon svg {
-  width: 26px; height: 26px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.8;
-}
-.benefit-stat {
-  font-family: var(--font);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.benefit-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.benefit-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.55;
+.section.benefits-section { padding: 56px 0; background: #fff; }
+.benefits-section .container { max-width: 1360px; padding-inline: 24px; }
+.benefits-section .section-header { text-align: center; }
+.benefit-figure { margin-top: 32px; }
+.benefit-compare { --before: 50%; position: relative; isolation: isolate; aspect-ratio: 2.1 / 1; overflow: hidden; border-radius: 4px; background: #f0eee9; }
+.benefit-scene { position: absolute; left: 0; right: 0; top: 0; }
+.benefit-room { display: block; width: 100%; height: auto; }
+.benefit-plane { position: absolute; inset: 0; pointer-events: none; }
+.benefit-before { display: none; }
+.benefits-section[data-compare-ready] .benefit-before { display: block; clip-path: inset(0 calc(100% - var(--before)) 0 0); }
+.benefits-section[data-compare-ready] .benefit-after { clip-path: inset(0 0 0 var(--before)); }
+.benefit-window-detail { position: absolute; left: 36%; top: 38%; width: 15%; height: 14%; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent); mask-composite: intersect; }
+.benefit-window-photo { position: absolute; width: 666.666667%; max-width: none; height: auto; left: -240%; top: -271.428571%; }
+.benefit-mounted-detail { position: absolute; left: 63%; top: 9.5%; width: 22%; height: 17%; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent); mask-composite: intersect; }
+.benefit-mounted-photo { position: absolute; width: 454.545455%; max-width: none; height: auto; left: -286.363636%; top: -55.882353%; }
+.benefit-state-label { position: absolute; top: 18px; z-index: 2; padding: 7px 13px; background: #fff; color: var(--navy); font: 500 13px/1.4 var(--font); pointer-events: none; }
+.benefit-label-before { left: 18px; display: none; }
+.benefits-section[data-compare-ready] .benefit-label-before { display: block; }
+.benefit-label-after { right: 18px; }
+.benefits-section [hidden] { display: none !important; }
+.benefit-divider { position: absolute; inset-block: 0; left: var(--before); width: 2px; background: #fff; transform: translateX(-50%); pointer-events: none; z-index: 2; }
+.benefit-handle { position: absolute; top: 50%; left: clamp(24px, var(--before), calc(100% - 24px)); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--navy); transform: translate(-50%, -50%); pointer-events: none; z-index: 2; box-shadow: 0 1px 8px rgba(14,25,83,.12); }
+.benefit-handle svg { width: 30px; height: 24px; }
+.benefit-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.benefit-range-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.benefit-compare:has(.benefit-range:focus-visible) { outline: 3px solid var(--blue); outline-offset: 4px; }
+.benefit-controls { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+.benefit-state-button { min-height: 44px; padding: 9px 18px; border: 1px solid #dfe5ee; border-radius: 4px; color: var(--navy); background: #fff; font: 600 13px/1.4 var(--font); cursor: pointer; transition: border-color .18s ease, background .18s ease; }
+.benefit-state-button:hover { border-color: var(--blue); }
+.benefit-state-button[aria-pressed="true"] { border-color: var(--blue); background: #edf2ff; }
+.benefit-state-button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.benefit-takeaways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32px; }
+.benefit-takeaway { padding: 0 24px; text-align: center; }
+.benefit-takeaway + .benefit-takeaway { border-left: 1px solid #dfe5ee; }
+.benefit-takeaway h3 { font: 500 26px/1.2 var(--font-heading); color: var(--navy); }
+.benefit-takeaway p { margin-top: 10px; color: var(--text-muted); font-size: 15px; line-height: 1.55; }
+@media (max-width: 700px) {
+  .section.benefits-section { padding: 40px 0; }
+  .benefits-section .container { padding-inline: 16px; }
+  .benefit-figure { margin-top: 24px; }
+  .benefit-compare { aspect-ratio: 3 / 2; }
+  .benefit-state-label { top: auto; bottom: 10px; padding: 5px 8px; font-size: 11px; }
+  .benefit-label-before { left: 10px; }
+  .benefit-label-after { right: 10px; }
+  .benefit-controls { gap: 8px; }
+  .benefit-state-button { flex: 1; padding-inline: 8px; }
+  .benefit-takeaways { grid-template-columns: 1fr; margin-top: 24px; }
+  .benefit-takeaway { padding: 18px 0; text-align: left; }
+  .benefit-takeaway + .benefit-takeaway { border-left: 0; border-top: 1px solid #dfe5ee; }
+  .benefit-takeaway h3 { font-size: 24px; }
+  .benefit-takeaway p { font-size: 14px; margin-top: 6px; }
 }
 
 /* ============================================
@@ -541,7 +404,7 @@ a { text-decoration: none; color: inherit; }
 .scene-row:nth-child(even) .scene-body { background: var(--white); }
 .scene-room-label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--white);
@@ -553,13 +416,14 @@ a { text-decoration: none; color: inherit; }
   align-self: flex-start;
 }
 .scene-body h3 {
-  font-family: var(--font);
-  font-size: 22px;
-  font-weight: 700;
+  letter-spacing: 0;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 500;
   color: var(--navy);
   margin-bottom: 8px;
   line-height: 1.2;
-  font-style: italic;
+  font-style: normal;
 }
 .scene-fix {
   font-size: 15px;
@@ -571,14 +435,15 @@ a { text-decoration: none; color: inherit; }
 .scene-body p {
   font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 20px;
 }
 .scene-cta {
+  line-height: 1.4;
   display: inline-flex;
   align-items: center;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--blue);
   gap: 6px;
   transition: gap .2s;
@@ -591,319 +456,127 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   PRODUCTS — 1 featured + stacked
+   PRODUCTS — DELLA comparison-page product grid
 ============================================ */
-.products-section {
-  background: var(--gray-50);
-  padding-top: 56px;
+.products-section { padding: 48px 0; background: #fff; }
+.products-section .container { max-width: 1360px; padding-inline: 24px; }
+.products-section .section-header { text-align: center; }
+.products-section .section-desc { max-width: 760px; margin-inline: auto; }
+.products-section .products-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-top: 28px; list-style: none; }
+.products-section .product-card { --card-inset: 18px; display: flex; min-width: 0; flex-direction: column; border: 1px solid #e2e6ee; background: #fff; transition: border-color .18s ease, box-shadow .18s ease; }
+.products-section .product-card:hover { border-color: var(--blue); box-shadow: 0 6px 18px rgba(14,25,83,.06); }
+.products-section .product-image-wrap { display: block; position: relative; aspect-ratio: 1 / 1; margin: 10px 14px 0; overflow: hidden; background: #fff; }
+.products-section .product-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.products-section .product-card-body { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.products-section .product-title { margin: 10px var(--card-inset) 0; font: 500 23px/1.2 var(--font-heading); color: var(--navy); }
+.products-section .product-capacity { margin: 5px var(--card-inset) 0; font-size: 14px; font-weight: 500; color: var(--navy); }
+.products-section .product-meta { display: grid; gap: 0; margin: 18px var(--card-inset) 0; border-top: 1px solid #e2e6ee; }
+.products-section .product-meta div { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 9px 0; border-bottom: 1px solid #e2e6ee; font-size: 12px; line-height: 1.4; }
+.products-section .product-meta dt { color: var(--text-muted); font-weight: 400; }
+.products-section .product-meta dd { margin: 0; color: var(--navy); font-weight: 500; text-align: right; max-width: 70%; overflow-wrap: anywhere; }
+.products-section .product-identity { margin: 8px var(--card-inset) 0; color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+.products-section .product-identity summary { display: list-item; min-height: 44px; padding: 12px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.products-section .product-identity summary:hover { color: #466fcb; }
+.products-section .product-full-name { margin-bottom: 14px; overflow-wrap: anywhere; }
+.products-section .product-price { margin: auto var(--card-inset) 16px; padding-top: 16px; font: 700 25px/1.2 var(--font-heading); color: var(--navy); }
+.products-section .product-link { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; margin: 0 var(--card-inset) 18px; padding: 0 12px; font: 600 14px/1.2 var(--font); text-align: center; color: #fff; background: var(--navy); border: 1px solid var(--navy); border-radius: 4px; transition: background .18s ease, color .18s ease, border-color .18s ease; }
+.products-section .product-link:hover { background: #fff; color: var(--navy); }
+.products-section :is(a, summary):focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 1100px) {
+  .products-section .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.products-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 38px;
+@media (max-width: 767px) {
+  .products-section { padding: 32px 0; }
+  .products-section .container { padding-inline: 16px; }
+  .products-section .products-grid { gap: 14px; }
+  .products-section .product-card { --card-inset: 12px; }
+  .products-section .product-title { font-size: 21px; }
+  .products-section .product-price { font-size: 24px; }
+  .products-section .product-image-wrap { margin: 8px 12px 0; }
+  .products-section .product-meta div { flex-wrap: wrap; }
+  .products-section .product-meta dd { max-width: 100%; text-align: left; }
 }
-.product-feature {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 26px 28px 24px;
-  transition: all .25s;
-}
-.product-feature:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-sm);
-}
-.product-img-wrap {
-  position: relative;
-  background: transparent;
-  padding: 0;
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.product-feature .product-img-wrap {
-  flex: 0 0 48%;
-  width: auto;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.product-img-wrap img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: transform .3s;
-}
-.product-feature .product-img-wrap img { max-height: 340px; }
-.product-feature .product-badge { position: static; align-self: flex-start; }
-.product-feature:hover .product-img-wrap img,
-.product-card:hover .product-img-wrap img { transform: scale(1.04); }
-.product-badge {
-  position: absolute;
-  top: 0; left: 0;
-  z-index: 2;
-  background: var(--blue);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-.product-body {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-width: 0;
-}
-.product-copy,
-.product-action {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-.product-copy { gap: 8px; }
-.product-action { gap: 12px; align-items: flex-start; }
-.product-name {
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.35;
-  margin-bottom: 0;
-}
-.product-feature .product-body {
-  flex: 1;
-  max-width: 420px;
-  gap: 12px;
-  align-self: center;
-  justify-content: flex-start;
-  padding-top: 12px;
-}
-.product-feature .product-name { font-size: 21px; }
-.product-feature .product-price { font-size: 22px; }
-.product-feature .product-copy { gap: 6px; }
-.product-feature .product-action { gap: 12px; }
-.product-rating { font-size: 14px; color: var(--text-muted); margin-bottom: 0; line-height: 1.35; }
-.product-rating strong { color: var(--navy); font-weight: 700; }
-.product-card .product-rating { font-size: 12px; }
-.product-card .product-rating strong { font-weight: 600; }
-.product-spec { font-size: 13px; color: var(--text-muted); line-height: 1.45; margin-bottom: 0; }
-.product-lead { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 14px; }
-.product-price {
-  font-family: var(--font);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--navy);
-  margin: 0;
-}
-.product-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 12px 22px;
-  border-radius: 4px;
-  background: var(--blue);
-  color: #fff;
-  border: 1px solid var(--blue);
-  transition: all .2s;
-  align-self: flex-start;
-  white-space: nowrap;
-}
-.product-feature .product-cta,
-.product-card .product-cta {
-  min-width: 198px;
-  min-height: 48px;
-  padding: 12px 22px;
-}
-.product-feature .product-cta:hover,
-.product-card .product-cta:hover {
-  background: #fff;
-  color: var(--blue);
-  border-color: var(--blue);
-}
-.product-bottom-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.product-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all .25s;
-  text-decoration: none;
-  color: inherit;
-}
-.product-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-3px);
-}
-.product-card .product-img-wrap {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-}
-.product-card .product-img-wrap img { max-height: 180px; width: auto; }
-.product-card .product-body {
-  flex: 1;
-  padding: 0 24px 24px;
-  gap: 14px;
-  justify-content: space-between;
-}
-.product-card .product-copy { gap: 6px; }
-.product-card .product-action { gap: 10px; }
-.product-card .product-name { font-size: 15px; line-height: 1.3; }
-.product-card .product-price { font-size: 18px; }
-.product-card .product-cta { min-width: 0; width: 100%; justify-content: center; font-size: 14px; min-height: 44px; }
-
-/* ============================================
-   BEFORE YOU BUY — Editorial Image + List
-============================================ */
-.byb-section {
-  background: var(--white);
-  padding-top: 60px;
-  padding-bottom: 56px;
-}
-.byb-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 40px;
-  align-items: center;
-}
-.byb-img {
-  border-radius: 16px;
-  overflow: hidden;
-}
-.byb-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-.byb-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.byb-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--gray-200);
-}
-.byb-item:last-child { border-bottom: none; }
-.byb-num {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--blue);
-  flex-shrink: 0;
-}
-.byb-text h4 {
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-.byb-text p {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.55;
+@media (max-width: 600px) {
+  .products-section .products-grid { grid-template-columns: 1fr; }
+  .products-section .product-meta div { flex-wrap: nowrap; }
+  .products-section .product-meta dd { max-width: 70%; text-align: right; }
 }
 
 /* ============================================
-   SERVICES (copied from Shed)
+   INSTALLATION CHECKS — GUIDED WALKTHROUGH
 ============================================ */
-.services-section {
-  background: var(--white);
-  padding-top: 60px;
-  padding-bottom: 44px;
+.section.byb-section { padding: 56px 0; background: #fff; }
+.byb-section .container { max-width: 1360px; padding-inline: 24px; }
+.check-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 26px 0 24px; border-bottom: 1px solid #d4def0; }
+.check-tabs[hidden], .check-panel[hidden], .check-nav[hidden] { display: none; }
+.check-tab { position: relative; display: flex; align-items: center; gap: 14px; min-width: 0; min-height: 56px; padding: 14px 16px; border: 0; background: transparent; text-align: left; font: 600 15px/1.4 var(--font); color: var(--text-muted); cursor: pointer; }
+.check-tab + .check-tab::before { content: ''; position: absolute; left: 0; top: 20px; height: 18px; width: 1px; background: #d4def0; }
+.check-tab::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; }
+.check-tab:hover { color: var(--navy); background: #f8faff; }
+.check-tab[aria-selected="true"] { color: var(--navy); }
+.check-tab[aria-selected="true"]::after { background: var(--blue); }
+.check-number { color: inherit; opacity: .8; }
+.check-panel { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(360px, 1fr); border-radius: 4px; overflow: hidden; background: var(--blue-surface); }
+.byb-section:not([data-checks-ready]) .check-panel { margin-top: 28px; }
+.check-media { min-width: 0; margin: 0; background: #f0f2f4; }
+.check-media img { display: block; width: 100%; height: 100%; aspect-ratio: 7 / 5; object-fit: cover; }
+.check-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 34px; }
+.check-kicker { margin-bottom: 20px; font: 600 12px/1.5 var(--font); letter-spacing: .1em; color: var(--text-muted); }
+.check-heading { font: 500 36px/1.15 var(--font-heading); color: var(--navy); }
+.check-description { margin-top: 18px; color: var(--text-muted); font-size: 15px; line-height: 1.65; }
+.check-preparation { margin-top: 28px; }
+.check-preparation div { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 18px; padding: 20px 0; border-top: 1px solid #cddbee; font-size: 14px; line-height: 1.6; }
+.check-preparation dt { font-weight: 600; color: var(--navy); }
+.check-preparation dd { margin: 0; color: var(--text-muted); }
+.check-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 20px; }
+.check-nav button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 10px 0; border: 0; background: transparent; color: var(--navy); font: 600 13px/1.4 var(--font); cursor: pointer; }
+.check-nav button[data-step="-1"] { color: var(--text-muted); font-weight: 400; }
+.check-nav button:hover:not(:disabled) { color: #466fcb; text-decoration: underline; text-underline-offset: 4px; }
+.check-nav button:disabled { color: #8b94a8; cursor: default; }
+.check-nav svg { width: 16px; height: 18px; flex: none; }
+.check-guidance { margin-top: 28px; padding-top: 18px; border-top: 1px solid #d4def0; color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+.byb-section button:focus-visible, .check-panel:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 1200px) {
+  .check-copy { padding: 28px; }
+  .check-heading { font-size: 32px; }
 }
-.services-heading {
-  text-align: left;
-  margin-bottom: 18px;
+@media (max-width: 1050px) {
+  .check-panel { grid-template-columns: minmax(0, 1fr); }
+  .check-media img { height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+  .check-copy { padding: 32px; }
+  .check-heading { font-size: 34px; }
 }
-.services-heading h2 {
-  margin: 0;
-  font-family: var(--font);
-  font-size: clamp(23px, 3vw, 33px);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -.01em;
-  color: var(--navy);
+@media (max-width: 600px) {
+  .section.byb-section { padding: 40px 0; }
+  .byb-section .container { padding-inline: 16px; }
+  .check-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 22px 0; }
+  .check-tab { min-height: 52px; padding: 12px 10px; gap: 10px; font-size: 14px; }
+  .check-tab:nth-child(3)::before { display: none; }
+  .check-copy { padding: 26px 22px; }
+  .check-kicker { margin-bottom: 16px; }
+  .check-heading { font-size: 30px; }
+  .check-preparation { margin-top: 24px; }
+  .check-preparation div { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; padding: 18px 0; font-size: 13px; }
+  .check-nav { gap: 12px; margin-top: 14px; }
+  .check-nav button { gap: 6px; font-size: 12px; }
 }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-.service-card {
-  background: var(--blue-surface);
-  border: 1px solid var(--gray-200);
-  border-radius: 22px;
-  padding: 28px 24px 24px;
-  text-align: center;
-  min-height: 100%;
-}
-.service-icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 18px;
-}
-.service-icon-wrap img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-.service-title {
-  margin: 0 0 10px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--blue);
-}
-.service-desc {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--text-body);
-}
+
+/* ============================================
+   SERVICES — Central Air reference
+============================================ */
+.services-section { padding: 56px 0; background: #fff; line-height: 1.65; }
+.services-section .container,
+.faq-section .container,
+.bottom-cta .container { width: min(1200px, calc(100% - 64px)); max-width: none; padding: 0; margin-inline: auto; }
+.services-heading h2 { margin: 0; font: 500 32px/1.18 var(--font-heading); color: var(--navy); text-wrap: balance; }
+.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 32px; }
+.service-card { display: flex; flex-direction: column; align-items: center; padding: 30px 26px 28px; border-radius: 6px; background: #f3f7fc; text-align: center; }
+.service-icon-wrap { display: flex; width: 58px; height: 58px; flex: none; align-items: center; justify-content: center; margin-bottom: 14px; border-radius: 50%; background: var(--blue); }
+.service-icon-wrap img { display: block; width: 50px; height: 50px; }
+.service-title { margin: 0 0 8px; font: 500 22px/1.35 var(--font-heading); color: var(--navy); }
+.service-title a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+.service-title a:hover { border-bottom-color: currentColor; }
+.service-desc { margin: 0; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
 
 /* ============================================
    REASSURE — Quick Answers Strip
@@ -955,118 +628,63 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   FAQ (styled like Shed)
+   FAQ AND CLOSING ACTIONS — Central Air reference
 ============================================ */
-.faq-section {
-  background: var(--white);
-  padding-top: 46px;
-  padding-bottom: 28px;
+.faq-section { padding: 56px 0; background: #f8f9fb; line-height: 1.65; }
+.faq-section .section-title { text-align: left; margin: 0 0 14px; font: 500 32px/1.18 var(--font-heading); text-wrap: balance; }
+.faq-list { margin-top: 28px; border-top: 1px solid #dfe5ee; }
+.faq-item { border-bottom: 1px solid #dfe5ee; }
+.faq-q { display: grid; grid-template-columns: minmax(0, 1fr) 18px; align-items: center; gap: 24px; min-height: 60px; padding: 18px 0; font: 500 20px/1.28 var(--font-heading); color: var(--navy); cursor: pointer; list-style: none; transition: color .18s ease; }
+.faq-q h3 { margin: 0; font: inherit; color: inherit; }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after { content: ''; justify-self: end; width: 9px; height: 9px; margin-right: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .16s ease; }
+.faq-item[open] .faq-q,
+.faq-q:hover { color: #466fcb; }
+.faq-item[open] .faq-q::after { transform: translateY(3px) rotate(225deg); }
+.faq-a { display: grid; grid-template-rows: 0fr; max-width: 950px; padding: 0 40px 0 0; color: var(--text-muted); font-size: 15px; line-height: 1.7; overflow: hidden; transition: grid-template-rows .25s ease, padding-bottom .25s ease; }
+.faq-item[open] .faq-a { grid-template-rows: 1fr; padding-bottom: 18px; }
+.faq-a p { min-height: 0; margin: 0; overflow: hidden; }
+.bottom-cta { padding: 48px 0 40px; background: #fff; line-height: 1.65; }
+.bottom-cta-card { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 30px 40px; border-radius: 6px; background: #edf2ff; }
+.bottom-cta-copy { min-width: 0; }
+.bottom-cta h2 { margin: 0; font: 500 32px/1.15 var(--font-heading); color: var(--navy); text-wrap: balance; }
+.bottom-cta p { margin: 12px 0 0; max-width: 650px; color: var(--text-muted); font-size: 15px; }
+.bottom-cta-buttons { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: none; }
+.bottom-cta .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 24px; border: 1px solid var(--blue); border-radius: 4px; text-align: center; text-decoration: none; font: 600 14px/1.4 var(--font); color: var(--navy); background: #fff; transition: background .18s ease, color .18s ease; }
+.bottom-cta .btn:hover { background: #edf2ff; }
+.services-section :is(a, button):focus-visible,
+.faq-section summary:focus-visible,
+.bottom-cta a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 1199px) {
+  .services-grid { gap: 18px; }
 }
-.faq-list {
-  margin-top: 28px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  overflow: visible;
+@media (max-width: 1100px) {
+  .bottom-cta-card { flex-direction: column; align-items: flex-start; }
 }
-.faq-item {
-  border-bottom: 1px solid var(--gray-200);
-  transition: border-color .2s ease;
+@media (max-width: 820px) {
+  .services-section .container,
+  .faq-section .container,
+  .bottom-cta .container { width: calc(100% - 40px); }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .service-card { padding: 26px 20px; }
+  .faq-section { padding: 40px 0; }
+  .bottom-cta-card { padding: 28px; }
 }
-.faq-item:first-child { border-top: 1px solid var(--gray-200); }
-.faq-item.open { background: transparent; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-  cursor: pointer;
-  gap: 16px;
-  transition: color .2s ease;
-}
-.faq-q:hover { background: transparent; }
-.faq-q h3 {
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #282828;
-  flex: 1;
-  transition: color .2s ease;
-}
-.faq-q:hover h3,
-.faq-item.open .faq-q h3 { color: var(--blue); }
-.faq-icon {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  position: relative;
-}
-.faq-icon::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 8px; height: 8px;
-  border-right: 2px solid #282828;
-  border-bottom: 2px solid #282828;
-  transform: translate(-50%, -62%) rotate(45deg);
-  transform-origin: center;
-  transition: transform .25s ease, border-color .2s ease;
-}
-.faq-q:hover .faq-icon::before,
-.faq-item.open .faq-icon::before { border-color: var(--blue); }
-.faq-item.open .faq-icon::before { transform: translate(-50%, -38%) rotate(-135deg); }
-.faq-a {
-  padding: 0 0 18px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-muted);
-  display: none;
-}
-.faq-item.open .faq-a { display: block; }
-
-/* ============================================
-   BOTTOM CTA (styled like Shed)
-============================================ */
-.bottom-cta {
-  background: transparent;
-  padding: 0 0 28px;
-}
-.bottom-cta-card {
-  background: var(--blue-surface);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 32px 32px;
-  text-align: center;
-}
-.bottom-cta h2 {
-  font-family: var(--font);
-  font-size: clamp(21px, 2.6vw, 29px);
-  font-weight: 500;
-  color: var(--navy);
-  margin-bottom: 10px;
-  line-height: 1.25;
-}
-.bottom-cta p {
-  font-size: 16px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-.bottom-cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.bottom-cta .btn-lg { padding: 12px 20px; font-size: 15px; }
-.bottom-cta .btn-navy:hover {
-  background: #fff;
-  color: var(--blue);
-  border-color: var(--blue);
+@media (max-width: 560px) {
+  .services-section .container,
+  .faq-section .container,
+  .bottom-cta .container { width: calc(100% - 32px); }
+  .services-section { padding: 40px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 14px; }
+  .service-card { padding: 24px 20px; }
+  .service-title { font-size: 20px; }
+  .service-desc { font-size: 14px; }
+  .faq-q { font-size: 19px; }
+  .faq-a { font-size: 14px; padding-right: 0; }
+  .bottom-cta-card { padding: 25px; }
+  .bottom-cta h2 { font-size: 29px; }
+  .bottom-cta-buttons { width: 100%; flex-direction: column; align-items: stretch; }
+  .bottom-cta .btn { width: 100%; white-space: normal; }
 }
 
 /* ============================================
@@ -1078,19 +696,14 @@ a { text-decoration: none; color: inherit; }
   .compare-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .compare-card { padding: 24px 16px 28px; }
   .hero { min-height: 500px; }
+  .hero-overlay { background: linear-gradient(90deg, rgba(244,248,253,.92), rgba(244,248,253,.8) 60%, rgba(244,248,253,.65)); }
   .hero-inner { padding: 42px 0; max-width: 340px; }
-  .hero h1 { font-size: 26px; margin-bottom: 14px; }
-  .hero-text { font-size: 16px; line-height: 1.6; margin-bottom: 20px; max-width: none; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .hero-actions .btn-lg { min-width: 170px; min-height: 44px; padding: 10px 16px; font-size: 14px; justify-content: center; }
+  .hero h1 { font-size: clamp(32px, 5.6vw, 42px); margin-bottom: 14px; }
+  .hero-text { font-size: 16px; line-height: 1.5; max-width: none; }
+
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 
-  .zone-grid { grid-template-columns: 1fr; gap: 14px; }
-  .zone-alt { flex-direction: column; align-items: flex-start; gap: 12px; }
 
-  .benefits-grid { grid-template-columns: 1fr; }
-  .benefit-item { border-right: none; border-top: none; border-bottom: 1px solid var(--gray-200); }
-  .benefit-item:last-child { border-bottom: none; }
 
   .scene-row { grid-template-columns: 1fr; min-height: auto; }
   .scene-row:nth-child(even) .scene-img { order: 0; }
@@ -1098,68 +711,19 @@ a { text-decoration: none; color: inherit; }
   .scene-img { aspect-ratio: 16/9; }
   .scene-body { padding: 32px 24px; }
 
-  .products-grid { gap: 14px; margin-top: 28px; }
-  .product-bottom-row { grid-template-columns: 1fr; gap: 14px; }
-  .product-feature,
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-    padding: 18px 18px 20px;
-    min-height: auto;
-    height: auto;
-  }
-  .product-feature .product-img-wrap,
-  .product-card .product-img-wrap {
-    flex: none; width: 100%; min-width: 0; max-width: none; padding-top: 34px; align-self: stretch;
-  }
-  .product-feature .product-img-wrap img,
-  .product-card .product-img-wrap img { width: 100%; max-width: 100%; height: auto; max-height: none; }
-  .product-feature .product-badge,
-  .product-card .product-badge { left: 0; }
-  .product-feature .product-body,
-  .product-card .product-body { max-width: none; width: 100%; gap: 10px; align-items: center; text-align: center; }
-  .product-feature .product-copy,
-  .product-card .product-copy { gap: 5px; width: 100%; align-items: center; text-align: center; }
-  .product-feature .product-action,
-  .product-card .product-action { gap: 8px; align-items: center; width: 100%; }
-  .product-feature .product-name,
-  .product-card .product-name { font-size: 16px; line-height: 1.3; }
-  .product-feature .product-rating,
-  .product-card .product-rating { font-size: 12px; }
-  .product-feature .product-spec,
-  .product-card .product-spec { font-size: 12px; line-height: 1.4; }
-  .product-feature .product-price,
-  .product-card .product-price { font-size: 17px; }
-  .product-feature .product-cta,
-  .product-card .product-cta { min-width: 148px; width: auto; padding: 8px 14px; font-size: 12px; align-self: center; }
-
-  .byb-row { grid-template-columns: 1fr; gap: 28px; }
 
   .reassure-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
   .reassure-card { padding: 22px 18px 26px; border-radius: var(--radius-lg); }
   .reassure-num { font-size: 28px; }
-  .services-section { padding-top: 36px; padding-bottom: 26px; }
-  .services-grid { grid-template-columns: 1fr; gap: 12px; }
-  .service-card { padding: 22px 18px 18px; border-radius: 18px; }
-  .service-icon-wrap { width: 52px; height: 52px; margin-bottom: 14px; }
-  .service-title { font-size: 16px; }
-  .service-desc { font-size: 15px; }
 
-  .faq-section { padding-top: 30px; padding-bottom: 24px; }
 
-  .bottom-cta { padding: 0 0 24px; }
-  .bottom-cta-card { padding: 20px 16px; }
-  .bottom-cta h2 { font-size: 24px; line-height: 1.2; margin-bottom: 8px; max-width: 280px; margin-left: auto; margin-right: auto; }
-  .bottom-cta p { font-size: 14px; line-height: 1.55; margin-bottom: 18px; max-width: 280px; }
-  .bottom-cta-buttons { flex-direction: column; align-items: center; gap: 8px; }
-  .bottom-cta .btn-lg { width: 100%; max-width: 210px; padding: 10px 16px; font-size: 14px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .zone-grid { grid-template-columns: repeat(3, 1fr); }
-  .product-bottom-row { grid-template-columns: repeat(2, 1fr); }
   .reassure-grid { grid-template-columns: repeat(2, 1fr); }
+}
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 </style>
 </head>
@@ -1171,133 +735,192 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-inner">
-      <h1>Mini Split for <em>Old House</em></h1>
+      <h1>Mini Split for Old House</h1>
       <p class="hero-text">Add heating and cooling without rebuilding ductwork. Start with one room, then scale to 2-zone or 3-zone as needed.</p>
-      <div class="hero-actions">
-        <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-navy btn-lg">Shop Single-Zone</a>
-        <a href="#zones" class="btn btn-outline-white btn-lg">Compare Zone Options</a>
-      </div>
 
     </div>
   </div>
 </section>
 
-<!-- ZONE CARDS -->
-<section class="section zone-section" id="zones">
+<!-- ROOM SELECTOR -->
+<section class="section zone-section" id="zones" aria-labelledby="zones-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Start Here</span>
-      <h2 class="section-title">Choose by Room Count</h2>
-      <p class="section-desc">Start with how many rooms need comfort. Refine the indoor unit style later.</p>
+      <h2 class="section-title" id="zones-title">Choose by Room Count</h2>
+      <p class="section-desc">How many rooms need their own temperature setting?</p>
     </div>
-    <div class="zone-grid">
-      <a href="https://dellahome.com/collections/mini-split-single-zone" class="zone-card is-primary">
-        <span class="zone-badge">Most Common</span>
-        <div class="zone-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="zone-name">Single-Zone</div>
-        <p class="zone-desc">Fix one bedroom, office, attic, or sunroom. The most common old-house starting point.</p>
-        <span class="zone-cta">Browse Single-Zone</span>
-      </a>
-      <a href="https://dellahome.com/collections/2-zone-mini-split" class="zone-card">
-        <div class="zone-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        </div>
-        <div class="zone-name">2-Zone</div>
-        <p class="zone-desc">Two rooms, separate control, one outdoor unit. Best when two rooms share a floor.</p>
-        <span class="zone-cta">Browse 2-Zone</span>
-      </a>
-      <a href="https://dellahome.com/collections/3-zone-mini-split" class="zone-card">
-        <div class="zone-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-        </div>
-        <div class="zone-name">3-Zone</div>
-        <p class="zone-desc">Whole-floor upgrade from one system. Cleaner than stacking multiple single-zone units.</p>
-        <span class="zone-cta">Browse 3-Zone</span>
-      </a>
+    <div class="room-tabs" role="tablist" aria-label="Number of rooms" hidden>
+      <button class="room-tab" type="button" role="tab" id="room-tab-1" aria-controls="room-panel-1" aria-selected="false" tabindex="-1">1 room</button>
+      <button class="room-tab" type="button" role="tab" id="room-tab-2" aria-controls="room-panel-2" aria-selected="true">2 rooms</button>
+      <button class="room-tab" type="button" role="tab" id="room-tab-3" aria-controls="room-panel-3" aria-selected="false" tabindex="-1">3 rooms</button>
     </div>
-    <a href="https://dellahome.com/collections/concealed-ducted-mini-split" class="zone-alt">
-      <div class="zone-alt-left">
-        <div class="zone-alt-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><path d="M6 11v4m12-4v4M4 15h16a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 012-2z"/></svg>
-        </div>
-        <div>
-          <div class="zone-alt-name">Prefer a Cleaner Look?</div>
-          <div class="zone-alt-hint">Concealed ducted hides the air handler in a closet or ceiling cavity.</div>
-        </div>
+    <div class="room-panel" id="room-panel-1" role="tabpanel" aria-labelledby="room-tab-1" tabindex="0">
+      <figure class="room-media">
+        <img src="mini-split-for-old-house-images/room-selector/one-room.png" alt="Sunlit bedroom in an older home with one wall-mounted indoor unit" width="1536" height="1024" loading="lazy" decoding="async">
+      </figure>
+      <div class="room-copy">
+        <p class="room-type">Single-zone system</p>
+        <h3 class="room-heading">One room.<br>Your own comfort.</h3>
+        <p class="room-desc">Give a bedroom, office or sunroom its own heating and cooling.</p>
+        <dl class="room-specs">
+          <div><dt>Indoor units</dt><dd>1</dd></div>
+          <div><dt>Outdoor unit</dt><dd>1</dd></div>
+        </dl>
+        <a class="room-cta" href="https://dellahome.com/collections/mini-split-single-zone">Explore Single-Zone</a>
+        <p class="room-note">Confirm room loads and layout with your installer.</p>
       </div>
-      <span class="zone-alt-cta">Browse Concealed Ducted &rarr;</span>
-    </a>
+    </div>
+    <div class="room-panel" id="room-panel-2" role="tabpanel" aria-labelledby="room-tab-2" tabindex="0">
+      <figure class="room-media">
+        <img src="mini-split-for-old-house-images/room-selector/two-rooms.png" alt="Older-home living room and adjacent bedroom, each with a wall-mounted indoor unit" width="1536" height="1024" loading="lazy" decoding="async">
+      </figure>
+      <div class="room-copy">
+        <p class="room-type">2-zone system</p>
+        <h3 class="room-heading">Two rooms.<br>Your own settings.</h3>
+        <p class="room-desc">A living room and a bedroom, each with independent temperature control.</p>
+        <dl class="room-specs">
+          <div><dt>Indoor units</dt><dd>2</dd></div>
+          <div><dt>Outdoor unit</dt><dd>1</dd></div>
+        </dl>
+        <a class="room-cta" href="https://dellahome.com/collections/2-zone-mini-split">Explore 2-Zone</a>
+        <p class="room-note">Confirm room loads and layout with your installer.</p>
+      </div>
+    </div>
+    <div class="room-panel" id="room-panel-3" role="tabpanel" aria-labelledby="room-tab-3" tabindex="0">
+      <figure class="room-media">
+        <img src="mini-split-for-old-house-images/room-selector/three-rooms.png" alt="Living room with views into a bedroom and study, with one indoor unit in each room" width="1536" height="1024" loading="lazy" decoding="async">
+      </figure>
+      <div class="room-copy">
+        <p class="room-type">3-zone system</p>
+        <h3 class="room-heading">Three rooms.<br>Comfort for each.</h3>
+        <p class="room-desc">A living room, bedroom and study, each with its own temperature setting.</p>
+        <dl class="room-specs">
+          <div><dt>Indoor units</dt><dd>3</dd></div>
+          <div><dt>Outdoor unit</dt><dd>1</dd></div>
+        </dl>
+        <a class="room-cta" href="https://dellahome.com/collections/3-zone-mini-split">Explore 3-Zone</a>
+        <p class="room-note">Confirm room loads and layout with your installer.</p>
+      </div>
+    </div>
+    <div class="room-alternative">
+      <p>Prefer a hidden indoor unit?</p>
+      <a href="https://dellahome.com/collections/concealed-ducted-mini-split">Explore Concealed Ducted <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+    </div>
   </div>
 </section>
+<script>
+(() => {
+  const section = document.getElementById('zones');
+  const tabs = Array.from(section.querySelectorAll('.room-tab'));
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  const select = (index, focus = false) => {
+    tabs.forEach((tab, i) => {
+      const active = i === index;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panels[i].hidden = !active;
+    });
+    if (focus) tabs[index].focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(index));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(next, true);
+    });
+  });
+  select(1);
+  section.setAttribute('data-enhanced', '');
+  section.querySelector('.room-tabs').hidden = false;
+})();
+</script>
 
-<!-- WHY DUCTLESS -->
-<section class="section benefits-section">
+<!-- DUCTLESS BENEFITS -->
+<section class="section benefits-section" id="ductless-benefits" aria-labelledby="benefits-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Why Ductless</span>
-      <h2 class="section-title">Built for Homes Without Ductwork</h2>
-      <p class="section-desc">Old houses weren't designed for forced air. Mini splits work around that — one system replaces both your window ACs and radiators, and does it better.</p>
+      <h2 class="section-title" id="benefits-title">Built for Homes Without Ductwork</h2>
+      <p class="section-desc">Add heating and cooling around the character of your home.</p>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="10" x2="12" y2="3"/><line x1="12" y1="14" x2="12" y2="21"/></svg>
+    <figure class="benefit-figure">
+      <div class="benefit-compare">
+        <div class="benefit-scene">
+        <img class="benefit-room" src="mini-split-for-old-house-images/benefit-comparison/room.png" alt="Classic living room with original trim, a sash window, radiator and fireplace" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="benefit-plane benefit-before" aria-hidden="true"><div class="benefit-window-detail"><img class="benefit-window-photo" src="mini-split-for-old-house-images/benefit-comparison/della-window-installed-room.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div></div>
+        <div class="benefit-plane benefit-after" aria-hidden="true"><div class="benefit-mounted-detail"><img class="benefit-mounted-photo" src="mini-split-for-old-house-images/benefit-comparison/della-mounted-room.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div></div>
         </div>
-        <div class="benefit-stat">0</div>
-        <div class="benefit-name">Walls Torn Open</div>
-        <div class="benefit-desc">Only a small 3" hole connects indoor and outdoor units. No duct rebuild needed.</div>
+        <span class="benefit-state-label benefit-label-before">Window AC setup</span>
+        <span class="benefit-state-label benefit-label-after">Ductless setup</span>
+        <span class="benefit-divider" aria-hidden="true" hidden></span>
+        <span class="benefit-handle" aria-hidden="true" hidden><svg viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m10 6-6 6 6 6m10-12 6 6-6 6"/></svg></span>
+        <label for="benefit-reveal" class="benefit-range-label">Window AC image reveal</label>
+        <input class="benefit-range" id="benefit-reveal" type="range" min="0" max="100" step="1" value="50" hidden>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="benefit-stat">1 Day</div>
-        <div class="benefit-name">Typical Install Time</div>
-        <div class="benefit-desc">Most single-zone setups are installed in one day with minimal disruption.</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
-        </div>
-        <div class="benefit-stat">-22°F</div>
-        <div class="benefit-name">Heating Performance</div>
-        <div class="benefit-desc">Ultra hyper heat models keep old houses warm even in extreme cold.</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </div>
-        <div class="benefit-stat">4 Seasons</div>
-        <div class="benefit-name">One System, Year-Round</div>
-        <div class="benefit-desc">Heats and cools from the same unit year-round. No more switching between window ACs and radiators.</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><path d="M7 8h-1m1 4h-1m1 4h-1m6-8h1m-1 4h1m-1 4h1"/></svg>
-        </div>
-        <div class="benefit-stat">Zone</div>
-        <div class="benefit-name">Room-by-Room Control</div>
-        <div class="benefit-desc">Set each zone to its own temperature independently. Heat only what you use — turn off empty rooms, stop wasting energy.</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <div class="benefit-stat">3×</div>
-        <div class="benefit-name">Heat per Dollar</div>
-        <div class="benefit-desc">Heat pump efficiency cuts costs from the first winter. Whisper-quiet 22 dB, flush on the wall — no rattle, no blocked window.</div>
-      </div>
+    </figure>
+    <div class="benefit-controls" role="group" aria-label="Compare room setups" hidden>
+      <button class="benefit-state-button" type="button" data-reveal="100" aria-pressed="false">Window AC</button>
+      <button class="benefit-state-button" type="button" data-reveal="0" aria-pressed="false">Ductless</button>
+    </div>
+    <div class="benefit-takeaways">
+      <div class="benefit-takeaway"><h3>Clearer windows</h3><p>Move cooling equipment off the sill.</p></div>
+      <div class="benefit-takeaway"><h3>Room-level control</h3><p>Set comfort where you spend time.</p></div>
+      <div class="benefit-takeaway"><h3>Heating + cooling</h3><p>Choose equipment for your climate.</p></div>
     </div>
   </div>
 </section>
+<script>
+(() => {
+  const section = document.getElementById('ductless-benefits');
+  const stage = section.querySelector('.benefit-compare');
+  const range = section.querySelector('.benefit-range');
+  const buttons = Array.from(section.querySelectorAll('.benefit-state-button'));
+  const render = value => {
+    const before = Math.max(0, Math.min(100, Math.round(Number(value))));
+    range.value = before;
+    stage.style.setProperty('--before', before + '%');
+    range.setAttribute('aria-valuetext', 'Window AC ' + before + '%, ductless ' + (100 - before) + '%');
+    section.querySelector('.benefit-label-before').hidden = before === 0;
+    section.querySelector('.benefit-label-after').hidden = before === 100;
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.reveal) === before)));
+  };
+  const position = event => {
+    const bounds = stage.getBoundingClientRect();
+    render((event.clientX - bounds.left) / bounds.width * 100);
+  };
+  range.addEventListener('input', () => render(range.value));
+  range.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+    event.preventDefault();
+    range.focus({preventScroll: true});
+    range.setPointerCapture(event.pointerId);
+    position(event);
+  });
+  range.addEventListener('pointermove', event => {
+    if (range.hasPointerCapture(event.pointerId)) position(event);
+  });
+  const release = event => {
+    if (range.hasPointerCapture(event.pointerId)) range.releasePointerCapture(event.pointerId);
+  };
+  range.addEventListener('pointerup', release);
+  range.addEventListener('pointercancel', release);
+  buttons.forEach(button => button.addEventListener('click', () => render(button.dataset.reveal)));
+  section.setAttribute('data-compare-ready', '');
+  section.querySelectorAll('.benefit-range, .benefit-divider, .benefit-handle, .benefit-controls').forEach(element => { element.hidden = false; });
+  render(50);
+})();
+</script>
 
 <!-- ROOM SCENES -->
 <section class="section scenes-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Sound Familiar?</span>
+
       <h2 class="section-title">Every Old House Has That One Room</h2>
       <p class="section-desc">Find your problem room below. We'll match it to the right setup.</p>
     </div>
@@ -1350,166 +973,241 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- BEFORE YOU BUY -->
-
-<section class="section byb-section">
+<!-- INSTALLATION CHECKS -->
+<section class="section byb-section" id="installation-checks" aria-labelledby="checks-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Before You Buy</span>
-      <h2 class="section-title">What to Check in an Older Home</h2>
-      <p class="section-desc">Older homes have quirks. Confirm these four things before you order.</p>
+      <h2 class="section-title" id="checks-title">What to Check in an Older Home</h2>
+      <p class="section-desc">Four things to discuss with your installer before you choose a system.</p>
     </div>
-    <div class="byb-row">
-      <div class="byb-img">
-        <img src="mini-split-for-old-house-images/BYB.webp" alt="Mini split outdoor unit installed beside an older home" loading="lazy">
-      </div>
-      <div class="byb-list">
-        <div class="byb-item">
-          <span class="byb-num">1</span>
-          <div class="byb-text">
-            <h4>Electrical Panel</h4>
-            <p>Most mini splits need a dedicated 115V or 230V circuit. Check if your panel has open breaker slots.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">2</span>
-          <div class="byb-text">
-            <h4>Insulation Quality</h4>
-            <p>Better insulation means a smaller, quieter system. Uninsulated walls push the BTU requirement up.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">3</span>
-          <div class="byb-text">
-            <h4>Line-Set Route</h4>
-            <p>Indoor and outdoor units connect through a 3" wall hole. Older walls and plaster may need a surface run.</p>
-          </div>
-        </div>
-        <div class="byb-item">
-          <span class="byb-num">4</span>
-          <div class="byb-text">
-            <h4>Condenser Placement</h4>
-            <p>The outdoor unit needs a flat surface with clearance. A side yard, patio, or wall bracket works.</p>
-          </div>
+    <div class="check-tabs" role="tablist" aria-label="Installation planning topics" hidden>
+      <button class="check-tab" type="button" role="tab" id="check-tab-electrical" aria-controls="check-panel-electrical" aria-selected="false" tabindex="-1"><span class="check-number" aria-hidden="true">01</span>Electrical</button>
+      <button class="check-tab" type="button" role="tab" id="check-tab-insulation" aria-controls="check-panel-insulation" aria-selected="false" tabindex="-1"><span class="check-number" aria-hidden="true">02</span>Insulation</button>
+      <button class="check-tab" type="button" role="tab" id="check-tab-routing" aria-controls="check-panel-routing" aria-selected="true" tabindex="0"><span class="check-number" aria-hidden="true">03</span>Routing</button>
+      <button class="check-tab" type="button" role="tab" id="check-tab-placement" aria-controls="check-panel-placement" aria-selected="false" tabindex="-1"><span class="check-number" aria-hidden="true">04</span>Placement</button>
+    </div>
+    <div class="check-panel" id="check-panel-electrical" role="tabpanel" aria-labelledby="check-tab-electrical" tabindex="0">
+      <figure class="check-media"><img src="mini-split-for-old-house-images/installation-checks/electrical.png" alt="Closed electrical panel in a tidy utility area of an older home" width="1536" height="1024" loading="lazy" decoding="async"></figure>
+      <div class="check-copy">
+        <p class="check-kicker">01 / ELECTRICAL</p>
+        <h3 class="check-heading">Confirm the power.<br>Plan with confidence.</h3>
+        <p class="check-description">An electrician checks panel capacity and circuit requirements for the system you choose.</p>
+        <dl class="check-preparation">
+          <div><dt>Bring</dt><dd>A photo of the closed panel and known circuit details.</dd></div>
+          <div><dt>Confirm</dt><dd>Panel capacity and the required dedicated circuit.</dd></div>
+        </dl>
+        <div class="check-nav" aria-label="Check navigation" hidden>
+          <button type="button" data-step="-1" disabled><svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 3-6 6 6 6"/></svg>Previous</button>
+          <button type="button" data-step="1">Next: Insulation<svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 6 6-6 6"/></svg></button>
         </div>
       </div>
     </div>
+    <div class="check-panel" id="check-panel-insulation" role="tabpanel" aria-labelledby="check-tab-insulation" tabindex="0">
+      <figure class="check-media"><img src="mini-split-for-old-house-images/installation-checks/insulation.png" alt="Traditional sash window and finished attic eave in an older home" width="1536" height="1024" loading="lazy" decoding="async"></figure>
+      <div class="check-copy">
+        <p class="check-kicker">02 / INSULATION</p>
+        <h3 class="check-heading">Understand the room.<br>Size for your home.</h3>
+        <p class="check-description">Windows, drafts and insulation help your installer understand the heating and cooling load.</p>
+        <dl class="check-preparation">
+          <div><dt>Bring</dt><dd>Notes on windows, drafts and known insulation.</dd></div>
+          <div><dt>Confirm</dt><dd>Room loads and suitable system capacity.</dd></div>
+        </dl>
+        <div class="check-nav" aria-label="Check navigation" hidden>
+          <button type="button" data-step="-1"><svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 3-6 6 6 6"/></svg>Previous</button>
+          <button type="button" data-step="1">Next: Routing<svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="check-panel" id="check-panel-routing" role="tabpanel" aria-labelledby="check-tab-routing" tabindex="0">
+      <figure class="check-media"><img src="mini-split-for-old-house-images/installation-checks/routing-interior-detail.png" alt="Close view of a covered line-set route and wall entry beside an older home window" width="1536" height="1024" loading="lazy" decoding="async"></figure>
+      <div class="check-copy">
+        <p class="check-kicker">03 / ROUTING</p>
+        <h3 class="check-heading">Plan the path.<br>Preserve the detail.</h3>
+        <p class="check-description">Your installer plans the line-set and drain route around the walls and finishes you want to keep.</p>
+        <dl class="check-preparation">
+          <div><dt>Bring</dt><dd>Photos of the room, exterior wall and proposed outdoor location.</dd></div>
+          <div><dt>Confirm</dt><dd>Line routing, drainage and installation access.</dd></div>
+        </dl>
+        <div class="check-nav" aria-label="Check navigation" hidden>
+          <button type="button" data-step="-1"><svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 3-6 6 6 6"/></svg>Previous</button>
+          <button type="button" data-step="1">Next: Placement<svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="check-panel" id="check-panel-placement" role="tabpanel" aria-labelledby="check-tab-placement" tabindex="0">
+      <figure class="check-media"><img src="mini-split-for-old-house-images/installation-checks/placement-della-garden.png" alt="DELLA outdoor unit on the original ground pad beside a white clapboard home and garden" width="1536" height="1024" loading="lazy" decoding="async"></figure>
+      <div class="check-copy">
+        <p class="check-kicker">04 / PLACEMENT</p>
+        <h3 class="check-heading">Give the unit space.<br>Keep access clear.</h3>
+        <p class="check-description">Review the proposed outdoor location with your installer before choosing the mounting plan.</p>
+        <dl class="check-preparation">
+          <div><dt>Bring</dt><dd>A photo of the proposed outdoor location.</dd></div>
+          <div><dt>Confirm</dt><dd>Airflow, service access and suitable mounting.</dd></div>
+        </dl>
+        <div class="check-nav" aria-label="Check navigation" hidden>
+          <button type="button" data-step="-1"><svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 3-6 6 6 6"/></svg>Previous</button>
+          <button type="button" data-step="1" disabled>Next<svg viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="check-guidance">Your home's layout guides the final installation plan.</p>
   </div>
 </section>
+<script>
+(() => {
+  const section = document.getElementById('installation-checks');
+  const tabs = Array.from(section.querySelectorAll('.check-tab'));
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  const select = (index, focusTarget) => {
+    if (index < 0 || index >= tabs.length) return;
+    tabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      panels[i].hidden = !selected;
+    });
+    if (focusTarget === 'tab') tabs[index].focus({preventScroll: true});
+    if (focusTarget === 'panel') panels[index].focus({preventScroll: true});
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(index));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(next, 'tab');
+    });
+    panels[index].querySelectorAll('[data-step]').forEach(button => {
+      button.addEventListener('click', () => select(index + Number(button.dataset.step), 'panel'));
+    });
+  });
+  select(2);
+  section.setAttribute('data-checks-ready', '');
+  section.querySelector('.check-tabs').hidden = false;
+  section.querySelectorAll('.check-nav').forEach(nav => { nav.hidden = false; });
+})();
+</script>
 
 <!-- PRODUCTS -->
-<section class="section products-section">
+<section class="section products-section" id="products" aria-labelledby="products-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Top Picks</span>
-      <h2 class="section-title">Best Old-House Paths by Room Count</h2>
+      <h2 class="section-title" id="products-title">Best Old-House Paths by Room Count</h2>
       <p class="section-desc">Start with single-zone, then scale to 2-zone or 3-zone only when more rooms need independent comfort.</p>
     </div>
-    <div class="products-grid">
-      <a href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" class="product-feature">
-        <div class="product-img-wrap">
-          <span class="product-badge">Best Starting Point</span>
-          <img src="https://dellahome.com/cdn/shop/files/JA.jpg?v=1731029990&width=800" alt="DELLA Motto Series 12000 BTU Wall-Mounted" loading="lazy">
+    <ul class="products-grid">
+      <li class="product-card">
+        <div class="product-image-wrap"><img class="product-image" src="mini-split-for-old-house-images/product-cutouts/motto.svg" width="1800" height="1800" alt="DELLA Motto Series 12000 BTU Wall-Mounted" loading="lazy" decoding="async"></div>
+        <div class="product-card-body">
+          <h3 class="product-title">Motto</h3>
+          <p class="product-capacity">12,000 BTU</p>
+          <dl class="product-meta">
+              <div><dt>System</dt><dd>Single-zone</dd></div>
+              <div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div>
+              <div><dt>Efficiency</dt><dd>17 SEER2</dd></div>
+          </dl>
+          <details class="product-identity">
+            <summary>Full model name</summary>
+            <p class="product-full-name">DELLA Motto Series 12,000 BTU 17 SEER2</p>
+          </details>
+          <p class="product-price">$719.96</p>
+          <a class="product-link" href="https://dellahome.com/products/motto-series-12000btu-seer2-17-mini-split-heat-pump-ac" aria-label="View DELLA Motto Series 12,000 BTU 17 SEER2">View Product</a>
         </div>
-        <div class="product-body">
-          <div class="product-copy">
-            <div class="product-name">DELLA Motto Series 12,000 BTU 17 SEER2</div>
-            <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9</strong> (87 reviews)</div>
-            <div class="product-spec">Single-Zone | Up to 550 Sq.Ft. | One-room retrofit</div>
-          </div>
-          <div class="product-action">
-            <div class="product-price">$719.96</div>
-            <span class="product-cta">Shop 12K Motto</span>
-          </div>
+      </li>
+      <li class="product-card">
+        <div class="product-image-wrap"><img class="product-image" src="mini-split-for-old-house-images/product-cutouts/serena.svg" width="1800" height="1800" alt="DELLA Serena Series 18000 BTU dual-zone mini split" loading="lazy" decoding="async"></div>
+        <div class="product-card-body">
+          <h3 class="product-title">Serena</h3>
+          <p class="product-capacity">18,000 BTU</p>
+          <dl class="product-meta">
+              <div><dt>System</dt><dd>2-zone</dd></div>
+              <div><dt>Coverage</dt><dd>Up to 850 sq. ft.</dd></div>
+              <div><dt>Indoor units</dt><dd>7K + 12K BTU</dd></div>
+          </dl>
+          <details class="product-identity">
+            <summary>Full model name</summary>
+            <p class="product-full-name">Serena Series 18K BTU Dual Zone (7K + 12K)</p>
+          </details>
+          <p class="product-price">$1,909.96</p>
+          <a class="product-link" href="https://dellahome.com/products/della-serena-series-18000-btu-dual-zone-mini-split-ac-7k-12k-up-to-850-sq-ft" aria-label="View Serena Series 18K BTU Dual Zone (7K + 12K)">View Product</a>
         </div>
-      </a>
-      <div class="product-bottom-row">
-        <a href="https://dellahome.com/products/della-serena-series-18000-btu-dual-zone-mini-split-ac-7k-12k-up-to-850-sq-ft" class="product-card">
-          <div class="product-img-wrap">
-            <span class="product-badge">2 Rooms</span>
-            <img src="https://dellahome.com/cdn/shop/files/18KM_D77_1_3f6f2eff-4dea-4cda-b858-a911f9bb0986.jpg?v=1755843745&width=800" alt="DELLA Serena Series 18000 BTU dual-zone mini split" loading="lazy">
-          </div>
-          <div class="product-body">
-            <div class="product-copy">
-              <div class="product-name">Serena Series 18K BTU Dual Zone (7K + 12K)</div>
-              <div class="product-spec">2 Zones | Up to 850 Sq.Ft.</div>
-            </div>
-            <div class="product-action">
-              <div class="product-price">$1,909.96</div>
-              <span class="product-cta">Shop 18K Serena</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://dellahome.com/products/della-optima-series-12000-btu-25-seer2-ultra-hyper-heat-mini-split-ac-up-to-550-sq-ft" class="product-card">
-          <div class="product-img-wrap">
-            <span class="product-badge">-22°F Rated</span>
-            <img src="https://dellahome.com/cdn/shop/files/048-TPH-12K2V-25S-01.jpg?v=1750937277&width=800" alt="DELLA Optima Plus 12000 BTU Ultra Hyper Heat Mini Split" loading="lazy">
-          </div>
-          <div class="product-body">
-            <div class="product-copy">
-              <div class="product-name">Optima Plus 12K BTU 25 SEER2 Ultra Hyper Heat</div>
-              <div class="product-rating"><strong>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</strong> (3 reviews)</div>
-              <div class="product-spec">Single-Zone | Up to 550 Sq.Ft. | Heats to -22°F</div>
-            </div>
-            <div class="product-action">
-              <div class="product-price">$1,249.96</div>
-              <span class="product-cta">Shop 12K Optima Plus</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://dellahome.com/products/della-11000-btu-19-seer2-concealed-ducted-mini-split-air-conditioner" class="product-card">
-          <div class="product-img-wrap">
-            <span class="product-badge">Cleaner Look</span>
-            <img src="https://dellahome.com/cdn/shop/files/DC-9K2V-20S-I_O-PP-1_24703191-651e-4e5c-98b6-d34be59616e2.jpg?v=1770953786&width=800" alt="DELLA Concealed Ducted 11000 BTU" loading="lazy">
-          </div>
-          <div class="product-body">
-            <div class="product-copy">
-              <div class="product-name">Concealed Ducted 11K BTU 19 SEER2</div>
-              <div class="product-spec">Hidden Install | Up to 600 Sq.Ft.</div>
-            </div>
-            <div class="product-action">
-              <div class="product-price">$1,144.96</div>
-              <span class="product-cta">Shop 11K Ducted</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
+      </li>
+      <li class="product-card">
+        <div class="product-image-wrap"><img class="product-image" src="mini-split-for-old-house-images/product-cutouts/optima-plus.svg" width="1200" height="1200" alt="DELLA Optima Plus 12000 BTU Ultra Hyper Heat Mini Split" loading="lazy" decoding="async"></div>
+        <div class="product-card-body">
+          <h3 class="product-title">Optima Plus</h3>
+          <p class="product-capacity">12,000 BTU</p>
+          <dl class="product-meta">
+              <div><dt>System</dt><dd>Single-zone</dd></div>
+              <div><dt>Coverage</dt><dd>Up to 550 sq. ft.</dd></div>
+              <div><dt>Efficiency</dt><dd>25 SEER2</dd></div>
+          </dl>
+          <details class="product-identity">
+            <summary>Full model name</summary>
+            <p class="product-full-name">Optima Plus 12K BTU 25 SEER2 Ultra Hyper Heat</p>
+          </details>
+          <p class="product-price">$1,249.96</p>
+          <a class="product-link" href="https://dellahome.com/products/della-optima-series-12000-btu-25-seer2-ultra-hyper-heat-mini-split-ac-up-to-550-sq-ft" aria-label="View Optima Plus 12K BTU 25 SEER2 Ultra Hyper Heat">View Product</a>
+        </div>
+      </li>
+      <li class="product-card">
+        <div class="product-image-wrap"><img class="product-image" src="mini-split-for-old-house-images/product-cutouts/concealed-ducted.svg" width="1800" height="1800" alt="DELLA Concealed Ducted 11000 BTU" loading="lazy" decoding="async"></div>
+        <div class="product-card-body">
+          <h3 class="product-title">Concealed Ducted</h3>
+          <p class="product-capacity">11,000 BTU</p>
+          <dl class="product-meta">
+              <div><dt>System</dt><dd>Concealed ducted</dd></div>
+              <div><dt>Coverage</dt><dd>Up to 600 sq. ft.</dd></div>
+              <div><dt>Efficiency</dt><dd>19 SEER2</dd></div>
+          </dl>
+          <details class="product-identity">
+            <summary>Full model name</summary>
+            <p class="product-full-name">Concealed Ducted 11K BTU 19 SEER2</p>
+          </details>
+          <p class="product-price">$1,144.96</p>
+          <a class="product-link" href="https://dellahome.com/products/della-11000-btu-19-seer2-concealed-ducted-mini-split-air-conditioner" aria-label="View Concealed Ducted 11K BTU 19 SEER2">View Product</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- SERVICES (copied from Shed) -->
-<section class="section services-section">
+<!-- SERVICES -->
+<section class="services-section" id="services" aria-labelledby="services-title">
   <div class="container">
     <div class="services-heading">
-      <span class="section-label">Service Confidence</span>
-      <h2>Premium Della Services</h2>
+
+      <h2 id="services-title">Premium Della Services</h2>
     </div>
     <div class="services-grid">
       <article class="service-card">
         <div class="service-icon-wrap">
-          <img src="https://dellahome.com/cdn/shop/files/80x80px-40.png?v=1746071491&width=64" alt="" width="28" height="28" aria-hidden="true">
+          <img src="data:image/png;base64,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" alt="" width="50" height="50" aria-hidden="true">
         </div>
         <h3 class="service-title">Free &amp; Fast Shipping</h3>
         <p class="service-desc">Get your Della products delivered quickly with free standard shipping.</p>
       </article>
       <article class="service-card">
         <div class="service-icon-wrap">
-          <img src="https://dellahome.com/cdn/shop/files/20250424-114745.png?v=1745466491&width=64" alt="" width="28" height="28" aria-hidden="true">
+          <img src="data:image/png;base64,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" alt="" width="50" height="50" aria-hidden="true">
         </div>
         <h3 class="service-title">30-Day Money-Back</h3>
         <p class="service-desc">Not satisfied? Return within 30 days for a full refund.</p>
       </article>
       <article class="service-card">
         <div class="service-icon-wrap">
-          <img src="https://dellahome.com/cdn/shop/files/20250911-174827-1.png?v=1757584142&width=64" alt="" width="28" height="28" aria-hidden="true">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEiUlEQVR4AeycsU8VQRjEwT/BFjtrS2NiYyNWNFQYWiygMiEmJMRSTGyIsYGGXhMSGwoivYmxMpbUtraWzxmyl/B46/pysN/OHWP24+52b3dn53d73OY47yz4n5QDBiKFY2HBQAxEzAExOZ4hBiLmgJgczxADEXNATI5niIGIOSAmp84MERvkkOQYiBgtAzEQMQfE5HiGGIiYA2JyPEMMRMwBMTmeIQYi5oCYnCHNEDHr6sgxkDq+9m7VQHpbV6eigdTxtXerBtLbujoVDaSOr71bNZDe1tWpaCB1fO3dqoH0tq5ORQOp42vvVpsBmUwma4gdxFHTmEyu9r8HPWu9Hb1mxXAgHCziG3QfIHYQq2KxBT0H1IgIBxMKJA1wHwO+h/iM2F1cXLyrFNSEoDZq3E+akRWTQoFgSK8RTNuAsIE45IFSUBNiA5q2EUydZu5XjzAg6UpbwohOMeBP2EqnpPEUIpeSduzWT2FAMJRnCKb3/DGQ6LR22qvLjgRyMRhceT8vdgbwo4XWcCAD4NBUohwQ3K83EVfXBvMe7+XcRHvLiFwbm7nzW+bJAYEZDxF91yZPUTeX7iMz1yb7QpFOkgOC+zYfh/uuTR7lrEWbh4hcm3y8zVW5bl7v+nJAeo9kJBUNRAykgRiImANicjxDDETMATE5cjMkLeB+YxsRR2I8JP83oO8wie8jIoJ9oTudJDdDsIDjIo6Lw4iQex8jB0TnWm2jpAikjaTb3auBiPE3EAMRc0BMjtwMwfqDL5P4kmoqcr7hXJ6Te/E0b55fUOWMvZL3HMdvM4GsmcQXTLkXT/Pmsf5Moy0z5GYIzPiI2M0EsqYT1ixcq+RePM2b5xdU05bOHsHkMwQXh1Mxe+Y4cxRnyDidnnNUBjKnUVGnhQOZTCbLUYO7bj94igvXGgnkSzKIT1FpV37Tae20VxccBgS/qPkH1ucY0SquvOwftKFMJiWNfHw+T9pDtIUBSaN5ge0vxBYGfILgF1Rc3OWi+LEM6ubq3EQeNZ1QI4JaqRm7MSkUCK40/qH1Oob2FfEYwS+ocotA5vErpiwUwkBdnlMjqInaqHE9aUZ3MSkUCIfEASJWsP8EkVsAMu8dyv4gZj6WAYwHyH+FYDnPvfGAPi4sV7DlBYSu4lI4kG5oHCxiavF36ZhAjnEuP5a5+t6bkO6i7MOl8//VTq98tN0sNQPyvxHD7Jc4p3sIuLh1YXZwy0fRHygnNJwyriQLJNnM2cBbE7fM4pbH/N3B49GFNBDMgjM43t26eD/nN4rHKR9F40vSQGg3zOeti4+fhME1AY9ZNBVjOZAHkox+k7a8ZaXdcW4GAQSzhKv8NWx5CxsniTSqQQCh1tsAg+McDBCKvQ1hIGKUDcRAxBwQk+MZYiBiDojJ8QwpAokvNJB4z4s9GkjRnvhCA4n3vNijgRTtiS80kHjPiz0aSNGe+EIDife82KOBFO2JLzSQeM+LPRpI0Z46haVWDaTkToMyA2lgeqlLAym506DMQBqYXurSQEruNCgzkAaml7o0kJI7DcoMpIHppS7/AgAA///W6M7nAAAABklEQVQDAP3f/+fp8V2wAAAAAElFTkSuQmCC" alt="" width="50" height="50" aria-hidden="true">
         </div>
-        <h3 class="service-title">24/7 Live Support</h3>
+        <h3 class="service-title"><a href="https://dellahome.com/pages/contact">24/7 Live Support</a></h3>
         <p class="service-desc">Get instant answers to your questions anytime, day or night.</p>
       </article>
       <article class="service-card">
         <div class="service-icon-wrap">
-          <img src="https://dellahome.com/cdn/shop/files/20250424-114735.png?v=1745466499&width=64" alt="" width="28" height="28" aria-hidden="true">
+          <img src="data:image/png;base64,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" alt="" width="50" height="50" aria-hidden="true">
         </div>
         <h3 class="service-title">Lifetime Warranty</h3>
         <p class="service-desc">Our Mini Split systems come with limited lifetime compressor protection.</p>
@@ -1519,69 +1217,64 @@ a { text-decoration: none; color: inherit; }
 </section>
 
 <!-- FAQ -->
-<section class="section faq-section">
+<section class="faq-section" id="faq" aria-labelledby="faq-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Quick Answers</span>
-      <h2 class="section-title">Mini Split FAQ for Old Houses</h2>
-      <p class="section-desc">Common questions before you buy.</p>
+
+      <h2 class="section-title" id="faq-title">Mini Split FAQ for Old Houses</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>Can I install without existing ductwork?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Yes. Single-zone, 2-zone, and 3-zone systems don't need traditional ductwork. Concealed ducted setups use short hidden runs when the layout calls for them.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        </summary>
+        <div class="faq-a"><p>Yes. Single-zone, 2-zone, and 3-zone systems don't need traditional ductwork. Concealed ducted setups use short hidden runs when the layout calls for them.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>Does my old wiring support it?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Most 100-amp panels handle a single-zone install. Panels under 100A may need an upgrade. Confirm with your electrician before ordering.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        </summary>
+        <div class="faq-a"><p>Most 100-amp panels handle a single-zone install. Panels under 100A may need an upgrade. Confirm with your electrician before ordering.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>What about plaster or brick walls?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Only a 3-inch hole connects indoor and outdoor units. Plaster, brick, and stone walls all work. No large opening, no structural damage.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        </summary>
+        <div class="faq-a"><p>Only a 3-inch hole connects indoor and outdoor units. Plaster, brick, and stone walls all work. No large opening, no structural damage.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>Will it actually heat in winter?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">DELLA units operate down to −22°F outdoor temperature. No backup heater needed for most cold-climate regions in the continental US.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        </summary>
+        <div class="faq-a"><p>DELLA units operate down to −22°F outdoor temperature. No backup heater needed for most cold-climate regions in the continental US.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>Can I keep my radiators or boiler as backup?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">Yes. Many old-house owners keep the existing system for the coldest nights while the mini split carries the daily load. With ultra hyper heat models rated to −22°F, most buyers retire the backup within the first winter.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        </summary>
+        <div class="faq-a"><p>Yes. Many old-house owners keep the existing system for the coldest nights while the mini split carries the daily load. With ultra hyper heat models rated to −22°F, most buyers retire the backup within the first winter.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
           <h3>How long does the install take?</h3>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </div>
-        <div class="faq-a">A typical single-zone job takes one day with two people. Each additional indoor unit adds half a day more. No major construction required.</div>
-      </div>
+        </summary>
+        <div class="faq-a"><p>A typical single-zone job takes one day with two people. Each additional indoor unit adds half a day more. No major construction required.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- BOTTOM CTA -->
-<section class="bottom-cta">
+<section class="bottom-cta" aria-labelledby="closing-title">
   <div class="container">
     <div class="bottom-cta-card">
-      <h2>Tired of fighting your thermostat room by room?</h2>
-      <p>One mini split zone fixes the worst room. Add more zones later without ripping open walls.</p>
+      <div class="bottom-cta-copy">
+        <h2 id="closing-title">Ready for Room-by-Room Comfort?</h2>
+        <p>One mini split zone fixes the worst room. Add more zones later without ripping open walls.</p>
+      </div>
       <div class="bottom-cta-buttons">
-        <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-navy btn-lg">Start with Single-Zone</a>
-        <a href="#zone-compare" class="btn btn-outline btn-lg">Compare Zone Options</a>
+        <a href="https://dellahome.com/collections/mini-split-single-zone" class="btn btn-outline">Start with Single-Zone</a>
+        <a href="#zones" class="btn btn-outline">Compare Zone Options</a>
       </div>
     </div>
   </div>
