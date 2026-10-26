@@ -698,23 +698,16 @@ h3 {
   gap: 48px;
   align-items: center;
 }
-.outdoor-decision-split__media {
-  display: block;
-  margin: 0;
-  aspect-ratio: 1.25;
-  max-height: 560px;
-  overflow: hidden;
-  background: var(--blue-surface);
-  border-radius: 4px;
-}
-.outdoor-decision-split__media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 360px;
-  object-fit: cover;
-  object-position: center center;
-}
+.circuit-comparison { margin: 0; padding: 24px; background: var(--blue-surface); border-radius: 4px; min-width: 0; }
+.circuit-example + .circuit-example { margin-top: 20px; padding-top: 20px; border-top: 1px solid #cbd5e6; }
+.circuit-example h3 { margin: 0; font-size: 21px; line-height: 1.3; }
+.circuit-example svg { display: block; width: 100%; height: auto; margin: 12px 0 4px; }
+.circuit-example p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--navy); }
+.circuit-comparison figcaption { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 20px; font-size: 12px; line-height: 1.6; color: var(--text-muted); }
+.supply-key::before, .connection-key::before { content: ""; display: inline-block; width: 20px; margin: 0 6px 3px 0; border-top: 3px solid #4169cf; }
+.connection-key::before { border-top: 2px dashed #8494b1; }
+.circuit-caption { flex-basis: 100%; }
+@media (max-width: 680px) { .circuit-comparison { padding: 18px; } .circuit-example h3 { font-size: 20px; } }
 .outdoor-decision-split__copy {
   max-width: 520px;
 }
@@ -968,10 +961,8 @@ h3 {
   }
   .quick-answer-relaxed,
   .outdoor-decision-split__inner { gap: 24px; }
-  .quick-answer-relaxed__media,
-  .outdoor-decision-split__media { min-height: 260px; aspect-ratio: auto; }
-  .quick-answer-relaxed__media img,
-  .outdoor-decision-split__media img { min-height: 260px; }
+  .quick-answer-relaxed__media { min-height: 260px; aspect-ratio: auto; }
+  .quick-answer-relaxed__media img { min-height: 260px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .path-panel { margin-top: -22px; grid-template-columns: 1fr; }
   .path-heading { border-right: 0; border-bottom: 1px solid rgba(226,230,238,.35); padding: 14px 16px; }
@@ -1545,18 +1536,21 @@ h3 {
 
   <section class="outdoor-decision-split" aria-labelledby="outdoor-decision-title">
     <div class="outdoor-decision-split__inner">
-      <figure class="outdoor-decision-split__media">
-        <img src="multi-zone-vs-multiple-single-zone-scene.webp" alt="Della multi-zone mini split system serving multiple rooms" width="3840" height="2880" loading="lazy" onerror="this.onerror=null;this.src='memorial-category.png';">
+      <figure class="circuit-comparison" aria-label="Typical electrical supply for the same three rooms">
+        <div class="circuit-example"><h3>Three single-zone systems</h3><svg viewBox="0 0 480 208" role="img" aria-labelledby="supply-single-title"><title id="supply-single-title">Three panel supply circuits to three outdoor units, each connected to one indoor unit</title><g transform="translate(18 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><g transform="translate(184 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><g transform="translate(350 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><path d="M74 60v32M240 60v32M406 60v32" fill="none" stroke="#8494b1" stroke-width="2" stroke-dasharray="5 4"/><g transform="translate(40 92)"><rect width="68" height="42" rx="3" fill="#fff" stroke="#0e1953"/><circle cx="23" cy="21" r="15" fill="#edf2ff" stroke="#0e1953"/><path d="M12 14h22M10 21h26M12 28h22M48 12h12M48 18h12" stroke="#0e1953"/></g><g transform="translate(206 92)"><rect width="68" height="42" rx="3" fill="#fff" stroke="#0e1953"/><circle cx="23" cy="21" r="15" fill="#edf2ff" stroke="#0e1953"/><path d="M12 14h22M10 21h26M12 28h22M48 12h12M48 18h12" stroke="#0e1953"/></g><g transform="translate(372 92)"><rect width="68" height="42" rx="3" fill="#fff" stroke="#0e1953"/><circle cx="23" cy="21" r="15" fill="#edf2ff" stroke="#0e1953"/><path d="M12 14h22M10 21h26M12 28h22M48 12h12M48 18h12" stroke="#0e1953"/></g><path d="M222 164v-15H74v-15M240 164v-30M258 164v-15h148v-15" fill="none" stroke="#4169cf" stroke-width="3"/><rect x="191" y="164" width="98" height="32" rx="3" fill="#edf2ff" stroke="#4169cf"/><text x="240" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#0e1953">Panel</text></svg><p>3 outdoor units · Typically 3 supply circuits</p></div>
+        <div class="circuit-example"><h3>One tri-zone system</h3><svg viewBox="0 0 480 208" role="img" aria-labelledby="supply-multi-title"><title id="supply-multi-title">One panel supply circuit to one outdoor unit connected to three indoor units</title><g transform="translate(18 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><g transform="translate(184 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><g transform="translate(350 8)"><rect width="112" height="52" rx="3" fill="#fff" stroke="#c7d2e5"/><rect x="30" y="12" width="52" height="17" rx="3" fill="#edf2ff" stroke="#0e1953"/><path d="M35 24h42" stroke="#0e1953"/></g><path d="M74 60v20h149v12M240 60v32M406 60v14H257v18" fill="none" stroke="#8494b1" stroke-width="2" stroke-dasharray="5 4"/><g transform="translate(206 92)"><rect width="68" height="42" rx="3" fill="#fff" stroke="#0e1953"/><circle cx="23" cy="21" r="15" fill="#edf2ff" stroke="#0e1953"/><path d="M12 14h22M10 21h26M12 28h22M48 12h12M48 18h12" stroke="#0e1953"/></g><path d="M240 164v-30" fill="none" stroke="#4169cf" stroke-width="3"/><rect x="191" y="164" width="98" height="32" rx="3" fill="#edf2ff" stroke="#4169cf"/><text x="240" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#0e1953">Panel</text></svg><p>1 outdoor unit · Typically 1 supply circuit</p></div>
+        <figcaption><span class="supply-key">Dedicated supply</span><span class="connection-key">Indoor/outdoor connections</span><span class="circuit-caption">Conceptual layout for the same three rooms. Follow the selected equipment’s installation manual.</span></figcaption>
       </figure>
       <div class="outdoor-decision-split__copy">
         <span class="section-label">Setup guide</span>
         <h2 id="outdoor-decision-title">One multi-zone system or multiple single-zone systems?</h2>
-        <p>Choose one multi-zone system when nearby rooms can share one outdoor unit. Choose multiple single-zone systems when rooms are separated, run on different schedules, or need more backup.</p>
+        <p>For the same three rooms, one tri-zone system typically uses one dedicated outdoor supply circuit, compared with three for three separate single-zone systems. This can simplify electrical planning for a multi-room renovation.</p>
         <ul class="split-bullet-list">
-          <li>Cleaner exterior: choose one multi-zone system</li>
-          <li>More independence: choose multiple single-zone systems</li>
-          <li>Different schedules: compare room layout first</li>
+          <li>Multi-zone: fewer outdoor units and dedicated supply circuits</li>
+          <li>Separate single-zone systems: more independent operation and redundancy</li>
+          <li>Both options: confirm room loads, routing and electrical requirements</li>
         </ul>
+        <p>An electrician must verify existing loads, panel space and the selected equipment’s requirements. Fewer circuits do not guarantee that panel or wiring upgrades can be avoided.</p>
       </div>
     </div>
   </section>
@@ -1580,7 +1574,7 @@ h3 {
         <h2>Single-zone vs multi-zone questions</h2>
       </div>
       <div class="faq-list">
-        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is a single-zone or multi-zone mini split better for one room?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A single-zone mini split is usually the better choice for one room because it uses one indoor unit and one outdoor unit dedicated to that space.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Can one outdoor unit run multiple indoor units?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. A multi-zone mini split connects multiple indoor units to one outdoor unit, typically serving 2 to 5 separate zones depending on the system.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Is it better to install one multi-zone system or multiple single-zone systems?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Choose one multi-zone system when you want fewer outdoor units. Choose multiple single-zone systems when redundancy, separate operation, or long distances between rooms matter more.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Can different rooms heat and cool at the same time?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Each indoor unit can usually have its own temperature setting, but connected zones normally share the same system mode, heating or cooling.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Do I need a 2-zone, 3-zone, 4-zone, or 5-zone mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Start with the number of separate rooms that need their own indoor unit, then confirm each room's BTU load, line-set route, and outdoor unit capacity.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">How many zones do I need for my home?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Start with the number of separate rooms you want to control. One room usually means single-zone; two rooms starts with 2-zone; three to five rooms usually starts with multi-zone.</p></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-question">Is a single-zone or multi-zone mini split better for one room?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>A single-zone mini split is usually the better choice for one room because it uses one indoor unit and one outdoor unit dedicated to that space.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Can one outdoor unit run multiple indoor units?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. A multi-zone mini split connects multiple indoor units to one outdoor unit, typically serving 2 to 5 separate zones depending on the system.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Is it better to install one multi-zone system or multiple single-zone systems?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>One multi-zone system can reduce outdoor-unit and dedicated supply-circuit counts compared with separate single-zone systems serving the same rooms. Separate systems offer more independent operation and redundancy. Compare room loads, routing and model-specific electrical requirements; panel upgrades may still be needed.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Can different rooms heat and cool at the same time?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Each indoor unit can usually have its own temperature setting, but connected zones normally share the same system mode, heating or cooling.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">Do I need a 2-zone, 3-zone, 4-zone, or 5-zone mini split?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Start with the number of separate rooms that need their own indoor unit, then confirm each room's BTU load, line-set route, and outdoor unit capacity.</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-question">How many zones do I need for my home?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-a"><p>Start with the number of separate rooms you want to control. One room usually means single-zone; two rooms starts with 2-zone; three to five rooms usually starts with multi-zone.</p></div></details>
       </div>
     </div>
   </section>
@@ -1645,6 +1639,6 @@ function activateTab(activeTab, shouldFocus = false) {
   if (shouldFocus) activeTab.focus();
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a single-zone or multi-zone mini split better for one room?", "acceptedAnswer": {"@type": "Answer", "text": "A single-zone mini split is usually the better choice for one room because it uses one indoor unit and one outdoor unit dedicated to that space."}}, {"@type": "Question", "name": "Can one outdoor unit run multiple indoor units?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A multi-zone mini split connects multiple indoor units to one outdoor unit, typically serving 2 to 5 separate zones depending on the system."}}, {"@type": "Question", "name": "Is it better to install one multi-zone system or multiple single-zone systems?", "acceptedAnswer": {"@type": "Answer", "text": "Choose one multi-zone system when you want fewer outdoor units. Choose multiple single-zone systems when redundancy, separate operation, or long distances between rooms matter more."}}, {"@type": "Question", "name": "Can different rooms heat and cool at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "Each indoor unit can usually have its own temperature setting, but connected zones normally share the same system mode, heating or cooling."}}, {"@type": "Question", "name": "Do I need a 2-zone, 3-zone, 4-zone, or 5-zone mini split?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the number of separate rooms that need their own indoor unit, then confirm each room's BTU load, line-set route, and outdoor unit capacity."}}, {"@type": "Question", "name": "How many zones do I need for my home?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the number of separate rooms you want to control. One room usually means single-zone; two rooms starts with 2-zone; three to five rooms usually starts with multi-zone."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a single-zone or multi-zone mini split better for one room?", "acceptedAnswer": {"@type": "Answer", "text": "A single-zone mini split is usually the better choice for one room because it uses one indoor unit and one outdoor unit dedicated to that space."}}, {"@type": "Question", "name": "Can one outdoor unit run multiple indoor units?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A multi-zone mini split connects multiple indoor units to one outdoor unit, typically serving 2 to 5 separate zones depending on the system."}}, {"@type": "Question", "name": "Is it better to install one multi-zone system or multiple single-zone systems?", "acceptedAnswer": {"@type": "Answer", "text": "One multi-zone system can reduce outdoor-unit and dedicated supply-circuit counts compared with separate single-zone systems serving the same rooms. Separate systems offer more independent operation and redundancy. Compare room loads, routing and model-specific electrical requirements; panel upgrades may still be needed."}}, {"@type": "Question", "name": "Can different rooms heat and cool at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "Each indoor unit can usually have its own temperature setting, but connected zones normally share the same system mode, heating or cooling."}}, {"@type": "Question", "name": "Do I need a 2-zone, 3-zone, 4-zone, or 5-zone mini split?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the number of separate rooms that need their own indoor unit, then confirm each room's BTU load, line-set route, and outdoor unit capacity."}}, {"@type": "Question", "name": "How many zones do I need for my home?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the number of separate rooms you want to control. One room usually means single-zone; two rooms starts with 2-zone; three to five rooms usually starts with multi-zone."}}]}</script>
 </body>
 </html>

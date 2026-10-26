@@ -289,3 +289,8 @@ Hero navigation (K21): the banner provides the shopping and house-layout entry p
 
 
 H2 typography (K22): every H2 uses Spectral / Georgia / serif, 32px, weight 400, line-height 1.12 and #0E1953 across viewport sizes. Section-specific spacing and alignment remain in their layout rules.
+
+
+## Electrical planning — approved 2026-10-26
+
+The house-layout section includes a short electrical-planning paragraph before the catalogue. The FAQ answers whether a panel upgrade may be needed. Supply-circuit counts refer to each outdoor system; whole-home design may require multiple systems. Existing section order, imagery, products and controls remain.
