@@ -16,11 +16,12 @@ MODEL = 'gpt-image-2.6-sunburst'
 REFS = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), '_refs')
 
 LOOK = (
-    ' Style: modern light-luxury interior photography, like a premium furniture catalog (Homary, Povison, RH): '
-    'warm greige or soft taupe limewash and plaster walls, subtle wall panel moulding, rich materials such as dark '
-    'walnut and fluted (reeded) wood, travertine and marble, cream boucle, velvet, linen in layered neutral tones with '
-    'one accent color, slim brushed-brass details, sculptural lamps, a few curated objects and a large green plant. '
-    'Warm natural light with soft depth and long gentle shadows, true-to-life rich color, high dynamic range, clean and '
+    ' Style: Homary room-ideas catalog photography (modern minimalist / modern luxury): bright, airy, high-key '
+    'daylight through large windows with sheer curtains; generous empty floor and wall space; a few sculptural statement '
+    'furniture pieces are the heroes, styled minimally with at most two or three small objects and at most one plant; '
+    'no clutter, no rows of lamps. Furniture, materials and palette exactly as described above and nothing borrowed '
+    'from other rooms. The space must read instantly as the specific room type described. Eye-level, mostly frontal, '
+    'balanced composition. True-to-life color, clean whites, high dynamic range, clean and '
     'crisp: nothing dirty, dusty, hazy, muddy or yellow-cast. Avoid pale blond wood furniture and avoid plain white '
     'bedding everywhere. Staged and uninhabited: absolutely no people, no hands, no body parts and no pets. Shot on a '
     'full-frame camera, 24-35mm lens, straight verticals, sharp detail, photorealistic, not CGI-looking. No text, '

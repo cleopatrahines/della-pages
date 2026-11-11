@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a refined light-luxury living room in soft late-morning sun, seen straight-on. Warm greige limewash wall with subtle rectangular panel moulding and a tall pair of black-framed French doors on the far right opening to a green garden. On the right half: a low deep sofa in cream boucle with rust and oatmeal linen cushions, a round honed travertine coffee table with a stack of art books and a ceramic bowl, a dark walnut fluted sideboard, a sculptural paper floor lamp, a large olive tree in a stone planter. The DELLA indoor unit is mounted high on the wall above the sofa, toward the right half of the frame. Dark oak herringbone floor with a textured wool rug. The left 45 percent of the frame is calm, softly lit wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same refined light-luxury living room: warm greige limewash wall with panel moulding, a cream boucle sofa with rust and oatmeal linen cushions, a round travertine coffee table, a dark walnut fluted sideboard, an olive tree in a stone planter, dark oak herringbone floor, soft late-morning sun. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, fully visible and centered, with clear wall space around it.",
+    "size": "2160x3840"
+  },
+  "path-replace": {
+    "prompt": "A gracious light-luxury dining room in a home with central air, in bright midday light. Soft taupe plaster walls with panel moulding, a long dark walnut dining table with ink-blue velvet upholstered chairs, a sculptural brass pendant, a travertine console with a large ceramic vase of branches, tall windows with sheer linen. In the smooth white ceiling there is one neat rectangular white slot-style air supply register, and in the dark oak floor near the window there is a slim brushed-brass floor register. A small, slim white digital wall thermostat is mounted on the wall beside the doorway at switch height. There is NO wall-mounted air conditioner, no mini split and no indoor AC unit anywhere in the room: the walls above the chairs are clean.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "path-add": {
+    "prompt": "A newly finished bonus room addition above a garage, in warm afternoon light: a vaulted ceiling with exposed dark-stained wood beams, two dormer windows, warm greige plaster walls. A cozy reading and media lounge: a deep chocolate-brown velvet sectional sofa with cream and sage cushions, a fluted walnut media console, a low round travertine side table, a wool rug in oatmeal and sage, built-in walnut bookshelves. The DELLA indoor unit is mounted high on the tall solid gable end wall above the sofa, beside the bookshelves, in the upper middle of the frame, fully visible with clear wall space around it.",
+    "size": "3072x2048"
+  },
+  "path-supplement": {
+    "prompt": "A sun-filled enclosed sunroom in a 1920s home, a space the central air does not keep comfortable: original painted wood casement windows on two sides, a classic black-and-cream checkerboard marble floor, a solid section of warm plaster wall with old picture-rail moulding. Rattan lounge chairs with ink-blue linen cushions, a small dark walnut side table, large potted fiddle-leaf fig and trailing plants, a vintage brass floor lamp. The DELLA indoor unit is mounted high on the solid plaster wall, centered in the upper part of the frame, fully visible with clear wall space around it, well away from the windows.",
+    "size": "3072x2048"
+  },
+  "supplement": {
+    "prompt": "A detached garage converted into an elegant home studio and gym, early-morning light through a wide glazed garage-style door with black steel frames. Polished warm concrete floor, walls clad in vertical fluted dark walnut panels on one side and smooth warm greige plaster on the other. A cream boucle daybed, a sage-green wool rug, a walnut and brass rowing machine stored neatly against the wall, a large monstera, a sculptural ceramic lamp on a travertine plinth. The DELLA indoor unit is mounted high on the smooth plaster wall in the upper middle of the frame, fully visible with clear wall space around it.",
+    "size": "3072x2048"
+  },
+  "compare": {
+    "prompt": "Exterior side yard of an elegant modern-traditional home on a crisp sunny afternoon, eye-level wide shot. Warm white painted brick wall with black-framed windows, a neat bed of pale gravel with boxwood spheres, ornamental grasses and a small olive tree. On the left, standing on a concrete pad on the ground, is a generic central air conditioner condenser: a large square charcoal-gray cabinet with louvered metal sides and a round fan grille on top (top-discharge), with no brand name, no logo and no badge. On the right, a few meters away, the DELLA outdoor mini split condenser is mounted on white wall brackets about 18 inches above the gravel, with a neat white line-set cover running up the brick wall. Both units fully visible, clear space in front of each, crisp natural shadows.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "cta": {
+    "prompt": "Wide shot of an open-plan kitchen and dining area at dusk, warm lamplight inside and deep blue-hour sky through tall windows on the right. Dark walnut fluted kitchen island with a honed travertine top and two cognac leather counter stools, ink-blue painted shaker cabinetry, brushed-brass fixtures, a round dining table with cream boucle chairs, a sculptural pendant glowing softly. The DELLA indoor unit is mounted high on a solid warm greige plaster wall above the dining area, in the right half of the frame, fully visible. The left 45 percent of the frame is calm and darker, simple wall and floor in shadow with nothing important, so text can sit there.",
+    "size": "3840x2160"
+  },
+  "path-replace-b": {
+    "size": "3072x2048",
+    "kind": "plain",
+    "prompt": "A formal dining room in a classic American home with central air, in cool, clear midday daylight. Walls are full-height painted wood panelling (square shaker panels) in a soft putty-grey eggshell paint, with a flat white ceiling. A long rectangular ebonized black oak dining table with six oxblood-red leather dining chairs, a long low sideboard topped in honed black Nero Marquina marble with a pair of matte stone-grey ceramic vessels, a linear blackened-steel chandelier, a charcoal wool rug on a dark smoked oak plank floor, tall windows with plain oatmeal linen roman shades. Clearly visible central-air details: a long white linear slot supply diffuser set into the ceiling near the window wall; a rectangular matte-black metal floor register in the floor in front of the window; and a small slim white digital wall thermostat at light-switch height beside the doorway, in sharp focus. There is NO wall-mounted air conditioner, no mini split and no indoor AC unit anywhere: the walls above the sideboard are clean panelling. No brass, no walnut, no travertine, no boucle."
+  },
+  "path-add-b": {
+    "size": "3072x2048",
+    "prompt": "A brand-new bonus room addition built above a garage, bright soft morning daylight from two skylights and a wide gable window. Walls covered in pale sage-green grasscloth wallpaper, a white-painted vaulted ceiling with crisp white trim, a mid-tone natural oak plank floor, a built-in mid-tone oak window seat with ochre and cream striped linen cushions under the gable window. A low ochre-mustard velvet sofa with oatmeal linen pillows, a large natural jute rug, a black metal and glass side table with a glazed green ceramic lamp, a tall snake plant in a woven seagrass basket, framed botanical prints. Fresh, airy, clearly a newly finished attic-style addition. The DELLA indoor unit is mounted high on the solid grasscloth side wall above the sofa, in the upper middle of the frame, fully visible with clear wall space around it. No walnut, no fluted wood, no travertine, no boucle, no brass."
+  },
+  "supplement-b": {
+    "size": "3072x2048",
+    "prompt": "Concept view that shows two comfort systems in one home. Camera stands in the main house's family room looking through a wide open doorway with black steel-framed glass double doors into a converted garage studio beyond. Foreground left (the main house, served by central air): warm white smooth plaster walls, a flat white ceiling with a clearly visible white linear slot air supply register, a dark grey slate floor, an indigo-blue linen armchair and a small blackened-steel side table. Beyond the open doors (the converted garage studio): polished grey concrete floor, warm white plaster walls, open blackened-steel shelving with books and terracotta pots, a cognac leather lounge chair, a flat-woven kilim rug in terracotta and indigo, a large rubber plant. The DELLA indoor unit is mounted high on the far back wall of the garage studio, centered in the opening, fully visible with clear wall space around it. Clear daylight, crisp and neutral. No walnut, no fluted wood, no travertine, no boucle, no brass."
+  },
+  "cta-b": {
+    "size": "3840x2160",
+    "prompt": "Wide shot of an open-plan kitchen and breakfast nook at dusk, warm lamplight inside and deep blue-hour sky through a large black-framed window on the right. Kitchen cabinetry in high-gloss bottle-green lacquer with slim brushed-nickel bar pulls, a terrazzo countertop and backsplash with cream, grey and green chips, walls finished in smooth stone-grey microcement. A built-in banquette in moss-green velvet around a round white lacquer pedestal table, two tubular chrome chairs with cream leather seats, a pair of opal-glass globe pendants glowing softly, a bowl of lemons, a large fern. The DELLA indoor unit is mounted high on the solid microcement wall above the banquette, in the right half of the frame, fully visible with clear wall space around it. The left 45 percent of the frame is calm and darker, plain microcement wall and floor in soft shadow with nothing important, so text can sit there. No walnut, no fluted wood, no travertine, no boucle, no brass."
+  },
+  "hero-b": {
+    "size": "3840x2160",
+    "prompt": "Wide eye-level shot of a bright, airy ductless home living room in high-key morning daylight. Ivory warm-white walls with classic French panel moulding, a tall window with floor-length sheer white curtains at the far right, light natural herringbone oak floor, a large plain ivory wool rug. Minimal sculptural furniture placed in the center-right of the frame: a long low rounded cream boucle sofa, one bold burnt-orange leather lounge chair beside it, and a low oval white lacquer coffee table with a white marble top and slim brushed-gold base holding just two objects (a stack of two books and a white ceramic vase with one branch). One tall olive tree in a white planter near the window, nothing else. The DELLA indoor unit is mounted high on the ivory wall directly above the center of the sofa, at roughly 70 percent of the frame width, fully visible with plenty of clear wall space around it; keep the sofa and the unit together within the right half of the frame. The left 45 percent of the frame is calm, empty ivory wall with panel moulding and bright floor, nothing important, so a headline can sit there. Lots of empty space, clean and bright, not amber."
+  },
+  "path-supplement-b": {
+    "size": "3072x2048",
+    "prompt": "A bright enclosed sunroom in a 1920s house, the one room the home's central air does not keep comfortable. Original white-painted multi-pane wooden casement windows run along two walls above white-painted beadboard knee walls, with simple sheer white curtains; a white-painted beadboard ceiling; a classic black-and-cream checkerboard marble tile floor. One solid section of smooth warm-white plaster wall. Minimal furniture: two rattan cane lounge chairs with ink-blue linen seat cushions, a small round white lacquer side table with one ceramic cup, a single potted fiddle-leaf fig in a white pot. No brass lamps, no trinkets, lots of empty floor. Bright high-key late-morning daylight, clean and crisp, not amber. The DELLA indoor unit is mounted high on the solid plaster wall, in the upper middle of the frame, fully visible with clear wall space around it, well away from the windows."
+  }
+}

@@ -2,6 +2,7 @@
 
 Usage: python _system/sync.py            # all pages listed in PAGES
        python _system/sync.py --check    # report pages that are out of date, change nothing
+       python _system/sync.py --only <path or part of it>   # sync just the matching page(s)
 A page joins the system once it contains the START/END markers; this script only replaces
 what is between them.
 """
@@ -25,6 +26,7 @@ PAGES = [
     'mini-split-for-apartment.html',
     'mini-split-for-shed.html',
     '2-zone-vs-3-zone-mini-split/2-zone-vs-3-zone-mini-split.html',
+    'Ductless Mini Split vs Central Air/ductless-mini-split-vs-central-air-nov.html',
 ]
 
 
@@ -46,7 +48,10 @@ BLOCKS = [
 ]
 
 check = '--check' in sys.argv
+only = sys.argv[sys.argv.index('--only') + 1] if '--only' in sys.argv else None
 for rel in PAGES:
+    if only and only not in rel:
+        continue
     path = os.path.join(ROOT, rel)
     if not os.path.exists(path):
         print('missing ', rel); continue
