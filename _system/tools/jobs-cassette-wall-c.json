@@ -1,0 +1,42 @@
+{
+  "hero-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge spanning almost the full width of the intake grille, long curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim, small black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3840x2160",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Wall Mount Mini Split/assets/v5/hero.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "hero-m-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge spanning almost the full width of the intake grille, long curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim, small black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "2160x3840",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Wall Mount Mini Split/assets/v5/hero-m.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "pt-living-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge spanning almost the full width of the intake grille, long curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim, small black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Wall Mount Mini Split/assets/v5/pt-living.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "room-cassette-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge spanning almost the full width of the intake grille, long curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim, small black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Wall Mount Mini Split/assets/v5/room-cassette.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  }
+}
