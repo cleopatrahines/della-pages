@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "prompt": "Wide shot of a serene primary bedroom in soft morning light. The bed with oatmeal linen bedding and a folded navy wool throw sits in the right half of the frame, a low upholstered bench at its foot, an oak nightstand with a ceramic lamp. The DELLA indoor unit is mounted high on the plain warm-white plaster wall above and slightly right of the headboard area, not directly over the pillows. The entire left 45 percent of the frame is calm, uncluttered plaster wall and sheer curtains with gentle window light so headline text can sit there. Composition is wide and airy, ceiling line visible.",
+    "size": "1536x864",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  },
+  "fit-9k": {
+    "prompt": "A cozy, modest-size guest bedroom of about 12 by 12 feet with a standard 8 foot ceiling. Full-size bed with white and sand bedding and a navy knit throw, a small oak desk and chair by a single window with a linen roman shade, a framed print. The DELLA indoor unit is mounted high on the side wall. Soft diffuse daylight, slightly shaded room.",
+    "size": "1536x1024",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  },
+  "fit-12k": {
+    "prompt": "A spacious primary bedroom with a tall vaulted ceiling with exposed light oak beams, a king bed with cream linen bedding, and a separate sitting area with two armchairs and a round side table near large windows. Strong warm afternoon sunlight streams in and casts long window shadows across the floor. The DELLA indoor unit is mounted high on the plain wall above the sitting area. Suburban trees visible outside.",
+    "size": "1536x1024",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  },
+  "night": {
+    "prompt": "The same kind of calm bedroom at night. Deep blue-hour light through the window, one warm bedside lamp glowing low. A person sleeps peacefully under a cream duvet, seen from behind, only hair visible, no face. The DELLA indoor unit is mounted high on the wall above, its small temperature digits glowing softly. Moody, quiet, cinematic, mostly deep navy and warm amber tones, lots of soft shadow.",
+    "size": "1536x1024",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  },
+  "install": {
+    "prompt": "A bedroom corner showing good mini split placement: the DELLA indoor unit is mounted high on a clear wall above a low oak dresser, on the wall opposite the foot of the bed, so air will not blow directly onto the pillows. The bed is visible in the foreground at an angle with linen bedding and a navy throw. Plenty of open space around the unit. Soft natural daylight from a side window.",
+    "size": "1536x1024",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  },
+  "cta": {
+    "prompt": "Very wide view of a peaceful bedroom at dusk. The left half of the frame is a dim, plain deep-toned plaster wall and shadow, very low detail, so white headline text can sit over it. In the right half: a bed with cream linen and a navy throw, a warm glowing bedside lamp, a window with a deep blue evening sky, and the DELLA indoor unit mounted high on the wall. Calm, quiet, end-of-day mood.",
+    "size": "1536x864",
+    "quality": "high",
+    "ref": "C:/Users/wgvae/Desktop/projects/della-pages/_refs/ref-indoor-room.png"
+  }
+}

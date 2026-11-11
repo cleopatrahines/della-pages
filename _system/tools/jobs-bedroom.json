@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a serene light-luxury primary bedroom in soft late-morning sun. Warm greige limewash wall with subtle rectangular panel moulding. On the right: a low curved ivory boucle upholstered bed layered with taupe and warm chocolate linen bedding and a caramel knit throw, a dark walnut fluted nightstand with a travertine table lamp and a ceramic vase, a tall window with sheer ivory linen curtains on the far right. The DELLA indoor unit is mounted high on the wall above the bed, toward the right half of the frame. The left 45 percent of the frame is calm, softly lit wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same serene light-luxury bedroom: warm greige limewash wall with panel moulding, curved ivory boucle bed with taupe and chocolate linen bedding, dark walnut fluted nightstand with a travertine lamp, sheer linen curtains, soft late-morning sun. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, fully visible and centered.",
+    "size": "2160x3840"
+  },
+  "fit-9k": {
+    "prompt": "A compact, elegant guest bedroom about 12 by 12 feet in bright afternoon light. Soft sage-green painted wall, a full-size bed with an upholstered oatmeal linen headboard, sage and ivory bedding with a rust-toned lumbar pillow, a dark walnut nightstand with rattan cane doors and a brass reading sconce, a cognac leather sling chair in the corner, an arched mirror. The DELLA indoor unit is mounted high on the wall above the bed, centered in the upper middle of the frame, with clear space around it. Keep the top-left and bottom-left corners of the frame calm and simple.",
+    "size": "3072x2048"
+  },
+  "fit-12k": {
+    "prompt": "A grand light-luxury primary suite at golden hour: a high vaulted ceiling, a wall of tall black-framed windows looking onto a green garden, warm sun across a dark oak herringbone floor. A king bed with a tall chocolate-brown velvet channel-tufted headboard and ivory and camel bedding; a sitting area with two cream boucle swivel chairs and a round travertine coffee table on a large textured wool rug. The DELLA indoor unit is mounted high on the tall solid wall above the sitting area, in the upper middle of the frame, fully visible. Keep the top-left and bottom-left corners of the frame calm and simple.",
+    "size": "3072x2048"
+  },
+  "quiet": {
+    "prompt": "A calm, luxurious bedroom at night, wide and straight-on. Deep warm taupe plaster wall, an upholstered bed with ink-blue and charcoal linen bedding neatly made, two slim brass wall sconces glowing softly on either side of the bed, a dark walnut bench at the foot of the bed, a window with blue-hour twilight at the side. The DELLA indoor unit is mounted high on the wall centered above the bed in the upper third of the frame, fully visible with generous wall space above, below and to both sides, its small display softly lit. Quiet and restful; shadows keep detail, not muddy.",
+    "size": "3072x2048"
+  },
+  "step-place": {
+    "prompt": "Daytime view standing near the foot of a bed, looking at the opposite wall of a refined bedroom: a long low dark walnut fluted credenza with a large ceramic vase of olive branches and a stack of art books, a large abstract painting in muted earth tones hung lower and to the side. The DELLA indoor unit is mounted high on this wall above the credenza, well away from the bed, with clear space on all sides. A corner of the bed with oatmeal linen and a mocha throw is visible in the near foreground. Warm soft daylight from a side window.",
+    "size": "3072x2048"
+  },
+  "step-power": {
+    "prompt": "A clean, modern laundry and utility room in soft daylight: matte warm-white shaker cabinets with brushed-brass pulls, a honed travertine countertop, a woven basket, a trailing plant. On the wall beside the cabinets is a closed, light-gray residential electrical breaker panel with its door shut, neat and new. Calm, organized, premium. No mini split unit in this image.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "step-outside": {
+    "prompt": "Exterior side of a modern American home on a sunny late afternoon: warm white painted brick wall with a black-framed bedroom window. The DELLA outdoor condenser is mounted on white wall brackets below the window, about 18 inches above a neat bed of pale gravel, with ornamental grasses, boxwood spheres and a small olive tree nearby but clear space in front of the fan. A neat white line-set cover runs from the unit up the wall into the house. Crisp natural shadows, blue sky reflection in the window, the window shows only sheer curtains.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  }
+}
