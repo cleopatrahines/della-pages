@@ -1,0 +1,20 @@
+{
+  "scene-concealed-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the second reference photo: the unit is hidden in the ceiling cavity, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments. Mount it high on the plain light-gray wall on the right side of the room, directly below the ornate crown moulding, running horizontally, fully visible with nothing in front of it. Remove the slim linear slot diffuser from the ceiling near the crown moulding, so this single grille is the only air outlet. Keep everything else in the first image exactly the same: the plaster ceiling medallion, crown moulding, bookcases, fireplace, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "mini-split-for-old-house-images/v5/scene-concealed-b.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "scene-concealed-d": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the second reference photo: the unit is hidden in the ceiling cavity, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments. Mount it horizontally and centered on the flat light-gray wall between the two bookcases, high above the fireplace and the vase, directly below the ornate crown moulding, facing the camera, fully visible with nothing in front of it. Remove the slim linear slot diffuser from the ceiling near the crown moulding on the right, so this single grille is the only air outlet. Keep everything else in the first image exactly the same: the plaster ceiling medallion, crown moulding, bookcases, fireplace, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "mini-split-for-old-house-images/v5/scene-concealed-b.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  }
+}
