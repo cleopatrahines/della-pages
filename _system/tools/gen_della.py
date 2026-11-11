@@ -44,6 +44,8 @@ UNIT = {
     ),
     'plain': '',
 }
+# indoor + outdoor unit in one image (cutaways): both reference photos, both descriptions
+UNIT['both'] = UNIT['indoor'] + ' Outside:' + UNIT['outdoor'].replace(' The outdoor', ' the outdoor', 1) +     ' The first reference photo is the indoor unit, the second is the outdoor condenser.'
 
 
 def multipart(fields, files):
@@ -64,12 +66,15 @@ def run(name, job, out_dir):
     if os.path.exists(dst):
         return name, 'skip', None
     kind = job.get('kind', 'indoor')
-    ref = job.get('ref') or {'indoor': os.path.join(REFS, 'waiji.png'), 'outdoor': os.path.join(REFS, 'aq.png')}.get(kind)
+    ref = job.get('ref') or {'indoor': os.path.join(REFS, 'waiji.png'), 'outdoor': os.path.join(REFS, 'aq.png'),
+                             'both': [os.path.join(REFS, 'waiji.png'), os.path.join(REFS, 'aq.png')]}.get(kind)
+    refs = ref if isinstance(ref, list) else [ref] if ref else []
     fields = {'model': MODEL, 'prompt': job['prompt'] + LOOK + UNIT[kind], 'size': job.get('size', '3072x2048'),
               'quality': job.get('quality', 'high'), 'n': '1'}
-    if ref:
-        ct_img = 'image/webp' if ref.endswith('.webp') else 'image/jpeg' if ref.endswith(('.jpg', '.jpeg')) else 'image/png'
-        body, ct = multipart(fields, [('image[]', (os.path.basename(ref), open(ref, 'rb').read(), ct_img))])
+    if refs:
+        def ct_of(r):
+            return 'image/webp' if r.endswith('.webp') else 'image/jpeg' if r.endswith(('.jpg', '.jpeg')) else 'image/png'
+        body, ct = multipart(fields, [('image[]', (os.path.basename(r), open(r, 'rb').read(), ct_of(r))) for r in refs])
         url = 'https://api.openai.com/v1/images/edits'
     else:
         body, ct = json.dumps(fields | {'n': 1}).encode(), 'application/json'

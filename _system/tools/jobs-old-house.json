@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a beautifully restored Victorian front parlor in a period American house, soft late-morning sun. Tall twelve-foot ceiling with deep original crown moulding and a plaster ceiling medallion, warm greige limewashed plaster walls above painted wainscoting, two tall double-hung sash windows with sheer ivory linen panels on the far right, a cast-iron column radiator painted the wall color beneath the windows, wide-plank dark oak hardwood floor with a faded antique Persian rug in rust and ink-blue tones. On the right half: a camel velvet chesterfield sofa, a dark walnut side table with a brass lamp, a marble fireplace with a gilt mirror. The DELLA indoor unit is mounted high on the solid plaster wall in the right half of the frame, just below the crown moulding, fully visible with clear wall around it. The left 45 percent of the frame is calm, softly lit wall, wainscoting and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of a beautifully restored Victorian front parlor in soft late-morning sun: tall ceiling with deep original crown moulding, warm greige limewashed plaster walls over painted wainscoting, a tall double-hung sash window with sheer ivory linen, a cast-iron column radiator below it, dark oak hardwood floor with an antique rust and ink-blue rug, a camel velvet armchair and a dark walnut side table with a brass lamp. The DELLA indoor unit is mounted high on the plaster wall just below the crown moulding, in the upper quarter of the frame, centered and fully visible.",
+    "size": "2160x3840"
+  },
+  "scene-bedroom": {
+    "prompt": "An upstairs bedroom in a restored 1910s Craftsman bungalow on a hot, bright summer afternoon, strong sun slanting through a wide window with original stained wood casing and a deep sill. Warm taupe plaster walls with a dark-stained picture rail and tall original baseboards, an oak floor. A bed with a dark walnut slatted Craftsman-style headboard, layered rust, terracotta and oatmeal linen bedding, a leather-strap bench at the foot, a hammered-brass table lamp on a walnut nightstand. The DELLA indoor unit is mounted high on the plaster wall above the picture rail on the side wall, in the upper middle of the frame, fully visible with clear space around it.",
+    "size": "3072x2048"
+  },
+  "scene-sunroom": {
+    "prompt": "A glassed-in sunroom off a 1920s colonial-revival house at bright midday: three walls of original multi-pane wood-framed windows painted deep sage green, a solid painted panel wall with wainscoting on the left, a terracotta tile floor with a jute rug. A cream linen sofa with sage and ochre cushions, a pair of dark rattan armchairs, a travertine coffee table, large potted fiddle-leaf fig and olive tree. The DELLA indoor unit is mounted high on the solid panelled wall section, centered in the upper left-middle of the frame, fully visible with clear wall space around it and not in front of any window.",
+    "size": "3072x2048"
+  },
+  "scene-upstairs": {
+    "prompt": "The top-floor attic-level room of an old Victorian house converted into a cozy study and reading room at dusk, warm table lamps glowing and deep blue twilight in a dormer window. Sloped plaster ceiling meeting a tall vertical knee wall, warm greige limewash walls, wide-plank painted floorboards in deep chocolate, built-in walnut bookshelves under the eaves, a chocolate velvet reading chair with a brass floor lamp, a walnut writing desk under the dormer window. The DELLA indoor unit is mounted high on the tallest vertical gable wall, level and fully visible with generous wall space around it, in the upper middle of the frame. Shadows keep detail, not muddy.",
+    "size": "3072x2048"
+  },
+  "scene-concealed": {
+    "prompt": "A formal library-sitting room in a restored 1920 brownstone on a soft overcast day: tall ceiling with intact ornate plaster crown moulding and a ceiling medallion, original dark walnut wainscoting and built-in bookcases, a carved marble fireplace, warm greige plaster walls, a tall arched window with ink-blue velvet curtains. An ivory boucle sofa, a pair of cognac leather club chairs, a round travertine side table. Heating and cooling are completely hidden: the only visible sign is one slim, narrow white linear air grille set flush into the plaster ceiling near the crown moulding. There is no wall-mounted air conditioner or any box on the walls anywhere in the room.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "check-routing": {
+    "prompt": "Exterior close-medium view of the side wall of a restored red-brick Federal-style rowhouse on a crisp clear morning: old red brick with clean lime mortar, a tall six-over-six sash window with a white painted stone sill and black shutters. A neat white line-set cover runs from a small sealed wall entry beside the window straight down the brick and along the base of the wall, tidy and parallel to the window frame, toward the DELLA outdoor condenser on a low concrete pad at the bottom right of the frame, with a boxwood hedge and a gravel strip. Fresh, precise, preservation-quality workmanship.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "cta": {
+    "prompt": "Exterior of a beautifully restored Queen Anne Victorian house at golden hour: painted clapboard in deep sage green with cream trim and a little rust accent, a wraparound porch with turned spindles, tall windows glowing warm inside, a mature hydrangea and boxwood garden, a brick path. At the side of the house, on the right third of the frame, the DELLA outdoor condenser sits on a low pad beside the foundation with clear space around its fan, a neat white line-set cover running up the clapboard. The left 45 percent of the frame is calm lawn, sky and soft garden with nothing important, so text can sit there. Warm, crisp, inviting.",
+    "size": "3840x2160",
+    "kind": "outdoor"
+  }
+}

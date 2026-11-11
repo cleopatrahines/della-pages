@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a bright light-luxury living room high up in a modern city apartment tower, clear late morning. The right half of the frame is a corner of floor-to-ceiling glass with slim black mullions looking out over a sunny downtown skyline of glass high-rise towers, sheer ivory curtains drawn to the side. Smooth ivory plaster walls, large-format pale warm-gray porcelain floor tiles, a low-slung cream leather modular sofa, one burnt-orange leather lounge chair, an oval white marble coffee table on a brushed-gold base, a low white lacquer media console with one ceramic vase. The DELLA indoor unit is mounted high on the solid ivory wall section just left of the glass, in the right half of the frame, fully visible. The left 45 percent of the frame is calm, softly lit ivory wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same bright high-rise city apartment living room: smooth ivory plaster wall beside floor-to-ceiling glass with slim black mullions and a sunny downtown skyline of glass towers, sheer ivory curtains, pale warm-gray large-format porcelain floor, a low cream leather sofa and one burnt-orange leather lounge chair, an oval white marble coffee table on a brushed-gold base. The DELLA indoor unit is mounted high on the solid ivory wall in the upper quarter of the frame, fully visible and roughly centered, with the skyline window beside it.",
+    "size": "2160x3840"
+  },
+  "room-studio": {
+    "prompt": "A compact city studio apartment about 450 square feet in bright midday light, seen straight-on from the living side. Walls painted soft sage green, mid-tone oak herringbone floor. At the back, a built-in sleeping nook: a raised platform bed set into an alcove behind a black steel-framed reeded glass partition, made with sage and terracotta linen bedding. In front: a compact rounded oatmeal linen loveseat, a small round mid-oak dining table with two rattan cane chairs, one tall window with a sheer linen curtain showing neighbouring brick apartment buildings across the street. The DELLA indoor unit is mounted high on the sage wall above the sleeping nook, centered in the upper middle of the frame, fully visible. Keep the bottom-left corner calm.",
+    "size": "3072x2048"
+  },
+  "room-bedroom": {
+    "prompt": "A prewar New York apartment bedroom in the early evening, blue-hour city light outside. Walls painted deep ink blue with tall ivory crown moulding and a picture rail, a smoked oak chevron parquet floor, a pair of tall black steel multi-pane casement windows with a view of lit brownstones and a water tower across the street. A low smoked-oak platform bed with ochre and ink-blue linen bedding and a mustard wool throw, a slim ivory lacquer nightstand with one glowing alabaster lamp, a warm LED cove line glowing softly along the top of the crown moulding. The DELLA indoor unit is mounted high on the ink-blue wall above the bed, centered in the upper middle of the frame, crisp and fully visible with wall space around it. Clean, not muddy; shadows keep detail.",
+    "size": "3072x2048"
+  },
+  "room-topfloor": {
+    "prompt": "A top-floor city loft apartment on a hot sunny summer afternoon: strong bright sun pouring through a wall of tall black steel factory windows and a skylight, crisp sun patches on a smooth polished pale concrete floor. A tall exposed red brick wall, a board-formed concrete column, a large cognac leather sofa with clean lines, a low blackened-steel and glass coffee table, a long blackened-steel open shelf with only three objects, one large fiddle-leaf fig. Rooftops and a water tower visible outside. The DELLA indoor unit is mounted high on the exposed brick wall, in the upper middle of the frame, fully visible and level. Keep the bottom-left corner calm.",
+    "size": "3072x2048"
+  },
+  "install-exterior": {
+    "prompt": "Straight-on exterior elevation of a modern five-storey city apartment building on a clear sunny day: smooth warm-white stucco and pale limestone facade, rows of tall black-framed windows, cantilevered balconies with frameless glass railings. Centered on a third-floor balcony: the DELLA outdoor condenser mounted on two white wall brackets on the facade beside the black-framed balcony door, with clear space around its fan; a neat white line-set cover runs from the unit up the wall and into the building, a small gray electrical disconnect box is mounted on the wall to the right of the unit, and a slim condensate drain line runs neatly down beside the line-set cover. One potted olive tree and a teak lounge chair on the balcony. Blue sky, crisp natural shadows, other balconies tidy and empty, windows show only sheer curtains. The building fills the frame from edge to edge.",
+    "size": "3840x2160",
+    "kind": "outdoor"
+  },
+  "cta": {
+    "prompt": "A small, refined home office corner in a city apartment, soft bright overcast daylight. Warm sand grasscloth wallcovering, a light terrazzo floor with small cream and gray chips, a clean slab-front walnut desk floating under a tall window with an unobstructed sheer linen curtain (no window air conditioner, the window is clear), a navy leather desk chair, a slim brushed-nickel desk lamp, one stack of books. The DELLA indoor unit is mounted high on the grasscloth wall above the desk, fully visible. All of this sits in the right half of the frame; the left half of the frame is calm plain grasscloth wall and floor in soft shadow.",
+    "size": "3840x2160"
+  },
+  "hero-b": {
+    "prompt": "Wide eye-level shot of a bright light-luxury living room high up in a modern city apartment tower, clear late morning. On the far right of the frame: a corner of floor-to-ceiling glass with slim black mullions looking out over a sunny downtown skyline of glass high-rise towers, sheer ivory curtains drawn to the side. Smooth ivory plaster walls, large-format pale warm-gray porcelain floor tiles. All furniture is grouped in the right 55 percent of the frame: a low-slung cream leather modular sofa facing the camera, one burnt-orange leather lounge chair beside it on the right, an oval white marble coffee table on a brushed-gold base, a low white lacquer media console with one ceramic vase. The DELLA indoor unit is mounted high on the solid ivory wall above the sofa, in the right half of the frame, fully visible. The left 45 percent of the frame contains no furniture at all: only plain, softly sunlit ivory wall and empty pale floor, so a headline can sit there.",
+    "size": "3840x2160"
+  }
+}

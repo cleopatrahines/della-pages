@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a finished light-luxury living room in soft late-morning sun, the day a new mini split has been neatly installed. Warm greige limewash wall with subtle rectangular panel moulding, a dark oak herringbone floor with a large textured wool rug. On the right half: a low curved cream boucle sofa with sage green and oatmeal linen cushions, a round travertine coffee table with a stack of books and a ceramic bowl, a dark walnut fluted sideboard with a sculptural brass lamp, a large olive tree in a stone planter, a tall window with sheer ivory linen on the far right. The DELLA indoor unit is mounted high on the solid wall above the sofa, in the right half of the frame, perfectly level, fully visible with clear wall space around it. The left 45 percent of the frame is calm, softly lit wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same finished light-luxury living room in soft late-morning sun: warm greige limewash wall with panel moulding, dark oak herringbone floor, a curved cream boucle sofa with sage and oatmeal linen cushions, a round travertine coffee table, a dark walnut fluted sideboard with a sculptural brass lamp, an olive tree in a stone planter. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, centered, perfectly level and fully visible.",
+    "size": "2160x3840"
+  },
+  "opt-diy": {
+    "prompt": "Prep before a mini split goes up, in a calm light-luxury room in bright morning daylight. A smooth warm-white plaster wall with no unit on it yet: a flat white steel mini split mounting plate is screwed to the wall high up, perfectly level, with a slim aluminum spirit level resting on its top edge and a few light pencil marks beside it. Below, on a low dark walnut bench pushed against the wall, tools are laid out in neat parallel rows: a cordless drill, a tape measure, a small dish of screws and wall anchors, a utility knife, a roll of white wrapping tape, a coiled white drain hose. A large fiddle-leaf fig in a terracotta pot at one side, a slice of a window with ivory linen. Nobody in the room, nothing being held, everything resting neatly in place.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "opt-pro": {
+    "prompt": "Exterior of a modern American home on a warm, clear late afternoon. Charcoal-gray vertical board-and-batten siding, a black-framed window, a strip of pale gravel with clipped boxwood spheres and soft ornamental grasses. The DELLA outdoor condenser sits level on a clean light-gray composite equipment pad on the gravel, with generous clear space in front of its fan and on both sides. A neat white line-set cover runs from the side of the condenser straight up the siding and into the wall, tidy and perfectly parallel to the window frame. The condenser is a white rectangular cabinet with a large round fan grille on the left, a small blue DELLA badge at the top right and a service valve cover on the right side, matching the reference photo exactly, undistorted and fully visible. Crisp natural shadows, professional workmanship.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": "_refs/aq.png"
+  },
+  "step-choose": {
+    "prompt": "A refined home office and library in the early evening, warm table lamps glowing and deep blue dusk in a tall window at the side. Ink-blue painted wall panelling below, warm taupe plaster above, a dark walnut writing desk with a brass desk lamp and a leather notebook, a cognac leather swivel chair, built-in walnut bookshelves with curated books and ceramics, a dark wood floor with an antique rug in ink blue and rust. The DELLA indoor unit is mounted high on the plaster wall above the desk, in the upper middle of the frame, fully visible with clear wall space around it. Shadows keep detail, not muddy.",
+    "size": "3072x2048"
+  },
+  "step-confirm": {
+    "prompt": "A clean, finished modern garage utility wall in soft even daylight: smooth warm-gray painted drywall, a sealed light concrete floor, a tall dark walnut storage cabinet at the left edge. Mounted on the wall: a closed light-gray residential electrical breaker panel with its door shut, and beside it a small closed gray electrical disconnect box connected by one neat straight run of gray conduit. Everything new, level, labeled and tidy. A coiled garden hose on a brass hook and a potted snake plant add calm. Organized and premium. No air conditioner in this image.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "step-prepare": {
+    "prompt": "Overhead flat-lay of mini split installation tools and parts neatly arranged in a tidy grid on a large honed travertine surface, soft diffused daylight from one side. In the center a coiled white insulated pre-charged refrigerant line set with brass quick-connect fittings at its ends; around it in clean rows: a torque wrench, two adjustable wrenches, a hole saw bit, a cordless drill, a tape measure, a spirit level, a coil of white drain hose, a roll of white wrapping tape, a small tube of sealant, a stud finder and a pair of work gloves folded flat. A sprig of eucalyptus in one corner. Generous spacing, nothing overlapping, catalog-precise and clean. No people and no hands.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "step-verify": {
+    "prompt": "A bright glass garden room on a crisp clear morning: black steel-framed windows on two sides with a green garden beyond, one solid limewashed plaster wall in warm sand, a terracotta tile floor with a large jute rug. Two dark rattan lounge chairs with rust and cream linen cushions, a round travertine side table with a carafe, large potted olive and bird-of-paradise plants. The DELLA indoor unit is mounted high on the solid plaster wall, in the upper left-middle of the frame, perfectly level, fully visible with clear wall space around it and not in front of any window, its small display softly lit.",
+    "size": "3072x2048"
+  },
+  "check": {
+    "prompt": "A serene guest bedroom in warm late-afternoon light. Soft taupe plaster wall with slim vertical fluted walnut panelling behind the bed, a low upholstered bed in chocolate-brown velvet with cream and caramel linen bedding and a rust lumbar pillow, a pair of round travertine nightstands with sculptural ceramic lamps, a cream boucle accent chair, an ink-dark wood floor with a soft wool rug. The DELLA indoor unit is mounted high on the side wall, away from the bed, in the upper middle of the frame, fully visible with clear wall space around it.",
+    "size": "3072x2048"
+  },
+  "cta": {
+    "prompt": "A warm light-luxury dining room at blue hour, the evening sky deep blue in a large window on the far right, sculptural paper pendant lights glowing over a long oval travertine dining table with mocha linen-upholstered chairs, a dark walnut fluted sideboard with brass candlesticks and a ceramic vase of dried branches, warm greige plaster walls. The DELLA indoor unit is mounted high on the solid wall above the sideboard in the right third of the frame, fully visible with clear wall around it. The left 45 percent of the frame is calm, softly lit wall and floor in shadowy warm tones with nothing important, so text can sit there. Shadows keep detail, not muddy.",
+    "size": "3840x2160"
+  },
+  "check-scene": {
+    "prompt": "Install day in a calm, well-kept room, wide eye-level view, before the indoor unit goes up. The main wall is smooth plaster painted a deep ink blue, with a crisp white baseboard; the floor is mid-tone wide-plank oak, protected by a neat natural canvas drop cloth. A tall window on the right with a black steel frame and an unlined oatmeal linen roman shade, morning daylight. On the ink-blue wall, high and left of center: a flat white steel mini split mounting plate screwed to the wall, perfectly level, with a slim aluminum spirit level resting on its top edge. Just below the lower right corner of the plate: a neat round hole through the wall fitted with a white plastic wall sleeve and a clean white escutcheon ring. Lower on the wall, near the baseboard below the plate: a small new white electrical junction box with a blank cover plate. On the drop cloth below the plate: a coiled white insulated pre-charged line set with brass quick-connect fittings and a coiled white drain hose, placed neatly. In the left third of the room: a closed aluminum step ladder leaning flat against the side wall, and a simple wooden sawhorse holding an open installation manual (pages with no legible text) next to a small metal tray of screws and wall anchors. On the deep window sill on the right: a clipboard with a few papers and a pencil. A tall potted bird-of-paradise plant in a mustard-ochre glazed pot as the one accent color. Everything orderly, clean and premium; a believable, tidy installation in progress. No air conditioner unit anywhere in the room yet.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "opt-diy-b": {
+    "prompt": "Straight-down overhead flat-lay of mini split installation tools and parts on a matte blackened-steel workbench top, soft diffused daylight. In the center: a coiled white insulated pre-charged refrigerant line set with brass quick-connect fittings at both ends. Arranged around it in clean, evenly spaced rows: a torque wrench, two adjustable wrenches, a hole saw bit, a cordless drill, a tape measure, a short spirit level, a coil of white drain hose, a roll of white wrapping tape, a small tube of sealant, a stud finder, and a rolled-open rust-red leather tool roll holding screwdrivers as the one accent color. Nothing overlapping, catalog-precise, crisp edges, no furniture or room visible, only the steel surface. No people and no hands.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "cta-b": {
+    "prompt": "A finished open loft dining space at golden hour, the day after a neat mini split install. The long back wall is exposed brick painted a soft matte white, with a black steel-framed window on the far right letting in warm low sun. A long rectangular smoked-oak dining table with black cane-back bentwood chairs, a linen runner in natural flax, a cluster of terracotta and rust glazed pottery vases with dried grasses, a black metal linear pendant light above the table, a smooth polished warm-gray concrete floor. The DELLA indoor unit is mounted high on the painted brick wall in the right third of the frame, above the table, perfectly level and fully visible with clear wall space around it. The left 45 percent of the frame is calm painted brick wall and floor in soft shadow with nothing important, so text can sit there.",
+    "size": "3840x2160"
+  },
+  "power": {
+    "prompt": "A clean, modern utility room in soft even daylight from a high window. The wall is smooth light-gray board-formed concrete; the floor is gray-and-white terrazzo. Mounted on the wall at eye level: a closed light-gray residential electrical breaker panel with its door shut, and to its right a small closed gray outdoor-rated electrical disconnect box joined to it by one straight, neat run of gray metal conduit. To the left, open blackened-steel shelving with a few neat woven seagrass baskets and folded canvas cloths; a deep forest-green glazed ceramic pot with a trailing pothos as the one accent color. Everything new, level and tidy. No air conditioner in this image.",
+    "size": "3072x2048",
+    "kind": "plain"
+  }
+}

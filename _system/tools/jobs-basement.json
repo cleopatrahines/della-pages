@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a bright, premium finished basement family lounge on a sunny late morning. It reads clearly as a lower level: a slightly lower flat ceiling with small recessed lights, and two wide horizontal egress windows set high in the far wall, their stone-lined window wells showing green ferns and daylight that pours in across the room. Warm greige limewash walls with subtle panel moulding, a wide oak herringbone floor in a mid-brown tone, a deep cream boucle sectional with sage and caramel cushions on a large textured wool rug, a round travertine coffee table, a dark walnut fluted media console with a ceramic lamp and a tall fiddle-leaf fig. The DELLA indoor unit is mounted high on the solid wall between the windows and the right side of the room, in the right half of the frame, fully visible. The left 45 percent of the frame is calm, softly lit wall and floor with nothing important, so a headline can sit there. Dry, airy and fresh, never damp.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same bright finished basement family lounge: a slightly lower flat ceiling with recessed lights, a wide horizontal egress window high in the wall with a stone-lined window well and green ferns, warm greige limewash walls, a cream boucle sectional with sage and caramel cushions, a round travertine coffee table, a dark walnut fluted media console and a tall fiddle-leaf fig, warm late-morning daylight. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, fully visible and centered. Dry, airy and fresh.",
+    "size": "2160x3840"
+  },
+  "media": {
+    "prompt": "A luxurious basement media room in the early evening, wide and slightly angled. Deep ink-blue painted walls with fluted dark walnut slat panels on either side of a large wall-mounted flat-screen TV that is switched off, a deep chocolate velvet sectional with cream boucle pillows on a thick oatmeal rug, a low travertine coffee table with a brass tray, warm cove lighting along the ceiling edge and two slim brass wall sconces glowing. The DELLA indoor unit is mounted high on the pale greige side wall, in the upper middle of the frame, fully visible with wall space around it. Rich and cozy, shadows keep detail, not muddy.",
+    "size": "3072x2048"
+  },
+  "office": {
+    "prompt": "A compact, elegant basement home office that doubles as a guest room, in soft morning light from one horizontal egress window set high in the wall with a planted window well outside. Soft sage-green limewash walls, a dark walnut writing desk with a cognac leather chair and a brass task lamp, a built-in daybed with an oatmeal linen mattress, rust and ivory cushions, open walnut shelves with books and ceramics, a jute rug. The DELLA indoor unit is mounted high on the solid wall above the daybed, in the upper middle of the frame, fully visible with clear space around it. Bright, dry and calm.",
+    "size": "3072x2048"
+  },
+  "gym": {
+    "prompt": "A premium finished basement home gym in bright daylight from a wide egress window high on the end wall. Warm taupe plaster walls, a full-height mirror on one wall, black rubber floor tiles with a natural oak platform, a walnut wall rack holding neat rows of matte black dumbbells, a dark leather weight bench, a rowing machine in walnut, a rolled cream yoga mat and a tall olive tree in a stone planter. The DELLA indoor unit is mounted high on the solid wall opposite the mirror, in the upper middle of the frame, fully visible and not reflected in a distorted way. Fresh, clean and energetic, no clutter.",
+    "size": "3072x2048"
+  },
+  "bar": {
+    "prompt": "A large open-plan finished basement recreation room at golden hour, seen wide from one corner: a below-grade wet bar with a dark walnut fluted front, a honed travertine countertop, brass bar stools with cognac leather seats and open shelves with glassware, and beyond it a walnut game table with a green felt top under a brass pendant, a cream boucle lounge chair and a large leafy plant. Low warm sun enters through a row of horizontal egress windows high in the wall with planted window wells. Warm greige limewash walls, a mid-tone oak floor. The DELLA indoor unit is mounted high on the long solid wall above the bar area, in the upper middle of the frame, fully visible with generous wall space around it. Spacious, warm and dry.",
+    "size": "3072x2048"
+  },
+  "outside": {
+    "prompt": "Exterior of a modern American home at the foundation level on a sunny afternoon: a warm gray parged concrete foundation wall meeting painted white lap siding above, with a black-framed basement egress window set into a neat curved window well of stacked natural stone, and a bed of pale gravel with ornamental grasses and boxwood spheres. The DELLA outdoor condenser is mounted on white wall brackets on the foundation wall beside the window well, about 18 inches above the gravel, with clear space in front of the fan. A neat white line-set cover runs from the unit up into the house at the rim joist. Crisp natural shadows, clean and tidy.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "cta": {
+    "prompt": "Wide shot of a serene basement guest bedroom in the evening, lamps on. A horizontal egress window high in the wall at the right shows deep blue dusk above a planted window well. Warm taupe plaster wall with panel moulding, an upholstered bed with a tall camel linen headboard, layered taupe and rust bedding, a dark walnut nightstand with a sculptural travertine lamp glowing, a cream boucle accent chair and a large plant. The DELLA indoor unit is mounted high on the wall above the bed, in the right half of the frame, fully visible. The left 45 percent of the frame is quiet, darker wall with nothing important, so text can sit there. Cozy and dry, shadows keep detail.",
+    "size": "3840x2160"
+  }
+}

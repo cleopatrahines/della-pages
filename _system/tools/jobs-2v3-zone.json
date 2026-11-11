@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a bright light-luxury upstairs family lounge in clear late-morning daylight, sheer ivory curtains on a tall window at the far right. Ivory walls with classic French panel moulding, a light-to-mid oak herringbone floor. In the right half: a low rounded cream boucle sofa with two burnt-orange leather cushions, a low oval coffee table in white marble with a brushed-gold base holding one stack of books and a single ceramic vase. At the far right edge, a wide open cased doorway shows a glimpse of an adjoining bedroom with a smoked-oak bed and sand linen bedding. The DELLA indoor unit is mounted high on the lounge wall above the sofa, in the right half of the frame, fully visible with clear wall space around it. The left 45 percent of the frame is calm ivory panelled wall and herringbone floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same bright upstairs family lounge: ivory walls with French panel moulding, light-to-mid oak herringbone floor, a low rounded cream boucle sofa with burnt-orange leather cushions, a white marble and brushed-gold oval coffee table, sheer ivory curtains, clear late-morning daylight. The DELLA indoor unit is mounted high on the wall above the sofa in the upper quarter of the frame, fully visible and centered, with generous wall space around it.",
+    "size": "2160x3840"
+  },
+  "setup-bedrooms": {
+    "prompt": "Eye-level view from a quiet upstairs hallway with a pale large-format limestone-look porcelain floor, looking through two open doorways side by side into two separate bedrooms divided by a white wall. Left bedroom: walls painted soft sage green, a rattan cane bed with oatmeal linen bedding and a terracotta throw. Right bedroom: warm white smooth plaster walls, a low clean slab-front walnut bed with mushroom-grey linen bedding and an ink-blue lumbar pillow. Each bedroom has its own DELLA indoor unit mounted high on its back wall above the bed, two identical units, both fully visible. Bright soft afternoon daylight through sheer curtains in both rooms.",
+    "size": "3072x2048"
+  },
+  "setup-office": {
+    "prompt": "Eye-level view inside a refined home office with walls of ink-blue painted wood paneling, a white lacquer desk with a cognac leather desk chair, open blackened-steel shelving with a few books and one ceramic, and a large-format honed concrete floor. On the right, a tall black steel-framed glass door stands open to the adjoining bedroom beyond, which has warm greige limewash walls, a mid-oak bed with taupe linen bedding and a sculptural paper lamp. The office has its own DELLA indoor unit mounted high on the blue panelled wall above the desk, fully visible; the bedroom beyond has its own DELLA indoor unit high on its wall, also fully visible. Clear overcast midday daylight, crisp and clean.",
+    "size": "3072x2048"
+  },
+  "setup-upstairs": {
+    "prompt": "Eye-level view from the top of a staircase across a bright upstairs landing: a white-painted balustrade with a dark walnut handrail in the near left foreground, a corridor with natural grasscloth wallpaper and a light oak herringbone floor. Three open doors along the corridor lead into three separate bedrooms, each visibly different: one with navy linen bedding, one with sage and ivory bedding, one with a rust-colored throw on a cane bed. Each of the three rooms has its own DELLA indoor unit mounted high on its back wall, three identical units, each fully visible inside its own room. Soft even daylight from the rooms' windows with sheer curtains.",
+    "size": "3072x2048"
+  },
+  "setup-family": {
+    "prompt": "Wide eye-level view from a calm upstairs hall with a terrazzo floor, looking into three separate rooms through three open doorways side by side. Left: a nursery with soft pale-pink painted wainscot paneling, an empty white lacquer crib with a folded oatmeal blanket, a rounded upholstered nursing chair, no baby, no toys scattered. Center: a compact home office with a light walnut slab desk, a black task chair and one framed print on warm white plaster. Right: a primary bedroom with exposed whitewashed brick walls, a deep-navy upholstered bed and camel linen bedding. Each of the three rooms has its own DELLA indoor unit mounted high on its back wall, three identical units, each fully visible. Bright clean morning daylight.",
+    "size": "3072x2048"
+  },
+  "ext-2": {
+    "prompt": "Exterior side of a modern farmhouse-style two-story home on a bright clear morning: white vertical board-and-batten siding, two black-framed upstairs windows side by side showing only sheer curtains, a neat strip of pale gravel with a few clipped boxwood spheres and soft ornamental grasses. One DELLA outdoor condenser is mounted on white wall brackets about 18 inches above the gravel, with clear space in front of the fan grille. A single neat white line-set cover runs from the unit up the wall and then splits into two tidy white covers, each entering the wall below one of the two upstairs windows. Crisp natural shadows, clean blue sky.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "ext-3": {
+    "prompt": "Exterior side of a traditional two-story home with warm red-brown exposed brick and a newer single-story addition clad in smooth warm-white stucco, on a sunny late afternoon. One DELLA outdoor condenser stands on a small light concrete pad beside the house with a bed of dark mulch, a small Japanese maple and lavender nearby but clear space in front of the fan. Neat white line-set covers run from the unit up and along the wall and branch into three tidy runs, each entering the house at a different room: two upstairs in the brick wall and one in the stucco addition. Black-framed windows show only sheer curtains. Crisp natural shadows, clear sky.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "cutaway": {
+    "prompt": "A photorealistic architectural cutaway model of a single-story modern home, seen perfectly straight-on from the front with the front wall and front half of the roof removed like a dollhouse section, standing on a thin slab of lawn on a clean warm-white studio background. Under a simple pitched roof with an empty attic space visible above the ceiling, three side-by-side rooms of equal width are separated by two interior walls. Left room: a bedroom with a bed with oatmeal linen and a walnut nightstand. Middle room: a home office with a desk, a chair and a low shelf. Right room: a nursery with an empty white crib, a rocking chair and a round rug; no baby, no people. Each room has exactly one white wall-mounted mini split indoor unit (a sleek white rectangle about three times as wide as tall, flat front, slim louver at the bottom) mounted high on its back wall, centered in the room; all three identical and level. Outside the right exterior wall, on a small concrete pad on the lawn, stands exactly one white outdoor condenser with a large round fan grille. No visible pipes, line sets or cables anywhere. Leave empty background margin on both sides of the house and above the roof. Bright even soft studio light, clean warm whites, soft contact shadow.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": "_refs/waiji.png"
+  },
+  "cta": {
+    "prompt": "Wide shot of a serene light-luxury primary bedroom at dusk with deep blue twilight in a tall window on the right. Warm ivory plaster walls; behind the bed a wide clean slab-front walnut wall panel with a warm LED cove strip glowing softly along its top and an under-glow beneath the floating bed. A low platform bed on the right with a camel leather headboard and layered stone and chocolate linen bedding, one sculptural alabaster lamp on a slim nightstand. Large-format light warm-grey porcelain floor with a soft wool rug. The DELLA indoor unit is mounted high on the plaster wall above the walnut panel, in the right half of the frame, fully visible with generous wall space around it. The left 45 percent of the frame is calm, softly lit wall and floor with nothing important, so text can sit there. Shadows keep detail, not muddy.",
+    "size": "3840x2160"
+  }
+}

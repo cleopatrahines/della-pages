@@ -1,0 +1,10 @@
+{
+  "fit-12k-c": {
+    "prompt": "A compact, bright attached sunroom about 12 by 14 feet in clear late-morning daylight: white-painted shiplap knee walls with a run of white-framed casement windows above on two sides, a soft green garden outside, light herringbone oak floor, a flat white painted tongue-and-groove ceiling. Furniture: one low cream linen loveseat with chambray-blue cushions, a small round white lacquer side table with a single ceramic cup, a woven jute rug, one potted olive tree. The back wall is the solid warm-white plaster wall of the house; the DELLA indoor unit is mounted high on that solid wall, centered in the upper middle of the frame with clear space around it. Calm and airy, generous empty floor.",
+    "size": "3072x2048"
+  },
+  "fit-18k-c": {
+    "prompt": "A large, glass-heavy west-facing four-season room in strong, crisp afternoon sun: floor-to-ceiling black steel-framed windows along two long sides and a glass lantern roof section, large-format pale limestone floor tiles with bright sun patterns, a big cream modular sofa with navy wool cushions, a long low white marble coffee table, a pair of black leather sling chairs, one tall fiddle-leaf fig. The far end wall is solid, painted ivory with French panel moulding; the DELLA indoor unit is mounted high on that solid end wall, fully visible, upper middle of the frame. Spacious and minimal, clearly a large sun-filled room.",
+    "size": "3072x2048"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scene-sunroom-b": {
+    "prompt": "A glassed-in sunroom off a 1920s colonial-revival house in strong bright midday summer sun pouring through glass: two walls of original white-painted multi-pane wood windows from knee wall to ceiling, a solid wall on the left finished in painted raised panelling in soft butter yellow, a black-and-white checkerboard marble tile floor. A slipcovered sofa in blue-and-white ticking stripe linen, a pair of white-painted wicker armchairs with cobalt cushions, cobalt-blue glazed ceramic garden stools, a painted white wooden coffee table, potted lemon trees and ferns. Accent color: cobalt blue. The DELLA indoor unit is mounted high on the solid panelled wall section in the upper left-middle of the frame, fully visible with clear wall space around it and not in front of any window. Keep the bottom-left corner simple.",
+    "size": "3072x2048"
+  },
+  "scene-upstairs-b": {
+    "prompt": "The top-floor room under the eaves of an old Victorian house used as a study, at dusk with the last warm glow in the sky and deep blue twilight in a small gable window. Steeply sloped ceilings finished in ivory painted beadboard meeting short knee walls, a tall vertical gable end wall painted deep oxblood red, original wide pine floorboards stained dark with a faded red and indigo kilim rug. An antique mahogany secretary desk with a green glass banker's lamp, a tufted oxblood leather wingback chair, low built-in painted bookshelves tucked under the slopes. Accent color: oxblood red. The DELLA indoor unit is mounted high on the tall vertical gable wall, level and fully visible with generous wall space around it, in the upper middle of the frame. Shadows keep detail, not muddy. Keep the bottom-left corner calm.",
+    "size": "3072x2048"
+  },
+  "scene-concealed-b": {
+    "prompt": "A formal library in a restored 1920 brownstone in soft bright morning light: tall ceiling with intact ornate white plaster crown moulding and a plaster ceiling medallion, floor-to-ceiling built-in bookcases painted deep slate green-gray, a carved dark green Verde Antico marble fireplace, walls of pale stone-gray painted plaster, a tall arched window with ivory linen curtains. A long tight-back sofa in mustard-ochre velvet, a pair of caned mahogany armchairs, an oval mahogany coffee table with books, an antique Persian rug in indigo and ochre, polished parquet floor. Accent color: mustard ochre. Heating and cooling are completely hidden: the only visible sign is one slim, narrow white linear air grille set flush into the plaster ceiling near the crown moulding. There is no wall-mounted air conditioner or any box on the walls anywhere in the room. Keep the bottom-left corner calm.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "scene-upstairs-c": {
+    "prompt": "The top-floor room under the eaves of an old Victorian house, converted into a bright, calm study, photographed at early dusk: soft blue twilight in a small pointed Gothic gable window, the room lit by a warm LED strip glowing under the built-in shelves and a soft LED cove along the ridge. Steeply sloped ceilings in ivory painted beadboard meeting short knee walls, a tall vertical gable end wall in smooth warm-white plaster, original wide floorboards painted soft pale gray. Low built-in white painted bookshelves tucked under the slopes with a few books, a slim writing desk in glossy white lacquer on brushed-gold legs, one sculptural rounded reading chair in sage-green velvet, a small sage and ivory wool rug. Accent color: sage green. Minimal styling, generous empty floor. The DELLA indoor unit is mounted high on the tall vertical gable wall, level and fully visible with generous wall space around it, in the upper middle of the frame. Clean, crisp, shadows keep detail, not amber. Keep the bottom-left corner calm.",
+    "size": "3072x2048"
+  }
+}

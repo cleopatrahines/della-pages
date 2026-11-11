@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "prompt": "Wide eye-level shot of a generous contemporary living room in crisp late-morning light. Warm greige limewash walls with tall rectangular panel moulding, a honed travertine fireplace surround with a slim mantel, a long low curved cream boucle sofa with rust and ivory linen cushions, a sculptural dark walnut coffee table with a stone bowl, a chocolate velvet lounge chair, a large olive tree in a ceramic planter, a tall window with sheer ivory linen curtains on the far right. The DELLA indoor unit is mounted high on the plain wall above the sofa, in the right half of the frame, fully visible with clear wall around it. The left 45 percent of the frame is calm, softly lit panelled wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m": {
+    "prompt": "Vertical shot of the same contemporary living room: warm greige limewash wall with panel moulding, the curved cream boucle sofa with rust and ivory cushions, a dark walnut coffee table, a large olive tree in a ceramic planter, sheer linen curtains, crisp late-morning light. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, centered and fully visible with clear wall above, below and to both sides.",
+    "size": "2160x3840"
+  },
+  "fit-12k": {
+    "prompt": "A mid-size enclosed home office and study about 14 by 14 feet with a standard 8 foot flat ceiling and a paneled door standing closed at the side. Deep ink-blue painted walls with picture-frame moulding, a dark walnut writing desk with a brass desk lamp and a leather desk pad, a cognac leather desk chair, built-in walnut shelves with books and ceramics, one window with a linen roman shade letting in soft filtered daylight. The DELLA indoor unit is mounted high on the plain wall above the desk, in the upper middle of the frame, fully visible with generous wall space around it. Intimate, tidy, enclosed. Keep the bottom-left corner of the frame calm and simple.",
+    "size": "3072x2048"
+  },
+  "fit-18k": {
+    "prompt": "A grand open-plan great room at golden hour with a double-height vaulted ceiling and dark stained wood beams. One connected space: a large cream boucle sectional with chocolate and sage cushions on a big textured wool rug in the foreground, a long dark walnut dining table with eight upholstered chairs beyond it, and a kitchen with a travertine island and fluted walnut cabinetry at the far end. Warm low sun through tall black-framed windows. The DELLA indoor unit is mounted high on a tall plain limewash wall above the living area, in the upper middle of the frame, fully visible with clear wall around it. Expansive and airy. Keep the bottom-left corner of the frame calm and simple.",
+    "size": "3072x2048"
+  },
+  "factors": {
+    "prompt": "A sun-drenched living room in the middle of a hot afternoon: a large west-facing window wall pouring strong direct sunlight and long bright patches across a dark oak herringbone floor, a tall ceiling, and a wide open cased archway on one side leading into an adjoining dining room with a round travertine table and pendant light. A low taupe linen sofa with a rust throw, a brass floor lamp, a fluted walnut side table with books, a fiddle-leaf fig. The DELLA indoor unit is mounted high on the solid plaster wall between the window and the archway, near the center of the frame, fully visible with clear wall around it. Bright and warm but crisp, not hazy.",
+    "size": "3072x2048"
+  },
+  "feature": {
+    "prompt": "A serene formal sitting room with very tall arched steel-framed windows reaching almost to the ceiling, soft even north light on a cool overcast midday. Pale sage-green plaster walls with panel moulding, a pair of ivory boucle armchairs and a dark walnut round side table with a travertine top, a sage velvet ottoman, a large abstract painting in muted greens, a tall ceramic vase with branches. The DELLA indoor unit is mounted high on the solid wall between two of the tall windows, centered in the upper third of the frame, fully visible with clear wall space on all sides. Calm, balanced, fresh and quiet.",
+    "size": "3072x2048"
+  },
+  "cta": {
+    "prompt": "Exterior side of an elegant modern American home at early evening blue hour: a warm white limewashed stucco wall with a tall black-framed window glowing with warm interior light on the right. The DELLA outdoor condenser is mounted on white wall brackets about 18 inches above a neat bed of pale gravel in the right third of the frame, with a neat white line-set cover running up the wall into the house, ornamental grasses, boxwood spheres and a small olive tree nearby but clear space in front of the fan. The left 45 percent of the frame is calm, plain shadowed wall and soft deep-blue sky with nothing important, so a headline can sit over it. Crisp, clean, premium.",
+    "size": "3840x2160",
+    "kind": "outdoor"
+  },
+  "cta-b": {
+    "prompt": "Exterior side of an elegant modern American home at early evening blue hour, wide shot. A long warm white limewashed stucco wall. The DELLA outdoor condenser is mounted on white wall brackets about 18 inches above a neat bed of pale gravel, placed far to the right, between 65 and 85 percent of the frame width, with a neat white line-set cover running up the wall beside it and clear space in front of the fan; a tall black-framed window glowing with warm interior light at the far right edge, ornamental grasses and boxwood spheres along the gravel bed. The entire left 55 percent of the frame is calm, plain softly shadowed wall and a strip of deep-blue sky with nothing important, so a headline can sit over it. Crisp, clean, premium.",
+    "size": "3840x2160",
+    "kind": "outdoor"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "hero-b": {
+    "prompt": "Wide eye-level shot through a contemporary whole-home open plan in warm late-afternoon light, showing several living spaces at once: an entry and living area in the foreground, an open kitchen beyond, and a wide doorway on the far right opening into a den. Soft white plaster walls, polished pale gray concrete floor, a floating staircase with blackened steel stringers and a slim steel railing in the middle distance. On the right half: a camel leather sofa with forest-green linen cushions on a charcoal flat-weave rug, a low blackened steel and smoked glass coffee table; beyond it a kitchen with deep forest-green lacquered cabinets, a honed white marble island and black stools; a mid-oak dining table with black chairs. Accent color: forest green. The DELLA indoor unit is mounted high on the solid living-room wall in the right half of the frame, fully visible with clear wall around it; a second identical DELLA indoor unit is visible smaller in the distance, high on the den wall through the doorway, also fully visible and level. The left 45 percent of the frame is calm, softly lit plain wall and concrete floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m-b": {
+    "prompt": "Vertical shot of the same contemporary open plan in warm late-afternoon light, looking from the living area toward the open kitchen: soft white plaster wall, polished pale gray concrete floor, a camel leather sofa with forest-green linen cushions, beyond it deep forest-green lacquered kitchen cabinets with a honed white marble island, a blackened steel staircase railing at the side. The DELLA indoor unit is mounted high on the plain living-room wall in the upper quarter of the frame, centered and fully visible with clear wall above, below and to both sides.",
+    "size": "2160x3840"
+  },
+  "sizing-b": {
+    "prompt": "A bright modern home office in high-key morning daylight from a large window with sheer white curtains on the right. The wall behind the desk is painted deep ink blue and holds a few open slab walnut floating shelves with a handful of books and two ceramics; the other walls are ivory. A sculptural waterfall desk in glossy white lacquer, a white leather executive chair, a light-to-mid oak herringbone floor with a soft gray wool rug, a closed laptop and one small vase on the desk. Accent color: ink blue. The DELLA indoor unit is mounted high on the ink-blue wall above the desk, in the upper middle of the frame, fully visible with clear wall space around it, not covered by shelves. Clean, airy, generous empty floor. Keep the bottom-left corner calm.",
+    "size": "3072x2048"
+  },
+  "cta-b": {
+    "prompt": "Wide frontal shot of a calm modern luxury primary bedroom in the early evening: soft blue dusk outside a tall window with sheer ivory curtains on the far right, the room lit by a warm LED cove strip along the ceiling and a warm LED under-glow beneath the bed and the nightstands. Warm-white walls with French panel moulding, a wide-plank mid-tone oak floor with a large oatmeal rug. On the right third: a low rounded cream upholstered bed with chocolate-brown and taupe linen bedding, glossy white lacquer nightstands with one small sculptural lamp each. Accent color: chocolate brown. The DELLA indoor unit is mounted high on the wall above the bed in the right third of the frame, fully visible with generous wall space around it. The left 55 percent of the frame is calm, softly lit plain panelled wall and floor with nothing important, so text can sit there. Clean and crisp, shadows keep detail, not amber.",
+    "size": "3840x2160"
+  }
+}
