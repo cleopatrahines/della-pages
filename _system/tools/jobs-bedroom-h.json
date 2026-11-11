@@ -1,0 +1,40 @@
+{
+  "hero-h": {
+    "prompt": "Wide eye-level shot of a bright, airy modern-luxury primary bedroom in high-key late-morning daylight. Ivory warm-white wall with elegant French panel moulding, light natural oak herringbone floor. On the right: a low sculptural bed with a rounded, softly channelled ivory linen headboard, crisp ivory bedding with a dusty-blue linen throw folded at the foot, one white lacquer nightstand with a brushed-gold edge holding a single white ceramic lamp; a tall window with sheer white curtains on the far right. The DELLA indoor unit is mounted high on the wall above the bed, toward the right half of the frame. The left 45 percent of the frame is calm, bright, empty wall and floor with nothing important, so a headline can sit there.",
+    "size": "3840x2160"
+  },
+  "hero-m-h": {
+    "prompt": "Vertical shot of the same bright modern-luxury bedroom: ivory wall with French panel moulding, light oak herringbone floor, low rounded ivory linen bed with a dusty-blue throw, white lacquer nightstand with a brushed-gold edge and a white ceramic lamp, sheer white curtains, high-key daylight. The DELLA indoor unit is mounted high on the wall in the upper quarter of the frame, fully visible and centered above the bed.",
+    "size": "2160x3840"
+  },
+  "fit-9k-h": {
+    "prompt": "A compact guest bedroom about 12 by 12 feet, bright afternoon daylight through one window with sheer curtains. Sand-colored grasscloth wallpaper, wide-plank mid-tone oak floor, a full-size bed with a natural rattan cane headboard, white and olive-green linen bedding, a small round mid-oak side table with one stoneware cup, a simple wall-mounted reading light. The DELLA indoor unit is mounted high on the wall above the bed, centered in the upper middle of the frame, with clear space around it. Keep the top-left and bottom-left corners of the frame calm and simple. Compact, cozy, uncluttered.",
+    "size": "3072x2048"
+  },
+  "fit-12k-h": {
+    "prompt": "A spacious modern-luxury primary suite in bright daylight: floor-to-ceiling glass on the right with sheer white curtains and a garden view, large-format light warm-gray porcelain floor tiles, smooth warm-white plaster walls. A wide king bed with a tall ivory leather headboard and ivory bedding with a navy wool throw; a separate sitting area with a white lacquer low table topped with a Calacatta marble slab and two pale gray rounded lounge chairs on a large flat-weave ivory rug; one brushed-gold floor lamp. The DELLA indoor unit is mounted high on the tall solid wall above the sitting area, in the upper middle of the frame, fully visible. Keep the top-left and bottom-left corners of the frame calm and simple.",
+    "size": "3072x2048"
+  },
+  "quiet-h": {
+    "prompt": "A calm modern bedroom in the evening, wide and straight-on. Deep ink-blue limewash wall, a recessed ceiling cove with a warm LED light strip glowing softly along the ceiling edge, a low floating smoked-oak platform bed with a warm LED under-glow, crisp white and charcoal linen bedding neatly made, a matching smoked-oak floating nightstand with one small glass vase. Dark polished concrete floor. Evening blue hour visible through a side window with sheer curtains. The DELLA indoor unit is mounted high on the wall centered above the bed in the upper third of the frame, fully visible with generous wall space above, below and to both sides, its small display softly lit. Quiet, restful, clean; shadows keep detail, not muddy, no amber haze.",
+    "size": "3072x2048"
+  },
+  "step-place-h": {
+    "prompt": "Daytime view standing near the foot of a bed, looking at the opposite wall of a refined bright bedroom: warm white smooth plaster wall, wide-plank light oak floor, a long low white lacquer media credenza with slim brushed-gold legs holding one terracotta ceramic vase and two books, a single large framed abstract print in soft blush and sand tones hung low and off to one side. The DELLA indoor unit is mounted high on this wall above the credenza, well away from the bed, with clear space on all sides. A corner of the bed with blush-pink linen bedding is visible in the near foreground. Bright soft daylight from a side window with sheer curtains.",
+    "size": "3072x2048"
+  },
+  "step-power-h": {
+    "prompt": "A bright, clean modern laundry and utility room in high-key daylight: flat-front matte white cabinets with slim black pulls, a white quartz countertop, light terrazzo floor tiles with small gray and sage chips, a white front-load washer and dryer tucked under the counter, one woven basket. On the wall beside the cabinets is a closed, light-gray residential electrical breaker panel with its door shut, neat and new. Calm, organized, premium, uncluttered. No mini split unit in this image.",
+    "size": "3072x2048",
+    "kind": "plain"
+  },
+  "step-outside-h": {
+    "prompt": "Exterior side of a modern American home on a sunny clear day: smooth light-gray stucco wall with a black-framed bedroom window and a clean limestone sill. The DELLA outdoor condenser is mounted on white wall brackets below the window, about 18 inches above a neat bed of crushed white gravel, with a few clumps of ornamental grass and a row of low lavender nearby but clear space in front of the fan. A neat white line-set cover runs from the unit up the wall into the house. Crisp natural shadows, blue sky reflection in the window; the window shows only sheer curtains.",
+    "size": "3072x2048",
+    "kind": "outdoor"
+  },
+  "cta-h": {
+    "prompt": "Wide eye-level shot of a serene, bright modern bedroom in soft morning light. Greige limewash wall, pale large-format limestone-look floor tiles with a cream wool rug. A low platform bed in warm mid-walnut slab with ivory and sage linen bedding, a camel leather bench at the foot of the bed, one tall sculptural white ceramic floor vase with a single olive branch. A large window with sheer white curtains on the far right. The DELLA indoor unit is mounted high on the wall above the bed in the right half of the frame, fully visible with clear wall space on all sides. The left 45 percent of the frame is calm, simple wall and floor with nothing important, so text can sit there.",
+    "size": "3840x2160"
+  }
+}
