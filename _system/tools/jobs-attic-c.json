@@ -1,0 +1,21 @@
+{
+  "type-cassette-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the flat ceiling; ONE long straight air-outlet louver slot along the top edge spanning almost the full width of the intake grille, long curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim, small black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Mini Split for Attic/assets/v5/type-cassette-b.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "type-ducted-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the second reference photo: the unit itself is hidden in the attic knee wall and ceiling space, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments. Mount it high and centered on the flat gable end wall, above the TV, just below the point where the two sloped ceilings meet the wall, fully visible with nothing in front of it. Remove the two dark linear slot diffusers in the sloped ceiling (keep the warm LED light strips) and remove the small return grille low on the right wall, so this single wall grille is the only air outlet. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Mini Split for Attic/assets/v5/type-ducted-b2.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  }
+}
