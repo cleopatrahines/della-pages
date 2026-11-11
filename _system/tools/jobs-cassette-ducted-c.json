@@ -1,0 +1,107 @@
+{
+  "hero-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge, curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3840x2160",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/hero-b.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "hero-m-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge, curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "2160x3840",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/hero-m.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "cassette-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge, curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/cassette.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "proj-open-c": {
+    "prompt": "Replace the ceiling cassette in the first image with the exact DELLA ceiling cassette shown in the reference photos: a square white panel with softly rounded corners set flush in the ceiling; ONE long straight air-outlet louver slot along the top edge, curved louver slots on the left and right sides and one along the bottom; a square central intake grille with a fine rectangular mesh; a small gray DELLA wordmark just above the intake grille; a slim black display strip centered below the intake grille. Same position, size and perspective as the cassette it replaces, perfectly square, undistorted, fully visible, nothing in front of it. Keep everything else in the first image exactly the same: room, furniture, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/proj-open.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/cassette-panel-della.jpg"
+    ]
+  },
+  "ducted-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the last reference photo: the unit itself is hidden above the ceiling, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments, mounted high on a wall face just below the ceiling, fully visible with nothing in front of it. Remove every other ceiling slot diffuser, linear slot and return grille from the first image so this single wall grille is the only air outlet. Place the grille high on the sage-green wall on the left, centered on that wall, just below the ceiling. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/ducted.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "proj-basement-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the last reference photo: the unit itself is hidden above the ceiling, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments, mounted high on a wall face just below the ceiling, fully visible with nothing in front of it. Remove every other ceiling slot diffuser, linear slot and return grille from the first image so this single wall grille is the only air outlet. Place the grille on the white soffit face on the right, just below the ceiling, above the media wall and TV. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/proj-basement.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "proj-new-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the last reference photo: the unit itself is hidden above the ceiling, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments, mounted high on a wall face just below the ceiling, fully visible with nothing in front of it. Remove every other ceiling slot diffuser, linear slot and return grille from the first image so this single wall grille is the only air outlet. Place the grille high on the plain white wall on the right, above the floating stair, just below the ceiling. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/proj-new.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "proj-multi-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the last reference photo: the unit itself is hidden above the ceiling, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments, mounted high on a wall face just below the ceiling, fully visible with nothing in front of it. Remove every other ceiling slot diffuser, linear slot and return grille from the first image so this single wall grille is the only air outlet. Place one grille high on the end wall above the far arched doorway, just below the ceiling, so it is clearly visible down the hallway. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/proj-multi.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "cta-c": {
+    "prompt": "Show the DELLA concealed ducted mini split exactly as in the last reference photo: the unit itself is hidden above the ceiling, and the only visible part is ONE long, slim, white rectangular supply grille with many fine horizontal louver blades, divided into three or four equal segments, mounted high on a wall face just below the ceiling, fully visible with nothing in front of it. Remove every other ceiling slot diffuser, linear slot and return grille from the first image so this single wall grille is the only air outlet. Place the grille high on the walnut-panelled wall, centered, in the gap between the top of the panelling and the ceiling, with the warm LED cove light still glowing around the ceiling recess. Keep everything else in the first image exactly the same: room, furniture, materials, light, colors and framing.",
+    "size": "3840x2160",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/cta.webp",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "cutaway-c": {
+    "prompt": "In this architectural cutaway, keep the left room and its ceiling cassette as they are, but make the cassette match the DELLA cassette in the second reference photo (square rounded panel, one straight top louver, curved side louvers, central mesh grille, slim black display). In the right room, keep the concealed ducted unit hidden in the ceiling space, but remove the round flexible ducts and all ceiling slot diffusers and return grilles. Instead connect the unit with one short rectangular duct to ONE long, slim, white segmented louvered supply grille mounted high on the right room's back wall just below the ceiling, exactly like the grille in the third reference photo, fully visible. Keep everything else the same: rooms, furniture, colors, framing and the white section edges.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/cutaway.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  },
+  "cutaway-d": {
+    "prompt": "Edit this architectural cutaway. LEFT room: keep everything, but make the ceiling cassette panel match the DELLA cassette in the second reference photo (square rounded white panel, one straight louver along the top edge, curved louvers on the sides, central fine-mesh intake grille, small DELLA wordmark, slim black display strip). RIGHT room: KEEP the concealed ducted indoor unit exactly as it is now - the long white rectangular cabinet with the blue coil face lying in the ceiling space above the right room - it must stay clearly visible. Remove only the round silver flexible ducts and every slot diffuser and return grille in the right room's ceiling. Instead, the ducted unit's front outlet connects through one short straight rectangular white duct down to ONE long, slim, white supply grille with fine horizontal louver blades divided into three or four segments, mounted high on the right room's back wall just below the ceiling, exactly like the grille in the third reference photo, fully visible. Keep everything else the same: rooms, furniture, colors, framing, roof joists and the white section edges.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "ref": [
+      "Ceiling Cassette vs Concealed Ducted Mini Split/assets/v5/cutaway.webp",
+      "_refs/cassette-ceiling-della.jpg",
+      "_refs/ducted-grille-della.jpg"
+    ]
+  }
+}
