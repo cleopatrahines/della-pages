@@ -6,6 +6,7 @@ kind picks the shared style text and the default reference image:
   indoor  -> _refs/waiji.png (wall-mounted indoor unit)   [default]
   outdoor -> _refs/aq.png    (outdoor condenser on a wall)
   plain   -> style text only, no product description (pass your own ref, or none)
+"raw": true sends the prompt alone (no style/unit text): use it to edit an existing image passed first in "ref".
 Existing outputs are skipped; delete one to regenerate. GEN_WORKERS sets parallel calls (default 3).
 """
 import base64, io, json, os, sys, urllib.request, uuid, concurrent.futures as cf
@@ -69,7 +70,8 @@ def run(name, job, out_dir):
     ref = job.get('ref') or {'indoor': os.path.join(REFS, 'waiji.png'), 'outdoor': os.path.join(REFS, 'aq.png'),
                              'both': [os.path.join(REFS, 'waiji.png'), os.path.join(REFS, 'aq.png')]}.get(kind)
     refs = ref if isinstance(ref, list) else [ref] if ref else []
-    fields = {'model': MODEL, 'prompt': job['prompt'] + LOOK + UNIT[kind], 'size': job.get('size', '3072x2048'),
+    prompt = job['prompt'] if job.get('raw') else job['prompt'] + LOOK + UNIT[kind]
+    fields = {'model': MODEL, 'prompt': prompt, 'size': job.get('size', '3072x2048'),
               'quality': job.get('quality', 'high'), 'n': '1'}
     if refs:
         def ct_of(r):

@@ -1,0 +1,16 @@
+{
+  "cutaway-d": {
+    "prompt": "Edit the first image. Keep everything exactly the same: the house cutaway, the three rooms, the furniture, the three white wall-mounted indoor units, the roof, the lawn, the background, the framing and the camera angle. Change only the outdoor unit standing on the pad outside the right wall of the house: replace it with the DELLA mini split outdoor unit shown in the second image, keeping the same position and a similar size. It is a white rectangular cabinet with a large round fan grille on the left of its front, a small blue DELLA badge with white letters at the top right of the front, and a service valve cover on its right side. It sits level on a light concrete pad on the grass, and a slim white line-set cover runs from it up the outside wall into the house. Photorealistic, same lighting as the rest of the image. No text other than the DELLA badge.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "raw": true,
+    "ref": ["C:/Users/wgvae/Desktop/projects/della-pages/2-zone-vs-3-zone-mini-split/assets/v5/cutaway.webp", "C:/Users/wgvae/Desktop/projects/della-pages/_refs/aq.png"]
+  },
+  "compare-d": {
+    "prompt": "Edit the first image. Keep everything exactly the same: the house facade, windows, wall lamp, the white wall-mounted DELLA mini split outdoor unit on the right with its brackets, the plants, gravel, lawn, light, framing and camera angle. Change only the square gray central air conditioner condenser standing on the concrete pad at the left: replace it with the DELLA central air outdoor condenser shown in the second and third images, in the same position and at a similar size. It is a dark charcoal-gray square cabinet with horizontal louvered grilles on all sides, a fan grille on the top, and a blue DELLA badge with white letters centered high on the front grille. Keep it standing level on the same concrete pad with the same conduit and disconnect box on the wall beside it. Photorealistic, same sunlight and shadows as the rest of the image. No text other than the DELLA badges.",
+    "size": "3072x2048",
+    "kind": "plain",
+    "raw": true,
+    "ref": ["C:/Users/wgvae/Desktop/projects/della-pages/Ductless Mini Split vs Central Air/assets/v5/compare.webp", "C:/Users/wgvae/Desktop/projects/della-pages/_refs/c2.png", "C:/Users/wgvae/Desktop/projects/della-pages/_refs/c1.png"]
+  }
+}

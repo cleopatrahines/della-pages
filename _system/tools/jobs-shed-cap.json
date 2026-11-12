@@ -1,0 +1,14 @@
+{
+  "cap-9k": {
+    "prompt": "Inside a small compact backyard shed, about 10 by 12 feet, converted into a cozy music and hobby room, seen frontally. Clear shed cues: low pitched ceiling with exposed painted rafters, one small square window with a garden view, the edge of a half-glass shed door at the side. Walls in deep forest-green painted tongue-and-groove boards; wide-plank stained walnut-tone floor; a cognac leather lounge chair, an acoustic guitar on a stand, a slim low record console in dark stained ash with a turntable, a small mustard wool rug. Soft afternoon daylight. Mount the DELLA wall-mounted indoor unit high on the back wall, centered under the rafters, fully visible.",
+    "size": "3072x2048"
+  },
+  "cap-12k": {
+    "prompt": "Inside a modern backyard office shed, medium-wide view. Clear shed cues: gable ceiling with dark-stained timber beams, a large fixed picture window looking onto a green garden lawn and trees, a glazed side door. Walls in warm white lime plaster; polished light concrete floor; a long writing desk in smoked oak with a navy upholstered task chair; a single low bookshelf in black steel; one potted olive tree. Fresh bright morning daylight. Mount the DELLA wall-mounted indoor unit high on the solid end wall beside the picture window, fully visible.",
+    "size": "3072x2048"
+  },
+  "cap-18k": {
+    "prompt": "Inside a large detached backyard garden studio built like a small barn, wide view showing its size. Clear outbuilding cues: tall vaulted ceiling with exposed steel tie rods, a fully glazed gable end with black-framed windows and two roof skylights pouring strong sun across the room, sliding barn door. Board-and-batten walls painted warm gray; wide light-gray polished concrete floor; a big central work table in black steel with a thick walnut top; a deep ivory linen sofa with a burnt-orange rug; a tall open storage wall in black steel. Bright hot midday sun with crisp shadows. Mount the DELLA wall-mounted indoor unit high on the solid side wall, fully visible.",
+    "size": "3072x2048"
+  }
+}

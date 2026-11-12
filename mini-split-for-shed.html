@@ -107,21 +107,13 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:65% 50%;transform:scale(1.05);animation:heroIn 2.4s var(--ease) forwards}
 @keyframes heroIn{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,252,246,.9) 0%,rgba(255,252,246,.66) 30%,rgba(255,252,246,0) 55%);pointer-events:none}
-.hero .container{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:72px}
+.hero .container{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center}
 .hero-copy{max-width:560px}
 .hero h1{font-size:clamp(50px,5.8vw,84px);line-height:.98;letter-spacing:-2.4px;margin-bottom:24px}
 .hero-sub{max-width:450px;color:var(--ink-700);font-size:19px;line-height:1.6}
-/* proof bar overlapping hero bottom */
-.proof{position:relative;z-index:2;margin-top:-60px}
-.proof-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border-radius:var(--r-md);box-shadow:0 24px 60px -24px rgba(11,19,61,.28)}
-.proof-bar--3{grid-template-columns:repeat(3,1fr)}
-.proof-item{padding:28px 30px;border-left:1px solid var(--line)}
-.proof-item:first-child{border-left:0}
-.proof-item strong{display:block;margin-bottom:4px;font:500 31px/1.08 var(--serif);letter-spacing:-.8px;color:var(--navy-900)}
-.proof-item span{color:var(--ink-600);font-size:14.5px;line-height:1.45}
 
 /* =========== STICKY SUB-NAV =========== */
-.subnav{position:sticky;top:var(--hdr,0px);z-index:30;margin-top:56px;background:rgba(255,254,251,.9);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.subnav{position:sticky;top:var(--hdr,0px);z-index:30;background:rgba(255,254,251,.9);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
 .subnav.is-stuck{box-shadow:0 10px 26px -20px rgba(11,19,61,.35)}
 .subnav .container{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
 .subnav-title{font:500 20px/1 var(--serif);letter-spacing:-.3px;white-space:nowrap}
@@ -353,9 +345,6 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
   :root{--gap:88px}
   .sec-head{grid-template-columns:1fr;margin-bottom:36px}
   .sec-head .lead{justify-self:start}
-  .proof-bar{grid-template-columns:1fr 1fr}
-  .proof-bar:not(.proof-bar--3) .proof-item:nth-child(3){border-left:0}
-  .proof-bar:not(.proof-bar--3) .proof-item:nth-child(n+3){border-top:1px solid var(--line)}
   .tile-grid{grid-template-columns:1fr}
   .tile--row{flex-direction:column}
   .tile--row .tile-media{flex:none;aspect-ratio:16/10;min-height:0}
@@ -375,17 +364,9 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
   .hero{height:auto;display:flex;flex-direction:column;background:var(--cream-50)}
   .hero-media{position:relative;aspect-ratio:4/5}
   .hero::after{display:none}
-  .hero .container{padding:30px 0 88px}
+  .hero .container{padding:30px 0 36px}
   .hero h1{font-size:46px;letter-spacing:-1.4px;margin-bottom:16px}
   .hero-sub{font-size:17px}
-  .proof{margin-top:-60px}
-  .proof-item{padding:18px 16px}
-  .proof-item strong{font-size:23px;letter-spacing:-.5px}
-  .proof-item span{font-size:13.5px}
-  .proof-bar--3{grid-template-columns:1fr}
-  .proof-bar--3 .proof-item{border-left:0}
-  .proof-bar--3 .proof-item + .proof-item{border-top:1px solid var(--line)}
-  .subnav{margin-top:36px}
   .subnav .container{height:58px}
   .subnav .btn{display:none}
   .subnav-links a{font-size:15px}
@@ -449,24 +430,18 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 /* === DELLA SYSTEM v2 END === */
 
 /* ---------- page: shed ---------- */
-/* capacity: three text cards, 12K in navy */
-.shed-page .cap-grid{--cols:3}
-.cap-card{color:var(--navy-900)}
-.cap-card .tile-body{gap:0;padding:32px 32px 32px}
-.cap-btu{margin:26px 0 10px;font:400 clamp(46px,4.2vw,60px)/1 var(--serif);letter-spacing:-2px}
-.cap-btu small{margin-left:6px;font:500 16px/1 var(--sans);letter-spacing:1px}
-.cap-card .tile-body > p{margin-bottom:24px;color:var(--ink-600)}
-.cap-card .ticks{margin:0 0 30px;padding-top:22px;border-top:1px solid var(--line)}
-.cap-card .btn{width:100%;margin-top:auto}
-.cap-card.is-featured{background:var(--navy-800);box-shadow:0 0 0 1px var(--navy-800)}
-.cap-card.is-featured .cap-btu,.cap-card.is-featured .ticks li{color:var(--white)}
-.cap-card.is-featured .tile-body > p{color:rgba(255,255,255,.76)}
-.cap-card.is-featured .ticks{border-color:rgba(255,255,255,.18)}
-.cap-card.is-featured .ticks svg{color:var(--blue-300)}
-.cap-card.is-featured .tile-tags .chip{background:rgba(255,255,255,.12);color:var(--white)}
-.cap-card.is-featured .tile-tags .chip--blue{background:var(--blue-500)}
-.cap-card:not(.is-featured):hover .btn-ghost{background:var(--navy-800);color:var(--white)}
-.cap-card.is-featured:hover .btn-white{background:var(--sky-100)}
+/* capacity: photo tiles in the Bedroom "fit" style */
+.cap-tiles .tile-body{gap:0}
+.cap-tiles .tile-tags{margin-bottom:14px}
+.cap-tiles .tile-body > p{margin-bottom:20px;color:var(--ink-600)}
+.cap-tiles .ticks{margin:22px 0 28px}
+.cap-tiles p + .ticks{margin-top:0;padding-top:22px;border-top:1px solid var(--line)}
+.cap-tiles .btn{width:100%;margin-top:auto}
+.cap-tiles .tile:hover .btn-ghost{background:var(--navy-800);color:var(--white)}
+.cap-tiles .tile-media--shade::after{background:linear-gradient(180deg,rgba(11,19,61,0) 38%,rgba(11,19,61,.74) 100%)}
+.cap-tiles .tile-cap strong{font-size:clamp(42px,3.6vw,52px)}
+@media (min-width:861px) and (max-width:1100px){.cap-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.cap-tiles .tile-body{padding:24px 22px 26px}}
+@media (max-width:640px){.cap-tiles.rail > .tile{flex-basis:86%}.cap-tiles .tile-cap strong{font-size:50px}}
 
 /* detached checklist: exterior photo + subpanel inset, numbered list */
 .detached-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:80px;align-items:center}
@@ -516,8 +491,6 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 }
 @media (max-width:640px){
   .hero-media img{object-position:50% 35%}
-  .cap-card .tile-body{padding:26px 22px 24px}
-  .cap-btu{font-size:48px;margin-top:22px}
   .detached-media{margin-bottom:28px}
   .detached-inset{right:12px;bottom:-28px;width:44%;border-width:4px}
   .check-list li{grid-template-columns:48px 1fr;padding:22px 0}
@@ -551,6 +524,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
   <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5z"/></symbol>
   <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></symbol>
   <symbol id="i-fan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="8" rx="2"/><path d="M6 11h12M8 17.5c-.6 1-.6 2 0 3M12 17.5c-.6 1-.6 2 0 3M16 17.5c-.6 1-.6 2 0 3"/></symbol>
+  <symbol id="i-cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><rect x="9.5" y="9.5" width="5" height="5" rx=".8"/><path d="M8 6.2h8M8 17.8h8M6.2 8v8M17.8 8v8"/></symbol>
   <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.5-.9-1.6-1.4-2.8-1.4-1.6 0-2.8.8-2.8 2.1 0 3 5.8 1.5 5.8 4.3 0 1.3-1.3 2.1-3 2.1-1.3 0-2.5-.6-3-1.5M12 6.3v1.5M12 16.3v1.5"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
@@ -573,17 +547,6 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
     </div>
   </section>
 
-  <div class="proof">
-    <div class="container">
-      <div class="proof-bar reveal">
-        <div class="proof-item"><strong>9K–18K BTU</strong><span>For sheds up to 1,000 sq. ft.</span></div>
-        <div class="proof-item"><strong>Up to 25</strong><span>SEER2 efficiency</span></div>
-        <div class="proof-item"><strong>115V / 230V</strong><span>Confirm voltage per model</span></div>
-        <div class="proof-item"><strong>Heat + Cool</strong><span>Heat-pump comfort year-round</span></div>
-      </div>
-    </div>
-  </div>
-
   <nav class="subnav" aria-label="On this page">
     <div class="container">
       <span class="subnav-title">Shed Mini Splits</span>
@@ -604,12 +567,14 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
         <h2 class="h2 reveal" id="capacity-title">Choose Your Capacity</h2>
         <p class="lead reveal" data-d="1">Shed load changes fast with insulation, sun, and daily use, so 12K is often the safest starting point.</p>
       </header>
-
-      <div class="tile-grid cap-grid rail">
-        <a class="tile cap-card reveal" href="https://dellahome.com/collections/9000-btu-mini-split">
+      <div class="tile-grid cap-tiles rail">
+        <a class="tile reveal" href="https://dellahome.com/collections/9000-btu-mini-split">
+          <div class="tile-media tile-media--shade">
+            <img src="Mini%20Split%20for%20Shed/assets/v5/cap-9k-1920.webp" srcset="Mini%20Split%20for%20Shed/assets/v5/cap-9k-1920.webp 1920w, Mini%20Split%20for%20Shed/assets/v5/cap-9k.webp 3072w" sizes="(max-width: 860px) 90vw, 420px" alt="Compact backyard music shed with forest-green board walls, a leather lounge chair and a DELLA mini split under the rafters" width="3072" height="2048" loading="lazy">
+            <div class="tile-cap"><strong>9,000<small>BTU</small></strong></div>
+          </div>
           <div class="tile-body">
             <div class="tile-tags"><span class="chip">Compact Spaces</span></div>
-            <p class="cap-btu">9,000 <small>BTU</small></p>
             <p>Best for smaller enclosed sheds and lighter weekly use.</p>
             <ul class="ticks">
               <li><svg><use href="#i-check"/></svg>Small hobby rooms</li>
@@ -620,24 +585,30 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
           </div>
         </a>
 
-        <a class="tile cap-card is-featured reveal" data-d="1" href="https://dellahome.com/collections/12000-btu-mini-split">
+        <a class="tile reveal" data-d="1" href="https://dellahome.com/collections/12000-btu-mini-split">
+          <div class="tile-media tile-media--shade">
+            <img src="Mini%20Split%20for%20Shed/assets/v5/cap-12k-1920.webp" srcset="Mini%20Split%20for%20Shed/assets/v5/cap-12k-1920.webp 1920w, Mini%20Split%20for%20Shed/assets/v5/cap-12k.webp 3072w" sizes="(max-width: 860px) 90vw, 420px" alt="Backyard office shed with a garden picture window, a smoked oak desk and a DELLA mini split on the end wall" width="3072" height="2048" loading="lazy">
+            <div class="tile-cap"><strong>12,000<small>BTU</small></strong></div>
+          </div>
           <div class="tile-body">
-            <div class="tile-tags"><span class="chip chip--blue">Most Recommended</span><span class="chip">The Gold Standard</span></div>
-            <p class="cap-btu">12,000 <small>BTU</small></p>
+            <div class="tile-tags"><span class="chip chip--navy">Most Recommended</span><span class="chip">The Gold Standard</span></div>
             <p>The strongest default for backyard office sheds and everyday detached workspaces.</p>
             <ul class="ticks">
               <li><svg><use href="#i-check"/></svg>High-efficiency inverter tech</li>
               <li><svg><use href="#i-check"/></svg>Rapid cooling and heating</li>
               <li><svg><use href="#i-check"/></svg>Wi-Fi smart control</li>
             </ul>
-            <span class="btn btn-white">Shop 12K Precision <svg><use href="#i-arrow"/></svg></span>
+            <span class="btn btn-navy">Shop 12K Precision <svg><use href="#i-arrow"/></svg></span>
           </div>
         </a>
 
-        <a class="tile cap-card reveal" data-d="2" href="https://dellahome.com/collections/18000-btu-mini-split">
+        <a class="tile reveal" data-d="2" href="https://dellahome.com/collections/18000-btu-mini-split">
+          <div class="tile-media tile-media--shade">
+            <img src="Mini%20Split%20for%20Shed/assets/v5/cap-18k-1920.webp" srcset="Mini%20Split%20for%20Shed/assets/v5/cap-18k-1920.webp 1920w, Mini%20Split%20for%20Shed/assets/v5/cap-18k.webp 3072w" sizes="(max-width: 860px) 90vw, 420px" alt="Large sunlit barn-style garden studio with skylights, a glazed gable end and a DELLA mini split on the side wall" width="3072" height="2048" loading="lazy">
+            <div class="tile-cap"><strong>18,000<small>BTU</small></strong></div>
+          </div>
           <div class="tile-body">
             <div class="tile-tags"><span class="chip">Extended Spaces</span></div>
-            <p class="cap-btu">18,000 <small>BTU</small></p>
             <p>Move up for larger workshop sheds or clearly higher load.</p>
             <ul class="ticks">
               <li><svg><use href="#i-check"/></svg>Larger footprints</li>

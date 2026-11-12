@@ -1,0 +1,14 @@
+{
+  "cap-9k": {
+    "prompt": "A compact enclosed basement home office and reading den, about 12 by 14 feet, seen frontally. Clear below-grade cues: a low 7.5-foot ceiling with a painted drywall soffit running along one side, and a short wide hopper window set high at the top of the back wall with daylight from a window well. Walls in pale sage-green limewash plaster; a built-in desk and shelves in smoked oak along the side wall with an olive green leather desk chair; a slim ivory linen daybed with a rust wool throw against the back wall; a flat-woven charcoal wool rug on mid-tone herringbone oak flooring. Bright soft daylight plus a few recessed ceiling lights. Mount the DELLA wall-mounted indoor unit centered on the back wall above the daybed, just below the ceiling and beside the high window.",
+    "size": "3072x2048"
+  },
+  "cap-12k": {
+    "prompt": "A finished basement family room seen at eye level, medium-wide. Clear below-grade cues: two high, wide egress windows near the ceiling on the back wall showing window wells with stone retaining walls and daylight, a lower 8-foot ceiling with recessed lights. Warm white smooth plaster walls with a wall of built-in open shelving painted soft greige; large-format light warm-gray porcelain tile floor with a big textured cream wool rug; a low modular sectional sofa in warm taupe performance fabric with two navy cushions; a round white lacquer coffee table; one tall fiddle-leaf fig. Calm late-morning daylight. Mount the DELLA wall-mounted indoor unit high on the back wall between the two egress windows, fully visible.",
+    "size": "3072x2048"
+  },
+  "cap-18k": {
+    "prompt": "A large open-plan finished basement recreation room, wide view showing its long depth. Clear below-grade cues: a row of three small high windows along the top of the long side wall with window-well light, two square structural columns wrapped in white plaster, a slightly low flat ceiling with recessed lights and a warm LED cove strip. Polished light-gray concrete floor; a pool table with deep navy felt in the middle; at the far end a wet bar with a terrazzo countertop, white oak slab cabinets and three black leather bar stools; a long charcoal velvet sofa along one wall. Early evening, warm LED glow plus soft remaining daylight. Mount the DELLA wall-mounted indoor unit high on the far end wall above the bar area, fully visible.",
+    "size": "3072x2048"
+  }
+}

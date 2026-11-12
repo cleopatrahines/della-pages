@@ -3,7 +3,7 @@
 Reference page: `Mini Split for Bedroom/mini-split-for-bedroom.html`. Open it next to this file; every other page must feel like it was made by the same hand.
 
 ## Why
-Manager feedback: the old pages are not "大气" and don't match dellahome.com. History: v2 (warm cream/sand/navy) was liked; v3 (all-white, cool) was "too white". v4 = v2 look refined, with the feel of the two main references: https://dellahome.com/pages/coupon-code and https://dellahome.com/pages/black-friday-early-deals — cream page, sand bands, **navy image + panel blocks**, real lifestyle photos. Keep a topic-page character (sizing tiles, steps, proof bar) rather than copying the promo layout. No eyebrow labels. Text a size larger than v2 (body 17px, lead 18px, nothing under 12px).
+Manager feedback: the old pages are not "大气" and don't match dellahome.com. History: v2 (warm cream/sand/navy) was liked; v3 (all-white, cool) was "too white". v4 = v2 look refined, with the feel of the two main references: https://dellahome.com/pages/coupon-code and https://dellahome.com/pages/black-friday-early-deals — cream page, sand bands, **navy image + panel blocks**, real lifestyle photos. Keep a topic-page character (sizing tiles, steps) rather than copying the promo layout. No eyebrow labels. Text a size larger than v2 (body 17px, lead 18px, nothing under 12px).
 
 Measured on dellahome.com: body **Inter Tight**, headings **Spectral** with negative tracking, cream `#FFFEFB`, sand `#F5F3ED`, sky `#D8F0F7`, navy `#0B133D` / `#0E1952`, **pill buttons**.
 
@@ -15,11 +15,11 @@ Measured on dellahome.com: body **Inter Tight**, headings **Spectral** with nega
 - `_system/tools/gen_della.py` — image generation. `_system/tools/qa.mjs` — screenshots + error/overflow check at 1440 and 390.
 
 ## Scene character
-Each page must feel like its own scene, not the Bedroom page with new photos. Reusable: proof bar, sub-nav, TRUST, FAQ, CTA, product cards, buy bar. Scene-specific: the images, and at least one **signature section** built around the scene from the page's existing content (e.g. annotated scene photo with numbered callouts kept off the unit, a cutaway, a before/after or conditions view). Vary layouts between pages too: don't reuse the same tile grid → feature → steps sequence everywhere.
+Each page must feel like its own scene, not the Bedroom page with new photos. Reusable: sub-nav, TRUST, FAQ, CTA, product cards, buy bar. Scene-specific: the images, and at least one **signature section** built around the scene from the page's existing content (e.g. annotated scene photo with numbered callouts kept off the unit, a cutaway, a before/after or conditions view). Vary layouts between pages too: don't reuse the same tile grid → feature → steps sequence everywhere.
 
 ## Page skeleton (in this order)
 1. **Hero** (template). Keep the page's H1 text exactly. **No eyebrow and no buttons** — H1 + one sentence only. Desktop 16:9 photo with calm left side; phones get their own vertical photo above the copy.
-2. **Proof bar** — 3 or 4 numbers already stated on the page or in its product data. Never invent a spec.
+2. **No proof bar** (removed 2026-11-12: it only repeated numbers from the first section). The sub-nav follows the hero directly.
 3. **Sub-nav** — 3–5 anchors + FAQ, "Shop now" button.
 4. The page's own sections, **same order and same copy as before**, rebuilt with system components.
 5. **TRUST** (synced module) — replaces any "Premium Della Services" section and its H2.
@@ -53,6 +53,7 @@ Rules: pill buttons only; at most one navy primary button per card; links use `.
 Modern light-luxury interiors, like https://www.homary.com/room-ideas and https://www.povison.com/ . `gen_della.py` adds no materials: every prompt names its own furniture, materials and palette. **Within one page every image has a different material story** (wall finish, main wood/metal, stone, textiles, accent color); dark walnut fluted cabinets, round travertine tables and curved cream boucle sofas appear at most once per page. Each image must read instantly as the page's scene (basement: window wells, low ceilings, below-grade light; sunroom: glass walls, knee walls; attic: slopes, dormers…). **No people, no hands, no pets** (the existing Bedroom CTA photo with a dog is the one approved exception). Avoid pale blond wood and plain white bedding in every shot. Clean and crisp, never hazy or yellow-cast. **Every image on a page is a different scene** (room, time of day, palette, angle, distance).
 - The DELLA indoor unit must keep its real proportions (about 3:1 width to height, flat front, level) and be fully visible with wall space around it. Reject and regenerate any image where it is warped, cropped or covered.
 - Indoor wall unit: reference `_refs/waiji.png` — `"kind": "indoor"` (default). Outdoor condenser: `_refs/aq.png` — `"kind": "outdoor"`. No unit: `"kind": "plain"`.
+- Every outdoor unit in a photo must be a DELLA one with the blue DELLA badge. Mini split (single or multi-zone): `_refs/aq.png`. Central air condenser (dark gray, square, top fan): `_refs/c1.png` + `_refs/c2.png`. To fix one unit in an existing photo, pass the photo first in `"ref"` with `"raw": true` and say what to keep (see `jobs-outdoor-fix.json`).
 - Ceiling cassette / ducted: describe the unit carefully; use the page's existing product images as reference if needed.
 - **4K WebP.** Hero and CTA 3840×2160 (left ~45% calm for text); phone hero 2160×3840; cards, steps and feature 3072×2048. The script also writes `<name>-1920.webp`; use it as `src` and list both in `srcset`. Make a 1080-wide copy for the phone hero.
 - Jobs file example: `_system/tools/jobs-bedroom.json`. Images go in `<page folder>/assets/v5/`. About $0.15 per 4K image — tell the user the total.

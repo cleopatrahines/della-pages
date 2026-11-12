@@ -1,0 +1,14 @@
+{
+  "cap-9k": {
+    "prompt": "A small city apartment second bedroom set up as a calm home office nook, seen frontally. Clear apartment cues: tall double-hung window with a view of neighboring brownstone facades and fire escapes, original picture-rail moulding, a steam radiator under the window painted to match the wall. Walls painted soft blue-gray; herringbone oak floor; a compact walnut writing desk under the window with a cane-back chair; a narrow daybed with a terracotta linen cover and a striped wool throw. Soft morning daylight. Mount the DELLA wall-mounted indoor unit high on the side wall above the daybed, fully visible.",
+    "size": "3072x2048"
+  },
+  "cap-12k": {
+    "prompt": "The main living room of a mid-century style city apartment, medium-wide view. Clear apartment cues: a wide arched opening into a small galley kitchen, two tall casement windows with a city street view of other apartment buildings, crown moulding. Warm ivory walls; mid-tone herringbone oak floor; a camel leather three-seat sofa; a low Calacatta marble coffee table; a vintage teak sideboard with one ceramic vase; a cream wool rug with a thin black border. Warm late-afternoon daylight, clean whites. Mount the DELLA wall-mounted indoor unit high on the wall above the sofa, fully visible.",
+    "size": "3072x2048"
+  },
+  "cap-18k": {
+    "prompt": "A large open-plan top-floor apartment living and dining area, wide view showing both zones. Clear top-floor cues: sloped ceiling with two big skylights letting in strong sun, glass doors opening onto a roof terrace with planters and a city skyline beyond. Smooth white walls; large-format warm limestone floor; a long dark smoked-oak dining table with black wishbone-style chairs; a deep ivory linen sectional sofa in the living zone; a sculptural pendant lamp in brushed brass over the table; one tall olive tree in a stone pot. Bright, sunny midday. Mount the DELLA wall-mounted indoor unit high on the tall flat end wall between the living and dining zones, fully visible.",
+    "size": "3072x2048"
+  }
+}
