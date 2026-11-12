@@ -4,178 +4,186 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>DELLA Warranty Policy: Revised Copy</title>
+  <title>WARRANTY POLICY – Della</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Spectral:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- dellahome.com uses PP Neue Montreal (licensed); Inter Tight is the closest free stand-in for this preview -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-:root{--ink:#0b133d;--ink-2:#4a5275;--line:#e4e1d8;--bg:#fffefb;--sand:#f5f3ed}
+/* mirrors the live PageFly section on dellahome.com/pages/warranty-policy */
+:root{--navy:#0b133d;--cream:#fffefb;--line:#f4f3ed;--link:#5984e7}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 "Inter Tight",system-ui,sans-serif}
-.wrap{width:min(100% - 32px,880px);margin:0 auto;padding:40px 0 96px}
-h1,h2,h3{font-family:Spectral,Georgia,serif;font-weight:500;letter-spacing:-.4px;line-height:1.2}
-h1{margin:0 0 32px;font-size:clamp(34px,5vw,48px);letter-spacing:1px;text-align:center}
-h2{margin:48px 0 14px;padding-top:28px;border-top:1px solid var(--line);font:600 18px/1.35 "Inter Tight",sans-serif;letter-spacing:.6px;text-transform:uppercase}
-h3{margin:28px 0 8px;font-size:21px}
-p{margin:0 0 14px}
-ul,ol{margin:0 0 16px;padding-left:24px}
-li{margin-bottom:6px}
-a{color:var(--ink)}
-.part{margin:0 0 8px;padding:14px 18px;border-radius:10px;background:var(--sand);color:var(--ink-2);font-size:15px}
-.part b{color:var(--ink)}
-.part + h1{margin-top:20px}
-.divider{margin:88px 0 0;border:0;border-top:2px solid var(--ink)}
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding-top:24px}
-  h2{font-size:16.5px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--navy);font:400 16px/1.6 "PP Neue Montreal","Inter Tight",system-ui,sans-serif;letter-spacing:.25px}
+.wp{padding:31px 15px 20px}
+.wp-inner{max-width:720px;margin:0 auto}
+.wp h1{margin:0 0 20px;font-size:45px;font-weight:400;line-height:1.3;text-align:center}
+.wp p{margin:0}
+.wp strong{font-weight:700}
+.wp .blk{padding-top:20px}
+.wp .blk p + p{margin-top:25.6px}
+.wp .label{display:block;margin-bottom:25.6px}
+.wp a.signup{color:var(--link);font-weight:700}
+.wp ul.cond{margin:17px 0 0;padding-left:21px;font-size:15px;line-height:1.5}
+.wp ul.cond li{margin-bottom:10px}
+.wp ul.cond li:last-child{margin-bottom:0}
+.wp .click{margin:17px 0 17px}
+/* accordions */
+.acc{max-width:720px;margin:0 auto}
+.acc details{font-size:15px}
+.acc summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;border-bottom:2px solid var(--line);font-weight:500;font-size:16px;cursor:pointer;list-style:none}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";flex:none;width:12px;height:12px;background:linear-gradient(var(--navy),var(--navy)) center/12px 1.5px no-repeat,linear-gradient(var(--navy),var(--navy)) center/1.5px 12px no-repeat}
+.acc details[open] > summary::after{background:linear-gradient(var(--navy),var(--navy)) center/12px 1.5px no-repeat}
+.acc .panel{padding:15px}
+.acc .panel p{font-size:16px}
+.acc .panel p + p{margin-top:25.6px}
+.wp .after{padding-top:30px}
+.wp .after p + p{margin-top:25.6px}
+.wp .contact{margin-top:51px}
+.wp u a{color:inherit;text-decoration:none}
+.wp .faq-label{display:block;margin:51px 0 9px}
+@media (max-width:767px){
+  .wp h1{font-size:32px}
+  .acc summary{padding:18px 6px}
+  .acc .panel{padding:15px 6px}
 }
   </style>
 </head>
 <body>
-<div class="wrap">
+<section class="wp">
+  <div class="wp-inner">
+    <h1>WARRANTY POLICY</h1>
 
-  <p class="part"><b>Page 1 of 3:</b> dellahome.com/pages/warranty-policy</p>
-  <h1>WARRANTY POLICY</h1>
+    <div class="blk">
+      <p><strong class="label">STANDARD WARRANTY</strong>All our products come with a standard warranty, and no registration is required: 1 year for mini splits, pool heat pumps, window ACs, portable ACs and tower fans, and 3 years on parts and 5 years on the compressor for central AC. Full terms are also in your user manual.</p>
+      <p><strong class="label">EXTENDED WARRANTY</strong>Don't forget: we also offer a free extended warranty. So, <u><a class="signup" href="https://dellahome.com/pages/registration">sign up</a></u> today for more peace of mind!</p>
+      <p>To qualify for the free extended warranty, the unit must meet the following conditions:</p>
+    </div>
+    <ul class="cond">
+      <li>Be registered within <strong>100 days</strong> of purchase (the date on your order).</li>
+      <li>Be owned by the original purchaser.</li>
+      <li>The product must remain installed and operated at the address provided during registration.</li>
+      <li>The original PCB must be returned to DELLA for any PCB replacement requests after <strong>100 days</strong>.</li>
+      <li>Mini splits installed with a DELLA rental kit: include a link to your installation video when you register to activate the lifetime warranty.</li>
+      <li>Professionally installed systems: include the installer's name and HVAC license number when you register.</li>
+    </ul>
+    <p class="click">Click each product below for more information.</p>
+  </div>
 
-  <h2>Maximizing Savings with Energy-Efficient HVAC Systems</h2>
-  <p>Homeowners across the U.S. can take advantage of valuable federal, state, and local tax credits or rebates when they invest in energy-efficient HVAC systems, such as mini splits, heat pumps, or air conditioners. These financial incentives are designed to encourage the adoption of environmentally friendly technologies, which help reduce energy consumption and lower utility bills.</p>
-  <p>By installing systems that meet ENERGY STAR® standards or other qualifying criteria, homeowners may be eligible to receive rebates at both the state and local levels, and even claim federal tax credits. These programs not only ease the initial cost of purchasing energy-efficient units but also contribute to long-term energy savings and environmental benefits.</p>
-  <p><b>Eligibility:</b> Your air conditioning must meet or exceed the ENERGY STAR® requirements for efficiency. This usually involves specific Seasonal Energy Efficiency Ratio (SEER) and Heating Seasonal Performance Factor (HSPF) ratings.</p>
+  <div class="acc">
+    <details>
+      <summary>MINI SPLIT WARRANTY (Lifetime Warranty When Registered)</summary>
+      <div class="panel">
+        <p>Every DELLA mini split comes with a 1-year limited warranty. Register within 100 days of purchase and DELLA adds complimentary <strong>lifetime parts coverage, including the compressor,</strong> for as long as the original purchaser owns the system and it remains installed at the registered address. Lifetime coverage applies to both DIY and professional installations.</p>
+        <p><strong>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase</strong></p>
+        <p><strong>Full Return:</strong> DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
+        <p><strong>Parts Replacement:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>2. Warranty Coverage from 31 Days to 1 Year</strong></p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>3. Extended Lifetime Warranty (Beyond 1 Year)</strong></p>
+        <p><strong>Extended Warranty Program:</strong> Customers who register their mini split unit within 100 days of purchase will receive complimentary <strong>lifetime parts coverage, including the compressor.</strong> This applies whether the system was installed by the customer or by a licensed HVAC technician.</p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+      </div>
+    </details>
 
-  <h2>Standard Warranty</h2>
-  <p>All our products come with a standard warranty, and no registration is required: 1 year for mini splits, pool heat pumps, window ACs, portable ACs and tower fans, and 3 years on parts and 5 years on the compressor for central AC. Full terms are also in your user manual.</p>
+    <details>
+      <summary>POOL HEAT PUMP WARRANTY</summary>
+      <div class="panel">
+        <p><strong>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase: Full Return</strong></p>
+        <p>DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
+        <p><strong>Parts Replacement:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>2. Warranty Coverage from 31 Days to 1 Year</strong></p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>3. Extended Warranty: 2-year parts warranty and a 10-year compressor/heat exchanger warranty.</strong></p>
+        <p><strong>Extended Warranty Program:</strong> Customers who register their pool heat pump unit within 100 days of purchase will receive complimentary lifetime parts coverage.</p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+      </div>
+    </details>
 
-  <h2>Extended Warranty</h2>
-  <p>Don't forget: we also offer a free extended warranty. So, sign up today for more peace of mind!</p>
-  <p>To qualify for the free extended warranty, the unit must meet the following conditions:</p>
-  <ul>
-    <li>Be registered within 100 days of purchase (the date on your order).</li>
-    <li>Be owned by the original purchaser.</li>
-    <li>The product must remain installed and operated at the address provided during registration.</li>
-    <li>The original PCB must be returned to DELLA for any PCB replacement requests after 100 days.</li>
-    <li>Mini splits installed with a DELLA rental kit: include a link to your installation video when you register to activate the lifetime warranty.</li>
-    <li>Professionally installed systems: include the installer's name and HVAC license number when you register.</li>
-  </ul>
-  <p>Click each product below for more information.</p>
+    <details>
+      <summary>CENTRAL AIR CONDITIONERS WARRANTY</summary>
+      <div class="panel">
+        <p><strong>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase: Full Return</strong></p>
+        <p>DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
+        <p><strong>Parts Replacement:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>2. Standard Warranty: 3-Year Parts Warranty and 5-Year Compressor Warranty.</strong></p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
+        <p><strong>3. Extended Warranty: 5-Year Parts Warranty and 10-Year Compressor Warranty.</strong></p>
+        <p><strong>Extended Warranty Program:</strong> Customers who register their central AC unit within 100 days of purchase will receive a complimentary 5-year parts warranty and a 10-year compressor warranty.</p>
+        <p><strong>Registered Product and DIY (Non-professional) Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
+        <p><strong>Registered Product and Professional Install:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
+        <p><strong>Unregistered Product:</strong> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+      </div>
+    </details>
 
-  <h2>Mini Split Warranty (Lifetime Warranty When Registered)</h2>
-  <p>Every DELLA mini split comes with a 1-year limited warranty. Register within 100 days of purchase and DELLA adds complimentary lifetime parts coverage, including the compressor, for as long as the original purchaser owns the system and it remains installed at the registered address. Lifetime coverage applies to both DIY and professional installations.</p>
-  <h3>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase</h3>
-  <p><b>Full Return:</b> DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
-  <p><b>Parts Replacement:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>2. Warranty Coverage from 31 Days to 1 Year</h3>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>3. Extended Lifetime Warranty (Beyond 1 Year)</h3>
-  <p><b>Extended Warranty Program:</b> Customers who register their mini split unit within 100 days of purchase will receive complimentary lifetime parts coverage, including the compressor. This applies whether the system was installed by the customer or by a licensed HVAC technician.</p>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+    <details>
+      <summary>WINDOW AC, PORTABLE AC AND TOWER FANS WARRANTY</summary>
+      <div class="panel">
+        <p><strong>1. Standard Warranty (1 Year)</strong></p>
+        <p><strong>Coverage:</strong> These products are covered by a 1-year limited warranty from the date of purchase. After 30 days, customers are responsible for the return shipping costs.</p>
+        <p><strong>2. Extended Warranty (Additional 6 Months)</strong></p>
+        <p><strong>Eligibility:</strong> Customers who register their product within 100 days of purchase will receive an additional 6 months of parts-only warranty coverage, totaling <strong>18 months.</strong></p>
+        <p><strong>Coverage:</strong> Parts replacement only. No full unit replacements.</p>
+        <p><strong>Shipping:</strong> DELLA will cover the shipping expenses for sending out replacement parts, but customers are responsible for any shipping costs when returning parts.</p>
+      </div>
+    </details>
+  </div>
 
-  <h2>Pool Heat Pump Warranty</h2>
-  <h3>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase: Full Return</h3>
-  <p>DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
-  <p><b>Parts Replacement:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>2. Warranty Coverage from 31 Days to 1 Year</h3>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>3. Extended Warranty: 2-year parts warranty and a 10-year compressor/heat exchanger warranty.</h3>
-  <p><b>Extended Warranty Program:</b> Customers who register their pool heat pump unit within 100 days of purchase will receive complimentary lifetime parts coverage.</p>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+  <div class="wp-inner after">
+    <p><strong>Warranty Parts Replacement</strong></p>
+    <p>Some parts may need to be returned for replacement. The limited lifetime warranty covers replacement parts for confirmed defects, including the compressor on registered mini splits. It does not cover labor or the costs listed below. For more information, please contact us.</p>
+    <p><strong>Not Covered by Warranty:</strong></p>
+    <p><strong>1. Technician Labor:</strong> Costs for any technician services such as examining, disassembling, reassembling, uninstalling, or reinstalling the unit.</p>
+    <p><strong>2. Parts &amp; Labor for Repairs:</strong> Costs related to diagnosing, repairing, removing, installing, shipping, or handling defective or new parts, including routine maintenance.</p>
+    <p><strong>3. Usage Costs:</strong> Expenses for electricity, fuel, refrigerant replacement, refilling, or disposal.</p>
+    <p><strong>4. Damage from Improper Use:</strong> Damage caused by improper installation, abnormal or incorrect usage, incorrect servicing, modifications, or using the product in ways not intended by the manufacturer.</p>
+    <p><strong>5. Third-Party Parts:</strong> Any parts not supplied or approved by DELLA.</p>
+    <p><strong>6. Electrical Failures:</strong> Failures due to voltage issues, including improper voltage installation, open circuit breakers, blown fuses, or electrical outages.</p>
+    <p><strong>7. Environmental Damage:</strong> Damage from natural disasters or elements, such as rain, flooding, fire, lightning, corrosive chemicals, etc.</p>
+    <p><strong>8. Incidental or Consequential Damages:</strong> Depending on your state or province, some incidental or consequential damages may not be covered.</p>
 
-  <h2>Central Air Conditioners Warranty</h2>
-  <h3>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase: Full Return</h3>
-  <p>DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
-  <p><b>Parts Replacement:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>2. Standard Warranty: 3-Year Parts Warranty and 5-Year Compressor Warranty.</h3>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>3. Extended Warranty: 5-Year Parts Warranty and 10-Year Compressor Warranty.</h3>
-  <p><b>Extended Warranty Program:</b> Customers who register their central AC unit within 100 days of purchase will receive a complimentary 5-year parts warranty and a 10-year compressor warranty.</p>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
+    <p class="contact"><strong>Contact and Claims</strong></p>
+    <p>For any questions or to initiate a return or warranty claim, please contact our customer service team at <u><a href="tel:+18008634143">(800) 863-4143</a></u> or on our live chat, available 24/7. We are happy to assist you and ensure that your experience is smooth and efficient.</p>
+    <p>To speed up your claim, have ready: your model and serial numbers (indoor and outdoor), order number and purchase date, the installation address, photos or videos of the problem and any error codes, and, for professional installs, the technician's defect report.</p>
+    <p>We are committed to providing prompt, fair, and effective service for every customer concern.</p>
 
-  <h2>Window AC, Portable AC and Tower Fans Warranty</h2>
-  <h3>1. Standard Warranty (1 Year)</h3>
-  <p><b>Coverage:</b> These products are covered by a 1-year limited warranty from the date of purchase. After 30 days, customers are responsible for the return shipping costs.</p>
-  <h3>2. Extended Warranty (Additional 6 Months)</h3>
-  <p><b>Eligibility:</b> Customers who register their product within 100 days of purchase will receive an additional 6 months of parts-only warranty coverage, totaling 18 months.</p>
-  <p><b>Coverage:</b> Parts replacement only. No full unit replacements.</p>
-  <p><b>Shipping:</b> DELLA will cover the shipping expenses for sending out replacement parts, but customers are responsible for any shipping costs when returning parts.</p>
+    <strong class="faq-label">Warranty FAQs</strong>
+  </div>
 
-  <h2>Warranty Parts Replacement</h2>
-  <p>Some parts may need to be returned for replacement. The limited lifetime warranty covers replacement parts for confirmed defects, including the compressor on registered mini splits. It does not cover labor or the costs listed below. For more information, please contact us.</p>
-
-  <h2>Not Covered by Warranty</h2>
-  <ol>
-    <li><b>Technician Labor:</b> Costs for any technician services such as examining, disassembling, reassembling, uninstalling, or reinstalling the unit.</li>
-    <li><b>Parts &amp; Labor for Repairs:</b> Costs related to diagnosing, repairing, removing, installing, shipping, or handling defective or new parts, including routine maintenance.</li>
-    <li><b>Usage Costs:</b> Expenses for electricity, fuel, refrigerant replacement, refilling, or disposal.</li>
-    <li><b>Damage from Improper Use:</b> Damage caused by improper installation, abnormal or incorrect usage, incorrect servicing, modifications, or using the product in ways not intended by the manufacturer.</li>
-    <li><b>Third-Party Parts:</b> Any parts not supplied or approved by DELLA.</li>
-    <li><b>Electrical Failures:</b> Failures due to voltage issues, including improper voltage installation, open circuit breakers, blown fuses, or electrical outages.</li>
-    <li><b>Environmental Damage:</b> Damage from natural disasters or elements, such as rain, flooding, fire, lightning, corrosive chemicals, etc.</li>
-    <li><b>Incidental or Consequential Damages:</b> Depending on your state or province, some incidental or consequential damages may not be covered.</li>
-  </ol>
-
-  <h2>Contact and Claims</h2>
-  <p>For any questions or to initiate a return or warranty claim, please contact our customer service team at (800) 863-4143 or on our live chat, available 24/7. We are happy to assist you and ensure that your experience is smooth and efficient.</p>
-  <p>To speed up your claim, have ready: your model and serial numbers (indoor and outdoor), order number and purchase date, the installation address, photos or videos of the problem and any error codes, and, for professional installs, the technician's defect report.</p>
-  <p>We are committed to providing prompt, fair, and effective service for every customer concern.</p>
-
-  <h2>Warranty FAQs</h2>
-  <h3>Does DIY installation void the DELLA mini split warranty?</h3>
-  <p>No. Registered DIY installs get the same free replacement parts as professional installs. If you used a DELLA rental kit, add a link to your installation video when you register. Damage caused by improper installation is not covered, so follow the installation manual.</p>
-  <h3>What does "lifetime" mean?</h3>
-  <p>Coverage lasts for as long as you, the original purchaser, own the mini split and it remains installed at the address you registered. It covers replacement parts for confirmed defects, including the compressor. After the first year, you pay shipping.</p>
-  <h3>What if I miss the 100-day registration window?</h3>
-  <p>The standard 1-year limited warranty still applies. After the first year, an unregistered mini split has no parts coverage, so you pay for parts and shipping.</p>
-  <h3>Does the warranty cover labor?</h3>
-  <p>No. Technician labor, diagnosis and installation costs are not covered. For professional installs, if the unit still malfunctions after parts are replaced and you have a licensed technician's defect report, DELLA will take care of you at its discretion.</p>
-  <h3>Is the warranty transferable?</h3>
-  <p>No. The extended warranty stays with the original purchaser and the registered installation address.</p>
-
-  <hr class="divider">
-  <p class="part" style="margin-top:32px"><b>Page 2 of 3:</b> dellahome.com/pages/registration (warranty text above the form)</p>
-  <h1>Register Your Warranty</h1>
-  <p>Mini splits, pool heat pumps, window ACs, portable ACs and tower fans come with a standard 1-year limited warranty. Central AC comes with a 3-year parts warranty and a 5-year compressor warranty.</p>
-  <p>Register your product within 100 days of purchase to enjoy exclusive coverage benefits:</p>
-  <ul>
-    <li><b>Mini Split Systems:</b> Complimentary lifetime parts coverage, including the compressor, for DIY and professional installations.</li>
-    <li><b>Central AC:</b> Comes with a 5-year parts warranty and a 10-year compressor warranty.</li>
-    <li><b>Pool Heat Pump:</b> Comes with a 2-year parts warranty and a 10-year compressor/heat exchanger warranty.</li>
-    <li><b>Window ACs, Portable ACs, and Tower Fans:</b> An additional 6 months of parts-only warranty (18 months in total).</li>
-  </ul>
-  <p>Register now to enjoy peace of mind and long-term protection for your DELLA product.</p>
-
-  <hr class="divider">
-  <p class="part" style="margin-top:32px"><b>Page 3 of 3:</b> support.dellahome.com Help Center article 38697609519515</p>
-  <h1>What is the warranty policy for the DELLA mini split?</h1>
-  <p>Every DELLA mini split comes with a 1-year limited warranty. Register within 100 days of purchase and DELLA adds complimentary lifetime parts coverage, including the compressor, for as long as the original purchaser owns the system and it remains installed at the registered address. Lifetime coverage applies to both DIY and professional installations.</p>
-  <h3>1. Returns &amp; Warranty Coverage Within 30 Days of Purchase</h3>
-  <p><b>Full Return:</b> DELLA provides comprehensive assistance for all orders within 30 days of purchase. Our money-back guarantee allows you to return the item first, after which we will process your refund. Products must be returned in their original operating condition, including all accessories and packaging.</p>
-  <p><b>Parts Replacement:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>2. Warranty Coverage from 31 Days to 1 Year</h3>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. DELLA will also cover all shipping expenses for the delivery of replacement parts. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. DELLA will also cover all shipping expenses for the delivery of replacement parts.</p>
-  <h3>3. Extended Lifetime Warranty (Beyond 1 Year)</h3>
-  <p><b>Extended Warranty Program:</b> Customers who register their mini split unit within 100 days of purchase will receive complimentary lifetime parts coverage, including the compressor. This applies whether the system was installed by the customer or by a licensed HVAC technician.</p>
-  <p><b>Registered Product and DIY (Non-professional) Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. The customer is responsible for all shipping costs.</p>
-  <p><b>Registered Product and Professional Install:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts free of charge. If, after parts are replaced, the customer's unit is still malfunctioning and the customer has a licensed HVAC technician's defect report, DELLA will take care of the customer at its discretion. In any event, the customer is responsible for all shipping costs.</p>
-  <p><b>Unregistered Product:</b> If a product defect is confirmed, DELLA will, at its discretion, provide the necessary replacement parts. The customer is responsible for the costs of all parts and shipping.</p>
-  <h3>4. Warranty Registration</h3>
-  <p>You can register it here: <a href="https://dellahome.com/pages/warranty">https://dellahome.com/pages/warranty</a>. Register within 100 days of purchase. If you installed with a DELLA rental kit, include a link to your installation video to activate the lifetime warranty. For a professional install, include the installer's name and HVAC license number.</p>
-  <p><b>Not covered:</b> technician labor, diagnosis and installation costs, refrigerant, damage from improper installation or use, third-party parts, electrical failures and environmental damage. See the full <a href="https://dellahome.com/pages/warranty-policy">Warranty Policy</a>.</p>
-
-</div>
+  <div class="acc">
+    <details>
+      <summary>Does DIY installation void the DELLA mini split warranty?</summary>
+      <div class="panel"><p>No. Registered DIY installs get the same free replacement parts as professional installs. If you used a DELLA rental kit, add a link to your installation video when you register. Damage caused by improper installation is not covered, so follow the installation manual.</p></div>
+    </details>
+    <details>
+      <summary>What does "lifetime" mean?</summary>
+      <div class="panel"><p>Coverage lasts for as long as you, the original purchaser, own the mini split and it remains installed at the address you registered. It covers replacement parts for confirmed defects, including the compressor. After the first year, you pay shipping.</p></div>
+    </details>
+    <details>
+      <summary>What if I miss the 100-day registration window?</summary>
+      <div class="panel"><p>The standard 1-year limited warranty still applies. After the first year, an unregistered mini split has no parts coverage, so you pay for parts and shipping.</p></div>
+    </details>
+    <details>
+      <summary>Does the warranty cover labor?</summary>
+      <div class="panel"><p>No. Technician labor, diagnosis and installation costs are not covered. For professional installs, if the unit still malfunctions after parts are replaced and you have a licensed technician's defect report, DELLA will take care of you at its discretion.</p></div>
+    </details>
+    <details>
+      <summary>Is the warranty transferable?</summary>
+      <div class="panel"><p>No. The extended warranty stays with the original purchaser and the registered installation address.</p></div>
+    </details>
+  </div>
+</section>
 </body>
 </html>
