@@ -32,7 +32,8 @@ Each page must feel like its own scene, not the Bedroom page with new photos. Re
 |---|---|
 | Spacing | Every section uses `--gap` (112 / 88 / 72px). Two plain cream sections in a row share one gap automatically; the final CTA has a smaller `--gap-end` below it. Do not set section padding in page CSS. |
 | Section wrapper | `section.sec` on the cream page (+ `.bg-white` / `.bg-sand` / `.bg-sky` / `.bg-navy`) — never two sand bands in a row (TRUST is sand) |
-| Section title | `header.sec-head` (`.h2` left, `.lead` right). **No eyebrow labels anywhere.** A heading under an H2 (e.g. "Shop … by Capacity") is an `h3.h3` inside `.sub-head` |
+| Section title | `header.sec-head` (`.h2` left, `.lead` right; flex-wrap, so the lead drops under the title instead of squeezing it). **No eyebrow labels anywhere.** A heading under an H2 (e.g. "Shop … by Capacity") is an `h3.h3` inside `.sub-head` |
+| Heading wraps | An h2/h3 must not break mid-line when its section has room for one line (owner rule, 2026-11-12). Don't put titles in narrow grid columns; FAQ title spans the full width above lead + list. Wrapping is OK only in genuinely narrow spots (feature/split columns, CTA copy beside the photo, small cards). Check with a wrap audit at 1440 / 1100 / 390. |
 | Labels | Never put chips or badges on top of a photo where they can cover the unit; put them in the card body (`.tile-tags`). Big numbers on photos sit bottom-left only. |
 | Scenario / room / path cards | `.tile-grid` (`style="--cols:2|3|4"`, add `.rail` to swipe on phones) + `.tile` (`.tile-media`, `.chip`, `.tile-body`); big number on photo = `.tile-media--shade` + `.tile-cap`; selected state `.is-selected` |
 | Facts inside cards | `dl.kv` rows, `ul.ticks` checklist |
