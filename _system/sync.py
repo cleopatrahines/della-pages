@@ -27,6 +27,7 @@ PAGES = [
     'mini-split-for-shed.html',
     '2-zone-vs-3-zone-mini-split/2-zone-vs-3-zone-mini-split.html',
     'Ductless Mini Split vs Central Air/ductless-mini-split-vs-central-air-nov.html',
+    'Mini Split for Mobile Home/mini-split-for-mobile-home.html',
 ]
 
 
