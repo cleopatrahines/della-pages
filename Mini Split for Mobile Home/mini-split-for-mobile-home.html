@@ -8,6 +8,7 @@
   <meta property="og:title" content="Mini Splits for Mobile Homes | DELLA">
   <meta property="og:description" content="Compare wall-mounted 1-zone to 4-zone DELLA mini split heat pumps for single-wide, double-wide, and park model mobile homes.">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://dellahome.com/pages/mini-split-for-mobile-home">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%235884E7'/%3E%3Crect x='7' y='12' width='18' height='8' rx='2' fill='white'/%3E%3C/svg%3E">
   <script>document.documentElement.classList.add('js');</script>
   <!-- Fonts: dellahome.com's theme already loads Inter Tight + Spectral. This link is for the GitHub Pages preview only. -->
@@ -654,7 +655,7 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
             <dl class="kv">
               <div><dt>Setup</dt><dd>Single-Zone · 1 Room</dd></div>
               <div><dt>Voltage</dt><dd>115V &amp; 230V</dd></div>
-              <div><dt>Systems from</dt><dd>$649.96</dd></div>
+              <div><dt>Systems from</dt><dd data-from="1">$649.96</dd></div>
             </dl>
             <button class="btn btn-navy" type="button" data-select-zone="1" data-source="layout_card">See Single-Zone Systems <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           </div>
@@ -670,7 +671,7 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
             <dl class="kv">
               <div><dt>Setup</dt><dd>2–4 Zone Multi-Zone</dd></div>
               <div><dt>Voltage</dt><dd>230V</dd></div>
-              <div><dt>Systems from</dt><dd>$1,739.96</dd></div>
+              <div><dt>Systems from</dt><dd data-from="2">$1,739.96</dd></div>
             </dl>
             <button class="btn btn-navy" type="button" data-select-zone="2" data-source="layout_card">See 2-Zone Systems <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
             <div class="more-zones"><span class="more-label">Need more rooms?</span><button type="button" data-select-zone="3" data-source="layout_more">3-Zone (3 Rooms)</button><button type="button" data-select-zone="4" data-source="layout_more">4-Zone (Double-Wide)</button></div>
@@ -1058,7 +1059,7 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
   </section>
 
   <div class="buybar">
-    <div class="buybar-txt"><strong>Mobile home mini splits</strong><span>1–4 zones · from $649.96</span></div>
+    <div class="buybar-txt"><strong>Mobile home mini splits</strong><span>1–4 zones · from <span data-from="all">$649.96</span></span></div>
     <a class="btn btn-navy" href="#systems">Shop now</a>
   </div>
 </main>
@@ -1363,6 +1364,35 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
   Array.prototype.forEach.call(document.querySelectorAll('.collection-link'), function (a) {
     a.addEventListener('click', function () { track('mobile_home_collection_view', { zone: currentZone(), collection_url: a.href, source_module: a.closest('section') ? a.closest('section').id || 'cta' : 'page' }); });
   });
+  /* "From $…" labels (sidebar, layout cards, buy bar) follow the card prices, which the shared JS
+     refreshes from Shopify on dellahome.com; static values stay if nothing changes */
+  var money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  function priceOf(card) {
+    var el = card.querySelector('.p-price');
+    var stock = card.querySelector('.p-stock');
+    if (!el || (stock && stock.classList.contains('is-out'))) { return null; }
+    var n = parseFloat(el.textContent.replace(/[^0-9.]/g, ''));
+    return isNaN(n) ? null : n;
+  }
+  function syncFrom() {
+    var mins = {};
+    cards.forEach(function (c) {
+      var n = priceOf(c);
+      if (n === null) { return; }
+      [c.dataset.zones, 'all'].forEach(function (k) { if (!(k in mins) || n < mins[k]) { mins[k] = n; } });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-from]'), function (el) {
+      var k = el.getAttribute('data-from');
+      if (k in mins) {
+        var txt = money.format(mins[k]);
+        if (el.textContent !== txt) { el.textContent = txt; }
+      }
+    });
+  }
+  var syncTimer;
+  new MutationObserver(function () { clearTimeout(syncTimer); syncTimer = setTimeout(syncFrom, 150); })
+    .observe(grid, { subtree: true, characterData: true, childList: true });
+
   var installer = document.getElementById('installerCta');
   if (installer) { installer.addEventListener('click', function () { track('mobile_home_installer_click', { source_module: 'installation' }); }); }
 })();
