@@ -435,6 +435,8 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 
 /* ---------- page: mobile home ---------- */
 .mh-page [hidden]{display:none!important}
+/* hero: the photo has a kitchen behind the headline, so the left wash is a bit stronger than the system default */
+.mh-page .hero::after{background:linear-gradient(90deg,rgba(255,252,246,.95) 0%,rgba(255,252,246,.86) 34%,rgba(255,252,246,0) 60%)}
 .skip-link{position:absolute;left:12px;top:-100px;z-index:100;padding:12px 20px;border-radius:var(--pill);background:var(--navy-800);color:var(--white);text-decoration:none}
 .skip-link:focus{top:12px}
 .nw{white-space:nowrap}
@@ -513,7 +515,9 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
   .layout-copy h3{font-size:27px}
 }
 @media (max-width:1100px){
+  .mh-page .hero::after{background:linear-gradient(90deg,rgba(255,252,246,.96) 0%,rgba(255,252,246,.9) 46%,rgba(255,252,246,0) 78%)}
   html.js .shop-layout{grid-template-columns:216px minmax(0,1fr);gap:28px}
+  .zone-sidebar .zone-list label small{white-space:normal}
   .layout-panel{grid-template-columns:1fr}
   .layout-copy{border-left:0;border-top:1px solid var(--line)}
   .install .split-media{position:relative;top:auto}
@@ -716,13 +720,13 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
           <h3 class="zone-title">Browse by Setup</h3>
           <div class="zone-list" role="radiogroup" aria-label="Number of zones">
             <input type="radio" name="zone" id="zone-1" value="1">
-            <label for="zone-1"><b>Single-Zone</b><small>1 Room · From <span data-from="1">$649.96</span></small></label>
+            <label for="zone-1"><b>Single-Zone</b><small>1 Room · <span class="nw">From <span data-from="1">$649.96</span></span></small></label>
             <input type="radio" name="zone" id="zone-2" value="2" checked>
-            <label for="zone-2"><b>2 Zone</b><small>Living + 1 Bed · From <span data-from="2">$1,739.96</span></small></label>
+            <label for="zone-2"><b>2 Zone</b><small>Living + 1 Bed · <span class="nw">From <span data-from="2">$1,739.96</span></span></small></label>
             <input type="radio" name="zone" id="zone-3" value="3">
-            <label for="zone-3"><b>3 Zone</b><small>3 Rooms · From <span data-from="3">$2,334.96</span></small></label>
+            <label for="zone-3"><b>3 Zone</b><small>3 Rooms · <span class="nw">From <span data-from="3">$2,334.96</span></span></small></label>
             <input type="radio" name="zone" id="zone-4" value="4">
-            <label for="zone-4"><b>4 Zone</b><small>Double-Wide · From <span data-from="4">$3,179.96</span></small></label>
+            <label for="zone-4"><b>4 Zone</b><small>Double-Wide · <span class="nw">From <span data-from="4">$3,179.96</span></span></small></label>
           </div>
         </aside>
 
