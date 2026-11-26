@@ -66,12 +66,12 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 /* headings stay on one line while they fit; the lead moves under the title when there is no room beside it */
 .sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px;margin-bottom:56px}
 .sec-head > *{min-width:0}
-.sec-head .lead{flex:1 1 360px;max-width:470px}
+/* the lead sits right of the title while there is room, otherwise drops below; either way it runs to the container edge */
+.sec-head .lead{flex:1 1 360px}
 .sec-head--center{flex-direction:column;align-items:center;text-align:center}
-.sec-head--center .lead{flex:none;max-width:660px}
+.sec-head--center .lead{flex:none}
 .sub-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-bottom:32px}
 .sub-head > *{min-width:0}
-.h2,.h3{text-wrap:balance}
 
 /* ---------- buttons & links ---------- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 30px;border:1px solid transparent;border-radius:var(--pill);font:500 16px/1 var(--sans);letter-spacing:.1px;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease),transform .15s var(--ease)}
@@ -171,7 +171,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--navy-900)}
 .feature-copy{display:flex;flex-direction:column;justify-content:center;padding:60px 64px}
 .feature-copy h2{color:var(--white);margin-bottom:18px}
 .feature-copy .h2{font-size:clamp(32px,3.2vw,46px)}
-.feature-copy p{max-width:460px;margin-bottom:34px;color:rgba(255,255,255,.8);font-size:18px}
+.feature-copy p{margin-bottom:34px;color:rgba(255,255,255,.8);font-size:18px}
 .feature-points{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0;padding:28px 0 0;border-top:1px solid rgba(255,255,255,.18);list-style:none}
 .feature-points strong{display:block;font:500 34px/1.05 var(--serif);letter-spacing:-.8px}
 .feature-points span{display:block;margin-top:8px;color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.45}
@@ -823,16 +823,16 @@ html.js .shop-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:
 <div class="p-foot"><span class="p-price">$1,829.96</span><span class="p-stock">Available</span></div>
 <a class="btn btn-navy product-link" href="https://dellahome.com/products/vario-series-20000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft" target="_blank" rel="noopener" aria-label="View DELLA Vario Series 20000 BTU Dual Zone Mini Split AC (9K + 9K) - Up to 800 Sq.Ft.">View Product</a>
 </div></article>
-<article class="p-card" data-key="Z2-03" data-zones="2" data-product-handle="della-serena-series-18000-btu-dual-zone-mini-split-ac-7k-12k-up-to-850-sq-ft" data-series="Serena">
+<article class="p-card" data-key="Z2-03" data-zones="2" data-product-handle="della-serena-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft" data-series="Serena">
 <p class="p-label">2-Zone · Bedroom + Living</p>
-<div class="p-media"><img src="assets/products/Z2-03.webp" alt="DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (7K + 12K) - Up to 850 Sq.Ft." width="952" height="923" loading="lazy"></div>
+<div class="p-media"><img src="assets/products/Z2-03-serena-9k12k.webp" alt="DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft." width="998" height="970" loading="lazy"></div>
 <div class="p-body">
 <h3 class="p-title">Serena</h3>
 <p class="p-cap">18,000 BTU Outdoor · 2-Zone</p>
-<dl class="p-specs"><div><dt>Indoor units</dt><dd>7K + 12K</dd></div><div><dt>Efficiency</dt><dd>22 SEER</dd></div><div><dt>Voltage</dt><dd>230V</dd></div></dl>
-<details class="p-name"><summary>Full model name</summary><p class="p-full">DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (7K + 12K) - Up to 850 Sq.Ft.</p></details>
+<dl class="p-specs"><div><dt>Indoor units</dt><dd>9K + 12K</dd></div><div><dt>Efficiency</dt><dd>22 SEER</dd></div><div><dt>Voltage</dt><dd>230V</dd></div></dl>
+<details class="p-name"><summary>Full model name</summary><p class="p-full">DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.</p></details>
 <div class="p-foot"><span class="p-price">$1,909.96</span><span class="p-stock">Available</span></div>
-<a class="btn btn-navy product-link" href="https://dellahome.com/products/della-serena-series-18000-btu-dual-zone-mini-split-ac-7k-12k-up-to-850-sq-ft" target="_blank" rel="noopener" aria-label="View DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (7K + 12K) - Up to 850 Sq.Ft.">View Product</a>
+<a class="btn btn-navy product-link" href="https://dellahome.com/products/della-serena-series-18000-btu-dual-zone-mini-split-ac-9k-12k-up-to-950-sq-ft" target="_blank" rel="noopener" aria-label="View DELLA Serena Series 18000 BTU Dual Zone Mini Split AC (9K + 12K) - Up to 950 Sq.Ft.">View Product</a>
 </div></article>
 <article class="p-card" data-key="Z2-04" data-zones="2" data-product-handle="optima-series-18000-btu-dual-zone-mini-split-ac-9k-9k-up-to-800-sq-ft" data-series="Optima">
 <p class="p-label">2-Zone · Cold-Climate Ultra Heat</p>
